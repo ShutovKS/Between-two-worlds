@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
+using static Units.Tools.Tools;
 
 namespace UI.MainMenu
 {
@@ -9,10 +10,7 @@ namespace UI.MainMenu
         [SerializeField] private Buttons _buttons;
         [SerializeField] private GameName _gameName;
 
-        public void SetBackground(Texture2D texture2D) => _background.BackgroundImage.sprite = Sprite.Create(
-            texture2D,
-            new Rect(0, 0, texture2D.width, texture2D.height),
-            new Vector2(0.5f, 0.5f));
+        public void SetBackground(Texture2D texture2D) => _background.BackgroundImage.sprite = texture2D.ToSprite();
 
         public void SetLoadGameButton(UnityAction action)
         {

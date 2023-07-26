@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
+using static Units.Tools.Tools;
 
 namespace UI.Dialogue
 {
@@ -21,17 +22,11 @@ namespace UI.Dialogue
             _answers.AnswerButton2.onClick.AddListener(answer2.action);
         }
 
-        public void SetBackground(Texture2D texture2D) => _background.BackgroundImage.sprite = Sprite.Create(
-            texture2D,
-            new Rect(0, 0, texture2D.width, texture2D.height),
-            new Vector2(0.5f, 0.5f));
+        public void SetBackground(Texture2D texture2D) => _background.BackgroundImage.sprite = texture2D.ToSprite();
 
         public void SetActionAvatar(bool value) => _person.AvatarGO.SetActive(value);
 
-        public void SetAvatar(Texture2D texture2D) => _person.AvatarImage.sprite = Sprite.Create(
-            texture2D,
-            new Rect(0, 0, texture2D.width, texture2D.height),
-            new Vector2(0.5f, 0.5f));
+        public void SetAvatar(Texture2D texture2D) => _person.AvatarImage.sprite = texture2D.ToSprite();
 
         public void SetText(string authorName, string text, UnityAction action)
         {
