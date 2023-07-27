@@ -7,7 +7,6 @@ namespace UI.Dialogue
         [SerializeField] private GameObject _dialogueScreenGameObject;
 
         [SerializeField] private AnswerOptionsUI _answers;
-        [SerializeField] private BackgroundUI _background;
         [SerializeField] private PersonAvatarUI _person;
         [SerializeField] private DialogueTextUI _dialogueText;
 

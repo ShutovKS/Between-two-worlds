@@ -6,7 +6,6 @@ namespace UI.MainMenu
     {
         [SerializeField] private GameObject mainMenuScreenGameObject;
 
-        [field: SerializeField] public BackgroundUI Background { get; private set; }
         [field: SerializeField] public ButtonsUI Buttons { get; private set; }
         [field: SerializeField] public GameNameUI GameName { get; private set; }
 

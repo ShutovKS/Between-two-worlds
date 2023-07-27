@@ -7,5 +7,6 @@ namespace Infrastructure.Services.UIFactory
         GameObject DialogueScreen { get; }
         GameObject MainMenuScreen { get; }
         GameObject SettingsScreen { get; }
+        GameObject BackgroundScreen { get; }
     }
 }

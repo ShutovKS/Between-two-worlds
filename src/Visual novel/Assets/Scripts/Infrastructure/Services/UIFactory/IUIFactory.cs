@@ -8,9 +8,11 @@ namespace Infrastructure.Services.UIFactory
         Task<GameObject> CreatedMainMenuScreen();
         Task<GameObject> CreatedSettingsScreen();
         Task<GameObject> CreatedDialogueScreen();
+        Task<GameObject> CreatedBackgroundScreen();
         
         void DestroyMainMenuScreen();
         void DestroyDialogueScreen();
         void DestroySettingsScreen();
+        void DestroyBackgroundScreen();
     }
 }
