@@ -26,12 +26,12 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1804767121657799600}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 7834141597549511468}
+  m_Father: {fileID: 3685891428372592303}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -88,7 +88,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b84cb0aa0a2d49858b9af36e94530bd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BackgroundImage: {fileID: 1847281168358480950}
+  <BackgroundImage>k__BackingField: {fileID: 1847281168358480950}
 --- !u!1 &1927871600123502917
 GameObject:
   m_ObjectHideFlags: 0
@@ -181,7 +181,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 31.5
+  m_fontSize: 31.2
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -315,7 +315,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 31.5
+  m_fontSize: 31.2
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -449,7 +449,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 31.5
+  m_fontSize: 31.2
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -592,12 +592,12 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3799508807731924810}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 7834141597549511468}
+  m_Father: {fileID: 3685891428372592303}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.005, y: 0.55}
   m_AnchorMax: {x: 0.27, y: 0.8}
@@ -659,7 +659,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 57.3
+  m_fontSize: 56.8
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -713,7 +713,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d8f68bcca1b421db3e54f17e61f9f27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GameNameText: {fileID: 1655028849597616100}
+  <GameNameText>k__BackingField: {fileID: 1655028849597616100}
 --- !u!1 &3809929243367015800
 GameObject:
   m_ObjectHideFlags: 0
@@ -806,7 +806,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 31.5
+  m_fontSize: 31.2
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -880,9 +880,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 5864020690138093219}
-  - {fileID: 5375787479749697650}
-  - {fileID: 6029714172459735465}
+  - {fileID: 3685891428372592303}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -965,6 +963,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36b35d484ec54e75bf73b985e57a15ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _mainMenuScreenGO: {fileID: 5018326880551288939}
   _background: {fileID: 720302936676383974}
   _buttons: {fileID: 5307597545719349517}
   _gameName: {fileID: 7024724666437294960}
@@ -1089,6 +1088,44 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &5018326880551288939
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3685891428372592303}
+  m_Layer: 5
+  m_Name: Panel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &3685891428372592303
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5018326880551288939}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 5864020690138093219}
+  - {fileID: 5375787479749697650}
+  - {fileID: 6029714172459735465}
+  m_Father: {fileID: 7834141597549511468}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &5328204517057356271
 GameObject:
   m_ObjectHideFlags: 0
@@ -1476,7 +1513,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7710818334774499713}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1486,7 +1523,7 @@ RectTransform:
   - {fileID: 2571676476231755704}
   - {fileID: 5530962991496806212}
   - {fileID: 1837080449435689361}
-  m_Father: {fileID: 7834141597549511468}
+  m_Father: {fileID: 3685891428372592303}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.025, y: 0.05}
   m_AnchorMax: {x: 0.25, y: 0.5}
@@ -1505,11 +1542,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5fcd6ff7be64fb9baaf3c92395a983c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LoadGameButton: {fileID: 580720827603265571}
-  StartGameButton: {fileID: 3970734626767723581}
-  SettingsButton: {fileID: 1659919155343237433}
-  ExitButton: {fileID: 8861565763546236697}
-  LoadGameButtonText: {fileID: 8774063994561960079}
-  StartGameButtonText: {fileID: 890853211064378553}
-  SettingsButtonText: {fileID: 3608949952113594971}
-  ExitButtonText: {fileID: 6289899429701391572}
+  <LoadGameButton>k__BackingField: {fileID: 580720827603265571}
+  <StartGameButton>k__BackingField: {fileID: 3970734626767723581}
+  <SettingsButton>k__BackingField: {fileID: 1659919155343237433}
+  <ExitButton>k__BackingField: {fileID: 8861565763546236697}
+  <LoadGameButtonText>k__BackingField: {fileID: 8774063994561960079}
+  <StartGameButtonText>k__BackingField: {fileID: 890853211064378553}
+  <SettingsButtonText>k__BackingField: {fileID: 3608949952113594971}
+  <ExitButtonText>k__BackingField: {fileID: 6289899429701391572}

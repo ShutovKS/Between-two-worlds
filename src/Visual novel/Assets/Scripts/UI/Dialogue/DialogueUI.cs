@@ -6,11 +6,13 @@ namespace UI.Dialogue
 {
     public class DialogueUI : MonoBehaviour
     {
+        [SerializeField] private GameObject _dialogueScreenGO;
+        
         [SerializeField] private Answers _answers;
         [SerializeField] private Background _background;
         [SerializeField] private Person _person;
         [SerializeField] private Text _text;
-
+        
         public void SetAnswers((string text, UnityAction action) answer1, (string text, UnityAction action) answer2)
         {
             _answers.AnswerText1.text = answer1.text;
@@ -35,5 +37,7 @@ namespace UI.Dialogue
             _text.FurtherButton.onClick.RemoveAllListeners();
             _text.FurtherButton.onClick.AddListener(action);
         }
+        
+        public void SetActivePanel(bool value) => _dialogueScreenGO.SetActive(value);
     }
 }

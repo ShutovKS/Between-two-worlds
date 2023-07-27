@@ -4,5 +4,6 @@
     {
         public const string DIALOGUE_SCREEN = "Screens/Dialogue";
         public const string MAIN_MENU_SCREEN = "Screens/MainMenu";
+        public const string SETTINGS_SCREEN = "Screens/Settings";
     }
 }

@@ -6,9 +6,11 @@ namespace Infrastructure.Services.UIFactory
     public interface IUIFactory : IUIFactoryInfo
     {
         Task<GameObject> CreatedMainMenuScreen();
-        void DestroyMainMenuScreen();
-        
+        Task<GameObject> CreatedSettingsScreen();
         Task<GameObject> CreatedDialogueScreen();
+        
+        void DestroyMainMenuScreen();
         void DestroyDialogueScreen();
+        void DestroySettingsScreen();
     }
 }

@@ -17,6 +17,7 @@ namespace Infrastructure.Services.UIFactory
 
         public GameObject DialogueScreen { get; private set; }
         public GameObject MainMenuScreen { get; private set; }
+        public GameObject SettingsScreen { get; private set; }
 
         public async Task<GameObject> CreatedMainMenuScreen()
         {
@@ -32,14 +33,15 @@ namespace Infrastructure.Services.UIFactory
             return DialogueScreen;
         }
 
-        public void DestroyMainMenuScreen()
+        public async Task<GameObject> CreatedSettingsScreen()
         {
-            Destroy(MainMenuScreen);
+            var prefab = await _assetsAddressablesProvider.GetAsset<GameObject>(SETTINGS_SCREEN);
+            SettingsScreen = Instantiate(prefab);
+            return SettingsScreen;
         }
 
-        public void DestroyDialogueScreen()
-        {
-            Destroy(DialogueScreen);
-        }
+        public void DestroyMainMenuScreen() => Destroy(MainMenuScreen);
+        public void DestroyDialogueScreen() => Destroy(DialogueScreen);
+        public void DestroySettingsScreen() => Destroy(SettingsScreen);
     }
 }

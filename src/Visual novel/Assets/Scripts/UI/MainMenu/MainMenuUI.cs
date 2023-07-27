@@ -6,10 +6,12 @@ namespace UI.MainMenu
 {
     public class MainMenuUI : MonoBehaviour
     {
+        [SerializeField] private GameObject _mainMenuScreenGO;
+        
         [SerializeField] private Background _background;
         [SerializeField] private Buttons _buttons;
         [SerializeField] private GameName _gameName;
-
+        
         public void SetBackground(Texture2D texture2D) => _background.BackgroundImage.sprite = texture2D.ToSprite();
 
         public void SetLoadGameButton(UnityAction action)
@@ -35,6 +37,8 @@ namespace UI.MainMenu
             _buttons.ExitButton.onClick.RemoveAllListeners();
             _buttons.ExitButton.onClick.AddListener(action);
         }
+
+        public void SetActivePanel(bool value) => _mainMenuScreenGO.SetActive(value);
 
         public void SetLoadGameButton(string text) => _buttons.LoadGameButtonText.text = text;
         public void SetStartGameButton(string text) => _buttons.StartGameButtonText.text = text;
