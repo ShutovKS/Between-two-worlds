@@ -88,7 +88,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b84cb0aa0a2d49858b9af36e94530bd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <BackgroundImage>k__BackingField: {fileID: 1847281168358480950}
+  _backgroundImage: {fileID: 1847281168358480950}
 --- !u!1 &1927871600123502917
 GameObject:
   m_ObjectHideFlags: 0
@@ -713,7 +713,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d8f68bcca1b421db3e54f17e61f9f27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <GameNameText>k__BackingField: {fileID: 1655028849597616100}
+  _gameNameText: {fileID: 1655028849597616100}
 --- !u!1 &3809929243367015800
 GameObject:
   m_ObjectHideFlags: 0
@@ -963,10 +963,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36b35d484ec54e75bf73b985e57a15ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _mainMenuScreenGO: {fileID: 5018326880551288939}
-  _background: {fileID: 720302936676383974}
-  _buttons: {fileID: 5307597545719349517}
-  _gameName: {fileID: 7024724666437294960}
+  mainMenuScreenGameObject: {fileID: 5018326880551288939}
+  <Background>k__BackingField: {fileID: 720302936676383974}
+  <Buttons>k__BackingField: {fileID: 5307597545719349517}
+  <GameName>k__BackingField: {fileID: 7024724666437294960}
 --- !u!1 &4781323547281948093
 GameObject:
   m_ObjectHideFlags: 0
@@ -1542,11 +1542,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5fcd6ff7be64fb9baaf3c92395a983c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <LoadGameButton>k__BackingField: {fileID: 580720827603265571}
-  <StartGameButton>k__BackingField: {fileID: 3970734626767723581}
-  <SettingsButton>k__BackingField: {fileID: 1659919155343237433}
-  <ExitButton>k__BackingField: {fileID: 8861565763546236697}
-  <LoadGameButtonText>k__BackingField: {fileID: 8774063994561960079}
-  <StartGameButtonText>k__BackingField: {fileID: 890853211064378553}
-  <SettingsButtonText>k__BackingField: {fileID: 3608949952113594971}
-  <ExitButtonText>k__BackingField: {fileID: 6289899429701391572}
+  _loadGameButton: {fileID: 580720827603265571}
+  _startGameButton: {fileID: 3970734626767723581}
+  _settingsButton: {fileID: 1659919155343237433}
+  _exitButton: {fileID: 8861565763546236697}
+  _loadGameButtonText: {fileID: 8774063994561960079}
+  _startGameButtonText: {fileID: 890853211064378553}
+  _settingsButtonText: {fileID: 3608949952113594971}
+  _exitButtonText: {fileID: 6289899429701391572}

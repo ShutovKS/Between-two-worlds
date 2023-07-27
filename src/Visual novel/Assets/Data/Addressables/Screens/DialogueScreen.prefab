@@ -491,11 +491,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4df10d7bdf447b585e3f01c13d2558b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _dialogueScreenGO: {fileID: 4136458253577208461}
+  _dialogueScreenGameObject: {fileID: 4136458253577208461}
   _answers: {fileID: 2108221363639294097}
   _background: {fileID: 7778702666620653125}
   _person: {fileID: 8747564789639568428}
-  _text: {fileID: 1669926806809939411}
+  _dialogueText: {fileID: 1669926806809939411}
 --- !u!1 &963740760132564707
 GameObject:
   m_ObjectHideFlags: 0
@@ -937,7 +937,7 @@ GameObject:
   - component: {fileID: 6458872911655040939}
   - component: {fileID: 2108221363639294097}
   m_Layer: 5
-  m_Name: AnswersPanel
+  m_Name: AnswerOptionsPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1014,10 +1014,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d84a4c5ead4491e9fd71eeae5437ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <AnswerButton1>k__BackingField: {fileID: 1978311039831059119}
-  <AnswerButton2>k__BackingField: {fileID: 6277149111390240087}
-  <AnswerText1>k__BackingField: {fileID: 8598978719806669635}
-  <AnswerText2>k__BackingField: {fileID: 7171955918626488025}
+  _answerButton1: {fileID: 1978311039831059119}
+  _answerButton2: {fileID: 6277149111390240087}
+  _answerText1: {fileID: 8598978719806669635}
+  _answerText2: {fileID: 7171955918626488025}
 --- !u!1 &6167466755311044076
 GameObject:
   m_ObjectHideFlags: 0
@@ -1106,7 +1106,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cd6d309fd9a4327a6e21250329d48f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <BackgroundImage>k__BackingField: {fileID: 5625865941733364116}
+  _backgroundImage: {fileID: 5625865941733364116}
 --- !u!1 &7188628091634849400
 GameObject:
   m_ObjectHideFlags: 0
@@ -1327,7 +1327,7 @@ GameObject:
   - component: {fileID: 6255105739276026427}
   - component: {fileID: 8747564789639568428}
   m_Layer: 5
-  m_Name: PersonPanel
+  m_Name: PersonAvatarPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1365,8 +1365,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e5031bd82f64f3fbd01b8d2b66d9ab9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <AvatarGO>k__BackingField: {fileID: 7277491237118591570}
-  <AvatarImage>k__BackingField: {fileID: 7886446587985050548}
+  _avatarGO: {fileID: 7277491237118591570}
+  _avatarImage: {fileID: 7886446587985050548}
 --- !u!1 &8450451169990527459
 GameObject:
   m_ObjectHideFlags: 0
@@ -1380,7 +1380,7 @@ GameObject:
   - component: {fileID: 6402128267204549912}
   - component: {fileID: 1669926806809939411}
   m_Layer: 5
-  m_Name: TextPanel
+  m_Name: DialogueTextPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1458,9 +1458,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50ceb0043791456ebc609446df4938d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <AuthorNameText>k__BackingField: {fileID: 9093626652510023565}
-  <TextText>k__BackingField: {fileID: 7616951607059920396}
-  <FurtherButton>k__BackingField: {fileID: 1973352370474180074}
+  _authorNameText: {fileID: 9093626652510023565}
+  _textText: {fileID: 7616951607059920396}
+  _furtherButton: {fileID: 1973352370474180074}
+  _furtherText: {fileID: 2759000017690329839}
 --- !u!1 &8511339894041558054
 GameObject:
   m_ObjectHideFlags: 0

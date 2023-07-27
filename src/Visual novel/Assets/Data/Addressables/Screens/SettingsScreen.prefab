@@ -666,9 +666,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9efe21b5fc61f3d41967283cac9ed8d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _settingsScreenGO: {fileID: 4212196979032803098}
-  _back: {fileID: 29224339199597649}
-  _language: {fileID: 2745560781269828861}
+  _settingsScreenGameObject: {fileID: 4212196979032803098}
+  <BackButton>k__BackingField: {fileID: 29224339199597649}
+  <LanguageSetting>k__BackingField: {fileID: 2745560781269828861}
 --- !u!1 &3284264319376549512
 GameObject:
   m_ObjectHideFlags: 0
@@ -1428,8 +1428,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e125d73d4d4ed9a45b99ac6c8cc9acd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: {fileID: 906136077478179219}
-  Dropdown: {fileID: 6079485891757799311}
+  _nameText: {fileID: 906136077478179219}
+  _dropdown: {fileID: 6079485891757799311}
 --- !u!1 &7115197006908171183
 GameObject:
   m_ObjectHideFlags: 0
@@ -1783,8 +1783,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6055d66dcaac44968e96e197ba3e14a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <BackButton>k__BackingField: {fileID: 4477249740876702674}
-  <BackButtonText>k__BackingField: {fileID: 3646817425243370280}
+  _backButton: {fileID: 4477249740876702674}
+  _backButtonText: {fileID: 3646817425243370280}
 --- !u!1 &9164271854198959810
 GameObject:
   m_ObjectHideFlags: 0
