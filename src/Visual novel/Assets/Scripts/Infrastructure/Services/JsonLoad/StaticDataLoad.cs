@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Infrastructure.Services.JsonLoad
 {
-    public class JsonLoad : IJsonLoad
+    public class StaticDataLoad : IStaticDataLoad
     {
         private const string PATH_TO_DIALOGUE = "";
         private readonly Dictionary<string, Part> _partsDictionary;

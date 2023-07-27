@@ -17,9 +17,9 @@ namespace Infrastructure.Bootstrap
         {
             var assetsAddressablesProvider = new AssetsAddressablesProvider();
             var uiFactory = new UIFactory(assetsAddressablesProvider);
-            var jsonLoad = new JsonLoad();
+            var staticDataLoad = new StaticDataLoad();
 
-            ServicesContainer.SetUp(assetsAddressablesProvider, uiFactory, jsonLoad);
+            ServicesContainer.SetUp(assetsAddressablesProvider, uiFactory, staticDataLoad);
         }
     }
 }
