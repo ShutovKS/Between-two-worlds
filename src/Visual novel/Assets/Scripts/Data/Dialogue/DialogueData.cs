@@ -1,8 +1,9 @@
-﻿using JetBrains.Annotations;
+﻿using System;
+using JetBrains.Annotations;
 
-namespace Infrastructure.Services.JsonLoad
+namespace Data.Dialogue
 {
-    [System.Serializable]
+    [Serializable]
     public class DialogueData
     {
         public string id;

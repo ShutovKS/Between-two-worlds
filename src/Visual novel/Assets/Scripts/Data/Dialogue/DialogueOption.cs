@@ -1,6 +1,6 @@
 ﻿using JetBrains.Annotations;
 
-namespace Infrastructure.Services.JsonLoad
+namespace Data.Dialogue
 {
     [System.Serializable]
     public class DialogueOption
