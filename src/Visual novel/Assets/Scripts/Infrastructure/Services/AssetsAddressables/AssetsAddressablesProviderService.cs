@@ -5,7 +5,7 @@ using UnityEngine.AddressableAssets;
 
 namespace Infrastructure.Services.AssetsAddressables
 {
-    public class AssetsAddressablesProvider : IAssetsAddressablesProvider
+    public class AssetsAddressablesProviderService : IAssetsAddressablesProviderService
     {
         private readonly Dictionary<string, Object> _cachedAssets = new();
 

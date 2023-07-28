@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using Data.Dialogue;
 using UnityEngine;
 
-namespace Infrastructure.Services.JsonLoad
+namespace Infrastructure.Services.StaticDataLoad
 {
-    public class StaticDataLoad : IStaticDataLoad
+    public class StaticDataLoadService : IStaticDataLoadService
     {
         private const string PATH_TO_DIALOGUE = "";
         private readonly Dictionary<string, Part> _partsDictionary;

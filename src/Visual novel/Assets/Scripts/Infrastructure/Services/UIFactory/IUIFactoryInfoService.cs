@@ -2,7 +2,7 @@
 
 namespace Infrastructure.Services.UIFactory
 {
-    public interface IUIFactoryInfo
+    public interface IUIFactoryInfoService
     {
         GameObject DialogueScreen { get; }
         GameObject MainMenuScreen { get; }

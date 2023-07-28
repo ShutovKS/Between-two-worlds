@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Infrastructure.Services.UIFactory
 {
-    public interface IUIFactory : IUIFactoryInfo
+    public interface IUIFactoryService : IUIFactoryInfoService
     {
         Task<GameObject> CreatedMainMenuScreen();
         Task<GameObject> CreatedSettingsScreen();

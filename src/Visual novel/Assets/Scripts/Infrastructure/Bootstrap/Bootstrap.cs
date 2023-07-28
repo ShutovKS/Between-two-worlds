@@ -1,6 +1,6 @@
 ﻿using Infrastructure.Services;
 using Infrastructure.Services.AssetsAddressables;
-using Infrastructure.Services.JsonLoad;
+using Infrastructure.Services.StaticDataLoad;
 using Infrastructure.Services.UIFactory;
 using UnityEngine;
 
@@ -15,9 +15,9 @@ namespace Infrastructure.Bootstrap
 
         private void ServicesInitialize()
         {
-            var assetsAddressablesProvider = new AssetsAddressablesProvider();
-            var uiFactory = new UIFactory(assetsAddressablesProvider);
-            var staticDataLoad = new StaticDataLoad();
+            var assetsAddressablesProvider = new AssetsAddressablesProviderService();
+            var uiFactory = new UIFactoryService(assetsAddressablesProvider);
+            var staticDataLoad = new StaticDataLoadService();
 
             ServicesContainer.SetUp(assetsAddressablesProvider, uiFactory, staticDataLoad);
         }

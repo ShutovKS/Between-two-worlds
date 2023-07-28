@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Infrastructure.Services.AssetsAddressables
 {
-    public interface IAssetsAddressablesProvider
+    public interface IAssetsAddressablesProviderService
     {
         Task<T> GetAsset<T>(string address) where T : Object;
     }

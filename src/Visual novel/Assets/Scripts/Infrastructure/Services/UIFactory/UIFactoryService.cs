@@ -6,14 +6,14 @@ using static UnityEngine.Object;
 
 namespace Infrastructure.Services.UIFactory
 {
-    public class UIFactory : IUIFactory
+    public class UIFactoryService : IUIFactoryService
     {
-        public UIFactory(IAssetsAddressablesProvider assetsAddressablesProvider)
+        public UIFactoryService(IAssetsAddressablesProviderService assetsAddressablesProviderService)
         {
-            _assetsAddressablesProvider = assetsAddressablesProvider;
+            _assetsAddressablesProviderService = assetsAddressablesProviderService;
         }
 
-        private readonly IAssetsAddressablesProvider _assetsAddressablesProvider;
+        private readonly IAssetsAddressablesProviderService _assetsAddressablesProviderService;
 
         public GameObject DialogueScreen { get; private set; }
         public GameObject MainMenuScreen { get; private set; }
@@ -22,28 +22,28 @@ namespace Infrastructure.Services.UIFactory
 
         public async Task<GameObject> CreatedMainMenuScreen()
         {
-            var prefab = await _assetsAddressablesProvider.GetAsset<GameObject>(MAIN_MENU_SCREEN);
+            var prefab = await _assetsAddressablesProviderService.GetAsset<GameObject>(MAIN_MENU_SCREEN);
             MainMenuScreen = Instantiate(prefab);
             return MainMenuScreen;
         }
 
         public async Task<GameObject> CreatedDialogueScreen()
         {
-            var prefab = await _assetsAddressablesProvider.GetAsset<GameObject>(DIALOGUE_SCREEN);
+            var prefab = await _assetsAddressablesProviderService.GetAsset<GameObject>(DIALOGUE_SCREEN);
             DialogueScreen = Instantiate(prefab);
             return DialogueScreen;
         }
 
         public async Task<GameObject> CreatedBackgroundScreen()
         {
-            var prefab = await _assetsAddressablesProvider.GetAsset<GameObject>(BACKGROUND_SCREEN);
+            var prefab = await _assetsAddressablesProviderService.GetAsset<GameObject>(BACKGROUND_SCREEN);
             BackgroundScreen = Instantiate(prefab);
             return BackgroundScreen;
         }
 
         public async Task<GameObject> CreatedSettingsScreen()
         {
-            var prefab = await _assetsAddressablesProvider.GetAsset<GameObject>(SETTINGS_SCREEN);
+            var prefab = await _assetsAddressablesProviderService.GetAsset<GameObject>(SETTINGS_SCREEN);
             SettingsScreen = Instantiate(prefab);
             return SettingsScreen;
         }
