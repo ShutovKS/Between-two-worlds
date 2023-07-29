@@ -1,6 +1,6 @@
 ﻿using Data.Dynamic;
 
-namespace Infrastructure.Services.DataLoadObserver
+namespace Infrastructure.Services.DataSaveLoadObserver
 {
     public interface IDataSaveObserverService
     {

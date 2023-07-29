@@ -1,14 +1,14 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-namespace Infrastructure.Services.DataLoadObserver
+namespace Infrastructure.Services.DataSaveLoadObserver
 {
     public interface ISaveLoadDataObserverService
     {
         List<IDataLoadObserverService> LoadObservers { get; }
         List<IDataSaveObserverService> SaveObservers { get; }
-        void RegisterObserver(GameObject gameObject);
-        void RemoveObserver(GameObject gameObject);
+        void RegisterObserver(object obj);
+        void RemoveObserver(object obj);
         void RemoveAll();
     }
 }

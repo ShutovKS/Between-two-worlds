@@ -1,36 +1,36 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-namespace Infrastructure.Services.DataLoadObserver
+namespace Infrastructure.Services.DataSaveLoadObserver
 {
     public class SaveLoadDataObserverService : ISaveLoadDataObserverService
     {
         public List<IDataLoadObserverService> LoadObservers { get; } = new();
         public List<IDataSaveObserverService> SaveObservers { get; } = new();
 
-        public void RegisterObserver(GameObject gameObject)
+        public void RegisterObserver(object obj)
         {
-            foreach (var loadObserver in gameObject.GetComponentsInChildren<IDataLoadObserverService>())
+            if (obj is IDataLoadObserverService loadObserver)
             {
-                if (loadObserver is IDataSaveObserverService saveObserver)
-                {
-                    SaveObservers.Add(saveObserver);
-                }
-
                 LoadObservers.Add(loadObserver);
+            }
+
+            if (obj is IDataSaveObserverService saveObserver)
+            {
+                SaveObservers.Add(saveObserver);
             }
         }
 
-        public void RemoveObserver(GameObject gameObject)
+        public void RemoveObserver(object obj)
         {
-            foreach (var loadObserver in gameObject.GetComponentsInChildren<IDataLoadObserverService>())
+            if (obj is IDataLoadObserverService loadObserver)
             {
-                if (loadObserver is IDataSaveObserverService saveObserver)
-                {
-                    SaveObservers.Remove(saveObserver);
-                }
-
                 LoadObservers.Remove(loadObserver);
+            }
+
+            if (obj is IDataSaveObserverService saveObserver)
+            {
+                SaveObservers.Remove(saveObserver);
             }
         }
 
