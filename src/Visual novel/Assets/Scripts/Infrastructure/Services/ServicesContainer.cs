@@ -7,16 +7,16 @@ namespace Infrastructure.Services
     {
         public static void SetUp(params object[] objects)
         {
+            _classesDictionary = new Dictionary<Type, object>();
+            
             foreach (var variable in objects)
+            foreach (var interfaceType in variable.GetType().GetInterfaces())
             {
-                foreach (var interfaceType in variable.GetType().GetInterfaces())
-                {
-                    _classesDictionary.Add(interfaceType, variable);
-                }
+                _classesDictionary.Add(interfaceType, variable);
             }
         }
 
-        private static Dictionary<Type, object> _classesDictionary = new();
+        private static Dictionary<Type, object> _classesDictionary;
 
         public static T GetService<T>() where T : class
         {
