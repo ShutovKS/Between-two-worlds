@@ -1,7 +1,7 @@
 ﻿using System;
 using JetBrains.Annotations;
 
-namespace Data.Dialogue
+namespace Data.Localization.Dialogue
 {
     [Serializable]
     public class DialogueData

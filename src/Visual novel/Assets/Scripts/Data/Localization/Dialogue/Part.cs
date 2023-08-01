@@ -1,4 +1,4 @@
-﻿namespace Data.Dialogue
+﻿namespace Data.Localization.Dialogue
 {
     [System.Serializable]
     public class Part
