@@ -5,10 +5,10 @@ namespace Infrastructure.Services
 {
     public static class ServicesContainer
     {
-        public static void SetUp(params object[] objects)
+        public static void SetServices(params object[] objects)
         {
-            _classesDictionary = new Dictionary<Type, object>();
-            
+            _classesDictionary.Clear();
+
             foreach (var variable in objects)
             foreach (var interfaceType in variable.GetType().GetInterfaces())
             {
@@ -16,7 +16,7 @@ namespace Infrastructure.Services
             }
         }
 
-        private static Dictionary<Type, object> _classesDictionary;
+        private readonly static Dictionary<Type, object> _classesDictionary = new();
 
         public static T GetService<T>() where T : class
         {
