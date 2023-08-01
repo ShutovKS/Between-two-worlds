@@ -817,7 +817,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 1
-  m_AdditionalShaderChannelsFlag: 25
+  m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
@@ -875,7 +875,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainMenuScreenGameObject: {fileID: 5018326880551288939}
-  <Background>k__BackingField: {fileID: 0}
   <Buttons>k__BackingField: {fileID: 5307597545719349517}
   <GameName>k__BackingField: {fileID: 7024724666437294960}
 --- !u!1 &4781323547281948093

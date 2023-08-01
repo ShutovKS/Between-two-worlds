@@ -434,7 +434,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 1
-  m_AdditionalShaderChannelsFlag: 25
+  m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
@@ -493,7 +493,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _dialogueScreenGameObject: {fileID: 4136458253577208461}
   _answers: {fileID: 2108221363639294097}
-  _background: {fileID: 0}
   _person: {fileID: 8747564789639568428}
   _dialogueText: {fileID: 1669926806809939411}
 --- !u!1 &963740760132564707

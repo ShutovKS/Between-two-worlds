@@ -1,3 +1,4 @@
+using Data.Localization.UILocalisation;
 using UnityEngine;
 
 namespace UI.Settings
@@ -10,5 +11,12 @@ namespace UI.Settings
         [field: SerializeField] public LanguageSettingUI LanguageSetting { get; private set; }
 
         public void SetActivePanel(bool value) => _settingsScreenGameObject.SetActive(value);
+
+        public void Localisator(UILocalisation localisation)
+        {
+            BackButton.SetBackButtonText(localisation.Back);
+            
+            LanguageSetting.SetLanguageName(localisation.Language);
+        }
     }
 }

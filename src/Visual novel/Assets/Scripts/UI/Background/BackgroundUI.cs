@@ -8,6 +8,8 @@ namespace UI.Background
     {
         [SerializeField] private Image _backgroundImage;
 
+        [SerializeField] private GameObject _backgroundScreenGameObject;
+
         public void SetBackgroundImage(Texture2D texture2D)
         {
             _backgroundImage.color = Color.white;
@@ -19,5 +21,7 @@ namespace UI.Background
             _backgroundImage.color = color;
             _backgroundImage.sprite = null;
         }
+
+        public void SetActivePanel(bool value) => _backgroundScreenGameObject.SetActive(value);
     }
 }
