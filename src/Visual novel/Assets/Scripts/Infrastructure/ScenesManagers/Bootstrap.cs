@@ -1,37 +1,45 @@
-﻿using Infrastructure.Services;
+﻿using Data.Dynamic;
+using Infrastructure.Services;
 using Infrastructure.Services.AssetsAddressables;
-using Infrastructure.Services.DataLoadObserver;
+using Infrastructure.Services.DataSaveLoadObserver;
+using Infrastructure.Services.LocalisationDataLoad;
 using Infrastructure.Services.PersistentData;
 using Infrastructure.Services.SaveLoadData;
-using Infrastructure.Services.StaticDataLoad;
 using Infrastructure.Services.UIFactory;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-namespace Infrastructure.Bootstrap
+namespace Infrastructure.ScenesManagers
 {
     public class Bootstrap : MonoBehaviour
     {
         private void Awake()
         {
             ServicesInitialize();
+            GameLoading();
         }
 
         private void ServicesInitialize()
         {
             var assetsAddressablesProvider = new AssetsAddressablesProviderService();
             var saveLoadDataObserver = new SaveLoadDataObserverService();
-            var persistentDataService = new PersistentDataService();
+            var persistentData = new PersistentDataService();
             var saveLoadData = new SaveLoadDataService();
-            var staticDataLoad = new StaticDataLoadService();
+            var localisationDataLoad = new LocalisationDataLoadService();
             var uiFactory = new UIFactoryService(assetsAddressablesProvider);
 
-            ServicesContainer.SetUp(
+            ServicesContainer.SetServices(
                 assetsAddressablesProvider,
                 saveLoadDataObserver,
-                persistentDataService,
+                persistentData,
                 saveLoadData,
                 uiFactory,
-                staticDataLoad);
+                localisationDataLoad);
+        }
+
+        private void GameLoading()
+        {
+            SceneManager.LoadScene("1.Loading");
         }
     }
 }
