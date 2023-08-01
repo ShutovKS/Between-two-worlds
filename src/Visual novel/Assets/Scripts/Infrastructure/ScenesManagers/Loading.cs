@@ -104,7 +104,7 @@ namespace Infrastructure.ScenesManagers
 
         private void StartGame()
         {
-            SceneManager.LoadScene("2.Core");
+            SceneManager.LoadScene("2.Meta");
             _uiFactoryInfo.ChooseLanguageUI.SetActivePanel(false);
         }
     }
