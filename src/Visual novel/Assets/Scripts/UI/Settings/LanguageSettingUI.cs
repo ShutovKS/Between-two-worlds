@@ -11,7 +11,14 @@ namespace UI.Settings
         [SerializeField] private TMP_Dropdown _dropdown;
 
         public void SetLanguageName(string text) => _nameText.text = text;
-        public void AddLanguagesToDropdown(params string[] languages) => _dropdown.AddOptions(languages.ToList());
+
+        public void SetLanguagesToDropdown(params string[] languages)
+        {
+            _dropdown.ClearOptions();
+            _dropdown.AddOptions(languages.ToList());
+        }
+
+        public void SetCurrentLanguageToDropdown(int value) => _dropdown.value = value;
 
         public void RegisterLanguageChangeCallback(UnityAction<int> onChangeNumber)
         {

@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using System.Threading.Tasks;
 using Data.Dynamic;
 using Infrastructure.Services;
@@ -7,12 +6,11 @@ using Infrastructure.Services.LocalisationDataLoad;
 using Infrastructure.Services.PersistentData;
 using Infrastructure.Services.SaveLoadData;
 using Infrastructure.Services.UIFactory;
-using Units.Tools;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
-namespace Infrastructure.ScenesManagers
+namespace Infrastructure.ScenesManagers.Loading
 {
     public class Loading : MonoBehaviour
     {

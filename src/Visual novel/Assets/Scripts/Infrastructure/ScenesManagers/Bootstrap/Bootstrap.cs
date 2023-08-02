@@ -1,5 +1,4 @@
-﻿using Data.Dynamic;
-using Infrastructure.Services;
+﻿using Infrastructure.Services;
 using Infrastructure.Services.AssetsAddressables;
 using Infrastructure.Services.DataSaveLoadObserver;
 using Infrastructure.Services.LocalisationDataLoad;
@@ -9,7 +8,7 @@ using Infrastructure.Services.UIFactory;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace Infrastructure.ScenesManagers
+namespace Infrastructure.ScenesManagers.Bootstrap
 {
     public class Bootstrap : MonoBehaviour
     {
