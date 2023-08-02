@@ -34,6 +34,8 @@ namespace Infrastructure.Services.LocalisationDataLoad
             }
         }
 
+        public string CurrentLanguage { get; private set; }
+
         private const string PATH_TO_DIALOGUE = "";
         private const string PATH_TO_UI = "UILocalisation";
 
@@ -43,6 +45,7 @@ namespace Infrastructure.Services.LocalisationDataLoad
 
         public void Load(string language)
         {
+            CurrentLanguage = language;
             // LoadDialogues(language);
             LoadUILocalisation(language);
         }

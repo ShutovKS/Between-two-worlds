@@ -7,6 +7,8 @@ namespace Infrastructure.Services.LocalisationDataLoad
 {
     public interface ILocalisationDataLoadService
     {
+        string CurrentLanguage { get; }
+        
         void Load(string language);
 
         Part GetPart(string id);
