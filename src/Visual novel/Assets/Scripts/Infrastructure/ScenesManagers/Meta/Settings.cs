@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Infrastructure.Services.LocalisationDataLoad;
-using Infrastructure.Services.UIFactory;
 using UI.Settings;
 using UnityEngine.Events;
 

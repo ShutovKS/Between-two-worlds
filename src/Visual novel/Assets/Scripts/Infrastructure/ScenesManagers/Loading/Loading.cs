@@ -3,7 +3,6 @@ using System.Threading.Tasks;
 using Data.Dynamic;
 using Infrastructure.Services;
 using Infrastructure.Services.LocalisationDataLoad;
-using Infrastructure.Services.PersistentData;
 using Infrastructure.Services.SaveLoadData;
 using Infrastructure.Services.UIFactory;
 using UnityEngine;
@@ -15,7 +14,6 @@ namespace Infrastructure.ScenesManagers.Loading
     public class Loading : MonoBehaviour
     {
         private ILocalisationDataLoadService _localisationDataLoad;
-        private IPersistentDataService _persistentData;
         private ISaveLoadDataService _saveLoadData;
         private IUIFactoryInfoService _uiFactoryInfo;
         private IUIFactoryService _uiFactory;
@@ -34,7 +32,6 @@ namespace Infrastructure.ScenesManagers.Loading
         private void InitializedServices()
         {
             _localisationDataLoad = ServicesContainer.GetService<ILocalisationDataLoadService>();
-            _persistentData = ServicesContainer.GetService<IPersistentDataService>();
             _saveLoadData = ServicesContainer.GetService<ISaveLoadDataService>();
             _uiFactoryInfo = ServicesContainer.GetService<IUIFactoryInfoService>();
             _uiFactory = ServicesContainer.GetService<IUIFactoryService>();
@@ -62,13 +59,11 @@ namespace Infrastructure.ScenesManagers.Loading
             if (_saveLoadData.Exists())
             {
                 var dynamicData = _saveLoadData.Load();
-                _persistentData.SetDynamicData(dynamicData);
             }
             else
             {
                 var dynamicData = new DynamicData();
                 _saveLoadData.Save(dynamicData);
-                _persistentData.SetDynamicData(dynamicData);
             }
 
             var localizationsInfo = _localisationDataLoad.GetLocalizationsInfo();

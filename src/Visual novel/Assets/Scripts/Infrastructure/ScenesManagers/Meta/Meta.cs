@@ -1,10 +1,7 @@
-using System.Linq;
 using Data.Dynamic;
 using Infrastructure.Services;
 using Infrastructure.Services.AssetsAddressables;
-using Infrastructure.Services.DataSaveLoadObserver;
 using Infrastructure.Services.LocalisationDataLoad;
-using Infrastructure.Services.PersistentData;
 using Infrastructure.Services.SaveLoadData;
 using Infrastructure.Services.UIFactory;
 using UnityEngine;
@@ -16,8 +13,6 @@ namespace Infrastructure.ScenesManagers.Meta
     {
         private IAssetsAddressablesProviderService _assetsAddressablesProvider;
         private ILocalisationDataLoadService _localisationDataLoad;
-        private IPersistentDataService _persistentData;
-        private ISaveLoadDataObserverService _saveLoadDataObserver;
         private ISaveLoadDataService _saveLoadData;
         private IUIFactoryInfoService _uiFactoryInfo;
         private IUIFactoryService _uiFactory;
@@ -38,7 +33,6 @@ namespace Infrastructure.ScenesManagers.Meta
         private void StartGame()
         {
             var data = new DynamicData();
-            _persistentData.SetDynamicData(data);
             _saveLoadData.Save(data);
 
             _menu.ClosedMenu();
@@ -80,8 +74,6 @@ namespace Infrastructure.ScenesManagers.Meta
         {
             _assetsAddressablesProvider = ServicesContainer.GetService<IAssetsAddressablesProviderService>();
             _localisationDataLoad = ServicesContainer.GetService<ILocalisationDataLoadService>();
-            _persistentData = ServicesContainer.GetService<IPersistentDataService>();
-            _saveLoadDataObserver = ServicesContainer.GetService<ISaveLoadDataObserverService>();
             _saveLoadData = ServicesContainer.GetService<ISaveLoadDataService>();
             _uiFactoryInfo = ServicesContainer.GetService<IUIFactoryInfoService>();
             _uiFactory = ServicesContainer.GetService<IUIFactoryService>();
