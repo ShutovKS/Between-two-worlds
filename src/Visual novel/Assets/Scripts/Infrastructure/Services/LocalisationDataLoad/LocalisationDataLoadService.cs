@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using Data.Localization.Dialogue;
+using System.Xml.Serialization;
+using Data.Localization.Dialogues;
 using Data.Localization.LocalizationMain;
 using Data.Localization.UILocalisation;
 using UnityEngine;
@@ -36,24 +37,27 @@ namespace Infrastructure.Services.LocalisationDataLoad
 
         public string CurrentLanguage { get; private set; }
 
-        private const string PATH_TO_DIALOGUE = "";
-        private const string PATH_TO_UI = "UILocalisation";
+        private string _path;
+        private const string PATH_TO_DIALOGUE = "Dialogues.xml";
+        private const string PATH_TO_UI = "UILocalisation.json";
 
         private readonly Dictionary<string, LocalizationMain> _localizations = new();
-        private readonly Dictionary<string, Part> _partsLocalisation = new();
+        private readonly Dictionary<string, IPhrase> _dialogues = new();
         private UILocalisation _uiLocalisation = new();
 
         public void Load(string language)
         {
             CurrentLanguage = language;
-            // LoadDialogues(language);
-            LoadUILocalisation(language);
+            _path = _localizations[language].PathToDirectory;
+            LoadUILocalisation();
+            LoadDialogues();
         }
 
-        [Obsolete]
-        public Part GetPart(string id)
+        public IPhrase GetPart(string id)
         {
-            throw new Exception($"No get part");
+            return _dialogues.TryGetValue(id, out var phrase)
+                ? phrase
+                : throw new Exception($"No get part on id: {id}");
         }
 
         public UILocalisation GetUILocalisation()
@@ -66,19 +70,32 @@ namespace Infrastructure.Services.LocalisationDataLoad
             return _localizations.Values.ToList();
         }
 
-        [Obsolete]
-        private void LoadDialogues(string language)
+        private void LoadDialogues()
         {
-            var json = File.ReadAllText($"{_localizations[language].PathToDirectory}\\{PATH_TO_DIALOGUE}");
-            var partsDictionary = new Dictionary<string, Part>();
+            var serializer = new XmlSerializer(typeof(object[]), new[] { typeof(Phrase), typeof(Responses) });
+            object[] deserializedData;
+            using (TextReader reader = new StreamReader($"{_path}\\{PATH_TO_DIALOGUE}"))
+            {
+                deserializedData = (object[])serializer.Deserialize(reader);
+            }
 
-            var part = JsonUtility.FromJson<Part>(json);
-            // Fill in the dialog locale
+            foreach (var item in deserializedData)
+            {
+                switch (item)
+                {
+                    case Phrase phrase:
+                        _dialogues.Add(phrase.ID, phrase);
+                        break;
+                    case Responses response:
+                        _dialogues.Add(response.ID, response);
+                        break;
+                }
+            }
         }
 
-        private void LoadUILocalisation(string language)
+        private void LoadUILocalisation()
         {
-            var json = File.ReadAllText($"{_localizations[language].PathToDirectory}\\{PATH_TO_UI}.json");
+            var json = File.ReadAllText($"{_path}\\{PATH_TO_UI}");
             var uiLocalisation = JsonUtility.FromJson<UILocalisation>(json);
             _uiLocalisation = uiLocalisation;
         }
