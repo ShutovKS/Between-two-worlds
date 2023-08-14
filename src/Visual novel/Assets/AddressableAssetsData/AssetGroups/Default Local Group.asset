@@ -16,32 +16,7 @@ MonoBehaviour:
   m_Data:
     m_SerializedData: []
   m_GUID: d241931c0c69ce340bebe78ad216eb00
-  m_SerializeEntries:
-  - m_GUID: cd2338343e9043043aedff609d579f44
-    m_Address: Screens/MainMenu
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 70e839069f534b94eab045d825a13569
-    m_Address: Screens/Dialogue
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 95788afe1443a0249add627804d8b7ab
-    m_Address: Screens/Settings
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 590ebe375f5fcc045b22f6748b913e41
-    m_Address: Screens/Background
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: a0526e8ec85580d4da84c8e6e9ceddd2
-    m_Address: Screens/ChooseLanguage
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
+  m_SerializeEntries: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 3c6c5518033928745b3226d9f12dab01, type: 2}
   m_SchemaSet:

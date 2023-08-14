@@ -3,8 +3,8 @@
 namespace Data.Dynamic
 {
     [Serializable]
-    public class DynamicData
+    public class DialoguesData
     {
-        public DialoguesData dialogues;
+        public string idLastDialogue;
     }
 }

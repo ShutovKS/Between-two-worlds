@@ -6,9 +6,9 @@ namespace UI.Dialogue
     {
         [SerializeField] private GameObject _dialogueScreenGameObject;
 
-        [SerializeField] private AnswerOptionsUI _answers;
-        [SerializeField] private PersonAvatarUI _person;
-        [SerializeField] private DialogueTextUI _dialogueText;
+        [field: SerializeField] public AnswerOptionsUI Answers { get; private set; }
+        [field: SerializeField] public PersonAvatarUI Person { get; private set; }
+        [field: SerializeField] public DialogueTextUI DialogueText { get; private set; }
 
         public void SetActivePanel(bool value) => _dialogueScreenGameObject.SetActive(value);
     }
