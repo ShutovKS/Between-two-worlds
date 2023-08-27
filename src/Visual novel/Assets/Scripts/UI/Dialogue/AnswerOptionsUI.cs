@@ -1,36 +1,40 @@
-﻿using TMPro;
-using Units.Tools;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.UI;
 
 namespace UI.Dialogue
 {
     public class AnswerOptionsUI : MonoBehaviour
     {
-        [SerializeField] private Button _answerButton1;
-        [SerializeField] private Button _answerButton2;
-        [SerializeField] private Button _answerButton3;
-
-        [SerializeField] private TextMeshProUGUI _answerText1;
-        [SerializeField] private TextMeshProUGUI _answerText2;
-        [SerializeField] private TextMeshProUGUI _answerText3;
-        
+        [SerializeField] private GameObject _answerOptionUIPrefab;
+        [SerializeField] private Transform _answersParentTransform;
         [SerializeField] private GameObject _answerOptionsGameObject;
+        private List<GameObject> _answerOptionUIGameObjects = new();
 
-        public void SetAnswerOptions(
-            (string text, UnityAction action) answer1,
-            (string text, UnityAction action) answer2,
-            (string text, UnityAction action) answer3)
+        public void SetAnswerOptions(params (string text, UnityAction action)[] answers)
         {
-            _answerText1.text = answer1.text;
-            _answerButton1.RegisterNewCallback(answer1.action);
+            foreach (var go in _answerOptionUIGameObjects)
+            {
+                Destroy(go);
+            }
 
-            _answerText2.text = answer2.text;
-            _answerButton2.RegisterNewCallback(answer2.action);
+            var count = answers.Length;
+            foreach (var (text, action) in answers)
+            {
+                var answerOption = Instantiate(_answerOptionUIPrefab, _answersParentTransform);
+                answerOption.GetComponent<AnswerOptionUI>().SetAnswerOption(text, action);
+                _answerOptionUIGameObjects.Add(answerOption);
 
-            _answerText3.text = answer3.text;
-            _answerButton3.RegisterNewCallback(answer3.action);
+                var rectTransform = answerOption.GetComponent<RectTransform>();
+                var anchoredPosition = rectTransform.anchoredPosition;
+                rectTransform.anchoredPosition = new Vector2(
+                    anchoredPosition.x,
+                    anchoredPosition.y + rectTransform.sizeDelta.y * count * 1.5f);
+
+                count--;
+
+                answerOption.SetActive(true);
+            }
         }
 
         public void SetActiveAnswerOptions(bool value) => _answerOptionsGameObject.SetActive(value);
