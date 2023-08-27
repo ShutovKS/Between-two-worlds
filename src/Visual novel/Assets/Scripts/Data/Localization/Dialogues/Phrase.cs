@@ -13,6 +13,5 @@ namespace Data.Localization.Dialogues
         public string Text { get; set; }
         public string BackgroundPath { get; set; }
         public string SoundEffect { get; set; }
-        public int Position { get; set; }
     }
 }
