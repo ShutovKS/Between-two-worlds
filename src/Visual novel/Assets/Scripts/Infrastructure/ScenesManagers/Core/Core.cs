@@ -6,6 +6,7 @@ using Infrastructure.Services.LocalisationDataLoad;
 using Infrastructure.Services.SaveLoadData;
 using Infrastructure.Services.UIFactory;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Infrastructure.ScenesManagers.Core
 {
@@ -71,10 +72,15 @@ namespace Infrastructure.ScenesManagers.Core
                 case Responses response:
                     _uiFactoryInfo.DialogueUI.Answers.SetActiveAnswerOptions(true);
 
-                    _uiFactoryInfo.DialogueUI.Answers.SetAnswerOptions(
-                        (response.ResponseList[0].AnswerText, () => SetDialog(response.ResponseList[0].IDNextDialog)),
-                        (response.ResponseList[1].AnswerText, () => SetDialog(response.ResponseList[1].IDNextDialog)),
-                        (response.ResponseList[2].AnswerText, () => SetDialog(response.ResponseList[2].IDNextDialog)));
+                    var tuples = new (string, UnityAction)[response.ResponseList.Length];
+                    for (var i = 0; i < response.ResponseList.Length; i++)
+                    {
+                        var index = i;
+                        tuples[i] = (response.ResponseList[i].AnswerText,
+                            () => SetDialog(response.ResponseList[index].IDNextDialog));
+                    }
+
+                    _uiFactoryInfo.DialogueUI.Answers.SetAnswerOptions(tuples);
 
                     break;
             }
