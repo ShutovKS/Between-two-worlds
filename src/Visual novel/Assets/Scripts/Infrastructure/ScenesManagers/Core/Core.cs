@@ -1,5 +1,4 @@
-﻿using System.Threading.Tasks;
-using Data.Dynamic;
+﻿using Data.Dynamic;
 using Data.Localization.Dialogues;
 using Infrastructure.Services;
 using Infrastructure.Services.AssetsAddressables;
@@ -15,7 +14,6 @@ namespace Infrastructure.ScenesManagers.Core
         private ILocalisationDataLoadService _localisationDataLoad;
         private ISaveLoadDataService _saveLoadData;
         private IUIFactoryInfoService _uiFactoryInfo;
-        private IAssetsAddressablesProviderService _assetsAddressablesProvider;
 
         private DynamicData _data;
 
@@ -23,8 +21,7 @@ namespace Infrastructure.ScenesManagers.Core
         {
             InitializedServices();
             LoadData();
-            // SetDialog(_data.dialogues.idLastDialogue);
-            SetDialog("1");
+            SetDialog(_data.dialogues.idLastDialogue);
             _uiFactoryInfo.DialogueUI.SetActivePanel(true);
         }
 
@@ -33,7 +30,6 @@ namespace Infrastructure.ScenesManagers.Core
             _localisationDataLoad = ServicesContainer.GetService<ILocalisationDataLoadService>();
             _saveLoadData = ServicesContainer.GetService<ISaveLoadDataService>();
             _uiFactoryInfo = ServicesContainer.GetService<IUIFactoryInfoService>();
-            _assetsAddressablesProvider = ServicesContainer.GetService<IAssetsAddressablesProviderService>();
         }
 
         private void LoadData()
@@ -41,42 +37,52 @@ namespace Infrastructure.ScenesManagers.Core
             _data = _saveLoadData.Load();
         }
 
-        private async void SetDialog(string id)
+        private void SetDialog(string id)
         {
             var dialogue = _localisationDataLoad.GetPart(id);
 
-            if (dialogue is Phrase phrase)
+            switch (dialogue)
             {
-                _uiFactoryInfo.DialogueUI.Answers.SetActiveAnswerOptions(false);
+                case Phrase phrase:
+                    _uiFactoryInfo.DialogueUI.Answers.SetActiveAnswerOptions(false);
 
-                _uiFactoryInfo.DialogueUI.DialogueText.SetText(phrase.Text);
-                _uiFactoryInfo.DialogueUI.DialogueText.SetAuthorName(phrase.Name);
+                    _uiFactoryInfo.DialogueUI.DialogueText.SetText(phrase.Text);
+                    _uiFactoryInfo.DialogueUI.DialogueText.SetAuthorName(phrase.Name);
 
-                _uiFactoryInfo.DialogueUI.Person.SetAvatar(
-                    await GetTexture2D("CharacterAvatars/" + phrase.CharacterAvatarPath));
+                    if (phrase.CharacterAvatarPath == null)
+                    {
+                        _uiFactoryInfo.DialogueUI.Person.SetActionAvatar(false);
+                    }
+                    else
+                    {
+                        _uiFactoryInfo.DialogueUI.Person.SetActionAvatar(true);
+                        _uiFactoryInfo.DialogueUI.Person.SetAvatar(
+                            GetTexture2D("CharacterAvatars/" + phrase.CharacterAvatarPath));
+                    }
 
-                _uiFactoryInfo.BackgroundUI.SetBackgroundImage(
-                    await GetTexture2D("Backgrounds/" + phrase.BackgroundPath));
+                    _uiFactoryInfo.BackgroundUI.SetBackgroundImage(
+                        GetTexture2D("Backgrounds/" + phrase.BackgroundPath));
 
+                    _uiFactoryInfo.DialogueUI.DialogueText.SetBackButtonText("Next");
+                    _uiFactoryInfo.DialogueUI.DialogueText.RegisterFurtherButtonCallback(
+                        () => SetDialog(phrase.IDNextDialog));
 
-                _uiFactoryInfo.DialogueUI.DialogueText.SetBackButtonText("Next");
-                _uiFactoryInfo.DialogueUI.DialogueText.RegisterFurtherButtonCallback(
-                    () => SetDialog(phrase.IDNextDialog));
-            }
-            else if (dialogue is Responses response)
-            {
-                _uiFactoryInfo.DialogueUI.Answers.SetActiveAnswerOptions(true);
+                    break;
+                case Responses response:
+                    _uiFactoryInfo.DialogueUI.Answers.SetActiveAnswerOptions(true);
 
-                _uiFactoryInfo.DialogueUI.Answers.SetAnswerOptions(
-                    (response.ResponseList[0].AnswerText, () => SetDialog(response.ResponseList[0].IDNextDialog)),
-                    (response.ResponseList[1].AnswerText, () => SetDialog(response.ResponseList[1].IDNextDialog)),
-                    (response.ResponseList[2].AnswerText, () => SetDialog(response.ResponseList[2].IDNextDialog)));
+                    _uiFactoryInfo.DialogueUI.Answers.SetAnswerOptions(
+                        (response.ResponseList[0].AnswerText, () => SetDialog(response.ResponseList[0].IDNextDialog)),
+                        (response.ResponseList[1].AnswerText, () => SetDialog(response.ResponseList[1].IDNextDialog)),
+                        (response.ResponseList[2].AnswerText, () => SetDialog(response.ResponseList[2].IDNextDialog)));
+
+                    break;
             }
         }
 
-        private async Task<Texture2D> GetTexture2D(string path)
+        private Texture2D GetTexture2D(string path)
         {
-            var texture2D = await _assetsAddressablesProvider.GetAsset<Texture2D>(path);
+            var texture2D = Resources.Load<Texture2D>("Data/" + path);
 
             return texture2D;
         }
