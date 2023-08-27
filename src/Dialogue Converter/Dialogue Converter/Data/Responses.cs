@@ -3,8 +3,8 @@
 [Serializable]
 public class Responses : IPhrase
 {
-    public Response[] ResponseList { get; set; }
     public string ID { get; set; }
+    public Response[] ResponseList { get; set; }
 
     [Serializable]
     public class Response

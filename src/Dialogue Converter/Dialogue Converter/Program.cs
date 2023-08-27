@@ -1,4 +1,4 @@
-﻿#region
+#region
 
 using System.Xml.Serialization;
 using Dialogue_Converter;
@@ -26,24 +26,42 @@ static List<IPhrase> ParseDialogues(string dialoguePath)
     foreach (var dialogue in File.ReadAllLines(dialoguePath))
     {
         if (!string.IsNullOrWhiteSpace(dialogue))
+        {
             list.Add(dialogue);
+        }
     }
 
     var dialoguesTexts = list.ToArray();
 
     foreach (var inputText in dialoguesTexts)
     {
-        var phrases = ParseDialogue(ref id, inputText);
+        var phrases = ParseDialogue(id, inputText);
         foreach (var phrase in phrases)
         {
             dialogues.Add(phrase);
+        }
+
+        id++;
+    }
+
+    var background = string.Empty;
+    foreach (var dialogue in dialogues)
+    {
+        if (dialogue is not Phrase phrase) continue;
+        if (phrase.BackgroundPath == null)
+        {
+            phrase.BackgroundPath = background;
+        }
+        else
+        {
+            background = phrase.BackgroundPath;
         }
     }
 
     return dialogues;
 }
 
-static IPhrase[] ParseDialogue(ref int id, string inputText)
+static IPhrase[] ParseDialogue(int id, string inputText)
 {
     var colonIndex = inputText.IndexOf(':');
     var firstWord = inputText[..colonIndex].Trim();
@@ -51,16 +69,15 @@ static IPhrase[] ParseDialogue(ref int id, string inputText)
 
     var phrases = true switch
     {
-        _ when remainingText.Contains('#') => ParseResponseDialogue(ref id, firstWord, remainingText),
-        _ when remainingText.Contains('|') => ParseBranchingDialogues(ref id, firstWord, remainingText),
-        _ => ParseSimpleDialogue(ref id, firstWord, remainingText)
+        _ when remainingText.Contains('#') => ParseResponseDialogue(id, remainingText),
+        _ when remainingText.Contains('|') => ParseBranchingDialogues(id, firstWord, remainingText),
+        _ => ParseSimpleDialogue(id, firstWord, remainingText)
     };
 
-    id++;
     return phrases;
 }
 
-static IPhrase[] ParseResponseDialogue(ref int id, string character, string content)
+static IPhrase[] ParseResponseDialogue(int id, string content)
 {
     content = content.Replace("#", string.Empty);
     var contents = content.Split('|');
@@ -70,8 +87,7 @@ static IPhrase[] ParseResponseDialogue(ref int id, string character, string cont
     {
         var part = contents[i];
         var IDNext = GetId(id + 1);
-
-        if (part[^1] == ']')
+        if (part.Length > 0 && part[^1] == ']')
         {
             var openBracketIndex = part.IndexOf('[');
             var closeBracketIndex = part.IndexOf(']');
@@ -95,24 +111,26 @@ static IPhrase[] ParseResponseDialogue(ref int id, string character, string cont
     return new IPhrase[] { responses };
 }
 
-static IPhrase[] ParseSimpleDialogue(ref int id, string character, string content)
+static IPhrase[] ParseSimpleDialogue(int id, string character, string content)
 {
+    var background = GetBackground(ref content);
     var phrase = new Phrase
     {
         ID = GetId(id),
         IDNextDialog = GetId(id + 1),
-        CharacterAvatarPath = GetCharacterImage(character) ?? "N U L L",
-        Name = GetCharacterName(character) ?? "N U L L",
+        CharacterAvatarPath = GetCharacterImage(character),
+        Name = GetCharacterName(character),
         Text = content,
-        BackgroundPath = "null",
-        SoundEffect = "null"
+        BackgroundPath = background,
+        SoundEffect = null
     };
 
     return new IPhrase[] { phrase };
 }
 
-static IPhrase[] ParseBranchingDialogues(ref int id, string character, string content)
+static IPhrase[] ParseBranchingDialogues(int id, string character, string content)
 {
+    var background = GetBackground(ref content);
     var dialogueParts = content.Split('|');
     var dialogues = new IPhrase[dialogueParts.Length];
 
@@ -127,7 +145,7 @@ static IPhrase[] ParseBranchingDialogues(ref int id, string character, string co
             var openBracketIndex = part.IndexOf('[');
             var closeBracketIndex = part.IndexOf(']');
             ID += part.Substring(openBracketIndex + 1, closeBracketIndex - openBracketIndex - 1);
-            part = part[..openBracketIndex];
+            part = part[(closeBracketIndex + 1)..];
         }
 
         if (part.Length > 0 && part[^1] == ']')
@@ -142,15 +160,26 @@ static IPhrase[] ParseBranchingDialogues(ref int id, string character, string co
         {
             ID = ID,
             IDNextDialog = IDNext,
-            CharacterAvatarPath = GetCharacterImage(character) ?? "N U L L",
-            Name = GetCharacterName(character) ?? "N U L L",
+            CharacterAvatarPath = GetCharacterImage(character),
+            Name = GetCharacterName(character),
             Text = part,
-            BackgroundPath = "null",
-            SoundEffect = "null"
+            BackgroundPath = background,
+            SoundEffect = null
         };
     }
 
     return dialogues;
+}
+
+static string? GetBackground(ref string content)
+{
+    if (!content.Contains('<')) return null;
+
+    var openBracketIndex = content.IndexOf('<');
+    var closeBracketIndex = content.IndexOf('>');
+    var background = content.Substring(openBracketIndex + 1, closeBracketIndex - openBracketIndex - 1);
+    content = content[..openBracketIndex] + content[(closeBracketIndex + 1)..];
+    return background;
 }
 
 static void SerializeDialogues(List<IPhrase> dialogues, string xmlPath)
@@ -160,7 +189,7 @@ static void SerializeDialogues(List<IPhrase> dialogues, string xmlPath)
     serializer.Serialize(stream, dialogues.ToArray());
 }
 
-static string? GetCharacterName(string character)
+static string GetCharacterName(string character)
 {
     return character switch
     {
@@ -171,8 +200,8 @@ static string? GetCharacterName(string character)
         "CharacterW" => "Офицант",
 
         "OtherDoor" => "Дверь",
-        "OtherSignatureUnderPainting" => "Подпись под картиной",
         "OtherPhone" => "Телефон",
+        "OtherSignatureUnderPainting" => "Подпись под картиной",
 
         _ => throw new Exception($"No character name on character: {character}")
     };
@@ -180,6 +209,8 @@ static string? GetCharacterName(string character)
 
 static string? GetCharacterImage(string character)
 {
+    if (character.Contains("Other")) return null;
+
     return character switch
     {
         "CharacterH" => "CharacterHero",
