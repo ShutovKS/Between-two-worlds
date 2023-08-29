@@ -64,9 +64,9 @@ namespace Infrastructure.ScenesManagers.Core
                     _uiFactoryInfo.BackgroundUI.SetBackgroundImage(
                         GetTexture2D("Backgrounds/" + phrase.BackgroundPath));
 
-                    _uiFactoryInfo.DialogueUI.DialogueText.SetBackButtonText("Next");
-                    _uiFactoryInfo.DialogueUI.DialogueText.RegisterFurtherButtonCallback(
-                        () => SetDialog(phrase.IDNextDialog));
+                    _uiFactoryInfo.DialogueUI.Buttons.SetFurtherButtonText("Next");
+                    _uiFactoryInfo.DialogueUI.Buttons.RegisterFurtherButtonCallback(
+                    () => SetDialog(phrase.IDNextDialog));
 
                     break;
                 case Responses response:
