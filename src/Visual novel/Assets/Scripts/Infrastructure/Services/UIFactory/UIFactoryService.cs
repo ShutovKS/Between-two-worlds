@@ -39,7 +39,7 @@ namespace Infrastructure.Services.UIFactory
             _mainMenuScreen = Instantiate(prefab);
 
             DontDestroyOnLoad(_mainMenuScreen);
-            
+
             MainMenuUI = _mainMenuScreen.TryGetComponent(out MainMenuUI ui)
                 ? ui
                 : throw new Exception($"No {ui.GetType()} in gameObject");
@@ -53,7 +53,7 @@ namespace Infrastructure.Services.UIFactory
             _dialogueScreen = Instantiate(prefab);
 
             DontDestroyOnLoad(_dialogueScreen);
-            
+
             DialogueUI = _dialogueScreen.TryGetComponent(out DialogueUI ui)
                 ? ui
                 : throw new Exception($"No {ui.GetType()} in gameObject");
@@ -107,10 +107,6 @@ namespace Infrastructure.Services.UIFactory
         public void DestroyDialogueScreen() => Destroy(_mainMenuScreen);
         public void DestroySettingsScreen() => Destroy(_settingsScreen);
         public void DestroyBackgroundScreen() => Destroy(_backgroundScreen);
-
-        public void DestroyChooseLanguageScreen()
-        {
-            throw new NotImplementedException();
-        }
+        public void DestroyChooseLanguageScreen() => Destroy(_chooseLanguageScreen);
     }
 }
