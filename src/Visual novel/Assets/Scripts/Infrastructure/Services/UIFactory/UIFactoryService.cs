@@ -1,4 +1,5 @@
-﻿using System;
+using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Infrastructure.Services.AssetsAddressables;
 using UI.Background;
@@ -27,86 +28,83 @@ namespace Infrastructure.Services.UIFactory
         public BackgroundUI BackgroundUI { get; private set; }
         public ChooseLanguageUI ChooseLanguageUI { get; private set; }
 
-        private GameObject _dialogueScreen;
-        private GameObject _mainMenuScreen;
-        private GameObject _settingsScreen;
-        private GameObject _backgroundScreen;
-        private GameObject _chooseLanguageScreen;
+        private Dictionary<Type, GameObject> _screens = new();
 
-        public async Task<GameObject> CreatedMainMenuScreen()
+        public async Task CreatedMainMenuScreen()
         {
             var prefab = await _assetsAddressablesProviderService.GetAsset<GameObject>(MAIN_MENU_SCREEN);
-            _mainMenuScreen = Instantiate(prefab);
+            var mainMenuScreen = Instantiate(prefab);
 
-            DontDestroyOnLoad(_mainMenuScreen);
+            DontDestroyOnLoad(mainMenuScreen);
 
-            MainMenuUI = _mainMenuScreen.TryGetComponent(out MainMenuUI ui)
+            MainMenuUI = mainMenuScreen.TryGetComponent(out MainMenuUI ui)
                 ? ui
                 : throw new Exception($"No {ui.GetType()} in gameObject");
 
-            return _mainMenuScreen;
+            _screens.Add(typeof(MainMenuUI), mainMenuScreen);
         }
 
-        public async Task<GameObject> CreatedDialogueScreen()
+        public async Task CreatedDialogueScreen()
         {
             var prefab = await _assetsAddressablesProviderService.GetAsset<GameObject>(DIALOGUE_SCREEN);
-            _dialogueScreen = Instantiate(prefab);
+            var dialogueScreen = Instantiate(prefab);
 
-            DontDestroyOnLoad(_dialogueScreen);
+            DontDestroyOnLoad(dialogueScreen);
 
-            DialogueUI = _dialogueScreen.TryGetComponent(out DialogueUI ui)
+            DialogueUI = dialogueScreen.TryGetComponent(out DialogueUI ui)
                 ? ui
                 : throw new Exception($"No {ui.GetType()} in gameObject");
 
-            return _dialogueScreen;
+            _screens.Add(typeof(DialogueUI), dialogueScreen);
         }
 
-        public async Task<GameObject> CreatedBackgroundScreen()
+        public async Task CreatedBackgroundScreen()
         {
             var prefab = await _assetsAddressablesProviderService.GetAsset<GameObject>(BACKGROUND_SCREEN);
-            _backgroundScreen = Instantiate(prefab);
+            var backgroundScreen = Instantiate(prefab);
 
-            DontDestroyOnLoad(_backgroundScreen);
+            DontDestroyOnLoad(backgroundScreen);
 
-            BackgroundUI = _backgroundScreen.TryGetComponent(out BackgroundUI ui)
+            BackgroundUI = backgroundScreen.TryGetComponent(out BackgroundUI ui)
                 ? ui
                 : throw new Exception($"No {ui.GetType()} in gameObject");
 
-            return _backgroundScreen;
+            _screens.Add(typeof(BackgroundUI), backgroundScreen);
         }
 
-        public async Task<GameObject> CreatedChooseLanguageScreen()
+        public async Task CreatedChooseLanguageScreen()
         {
             var prefab = await _assetsAddressablesProviderService.GetAsset<GameObject>(CHOOSE_LANGUAGE_SCREEN);
-            _chooseLanguageScreen = Instantiate(prefab);
+            var chooseLanguageScreen = Instantiate(prefab);
 
-            DontDestroyOnLoad(_chooseLanguageScreen);
+            DontDestroyOnLoad(chooseLanguageScreen);
 
-            ChooseLanguageUI = _chooseLanguageScreen.TryGetComponent(out ChooseLanguageUI ui)
+            ChooseLanguageUI = chooseLanguageScreen.TryGetComponent(out ChooseLanguageUI ui)
                 ? ui
                 : throw new Exception($"No {ui.GetType()} in gameObject");
 
-            return _chooseLanguageScreen;
+            _screens.Add(typeof(ChooseLanguageUI), chooseLanguageScreen);
         }
 
-        public async Task<GameObject> CreatedSettingsScreen()
+        public async Task CreatedSettingsScreen()
         {
             var prefab = await _assetsAddressablesProviderService.GetAsset<GameObject>(SETTINGS_SCREEN);
-            _settingsScreen = Instantiate(prefab);
+            var settingsScreen = Instantiate(prefab);
 
-            DontDestroyOnLoad(_settingsScreen);
+            DontDestroyOnLoad(settingsScreen);
 
-            SettingsUI = _settingsScreen.TryGetComponent(out SettingsUI ui)
+            SettingsUI = settingsScreen.TryGetComponent(out SettingsUI ui)
                 ? ui
                 : throw new Exception($"No {ui.GetType()} in gameObject");
 
-            return _settingsScreen;
+            _screens.Add(typeof(SettingsUI), settingsScreen);
         }
 
-        public void DestroyMainMenuScreen() => Destroy(_dialogueScreen);
-        public void DestroyDialogueScreen() => Destroy(_mainMenuScreen);
-        public void DestroySettingsScreen() => Destroy(_settingsScreen);
-        public void DestroyBackgroundScreen() => Destroy(_backgroundScreen);
-        public void DestroyChooseLanguageScreen() => Destroy(_chooseLanguageScreen);
+        public void DestroyMainMenuScreen() => Destroy(_screens[typeof(MainMenuUI)]);
+        public void DestroyDialogueScreen() => Destroy(_screens[typeof(DialogueUI)]);
+        public void DestroySettingsScreen() => Destroy(_screens[typeof(SettingsUI)]);
+        public void DestroyBackgroundScreen() => Destroy(_screens[typeof(BackgroundUI)]);
+        public void DestroyChooseLanguageScreen() => Destroy(_screens[typeof(ChooseLanguageUI)]);
+        public void DestroyConfirmationScreen() => Destroy(_screens[typeof(ConfirmationUI)]);
     }
 }
