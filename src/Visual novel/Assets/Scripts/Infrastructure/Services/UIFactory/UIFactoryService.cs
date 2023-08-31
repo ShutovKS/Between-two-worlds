@@ -1,9 +1,10 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Infrastructure.Services.AssetsAddressables;
 using UI.Background;
 using UI.ChooseLanguage;
+using UI.Confirmation;
 using UI.Dialogue;
 using UI.MainMenu;
 using UI.Settings;
@@ -27,6 +28,7 @@ namespace Infrastructure.Services.UIFactory
         public SettingsUI SettingsUI { get; private set; }
         public BackgroundUI BackgroundUI { get; private set; }
         public ChooseLanguageUI ChooseLanguageUI { get; private set; }
+        public ConfirmationUI ConfirmationUI { get; private set; }
 
         private Dictionary<Type, GameObject> _screens = new();
 
@@ -98,6 +100,20 @@ namespace Infrastructure.Services.UIFactory
                 : throw new Exception($"No {ui.GetType()} in gameObject");
 
             _screens.Add(typeof(SettingsUI), settingsScreen);
+        }
+
+        public async Task CreatedConfirmationScreen()
+        {
+            var prefab = await _assetsAddressablesProviderService.GetAsset<GameObject>(CONFIRMATION_SCREEN);
+            var confirmationScreen = Instantiate(prefab);
+
+            DontDestroyOnLoad(confirmationScreen);
+
+            ConfirmationUI = confirmationScreen.TryGetComponent(out ConfirmationUI ui)
+                ? ui
+                : throw new Exception($"No {ui.GetType()} in gameObject");
+
+            _screens.Add(typeof(ConfirmationUI), confirmationScreen);
         }
 
         public void DestroyMainMenuScreen() => Destroy(_screens[typeof(MainMenuUI)]);

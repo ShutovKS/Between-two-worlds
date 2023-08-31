@@ -1,4 +1,4 @@
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using UnityEngine;
 
 namespace Infrastructure.Services.UIFactory
@@ -10,11 +10,13 @@ namespace Infrastructure.Services.UIFactory
         Task CreatedDialogueScreen();
         Task CreatedBackgroundScreen();
         Task CreatedChooseLanguageScreen();
+        Task CreatedConfirmationScreen();
 
         void DestroyMainMenuScreen();
         void DestroyDialogueScreen();
         void DestroySettingsScreen();
         void DestroyBackgroundScreen();
         void DestroyChooseLanguageScreen();
+        void DestroyConfirmationScreen();
     }
 }

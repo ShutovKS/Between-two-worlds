@@ -1,5 +1,6 @@
 ﻿using UI.Background;
 using UI.ChooseLanguage;
+using UI.Confirmation;
 using UI.Dialogue;
 using UI.MainMenu;
 using UI.Settings;
@@ -13,5 +14,6 @@ namespace Infrastructure.Services.UIFactory
         SettingsUI SettingsUI { get; }
         BackgroundUI BackgroundUI { get; }
         ChooseLanguageUI ChooseLanguageUI { get; }
+        ConfirmationUI ConfirmationUI { get; }
     }
 }
