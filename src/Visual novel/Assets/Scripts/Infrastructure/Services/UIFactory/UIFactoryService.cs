@@ -7,6 +7,7 @@ using UI.ChooseLanguage;
 using UI.Confirmation;
 using UI.Dialogue;
 using UI.MainMenu;
+using UI.SaveLoad;
 using UI.Settings;
 using UnityEngine;
 using static Data.AssetsAddressablesContainer.AssetsAddressablesContainer;
@@ -29,6 +30,7 @@ namespace Infrastructure.Services.UIFactory
         public BackgroundUI BackgroundUI { get; private set; }
         public ChooseLanguageUI ChooseLanguageUI { get; private set; }
         public ConfirmationUI ConfirmationUI { get; private set; }
+        public SaveLoadUI SaveLoadUI { get; private set; }
 
         private Dictionary<Type, GameObject> _screens = new();
 
@@ -116,11 +118,26 @@ namespace Infrastructure.Services.UIFactory
             _screens.Add(typeof(ConfirmationUI), confirmationScreen);
         }
 
+        public async Task CreatedSaveLoadScreen()
+        {
+            var prefab = await _assetsAddressablesProviderService.GetAsset<GameObject>(SAVE_LOAD_SCREEN);
+            var saveLoadScreen = Instantiate(prefab);
+
+            DontDestroyOnLoad(saveLoadScreen);
+
+            SaveLoadUI = saveLoadScreen.TryGetComponent(out SaveLoadUI ui)
+                ? ui
+                : throw new Exception($"No {ui.GetType()} in gameObject");
+
+            _screens.Add(typeof(SaveLoadUI), saveLoadScreen);
+        }
+
         public void DestroyMainMenuScreen() => Destroy(_screens[typeof(MainMenuUI)]);
         public void DestroyDialogueScreen() => Destroy(_screens[typeof(DialogueUI)]);
         public void DestroySettingsScreen() => Destroy(_screens[typeof(SettingsUI)]);
         public void DestroyBackgroundScreen() => Destroy(_screens[typeof(BackgroundUI)]);
         public void DestroyChooseLanguageScreen() => Destroy(_screens[typeof(ChooseLanguageUI)]);
         public void DestroyConfirmationScreen() => Destroy(_screens[typeof(ConfirmationUI)]);
+        public void DestroySaveLoadScreen() => Destroy(_screens[typeof(SaveLoadUI)]);
     }
 }
