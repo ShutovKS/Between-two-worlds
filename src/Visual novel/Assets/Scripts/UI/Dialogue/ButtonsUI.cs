@@ -2,6 +2,7 @@ using TMPro;
 using Units.Tools;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 namespace UI.Dialogue
@@ -14,7 +15,7 @@ namespace UI.Dialogue
         [SerializeField] private Button _settingsButton;
         [Space] 
         [SerializeField] private Button _historyButton;
-        [SerializeField] private Button _skipButton;
+        [SerializeField] private Button _speedUpButton;
         [SerializeField] private Button _autoButton;
         [SerializeField] private Button _furtherButton;
         [Space]
@@ -29,7 +30,7 @@ namespace UI.Dialogue
         public void RegisterSettingsButtonCallback(UnityAction action) => _settingsButton.RegisterNewCallback(action);
         
         public void RegisterHistoryButtonCallback(UnityAction action) => _historyButton.RegisterNewCallback(action);
-        public void RegisterSkipButtonCallback(UnityAction action) => _skipButton.RegisterNewCallback(action);
+        public void RegisterSpeedUpButtonCallback(UnityAction action) => _speedUpButton.RegisterNewCallback(action);
         public void RegisterAutoButtonCallback(UnityAction action) => _autoButton.RegisterNewCallback(action);
         public void RegisterFurtherButtonCallback(UnityAction action) => _furtherButton.RegisterNewCallback(action);
         

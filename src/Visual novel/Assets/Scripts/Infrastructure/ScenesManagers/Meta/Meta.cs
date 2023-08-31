@@ -66,8 +66,9 @@ namespace Infrastructure.ScenesManagers.Meta
         {
             _localisationDataLoad.Load(language);
             var localisation = _localisationDataLoad.GetUILocalisation();
-            _uiFactoryInfo.MainMenuUI.Localisator(localisation);
-            _uiFactoryInfo.SettingsUI.Localisator(localisation);
+            _uiFactoryInfo.MainMenuUI.SetLocalisation(localisation);
+            _uiFactoryInfo.SettingsUI.SetLocalisation(localisation);
+            _uiFactoryInfo.DialogueUI.SetLocalisation(localisation);
         }
 
         private void InitializedServices()

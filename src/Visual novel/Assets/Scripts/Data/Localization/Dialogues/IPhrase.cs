@@ -2,5 +2,6 @@
 {
     public interface IPhrase
     {
+        string ID { get; }
     }
 }

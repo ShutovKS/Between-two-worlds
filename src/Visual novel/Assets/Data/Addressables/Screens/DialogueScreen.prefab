@@ -469,7 +469,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 1
-  m_AdditionalShaderChannelsFlag: 25
+  m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
@@ -1050,7 +1050,7 @@ GameObject:
   - component: {fileID: 6882655821579120523}
   - component: {fileID: 4178283512289847304}
   m_Layer: 5
-  m_Name: SkipButton
+  m_Name: SpeedUpButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1462,7 +1462,7 @@ MonoBehaviour:
   _loadButton: {fileID: 7458176692256885144}
   _settingsButton: {fileID: 1371212974342448943}
   _historyButton: {fileID: 3691037448769678271}
-  _skipButton: {fileID: 4178283512289847304}
+  _speedUpButton: {fileID: 4178283512289847304}
   _autoButton: {fileID: 3051121743253609235}
   _furtherButton: {fileID: 4074567024572251352}
   _historyButtonText: {fileID: 4453082305425398989}
@@ -2798,7 +2798,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Skip
+  m_text: Speed up
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

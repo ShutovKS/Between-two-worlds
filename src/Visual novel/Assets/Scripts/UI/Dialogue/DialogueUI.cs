@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Data.Localization.UILocalisation;
+using UnityEngine;
 
 namespace UI.Dialogue
 {
@@ -12,5 +13,13 @@ namespace UI.Dialogue
         [field: SerializeField] public ButtonsUI Buttons { get; private set; }
 
         public void SetActivePanel(bool value) => _dialogueScreenGameObject.SetActive(value);
+
+        public void SetLocalisation(UILocalisation localisation)
+        {
+            // Buttons.SetHistoryButtonText(localisation.HistoryButton);
+            // Buttons.SetSkipButtonText(localisation.SkipButton);
+            // Buttons.SetAutoButtonText(localisation.AutoButton);
+            // Buttons.SetFurtherButtonText(localisation.FurtherButton);
+        }
     }
 }

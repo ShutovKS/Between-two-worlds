@@ -12,7 +12,7 @@ namespace UI.MainMenu
 
         public void SetActivePanel(bool value) => mainMenuScreenGameObject.SetActive(value);
 
-        public void Localisator(UILocalisation localisation)
+        public void SetLocalisation(UILocalisation localisation)
         {
             Buttons.SetLoadGameButton(localisation.LoadGameButton);
             Buttons.SetStartGameButton(localisation.StartGameButton);

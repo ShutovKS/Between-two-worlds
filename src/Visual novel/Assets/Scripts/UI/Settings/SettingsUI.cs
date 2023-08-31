@@ -12,7 +12,7 @@ namespace UI.Settings
 
         public void SetActivePanel(bool value) => _settingsScreenGameObject.SetActive(value);
 
-        public void Localisator(UILocalisation localisation)
+        public void SetLocalisation(UILocalisation localisation)
         {
             BackButton.SetBackButtonText(localisation.Back);
             

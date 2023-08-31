@@ -43,6 +43,7 @@ namespace Infrastructure.ScenesManagers.Loading
             _uiFactoryInfo.BackgroundUI.SetBackgroundColor(Color.black);
 
             await _uiFactory.CreatedChooseLanguageScreen();
+            _uiFactoryInfo.ChooseLanguageUI.SetActivePanel(true);
 
             await _uiFactory.CreatedDialogueScreen();
             _uiFactoryInfo.DialogueUI.SetActivePanel(false);
@@ -52,6 +53,9 @@ namespace Infrastructure.ScenesManagers.Loading
 
             await _uiFactory.CreatedMainMenuScreen();
             _uiFactoryInfo.MainMenuUI.SetActivePanel(false);
+
+            await _uiFactory.CreatedConfirmationScreen();
+            _uiFactoryInfo.ConfirmationUI.SetActivePanel(false);
         }
 
         private async Task LoadData()
@@ -91,8 +95,9 @@ namespace Infrastructure.ScenesManagers.Loading
         private void Localisation()
         {
             var uiLocalisation = _localisationDataLoad.GetUILocalisation();
-            _uiFactoryInfo.MainMenuUI.Localisator(uiLocalisation);
-            _uiFactoryInfo.SettingsUI.Localisator(uiLocalisation);
+            _uiFactoryInfo.MainMenuUI.SetLocalisation(uiLocalisation);
+            _uiFactoryInfo.SettingsUI.SetLocalisation(uiLocalisation);
+            _uiFactoryInfo.DialogueUI.SetLocalisation(uiLocalisation);
         }
 
         private void StartGame()
