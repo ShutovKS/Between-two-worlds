@@ -1,4 +1,5 @@
 using Data.Dynamic;
+using Data.Static;
 using Infrastructure.Services;
 using Infrastructure.Services.LocalisationDataLoad;
 using Infrastructure.Services.LocalizationUI;
@@ -31,17 +32,63 @@ namespace Infrastructure.ScenesManagers.Meta
 
         private void StartGame()
         {
-            var data = new DynamicData();
-            _saveLoadData.Save(data);
+            _uiFactoryInfo.SaveLoadUI.SetActivePanel(true);
+            _uiFactoryInfo.SaveLoadUI.ButtonsUI.RegisterBackButtonCallback(
+                () => { _uiFactoryInfo.SaveLoadUI.SetActivePanel(false); });
 
-            _menu.ClosedMenu();
-            SceneManager.LoadScene("3.Core");
+            var number = 0;
+            var datas = _saveLoadData.Load();
+            foreach (var ui in _uiFactoryInfo.SaveLoadUI.SaveDataUIs)
+            {
+                var data = datas.dialogues[number];
+                var n = number;
+                ui.SetTitle(data.titleText);
+                ui.SetImage(data.background);
+                ui.RegisterButtonCallback(
+                    () =>
+                    {
+                        var dataNew = new DialoguesData
+                        {
+                            idLastDialogue = Constant.DIALOG_START_ID,
+                        };
+
+                        datas.dialogues[n] = dataNew;
+                        _saveLoadData.Save(datas);
+
+                        PlayerPrefs.SetString(Constant.KEY_ID_DIALOGUE_FOR_PLAYER_PREFS, data.idLastDialogue);
+                        _uiFactoryInfo.SaveLoadUI.SetActivePanel(false);
+                        _menu.ClosedMenu();
+                        SceneManager.LoadScene("3.Core");
+                    });
+
+                number++;
+            }
         }
 
         private void LoadGame()
         {
-            _menu.ClosedMenu();
-            SceneManager.LoadScene("3.Core");
+            _uiFactoryInfo.SaveLoadUI.SetActivePanel(true);
+            _uiFactoryInfo.SaveLoadUI.ButtonsUI.RegisterBackButtonCallback(
+                () => { _uiFactoryInfo.SaveLoadUI.SetActivePanel(false); });
+
+            var number = 0;
+            var datas = _saveLoadData.Load();
+            foreach (var ui in _uiFactoryInfo.SaveLoadUI.SaveDataUIs)
+            {
+                var data = datas.dialogues[number];
+                ui.SetImage(data.background);
+                ui.SetTitle(data.titleText);
+                ui.RegisterButtonCallback(
+                    () =>
+                    {
+                        PlayerPrefs.SetString(Constant.KEY_ID_DIALOGUE_FOR_PLAYER_PREFS, data.idLastDialogue);
+                        _uiFactoryInfo.SaveLoadUI.SetActivePanel(false);
+                        _menu.ClosedMenu();
+                        SceneManager.LoadScene("3.Core");
+                    });
+
+                number++;
+            }
         }
 
         private void OpenMenu()
