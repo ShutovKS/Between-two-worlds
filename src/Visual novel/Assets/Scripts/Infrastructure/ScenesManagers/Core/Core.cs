@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections;
+using System.Globalization;
 using Data.Dynamic;
 using Data.Localization.Dialogues;
 using Infrastructure.Services;
 using Infrastructure.Services.LocalisationDataLoad;
 using Infrastructure.Services.SaveLoadData;
 using Infrastructure.Services.UIFactory;
+using Units.Tools;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
@@ -22,7 +24,6 @@ namespace Infrastructure.ScenesManagers.Core
         private IUIFactoryInfoService _uiFactoryInfo;
 
         private DynamicData _data;
-        private Dialogues _dialogues;
 
         private bool _isDialogCompleted;
         private bool _isAutoMode;
@@ -70,7 +71,7 @@ namespace Infrastructure.ScenesManagers.Core
         {
             _secondsDelay = SECONDS_DELAY_DEFAULT;
             _uiFactoryInfo.DialogueUI.SetActivePanel(true);
-            SetDialog(_data.dialogues.idLastDialogue);
+            SetDialog(_data.dialogues[0].idLastDialogue);
         }
 
         private void SetDialog(string id)
@@ -160,12 +161,61 @@ namespace Infrastructure.ScenesManagers.Core
 
         private void OnClickSave()
         {
-            _data.dialogues.idLastDialogue = _currentDialogue.ID;
-            _saveLoadData.Save(_data);
+            _uiFactoryInfo.SaveLoadUI.SetActivePanel(true);
+            _uiFactoryInfo.SaveLoadUI.ButtonsUI.RegisterBackButtonCallback(
+                () => { _uiFactoryInfo.SaveLoadUI.SetActivePanel(false); });
+
+            var number = 0;
+            foreach (var ui in _uiFactoryInfo.SaveLoadUI.SaveDataUIs)
+            {
+                var data = _data.dialogues[number];
+                var n = number;
+                ui.SetImage(data.background);
+                ui.SetTitle(data.titleText);
+                ui.RegisterButtonCallback(
+                    () =>
+                    {
+                        var id = _currentDialogue.ID;
+                        var titleText = DateTime.Now.ToString(CultureInfo.InvariantCulture);
+                        var texture2D = CameraTextureCapture.CaptureCameraView(
+                            _uiFactoryInfo.BackgroundUI.GetComponent<Canvas>(),
+                            _uiFactoryInfo.DialogueUI.GetComponent<Canvas>());
+
+                        _data.dialogues[n].idLastDialogue = id;
+                        _data.dialogues[n].titleText = titleText;
+                        _data.dialogues[n].background = texture2D;
+                        _saveLoadData.Save(_data);
+
+                        _uiFactoryInfo.SaveLoadUI.SaveDataUIs[n].SetTitle(titleText);
+                        _uiFactoryInfo.SaveLoadUI.SaveDataUIs[n].SetImage(texture2D);
+                        _uiFactoryInfo.SaveLoadUI.SaveDataUIs[n].RegisterButtonCallback(null);
+                    });
+
+                number++;
+            }
         }
 
         private void OnClickLoad()
         {
+            _uiFactoryInfo.SaveLoadUI.SetActivePanel(true);
+            _uiFactoryInfo.SaveLoadUI.ButtonsUI.RegisterBackButtonCallback(
+                () => { _uiFactoryInfo.SaveLoadUI.SetActivePanel(false); });
+
+            var number = 0;
+            foreach (var ui in _uiFactoryInfo.SaveLoadUI.SaveDataUIs)
+            {
+                var data = _data.dialogues[number];
+                ui.SetImage(data.background);
+                ui.SetTitle(data.titleText);
+                ui.RegisterButtonCallback(
+                    () =>
+                    {
+                        SetDialog(data.idLastDialogue);
+                        _uiFactoryInfo.SaveLoadUI.SetActivePanel(false);
+                    });
+
+                number++;
+            }
         }
 
         private void OnClickSettings()

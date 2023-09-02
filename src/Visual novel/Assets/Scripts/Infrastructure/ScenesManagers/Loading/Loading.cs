@@ -56,6 +56,9 @@ namespace Infrastructure.ScenesManagers.Loading
 
             await _uiFactory.CreatedConfirmationScreen();
             _uiFactoryInfo.ConfirmationUI.SetActivePanel(false);
+
+            await _uiFactory.CreatedSaveLoadScreen();
+            _uiFactoryInfo.SaveLoadUI.SetActivePanel(false);
         }
 
         private async Task LoadData()
