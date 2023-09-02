@@ -3,6 +3,7 @@ using System.Collections;
 using System.Globalization;
 using Data.Dynamic;
 using Data.Localization.Dialogues;
+using Data.Static;
 using Infrastructure.Services;
 using Infrastructure.Services.LocalisationDataLoad;
 using Infrastructure.Services.SaveLoadData;
@@ -71,7 +72,8 @@ namespace Infrastructure.ScenesManagers.Core
         {
             _secondsDelay = SECONDS_DELAY_DEFAULT;
             _uiFactoryInfo.DialogueUI.SetActivePanel(true);
-            SetDialog(_data.dialogues[0].idLastDialogue);
+            var id = PlayerPrefs.GetString(Constant.KEY_ID_DIALOGUE_FOR_PLAYER_PREFS, Constant.DIALOG_START_ID);
+            SetDialog(id);
         }
 
         private void SetDialog(string id)
@@ -181,14 +183,19 @@ namespace Infrastructure.ScenesManagers.Core
                             _uiFactoryInfo.BackgroundUI.GetComponent<Canvas>(),
                             _uiFactoryInfo.DialogueUI.GetComponent<Canvas>());
 
-                        _data.dialogues[n].idLastDialogue = id;
-                        _data.dialogues[n].titleText = titleText;
-                        _data.dialogues[n].background = texture2D;
+                        _data.dialogues[n] = new DialoguesData
+                        {
+                            idLastDialogue = id,
+                            titleText = titleText,
+                            background = texture2D
+                        };
+
                         _saveLoadData.Save(_data);
 
-                        _uiFactoryInfo.SaveLoadUI.SaveDataUIs[n].SetTitle(titleText);
-                        _uiFactoryInfo.SaveLoadUI.SaveDataUIs[n].SetImage(texture2D);
-                        _uiFactoryInfo.SaveLoadUI.SaveDataUIs[n].RegisterButtonCallback(null);
+                        var saveDataUI = _uiFactoryInfo.SaveLoadUI.SaveDataUIs[n];
+                        saveDataUI.SetTitle(titleText);
+                        saveDataUI.SetImage(texture2D);
+                        saveDataUI.RegisterButtonCallback(null);
                     });
 
                 number++;
