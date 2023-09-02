@@ -32,11 +32,13 @@ namespace Infrastructure.Services.SaveLoadData
 
             var dataString = File.ReadAllText(_filePath);
             var dataDynamic = JsonUtility.FromJson<DynamicData>(dataString);
+            dataDynamic.Deserialize();
             return dataDynamic;
         }
 
         public void Save(DynamicData data)
         {
+            data.Serialize();
             var dataString = JsonUtility.ToJson(data);
             File.WriteAllText(_filePath, dataString);
         }

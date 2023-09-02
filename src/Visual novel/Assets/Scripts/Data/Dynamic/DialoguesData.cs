@@ -8,6 +8,25 @@ namespace Data.Dynamic
     {
         public string idLastDialogue;
         public string titleText;
-        public Texture2D background;
+        [NonSerialized] public Texture2D background;
+        public byte[] backgroundBytes;
+
+        public void Serialize()
+        {
+            if (background != null)
+            {
+                backgroundBytes = background.EncodeToPNG();
+            }
+        }
+
+        public void Deserialize()
+        {
+            if (backgroundBytes is { Length: > 0 })
+            {
+                var texture = new Texture2D(2, 2);
+                texture.LoadImage(backgroundBytes);
+                background = texture;
+            }
+        }
     }
 }
