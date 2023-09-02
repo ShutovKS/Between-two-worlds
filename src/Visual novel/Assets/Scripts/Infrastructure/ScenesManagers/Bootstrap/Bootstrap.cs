@@ -1,6 +1,7 @@
 ﻿using Infrastructure.Services;
 using Infrastructure.Services.AssetsAddressables;
 using Infrastructure.Services.LocalisationDataLoad;
+using Infrastructure.Services.LocalizationUI;
 using Infrastructure.Services.SaveLoadData;
 using Infrastructure.Services.UIFactory;
 using UnityEngine;
@@ -21,13 +22,15 @@ namespace Infrastructure.ScenesManagers.Bootstrap
             var assetsAddressablesProvider = new AssetsAddressablesProviderService();
             var saveLoadData = new SaveLoadDataService();
             var localisationDataLoad = new LocalisationDataLoadService();
+            var localizerUI = new LocalizerUI();
             var uiFactory = new UIFactoryService(assetsAddressablesProvider);
 
             ServicesContainer.SetServices(
                 assetsAddressablesProvider,
                 saveLoadData,
                 uiFactory,
-                localisationDataLoad);
+                localisationDataLoad,
+                localizerUI);
         }
 
         private void GameLoading()

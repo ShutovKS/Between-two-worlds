@@ -1,9 +1,10 @@
 ﻿using Data.Localization.UILocalisation;
+using Infrastructure.Services.LocalizationUI;
 using UnityEngine;
 
 namespace UI.MainMenu
 {
-    public class MainMenuUI : MonoBehaviour
+    public class MainMenuUI : MonoBehaviour, ILocalizableUI
     {
         [SerializeField] private GameObject mainMenuScreenGameObject;
 
@@ -12,7 +13,7 @@ namespace UI.MainMenu
 
         public void SetActivePanel(bool value) => mainMenuScreenGameObject.SetActive(value);
 
-        public void SetLocalisation(UILocalisation localisation)
+        public void Localize(UILocalisation localisation)
         {
             Buttons.SetLoadGameButton(localisation.LoadGameButton);
             Buttons.SetStartGameButton(localisation.StartGameButton);

@@ -1,7 +1,7 @@
 using Data.Dynamic;
 using Infrastructure.Services;
-using Infrastructure.Services.AssetsAddressables;
 using Infrastructure.Services.LocalisationDataLoad;
+using Infrastructure.Services.LocalizationUI;
 using Infrastructure.Services.SaveLoadData;
 using Infrastructure.Services.UIFactory;
 using UnityEngine;
@@ -11,11 +11,10 @@ namespace Infrastructure.ScenesManagers.Meta
 {
     public class Meta : MonoBehaviour
     {
-        private IAssetsAddressablesProviderService _assetsAddressablesProvider;
         private ILocalisationDataLoadService _localisationDataLoad;
         private ISaveLoadDataService _saveLoadData;
         private IUIFactoryInfoService _uiFactoryInfo;
-        private IUIFactoryService _uiFactory;
+        private ILocalizerUI _localizerUI;
 
         private Settings _settings;
         private MainMenu _menu;
@@ -66,18 +65,15 @@ namespace Infrastructure.ScenesManagers.Meta
         {
             _localisationDataLoad.Load(language);
             var localisation = _localisationDataLoad.GetUILocalisation();
-            _uiFactoryInfo.MainMenuUI.SetLocalisation(localisation);
-            _uiFactoryInfo.SettingsUI.SetLocalisation(localisation);
-            _uiFactoryInfo.DialogueUI.SetLocalisation(localisation);
+            _localizerUI.Localize(localisation);
         }
 
         private void InitializedServices()
         {
-            _assetsAddressablesProvider = ServicesContainer.GetService<IAssetsAddressablesProviderService>();
             _localisationDataLoad = ServicesContainer.GetService<ILocalisationDataLoadService>();
             _saveLoadData = ServicesContainer.GetService<ISaveLoadDataService>();
             _uiFactoryInfo = ServicesContainer.GetService<IUIFactoryInfoService>();
-            _uiFactory = ServicesContainer.GetService<IUIFactoryService>();
+            _localizerUI = ServicesContainer.GetService<ILocalizerUI>();
         }
     }
 }

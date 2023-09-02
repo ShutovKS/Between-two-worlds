@@ -1,9 +1,10 @@
 ﻿using Data.Localization.UILocalisation;
+using Infrastructure.Services.LocalizationUI;
 using UnityEngine;
 
 namespace UI.Dialogue
 {
-    public class DialogueUI : MonoBehaviour
+    public class DialogueUI : MonoBehaviour, ILocalizableUI
     {
         [SerializeField] private GameObject _dialogueScreenGameObject;
 
@@ -14,7 +15,7 @@ namespace UI.Dialogue
 
         public void SetActivePanel(bool value) => _dialogueScreenGameObject.SetActive(value);
 
-        public void SetLocalisation(UILocalisation localisation)
+        public void Localize(UILocalisation localisation)
         {
             // Buttons.SetHistoryButtonText(localisation.HistoryButton);
             // Buttons.SetSkipButtonText(localisation.SkipButton);

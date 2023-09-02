@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using Data.Dynamic;
 using Infrastructure.Services;
 using Infrastructure.Services.LocalisationDataLoad;
+using Infrastructure.Services.LocalizationUI;
 using Infrastructure.Services.SaveLoadData;
 using Infrastructure.Services.UIFactory;
 using UnityEngine;
@@ -17,6 +18,7 @@ namespace Infrastructure.ScenesManagers.Loading
         private ISaveLoadDataService _saveLoadData;
         private IUIFactoryInfoService _uiFactoryInfo;
         private IUIFactoryService _uiFactory;
+        private ILocalizerUI _localizerUI;
 
         private string _language = "";
 
@@ -24,8 +26,9 @@ namespace Infrastructure.ScenesManagers.Loading
         {
             InitializedServices();
             await CreatedUI();
+            RegisterLocalizableUI();
             await LoadData();
-            Localisation();
+            LocalisationUI();
             StartGame();
         }
 
@@ -35,6 +38,7 @@ namespace Infrastructure.ScenesManagers.Loading
             _saveLoadData = ServicesContainer.GetService<ISaveLoadDataService>();
             _uiFactoryInfo = ServicesContainer.GetService<IUIFactoryInfoService>();
             _uiFactory = ServicesContainer.GetService<IUIFactoryService>();
+            _localizerUI = ServicesContainer.GetService<ILocalizerUI>();
         }
 
         private async Task CreatedUI()
@@ -59,6 +63,15 @@ namespace Infrastructure.ScenesManagers.Loading
 
             await _uiFactory.CreatedSaveLoadScreen();
             _uiFactoryInfo.SaveLoadUI.SetActivePanel(false);
+        }
+
+        private void RegisterLocalizableUI()
+        {
+            _localizerUI.Register(_uiFactoryInfo.DialogueUI);
+            _localizerUI.Register(_uiFactoryInfo.SettingsUI);
+            _localizerUI.Register(_uiFactoryInfo.MainMenuUI);
+            _localizerUI.Register(_uiFactoryInfo.ConfirmationUI);
+            _localizerUI.Register(_uiFactoryInfo.SaveLoadUI);
         }
 
         private async Task LoadData()
@@ -95,12 +108,10 @@ namespace Infrastructure.ScenesManagers.Loading
             _localisationDataLoad.Load(_language);
         }
 
-        private void Localisation()
+        private void LocalisationUI()
         {
             var uiLocalisation = _localisationDataLoad.GetUILocalisation();
-            _uiFactoryInfo.MainMenuUI.SetLocalisation(uiLocalisation);
-            _uiFactoryInfo.SettingsUI.SetLocalisation(uiLocalisation);
-            _uiFactoryInfo.DialogueUI.SetLocalisation(uiLocalisation);
+            _localizerUI.Localize(uiLocalisation);
         }
 
         private void StartGame()

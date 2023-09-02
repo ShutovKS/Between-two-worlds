@@ -1,9 +1,10 @@
 using Data.Localization.UILocalisation;
+using Infrastructure.Services.LocalizationUI;
 using UnityEngine;
 
 namespace UI.Confirmation
 {
-    public class ConfirmationUI : MonoBehaviour
+    public class ConfirmationUI : MonoBehaviour, ILocalizableUI
     {
         [SerializeField] private GameObject _confirmationScreenGameObject;
 
@@ -12,7 +13,7 @@ namespace UI.Confirmation
 
         public void SetActivePanel(bool value) => _confirmationScreenGameObject.SetActive(value);
 
-        public void SetLocalisation(UILocalisation localisation)
+        public void Localize(UILocalisation localisation)
         {
             // Text.SetTitleText(localisation.Title);
             // Buttons.SetYesButtonText(localisation.YesButton);
