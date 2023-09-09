@@ -1,4 +1,4 @@
-﻿using Infrastructure.Services;
+using Infrastructure.Services;
 using Infrastructure.Services.AssetsAddressables;
 using Infrastructure.Services.LocalisationDataLoad;
 using Infrastructure.Services.LocalizationUI;
@@ -22,7 +22,7 @@ namespace Infrastructure.ScenesManagers.Bootstrap
             var assetsAddressablesProvider = new AssetsAddressablesProviderService();
             var saveLoadData = new SaveLoadDataService();
             var localisationDataLoad = new LocalisationDataLoadService();
-            var localizerUI = new LocalizerUI();
+            var localizerUI = new LocalizerUIService();
             var uiFactory = new UIFactoryService(assetsAddressablesProvider);
 
             ServicesContainer.SetServices(

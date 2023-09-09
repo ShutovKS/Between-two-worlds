@@ -3,7 +3,7 @@ using Data.Localization.UILocalisation;
 
 namespace Infrastructure.Services.LocalizationUI
 {
-    public class LocalizerUI : ILocalizerUI
+    public class LocalizerUIService : ILocalizerUI
     {
         private readonly List<ILocalizableUI> _localizables = new();
 
