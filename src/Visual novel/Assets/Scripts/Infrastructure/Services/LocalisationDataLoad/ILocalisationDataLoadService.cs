@@ -1,18 +1,22 @@
+#region
+
 using System.Collections.Generic;
 using Data.Localization.Dialogues;
 using Data.Localization.LocalizationMain;
 using Data.Localization.UILocalisation;
 
+#endregion
+
 namespace Infrastructure.Services.LocalisationDataLoad
 {
-    public interface ILocalisationDataLoadService
-    {
-        string CurrentLanguage { get; }
-        
-        void Load(string language);
+	public interface ILocalisationDataLoadService
+	{
+		string CurrentLanguage { get; }
 
-        IPhrase GetPart(string id);
-        UILocalisation GetUILocalisation();
-        List<LocalizationMain> GetLocalizationsInfo();
-    }
+		void Load(string language);
+
+		IPhrase GetPart(string id);
+		UILocalisation GetUILocalisation();
+		List<LocalizationMain> GetLocalizationsInfo();
+	}
 }

@@ -1,25 +1,25 @@
 ﻿namespace Data.Localization.UILocalisation
 {
-    public class UILocalisation
-    {
-        #region MainMenu
+	public class UILocalisation
+	{
+		#region MainMenu
 
-        public string GameName;
-        public string LoadGameButton;
-        public string StartGameButton;
-        public string SettingsButton;
-        public string ExitButton;
+		public string GameName;
+		public string LoadGameButton;
+		public string StartGameButton;
+		public string SettingsButton;
+		public string ExitButton;
 
-        #endregion
+		#endregion
 
-        #region Settings
+		#region Settings
 
-        //BackButton
-        public string Back;
+		//BackButton
+		public string Back;
 
-        //Language
-        public string Language;
+		//Language
+		public string Language;
 
-        #endregion
-    }
+		#endregion
+	}
 }
