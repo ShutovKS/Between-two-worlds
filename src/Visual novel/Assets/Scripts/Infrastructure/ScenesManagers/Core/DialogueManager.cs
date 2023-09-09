@@ -1,8 +1,9 @@
 ﻿using System;
+using System.Collections;
 using System.Threading.Tasks;
 using Data.Localization.Dialogues;
 using Data.Static;
-using Infrastructure.Services.LocalisationDataLoad;
+using Infrastructure.Services.CoroutineRunner;
 using UI.Background;
 using UI.Dialogue;
 using UnityEngine;
@@ -21,19 +22,21 @@ namespace Infrastructure.ScenesManagers.Core
 
         public IPhrase CurrentDialogue { get; private set; }
         private UnityAction _onDialogueCompleted;
-        private Task _displayTypingTask;
+        private Coroutine _displayTypingCoroutine;
         private float _secondsDelay;
 
         private readonly Func<string, IPhrase> _onGetPart;
         private readonly BackgroundUI _backgroundUI;
         private readonly DialogueUI _dialogueUI;
+        private readonly ICoroutineRunner _coroutineRunner;
 
         public DialogueManager(Func<string, IPhrase> onGetPart, DialogueUI dialogueUI,
-            BackgroundUI backgroundUI)
+            BackgroundUI backgroundUI, ICoroutineRunner coroutineRunner)
         {
             _onGetPart = onGetPart;
             _dialogueUI = dialogueUI;
             _backgroundUI = backgroundUI;
+            _coroutineRunner = coroutineRunner;
         }
 
         public void StartDialogue()
@@ -56,7 +59,7 @@ namespace Infrastructure.ScenesManagers.Core
             else
             {
                 _isDialogCompleted = true;
-                _displayTypingTask.Dispose();
+                _coroutineRunner.StopCoroutine(_displayTypingCoroutine);
                 _dialogueUI.DialogueText.SetText(phrase.Text);
                 _onDialogueCompleted?.Invoke();
             }
@@ -136,20 +139,20 @@ namespace Infrastructure.ScenesManagers.Core
                     GetTexture2D("CharacterAvatars/" + phrase.CharacterAvatarPath));
             }
 
-            _displayTypingTask = DisplayTyping(phrase.Text);
+            _displayTypingCoroutine = _coroutineRunner.StartCoroutine(DisplayTyping(phrase.Text));
         }
 
-        private async Task DisplayTyping(string text)
+        private IEnumerator DisplayTyping(string text)
         {
             var currentText = string.Empty;
             foreach (var letter in text)
             {
                 currentText += letter;
                 _dialogueUI.DialogueText.SetText(currentText);
-                await Task.Delay(TimeSpan.FromSeconds(_secondsDelay));
+                yield return new WaitForSeconds(_secondsDelay);
             }
 
-            await Task.Delay(TimeSpan.FromSeconds(_secondsDelay * 5));
+            yield return new WaitForSeconds(_secondsDelay * 5);
 
             _isDialogCompleted = true;
             _onDialogueCompleted?.Invoke();

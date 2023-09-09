@@ -1,5 +1,6 @@
 ﻿using Data.Dynamic;
 using Infrastructure.Services;
+using Infrastructure.Services.CoroutineRunner;
 using Infrastructure.Services.LocalisationDataLoad;
 using Infrastructure.Services.SaveLoadData;
 using Infrastructure.Services.UIFactory;
@@ -13,6 +14,7 @@ namespace Infrastructure.ScenesManagers.Core
         private ILocalisationDataLoadService _localisationDataLoad;
         private ISaveLoadDataService _saveLoadData;
         private IUIFactoryInfoService _uiFactoryInfo;
+        private ICoroutineRunner _coroutineRunner;
 
         private DynamicData _dataCurrent;
         private ButtonManager _buttonManager;
@@ -34,7 +36,8 @@ namespace Infrastructure.ScenesManagers.Core
             _dialogueManager = new DialogueManager(
                 _localisationDataLoad.GetPart,
                 _uiFactoryInfo.DialogueUI,
-                _uiFactoryInfo.BackgroundUI);
+                _uiFactoryInfo.BackgroundUI,
+                _coroutineRunner);
 
             _saveLoadManager = new SaveLoadManager(
                 _saveLoadData,
@@ -65,6 +68,7 @@ namespace Infrastructure.ScenesManagers.Core
             _localisationDataLoad = ServicesContainer.GetService<ILocalisationDataLoadService>();
             _saveLoadData = ServicesContainer.GetService<ISaveLoadDataService>();
             _uiFactoryInfo = ServicesContainer.GetService<IUIFactoryInfoService>();
+            _coroutineRunner = ServicesContainer.GetService<ICoroutineRunner>();
         }
 
         private void LoadData()
