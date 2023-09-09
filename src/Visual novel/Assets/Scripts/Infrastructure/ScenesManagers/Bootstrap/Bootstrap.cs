@@ -1,5 +1,6 @@
-using Infrastructure.Services;
+﻿using Infrastructure.Services;
 using Infrastructure.Services.AssetsAddressables;
+using Infrastructure.Services.CoroutineRunner;
 using Infrastructure.Services.LocalisationDataLoad;
 using Infrastructure.Services.LocalizationUI;
 using Infrastructure.Services.SaveLoadData;
@@ -9,7 +10,7 @@ using UnityEngine.SceneManagement;
 
 namespace Infrastructure.ScenesManagers.Bootstrap
 {
-    public class Bootstrap : MonoBehaviour
+    public class Bootstrap : MonoBehaviour, ICoroutineRunner
     {
         private void Awake()
         {
@@ -24,13 +25,15 @@ namespace Infrastructure.ScenesManagers.Bootstrap
             var localisationDataLoad = new LocalisationDataLoadService();
             var localizerUI = new LocalizerUIService();
             var uiFactory = new UIFactoryService(assetsAddressablesProvider);
+            var coroutineRunner = new GameObject().AddComponent<CoroutineRunnerService>();
 
             ServicesContainer.SetServices(
                 assetsAddressablesProvider,
                 saveLoadData,
                 uiFactory,
                 localisationDataLoad,
-                localizerUI);
+                localizerUI,
+                coroutineRunner);
         }
 
         private void GameLoading()
