@@ -1,4 +1,4 @@
-﻿#region
+#region
 
 using Data.Dynamic;
 using Infrastructure.Services;
@@ -38,7 +38,7 @@ namespace Infrastructure.ScenesManagers.Core
 		private void InitializedManagers()
 		{
 			_dialogueManager = new DialogueManager(
-				_localisationDataLoad.GetPart,
+				_localisationDataLoad.GetPhraseId,
 				_uiFactoryInfo.DialogueUI,
 				_uiFactoryInfo.BackgroundUI,
 				_coroutineRunner);

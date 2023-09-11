@@ -58,7 +58,7 @@ namespace Infrastructure.Services.LocalisationDataLoad
 			LoadDialogues();
 		}
 
-		public IPhrase GetPart(string id)
+		public IPhrase GetPhraseId(string id)
 		{
 			return _dialogues.TryGetValue(id, out var phrase)
 				? phrase

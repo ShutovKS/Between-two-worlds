@@ -15,7 +15,7 @@ namespace Infrastructure.Services.LocalisationDataLoad
 
 		void Load(string language);
 
-		IPhrase GetPart(string id);
+		IPhrase GetPhraseId(string id);
 		UILocalisation GetUILocalisation();
 		List<LocalizationMain> GetLocalizationsInfo();
 	}
