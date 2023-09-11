@@ -36,37 +36,9 @@ namespace Infrastructure.ScenesManagers.Meta
 
 		private void StartGame()
 		{
-			_uiFactoryInfo.SaveLoadUI.SetActivePanel(true);
-			_uiFactoryInfo.SaveLoadUI.ButtonsUI.RegisterBackButtonCallback(
-				() => { _uiFactoryInfo.SaveLoadUI.SetActivePanel(false); });
-
-			var number = 0;
-			var datas = _saveLoadData.Load();
-			foreach (var ui in _uiFactoryInfo.SaveLoadUI.SaveDataUIs)
-			{
-				var data = datas.dialogues[number];
-				var n = number;
-				ui.SetTitle(data.titleText);
-				ui.SetImage(data.background);
-				ui.RegisterButtonCallback(
-					() =>
-					{
-						var dataNew = new DialoguesData
-						{
-							idLastDialogue = Constant.DIALOG_START_ID
-						};
-
-						datas.dialogues[n] = dataNew;
-						_saveLoadData.Save(datas);
-
-						PlayerPrefs.SetString(Constant.KEY_ID_DIALOGUE_FOR_PLAYER_PREFS, data.idLastDialogue);
-						_uiFactoryInfo.SaveLoadUI.SetActivePanel(false);
-						_menu.ClosedMenu();
-						SceneManager.LoadScene("3.Core");
-					});
-
-				number++;
-			}
+			PlayerPrefs.SetString(Constant.KEY_ID_DIALOGUE_FOR_PLAYER_PREFS, Constant.DIALOG_START_ID);
+			_menu.ClosedMenu();
+			SceneManager.LoadScene("3.Core");
 		}
 
 		private void LoadGame()
