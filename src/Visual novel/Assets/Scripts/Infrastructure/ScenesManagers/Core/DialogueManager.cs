@@ -17,12 +17,14 @@ namespace Infrastructure.ScenesManagers.Core
 	public class DialogueManager
 	{
 		public DialogueManager(Func<string, IPhrase> onGetPart, DialogueUI dialogueUI,
-			BackgroundUI backgroundUI, ICoroutineRunner coroutineRunner)
+			BackgroundUI backgroundUI, ICoroutineRunner coroutineRunner,
+			UnityAction<string, string, string> onNewDialog)
 		{
 			_onGetPart = onGetPart;
 			_dialogueUI = dialogueUI;
 			_backgroundUI = backgroundUI;
 			_coroutineRunner = coroutineRunner;
+			_onNewDialog = onNewDialog;
 		}
 
 		private const float SECONDS_DELAY_DEFAULT = 0.05f;
@@ -31,6 +33,7 @@ namespace Infrastructure.ScenesManagers.Core
 		public IPhrase CurrentDialogue { get; private set; }
 		private readonly BackgroundUI _backgroundUI;
 		private readonly ICoroutineRunner _coroutineRunner;
+		private readonly UnityAction<string, string, string> _onNewDialog;
 		private readonly DialogueUI _dialogueUI;
 
 		private readonly Func<string, IPhrase> _onGetPart;
@@ -126,6 +129,7 @@ namespace Infrastructure.ScenesManagers.Core
 
 		private void SetPhraseTyping(Phrase phrase)
 		{
+			_onNewDialog.Invoke(phrase.ID, phrase.Name, phrase.Text);
 			_dialogueUI.Answers.SetActiveAnswerOptions(false);
 			_backgroundUI.SetBackgroundImage(GetTexture2D("Backgrounds/" + phrase.BackgroundPath));
 			_dialogueUI.DialogueText.SetAuthorName(phrase.Name);
@@ -170,7 +174,12 @@ namespace Infrastructure.ScenesManagers.Core
 			{
 				var index = i;
 				tuples[i] = (response.ResponseList[i].AnswerText,
-					() => SetDialog(response.ResponseList[index].IDNextDialog));
+					() =>
+					{
+						//TODO: add name to response
+						_onNewDialog.Invoke(response.ID, null, response.ResponseList[index].AnswerText);
+						SetDialog(response.ResponseList[index].IDNextDialog);
+					});
 			}
 
 			_dialogueUI.Answers.SetAnswerOptions(tuples);

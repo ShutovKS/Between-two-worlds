@@ -1,5 +1,6 @@
-#region
+﻿#region
 
+using System;
 using Data.Dynamic;
 using Infrastructure.Services;
 using Infrastructure.Services.CoroutineRunner;
@@ -7,6 +8,7 @@ using Infrastructure.Services.LocalisationDataLoad;
 using Infrastructure.Services.SaveLoadData;
 using Infrastructure.Services.UIFactory;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
 #endregion
@@ -37,11 +39,15 @@ namespace Infrastructure.ScenesManagers.Core
 
 		private void InitializedManagers()
 		{
+			_historyManager = new HistoryManager(_uiFactoryInfo.DialogueUI.History);
+			var onNewDialog = new UnityAction<string, string, string>(_historyManager.AddedDialogInHistory);
+
 			_dialogueManager = new DialogueManager(
 				_localisationDataLoad.GetPhraseId,
 				_uiFactoryInfo.DialogueUI,
 				_uiFactoryInfo.BackgroundUI,
-				_coroutineRunner);
+				_coroutineRunner,
+				onNewDialog);
 
 			_saveLoadManager = new SaveLoadManager(
 				_saveLoadData,
@@ -51,8 +57,6 @@ namespace Infrastructure.ScenesManagers.Core
 				_uiFactoryInfo.BackgroundUI,
 				_uiFactoryInfo.DialogueUI,
 				_dialogueManager.SetDialog);
-
-			_historyManager = new HistoryManager();
 
 			_settingsManager = new SettingsManager();
 

@@ -16,6 +16,7 @@ namespace UI.Dialogue
 		[field: SerializeField] public PersonAvatarUI Person { get; private set; }
 		[field: SerializeField] public DialogueTextUI DialogueText { get; private set; }
 		[field: SerializeField] public ButtonsUI Buttons { get; private set; }
+		[field: SerializeField] public HistoryUI History { get; private set; }
 
 		public void Localize(UILocalisation localisation)
 		{
