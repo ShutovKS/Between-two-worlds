@@ -57,5 +57,7 @@ namespace UI.Dialogue
 			}
 			else throw new Exception($"No id {id} in dictionary history phrases");
 		}
+		
+		public IEnumerable<string> GetHistoryPhrasesId() => _historyPhrases.Keys;
 	}
 }
