@@ -21,7 +21,6 @@ namespace Infrastructure.ScenesManagers.Loading
 		private string _language = "";
 		private ILocalisationDataLoadService _localisationDataLoad;
 		private ILocalizerUI _localizerUI;
-		private ISaveLoadDataService _saveLoadData;
 		private IUIFactoryService _uiFactory;
 		private IUIFactoryInfoService _uiFactoryInfo;
 
@@ -38,7 +37,6 @@ namespace Infrastructure.ScenesManagers.Loading
 		private void InitializedServices()
 		{
 			_localisationDataLoad = ServicesContainer.GetService<ILocalisationDataLoadService>();
-			_saveLoadData = ServicesContainer.GetService<ISaveLoadDataService>();
 			_uiFactoryInfo = ServicesContainer.GetService<IUIFactoryInfoService>();
 			_uiFactory = ServicesContainer.GetService<IUIFactoryService>();
 			_localizerUI = ServicesContainer.GetService<ILocalizerUI>();
@@ -79,16 +77,6 @@ namespace Infrastructure.ScenesManagers.Loading
 
 		private async Task LoadData()
 		{
-			if (_saveLoadData.Exists())
-			{
-				var dynamicData = _saveLoadData.Load();
-			}
-			else
-			{
-				var dynamicData = new DynamicData();
-				_saveLoadData.Save(dynamicData);
-			}
-
 			var localizationsInfo = _localisationDataLoad.GetLocalizationsInfo();
 			var addLanguageInScrollView = new Action<string, UnityAction>(
 				_uiFactoryInfo.ChooseLanguageUI.ScrollViewLanguages.AddLanguageInScrollView);
