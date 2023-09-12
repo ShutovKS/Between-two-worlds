@@ -15,7 +15,7 @@ namespace Data.Dynamic
 		{
 			foreach (var dialoguesData in dialogues)
 			{
-				dialoguesData.Serialize();
+				dialoguesData?.Serialize();
 			}
 		}
 
@@ -23,7 +23,7 @@ namespace Data.Dynamic
 		{
 			foreach (var dialoguesData in dialogues)
 			{
-				dialoguesData.Deserialize();
+				dialoguesData?.Deserialize();
 			}
 		}
 	}
