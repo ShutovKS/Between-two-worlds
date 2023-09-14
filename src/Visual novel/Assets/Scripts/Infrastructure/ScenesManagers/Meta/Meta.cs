@@ -49,9 +49,14 @@ namespace Infrastructure.ScenesManagers.Meta
 
 			var number = 0;
 			var datas = _saveLoadData.Load();
+
 			foreach (var ui in _uiFactoryInfo.SaveLoadUI.SaveDataUIs)
 			{
-				var data = datas.dialogues[number];
+				//TODO: error load new data
+				var data = datas.dialogues[number++];
+				
+				if(!data.isDataExist) continue; 
+
 				ui.SetImage(data.background);
 				ui.SetTitle(data.titleText);
 				ui.RegisterButtonCallback(
@@ -62,8 +67,6 @@ namespace Infrastructure.ScenesManagers.Meta
 						_menu.ClosedMenu();
 						SceneManager.LoadScene("3.Core");
 					});
-
-				number++;
 			}
 		}
 

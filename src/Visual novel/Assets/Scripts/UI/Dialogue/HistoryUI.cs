@@ -47,6 +47,15 @@ namespace UI.Dialogue
 			panelAnchoredPosition.y = - scrollSizeDelta.y + panel.sizeDelta.y * 0.5f;
 			panel.anchoredPosition = panelAnchoredPosition;
 		}
+		
+		public void ClearHistory()
+		{
+			foreach (var historyPhrase in _historyPhrases)
+			{
+				Destroy(historyPhrase.Value);
+			}
+			_historyPhrases.Clear();
+		}
 
 		public void DestroyHistoryPhrase(string id)
 		{

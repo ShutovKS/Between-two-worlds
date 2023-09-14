@@ -22,7 +22,8 @@ namespace Infrastructure.Services.SaveLoadData
 			_filePath = Path.Combine(folderPath, FILE_NAME);
 			if (!File.Exists(_filePath))
 			{
-				File.CreateText(_filePath);
+				// File.CreateText(_filePath);
+				Save(new DynamicData());
 			}
 		}
 
@@ -32,7 +33,7 @@ namespace Infrastructure.Services.SaveLoadData
 
 		public DynamicData Load()
 		{
-			if (!Exists()) throw new Exception("no data for load");
+			if (!Exists()) return null;
 
 			var dataString = File.ReadAllText(_filePath);
 			var dataDynamic = JsonUtility.FromJson<DynamicData>(dataString);

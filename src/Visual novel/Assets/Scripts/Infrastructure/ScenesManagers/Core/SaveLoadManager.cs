@@ -19,7 +19,7 @@ namespace Infrastructure.ScenesManagers.Core
 	{
 		public SaveLoadManager(ISaveLoadDataService saveLoadData, SaveLoadUI saveLoadUI, DynamicData data,
 			Func<string> onGetDialogCurrent, BackgroundUI backgroundUI, DialogueUI dialogueUI,
-			UnityAction<string> onSetDialog)
+			UnityAction<string> onSetDialog, UnityAction onClearHistory)
 		{
 			_saveLoadData = saveLoadData;
 			_saveLoadUI = saveLoadUI;
@@ -28,6 +28,7 @@ namespace Infrastructure.ScenesManagers.Core
 			_backgroundUI = backgroundUI;
 			_dialogueUI = dialogueUI;
 			_onSetDialog = onSetDialog;
+			_onClearHistory = onClearHistory;
 		}
 
 		private readonly BackgroundUI _backgroundUI;
@@ -35,6 +36,7 @@ namespace Infrastructure.ScenesManagers.Core
 		private readonly DialogueUI _dialogueUI;
 		private readonly Func<string> _onGetDialogCurrent;
 		private readonly UnityAction<string> _onSetDialog;
+		private readonly UnityAction _onClearHistory;
 		private readonly ISaveLoadDataService _saveLoadData;
 		private readonly SaveLoadUI _saveLoadUI;
 
@@ -47,10 +49,14 @@ namespace Infrastructure.ScenesManagers.Core
 			var number = 0;
 			foreach (var ui in _saveLoadUI.SaveDataUIs)
 			{
-				var data = _data.dialogues[number];
 				var n = number;
-				ui.SetImage(data.background);
-				ui.SetTitle(data.titleText);
+				var data = _data.dialogues[number++];
+				if (data.isDataExist)
+				{
+					ui.SetImage(data.background);
+					ui.SetTitle(data.titleText);
+				}
+
 				ui.RegisterButtonCallback(
 					() =>
 					{
@@ -64,7 +70,8 @@ namespace Infrastructure.ScenesManagers.Core
 						{
 							idLastDialogue = id,
 							titleText = titleText,
-							background = texture2D
+							background = texture2D,
+							isDataExist = true
 						};
 
 						_saveLoadData.Save(_data);
@@ -74,8 +81,6 @@ namespace Infrastructure.ScenesManagers.Core
 						saveDataUI.SetImage(texture2D);
 						saveDataUI.RegisterButtonCallback(null);
 					});
-
-				number++;
 			}
 		}
 
@@ -88,17 +93,24 @@ namespace Infrastructure.ScenesManagers.Core
 			var number = 0;
 			foreach (var ui in _saveLoadUI.SaveDataUIs)
 			{
-				var data = _data.dialogues[number];
-				ui.SetImage(data.background);
-				ui.SetTitle(data.titleText);
-				ui.RegisterButtonCallback(
-					() =>
-					{
-						_onSetDialog.Invoke(data.idLastDialogue);
-						_saveLoadUI.SetActivePanel(false);
-					});
+				var data = _data.dialogues[number++];
 
-				number++;
+				if (data.isDataExist)
+				{
+					ui.SetImage(data.background);
+					ui.SetTitle(data.titleText);
+					ui.RegisterButtonCallback(
+						() =>
+						{
+							_onClearHistory?.Invoke();
+							_onSetDialog.Invoke(data.idLastDialogue);
+							_saveLoadUI.SetActivePanel(false);
+						});
+				}
+				else
+				{
+					ui.RegisterButtonCallback(null);
+				}
 			}
 		}
 	}

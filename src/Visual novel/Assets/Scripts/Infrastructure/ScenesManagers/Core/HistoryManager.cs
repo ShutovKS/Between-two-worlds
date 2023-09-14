@@ -21,5 +21,10 @@ namespace Infrastructure.ScenesManagers.Core
 		{
 			_historyUI.CreateHistoryPhrase(id, name, text);
 		}
+		
+		public void ClearHistory()
+		{
+			_historyUI.ClearHistory();
+		}
 	}
 }

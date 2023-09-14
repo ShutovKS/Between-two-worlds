@@ -56,7 +56,8 @@ namespace Infrastructure.ScenesManagers.Core
 				() => _dialogueManager.CurrentDialogue.ID,
 				_uiFactoryInfo.BackgroundUI,
 				_uiFactoryInfo.DialogueUI,
-				_dialogueManager.SetDialog);
+				_dialogueManager.SetDialog,
+				_historyManager.ClearHistory);
 
 			_settingsManager = new SettingsManager();
 
