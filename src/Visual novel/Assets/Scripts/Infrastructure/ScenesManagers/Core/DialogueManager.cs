@@ -43,11 +43,11 @@ namespace Infrastructure.ScenesManagers.Core
 		private bool _isDialogCompleted;
 		private bool _isSpeedUpMode;
 		private UnityAction _onDialogueCompleted;
-		private float _secondsDelay;
+		private float _typingDelay;
 
 		public void StartDialogue()
 		{
-			_secondsDelay = SECONDS_DELAY_DEFAULT;
+			_typingDelay = SECONDS_DELAY_DEFAULT;
 			_dialogueUI.SetActivePanel(true);
 			var id = PlayerPrefs.GetString(Constant.KEY_ID_DIALOGUE_FOR_PLAYER_PREFS, Constant.DIALOG_START_ID);
 			SetDialog(id);
@@ -76,12 +76,12 @@ namespace Infrastructure.ScenesManagers.Core
 			if (_isSpeedUpMode)
 			{
 				_isSpeedUpMode = false;
-				_secondsDelay = SECONDS_DELAY_DEFAULT;
+				_typingDelay = SECONDS_DELAY_DEFAULT;
 			}
 			else
 			{
 				_isSpeedUpMode = true;
-				_secondsDelay = SECONDS_DELAY_FAST;
+				_typingDelay = SECONDS_DELAY_FAST;
 			}
 		}
 
@@ -156,10 +156,10 @@ namespace Infrastructure.ScenesManagers.Core
 			{
 				currentText += letter;
 				_dialogueUI.DialogueText.SetText(currentText);
-				yield return new WaitForSeconds(_secondsDelay);
+				yield return new WaitForSeconds(_typingDelay);
 			}
 
-			yield return new WaitForSeconds(_secondsDelay * 5);
+			yield return new WaitForSeconds(_typingDelay * 5);
 
 			_isDialogCompleted = true;
 			_onDialogueCompleted?.Invoke();

@@ -40,14 +40,13 @@ namespace Infrastructure.ScenesManagers.Core
 		private void InitializedManagers()
 		{
 			_historyManager = new HistoryManager(_uiFactoryInfo.DialogueUI.History);
-			var onNewDialog = new UnityAction<string, string, string>(_historyManager.AddedDialogInHistory);
 
 			_dialogueManager = new DialogueManager(
 				_localisationDataLoad.GetPhraseId,
 				_uiFactoryInfo.DialogueUI,
 				_uiFactoryInfo.BackgroundUI,
 				_coroutineRunner,
-				onNewDialog);
+				_historyManager.AddedDialogInHistory);
 
 			_saveLoadManager = new SaveLoadManager(
 				_saveLoadData,
