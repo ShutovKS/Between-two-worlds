@@ -20,7 +20,7 @@ namespace Units.Tools
 		public static void RegisterNewCallback(this Button button, UnityAction action)
 		{
 			button.onClick.RemoveAllListeners();
-			button.onClick.AddListener(action);
+			if (action != null) button.onClick.AddListener(action);
 		}
 	}
 }
