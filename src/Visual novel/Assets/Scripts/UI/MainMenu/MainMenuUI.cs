@@ -19,7 +19,6 @@ namespace UI.MainMenu
 		{
 			Buttons.SetLoadGameButton(localisation.LoadGameButton);
 			Buttons.SetStartGameButton(localisation.StartGameButton);
-			Buttons.SetSettingsButton(localisation.SettingsButton);
 			Buttons.SetExitButton(localisation.ExitButton);
 
 			GameName.SetGameName(localisation.GameName);

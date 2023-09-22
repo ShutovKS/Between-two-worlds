@@ -10,7 +10,6 @@ using UI.Confirmation;
 using UI.Dialogue;
 using UI.MainMenu;
 using UI.SaveLoad;
-using UI.Settings;
 using UnityEngine;
 using static Data.AssetsAddressablesContainer.AssetsAddressablesContainer;
 using static UnityEngine.Object;
@@ -32,7 +31,6 @@ namespace Infrastructure.Services.UIFactory
 
 		public DialogueUI DialogueUI { get; private set; }
 		public MainMenuUI MainMenuUI { get; private set; }
-		public SettingsUI SettingsUI { get; private set; }
 		public BackgroundUI BackgroundUI { get; private set; }
 		public ChooseLanguageUI ChooseLanguageUI { get; private set; }
 		public ConfirmationUI ConfirmationUI { get; private set; }
@@ -94,20 +92,6 @@ namespace Infrastructure.Services.UIFactory
 			_screens.Add(typeof(ChooseLanguageUI), chooseLanguageScreen);
 		}
 
-		public async Task CreatedSettingsScreen()
-		{
-			var prefab = await _assetsAddressablesProviderService.GetAsset<GameObject>(SETTINGS_SCREEN);
-			var settingsScreen = Instantiate(prefab);
-
-			DontDestroyOnLoad(settingsScreen);
-
-			SettingsUI = settingsScreen.TryGetComponent(out SettingsUI ui)
-				? ui
-				: throw new Exception($"No {ui.GetType()} in gameObject");
-
-			_screens.Add(typeof(SettingsUI), settingsScreen);
-		}
-
 		public async Task CreatedConfirmationScreen()
 		{
 			var prefab = await _assetsAddressablesProviderService.GetAsset<GameObject>(CONFIRMATION_SCREEN);
@@ -144,11 +128,6 @@ namespace Infrastructure.Services.UIFactory
 		public void DestroyDialogueScreen()
 		{
 			Destroy(_screens[typeof(DialogueUI)]);
-		}
-
-		public void DestroySettingsScreen()
-		{
-			Destroy(_screens[typeof(SettingsUI)]);
 		}
 
 		public void DestroyBackgroundScreen()

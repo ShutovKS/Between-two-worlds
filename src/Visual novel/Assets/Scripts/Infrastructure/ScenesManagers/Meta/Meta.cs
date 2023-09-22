@@ -21,16 +21,14 @@ namespace Infrastructure.ScenesManagers.Meta
 		private MainMenu _menu;
 		private ISaveLoadDataService _saveLoadData;
 
-		private Settings _settings;
 		private IUIFactoryInfoService _uiFactoryInfo;
 
 		private void Awake()
 		{
 			InitializedServices();
 
-			_menu = new MainMenu(_uiFactoryInfo.MainMenuUI, LoadGame, StartGame, OpenSetting, Exit);
-			_settings = new Settings(_uiFactoryInfo.SettingsUI, _localisationDataLoad, ChangeLocalisation, OpenMenu);
-
+			_menu = new MainMenu(_uiFactoryInfo.MainMenuUI, LoadGame, StartGame, Exit);
+			
 			OpenMenu();
 		}
 
@@ -72,16 +70,9 @@ namespace Infrastructure.ScenesManagers.Meta
 
 		private void OpenMenu()
 		{
-			_settings.ClosedSetting();
 			_menu.OpenMenu();
 		}
-
-		private void OpenSetting()
-		{
-			_menu.ClosedMenu();
-			_settings.OpenSetting();
-		}
-
+		
 		private void Exit()
 		{
 			Application.Quit();

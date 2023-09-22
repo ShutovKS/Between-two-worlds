@@ -31,11 +31,6 @@ namespace Infrastructure.ScenesManagers.Core
 			_buttons.RegisterLoadButtonCallback(onClickLoad);
 		}
 
-		public void RegisterOnClickSettings(UnityAction onClickSettings)
-		{
-			_buttons.RegisterSettingsButtonCallback(onClickSettings);
-		}
-
 		public void RegisterOnClickHistory(UnityAction onClickHistory)
 		{
 			_buttons.RegisterHistoryButtonCallback(onClickHistory);

@@ -15,7 +15,6 @@ namespace UI.Dialogue
 		[SerializeField] private Button _backButton;
 		[SerializeField] private Button _saveButton;
 		[SerializeField] private Button _loadButton;
-		[SerializeField] private Button _settingsButton;
 
 		[Space] [SerializeField] private Button _historyButton;
 
@@ -42,11 +41,6 @@ namespace UI.Dialogue
 		public void RegisterLoadButtonCallback(UnityAction action)
 		{
 			_loadButton.RegisterNewCallback(action);
-		}
-
-		public void RegisterSettingsButtonCallback(UnityAction action)
-		{
-			_settingsButton.RegisterNewCallback(action);
 		}
 
 		public void RegisterHistoryButtonCallback(UnityAction action)

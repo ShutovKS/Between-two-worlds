@@ -26,7 +26,6 @@ namespace Infrastructure.ScenesManagers.Core
 		private ILocalisationDataLoadService _localisationDataLoad;
 		private ISaveLoadDataService _saveLoadData;
 		private SaveLoadManager _saveLoadManager;
-		private SettingsManager _settingsManager;
 		private IUIFactoryInfoService _uiFactoryInfo;
 
 		private void Awake()
@@ -57,14 +56,11 @@ namespace Infrastructure.ScenesManagers.Core
 				_uiFactoryInfo.DialogueUI,
 				_dialogueManager.SetDialog,
 				_historyManager.ClearHistory);
-
-			_settingsManager = new SettingsManager();
-
+			
 			_buttonManager = new ButtonManager(_uiFactoryInfo.DialogueUI.Buttons);
 			_buttonManager.RegisterOnClickBack(ExitInMenu);
 			_buttonManager.RegisterOnClickSave(_saveLoadManager.DataSave);
 			_buttonManager.RegisterOnClickLoad(_saveLoadManager.DataLoad);
-			_buttonManager.RegisterOnClickSettings(_settingsManager.OpenSettingsPanel);
 			_buttonManager.RegisterOnClickHistory(_historyManager.OpenDialogHistory);
 			_buttonManager.RegisterOnClickSpeedUp(_dialogueManager.ChangeTypingDialogSpeedUp);
 			_buttonManager.RegisterOnClickAuto(_dialogueManager.AutoDialogSwitchMode);

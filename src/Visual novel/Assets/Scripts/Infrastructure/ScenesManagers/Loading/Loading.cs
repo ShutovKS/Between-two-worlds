@@ -53,9 +53,6 @@ namespace Infrastructure.ScenesManagers.Loading
 			await _uiFactory.CreatedDialogueScreen();
 			_uiFactoryInfo.DialogueUI.SetActivePanel(false);
 
-			await _uiFactory.CreatedSettingsScreen();
-			_uiFactoryInfo.SettingsUI.SetActivePanel(false);
-
 			await _uiFactory.CreatedMainMenuScreen();
 			_uiFactoryInfo.MainMenuUI.SetActivePanel(false);
 
@@ -69,7 +66,6 @@ namespace Infrastructure.ScenesManagers.Loading
 		private void RegisterLocalizableUI()
 		{
 			_localizerUI.Register(_uiFactoryInfo.DialogueUI);
-			_localizerUI.Register(_uiFactoryInfo.SettingsUI);
 			_localizerUI.Register(_uiFactoryInfo.MainMenuUI);
 			_localizerUI.Register(_uiFactoryInfo.ConfirmationUI);
 			_localizerUI.Register(_uiFactoryInfo.SaveLoadUI);

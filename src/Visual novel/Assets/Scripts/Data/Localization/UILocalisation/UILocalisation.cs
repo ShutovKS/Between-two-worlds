@@ -1,4 +1,4 @@
-﻿namespace Data.Localization.UILocalisation
+namespace Data.Localization.UILocalisation
 {
 	public class UILocalisation
 	{
@@ -7,7 +7,6 @@
 		public string GameName;
 		public string LoadGameButton;
 		public string StartGameButton;
-		public string SettingsButton;
 		public string ExitButton;
 
 		#endregion
