@@ -1,4 +1,4 @@
-namespace Data.Localization.UILocalisation
+﻿namespace Data.Localization.UILocalisation
 {
 	public class UILocalisation
 	{
@@ -10,15 +10,24 @@ namespace Data.Localization.UILocalisation
 		public string ExitButton;
 
 		#endregion
+		
+		#region Confirmation
 
-		#region Settings
-
-		//BackButton
-		public string Back;
-
-		//Language
-		public string Language;
+		public string Title;
+		public string YesButton;
+		public string NoButton;
 
 		#endregion
+
+		#region Dialogue
+
+		public string HistoryButton;
+		public string SkipButton;
+		public string AutoButton;
+		public string FurtherButton;
+
+		#endregion
+		
+		public string BackButton;
 	}
 }

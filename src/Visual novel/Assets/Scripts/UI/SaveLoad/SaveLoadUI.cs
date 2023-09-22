@@ -16,7 +16,7 @@ namespace UI.SaveLoad
 
 		public void Localize(UILocalisation localisation)
 		{
-			// ButtonsUI.SetBackButtonText(localisation.BackButton);
+			ButtonsUI.SetBackButtonText(localisation.BackButton);
 		}
 
 		public void SetActivePanel(bool isActive)

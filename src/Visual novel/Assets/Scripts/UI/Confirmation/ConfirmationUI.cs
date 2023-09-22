@@ -17,9 +17,9 @@ namespace UI.Confirmation
 
 		public void Localize(UILocalisation localisation)
 		{
-			// Text.SetTitleText(localisation.Title);
-			// Buttons.SetYesButtonText(localisation.YesButton);
-			// Buttons.SetNoButtonText(localisation.NoButton);
+			Text.SetTitleText(localisation.Title);
+			Buttons.SetYesButtonText(localisation.YesButton);
+			Buttons.SetNoButtonText(localisation.NoButton);
 		}
 
 		public void SetActivePanel(bool value)

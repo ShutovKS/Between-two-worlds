@@ -20,10 +20,10 @@ namespace UI.Dialogue
 
 		public void Localize(UILocalisation localisation)
 		{
-			// Buttons.SetHistoryButtonText(localisation.HistoryButton);
-			// Buttons.SetSkipButtonText(localisation.SkipButton);
-			// Buttons.SetAutoButtonText(localisation.AutoButton);
-			// Buttons.SetFurtherButtonText(localisation.FurtherButton);
+			Buttons.SetHistoryButtonText(localisation.HistoryButton);
+			Buttons.SetSkipButtonText(localisation.SkipButton);
+			Buttons.SetAutoButtonText(localisation.AutoButton);
+			Buttons.SetFurtherButtonText(localisation.FurtherButton);
 		}
 
 		public void SetActivePanel(bool value)
