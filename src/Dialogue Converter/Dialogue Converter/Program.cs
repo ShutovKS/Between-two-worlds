@@ -1,4 +1,4 @@
-#region
+﻿#region
 
 using System.Xml.Serialization;
 using Dialogue_Converter;
@@ -9,8 +9,8 @@ var path = Directory.GetCurrentDirectory().Replace(
     @"Dialogue Converter\Dialogue Converter\bin\Debug\net7.0",
     string.Empty);
 
-var xmlPath = path + @"Scenario\Rus Demo\Dialogues.xml";
-var dialoguePath = path + @"Scenario\Rus Demo\Dialogue script.txt";
+var xmlPath = path + @"Scenario\Rus\Dialogues.xml";
+var dialoguePath = path + @"Scenario\Rus\Dialogue script.txt";
 
 var dialogues = ParseDialogues(dialoguePath);
 dialogues[0].ID = "Start";
@@ -86,13 +86,18 @@ static IPhrase[] ParseResponseDialogue(int id, string content)
     for (var i = 0; i < contents.Length; i++)
     {
         var part = contents[i];
-        var IDNext = GetId(id + 1);
+        var IDNext = string.Empty;
         if (part.Length > 0 && part[^1] == ']')
         {
+            IDNext = GetId(id + 1);
             var openBracketIndex = part.IndexOf('[');
             var closeBracketIndex = part.IndexOf(']');
             IDNext += part.Substring(openBracketIndex + 1, closeBracketIndex - openBracketIndex - 1);
-            part = part[..openBracketIndex];
+            part = part[..openBracketIndex] + part[(closeBracketIndex + 1)..];
+        }
+        if (TryGetUniqueId(ref part, out var uniqueId))
+        {
+            IDNext = uniqueId;
         }
 
         responseList[i] = new Responses.Response
@@ -111,19 +116,25 @@ static IPhrase[] ParseResponseDialogue(int id, string content)
     return new IPhrase[] { responses };
 }
 
-static IPhrase[] ParseSimpleDialogue(int id, string character, string content)
+static IPhrase[] ParseSimpleDialogue(int id, string character, string part)
 {
-    var background = GetBackground(ref content);
+    var background = GetBackground(ref part);
     var phrase = new Phrase
     {
         ID = GetId(id),
         IDNextDialog = GetId(id + 1),
         CharacterAvatarPath = GetCharacterImage(character),
         Name = GetCharacterName(character),
-        Text = content,
+        Text = part,
         BackgroundPath = background,
         SoundEffect = null
     };
+
+    if (TryGetUniqueId(ref part, out var uniqueId))
+    {
+        phrase.ID = uniqueId!;
+        phrase.Text = part;
+    }
 
     return new IPhrase[] { phrase };
 }
@@ -153,7 +164,7 @@ static IPhrase[] ParseBranchingDialogues(int id, string character, string conten
             var openBracketIndex = part.IndexOf('[');
             var closeBracketIndex = part.IndexOf(']');
             IDNext += part.Substring(openBracketIndex + 1, closeBracketIndex - openBracketIndex - 1);
-            part = part[..openBracketIndex];
+            part = part[..openBracketIndex] + part[(closeBracketIndex + 1)..];
         }
 
         dialogues[i] = new Phrase
@@ -180,6 +191,21 @@ static string? GetBackground(ref string content)
     var background = content.Substring(openBracketIndex + 1, closeBracketIndex - openBracketIndex - 1);
     content = content[..openBracketIndex] + content[(closeBracketIndex + 1)..];
     return background;
+}
+
+static bool TryGetUniqueId(ref string content, out string? uniqueId)
+{
+    if (content.Length <= 0 || content[^1] != '@' && content[0] != '@')
+    {
+        uniqueId = null;
+        return false;
+    }
+
+    var openBracketIndex = content.IndexOf('@');
+    var closeBracketIndex = content.LastIndexOf('@');
+    uniqueId = content.Substring(openBracketIndex + 1, closeBracketIndex - openBracketIndex - 1);
+    content = content[..openBracketIndex] + content[(closeBracketIndex + 1)..];
+    return true;
 }
 
 static void SerializeDialogues(List<IPhrase> dialogues, string xmlPath)
