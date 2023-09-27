@@ -1,4 +1,4 @@
-﻿#region
+#region
 
 using System.Xml.Serialization;
 using Dialogue_Converter;
@@ -119,12 +119,14 @@ static IPhrase[] ParseResponseDialogue(int id, string content)
 static IPhrase[] ParseSimpleDialogue(int id, string character, string part)
 {
     var background = GetBackground(ref part);
+    charactersAvatars.TryGetCharacterAvatarPath(part, out var characterAvatarPath);
+    charactersNames.TryGetCharacterName(part, out var characterName);
     var phrase = new Phrase
     {
         ID = GetId(id),
         IDNextDialog = GetId(id + 1),
-        CharacterAvatarPath = GetCharacterImage(character),
-        Name = GetCharacterName(character),
+        CharacterAvatarPath = characterAvatarPath,
+        Name = characterName,
         Text = part,
         BackgroundPath = background,
         SoundEffect = null
@@ -167,12 +169,14 @@ static IPhrase[] ParseBranchingDialogues(int id, string character, string conten
             part = part[..openBracketIndex] + part[(closeBracketIndex + 1)..];
         }
 
+        charactersAvatars.TryGetCharacterAvatarPath(part, out var characterAvatarPath);
+        charactersNames.TryGetCharacterName(part, out var characterName);
         dialogues[i] = new Phrase
         {
             ID = ID,
             IDNextDialog = IDNext,
-            CharacterAvatarPath = GetCharacterImage(character),
-            Name = GetCharacterName(character),
+            CharacterAvatarPath = characterAvatarPath,
+            Name = characterName,
             Text = part,
             BackgroundPath = background,
             SoundEffect = null
