@@ -1,4 +1,4 @@
-#region
+﻿#region
 
 using System.Xml.Serialization;
 using Dialogue_Converter;
@@ -9,8 +9,11 @@ var path = Directory.GetCurrentDirectory().Replace(
     @"Dialogue Converter\Dialogue Converter\bin\Debug\net7.0",
     string.Empty);
 
-var xmlPath = path + @"Scenario\Rus\Dialogues.xml";
+var xmlPath = path + @"Scenario\Rus\Dialogues Test.xml";
 var dialoguePath = path + @"Scenario\Rus\Dialogue script.txt";
+
+var charactersNames = new CharactersNames(path + @"Scenario\Rus");
+var charactersAvatars = new CharactersAvatars(path + @"Scenario\Rus");
 
 var dialogues = ParseDialogues(dialoguePath);
 dialogues[0].ID = "Start";
@@ -18,30 +21,17 @@ SerializeDialogues(dialogues, xmlPath);
 
 return;
 
-static List<IPhrase> ParseDialogues(string dialoguePath)
+List<IPhrase> ParseDialogues(string dialoguePath)
 {
     var id = 0;
     var dialogues = new List<IPhrase>();
-    var list = new List<string>();
-    foreach (var dialogue in File.ReadAllLines(dialoguePath))
-    {
-        if (!string.IsNullOrWhiteSpace(dialogue))
-        {
-            list.Add(dialogue);
-        }
-    }
 
-    var dialoguesTexts = list.ToArray();
+    var dialoguesTexts = File.ReadAllLines(dialoguePath).Where(dialogue => !string.IsNullOrWhiteSpace(dialogue));
 
     foreach (var inputText in dialoguesTexts)
     {
-        var phrases = ParseDialogue(id, inputText);
-        foreach (var phrase in phrases)
-        {
-            dialogues.Add(phrase);
-        }
-
-        id++;
+        var phrases = ParseDialogue(id++, inputText);
+        dialogues.AddRange(phrases);
     }
 
     var background = string.Empty;
@@ -61,23 +51,23 @@ static List<IPhrase> ParseDialogues(string dialoguePath)
     return dialogues;
 }
 
-static IPhrase[] ParseDialogue(int id, string inputText)
+IEnumerable<IPhrase> ParseDialogue(int id, string inputText)
 {
     var colonIndex = inputText.IndexOf(':');
-    var firstWord = inputText[..colonIndex].Trim();
-    var remainingText = inputText[(colonIndex + 1)..].TrimStart(':', ' ');
+    var character = inputText[..colonIndex].Trim();
+    var text = inputText[(colonIndex + 1)..].TrimStart(':', ' ');
 
     var phrases = true switch
     {
-        _ when remainingText.Contains('#') => ParseResponseDialogue(id, remainingText),
-        _ when remainingText.Contains('|') => ParseBranchingDialogues(id, firstWord, remainingText),
-        _ => ParseSimpleDialogue(id, firstWord, remainingText)
+        _ when text.Contains('#') => ParseResponseDialogue(id, text),
+        _ when text.Contains('|') => ParseBranchingDialogues(id, character, text),
+        _ => ParseSimpleDialogue(id, character, text)
     };
 
     return phrases;
 }
 
-static IPhrase[] ParseResponseDialogue(int id, string content)
+IPhrase[] ParseResponseDialogue(int id, string content)
 {
     content = content.Replace("#", string.Empty);
     var contents = content.Split('|');
@@ -95,7 +85,7 @@ static IPhrase[] ParseResponseDialogue(int id, string content)
             IDNext += part.Substring(openBracketIndex + 1, closeBracketIndex - openBracketIndex - 1);
             part = part[..openBracketIndex] + part[(closeBracketIndex + 1)..];
         }
-        if (TryGetUniqueId(ref part, out var uniqueId))
+        if (ScrapingTools.TryGetUniqueIdInEnd(ref part, out var uniqueId))
         {
             IDNext = uniqueId;
         }
@@ -116,9 +106,9 @@ static IPhrase[] ParseResponseDialogue(int id, string content)
     return new IPhrase[] { responses };
 }
 
-static IPhrase[] ParseSimpleDialogue(int id, string character, string part)
+IPhrase[] ParseSimpleDialogue(int id, string character, string part)
 {
-    var background = GetBackground(ref part);
+    var background = ScrapingTools.GetBackground(ref part);
     charactersAvatars.TryGetCharacterAvatarPath(part, out var characterAvatarPath);
     charactersNames.TryGetCharacterName(part, out var characterName);
     var phrase = new Phrase
@@ -132,7 +122,7 @@ static IPhrase[] ParseSimpleDialogue(int id, string character, string part)
         SoundEffect = null
     };
 
-    if (TryGetUniqueId(ref part, out var uniqueId))
+    if (ScrapingTools.TryGetUniqueIdInStart(ref part, out var uniqueId))
     {
         phrase.ID = uniqueId!;
         phrase.Text = part;
@@ -141,9 +131,9 @@ static IPhrase[] ParseSimpleDialogue(int id, string character, string part)
     return new IPhrase[] { phrase };
 }
 
-static IPhrase[] ParseBranchingDialogues(int id, string character, string content)
+IPhrase[] ParseBranchingDialogues(int id, string character, string content)
 {
-    var background = GetBackground(ref content);
+    var background = ScrapingTools.GetBackground(ref content);
     var dialogueParts = content.Split('|');
     var dialogues = new IPhrase[dialogueParts.Length];
 
@@ -186,75 +176,14 @@ static IPhrase[] ParseBranchingDialogues(int id, string character, string conten
     return dialogues;
 }
 
-static string? GetBackground(ref string content)
-{
-    if (!content.Contains('<')) return null;
-
-    var openBracketIndex = content.IndexOf('<');
-    var closeBracketIndex = content.IndexOf('>');
-    var background = content.Substring(openBracketIndex + 1, closeBracketIndex - openBracketIndex - 1);
-    content = content[..openBracketIndex] + content[(closeBracketIndex + 1)..];
-    return background;
-}
-
-static bool TryGetUniqueId(ref string content, out string? uniqueId)
-{
-    if (content.Length <= 0 || content[^1] != '@' && content[0] != '@')
-    {
-        uniqueId = null;
-        return false;
-    }
-
-    var openBracketIndex = content.IndexOf('@');
-    var closeBracketIndex = content.LastIndexOf('@');
-    uniqueId = content.Substring(openBracketIndex + 1, closeBracketIndex - openBracketIndex - 1);
-    content = content[..openBracketIndex] + content[(closeBracketIndex + 1)..];
-    return true;
-}
-
-static void SerializeDialogues(List<IPhrase> dialogues, string xmlPath)
+void SerializeDialogues(List<IPhrase> dialogues, string xmlPath)
 {
     var serializer = new XmlSerializer(typeof(object[]), new[] { typeof(Phrase), typeof(Responses) });
     using var stream = File.Create(xmlPath);
     serializer.Serialize(stream, dialogues.ToArray());
 }
 
-static string GetCharacterName(string character)
-{
-    return character switch
-    {
-        "CharacterH" => "Герой",
-        "CharacterD" => "Доктор",
-        "CharacterG" => "Девушка",
-        "CharacterGF" => "Подруга",
-        "CharacterW" => "Офицант",
-
-        "OtherDoor" => "Дверь",
-        "OtherPhone" => "Телефон",
-        "OtherSignatureUnderPainting" => "Подпись под картиной",
-
-        _ => throw new Exception($"No character name on character: {character}")
-    };
-}
-
-static string? GetCharacterImage(string character)
-{
-    if (character.Contains("Other")) return null;
-
-    return character switch
-    {
-        "CharacterH" => "CharacterHero",
-        "CharacterD" => "CharacterDoctor",
-        "CharacterG" => "CharacterGirl",
-        "CharacterGF" => "CharacterGirlfriend",
-        "CharacterW" => "CharacterWaiter",
-
-
-        _ => throw new Exception($"No character image on character: {character}")
-    };
-}
-
-static string GetId(int id)
+string GetId(int id)
 {
     return $"id{id}.";
 }
