@@ -1,6 +1,5 @@
 ﻿#region
 
-using System.Xml.Serialization;
 using Dialogue_Converter;
 using static Dialogue_Converter.Constant.Path;
 
@@ -16,7 +15,7 @@ CharactersAvatars charactersAvatars = new CharactersAvatars(path + CharactersAva
 
 var dialogues = ParseDialogues(path + DialoguePath);
 dialogues[0].ID = "Start";
-SerializeDialogues(dialogues, path + XmlPath);
+SerializeTools.SerializeDialogues(dialogues, path + XmlPath);
 
 return;
 
@@ -29,7 +28,7 @@ List<IPhrase> ParseDialogues(string dialoguePath)
 
     foreach (string inputText in dialoguesTexts)
     {
-        IEnumerable<IPhrase> phrases = ParseDialogue(id++, inputText);
+        var phrases = ParseDialogue(id++, inputText);
         dialogues.AddRange(phrases);
     }
 
@@ -70,7 +69,7 @@ IPhrase[] ParseResponseDialogue(int id, string content)
 {
     content = content.Replace("#", string.Empty);
     string[] contents = content.Split('|');
-    Responses.Response[] responseList = new Responses.Response[contents.Length];
+    var responseList = new Responses.Response[contents.Length];
 
     for (int i = 0; i < contents.Length; i++)
     {
@@ -78,7 +77,7 @@ IPhrase[] ParseResponseDialogue(int id, string content)
         string IDNext = string.Empty;
         if (part.Length > 0 && part[^1] == ']')
         {
-            IDNext = GetId(id + 1);
+            IDNext = ScrapingTools.GetId(id + 1);
             int openBracketIndex = part.IndexOf('[');
             int closeBracketIndex = part.IndexOf(']');
             IDNext += part.Substring(openBracketIndex + 1, closeBracketIndex - openBracketIndex - 1);
@@ -98,7 +97,7 @@ IPhrase[] ParseResponseDialogue(int id, string content)
 
     Responses responses = new Responses
     {
-        ID = GetId(id),
+        ID = ScrapingTools.GetId(id),
         ResponseList = responseList
     };
 
@@ -112,8 +111,8 @@ IPhrase[] ParseSimpleDialogue(int id, string character, string part)
     charactersNames.TryGetCharacterName(part, out string? characterName);
     Phrase phrase = new Phrase
     {
-        ID = GetId(id),
-        IDNextDialog = GetId(id + 1),
+        ID = ScrapingTools.GetId(id),
+        IDNextDialog = ScrapingTools.GetId(id + 1),
         CharacterAvatarPath = characterAvatarPath,
         Name = characterName,
         Text = part,
@@ -138,8 +137,8 @@ IPhrase[] ParseBranchingDialogues(int id, string character, string content)
 
     for (int i = 0; i < dialogueParts.Length; i++)
     {
-        string ID = GetId(id);
-        string IDNext = GetId(id + 1);
+        string ID = ScrapingTools.GetId(id);
+        string IDNext = ScrapingTools.GetId(id + 1);
         string part = dialogueParts[i];
 
         if (part[0] == '[')
@@ -173,16 +172,4 @@ IPhrase[] ParseBranchingDialogues(int id, string character, string content)
     }
 
     return dialogues;
-}
-
-void SerializeDialogues(List<IPhrase> dialogues, string xmlPath)
-{
-    XmlSerializer serializer = new XmlSerializer(typeof(object[]), new[] { typeof(Phrase), typeof(Responses) });
-    using FileStream stream = File.Create(xmlPath);
-    serializer.Serialize(stream, dialogues.ToArray());
-}
-
-string GetId(int id)
-{
-    return $"id{id}.";
 }

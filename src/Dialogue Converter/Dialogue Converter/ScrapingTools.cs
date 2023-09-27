@@ -37,6 +37,11 @@ public static class ScrapingTools
         return background;
     }
 
+    static public string GetId(int id)
+    {
+        return $"id{id}.";
+    }
+
     private static string GetUniqueId(ref string content)
     {
         var openBracketIndex = content.IndexOf('@');
