@@ -106,19 +106,20 @@ IPhrase[] ParseResponseDialogue(int id, string content)
 
 IPhrase[] ParseSimpleDialogue(int id, string character, string part)
 {
-    string background = ScrapingTools.GetBackground(ref part);
-    charactersAvatars.TryGetCharacterAvatarPath(part, out string? characterAvatarPath);
-    charactersNames.TryGetCharacterName(part, out string? characterName);
+    charactersAvatars.TryGetCharacterAvatarPath(character, out string? characterAvatarPath);
+    charactersNames.TryGetCharacterName(character, out string? characterName);
+    var background = ScrapingTools.GetBackground(ref part);
+    var actionTrigger = ScrapingTools.GetActionTrigger(ref part);
     Phrase phrase = new Phrase
     {
         ID = ScrapingTools.GetId(id),
         IDNextDialog = ScrapingTools.GetId(id + 1),
+        ActionTrigger = actionTrigger,
         CharacterAvatarPath = characterAvatarPath,
         Name = characterName,
         Text = part,
         BackgroundPath = background,
         SoundEffect = null,
-        ActionTrigger = ScrapingTools.GetActionTrigger(ref part)
     };
 
     if (ScrapingTools.TryGetUniqueIdInStart(ref part, out string? uniqueId))
