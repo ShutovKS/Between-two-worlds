@@ -10,4 +10,5 @@ public class Phrase : IPhrase
     public string Text { get; set; }
     public string BackgroundPath { get; set; }
     public string SoundEffect { get; set; }
+    public string ActionTrigger { get; set; }
 }

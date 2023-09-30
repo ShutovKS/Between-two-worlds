@@ -117,7 +117,8 @@ IPhrase[] ParseSimpleDialogue(int id, string character, string part)
         Name = characterName,
         Text = part,
         BackgroundPath = background,
-        SoundEffect = null
+        SoundEffect = null,
+        ActionTrigger = ScrapingTools.GetActionTrigger(ref part)
     };
 
     if (ScrapingTools.TryGetUniqueIdInStart(ref part, out string? uniqueId))

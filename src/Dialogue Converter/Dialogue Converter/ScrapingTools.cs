@@ -37,7 +37,18 @@ public static class ScrapingTools
         return background;
     }
 
-    static public string GetId(int id)
+    public static string GetActionTrigger(ref string content)
+    {
+        if (!content.Contains('{')) return string.Empty;
+
+        var openBracketIndex = content.IndexOf('{');
+        var closeBracketIndex = content.IndexOf('}');
+        var actionTrigger = content.Substring(openBracketIndex + 1, closeBracketIndex - openBracketIndex - 1);
+        content = content[..openBracketIndex] + content[(closeBracketIndex + 1)..];
+        return actionTrigger;
+    }
+
+    public static string GetId(int id)
     {
         return $"id{id}.";
     }
