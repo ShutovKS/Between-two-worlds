@@ -14,95 +14,124 @@ using UnityEngine;
 
 namespace Infrastructure.Services.LocalisationDataLoad
 {
-	public class LocalisationDataLoadService : ILocalisationDataLoadService
-	{
-		public LocalisationDataLoadService()
-		{
-			var path = $"{Application.streamingAssetsPath}\\Localizations";
+    public class LocalisationDataLoadService : ILocalisationDataLoadService
+    {
+        public LocalisationDataLoadService()
+        {
+            var path = $"{Application.streamingAssetsPath}\\Localizations";
 
-			var directoriesNames = Directory.GetDirectories(path);
+            var directoriesNames = Directory.GetDirectories(path);
 
-			foreach (var directoryName in directoriesNames)
-			{
-				if (!File.Exists($"{directoryName}\\Main.txt")) continue;
+            foreach (var directoryName in directoriesNames)
+            {
+                if (!File.Exists($"{directoryName}\\Main.txt")) continue;
 
-				var fileString = File.ReadAllText($"{directoryName}\\Main.txt");
-				var strings = fileString.Split("\n");
+                var fileString = File.ReadAllText($"{directoryName}\\Main.txt");
+                var strings = fileString.Split("\n");
 
-				var localizationMain = new LocalizationMain
-				{
-					PathToDirectory = directoryName,
-					Language = strings[0].Remove(0, strings[0].IndexOf('-'))
-				};
+                var localizationMain = new LocalizationMain
+                {
+                    PathToDirectory = directoryName,
+                    Language = strings[0].Remove(0, strings[0].IndexOf('-'))
+                };
 
-				_localizations.Add(localizationMain.Language, localizationMain);
-			}
-		}
+                _localizations.Add(localizationMain.Language, localizationMain);
+            }
+        }
 
-		private const string PATH_TO_DIALOGUE = "Dialogues.xml";
-		private const string PATH_TO_UI = "UILocalisation.json";
-		private readonly Dictionary<string, IPhrase> _dialogues = new();
+        private const string PATH_TO_DIALOGUE = "Dialogues.xml";
+        private const string PATH_TO_UI = "UILocalisation.json";
+        private const string PATH_TO_LAST_WORDS = "LastWords.txt";
+        private readonly Dictionary<string, IPhrase> _dialogues = new();
+        private readonly Dictionary<string, LocalizationMain> _localizations = new();
+        private readonly Dictionary<string, string> _lastWords = new();
+        private UILocalisation _uiLocalisation = new();
+        private string _path;
 
-		private readonly Dictionary<string, LocalizationMain> _localizations = new();
+        public string CurrentLanguage { get; private set; }
 
-		private string _path;
-		private UILocalisation _uiLocalisation = new();
+        public void Load(string language)
+        {
+            CurrentLanguage = language;
+            _path = _localizations[language].PathToDirectory;
+            LoadUILocalisation();
+            LoadDialogues();
+            LoadLastWords();
+            foreach ((string key, string value) in _lastWords)
+            {
+                Debug.Log($"{key} - {value}");
+            }
+        }
+        public string GetUpLastWord(string id)
+        {
+            return _lastWords.TryGetValue(id, out var lastWord)
+                ? lastWord
+                : throw new Exception($"No get part on id: {id}");
+        }
 
-		public string CurrentLanguage { get; private set; }
+        public IPhrase GetPhraseId(string id)
+        {
+            return _dialogues.TryGetValue(id, out var phrase)
+                ? phrase
+                : throw new Exception($"No get part on id: {id}");
+        }
 
-		public void Load(string language)
-		{
-			CurrentLanguage = language;
-			_path = _localizations[language].PathToDirectory;
-			LoadUILocalisation();
-			LoadDialogues();
-		}
+        public UILocalisation GetUILocalisation()
+        {
+            return _uiLocalisation;
+        }
 
-		public IPhrase GetPhraseId(string id)
-		{
-			return _dialogues.TryGetValue(id, out var phrase)
-				? phrase
-				: throw new Exception($"No get part on id: {id}");
-		}
+        public List<LocalizationMain> GetLocalizationsInfo()
+        {
+            return _localizations.Values.ToList();
+        }
 
-		public UILocalisation GetUILocalisation()
-		{
-			return _uiLocalisation;
-		}
+        #region Load
 
-		public List<LocalizationMain> GetLocalizationsInfo()
-		{
-			return _localizations.Values.ToList();
-		}
+        private void LoadLastWords()
+        {
+            using TextReader reader = new StreamReader($"{_path}\\{PATH_TO_LAST_WORDS}");
+            var fileString = reader.ReadToEnd();
+            var strings = fileString.Split("\n");
+            _lastWords.Clear();
+            foreach (var str in strings)
+            {
+                var array = str.Split('-');
+                _lastWords.Add(array[0], array[1]);
+            }
+        }
 
-		private void LoadDialogues()
-		{
-			var serializer = new XmlSerializer(typeof(object[]), new[] { typeof(Phrase), typeof(Responses) });
-			object[] deserializedData;
-			using (TextReader reader = new StreamReader($"{_path}\\{PATH_TO_DIALOGUE}"))
-			{
-				deserializedData = (object[])serializer.Deserialize(reader);
-			}
+        private void LoadDialogues()
+        {
+            var serializer = new XmlSerializer(typeof(object[]), new[] { typeof(Phrase), typeof(Responses) });
+            object[] deserializedData;
+            using (TextReader reader = new StreamReader($"{_path}\\{PATH_TO_DIALOGUE}"))
+            {
+                deserializedData = (object[])serializer.Deserialize(reader);
+            }
+            _dialogues.Clear();
+            foreach (var item in deserializedData)
+            {
+                switch (item)
+                {
+                    case Phrase phrase:
+                        _dialogues.Add(phrase.ID, phrase);
+                        break;
+                    case Responses response:
+                        _dialogues.Add(response.ID, response);
+                        break;
+                }
+            }
+        }
 
-			foreach (var item in deserializedData)
-			{
-				switch (item)
-				{
-					case Phrase phrase:
-						_dialogues.Add(phrase.ID, phrase);
-						break;
-					case Responses response:
-						_dialogues.Add(response.ID, response);
-						break;
-				}
-			}
-		}
+        private void LoadUILocalisation()
+        {
+            var json = File.ReadAllText($"{_path}\\{PATH_TO_UI}");
+            var uiLocalisation = JsonUtility.FromJson<UILocalisation>(json);
+            _uiLocalisation = uiLocalisation;
+        }
 
-		private void LoadUILocalisation()
-		{
-			var json = File.ReadAllText($"{_path}\\{PATH_TO_UI}");
-			var uiLocalisation = JsonUtility.FromJson<UILocalisation>(json);
-			_uiLocalisation = uiLocalisation;
-		}
-	}
+        #endregion
+
+    }
 }

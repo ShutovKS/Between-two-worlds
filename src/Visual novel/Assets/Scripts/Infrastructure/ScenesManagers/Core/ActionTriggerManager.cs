@@ -1,21 +1,20 @@
 ﻿using System;
 using Infrastructure.Services.LocalisationDataLoad;
-using UI.LastWords;
+using Infrastructure.Services.UIFactory;
 using UnityEngine.Events;
-using UnityEngine.SceneManagement;
 
 namespace Infrastructure.ScenesManagers.Core
 {
     public class ActionTriggerManager
     {
-        public ActionTriggerManager(LastWordsUI lastWordsUI, ILocalisationDataLoadService localisationDataLoadService, UnityAction onExitInMainMenu)
+        public ActionTriggerManager(IUIFactoryInfoService uiFactoryInfoService, ILocalisationDataLoadService localisationDataLoadService, UnityAction onExitInMainMenu)
         {
-            _lastWordsUI = lastWordsUI;
+            _uiFactoryInfoService = uiFactoryInfoService;
             _localisationDataLoadService = localisationDataLoadService;
             _onExitInMainMenu = onExitInMainMenu;
         }
 
-        private readonly LastWordsUI _lastWordsUI;
+        private readonly IUIFactoryInfoService _uiFactoryInfoService;
         private readonly ILocalisationDataLoadService _localisationDataLoadService;
         private UnityAction _onExitInMainMenu;
 
@@ -35,24 +34,27 @@ namespace Infrastructure.ScenesManagers.Core
 
         private void ActionEnd1()
         {
-            _lastWordsUI.SetActivePanel(true);
-            _lastWordsUI.SetText("End1");
-            _lastWordsUI.RegisterBackButtonCallback(() =>
-            {
-                _lastWordsUI.SetActivePanel(false);
-                _onExitInMainMenu();
-            });
+            var text = _localisationDataLoadService.GetUpLastWord("end1");
+            SetUpLastWordsUI(text);
         }
 
         private void ActionEnd2()
         {
-            _lastWordsUI.SetActivePanel(true);
-            _lastWordsUI.SetText("End2");
-            _lastWordsUI.RegisterBackButtonCallback(() =>
+            var text = _localisationDataLoadService.GetUpLastWord("end2");
+            SetUpLastWordsUI(text);
+        }
+
+        private void SetUpLastWordsUI(string text)
+        {
+            _uiFactoryInfoService.DialogueUI.SetActivePanel(false);
+            _uiFactoryInfoService.LastWordsUI.SetActivePanel(true);
+            _uiFactoryInfoService.LastWordsUI.SetText(text);
+            _uiFactoryInfoService.LastWordsUI.RegisterBackButtonCallback(() =>
             {
-                _lastWordsUI.SetActivePanel(false);
+                _uiFactoryInfoService.LastWordsUI.SetActivePanel(false);
                 _onExitInMainMenu();
             });
         }
+
     }
 }

@@ -9,14 +9,14 @@ using Data.Localization.UILocalisation;
 
 namespace Infrastructure.Services.LocalisationDataLoad
 {
-	public interface ILocalisationDataLoadService
-	{
-		string CurrentLanguage { get; }
+    public interface ILocalisationDataLoadService
+    {
+        string CurrentLanguage { get; }
+        void Load(string language);
 
-		void Load(string language);
-
-		IPhrase GetPhraseId(string id);
-		UILocalisation GetUILocalisation();
-		List<LocalizationMain> GetLocalizationsInfo();
-	}
+        string GetUpLastWord(string id);
+        IPhrase GetPhraseId(string id);
+        UILocalisation GetUILocalisation();
+        List<LocalizationMain> GetLocalizationsInfo();
+    }
 }

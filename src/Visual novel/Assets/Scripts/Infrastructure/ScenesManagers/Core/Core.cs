@@ -39,7 +39,7 @@ namespace Infrastructure.ScenesManagers.Core
 
         private void InitializedManagers()
         {
-            _actionTriggerManager = new ActionTriggerManager(_uiFactoryInfo.LastWordsUI, _localisationDataLoad, ExitInMenu);
+            _actionTriggerManager = new ActionTriggerManager(_uiFactoryInfo, _localisationDataLoad, ExitInMenu);
 
             _historyManager = new HistoryManager(_uiFactoryInfo.DialogueUI.History);
 
