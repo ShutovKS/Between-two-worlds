@@ -61,6 +61,9 @@ namespace Infrastructure.ScenesManagers.Loading
 
 			await _uiFactory.CreatedSaveLoadScreen();
 			_uiFactoryInfo.SaveLoadUI.SetActivePanel(false);
+
+			await _uiFactory.CreatedLastWordsScreen();
+			_uiFactoryInfo.LastWordsUI.SetActivePanel(false);
 		}
 
 		private void RegisterLocalizableUI()

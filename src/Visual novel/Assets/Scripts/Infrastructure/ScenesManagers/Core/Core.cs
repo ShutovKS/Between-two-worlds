@@ -15,84 +15,88 @@ using UnityEngine.SceneManagement;
 
 namespace Infrastructure.ScenesManagers.Core
 {
-	public class Core : MonoBehaviour
-	{
-		private ButtonManager _buttonManager;
-		private ICoroutineRunner _coroutineRunner;
+    public class Core : MonoBehaviour
+    {
+        private ButtonManager _buttonManager;
+        private ICoroutineRunner _coroutineRunner;
 
-		private DynamicData _dataCurrent;
-		private DialogueManager _dialogueManager;
-		private HistoryManager _historyManager;
-		private ILocalisationDataLoadService _localisationDataLoad;
-		private ISaveLoadDataService _saveLoadData;
-		private SaveLoadManager _saveLoadManager;
-		private IUIFactoryInfoService _uiFactoryInfo;
+        private DynamicData _dataCurrent;
+        private DialogueManager _dialogueManager;
+        private HistoryManager _historyManager;
+        private ILocalisationDataLoadService _localisationDataLoad;
+        private ISaveLoadDataService _saveLoadData;
+        private SaveLoadManager _saveLoadManager;
+        private ActionTriggerManager _actionTriggerManager;
+        private IUIFactoryInfoService _uiFactoryInfo;
 
-		private void Awake()
-		{
-			InitializedServices();
-			LoadData();
-			InitializedManagers();
-			_dialogueManager.StartDialogue();
-		}
+        private void Awake()
+        {
+            InitializedServices();
+            LoadData();
+            InitializedManagers();
+            _dialogueManager.StartDialogue();
+        }
 
-		private void InitializedManagers()
-		{
-			_historyManager = new HistoryManager(_uiFactoryInfo.DialogueUI.History);
+        private void InitializedManagers()
+        {
+            _actionTriggerManager = new ActionTriggerManager(_uiFactoryInfo.LastWordsUI, _localisationDataLoad, ExitInMenu);
 
-			_dialogueManager = new DialogueManager(
-				_localisationDataLoad.GetPhraseId,
-				_uiFactoryInfo.DialogueUI,
-				_uiFactoryInfo.BackgroundUI,
-				_coroutineRunner,
-				_historyManager.AddedDialogInHistory);
+            _historyManager = new HistoryManager(_uiFactoryInfo.DialogueUI.History);
 
-			_saveLoadManager = new SaveLoadManager(
-				_saveLoadData,
-				_uiFactoryInfo.SaveLoadUI,
-				_dataCurrent,
-				() => _dialogueManager.CurrentDialogue.ID,
-				_uiFactoryInfo.BackgroundUI,
-				_uiFactoryInfo.DialogueUI,
-				_dialogueManager.SetDialog,
-				_historyManager.ClearHistory);
-			
-			_buttonManager = new ButtonManager(_uiFactoryInfo.DialogueUI.Buttons);
-			_buttonManager.RegisterOnClickBack(ExitInMenu);
-			_buttonManager.RegisterOnClickSave(_saveLoadManager.DataSave);
-			_buttonManager.RegisterOnClickLoad(_saveLoadManager.DataLoad);
-			_buttonManager.RegisterOnClickHistory(_historyManager.OpenDialogHistory);
-			_buttonManager.RegisterOnClickSpeedUp(_dialogueManager.ChangeTypingDialogSpeedUp);
-			_buttonManager.RegisterOnClickAuto(_dialogueManager.AutoDialogSwitchMode);
-			_buttonManager.RegisterOnClickFurther(_dialogueManager.DialogFurther);
-		}
+            _dialogueManager = new DialogueManager(
+                _localisationDataLoad.GetPhraseId,
+                _uiFactoryInfo.DialogueUI,
+                _uiFactoryInfo.BackgroundUI,
+                _coroutineRunner,
+                _historyManager.AddedDialogInHistory,
+                _actionTriggerManager.HandleActionTrigger);
 
-		private void InitializedServices()
-		{
-			_localisationDataLoad = ServicesContainer.GetService<ILocalisationDataLoadService>();
-			_saveLoadData = ServicesContainer.GetService<ISaveLoadDataService>();
-			_uiFactoryInfo = ServicesContainer.GetService<IUIFactoryInfoService>();
-			_coroutineRunner = ServicesContainer.GetService<ICoroutineRunner>();
-		}
+            _saveLoadManager = new SaveLoadManager(
+                _saveLoadData,
+                _uiFactoryInfo.SaveLoadUI,
+                _dataCurrent,
+                () => _dialogueManager.CurrentDialogue.ID,
+                _uiFactoryInfo.BackgroundUI,
+                _uiFactoryInfo.DialogueUI,
+                _dialogueManager.SetDialog,
+                _historyManager.ClearHistory);
 
-		private void LoadData()
-		{
-			_dataCurrent = _saveLoadData.Load();
-		}
+            _buttonManager = new ButtonManager(_uiFactoryInfo.DialogueUI.Buttons);
+            _buttonManager.RegisterOnClickBack(ExitInMenu);
+            _buttonManager.RegisterOnClickSave(_saveLoadManager.DataSave);
+            _buttonManager.RegisterOnClickLoad(_saveLoadManager.DataLoad);
+            _buttonManager.RegisterOnClickHistory(_historyManager.OpenDialogHistory);
+            _buttonManager.RegisterOnClickSpeedUp(_dialogueManager.ChangeTypingDialogSpeedUp);
+            _buttonManager.RegisterOnClickAuto(_dialogueManager.AutoDialogSwitchMode);
+            _buttonManager.RegisterOnClickFurther(_dialogueManager.DialogFurther);
+        }
 
-		private void ExitInMenu()
-		{
-			_uiFactoryInfo.ConfirmationUI.SetActivePanel(true);
-			_uiFactoryInfo.ConfirmationUI.Buttons.RegisterYesButtonCallback(
-				() =>
-				{
-					SceneManager.LoadScene("2.Meta");
-					_uiFactoryInfo.ConfirmationUI.SetActivePanel(false);
-					_uiFactoryInfo.DialogueUI.SetActivePanel(false);
-				});
+        private void InitializedServices()
+        {
+            _localisationDataLoad = ServicesContainer.GetService<ILocalisationDataLoadService>();
+            _saveLoadData = ServicesContainer.GetService<ISaveLoadDataService>();
+            _uiFactoryInfo = ServicesContainer.GetService<IUIFactoryInfoService>();
+            _coroutineRunner = ServicesContainer.GetService<ICoroutineRunner>();
+        }
 
-			_uiFactoryInfo.ConfirmationUI.Buttons.RegisterNoButtonCallback(
-				() => { _uiFactoryInfo.ConfirmationUI.SetActivePanel(false); });
-		}
-	}
+        private void LoadData()
+        {
+            _dataCurrent = _saveLoadData.Load();
+        }
+
+        private void ExitInMenu()
+        {
+            _uiFactoryInfo.ConfirmationUI.SetActivePanel(true);
+            _uiFactoryInfo.ConfirmationUI.Buttons.RegisterYesButtonCallback(
+                () =>
+                {
+                    SceneManager.LoadScene("2.Meta");
+                    _uiFactoryInfo.ConfirmationUI.SetActivePanel(false);
+                    _uiFactoryInfo.DialogueUI.SetActivePanel(false);
+                });
+
+            _uiFactoryInfo.ConfirmationUI.Buttons.RegisterNoButtonCallback(
+                () => { _uiFactoryInfo.ConfirmationUI.SetActivePanel(false); });
+        }
+    }
 }

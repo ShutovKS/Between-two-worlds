@@ -8,5 +8,6 @@
 		public const string CHOOSE_LANGUAGE_SCREEN = "Screens/ChooseLanguage";
 		public const string CONFIRMATION_SCREEN = "Screens/Confirmation";
 		public const string SAVE_LOAD_SCREEN = "Screens/SaveLoad";
+		public const string LAST_WORDS_SCREEN = "Screens/LastWords";
 	}
 }

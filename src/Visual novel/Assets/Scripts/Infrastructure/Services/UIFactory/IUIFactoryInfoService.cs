@@ -4,6 +4,7 @@ using UI.Background;
 using UI.ChooseLanguage;
 using UI.Confirmation;
 using UI.Dialogue;
+using UI.LastWords;
 using UI.MainMenu;
 using UI.SaveLoad;
 
@@ -19,5 +20,6 @@ namespace Infrastructure.Services.UIFactory
 		ChooseLanguageUI ChooseLanguageUI { get; }
 		ConfirmationUI ConfirmationUI { get; }
 		SaveLoadUI SaveLoadUI { get; }
+		LastWordsUI LastWordsUI { get; }
 	}
 }

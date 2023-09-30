@@ -14,6 +14,7 @@ namespace Infrastructure.Services.UIFactory
 		Task CreatedChooseLanguageScreen();
 		Task CreatedConfirmationScreen();
 		Task CreatedSaveLoadScreen();
+		Task CreatedLastWordsScreen();
 
 		void DestroyMainMenuScreen();
 		void DestroyDialogueScreen();
@@ -21,5 +22,6 @@ namespace Infrastructure.Services.UIFactory
 		void DestroyChooseLanguageScreen();
 		void DestroyConfirmationScreen();
 		void DestroySaveLoadScreen();
+		void DestroyLastWordsScreen();
 	}
 }

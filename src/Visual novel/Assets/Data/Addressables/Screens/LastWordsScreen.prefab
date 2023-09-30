@@ -117,6 +117,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _text: {fileID: 2771221938884555607}
   _backButton: {fileID: 4562415419667518701}
+  _panel: {fileID: 3968195340032624518}
 --- !u!1 &1628527453335100749
 GameObject:
   m_ObjectHideFlags: 0
