@@ -1,0 +1,9 @@
+CharacterH-Eroe
+CharacterD-Dottore
+CharacterG-Ragazza
+CharacterGF-Fidanzata
+CharacterW-Cameriere
+OtherDoor-Porta
+OtherPhone-Telefono
+OtherSignatureUnderPainting-firma sotto l'immagine
+Nothing-
