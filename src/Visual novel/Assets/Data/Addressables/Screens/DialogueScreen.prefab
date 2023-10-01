@@ -2183,7 +2183,6 @@ MonoBehaviour:
   _backButton: {fileID: 8688636129559921065}
   _saveButton: {fileID: 595952192962269550}
   _loadButton: {fileID: 7458176692256885144}
-  _settingsButton: {fileID: 0}
   _historyButton: {fileID: 3691037448769678271}
   _speedUpButton: {fileID: 4178283512289847304}
   _autoButton: {fileID: 3051121743253609235}
@@ -3004,8 +3003,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 8
