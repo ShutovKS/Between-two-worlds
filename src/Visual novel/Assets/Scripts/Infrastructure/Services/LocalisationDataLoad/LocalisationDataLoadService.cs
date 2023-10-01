@@ -32,7 +32,7 @@ namespace Infrastructure.Services.LocalisationDataLoad
                 var localizationMain = new LocalizationMain
                 {
                     PathToDirectory = directoryName,
-                    Language = strings[0].Remove(0, strings[0].IndexOf('-'))
+                    Language = strings[0].Remove(0, strings[0].IndexOf('-') + 1)
                 };
 
                 _localizations.Add(localizationMain.Language, localizationMain);
@@ -57,23 +57,19 @@ namespace Infrastructure.Services.LocalisationDataLoad
             LoadUILocalisation();
             LoadDialogues();
             LoadLastWords();
-            foreach ((string key, string value) in _lastWords)
-            {
-                Debug.Log($"{key} - {value}");
-            }
         }
         public string GetUpLastWord(string id)
         {
-            return _lastWords.TryGetValue(id, out var lastWord)
-                ? lastWord
-                : throw new Exception($"No get part on id: {id}");
+            _lastWords.TryGetValue(id, out var lastWord);
+            if (lastWord == null) Debug.LogError($"No get last word on id: {id}");
+            return lastWord;
         }
 
         public IPhrase GetPhraseId(string id)
         {
-            return _dialogues.TryGetValue(id, out var phrase)
-                ? phrase
-                : throw new Exception($"No get part on id: {id}");
+            _dialogues.TryGetValue(id, out var phrase);
+            if (phrase == null) Debug.LogError($"No get phrase on id: {id}");
+            return phrase;
         }
 
         public UILocalisation GetUILocalisation()
