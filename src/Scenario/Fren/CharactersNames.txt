@@ -1,0 +1,9 @@
+CharacterH-Héros
+CharacterD-Docteur
+CharacterG-Fille
+CharacterGF-Petite Amie
+CharacterW-Serveur
+OtherDoor-Porte
+OtherPhone-Téléphone
+OtherSignatureUnderPainting-Signature sous l'image
+Nothing-

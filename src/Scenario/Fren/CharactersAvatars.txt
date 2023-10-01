@@ -1,0 +1,5 @@
+CharacterH-CharacterHero
+CharacterD-CharacterDoctor
+CharacterG-CharacterGirl
+CharacterGF-CharacterGirlfriend
+CharacterW-CharacterWaiter
