@@ -7,6 +7,7 @@ namespace Infrastructure.ScenesManagers.Core
 		public HistoryManager(HistoryUI historyUI)
 		{
 			_historyUI = historyUI;
+			ClearHistory();
 		}
 
 		private readonly HistoryUI _historyUI;
