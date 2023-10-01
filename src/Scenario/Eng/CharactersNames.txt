@@ -1,0 +1,9 @@
+CharacterH-Hero
+CharacterD-Doctor
+CharacterG-Girl
+CharacterGF-Girlfriend
+CharacterW-Waiter
+OtherDoor-Door
+OtherPhone-Phone
+OtherSignatureUnderPainting-Caption under the picture
+Nothing- 

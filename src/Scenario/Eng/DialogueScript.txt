@@ -1,0 +1,368 @@
+CharacterH: <DoctorOffice>These headaches... Every day it gets stronger...
+CharacterD: I understand that it's very hard for you. Your condition is really terrible.
+CharacterH: Sorry Doctor, I'm not sure I can hold on much longer.
+CharacterD: You know, I'm worried about your words. I called you today for a reason, I want to tell you something.
+CharacterD: We have found a way to put you out of your misery, or to be more precise, to perform brain surgery.
+CharacterH: Doctor, that's wonderful.
+CharacterD: However, it's not that simple. The operation will really ease your suffering. But there is also a risk here - the chances of success are low, you may lose the ability to walk or other complications will arise.
+CharacterD: The operation is too complicated and as a result the situation may become even worse.
+CharacterD: That's why I called you today.
+CharacterH: Doctor, this is... me...
+CharacterD: I understand that the decision is not an easy one, and the operation can be both a salvation and an even bigger nightmare. I'm giving you a few days to think about it. When I call you again, you will have to give your final answer.
+CharacterD: I can advise you not to spend these days sitting at home and deeply immersed in your thoughts. Try to take a walk, distract yourself.
+CharacterH: Okay, I'll try.
+CharacterH: <HouseCorridor>I'm finally home.
+CharacterH: What should I do...
+CharacterH: I'm so scared.
+OtherPhone: You have a new message.
+CharacterH: Aaaaaah!!! I'm so tired of what they want from me at such a time.
+CharacterH: <RoomHeroDream>Yes, well, that's all, the morning is wiser in the evening. I'm going to go to bed, it's hardly something important.
+CharacterH: Am I standing in the middle of my room? But I was just lying in my bed...
+CharacterH: Something is wrong here, for some reason the room doesn't look like it usually does, but I can't figure out why.
+CharacterG: Hello.
+CharacterH: Who are you?
+CharacterG: Who am I? Well, it's going to be hard to explain, so let's skip this question.
+CharacterH: What is this place? This is not my room.
+CharacterG: How stupid you are, this is your dream.
+CharacterH: Why do I feel so light?
+CharacterG: As I said, all this is your dream, everything that your subconscious wants is manifested here, which is why you feel so good here.
+CharacterG: This is the nature of dreams.
+CharacterG: And to your question who am I, I think I know how to answer, I am the one you want to see next to.
+CharacterH: It's so amazing...
+CharacterG: Night is the moment when the world talks to the stars, and hearts talk to dreams.
+CharacterH: I don't even know your name...
+CharacterG: And I don't have a name, I don't need it, don't think about it.
+CharacterH: And if I want to wake up and get out of this dream?
+CharacterG: You can always wake up, but don't you feel better here?
+CharacterH: You're right. It's such a liberating feeling.
+Nothing: Some time later...
+CharacterH: Why are you disappearing?
+CharacterG: Meetings in dreams are like tiny stars, they leave their mark, but disappear at dawn.
+CharacterH: <RoomHero>It was still a dream, but it was so realistic... As if she was there.
+CharacterH: Probably, some moments can be stored only in the heart.
+CharacterH: I need to go wash up.
+OtherDoor: <Bathroom>Knock... Knock...
+CharacterGF: Are you there? Are you alive?
+CharacterH: #How did you get here?[1]|What are you doing here?[2]
+CharacterGF: [1]And are you still asking me such questions? She opened the door with a key.|[2]What am I doing here? And who didn't answer me? I was already afraid that something had happened to you.
+CharacterGF: As soon as you told me that you were going to the hospital, I didn't get any more news from you.
+CharacterGF: You know I'm worried about you...
+CharacterH: Oh, sorry. After going to the doctor, I was not up to the phone and when I got home, I immediately went to bed.
+CharacterGF: Has your condition become even worse?
+CharacterH: No, nothing like that. That's not the point at all.
+CharacterGF: What is it then?
+CharacterH: Well, I'd like to finish washing first.
+CharacterGF: OK, I'll wait. Finish your business, and then we'll talk.
+CharacterH: Make yourself at home, I'll be there soon.
+CharacterH: Did she come here? Because I didn't answer?
+CharacterH: So, well, I sort of cleaned myself up, I look better, but these bruises under my eyes... I can't remember myself without them anymore.
+CharacterH: <HouseCorridor>M-m-m... What is this fragrance.
+CharacterGF: <Kitchen>Come here, it's time for breakfast.
+CharacterH: But I didn't cook anything.
+CharacterGF: Well, you said it yourself to make me feel at home. And I remember where all the things are after all these years.
+CharacterGF: If I didn't cook anything, what would you eat? Just cereal again? So you will have problems not only with your head, but also with your stomach.
+CharacterGF: So sit down, and let's have breakfast.
+CharacterH: Well, I won't refuse. Enjoy your meal.
+CharacterGF: As for how I got here, you gave me the keys to your apartment yourself, did you forget that you gave your keys to your best friend a few years ago?
+CharacterH: Oh, I really forgot already.
+CharacterGF: I came to make sure you're alive. I was so worried.
+CharacterGF: Now tell me what happened yesterday?
+CharacterH: I went to the doctor again, this time he told me that it was possible to have an operation.
+CharacterGF: Operation? Seriously? That's wonderful.
+CharacterGF: But that's not all that happened to you?
+CharacterH: Yes... The chances of a successful operation are low, and even if it is successful, there is a risk of complications that may be worse than my current condition.
+CharacterGF: What a nightmare. But know that no matter what happens during the operation, and what you will be after it, I will be with you.
+CharacterGF: Have you already signed the consent for the operation?
+CharacterH: No, I'm not sure what to do yet.
+CharacterGF: But I'm just really worried... Is there anything I can do to help?
+CharacterH: Thank you for your concern, but I'll deal with this myself.
+CharacterH: Although there is something I need help with. The doctor told me not to stay at home these days, although I really want to stay here.
+CharacterGF: Oh, that's great, I get it. Then we'll meet at the cafe tomorrow. I'll text you where and at what time. And it's not up for discussion.
+CharacterH: But... Okay, it's useless to argue with you.
+CharacterGF: Okay, I'll go first. There is no need to accompany. While.
+CharacterH: Bye.
+CharacterH: She's always been like this, at least something hasn't changed over time.
+CharacterH: And yet, the operation... the potential will get rid of these torments, but with such complications... What should I do?
+Nothing: The same evening.
+CharacterH: <RoomHeroDream>It's so late, it's time to go to bed. Moreover, tomorrow it will be necessary to get up early so as not to be late.
+Nothing: ...
+CharacterG: <ForestPath>Nice to see you.
+CharacterH: You... here again? Why?
+CharacterG: Remember, this is your dream, your dream world. If I'm here, then you want me to be there. A bit mysterious, isn't it? Hee-hee.
+CharacterG: While I'm here, let's go for a walk along the forest path.
+CharacterH: With pleasure, let's go.
+CharacterH: I wonder what kind of forest it is? So unlike anything I've ever seen.
+CharacterG: But the dream doesn't have to be ordinary, does it?
+CharacterH: You're right.
+CharacterG: Oh, look what a lovely creature!
+CharacterH: Unusual, but what is it?
+CharacterG: It is necessary to ask you, your world is still.
+CharacterG: Don't you want to give it a name?
+CharacterH: #Horbit (Horned rabbit)[1]|Horha (Horned Hare)[1]|Offer it yourself.[2]
+CharacterG: [1] Hee hee hee, you're so funny.[1]|[2]"Hohei" - how do you like this name?[2]
+CharacterH: [1]How I felt that I shouldn't do it.[1]|[2] "Hohei"? Why this name?[2]
+CharacterG: [1]Oh, come on, it turned out nice.|[2]Wordplay, nothing special.
+CharacterG: Let's go, because everything interesting is waiting for us ahead.
+Nothing: Some time later...
+CharacterG: Wow, we've already gone through the whole forest. Look at how many stars there are!
+CharacterH: Yes, it's so beautiful here... it's like being in a fairy tale.
+CharacterG: I think it's even better than a fairy tale.
+CharacterH: For some reason it seems to me that I will wake up soon.
+CharacterH: While there is still time, I want to ask you one more question, will I meet you again? And if so, will you stay here forever?
+CharacterG: Yes, we will definitely meet again and...
+CharacterH: <RoomHero>What did she say? I can't remember until the end. Eh.
+CharacterH: What time is it now?
+CharacterH: There is still a lot of time, you can not rush anywhere.
+Nothing: Two hours later.
+CharacterH: <CafeOutside>I'm late, I'm late... I need to hurry. How could I be half an hour late?
+CharacterH: She's already sitting at the table, eh...
+CharacterGF: <CafeInside>Welcome! It's good to see you.
+CharacterH: Sorry. I didn't want to be late.
+CharacterGF: Nothing new happened, you were always late.
+CharacterH: And it's cozy here.
+CharacterW: What will we order?
+CharacterH: I'll take...
+CharacterH: #Pizza with cola, please.[1]|Do you have borscht? I would like it and kvass.[2]|Let the lady decide.[3]
+CharacterG: [1]I'll take the Caesar salad and pasta.[1]|[2]I'll take the Caesar salad and pasta.[2]|[3]I'll take the Caesar salad, pasta and cocktail, and he'll have pasta with barbecue and something to drink.[3]
+CharacterG: [1]And I was already hoping that you would decide to eat something healthy.|[2]Oh, unexpectedly!|[3]I think that's enough for us.
+CharacterW: OK, we will bring your order now.
+CharacterGF: You look tense. Something happened?
+CharacterH: Nothing serious, just a headache started.
+CharacterGF: And what to do?
+CharacterH: Don't worry, it'll pass soon.
+CharacterW: Here is your order, bon appetit!
+CharacterGF: Bon appetit.
+CharacterH: And you.
+CharacterGF: Let me taste your drink, and I'll give you mine.
+CharacterH: Mmm... The cocktail is delicious.
+CharacterGF: Yeah, it's the best cocktail in the area.
+CharacterGF: Since the doctor told you not to stay at home, then tomorrow we need to go somewhere. How about a walk in the park near your house? As in childhood?
+CharacterH: Yes, come on, we haven't walked there for several years.
+CharacterGF: Wonderful! I missed our walks so much.
+CharacterH: Once we've eaten, and I've already paid, so let's go home.
+Nothing: Back home.
+CharacterH: I wonder if I'll meet that girl again in my dream. I'm thinking of going to bed early.
+CharacterG: <ForestElves>Hi.
+CharacterH: Hi... I'm glad we met again.
+CharacterG: Like I said, I'm here again.
+CharacterH: Yes, it is. Do you remember our conversation at the end of the last meeting?
+CharacterG: Of course I remember.
+CharacterH: Could you repeat the answer to my question again? Will you always meet me in your dreams now?
+CharacterG: Have you forgotten already?
+CharacterH: No, that's not it. I just didn't hear what you said.
+CharacterG: How strange, because it's just a dream. Maybe you just didn't want to hear that answer from me?
+CharacterG: Well, I'll answer, but whatever happens later. In the meantime, look at this beautiful moonlight.
+CharacterH: Yes, it's really great.
+CharacterG: Let's change the situation, it's getting boring here. Shall we move to the forest of elves?
+CharacterH: A forest of elves, like in fantasy novels?
+CharacterG: You could say that.
+CharacterH: <ForestElfHouses>How beautiful it is here! Such huge trees and houses, some even on trees.
+CharacterG: <ForestElves>Look, there's a target and a bow. Let's shoot?
+CharacterG: <TargetsForBows>I'm the first!
+Nothing: After firing three arrows, she hit right on target each time.
+CharacterH: And I don't even know how to shoot.
+CharacterH: Great!
+CharacterG: Thank you.
+CharacterG: Now it's your turn.
+CharacterH: But I can't.
+CharacterG: It's simple, pull the bowstring, aim and shoot.
+CharacterH: Okay, just don't laugh.
+CharacterG: I promise to try.
+Nothing: After firing three times, none of the arrows reached the target.
+CharacterG: Hee-hee.
+CharacterH: Eh.
+CharacterH: Tell me, I wonder why we are in the village of elves, but they are not here?
+CharacterG: Maybe they just didn't show up because you didn't want to.
+CharacterG: Maybe you only wanted to be with me?
+CharacterH: # Yes, it is.[1]|No, it's probably something else.[2]
+CharacterG: [1]This is for your honesty[1]|[2]That's how it is, you have to be more honest.[2]
+Nothing: [1]She kissed him.|[2]She frowned.
+CharacterG: It's time to say goodbye, we'll continue next time. Bye, bye.
+CharacterH: Goodbye...
+CharacterH: <RoomHero>Kha... Kha...
+CharacterH: And I've already started to forget that I'm just a step away from death.
+CharacterH: Is it lunch already? It's time to pack up and go.
+Nothing: Having reached the destination.
+CharacterH: <Park>I even came earlier this time. It remains only to wait for her.
+CharacterGF: Who are we waiting for?
+CharacterH: Oh, you scared me. Hi.
+CharacterGF: Haha, hello.
+CharacterGF: How do you feel?
+CharacterH: Actually, not really, today was another headache attack, so that's it, but I think that everything is fine now.
+CharacterGF: Why are we just sitting there for so long? Let's go for a walk.
+CharacterH: Okay, let's go...
+CharacterGF: <PondWithFish> Look how beautiful the fish are. One, two, three... how many!
+CharacterGF: I've never seen so many of them here before.
+CharacterH: Let's go buy bread to feed them.
+CharacterGF: Yes, with pleasure.
+Nothing: They're coming back from the store.
+CharacterH: Here's your half.
+CharacterGF: Thank you.
+CharacterGF: There were even more of them as soon as we threw bread.
+CharacterH: They ate everything so quickly.
+CharacterH: <Park>Let's move on.
+CharacterH: Ahem... ahem...
+CharacterGF: Does your head hurt again?
+CharacterH: Yes, it will pass soon. Let's sit on the bench for now.
+CharacterH: Is it normal that you spend so much time with me? After all, you have a job, and it's not a day off. Won't you have a problem with that?
+CharacterGF: Don't worry about it, I work remotely, and I have plans for the week ahead fulfilled. And if anything, I can say that I have some difficulties. Hee-hee.
+CharacterH: I see you like working as a designer.
+CharacterGF: Yes, and how is your job?
+CharacterH: Nothing special, I quit three weeks ago. And there are no problems with money, I have accumulated enough.
+CharacterH: The headache is gone, let's move on.
+CharacterH: It's getting dark, it's probably time for us to disperse.
+CharacterGF: Yes, probably. Tomorrow I will wait for you at my house at 10 o'clock, let's go to the forest for a picnic. See you tomorrow!
+Nothing: Back home.
+CharacterH: <RoomHero>Mmm...
+CharacterH: My head hurts so much, I barely got home.
+CharacterH: We need to fall asleep and rest faster.
+CharacterG: <RoomHeroDream>I've been waiting for you.
+CharacterH: Hi.
+CharacterG: What do you say about traveling to different places? If you don't mind, of course.
+CharacterH: Oh, hello! Of course I don't mind. The last adventure was so interesting and exciting.
+CharacterG: I'm very glad you liked it. Then let's hit the road - I know a lot of amazing places that I want to show you.
+CharacterG: <Castle>How do you like this palace? Extraordinarily beautiful, isn't it?
+CharacterH: Not just beautiful - magnificent and majestic!
+CharacterG: I'm glad you liked him. Then let's move on to the next item on today's agenda.
+CharacterH: Which one is that?
+CharacterG: Today we are waiting for a ball right in this palace - just for the two of us.
+CharacterH: But I can't dance, and there's no music here...
+CharacterG: Oh, you don't have to worry about not being able to dance. And I'll deal with the music now.
+CharacterG: Come here.
+CharacterH: Unbelievable, I'm doing it!
+CharacterG: And it turns out very well!
+CharacterH: Ugh, finally we're done.
+CharacterG: After that we will go to the next place.
+Nothing: They visited several other different places.
+Nothing: <FloatingIsland>On a floating island.
+Nothing: <FrozenOcean>We rode canyons on the frozen ocean.
+Nothing: <Library>We visited the library where the stories of all the worlds are recorded.
+Nothing: <PirateShip>We went fishing from a pirate ship.
+Nothing: <Orchard>Tried the rarest fruits.
+CharacterG: This is where our adventure today comes to an end.
+CharacterH: Already? It was just incredible, so many new and interesting things.
+CharacterG: Goodbye.
+CharacterH: <RoomHero>She disappeared again as suddenly as she appeared.
+CharacterH: I can't even imagine what it would be like to fall asleep one day and not meet you.
+Nothing: Having gathered, he goes to an appointment.
+CharacterH: <GirlfriendHouseMorning>Girl, aren't you waiting for me?
+CharacterGF: Who knows, but who are you? Hee-hee.
+CharacterH: #Prince on a white horse.[1]|Zombies.[2]|Let's not make these jokes.[3]
+CharacterGF: [1]And where did you lose the horse? Hee-hee-hee.|[2] Well, with your bruises under your eyes, you really look like a zombie.|[3] Well, you're a bore...
+CharacterGF: Okay, let's go.
+CharacterGF: <Grassland>The weather is so beautiful, isn't it? Just the perfect day to enjoy a moment together.
+CharacterH: Yes, this is exactly what we need. The nature around us creates such an atmosphere of calm and relaxation.
+CharacterGF: <LakeWithBeach>Look, there's a lake. What if we spend some time on the shore and refresh ourselves? The water looks so attractive.
+CharacterH: Great idea.
+CharacterH: Look what I have! Hee-hee, gotcha! How do you like the water?
+CharacterGF: Oh, you got it! Now I have to take revenge!
+CharacterH: Okay, okay, you won! But I won't give up!
+CharacterGF: I want you to know that I am always here for you. Whatever difficulties come, we will overcome them together.
+CharacterGF: Looking at you, I know that our path ahead will be bright.
+CharacterH: ...
+CharacterH: <SunsetInForest>Look, the sun is starting to disappear below the horizon. What a beautiful end to the day.
+CharacterGF: So it's time to go back.
+CharacterGF: Then where would we meet tomorrow? Can't think of anything?
+CharacterH: If you don't have any ideas, then I'll choose, we'll go to the cinema.
+OtherSignatureUnderPainting: <HoldingHands>"Moments that strengthen our bond."
+Nothing: Coming home and falling asleep.
+CharacterH: <ForestPath>Something about this night...
+CharacterG: I'm here!
+CharacterH: Every time I meet you, a feeling awakens in my heart that the world is so beautiful and full of mysteries.
+CharacterG: All right. The world is full of mysteries, and that's what makes it interesting.
+CharacterH: I'm glad you're here.
+CharacterH: It may sound strange, but I feel that with every meeting you become a part of me. My feelings for you are so strong that sometimes I even begin to doubt whether this is reality or still a dream.
+CharacterH: I feel like you're something I've always missed. And I'm ready to go anywhere, just to be near you.
+CharacterG: Your words are the most valuable of all the riddles of this world.
+CharacterH: While I have time, tell me, how long will I be able to meet you in my dreams?
+CharacterG: I still haven't answered, as long as your inner self needs me, I'll be here.
+CharacterH: You know, today I received a message from the doctor that tomorrow I have to come and give my consent to the operation.
+CharacterH: And so I thought, the inner self needs you because I'm sick, but what will happen after the operation?
+CharacterG: You're starting to think in the right direction.
+CharacterG: <ForestCrossroads>It's time for me to leave, goodbye.
+CharacterH: But how so, I don't want to lose you!..
+CharacterG: It all depends on your choice.
+CharacterH: <RoomHero> If we don't see each other again...
+CharacterH: I don't want to lose her. But I'm so scared...
+CharacterH: Already tonight I will have to give my final decision.
+CharacterH: But which one? I do not know ...
+Nothing: After much thought, he began to pack up and went to a scheduled meeting.
+CharacterGF: <NightCity>Look at the beautiful lights of the city! The evening is just fabulous.
+CharacterH: It will be an unforgettable evening.
+CharacterGF: That's the movie theater. Look how it sparkles!
+CharacterH: Yeah, we haven't been here for a long time.
+CharacterGF: I am so glad that we are spending this evening together.
+CharacterGF: <Cinema>What a cozy room! I haven't been to the cinema for a long time.
+CharacterGF: It looks like the movie promises to be interesting. Have you noticed how much attention everyone is watching?
+CharacterH: Yes, it's impressive. Probably, the movie is really good.
+CharacterGF: I can't believe what an unexpected twist!
+CharacterH: Yes, screenwriters really know how to surprise.
+CharacterGF: Did you see how the Hero unexpectedly met his old friend?
+CharacterH: Of course, it was a shock for everyone, including me. I was sure he would never see him again.
+CharacterGF: It's so touching...
+CharacterH: Yes, such moments make you think.
+CharacterGF: The movie seems to be ending. Time has passed so quickly.
+CharacterH: Yes, but I'm glad we could share this evening together.
+CharacterGF: <NightCity> The movie was really exciting. It's so great that we decided to spend this evening here.
+CharacterH: I agree, it was unforgettable. Thank you for sharing this evening with me.
+CharacterH: Come on, it's time to get back to reality.
+CharacterGF: Soon you will have to go to the hospital to make a decision.
+CharacterGF: You know, before that I want to say something important.
+CharacterH: Of course, I'm all attention.
+CharacterGF: I wanted you to know that I appreciate you more than words can express. I have long been... I'm in love with you.
+CharacterH: I... I don't even know what to say.
+CharacterGF: I know we had our difficulties, but... I want to be there for you, to support you in everything, no matter what you decide. We can get through this together.
+CharacterH: Thank you for telling me that. You... you are also important to me.
+CharacterH: (I can't deny that she means a lot to me. But is it worth taking the risk and taking the next step?)
+CharacterGF: Are you okay?
+CharacterH: With a smile. Yes, I just think a lot about what's going on. Thank you for sharing your feelings with me.
+CharacterGF: We can go step by step. I'm not rushing you.
+CharacterH: With a deep sigh. Thank you for understanding.
+CharacterGF: Thank you for guiding me. It was a really wonderful evening.
+CharacterH: Yes, I was. I'm glad we got to talk.
+CharacterGF: So what do you think?
+CharacterH: Looking down. This... something I'll have to deal with. But I promise I'll think about it.
+CharacterH: <GirlfriendHouseEvening>Have a good night.
+CharacterGF: You too.
+CharacterH: She's real. Her feelings are sincere, and I feel the same. But it's so difficult.
+CharacterH: This whole day has been so intense. On the one hand, the joy of what she said, but on the other – an incredible tension.
+Nothing: Getting to the hospital.
+CharacterD: <Hospital>I've been waiting for you, come in.
+CharacterD: <DoctorOffice>Hi. How are you feeling today?
+CharacterH: Not very good. These thoughts... these solutions... they give me no peace.
+CharacterD: I understand. Making a decision that can affect your whole life is not easy. I'm here to support you in this.
+CharacterH: I feel empty. On the one hand, I want to live. I want to build a future, enjoy the moments.
+CharacterH: But on the other hand, these pains and the fact that everything can get even worse... I am afraid that the operation may not be successful, and I will find myself in a worse situation.
+CharacterD: Your feelings are absolutely understandable. The operation is a serious step. We have data about your condition and potential risks, but the decision is yours.
+CharacterD: It is important to listen to your inner voice and understand what is most important to you.
+CharacterH: I just don't know which way to choose. What if I make the wrong choice?
+CharacterD: There is no such thing as a "wrong" choice. The choices you make will reflect your values, dreams and fears. Life is full of uncertainty, and it's important to move forward with what you feel inside.
+CharacterH: Thank you for your support.
+CharacterD: By the way, you should understand that if you refuse surgery, you won't be able to live long. But if you agree, there is a chance.
+CharacterD: Of course, the chance is very small, your condition is unique, and people like you can be counted on the fingers of one hand. But if everything goes well, then the problems with the head will disappear.
+CharacterH: Then I choose...
+CharacterH: #Consent to the operation.@ending1@|Refusal of the operation.@ending2@
+
+CharacterD: @ending1@<DoctorOffice>Most likely it was a difficult choice.
+CharacterH: I still hope that everything will be successful.
+CharacterD: Well, I'll go inform you about your decision and in the next three hours we will begin.
+CharacterH: So right away?
+CharacterD: There's not much time left by the end.
+CharacterD: You're ready, aren't you?
+CharacterH: Yes, I... I'm ready. I can't say I'm not afraid, but I know it's the only way.
+CharacterD: Everything will be fine. Just relax.
+Nothing: <OperatingRoom> The operation has begun.
+CharacterGF: <RoomInHospital>You're awake.
+CharacterH: You're... here.
+CharacterGF: Of course, I will always be there for you.
+CharacterH: Now I can go forward, build my future... together with you.{end2}
+
+CharacterD: @ending2@<DoctorOffice>Most likely it was a difficult choice.
+CharacterD: I won't dissuade you. This is most likely our last meeting.
+CharacterH: Goodbye.
+Nothing: <NightCity>Returning home, another headache attack occurred, which could not be compared in strength with any other, having lost consciousness, he fell and did not get up again.
+CharacterG: <DreamWorld>You chose the dream world, you chose me.
+CharacterH: Yes, it is.
+CharacterH: Where are we now?
+CharacterG: We are in the world that you created by your decision.
+CharacterG: This is the place where our adventures will begin.{end2}
