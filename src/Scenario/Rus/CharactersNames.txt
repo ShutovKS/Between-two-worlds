@@ -1,0 +1,9 @@
+CharacterH-Герой
+CharacterD-Доктор
+CharacterG-Девушка
+CharacterGF-Подруга
+CharacterW-Официант
+OtherDoor-Дверь
+OtherPhone-Телефон
+OtherSignatureUnderPainting-Подпись под картиной
+Nothing- 
