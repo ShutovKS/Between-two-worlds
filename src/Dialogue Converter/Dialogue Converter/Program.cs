@@ -169,8 +169,8 @@ IPhrase[] ParseBranchingDialogues(int id, string character, string content, Char
             part = part[..openBracketIndex] + part[(closeBracketIndex + 1)..];
         }
 
-        charactersAvatars.TryGetCharacterAvatarPath(part, out string? characterAvatarPath);
-        charactersNames.TryGetCharacterName(part, out string? characterName);
+        charactersAvatars.TryGetCharacterAvatarPath(character, out string? characterAvatarPath);
+        charactersNames.TryGetCharacterName(character, out string? characterName);
         dialogues[i] = new Phrase
         {
             ID = ID,
