@@ -1,0 +1,9 @@
+CharacterH-Held
+CharacterD-Arzt
+CharacterG-Mädchen
+CharacterGF-Freundin
+CharacterW-Kellner
+OtherDoor-Tür
+OtherPhone-Telefon
+OtherSignatureUnderPainting-Unterschrift unter dem Bild
+Nothing- 
