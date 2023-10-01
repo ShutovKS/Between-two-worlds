@@ -5,21 +5,31 @@ using static Dialogue_Converter.Constant.Path;
 
 #endregion
 
-const string language = @"\Rus";
 string path = Directory.GetCurrentDirectory().Replace(
     @"Dialogue Converter\Dialogue Converter\bin\Debug\net7.0",
-    string.Empty) + MainDirectory + language;
+    string.Empty);
 
-CharactersNames charactersNames = new CharactersNames(path + CharactersNamesPath);
-CharactersAvatars charactersAvatars = new CharactersAvatars(path + CharactersAvatarsPath);
+var directories = Directory.GetDirectories(path + MainDirectory).Select(directory => directory.Replace(path + MainDirectory, string.Empty));
 
-var dialogues = ParseDialogues(path + DialoguePath);
-dialogues[0].ID = "Start";
-SerializeTools.SerializeDialogues(dialogues, path + XmlPath);
+foreach (string directory in directories)
+{
+    var mainPath = path + MainDirectory + directory;
+    var localizationPath = path + LocalizationDirectory + directory;
 
+    CharactersNames charactersNames = new CharactersNames(mainPath + CharactersNamesPath);
+    CharactersAvatars charactersAvatars = new CharactersAvatars(mainPath + CharactersAvatarsPath);
+    var dialogues = ParseDialogues(mainPath + DialoguePath, charactersAvatars, charactersNames);
+    dialogues[0].ID = "Start";
+
+    if (!Directory.Exists(localizationPath)) Directory.CreateDirectory(localizationPath);
+    SerializeTools.SerializeDialogues(dialogues, localizationPath + XmlPath);
+    File.Copy(mainPath + LastWordsPath, localizationPath + LastWordsPath, true);
+    File.Copy(mainPath + UILocalisationPath, localizationPath + UILocalisationPath, true);
+    File.Copy(mainPath + MainPath, localizationPath + MainPath, true);
+}
 return;
 
-List<IPhrase> ParseDialogues(string dialoguePath)
+List<IPhrase> ParseDialogues(string dialoguePath, CharactersAvatars charactersAvatars, CharactersNames charactersNames)
 {
     int id = 0;
     var dialogues = new List<IPhrase>();
@@ -28,7 +38,7 @@ List<IPhrase> ParseDialogues(string dialoguePath)
 
     foreach (string inputText in dialoguesTexts)
     {
-        var phrases = ParseDialogue(id++, inputText);
+        var phrases = ParseDialogue(id++, inputText, charactersAvatars, charactersNames);
         dialogues.AddRange(phrases);
     }
 
@@ -49,17 +59,17 @@ List<IPhrase> ParseDialogues(string dialoguePath)
     return dialogues;
 }
 
-IEnumerable<IPhrase> ParseDialogue(int id, string inputText)
+IEnumerable<IPhrase> ParseDialogue(int id, string inputText, CharactersAvatars charactersAvatars, CharactersNames charactersNames)
 {
     int colonIndex = inputText.IndexOf(':');
     string character = inputText[..colonIndex].Trim();
     string text = inputText[(colonIndex + 1)..].TrimStart(':', ' ');
 
-    IPhrase[] phrases = true switch
+    var phrases = true switch
     {
         _ when text.Contains('#') => ParseResponseDialogue(id, text),
-        _ when text.Contains('|') => ParseBranchingDialogues(id, character, text),
-        _ => ParseSimpleDialogue(id, character, text)
+        _ when text.Contains('|') => ParseBranchingDialogues(id, character, text, charactersAvatars, charactersNames),
+        _ => ParseSimpleDialogue(id, character, text, charactersAvatars, charactersNames)
     };
 
     return phrases;
@@ -104,7 +114,7 @@ IPhrase[] ParseResponseDialogue(int id, string content)
     return new IPhrase[] { responses };
 }
 
-IPhrase[] ParseSimpleDialogue(int id, string character, string part)
+IPhrase[] ParseSimpleDialogue(int id, string character, string part, CharactersAvatars charactersAvatars, CharactersNames charactersNames)
 {
     charactersAvatars.TryGetCharacterAvatarPath(character, out string? characterAvatarPath);
     charactersNames.TryGetCharacterName(character, out string? characterName);
@@ -131,7 +141,7 @@ IPhrase[] ParseSimpleDialogue(int id, string character, string part)
     return new IPhrase[] { phrase };
 }
 
-IPhrase[] ParseBranchingDialogues(int id, string character, string content)
+IPhrase[] ParseBranchingDialogues(int id, string character, string content, CharactersAvatars charactersAvatars, CharactersNames charactersNames)
 {
     string background = ScrapingTools.GetBackground(ref content);
     string[] dialogueParts = content.Split('|');
