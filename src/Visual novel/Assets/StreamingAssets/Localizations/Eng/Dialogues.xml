@@ -1,0 +1,3392 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfAnyType xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <anyType xsi:type="Phrase">
+    <ID>Start</ID>
+    <IDNextDialog>id1.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>These headaches... Every day it gets stronger...</Text>
+    <BackgroundPath>DoctorOffice</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id1.</ID>
+    <IDNextDialog>id2.</IDNextDialog>
+    <CharacterAvatarPath>CharacterDoctor</CharacterAvatarPath>
+    <Name>Doctor</Name>
+    <Text>I understand that it's very hard for you. Your condition is really terrible.</Text>
+    <BackgroundPath>DoctorOffice</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id2.</ID>
+    <IDNextDialog>id3.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>Sorry Doctor, I'm not sure I can hold on much longer.</Text>
+    <BackgroundPath>DoctorOffice</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id3.</ID>
+    <IDNextDialog>id4.</IDNextDialog>
+    <CharacterAvatarPath>CharacterDoctor</CharacterAvatarPath>
+    <Name>Doctor</Name>
+    <Text>You know, I'm worried about your words. I called you today for a reason, I want to tell you something.</Text>
+    <BackgroundPath>DoctorOffice</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id4.</ID>
+    <IDNextDialog>id5.</IDNextDialog>
+    <CharacterAvatarPath>CharacterDoctor</CharacterAvatarPath>
+    <Name>Doctor</Name>
+    <Text>We have found a way to put you out of your misery, or to be more precise, to perform brain surgery.</Text>
+    <BackgroundPath>DoctorOffice</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id5.</ID>
+    <IDNextDialog>id6.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>Doctor, that's wonderful.</Text>
+    <BackgroundPath>DoctorOffice</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id6.</ID>
+    <IDNextDialog>id7.</IDNextDialog>
+    <CharacterAvatarPath>CharacterDoctor</CharacterAvatarPath>
+    <Name>Doctor</Name>
+    <Text>However, it's not that simple. The operation will really ease your suffering. But there is also a risk here - the chances of success are low, you may lose the ability to walk or other complications will arise.</Text>
+    <BackgroundPath>DoctorOffice</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id7.</ID>
+    <IDNextDialog>id8.</IDNextDialog>
+    <CharacterAvatarPath>CharacterDoctor</CharacterAvatarPath>
+    <Name>Doctor</Name>
+    <Text>The operation is too complicated and as a result the situation may become even worse.</Text>
+    <BackgroundPath>DoctorOffice</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id8.</ID>
+    <IDNextDialog>id9.</IDNextDialog>
+    <CharacterAvatarPath>CharacterDoctor</CharacterAvatarPath>
+    <Name>Doctor</Name>
+    <Text>That's why I called you today.</Text>
+    <BackgroundPath>DoctorOffice</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id9.</ID>
+    <IDNextDialog>id10.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>Doctor, this is... me...</Text>
+    <BackgroundPath>DoctorOffice</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id10.</ID>
+    <IDNextDialog>id11.</IDNextDialog>
+    <CharacterAvatarPath>CharacterDoctor</CharacterAvatarPath>
+    <Name>Doctor</Name>
+    <Text>I understand that the decision is not an easy one, and the operation can be both a salvation and an even bigger nightmare. I'm giving you a few days to think about it. When I call you again, you will have to give your final answer.</Text>
+    <BackgroundPath>DoctorOffice</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id11.</ID>
+    <IDNextDialog>id12.</IDNextDialog>
+    <CharacterAvatarPath>CharacterDoctor</CharacterAvatarPath>
+    <Name>Doctor</Name>
+    <Text>I can advise you not to spend these days sitting at home and deeply immersed in your thoughts. Try to take a walk, distract yourself.</Text>
+    <BackgroundPath>DoctorOffice</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id12.</ID>
+    <IDNextDialog>id13.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>Okay, I'll try.</Text>
+    <BackgroundPath>DoctorOffice</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id13.</ID>
+    <IDNextDialog>id14.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>I'm finally home.</Text>
+    <BackgroundPath>HouseCorridor</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id14.</ID>
+    <IDNextDialog>id15.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>What should I do...</Text>
+    <BackgroundPath>HouseCorridor</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id15.</ID>
+    <IDNextDialog>id16.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>I'm so scared.</Text>
+    <BackgroundPath>HouseCorridor</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id16.</ID>
+    <IDNextDialog>id17.</IDNextDialog>
+    <Name>Phone</Name>
+    <Text>You have a new message.</Text>
+    <BackgroundPath>HouseCorridor</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id17.</ID>
+    <IDNextDialog>id18.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>Aaaaaah!!! I'm so tired of what they want from me at such a time.</Text>
+    <BackgroundPath>HouseCorridor</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id18.</ID>
+    <IDNextDialog>id19.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>Yes, well, that's all, the morning is wiser in the evening. I'm going to go to bed, it's hardly something important.</Text>
+    <BackgroundPath>RoomHeroDream</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id19.</ID>
+    <IDNextDialog>id20.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>Am I standing in the middle of my room? But I was just lying in my bed...</Text>
+    <BackgroundPath>RoomHeroDream</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id20.</ID>
+    <IDNextDialog>id21.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>Something is wrong here, for some reason the room doesn't look like it usually does, but I can't figure out why.</Text>
+    <BackgroundPath>RoomHeroDream</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id21.</ID>
+    <IDNextDialog>id22.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
+    <Name>Girl</Name>
+    <Text>Hello.</Text>
+    <BackgroundPath>RoomHeroDream</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id22.</ID>
+    <IDNextDialog>id23.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>Who are you?</Text>
+    <BackgroundPath>RoomHeroDream</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id23.</ID>
+    <IDNextDialog>id24.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
+    <Name>Girl</Name>
+    <Text>Who am I? Well, it's going to be hard to explain, so let's skip this question.</Text>
+    <BackgroundPath>RoomHeroDream</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id24.</ID>
+    <IDNextDialog>id25.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>What is this place? This is not my room.</Text>
+    <BackgroundPath>RoomHeroDream</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id25.</ID>
+    <IDNextDialog>id26.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
+    <Name>Girl</Name>
+    <Text>How stupid you are, this is your dream.</Text>
+    <BackgroundPath>RoomHeroDream</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id26.</ID>
+    <IDNextDialog>id27.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>Why do I feel so light?</Text>
+    <BackgroundPath>RoomHeroDream</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id27.</ID>
+    <IDNextDialog>id28.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
+    <Name>Girl</Name>
+    <Text>As I said, all this is your dream, everything that your subconscious wants is manifested here, which is why you feel so good here.</Text>
+    <BackgroundPath>RoomHeroDream</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id28.</ID>
+    <IDNextDialog>id29.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
+    <Name>Girl</Name>
+    <Text>This is the nature of dreams.</Text>
+    <BackgroundPath>RoomHeroDream</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id29.</ID>
+    <IDNextDialog>id30.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
+    <Name>Girl</Name>
+    <Text>And to your question who am I, I think I know how to answer, I am the one you want to see next to.</Text>
+    <BackgroundPath>RoomHeroDream</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id30.</ID>
+    <IDNextDialog>id31.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>It's so amazing...</Text>
+    <BackgroundPath>RoomHeroDream</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id31.</ID>
+    <IDNextDialog>id32.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
+    <Name>Girl</Name>
+    <Text>Night is the moment when the world talks to the stars, and hearts talk to dreams.</Text>
+    <BackgroundPath>RoomHeroDream</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id32.</ID>
+    <IDNextDialog>id33.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>I don't even know your name...</Text>
+    <BackgroundPath>RoomHeroDream</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id33.</ID>
+    <IDNextDialog>id34.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
+    <Name>Girl</Name>
+    <Text>And I don't have a name, I don't need it, don't think about it.</Text>
+    <BackgroundPath>RoomHeroDream</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id34.</ID>
+    <IDNextDialog>id35.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>And if I want to wake up and get out of this dream?</Text>
+    <BackgroundPath>RoomHeroDream</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id35.</ID>
+    <IDNextDialog>id36.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
+    <Name>Girl</Name>
+    <Text>You can always wake up, but don't you feel better here?</Text>
+    <BackgroundPath>RoomHeroDream</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id36.</ID>
+    <IDNextDialog>id37.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>You're right. It's such a liberating feeling.</Text>
+    <BackgroundPath>RoomHeroDream</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id37.</ID>
+    <IDNextDialog>id38.</IDNextDialog>
+    <Name> </Name>
+    <Text>Some time later...</Text>
+    <BackgroundPath>RoomHeroDream</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id38.</ID>
+    <IDNextDialog>id39.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>Why are you disappearing?</Text>
+    <BackgroundPath>RoomHeroDream</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id39.</ID>
+    <IDNextDialog>id40.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
+    <Name>Girl</Name>
+    <Text>Meetings in dreams are like tiny stars, they leave their mark, but disappear at dawn.</Text>
+    <BackgroundPath>RoomHeroDream</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id40.</ID>
+    <IDNextDialog>id41.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>It was still a dream, but it was so realistic... As if she was there.</Text>
+    <BackgroundPath>RoomHero</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id41.</ID>
+    <IDNextDialog>id42.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>Probably, some moments can be stored only in the heart.</Text>
+    <BackgroundPath>RoomHero</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id42.</ID>
+    <IDNextDialog>id43.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>I need to go wash up.</Text>
+    <BackgroundPath>RoomHero</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id43.</ID>
+    <IDNextDialog>id44.</IDNextDialog>
+    <Name>Door</Name>
+    <Text>Knock... Knock...</Text>
+    <BackgroundPath>Bathroom</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id44.</ID>
+    <IDNextDialog>id45.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirlfriend</CharacterAvatarPath>
+    <Name>Girlfriend</Name>
+    <Text>Are you there? Are you alive?</Text>
+    <BackgroundPath>Bathroom</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Responses">
+    <ID>id45.</ID>
+    <ResponseList>
+      <Response>
+        <AnswerText>How did you get here?</AnswerText>
+        <IDNextDialog>id46.1</IDNextDialog>
+      </Response>
+      <Response>
+        <AnswerText>What are you doing here?</AnswerText>
+        <IDNextDialog>id46.2</IDNextDialog>
+      </Response>
+    </ResponseList>
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id46.1</ID>
+    <IDNextDialog>id47.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirlfriend</CharacterAvatarPath>
+    <Name>Girlfriend</Name>
+    <Text>And are you still asking me such questions? She opened the door with a key.</Text>
+    <BackgroundPath>Bathroom</BackgroundPath>
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id46.2</ID>
+    <IDNextDialog>id47.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirlfriend</CharacterAvatarPath>
+    <Name>Girlfriend</Name>
+    <Text>What am I doing here? And who didn't answer me? I was already afraid that something had happened to you.</Text>
+    <BackgroundPath>Bathroom</BackgroundPath>
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id47.</ID>
+    <IDNextDialog>id48.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirlfriend</CharacterAvatarPath>
+    <Name>Girlfriend</Name>
+    <Text>As soon as you told me that you were going to the hospital, I didn't get any more news from you.</Text>
+    <BackgroundPath>Bathroom</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id48.</ID>
+    <IDNextDialog>id49.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirlfriend</CharacterAvatarPath>
+    <Name>Girlfriend</Name>
+    <Text>You know I'm worried about you...</Text>
+    <BackgroundPath>Bathroom</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id49.</ID>
+    <IDNextDialog>id50.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>Oh, sorry. After going to the doctor, I was not up to the phone and when I got home, I immediately went to bed.</Text>
+    <BackgroundPath>Bathroom</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id50.</ID>
+    <IDNextDialog>id51.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirlfriend</CharacterAvatarPath>
+    <Name>Girlfriend</Name>
+    <Text>Has your condition become even worse?</Text>
+    <BackgroundPath>Bathroom</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id51.</ID>
+    <IDNextDialog>id52.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>No, nothing like that. That's not the point at all.</Text>
+    <BackgroundPath>Bathroom</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id52.</ID>
+    <IDNextDialog>id53.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirlfriend</CharacterAvatarPath>
+    <Name>Girlfriend</Name>
+    <Text>What is it then?</Text>
+    <BackgroundPath>Bathroom</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id53.</ID>
+    <IDNextDialog>id54.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>Well, I'd like to finish washing first.</Text>
+    <BackgroundPath>Bathroom</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id54.</ID>
+    <IDNextDialog>id55.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirlfriend</CharacterAvatarPath>
+    <Name>Girlfriend</Name>
+    <Text>OK, I'll wait. Finish your business, and then we'll talk.</Text>
+    <BackgroundPath>Bathroom</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id55.</ID>
+    <IDNextDialog>id56.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>Make yourself at home, I'll be there soon.</Text>
+    <BackgroundPath>Bathroom</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id56.</ID>
+    <IDNextDialog>id57.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>Did she come here? Because I didn't answer?</Text>
+    <BackgroundPath>Bathroom</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id57.</ID>
+    <IDNextDialog>id58.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>So, well, I sort of cleaned myself up, I look better, but these bruises under my eyes... I can't remember myself without them anymore.</Text>
+    <BackgroundPath>Bathroom</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id58.</ID>
+    <IDNextDialog>id59.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>M-m-m... What is this fragrance.</Text>
+    <BackgroundPath>HouseCorridor</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id59.</ID>
+    <IDNextDialog>id60.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirlfriend</CharacterAvatarPath>
+    <Name>Girlfriend</Name>
+    <Text>Come here, it's time for breakfast.</Text>
+    <BackgroundPath>Kitchen</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id60.</ID>
+    <IDNextDialog>id61.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>But I didn't cook anything.</Text>
+    <BackgroundPath>Kitchen</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id61.</ID>
+    <IDNextDialog>id62.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirlfriend</CharacterAvatarPath>
+    <Name>Girlfriend</Name>
+    <Text>Well, you said it yourself to make me feel at home. And I remember where all the things are after all these years.</Text>
+    <BackgroundPath>Kitchen</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id62.</ID>
+    <IDNextDialog>id63.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirlfriend</CharacterAvatarPath>
+    <Name>Girlfriend</Name>
+    <Text>If I didn't cook anything, what would you eat? Just cereal again? So you will have problems not only with your head, but also with your stomach.</Text>
+    <BackgroundPath>Kitchen</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id63.</ID>
+    <IDNextDialog>id64.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirlfriend</CharacterAvatarPath>
+    <Name>Girlfriend</Name>
+    <Text>So sit down, and let's have breakfast.</Text>
+    <BackgroundPath>Kitchen</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id64.</ID>
+    <IDNextDialog>id65.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>Well, I won't refuse. Enjoy your meal.</Text>
+    <BackgroundPath>Kitchen</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id65.</ID>
+    <IDNextDialog>id66.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirlfriend</CharacterAvatarPath>
+    <Name>Girlfriend</Name>
+    <Text>As for how I got here, you gave me the keys to your apartment yourself, did you forget that you gave your keys to your best friend a few years ago?</Text>
+    <BackgroundPath>Kitchen</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id66.</ID>
+    <IDNextDialog>id67.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>Oh, I really forgot already.</Text>
+    <BackgroundPath>Kitchen</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id67.</ID>
+    <IDNextDialog>id68.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirlfriend</CharacterAvatarPath>
+    <Name>Girlfriend</Name>
+    <Text>I came to make sure you're alive. I was so worried.</Text>
+    <BackgroundPath>Kitchen</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id68.</ID>
+    <IDNextDialog>id69.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirlfriend</CharacterAvatarPath>
+    <Name>Girlfriend</Name>
+    <Text>Now tell me what happened yesterday?</Text>
+    <BackgroundPath>Kitchen</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id69.</ID>
+    <IDNextDialog>id70.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>I went to the doctor again, this time he told me that it was possible to have an operation.</Text>
+    <BackgroundPath>Kitchen</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id70.</ID>
+    <IDNextDialog>id71.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirlfriend</CharacterAvatarPath>
+    <Name>Girlfriend</Name>
+    <Text>Operation? Seriously? That's wonderful.</Text>
+    <BackgroundPath>Kitchen</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id71.</ID>
+    <IDNextDialog>id72.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirlfriend</CharacterAvatarPath>
+    <Name>Girlfriend</Name>
+    <Text>But that's not all that happened to you?</Text>
+    <BackgroundPath>Kitchen</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id72.</ID>
+    <IDNextDialog>id73.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>Yes... The chances of a successful operation are low, and even if it is successful, there is a risk of complications that may be worse than my current condition.</Text>
+    <BackgroundPath>Kitchen</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id73.</ID>
+    <IDNextDialog>id74.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirlfriend</CharacterAvatarPath>
+    <Name>Girlfriend</Name>
+    <Text>What a nightmare. But know that no matter what happens during the operation, and what you will be after it, I will be with you.</Text>
+    <BackgroundPath>Kitchen</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id74.</ID>
+    <IDNextDialog>id75.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirlfriend</CharacterAvatarPath>
+    <Name>Girlfriend</Name>
+    <Text>Have you already signed the consent for the operation?</Text>
+    <BackgroundPath>Kitchen</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id75.</ID>
+    <IDNextDialog>id76.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>No, I'm not sure what to do yet.</Text>
+    <BackgroundPath>Kitchen</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id76.</ID>
+    <IDNextDialog>id77.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirlfriend</CharacterAvatarPath>
+    <Name>Girlfriend</Name>
+    <Text>But I'm just really worried... Is there anything I can do to help?</Text>
+    <BackgroundPath>Kitchen</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id77.</ID>
+    <IDNextDialog>id78.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>Thank you for your concern, but I'll deal with this myself.</Text>
+    <BackgroundPath>Kitchen</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id78.</ID>
+    <IDNextDialog>id79.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>Although there is something I need help with. The doctor told me not to stay at home these days, although I really want to stay here.</Text>
+    <BackgroundPath>Kitchen</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id79.</ID>
+    <IDNextDialog>id80.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirlfriend</CharacterAvatarPath>
+    <Name>Girlfriend</Name>
+    <Text>Oh, that's great, I get it. Then we'll meet at the cafe tomorrow. I'll text you where and at what time. And it's not up for discussion.</Text>
+    <BackgroundPath>Kitchen</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id80.</ID>
+    <IDNextDialog>id81.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>But... Okay, it's useless to argue with you.</Text>
+    <BackgroundPath>Kitchen</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id81.</ID>
+    <IDNextDialog>id82.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirlfriend</CharacterAvatarPath>
+    <Name>Girlfriend</Name>
+    <Text>Okay, I'll go first. There is no need to accompany. While.</Text>
+    <BackgroundPath>Kitchen</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id82.</ID>
+    <IDNextDialog>id83.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>Bye.</Text>
+    <BackgroundPath>Kitchen</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id83.</ID>
+    <IDNextDialog>id84.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>She's always been like this, at least something hasn't changed over time.</Text>
+    <BackgroundPath>Kitchen</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id84.</ID>
+    <IDNextDialog>id85.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>And yet, the operation... the potential will get rid of these torments, but with such complications... What should I do?</Text>
+    <BackgroundPath>Kitchen</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id85.</ID>
+    <IDNextDialog>id86.</IDNextDialog>
+    <Name> </Name>
+    <Text>The same evening.</Text>
+    <BackgroundPath>Kitchen</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id86.</ID>
+    <IDNextDialog>id87.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>It's so late, it's time to go to bed. Moreover, tomorrow it will be necessary to get up early so as not to be late.</Text>
+    <BackgroundPath>RoomHeroDream</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id87.</ID>
+    <IDNextDialog>id88.</IDNextDialog>
+    <Name> </Name>
+    <Text>...</Text>
+    <BackgroundPath>RoomHeroDream</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id88.</ID>
+    <IDNextDialog>id89.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
+    <Name>Girl</Name>
+    <Text>Nice to see you.</Text>
+    <BackgroundPath>ForestPath</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id89.</ID>
+    <IDNextDialog>id90.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>You... here again? Why?</Text>
+    <BackgroundPath>ForestPath</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id90.</ID>
+    <IDNextDialog>id91.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
+    <Name>Girl</Name>
+    <Text>Remember, this is your dream, your dream world. If I'm here, then you want me to be there. A bit mysterious, isn't it? Hee-hee.</Text>
+    <BackgroundPath>ForestPath</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id91.</ID>
+    <IDNextDialog>id92.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
+    <Name>Girl</Name>
+    <Text>While I'm here, let's go for a walk along the forest path.</Text>
+    <BackgroundPath>ForestPath</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id92.</ID>
+    <IDNextDialog>id93.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>With pleasure, let's go.</Text>
+    <BackgroundPath>ForestPath</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id93.</ID>
+    <IDNextDialog>id94.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>I wonder what kind of forest it is? So unlike anything I've ever seen.</Text>
+    <BackgroundPath>ForestPath</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id94.</ID>
+    <IDNextDialog>id95.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
+    <Name>Girl</Name>
+    <Text>But the dream doesn't have to be ordinary, does it?</Text>
+    <BackgroundPath>ForestPath</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id95.</ID>
+    <IDNextDialog>id96.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>You're right.</Text>
+    <BackgroundPath>ForestPath</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id96.</ID>
+    <IDNextDialog>id97.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
+    <Name>Girl</Name>
+    <Text>Oh, look what a lovely creature!</Text>
+    <BackgroundPath>ForestPath</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id97.</ID>
+    <IDNextDialog>id98.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>Unusual, but what is it?</Text>
+    <BackgroundPath>ForestPath</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id98.</ID>
+    <IDNextDialog>id99.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
+    <Name>Girl</Name>
+    <Text>It is necessary to ask you, your world is still.</Text>
+    <BackgroundPath>ForestPath</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id99.</ID>
+    <IDNextDialog>id100.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
+    <Name>Girl</Name>
+    <Text>Don't you want to give it a name?</Text>
+    <BackgroundPath>ForestPath</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Responses">
+    <ID>id100.</ID>
+    <ResponseList>
+      <Response>
+        <AnswerText>Horbit (Horned rabbit)</AnswerText>
+        <IDNextDialog>id101.1</IDNextDialog>
+      </Response>
+      <Response>
+        <AnswerText>Horha (Horned Hare)</AnswerText>
+        <IDNextDialog>id101.1</IDNextDialog>
+      </Response>
+      <Response>
+        <AnswerText>Offer it yourself.</AnswerText>
+        <IDNextDialog>id101.2</IDNextDialog>
+      </Response>
+    </ResponseList>
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id101.1</ID>
+    <IDNextDialog>id102.1</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
+    <Name>Girl</Name>
+    <Text> Hee hee hee, you're so funny.</Text>
+    <BackgroundPath>ForestPath</BackgroundPath>
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id101.2</ID>
+    <IDNextDialog>id102.2</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
+    <Name>Girl</Name>
+    <Text>"Hohei" - how do you like this name?</Text>
+    <BackgroundPath>ForestPath</BackgroundPath>
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id102.1</ID>
+    <IDNextDialog>id103.1</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>How I felt that I shouldn't do it.</Text>
+    <BackgroundPath>ForestPath</BackgroundPath>
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id102.2</ID>
+    <IDNextDialog>id103.2</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text> "Hohei"? Why this name?</Text>
+    <BackgroundPath>ForestPath</BackgroundPath>
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id103.1</ID>
+    <IDNextDialog>id104.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
+    <Name>Girl</Name>
+    <Text>Oh, come on, it turned out nice.</Text>
+    <BackgroundPath>ForestPath</BackgroundPath>
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id103.2</ID>
+    <IDNextDialog>id104.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
+    <Name>Girl</Name>
+    <Text>Wordplay, nothing special.</Text>
+    <BackgroundPath>ForestPath</BackgroundPath>
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id104.</ID>
+    <IDNextDialog>id105.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
+    <Name>Girl</Name>
+    <Text>Let's go, because everything interesting is waiting for us ahead.</Text>
+    <BackgroundPath>ForestPath</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id105.</ID>
+    <IDNextDialog>id106.</IDNextDialog>
+    <Name> </Name>
+    <Text>Some time later...</Text>
+    <BackgroundPath>ForestPath</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id106.</ID>
+    <IDNextDialog>id107.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
+    <Name>Girl</Name>
+    <Text>Wow, we've already gone through the whole forest. Look at how many stars there are!</Text>
+    <BackgroundPath>ForestPath</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id107.</ID>
+    <IDNextDialog>id108.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>Yes, it's so beautiful here... it's like being in a fairy tale.</Text>
+    <BackgroundPath>ForestPath</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id108.</ID>
+    <IDNextDialog>id109.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
+    <Name>Girl</Name>
+    <Text>I think it's even better than a fairy tale.</Text>
+    <BackgroundPath>ForestPath</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id109.</ID>
+    <IDNextDialog>id110.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>For some reason it seems to me that I will wake up soon.</Text>
+    <BackgroundPath>ForestPath</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id110.</ID>
+    <IDNextDialog>id111.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>While there is still time, I want to ask you one more question, will I meet you again? And if so, will you stay here forever?</Text>
+    <BackgroundPath>ForestPath</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id111.</ID>
+    <IDNextDialog>id112.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
+    <Name>Girl</Name>
+    <Text>Yes, we will definitely meet again and...</Text>
+    <BackgroundPath>ForestPath</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id112.</ID>
+    <IDNextDialog>id113.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>What did she say? I can't remember until the end. Eh.</Text>
+    <BackgroundPath>RoomHero</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id113.</ID>
+    <IDNextDialog>id114.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>What time is it now?</Text>
+    <BackgroundPath>RoomHero</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id114.</ID>
+    <IDNextDialog>id115.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>There is still a lot of time, you can not rush anywhere.</Text>
+    <BackgroundPath>RoomHero</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id115.</ID>
+    <IDNextDialog>id116.</IDNextDialog>
+    <Name> </Name>
+    <Text>Two hours later.</Text>
+    <BackgroundPath>RoomHero</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id116.</ID>
+    <IDNextDialog>id117.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>I'm late, I'm late... I need to hurry. How could I be half an hour late?</Text>
+    <BackgroundPath>CafeOutside</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id117.</ID>
+    <IDNextDialog>id118.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>She's already sitting at the table, eh...</Text>
+    <BackgroundPath>CafeOutside</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id118.</ID>
+    <IDNextDialog>id119.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirlfriend</CharacterAvatarPath>
+    <Name>Girlfriend</Name>
+    <Text>Welcome! It's good to see you.</Text>
+    <BackgroundPath>CafeInside</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id119.</ID>
+    <IDNextDialog>id120.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>Sorry. I didn't want to be late.</Text>
+    <BackgroundPath>CafeInside</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id120.</ID>
+    <IDNextDialog>id121.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirlfriend</CharacterAvatarPath>
+    <Name>Girlfriend</Name>
+    <Text>Nothing new happened, you were always late.</Text>
+    <BackgroundPath>CafeInside</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id121.</ID>
+    <IDNextDialog>id122.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>And it's cozy here.</Text>
+    <BackgroundPath>CafeInside</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id122.</ID>
+    <IDNextDialog>id123.</IDNextDialog>
+    <CharacterAvatarPath>CharacterWaiter</CharacterAvatarPath>
+    <Name>Waiter</Name>
+    <Text>What will we order?</Text>
+    <BackgroundPath>CafeInside</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id123.</ID>
+    <IDNextDialog>id124.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>I'll take...</Text>
+    <BackgroundPath>CafeInside</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Responses">
+    <ID>id124.</ID>
+    <ResponseList>
+      <Response>
+        <AnswerText>Pizza with cola, please.</AnswerText>
+        <IDNextDialog>id125.1</IDNextDialog>
+      </Response>
+      <Response>
+        <AnswerText>Do you have borscht? I would like it and kvass.</AnswerText>
+        <IDNextDialog>id125.2</IDNextDialog>
+      </Response>
+      <Response>
+        <AnswerText>Let the lady decide.</AnswerText>
+        <IDNextDialog>id125.3</IDNextDialog>
+      </Response>
+    </ResponseList>
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id125.1</ID>
+    <IDNextDialog>id126.1</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
+    <Name>Girl</Name>
+    <Text>I'll take the Caesar salad and pasta.</Text>
+    <BackgroundPath>CafeInside</BackgroundPath>
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id125.2</ID>
+    <IDNextDialog>id126.2</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
+    <Name>Girl</Name>
+    <Text>I'll take the Caesar salad and pasta.</Text>
+    <BackgroundPath>CafeInside</BackgroundPath>
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id125.3</ID>
+    <IDNextDialog>id126.3</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
+    <Name>Girl</Name>
+    <Text>I'll take the Caesar salad, pasta and cocktail, and he'll have pasta with barbecue and something to drink.</Text>
+    <BackgroundPath>CafeInside</BackgroundPath>
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id126.1</ID>
+    <IDNextDialog>id127.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
+    <Name>Girl</Name>
+    <Text>And I was already hoping that you would decide to eat something healthy.</Text>
+    <BackgroundPath>CafeInside</BackgroundPath>
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id126.2</ID>
+    <IDNextDialog>id127.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
+    <Name>Girl</Name>
+    <Text>Oh, unexpectedly!</Text>
+    <BackgroundPath>CafeInside</BackgroundPath>
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id126.3</ID>
+    <IDNextDialog>id127.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
+    <Name>Girl</Name>
+    <Text>I think that's enough for us.</Text>
+    <BackgroundPath>CafeInside</BackgroundPath>
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id127.</ID>
+    <IDNextDialog>id128.</IDNextDialog>
+    <CharacterAvatarPath>CharacterWaiter</CharacterAvatarPath>
+    <Name>Waiter</Name>
+    <Text>OK, we will bring your order now.</Text>
+    <BackgroundPath>CafeInside</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id128.</ID>
+    <IDNextDialog>id129.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirlfriend</CharacterAvatarPath>
+    <Name>Girlfriend</Name>
+    <Text>You look tense. Something happened?</Text>
+    <BackgroundPath>CafeInside</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id129.</ID>
+    <IDNextDialog>id130.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>Nothing serious, just a headache started.</Text>
+    <BackgroundPath>CafeInside</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id130.</ID>
+    <IDNextDialog>id131.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirlfriend</CharacterAvatarPath>
+    <Name>Girlfriend</Name>
+    <Text>And what to do?</Text>
+    <BackgroundPath>CafeInside</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id131.</ID>
+    <IDNextDialog>id132.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>Don't worry, it'll pass soon.</Text>
+    <BackgroundPath>CafeInside</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id132.</ID>
+    <IDNextDialog>id133.</IDNextDialog>
+    <CharacterAvatarPath>CharacterWaiter</CharacterAvatarPath>
+    <Name>Waiter</Name>
+    <Text>Here is your order, bon appetit!</Text>
+    <BackgroundPath>CafeInside</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id133.</ID>
+    <IDNextDialog>id134.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirlfriend</CharacterAvatarPath>
+    <Name>Girlfriend</Name>
+    <Text>Bon appetit.</Text>
+    <BackgroundPath>CafeInside</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id134.</ID>
+    <IDNextDialog>id135.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>And you.</Text>
+    <BackgroundPath>CafeInside</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id135.</ID>
+    <IDNextDialog>id136.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirlfriend</CharacterAvatarPath>
+    <Name>Girlfriend</Name>
+    <Text>Let me taste your drink, and I'll give you mine.</Text>
+    <BackgroundPath>CafeInside</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id136.</ID>
+    <IDNextDialog>id137.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>Mmm... The cocktail is delicious.</Text>
+    <BackgroundPath>CafeInside</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id137.</ID>
+    <IDNextDialog>id138.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirlfriend</CharacterAvatarPath>
+    <Name>Girlfriend</Name>
+    <Text>Yeah, it's the best cocktail in the area.</Text>
+    <BackgroundPath>CafeInside</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id138.</ID>
+    <IDNextDialog>id139.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirlfriend</CharacterAvatarPath>
+    <Name>Girlfriend</Name>
+    <Text>Since the doctor told you not to stay at home, then tomorrow we need to go somewhere. How about a walk in the park near your house? As in childhood?</Text>
+    <BackgroundPath>CafeInside</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id139.</ID>
+    <IDNextDialog>id140.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>Yes, come on, we haven't walked there for several years.</Text>
+    <BackgroundPath>CafeInside</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id140.</ID>
+    <IDNextDialog>id141.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirlfriend</CharacterAvatarPath>
+    <Name>Girlfriend</Name>
+    <Text>Wonderful! I missed our walks so much.</Text>
+    <BackgroundPath>CafeInside</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id141.</ID>
+    <IDNextDialog>id142.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>Once we've eaten, and I've already paid, so let's go home.</Text>
+    <BackgroundPath>CafeInside</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id142.</ID>
+    <IDNextDialog>id143.</IDNextDialog>
+    <Name> </Name>
+    <Text>Back home.</Text>
+    <BackgroundPath>CafeInside</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id143.</ID>
+    <IDNextDialog>id144.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>I wonder if I'll meet that girl again in my dream. I'm thinking of going to bed early.</Text>
+    <BackgroundPath>CafeInside</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id144.</ID>
+    <IDNextDialog>id145.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
+    <Name>Girl</Name>
+    <Text>Hi.</Text>
+    <BackgroundPath>ForestElves</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id145.</ID>
+    <IDNextDialog>id146.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>Hi... I'm glad we met again.</Text>
+    <BackgroundPath>ForestElves</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id146.</ID>
+    <IDNextDialog>id147.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
+    <Name>Girl</Name>
+    <Text>Like I said, I'm here again.</Text>
+    <BackgroundPath>ForestElves</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id147.</ID>
+    <IDNextDialog>id148.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>Yes, it is. Do you remember our conversation at the end of the last meeting?</Text>
+    <BackgroundPath>ForestElves</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id148.</ID>
+    <IDNextDialog>id149.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
+    <Name>Girl</Name>
+    <Text>Of course I remember.</Text>
+    <BackgroundPath>ForestElves</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id149.</ID>
+    <IDNextDialog>id150.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>Could you repeat the answer to my question again? Will you always meet me in your dreams now?</Text>
+    <BackgroundPath>ForestElves</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id150.</ID>
+    <IDNextDialog>id151.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
+    <Name>Girl</Name>
+    <Text>Have you forgotten already?</Text>
+    <BackgroundPath>ForestElves</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id151.</ID>
+    <IDNextDialog>id152.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>No, that's not it. I just didn't hear what you said.</Text>
+    <BackgroundPath>ForestElves</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id152.</ID>
+    <IDNextDialog>id153.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
+    <Name>Girl</Name>
+    <Text>How strange, because it's just a dream. Maybe you just didn't want to hear that answer from me?</Text>
+    <BackgroundPath>ForestElves</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id153.</ID>
+    <IDNextDialog>id154.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
+    <Name>Girl</Name>
+    <Text>Well, I'll answer, but whatever happens later. In the meantime, look at this beautiful moonlight.</Text>
+    <BackgroundPath>ForestElves</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id154.</ID>
+    <IDNextDialog>id155.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>Yes, it's really great.</Text>
+    <BackgroundPath>ForestElves</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id155.</ID>
+    <IDNextDialog>id156.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
+    <Name>Girl</Name>
+    <Text>Let's change the situation, it's getting boring here. Shall we move to the forest of elves?</Text>
+    <BackgroundPath>ForestElves</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id156.</ID>
+    <IDNextDialog>id157.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>A forest of elves, like in fantasy novels?</Text>
+    <BackgroundPath>ForestElves</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id157.</ID>
+    <IDNextDialog>id158.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
+    <Name>Girl</Name>
+    <Text>You could say that.</Text>
+    <BackgroundPath>ForestElves</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id158.</ID>
+    <IDNextDialog>id159.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>How beautiful it is here! Such huge trees and houses, some even on trees.</Text>
+    <BackgroundPath>ForestElfHouses</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id159.</ID>
+    <IDNextDialog>id160.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
+    <Name>Girl</Name>
+    <Text>Look, there's a target and a bow. Let's shoot?</Text>
+    <BackgroundPath>ForestElves</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id160.</ID>
+    <IDNextDialog>id161.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
+    <Name>Girl</Name>
+    <Text>I'm the first!</Text>
+    <BackgroundPath>TargetsForBows</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id161.</ID>
+    <IDNextDialog>id162.</IDNextDialog>
+    <Name> </Name>
+    <Text>After firing three arrows, she hit right on target each time.</Text>
+    <BackgroundPath>TargetsForBows</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id162.</ID>
+    <IDNextDialog>id163.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>And I don't even know how to shoot.</Text>
+    <BackgroundPath>TargetsForBows</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id163.</ID>
+    <IDNextDialog>id164.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>Great!</Text>
+    <BackgroundPath>TargetsForBows</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id164.</ID>
+    <IDNextDialog>id165.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
+    <Name>Girl</Name>
+    <Text>Thank you.</Text>
+    <BackgroundPath>TargetsForBows</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id165.</ID>
+    <IDNextDialog>id166.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
+    <Name>Girl</Name>
+    <Text>Now it's your turn.</Text>
+    <BackgroundPath>TargetsForBows</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id166.</ID>
+    <IDNextDialog>id167.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>But I can't.</Text>
+    <BackgroundPath>TargetsForBows</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id167.</ID>
+    <IDNextDialog>id168.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
+    <Name>Girl</Name>
+    <Text>It's simple, pull the bowstring, aim and shoot.</Text>
+    <BackgroundPath>TargetsForBows</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id168.</ID>
+    <IDNextDialog>id169.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>Okay, just don't laugh.</Text>
+    <BackgroundPath>TargetsForBows</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id169.</ID>
+    <IDNextDialog>id170.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
+    <Name>Girl</Name>
+    <Text>I promise to try.</Text>
+    <BackgroundPath>TargetsForBows</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id170.</ID>
+    <IDNextDialog>id171.</IDNextDialog>
+    <Name> </Name>
+    <Text>After firing three times, none of the arrows reached the target.</Text>
+    <BackgroundPath>TargetsForBows</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id171.</ID>
+    <IDNextDialog>id172.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
+    <Name>Girl</Name>
+    <Text>Hee-hee.</Text>
+    <BackgroundPath>TargetsForBows</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id172.</ID>
+    <IDNextDialog>id173.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>Eh.</Text>
+    <BackgroundPath>TargetsForBows</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id173.</ID>
+    <IDNextDialog>id174.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>Tell me, I wonder why we are in the village of elves, but they are not here?</Text>
+    <BackgroundPath>TargetsForBows</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id174.</ID>
+    <IDNextDialog>id175.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
+    <Name>Girl</Name>
+    <Text>Maybe they just didn't show up because you didn't want to.</Text>
+    <BackgroundPath>TargetsForBows</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id175.</ID>
+    <IDNextDialog>id176.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
+    <Name>Girl</Name>
+    <Text>Maybe you only wanted to be with me?</Text>
+    <BackgroundPath>TargetsForBows</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Responses">
+    <ID>id176.</ID>
+    <ResponseList>
+      <Response>
+        <AnswerText> Yes, it is.</AnswerText>
+        <IDNextDialog>id177.1</IDNextDialog>
+      </Response>
+      <Response>
+        <AnswerText>No, it's probably something else.</AnswerText>
+        <IDNextDialog>id177.2</IDNextDialog>
+      </Response>
+    </ResponseList>
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id177.1</ID>
+    <IDNextDialog>id178.1</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
+    <Name>Girl</Name>
+    <Text>This is for your honesty</Text>
+    <BackgroundPath>TargetsForBows</BackgroundPath>
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id177.2</ID>
+    <IDNextDialog>id178.2</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
+    <Name>Girl</Name>
+    <Text>That's how it is, you have to be more honest.</Text>
+    <BackgroundPath>TargetsForBows</BackgroundPath>
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id178.1</ID>
+    <IDNextDialog>id179.</IDNextDialog>
+    <Name> </Name>
+    <Text>She kissed him.</Text>
+    <BackgroundPath>TargetsForBows</BackgroundPath>
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id178.2</ID>
+    <IDNextDialog>id179.</IDNextDialog>
+    <Name> </Name>
+    <Text>She frowned.</Text>
+    <BackgroundPath>TargetsForBows</BackgroundPath>
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id179.</ID>
+    <IDNextDialog>id180.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
+    <Name>Girl</Name>
+    <Text>It's time to say goodbye, we'll continue next time. Bye, bye.</Text>
+    <BackgroundPath>TargetsForBows</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id180.</ID>
+    <IDNextDialog>id181.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>Goodbye...</Text>
+    <BackgroundPath>TargetsForBows</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id181.</ID>
+    <IDNextDialog>id182.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>Kha... Kha...</Text>
+    <BackgroundPath>RoomHero</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id182.</ID>
+    <IDNextDialog>id183.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>And I've already started to forget that I'm just a step away from death.</Text>
+    <BackgroundPath>RoomHero</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id183.</ID>
+    <IDNextDialog>id184.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>Is it lunch already? It's time to pack up and go.</Text>
+    <BackgroundPath>RoomHero</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id184.</ID>
+    <IDNextDialog>id185.</IDNextDialog>
+    <Name> </Name>
+    <Text>Having reached the destination.</Text>
+    <BackgroundPath>RoomHero</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id185.</ID>
+    <IDNextDialog>id186.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>I even came earlier this time. It remains only to wait for her.</Text>
+    <BackgroundPath>Park</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id186.</ID>
+    <IDNextDialog>id187.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirlfriend</CharacterAvatarPath>
+    <Name>Girlfriend</Name>
+    <Text>Who are we waiting for?</Text>
+    <BackgroundPath>Park</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id187.</ID>
+    <IDNextDialog>id188.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>Oh, you scared me. Hi.</Text>
+    <BackgroundPath>Park</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id188.</ID>
+    <IDNextDialog>id189.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirlfriend</CharacterAvatarPath>
+    <Name>Girlfriend</Name>
+    <Text>Haha, hello.</Text>
+    <BackgroundPath>Park</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id189.</ID>
+    <IDNextDialog>id190.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirlfriend</CharacterAvatarPath>
+    <Name>Girlfriend</Name>
+    <Text>How do you feel?</Text>
+    <BackgroundPath>Park</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id190.</ID>
+    <IDNextDialog>id191.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>Actually, not really, today was another headache attack, so that's it, but I think that everything is fine now.</Text>
+    <BackgroundPath>Park</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id191.</ID>
+    <IDNextDialog>id192.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirlfriend</CharacterAvatarPath>
+    <Name>Girlfriend</Name>
+    <Text>Why are we just sitting there for so long? Let's go for a walk.</Text>
+    <BackgroundPath>Park</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id192.</ID>
+    <IDNextDialog>id193.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>Okay, let's go...</Text>
+    <BackgroundPath>Park</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id193.</ID>
+    <IDNextDialog>id194.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirlfriend</CharacterAvatarPath>
+    <Name>Girlfriend</Name>
+    <Text> Look how beautiful the fish are. One, two, three... how many!</Text>
+    <BackgroundPath>PondWithFish</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id194.</ID>
+    <IDNextDialog>id195.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirlfriend</CharacterAvatarPath>
+    <Name>Girlfriend</Name>
+    <Text>I've never seen so many of them here before.</Text>
+    <BackgroundPath>PondWithFish</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id195.</ID>
+    <IDNextDialog>id196.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>Let's go buy bread to feed them.</Text>
+    <BackgroundPath>PondWithFish</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id196.</ID>
+    <IDNextDialog>id197.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirlfriend</CharacterAvatarPath>
+    <Name>Girlfriend</Name>
+    <Text>Yes, with pleasure.</Text>
+    <BackgroundPath>PondWithFish</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id197.</ID>
+    <IDNextDialog>id198.</IDNextDialog>
+    <Name> </Name>
+    <Text>They're coming back from the store.</Text>
+    <BackgroundPath>PondWithFish</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id198.</ID>
+    <IDNextDialog>id199.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>Here's your half.</Text>
+    <BackgroundPath>PondWithFish</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id199.</ID>
+    <IDNextDialog>id200.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirlfriend</CharacterAvatarPath>
+    <Name>Girlfriend</Name>
+    <Text>Thank you.</Text>
+    <BackgroundPath>PondWithFish</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id200.</ID>
+    <IDNextDialog>id201.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirlfriend</CharacterAvatarPath>
+    <Name>Girlfriend</Name>
+    <Text>There were even more of them as soon as we threw bread.</Text>
+    <BackgroundPath>PondWithFish</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id201.</ID>
+    <IDNextDialog>id202.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>They ate everything so quickly.</Text>
+    <BackgroundPath>PondWithFish</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id202.</ID>
+    <IDNextDialog>id203.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>Let's move on.</Text>
+    <BackgroundPath>Park</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id203.</ID>
+    <IDNextDialog>id204.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>Ahem... ahem...</Text>
+    <BackgroundPath>Park</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id204.</ID>
+    <IDNextDialog>id205.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirlfriend</CharacterAvatarPath>
+    <Name>Girlfriend</Name>
+    <Text>Does your head hurt again?</Text>
+    <BackgroundPath>Park</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id205.</ID>
+    <IDNextDialog>id206.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>Yes, it will pass soon. Let's sit on the bench for now.</Text>
+    <BackgroundPath>Park</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id206.</ID>
+    <IDNextDialog>id207.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>Is it normal that you spend so much time with me? After all, you have a job, and it's not a day off. Won't you have a problem with that?</Text>
+    <BackgroundPath>Park</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id207.</ID>
+    <IDNextDialog>id208.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirlfriend</CharacterAvatarPath>
+    <Name>Girlfriend</Name>
+    <Text>Don't worry about it, I work remotely, and I have plans for the week ahead fulfilled. And if anything, I can say that I have some difficulties. Hee-hee.</Text>
+    <BackgroundPath>Park</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id208.</ID>
+    <IDNextDialog>id209.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>I see you like working as a designer.</Text>
+    <BackgroundPath>Park</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id209.</ID>
+    <IDNextDialog>id210.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirlfriend</CharacterAvatarPath>
+    <Name>Girlfriend</Name>
+    <Text>Yes, and how is your job?</Text>
+    <BackgroundPath>Park</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id210.</ID>
+    <IDNextDialog>id211.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>Nothing special, I quit three weeks ago. And there are no problems with money, I have accumulated enough.</Text>
+    <BackgroundPath>Park</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id211.</ID>
+    <IDNextDialog>id212.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>The headache is gone, let's move on.</Text>
+    <BackgroundPath>Park</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id212.</ID>
+    <IDNextDialog>id213.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>It's getting dark, it's probably time for us to disperse.</Text>
+    <BackgroundPath>Park</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id213.</ID>
+    <IDNextDialog>id214.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirlfriend</CharacterAvatarPath>
+    <Name>Girlfriend</Name>
+    <Text>Yes, probably. Tomorrow I will wait for you at my house at 10 o'clock, let's go to the forest for a picnic. See you tomorrow!</Text>
+    <BackgroundPath>Park</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id214.</ID>
+    <IDNextDialog>id215.</IDNextDialog>
+    <Name> </Name>
+    <Text>Back home.</Text>
+    <BackgroundPath>Park</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id215.</ID>
+    <IDNextDialog>id216.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>Mmm...</Text>
+    <BackgroundPath>RoomHero</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id216.</ID>
+    <IDNextDialog>id217.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>My head hurts so much, I barely got home.</Text>
+    <BackgroundPath>RoomHero</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id217.</ID>
+    <IDNextDialog>id218.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>We need to fall asleep and rest faster.</Text>
+    <BackgroundPath>RoomHero</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id218.</ID>
+    <IDNextDialog>id219.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
+    <Name>Girl</Name>
+    <Text>I've been waiting for you.</Text>
+    <BackgroundPath>RoomHeroDream</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id219.</ID>
+    <IDNextDialog>id220.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>Hi.</Text>
+    <BackgroundPath>RoomHeroDream</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id220.</ID>
+    <IDNextDialog>id221.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
+    <Name>Girl</Name>
+    <Text>What do you say about traveling to different places? If you don't mind, of course.</Text>
+    <BackgroundPath>RoomHeroDream</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id221.</ID>
+    <IDNextDialog>id222.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>Oh, hello! Of course I don't mind. The last adventure was so interesting and exciting.</Text>
+    <BackgroundPath>RoomHeroDream</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id222.</ID>
+    <IDNextDialog>id223.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
+    <Name>Girl</Name>
+    <Text>I'm very glad you liked it. Then let's hit the road - I know a lot of amazing places that I want to show you.</Text>
+    <BackgroundPath>RoomHeroDream</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id223.</ID>
+    <IDNextDialog>id224.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
+    <Name>Girl</Name>
+    <Text>How do you like this palace? Extraordinarily beautiful, isn't it?</Text>
+    <BackgroundPath>Castle</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id224.</ID>
+    <IDNextDialog>id225.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>Not just beautiful - magnificent and majestic!</Text>
+    <BackgroundPath>Castle</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id225.</ID>
+    <IDNextDialog>id226.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
+    <Name>Girl</Name>
+    <Text>I'm glad you liked him. Then let's move on to the next item on today's agenda.</Text>
+    <BackgroundPath>Castle</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id226.</ID>
+    <IDNextDialog>id227.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>Which one is that?</Text>
+    <BackgroundPath>Castle</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id227.</ID>
+    <IDNextDialog>id228.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
+    <Name>Girl</Name>
+    <Text>Today we are waiting for a ball right in this palace - just for the two of us.</Text>
+    <BackgroundPath>Castle</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id228.</ID>
+    <IDNextDialog>id229.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>But I can't dance, and there's no music here...</Text>
+    <BackgroundPath>Castle</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id229.</ID>
+    <IDNextDialog>id230.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
+    <Name>Girl</Name>
+    <Text>Oh, you don't have to worry about not being able to dance. And I'll deal with the music now.</Text>
+    <BackgroundPath>Castle</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id230.</ID>
+    <IDNextDialog>id231.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
+    <Name>Girl</Name>
+    <Text>Come here.</Text>
+    <BackgroundPath>Castle</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id231.</ID>
+    <IDNextDialog>id232.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>Unbelievable, I'm doing it!</Text>
+    <BackgroundPath>Castle</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id232.</ID>
+    <IDNextDialog>id233.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
+    <Name>Girl</Name>
+    <Text>And it turns out very well!</Text>
+    <BackgroundPath>Castle</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id233.</ID>
+    <IDNextDialog>id234.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>Ugh, finally we're done.</Text>
+    <BackgroundPath>Castle</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id234.</ID>
+    <IDNextDialog>id235.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
+    <Name>Girl</Name>
+    <Text>After that we will go to the next place.</Text>
+    <BackgroundPath>Castle</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id235.</ID>
+    <IDNextDialog>id236.</IDNextDialog>
+    <Name> </Name>
+    <Text>They visited several other different places.</Text>
+    <BackgroundPath>Castle</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id236.</ID>
+    <IDNextDialog>id237.</IDNextDialog>
+    <Name> </Name>
+    <Text>On a floating island.</Text>
+    <BackgroundPath>FloatingIsland</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id237.</ID>
+    <IDNextDialog>id238.</IDNextDialog>
+    <Name> </Name>
+    <Text>We rode canyons on the frozen ocean.</Text>
+    <BackgroundPath>FrozenOcean</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id238.</ID>
+    <IDNextDialog>id239.</IDNextDialog>
+    <Name> </Name>
+    <Text>We visited the library where the stories of all the worlds are recorded.</Text>
+    <BackgroundPath>Library</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id239.</ID>
+    <IDNextDialog>id240.</IDNextDialog>
+    <Name> </Name>
+    <Text>We went fishing from a pirate ship.</Text>
+    <BackgroundPath>PirateShip</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id240.</ID>
+    <IDNextDialog>id241.</IDNextDialog>
+    <Name> </Name>
+    <Text>Tried the rarest fruits.</Text>
+    <BackgroundPath>Orchard</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id241.</ID>
+    <IDNextDialog>id242.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
+    <Name>Girl</Name>
+    <Text>This is where our adventure today comes to an end.</Text>
+    <BackgroundPath>Orchard</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id242.</ID>
+    <IDNextDialog>id243.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>Already? It was just incredible, so many new and interesting things.</Text>
+    <BackgroundPath>Orchard</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id243.</ID>
+    <IDNextDialog>id244.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
+    <Name>Girl</Name>
+    <Text>Goodbye.</Text>
+    <BackgroundPath>Orchard</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id244.</ID>
+    <IDNextDialog>id245.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>She disappeared again as suddenly as she appeared.</Text>
+    <BackgroundPath>RoomHero</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id245.</ID>
+    <IDNextDialog>id246.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>I can't even imagine what it would be like to fall asleep one day and not meet you.</Text>
+    <BackgroundPath>RoomHero</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id246.</ID>
+    <IDNextDialog>id247.</IDNextDialog>
+    <Name> </Name>
+    <Text>Having gathered, he goes to an appointment.</Text>
+    <BackgroundPath>RoomHero</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id247.</ID>
+    <IDNextDialog>id248.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>Girl, aren't you waiting for me?</Text>
+    <BackgroundPath>GirlfriendHouseMorning</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id248.</ID>
+    <IDNextDialog>id249.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirlfriend</CharacterAvatarPath>
+    <Name>Girlfriend</Name>
+    <Text>Who knows, but who are you? Hee-hee.</Text>
+    <BackgroundPath>GirlfriendHouseMorning</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Responses">
+    <ID>id249.</ID>
+    <ResponseList>
+      <Response>
+        <AnswerText>Prince on a white horse.</AnswerText>
+        <IDNextDialog>id250.1</IDNextDialog>
+      </Response>
+      <Response>
+        <AnswerText>Zombies.</AnswerText>
+        <IDNextDialog>id250.2</IDNextDialog>
+      </Response>
+      <Response>
+        <AnswerText>Let's not make these jokes.</AnswerText>
+        <IDNextDialog>id250.3</IDNextDialog>
+      </Response>
+    </ResponseList>
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id250.1</ID>
+    <IDNextDialog>id251.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirlfriend</CharacterAvatarPath>
+    <Name>Girlfriend</Name>
+    <Text>And where did you lose the horse? Hee-hee-hee.</Text>
+    <BackgroundPath>GirlfriendHouseMorning</BackgroundPath>
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id250.2</ID>
+    <IDNextDialog>id251.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirlfriend</CharacterAvatarPath>
+    <Name>Girlfriend</Name>
+    <Text> Well, with your bruises under your eyes, you really look like a zombie.</Text>
+    <BackgroundPath>GirlfriendHouseMorning</BackgroundPath>
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id250.3</ID>
+    <IDNextDialog>id251.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirlfriend</CharacterAvatarPath>
+    <Name>Girlfriend</Name>
+    <Text> Well, you're a bore...</Text>
+    <BackgroundPath>GirlfriendHouseMorning</BackgroundPath>
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id251.</ID>
+    <IDNextDialog>id252.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirlfriend</CharacterAvatarPath>
+    <Name>Girlfriend</Name>
+    <Text>Okay, let's go.</Text>
+    <BackgroundPath>GirlfriendHouseMorning</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id252.</ID>
+    <IDNextDialog>id253.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirlfriend</CharacterAvatarPath>
+    <Name>Girlfriend</Name>
+    <Text>The weather is so beautiful, isn't it? Just the perfect day to enjoy a moment together.</Text>
+    <BackgroundPath>Grassland</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id253.</ID>
+    <IDNextDialog>id254.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>Yes, this is exactly what we need. The nature around us creates such an atmosphere of calm and relaxation.</Text>
+    <BackgroundPath>Grassland</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id254.</ID>
+    <IDNextDialog>id255.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirlfriend</CharacterAvatarPath>
+    <Name>Girlfriend</Name>
+    <Text>Look, there's a lake. What if we spend some time on the shore and refresh ourselves? The water looks so attractive.</Text>
+    <BackgroundPath>LakeWithBeach</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id255.</ID>
+    <IDNextDialog>id256.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>Great idea.</Text>
+    <BackgroundPath>LakeWithBeach</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id256.</ID>
+    <IDNextDialog>id257.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>Look what I have! Hee-hee, gotcha! How do you like the water?</Text>
+    <BackgroundPath>LakeWithBeach</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id257.</ID>
+    <IDNextDialog>id258.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirlfriend</CharacterAvatarPath>
+    <Name>Girlfriend</Name>
+    <Text>Oh, you got it! Now I have to take revenge!</Text>
+    <BackgroundPath>LakeWithBeach</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id258.</ID>
+    <IDNextDialog>id259.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>Okay, okay, you won! But I won't give up!</Text>
+    <BackgroundPath>LakeWithBeach</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id259.</ID>
+    <IDNextDialog>id260.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirlfriend</CharacterAvatarPath>
+    <Name>Girlfriend</Name>
+    <Text>I want you to know that I am always here for you. Whatever difficulties come, we will overcome them together.</Text>
+    <BackgroundPath>LakeWithBeach</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id260.</ID>
+    <IDNextDialog>id261.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirlfriend</CharacterAvatarPath>
+    <Name>Girlfriend</Name>
+    <Text>Looking at you, I know that our path ahead will be bright.</Text>
+    <BackgroundPath>LakeWithBeach</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id261.</ID>
+    <IDNextDialog>id262.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>...</Text>
+    <BackgroundPath>LakeWithBeach</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id262.</ID>
+    <IDNextDialog>id263.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>Look, the sun is starting to disappear below the horizon. What a beautiful end to the day.</Text>
+    <BackgroundPath>SunsetInForest</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id263.</ID>
+    <IDNextDialog>id264.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirlfriend</CharacterAvatarPath>
+    <Name>Girlfriend</Name>
+    <Text>So it's time to go back.</Text>
+    <BackgroundPath>SunsetInForest</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id264.</ID>
+    <IDNextDialog>id265.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirlfriend</CharacterAvatarPath>
+    <Name>Girlfriend</Name>
+    <Text>Then where would we meet tomorrow? Can't think of anything?</Text>
+    <BackgroundPath>SunsetInForest</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id265.</ID>
+    <IDNextDialog>id266.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>If you don't have any ideas, then I'll choose, we'll go to the cinema.</Text>
+    <BackgroundPath>SunsetInForest</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id266.</ID>
+    <IDNextDialog>id267.</IDNextDialog>
+    <Name>Caption under the picture</Name>
+    <Text>"Moments that strengthen our bond."</Text>
+    <BackgroundPath>HoldingHands</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id267.</ID>
+    <IDNextDialog>id268.</IDNextDialog>
+    <Name> </Name>
+    <Text>Coming home and falling asleep.</Text>
+    <BackgroundPath>HoldingHands</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id268.</ID>
+    <IDNextDialog>id269.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>Something about this night...</Text>
+    <BackgroundPath>ForestPath</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id269.</ID>
+    <IDNextDialog>id270.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
+    <Name>Girl</Name>
+    <Text>I'm here!</Text>
+    <BackgroundPath>ForestPath</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id270.</ID>
+    <IDNextDialog>id271.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>Every time I meet you, a feeling awakens in my heart that the world is so beautiful and full of mysteries.</Text>
+    <BackgroundPath>ForestPath</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id271.</ID>
+    <IDNextDialog>id272.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
+    <Name>Girl</Name>
+    <Text>All right. The world is full of mysteries, and that's what makes it interesting.</Text>
+    <BackgroundPath>ForestPath</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id272.</ID>
+    <IDNextDialog>id273.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>I'm glad you're here.</Text>
+    <BackgroundPath>ForestPath</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id273.</ID>
+    <IDNextDialog>id274.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>It may sound strange, but I feel that with every meeting you become a part of me. My feelings for you are so strong that sometimes I even begin to doubt whether this is reality or still a dream.</Text>
+    <BackgroundPath>ForestPath</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id274.</ID>
+    <IDNextDialog>id275.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>I feel like you're something I've always missed. And I'm ready to go anywhere, just to be near you.</Text>
+    <BackgroundPath>ForestPath</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id275.</ID>
+    <IDNextDialog>id276.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
+    <Name>Girl</Name>
+    <Text>Your words are the most valuable of all the riddles of this world.</Text>
+    <BackgroundPath>ForestPath</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id276.</ID>
+    <IDNextDialog>id277.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>While I have time, tell me, how long will I be able to meet you in my dreams?</Text>
+    <BackgroundPath>ForestPath</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id277.</ID>
+    <IDNextDialog>id278.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
+    <Name>Girl</Name>
+    <Text>I still haven't answered, as long as your inner self needs me, I'll be here.</Text>
+    <BackgroundPath>ForestPath</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id278.</ID>
+    <IDNextDialog>id279.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>You know, today I received a message from the doctor that tomorrow I have to come and give my consent to the operation.</Text>
+    <BackgroundPath>ForestPath</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id279.</ID>
+    <IDNextDialog>id280.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>And so I thought, the inner self needs you because I'm sick, but what will happen after the operation?</Text>
+    <BackgroundPath>ForestPath</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id280.</ID>
+    <IDNextDialog>id281.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
+    <Name>Girl</Name>
+    <Text>You're starting to think in the right direction.</Text>
+    <BackgroundPath>ForestPath</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id281.</ID>
+    <IDNextDialog>id282.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
+    <Name>Girl</Name>
+    <Text>It's time for me to leave, goodbye.</Text>
+    <BackgroundPath>ForestCrossroads</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id282.</ID>
+    <IDNextDialog>id283.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>But how so, I don't want to lose you!..</Text>
+    <BackgroundPath>ForestCrossroads</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id283.</ID>
+    <IDNextDialog>id284.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
+    <Name>Girl</Name>
+    <Text>It all depends on your choice.</Text>
+    <BackgroundPath>ForestCrossroads</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id284.</ID>
+    <IDNextDialog>id285.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text> If we don't see each other again...</Text>
+    <BackgroundPath>RoomHero</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id285.</ID>
+    <IDNextDialog>id286.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>I don't want to lose her. But I'm so scared...</Text>
+    <BackgroundPath>RoomHero</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id286.</ID>
+    <IDNextDialog>id287.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>Already tonight I will have to give my final decision.</Text>
+    <BackgroundPath>RoomHero</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id287.</ID>
+    <IDNextDialog>id288.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>But which one? I do not know ...</Text>
+    <BackgroundPath>RoomHero</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id288.</ID>
+    <IDNextDialog>id289.</IDNextDialog>
+    <Name> </Name>
+    <Text>After much thought, he began to pack up and went to a scheduled meeting.</Text>
+    <BackgroundPath>RoomHero</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id289.</ID>
+    <IDNextDialog>id290.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirlfriend</CharacterAvatarPath>
+    <Name>Girlfriend</Name>
+    <Text>Look at the beautiful lights of the city! The evening is just fabulous.</Text>
+    <BackgroundPath>NightCity</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id290.</ID>
+    <IDNextDialog>id291.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>It will be an unforgettable evening.</Text>
+    <BackgroundPath>NightCity</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id291.</ID>
+    <IDNextDialog>id292.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirlfriend</CharacterAvatarPath>
+    <Name>Girlfriend</Name>
+    <Text>That's the movie theater. Look how it sparkles!</Text>
+    <BackgroundPath>NightCity</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id292.</ID>
+    <IDNextDialog>id293.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>Yeah, we haven't been here for a long time.</Text>
+    <BackgroundPath>NightCity</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id293.</ID>
+    <IDNextDialog>id294.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirlfriend</CharacterAvatarPath>
+    <Name>Girlfriend</Name>
+    <Text>I am so glad that we are spending this evening together.</Text>
+    <BackgroundPath>NightCity</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id294.</ID>
+    <IDNextDialog>id295.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirlfriend</CharacterAvatarPath>
+    <Name>Girlfriend</Name>
+    <Text>What a cozy room! I haven't been to the cinema for a long time.</Text>
+    <BackgroundPath>Cinema</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id295.</ID>
+    <IDNextDialog>id296.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirlfriend</CharacterAvatarPath>
+    <Name>Girlfriend</Name>
+    <Text>It looks like the movie promises to be interesting. Have you noticed how much attention everyone is watching?</Text>
+    <BackgroundPath>Cinema</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id296.</ID>
+    <IDNextDialog>id297.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>Yes, it's impressive. Probably, the movie is really good.</Text>
+    <BackgroundPath>Cinema</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id297.</ID>
+    <IDNextDialog>id298.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirlfriend</CharacterAvatarPath>
+    <Name>Girlfriend</Name>
+    <Text>I can't believe what an unexpected twist!</Text>
+    <BackgroundPath>Cinema</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id298.</ID>
+    <IDNextDialog>id299.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>Yes, screenwriters really know how to surprise.</Text>
+    <BackgroundPath>Cinema</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id299.</ID>
+    <IDNextDialog>id300.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirlfriend</CharacterAvatarPath>
+    <Name>Girlfriend</Name>
+    <Text>Did you see how the Hero unexpectedly met his old friend?</Text>
+    <BackgroundPath>Cinema</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id300.</ID>
+    <IDNextDialog>id301.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>Of course, it was a shock for everyone, including me. I was sure he would never see him again.</Text>
+    <BackgroundPath>Cinema</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id301.</ID>
+    <IDNextDialog>id302.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirlfriend</CharacterAvatarPath>
+    <Name>Girlfriend</Name>
+    <Text>It's so touching...</Text>
+    <BackgroundPath>Cinema</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id302.</ID>
+    <IDNextDialog>id303.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>Yes, such moments make you think.</Text>
+    <BackgroundPath>Cinema</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id303.</ID>
+    <IDNextDialog>id304.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirlfriend</CharacterAvatarPath>
+    <Name>Girlfriend</Name>
+    <Text>The movie seems to be ending. Time has passed so quickly.</Text>
+    <BackgroundPath>Cinema</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id304.</ID>
+    <IDNextDialog>id305.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>Yes, but I'm glad we could share this evening together.</Text>
+    <BackgroundPath>Cinema</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id305.</ID>
+    <IDNextDialog>id306.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirlfriend</CharacterAvatarPath>
+    <Name>Girlfriend</Name>
+    <Text> The movie was really exciting. It's so great that we decided to spend this evening here.</Text>
+    <BackgroundPath>NightCity</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id306.</ID>
+    <IDNextDialog>id307.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>I agree, it was unforgettable. Thank you for sharing this evening with me.</Text>
+    <BackgroundPath>NightCity</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id307.</ID>
+    <IDNextDialog>id308.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>Come on, it's time to get back to reality.</Text>
+    <BackgroundPath>NightCity</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id308.</ID>
+    <IDNextDialog>id309.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirlfriend</CharacterAvatarPath>
+    <Name>Girlfriend</Name>
+    <Text>Soon you will have to go to the hospital to make a decision.</Text>
+    <BackgroundPath>NightCity</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id309.</ID>
+    <IDNextDialog>id310.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirlfriend</CharacterAvatarPath>
+    <Name>Girlfriend</Name>
+    <Text>You know, before that I want to say something important.</Text>
+    <BackgroundPath>NightCity</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id310.</ID>
+    <IDNextDialog>id311.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>Of course, I'm all attention.</Text>
+    <BackgroundPath>NightCity</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id311.</ID>
+    <IDNextDialog>id312.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirlfriend</CharacterAvatarPath>
+    <Name>Girlfriend</Name>
+    <Text>I wanted you to know that I appreciate you more than words can express. I have long been... I'm in love with you.</Text>
+    <BackgroundPath>NightCity</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id312.</ID>
+    <IDNextDialog>id313.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>I... I don't even know what to say.</Text>
+    <BackgroundPath>NightCity</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id313.</ID>
+    <IDNextDialog>id314.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirlfriend</CharacterAvatarPath>
+    <Name>Girlfriend</Name>
+    <Text>I know we had our difficulties, but... I want to be there for you, to support you in everything, no matter what you decide. We can get through this together.</Text>
+    <BackgroundPath>NightCity</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id314.</ID>
+    <IDNextDialog>id315.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>Thank you for telling me that. You... you are also important to me.</Text>
+    <BackgroundPath>NightCity</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id315.</ID>
+    <IDNextDialog>id316.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>(I can't deny that she means a lot to me. But is it worth taking the risk and taking the next step?)</Text>
+    <BackgroundPath>NightCity</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id316.</ID>
+    <IDNextDialog>id317.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirlfriend</CharacterAvatarPath>
+    <Name>Girlfriend</Name>
+    <Text>Are you okay?</Text>
+    <BackgroundPath>NightCity</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id317.</ID>
+    <IDNextDialog>id318.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>With a smile. Yes, I just think a lot about what's going on. Thank you for sharing your feelings with me.</Text>
+    <BackgroundPath>NightCity</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id318.</ID>
+    <IDNextDialog>id319.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirlfriend</CharacterAvatarPath>
+    <Name>Girlfriend</Name>
+    <Text>We can go step by step. I'm not rushing you.</Text>
+    <BackgroundPath>NightCity</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id319.</ID>
+    <IDNextDialog>id320.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>With a deep sigh. Thank you for understanding.</Text>
+    <BackgroundPath>NightCity</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id320.</ID>
+    <IDNextDialog>id321.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirlfriend</CharacterAvatarPath>
+    <Name>Girlfriend</Name>
+    <Text>Thank you for guiding me. It was a really wonderful evening.</Text>
+    <BackgroundPath>NightCity</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id321.</ID>
+    <IDNextDialog>id322.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>Yes, I was. I'm glad we got to talk.</Text>
+    <BackgroundPath>NightCity</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id322.</ID>
+    <IDNextDialog>id323.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirlfriend</CharacterAvatarPath>
+    <Name>Girlfriend</Name>
+    <Text>So what do you think?</Text>
+    <BackgroundPath>NightCity</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id323.</ID>
+    <IDNextDialog>id324.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>Looking down. This... something I'll have to deal with. But I promise I'll think about it.</Text>
+    <BackgroundPath>NightCity</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id324.</ID>
+    <IDNextDialog>id325.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>Have a good night.</Text>
+    <BackgroundPath>GirlfriendHouseEvening</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id325.</ID>
+    <IDNextDialog>id326.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirlfriend</CharacterAvatarPath>
+    <Name>Girlfriend</Name>
+    <Text>You too.</Text>
+    <BackgroundPath>GirlfriendHouseEvening</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id326.</ID>
+    <IDNextDialog>id327.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>She's real. Her feelings are sincere, and I feel the same. But it's so difficult.</Text>
+    <BackgroundPath>GirlfriendHouseEvening</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id327.</ID>
+    <IDNextDialog>id328.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>This whole day has been so intense. On the one hand, the joy of what she said, but on the other – an incredible tension.</Text>
+    <BackgroundPath>GirlfriendHouseEvening</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id328.</ID>
+    <IDNextDialog>id329.</IDNextDialog>
+    <Name> </Name>
+    <Text>Getting to the hospital.</Text>
+    <BackgroundPath>GirlfriendHouseEvening</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id329.</ID>
+    <IDNextDialog>id330.</IDNextDialog>
+    <CharacterAvatarPath>CharacterDoctor</CharacterAvatarPath>
+    <Name>Doctor</Name>
+    <Text>I've been waiting for you, come in.</Text>
+    <BackgroundPath>Hospital</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id330.</ID>
+    <IDNextDialog>id331.</IDNextDialog>
+    <CharacterAvatarPath>CharacterDoctor</CharacterAvatarPath>
+    <Name>Doctor</Name>
+    <Text>Hi. How are you feeling today?</Text>
+    <BackgroundPath>DoctorOffice</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id331.</ID>
+    <IDNextDialog>id332.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>Not very good. These thoughts... these solutions... they give me no peace.</Text>
+    <BackgroundPath>DoctorOffice</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id332.</ID>
+    <IDNextDialog>id333.</IDNextDialog>
+    <CharacterAvatarPath>CharacterDoctor</CharacterAvatarPath>
+    <Name>Doctor</Name>
+    <Text>I understand. Making a decision that can affect your whole life is not easy. I'm here to support you in this.</Text>
+    <BackgroundPath>DoctorOffice</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id333.</ID>
+    <IDNextDialog>id334.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>I feel empty. On the one hand, I want to live. I want to build a future, enjoy the moments.</Text>
+    <BackgroundPath>DoctorOffice</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id334.</ID>
+    <IDNextDialog>id335.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>But on the other hand, these pains and the fact that everything can get even worse... I am afraid that the operation may not be successful, and I will find myself in a worse situation.</Text>
+    <BackgroundPath>DoctorOffice</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id335.</ID>
+    <IDNextDialog>id336.</IDNextDialog>
+    <CharacterAvatarPath>CharacterDoctor</CharacterAvatarPath>
+    <Name>Doctor</Name>
+    <Text>Your feelings are absolutely understandable. The operation is a serious step. We have data about your condition and potential risks, but the decision is yours.</Text>
+    <BackgroundPath>DoctorOffice</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id336.</ID>
+    <IDNextDialog>id337.</IDNextDialog>
+    <CharacterAvatarPath>CharacterDoctor</CharacterAvatarPath>
+    <Name>Doctor</Name>
+    <Text>It is important to listen to your inner voice and understand what is most important to you.</Text>
+    <BackgroundPath>DoctorOffice</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id337.</ID>
+    <IDNextDialog>id338.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>I just don't know which way to choose. What if I make the wrong choice?</Text>
+    <BackgroundPath>DoctorOffice</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id338.</ID>
+    <IDNextDialog>id339.</IDNextDialog>
+    <CharacterAvatarPath>CharacterDoctor</CharacterAvatarPath>
+    <Name>Doctor</Name>
+    <Text>There is no such thing as a "wrong" choice. The choices you make will reflect your values, dreams and fears. Life is full of uncertainty, and it's important to move forward with what you feel inside.</Text>
+    <BackgroundPath>DoctorOffice</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id339.</ID>
+    <IDNextDialog>id340.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>Thank you for your support.</Text>
+    <BackgroundPath>DoctorOffice</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id340.</ID>
+    <IDNextDialog>id341.</IDNextDialog>
+    <CharacterAvatarPath>CharacterDoctor</CharacterAvatarPath>
+    <Name>Doctor</Name>
+    <Text>By the way, you should understand that if you refuse surgery, you won't be able to live long. But if you agree, there is a chance.</Text>
+    <BackgroundPath>DoctorOffice</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id341.</ID>
+    <IDNextDialog>id342.</IDNextDialog>
+    <CharacterAvatarPath>CharacterDoctor</CharacterAvatarPath>
+    <Name>Doctor</Name>
+    <Text>Of course, the chance is very small, your condition is unique, and people like you can be counted on the fingers of one hand. But if everything goes well, then the problems with the head will disappear.</Text>
+    <BackgroundPath>DoctorOffice</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id342.</ID>
+    <IDNextDialog>id343.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>Then I choose...</Text>
+    <BackgroundPath>DoctorOffice</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Responses">
+    <ID>id343.</ID>
+    <ResponseList>
+      <Response>
+        <AnswerText>Consent to the operation.</AnswerText>
+        <IDNextDialog>ending1</IDNextDialog>
+      </Response>
+      <Response>
+        <AnswerText>Refusal of the operation.</AnswerText>
+        <IDNextDialog>ending2</IDNextDialog>
+      </Response>
+    </ResponseList>
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>ending1</ID>
+    <IDNextDialog>id345.</IDNextDialog>
+    <CharacterAvatarPath>CharacterDoctor</CharacterAvatarPath>
+    <Name>Doctor</Name>
+    <Text>Most likely it was a difficult choice.</Text>
+    <BackgroundPath>DoctorOffice</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id345.</ID>
+    <IDNextDialog>id346.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>I still hope that everything will be successful.</Text>
+    <BackgroundPath>DoctorOffice</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id346.</ID>
+    <IDNextDialog>id347.</IDNextDialog>
+    <CharacterAvatarPath>CharacterDoctor</CharacterAvatarPath>
+    <Name>Doctor</Name>
+    <Text>Well, I'll go inform you about your decision and in the next three hours we will begin.</Text>
+    <BackgroundPath>DoctorOffice</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id347.</ID>
+    <IDNextDialog>id348.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>So right away?</Text>
+    <BackgroundPath>DoctorOffice</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id348.</ID>
+    <IDNextDialog>id349.</IDNextDialog>
+    <CharacterAvatarPath>CharacterDoctor</CharacterAvatarPath>
+    <Name>Doctor</Name>
+    <Text>There's not much time left by the end.</Text>
+    <BackgroundPath>DoctorOffice</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id349.</ID>
+    <IDNextDialog>id350.</IDNextDialog>
+    <CharacterAvatarPath>CharacterDoctor</CharacterAvatarPath>
+    <Name>Doctor</Name>
+    <Text>You're ready, aren't you?</Text>
+    <BackgroundPath>DoctorOffice</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id350.</ID>
+    <IDNextDialog>id351.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>Yes, I... I'm ready. I can't say I'm not afraid, but I know it's the only way.</Text>
+    <BackgroundPath>DoctorOffice</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id351.</ID>
+    <IDNextDialog>id352.</IDNextDialog>
+    <CharacterAvatarPath>CharacterDoctor</CharacterAvatarPath>
+    <Name>Doctor</Name>
+    <Text>Everything will be fine. Just relax.</Text>
+    <BackgroundPath>DoctorOffice</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id352.</ID>
+    <IDNextDialog>id353.</IDNextDialog>
+    <Name> </Name>
+    <Text> The operation has begun.</Text>
+    <BackgroundPath>OperatingRoom</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id353.</ID>
+    <IDNextDialog>id354.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirlfriend</CharacterAvatarPath>
+    <Name>Girlfriend</Name>
+    <Text>You're awake.</Text>
+    <BackgroundPath>RoomInHospital</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id354.</ID>
+    <IDNextDialog>id355.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>You're... here.</Text>
+    <BackgroundPath>RoomInHospital</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id355.</ID>
+    <IDNextDialog>id356.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirlfriend</CharacterAvatarPath>
+    <Name>Girlfriend</Name>
+    <Text>Of course, I will always be there for you.</Text>
+    <BackgroundPath>RoomInHospital</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id356.</ID>
+    <IDNextDialog>id357.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>Now I can go forward, build my future... together with you.</Text>
+    <BackgroundPath>RoomInHospital</BackgroundPath>
+    <ActionTrigger>end2</ActionTrigger>
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>ending2</ID>
+    <IDNextDialog>id358.</IDNextDialog>
+    <CharacterAvatarPath>CharacterDoctor</CharacterAvatarPath>
+    <Name>Doctor</Name>
+    <Text>Most likely it was a difficult choice.</Text>
+    <BackgroundPath>DoctorOffice</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id358.</ID>
+    <IDNextDialog>id359.</IDNextDialog>
+    <CharacterAvatarPath>CharacterDoctor</CharacterAvatarPath>
+    <Name>Doctor</Name>
+    <Text>I won't dissuade you. This is most likely our last meeting.</Text>
+    <BackgroundPath>DoctorOffice</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id359.</ID>
+    <IDNextDialog>id360.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>Goodbye.</Text>
+    <BackgroundPath>DoctorOffice</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id360.</ID>
+    <IDNextDialog>id361.</IDNextDialog>
+    <Name> </Name>
+    <Text>Returning home, another headache attack occurred, which could not be compared in strength with any other, having lost consciousness, he fell and did not get up again.</Text>
+    <BackgroundPath>NightCity</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id361.</ID>
+    <IDNextDialog>id362.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
+    <Name>Girl</Name>
+    <Text>You chose the dream world, you chose me.</Text>
+    <BackgroundPath>DreamWorld</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id362.</ID>
+    <IDNextDialog>id363.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>Yes, it is.</Text>
+    <BackgroundPath>DreamWorld</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id363.</ID>
+    <IDNextDialog>id364.</IDNextDialog>
+    <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
+    <Name>Hero</Name>
+    <Text>Where are we now?</Text>
+    <BackgroundPath>DreamWorld</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id364.</ID>
+    <IDNextDialog>id365.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
+    <Name>Girl</Name>
+    <Text>We are in the world that you created by your decision.</Text>
+    <BackgroundPath>DreamWorld</BackgroundPath>
+    <ActionTrigger />
+  </anyType>
+  <anyType xsi:type="Phrase">
+    <ID>id365.</ID>
+    <IDNextDialog>id366.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
+    <Name>Girl</Name>
+    <Text>This is the place where our adventures will begin.</Text>
+    <BackgroundPath>DreamWorld</BackgroundPath>
+    <ActionTrigger>end2</ActionTrigger>
+  </anyType>
+</ArrayOfAnyType>
