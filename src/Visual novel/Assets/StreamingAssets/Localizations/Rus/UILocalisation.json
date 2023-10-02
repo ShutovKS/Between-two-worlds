@@ -1,17 +1,14 @@
 ﻿{
   "GameName": "Между двумя мирами",
-  "LoadGameButton": "Загрузить игру",
-  "StartGameButton": "Начать игру",
+  "LoadGameButton": "Загрузить",
+  "StartGameButton": "Начать",
   "ExitButton": "Выход",
-
   "Title": "Вы уверены?",
   "YesButton": "Да",
   "NoButton": "Нет",
-
   "HistoryButton": "История",
   "SkipButton": "Пропустить",
   "AutoButton": "Авто",
   "FurtherButton": "Далее",
-
   "BackButton": "Назад"
 }

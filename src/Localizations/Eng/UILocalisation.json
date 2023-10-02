@@ -1,7 +1,7 @@
 ﻿{
-  "GameName": "Between two worlds",
-  "LoadGameButton": "Load the game",
-  "StartGameButton": "Start the game",
+  "GameName": "Between two Worlds",
+  "LoadGameButton": "Load",
+  "StartGameButton": "Start",
   "ExitButton": "Exit",
   "Title": "Are you sure?",
   "YesButton": "Yes",

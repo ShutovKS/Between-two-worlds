@@ -2,7 +2,7 @@
 
 public static class Path
 {
-    public const string MainDirectory = @"\Scenario";
+    public const string MainDirectory = @"\Localizations";
     public const string LocalizationDirectory = @"\Visual novel\Assets\StreamingAssets\Localizations";
 
     public const string XmlPath = @"\Dialogues.xml";

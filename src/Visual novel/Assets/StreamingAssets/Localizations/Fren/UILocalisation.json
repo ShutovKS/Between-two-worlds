@@ -1,7 +1,7 @@
 ﻿{
   "GameName": "Entre deux mondes",
-  "LoadGameButton": "Charger le jeu",
-  "StartGameButton": "Démarrer le jeu",
+  "LoadGameButton": "Charger",
+  "StartGameButton": "Démarrer",
   "ExitButton": "Sortie",
   "Title": "Êtes-vous sûr?",
   "YesButton": "Oui",
