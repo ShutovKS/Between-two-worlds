@@ -24,6 +24,7 @@
 */[Tt]rash
 */Logs/
 */.vs/
+.utmp
 *ExportedObj/
 .consulo/
 *.csproj
