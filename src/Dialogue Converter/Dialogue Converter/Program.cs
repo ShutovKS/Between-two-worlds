@@ -42,18 +42,17 @@ List<IPhrase> ParseDialogues(string dialoguePath, CharactersAvatars charactersAv
         dialogues.AddRange(phrases);
     }
 
-    string background = string.Empty;
+    var background = string.Empty;
+    var soundEffect = string.Empty;
     foreach (IPhrase dialogue in dialogues)
     {
         if (dialogue is not Phrase phrase) continue;
-        if (phrase.BackgroundPath == null)
-        {
-            phrase.BackgroundPath = background;
-        }
-        else
-        {
-            background = phrase.BackgroundPath;
-        }
+
+        if (phrase.BackgroundPath == null) phrase.BackgroundPath = background;
+        else background = phrase.BackgroundPath;
+
+        if (phrase.SoundEffect == null) phrase.SoundEffect = soundEffect;
+        else soundEffect = phrase.SoundEffect;
     }
 
     return dialogues;
@@ -84,24 +83,24 @@ IPhrase[] ParseResponseDialogue(int id, string content)
     for (int i = 0; i < contents.Length; i++)
     {
         string part = contents[i];
-        string IDNext = string.Empty;
+        string idNext = string.Empty;
         if (part.Length > 0 && part[^1] == ']')
         {
-            IDNext = ScrapingTools.GetId(id + 1);
+            idNext = ScrapingTools.GetId(id + 1);
             int openBracketIndex = part.IndexOf('[');
             int closeBracketIndex = part.IndexOf(']');
-            IDNext += part.Substring(openBracketIndex + 1, closeBracketIndex - openBracketIndex - 1);
+            idNext += part.Substring(openBracketIndex + 1, closeBracketIndex - openBracketIndex - 1);
             part = part[..openBracketIndex] + part[(closeBracketIndex + 1)..];
         }
         if (ScrapingTools.TryGetUniqueIdInEnd(ref part, out string? uniqueId))
         {
-            IDNext = uniqueId;
+            idNext = uniqueId!;
         }
 
         responseList[i] = new Responses.Response
         {
             AnswerText = part,
-            IDNextDialog = IDNext
+            IDNextDialog = idNext
         };
     }
 
@@ -118,39 +117,40 @@ IPhrase[] ParseSimpleDialogue(int id, string character, string part, CharactersA
 {
     charactersAvatars.TryGetCharacterAvatarPath(character, out string? characterAvatarPath);
     charactersNames.TryGetCharacterName(character, out string? characterName);
-    var background = ScrapingTools.GetBackground(ref part);
-    var actionTrigger = ScrapingTools.GetActionTrigger(ref part);
+    ScrapingTools.TryGetBackground(ref part, out string? backgroundPath);
+    ScrapingTools.TryGetSoundEffect(ref part, out string? soundEffect);
+    ScrapingTools.TryGetActionTrigger(ref part, out string? actionTrigger);
+    ScrapingTools.TryGetUniqueIdInStart(ref part, out string? uniqueId);
+
     Phrase phrase = new Phrase
     {
-        ID = ScrapingTools.GetId(id),
+        ID = uniqueId ?? ScrapingTools.GetId(id),
         IDNextDialog = ScrapingTools.GetId(id + 1),
         ActionTrigger = actionTrigger,
         CharacterAvatarPath = characterAvatarPath,
         Name = characterName,
         Text = part,
-        BackgroundPath = background,
-        SoundEffect = null,
+        BackgroundPath = backgroundPath,
+        SoundEffect = soundEffect
     };
-
-    if (ScrapingTools.TryGetUniqueIdInStart(ref part, out string? uniqueId))
-    {
-        phrase.ID = uniqueId!;
-        phrase.Text = part;
-    }
 
     return new IPhrase[] { phrase };
 }
 
 IPhrase[] ParseBranchingDialogues(int id, string character, string content, CharactersAvatars charactersAvatars, CharactersNames charactersNames)
 {
-    string background = ScrapingTools.GetBackground(ref content);
-    string[] dialogueParts = content.Split('|');
-    IPhrase[] dialogues = new IPhrase[dialogueParts.Length];
+    ScrapingTools.TryGetBackground(ref content, out string? background);
+    ScrapingTools.TryGetSoundEffect(ref content, out string? soundEffect);
+    var ID = ScrapingTools.GetId(id);
+    var IDNext = ScrapingTools.GetId(id + 1);
+    charactersAvatars.TryGetCharacterAvatarPath(character, out string? characterAvatarPath);
+    charactersNames.TryGetCharacterName(character, out string? characterName);
+
+    var dialogueParts = content.Split('|');
+    var dialogues = new IPhrase[dialogueParts.Length];
 
     for (int i = 0; i < dialogueParts.Length; i++)
     {
-        string ID = ScrapingTools.GetId(id);
-        string IDNext = ScrapingTools.GetId(id + 1);
         string part = dialogueParts[i];
 
         if (part[0] == '[')
@@ -169,8 +169,6 @@ IPhrase[] ParseBranchingDialogues(int id, string character, string content, Char
             part = part[..openBracketIndex] + part[(closeBracketIndex + 1)..];
         }
 
-        charactersAvatars.TryGetCharacterAvatarPath(character, out string? characterAvatarPath);
-        charactersNames.TryGetCharacterName(character, out string? characterName);
         dialogues[i] = new Phrase
         {
             ID = ID,
@@ -179,7 +177,7 @@ IPhrase[] ParseBranchingDialogues(int id, string character, string content, Char
             Name = characterName,
             Text = part,
             BackgroundPath = background,
-            SoundEffect = null
+            SoundEffect = soundEffect
         };
     }
 

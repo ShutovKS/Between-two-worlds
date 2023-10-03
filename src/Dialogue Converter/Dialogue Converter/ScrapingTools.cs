@@ -26,27 +26,52 @@ public static class ScrapingTools
         return true;
     }
 
-    public static string? GetBackground(ref string content)
+    public static bool TryGetBackground(ref string content, out string? background)
     {
-        if (!content.Contains('<')) return null;
+        if (!content.Contains('<'))
+        {
+            background = null;
+            return false;
+        }
 
         var openBracketIndex = content.IndexOf('<');
         var closeBracketIndex = content.IndexOf('>');
-        var background = content.Substring(openBracketIndex + 1, closeBracketIndex - openBracketIndex - 1);
+        background = content.Substring(openBracketIndex + 1, closeBracketIndex - openBracketIndex - 1);
         content = content[..openBracketIndex] + content[(closeBracketIndex + 1)..];
-        return background;
+        return true;
     }
 
-    public static string GetActionTrigger(ref string content)
+    public static bool TryGetActionTrigger(ref string content, out string? actionTrigger)
     {
-        if (!content.Contains('{')) return string.Empty;
+        if (!content.Contains('{'))
+        {
+            actionTrigger = null;
+            return false;
+        }
 
         var openBracketIndex = content.IndexOf('{');
         var closeBracketIndex = content.IndexOf('}');
-        var actionTrigger = content.Substring(openBracketIndex + 1, closeBracketIndex - openBracketIndex - 1);
+        actionTrigger = content.Substring(openBracketIndex + 1, closeBracketIndex - openBracketIndex - 1);
         content = content[..openBracketIndex] + content[(closeBracketIndex + 1)..];
-        return actionTrigger;
+        return true;
     }
+
+    public static bool TryGetSoundEffect(ref string content, out string? soundEffect)
+    {
+        if (!content.Contains('$'))
+        {
+            soundEffect = null;
+            return false;
+        }
+
+        var openBracketIndex = content.IndexOf('$');
+        string contentTemp = content[..openBracketIndex] + '.' + content[(openBracketIndex + 1)..];
+        var closeBracketIndex = contentTemp.IndexOf('$');
+        soundEffect = content.Substring(openBracketIndex + 1, closeBracketIndex - openBracketIndex - 1);
+        content = contentTemp[..openBracketIndex] + contentTemp[(closeBracketIndex + 1)..];
+        return true;
+    }
+
 
     public static string GetId(int id)
     {
