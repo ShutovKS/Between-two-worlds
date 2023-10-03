@@ -1,4 +1,4 @@
-CharacterH: <DoctorOffice>Diese Kopfschmerzen... Jeden Tag wird es stärker...
+CharacterH: <DoctorOffice>$FrozenWinter$Diese Kopfschmerzen... Jeden Tag wird es stärker...
 CharacterD: Ich verstehe, dass es dir sehr schwer fällt. Dein Zustand ist wirklich schrecklich.
 CharacterH: Entschuldigung, Doktor, ich bin mir nicht sicher, ob ich es noch lange halten kann.
 CharacterD: Weißt du, ich mache mir Sorgen um deine Worte. Ich habe dich heute aus einem Grund angerufen, ich möchte dir etwas mitteilen.
@@ -17,7 +17,7 @@ CharacterH: Ich habe so viel Angst.
 OtherPhone: Sie haben eine neue Nachricht.
 CharacterH: Aaaaaaa!!! Ich habe es satt, was man in dieser Zeit von mir will.
 CharacterH: <RoomHeroDream>Ja, das ist alles, der Morgen ist am Abend klüger. Ich gehe ins Bett, kaum etwas Wichtiges.
-CharacterH: Stehe ich in der Mitte meines Zimmers? Aber ich lag gerade in meinem Bett...
+CharacterH: $WooScary$Stehe ich in der Mitte meines Zimmers? Aber ich lag gerade in meinem Bett...
 CharacterH: Hier stimmt etwas nicht, aus irgendeinem Grund sieht das Zimmer nicht so aus, wie es normalerweise der Fall ist, aber ich kann nicht verstehen warum.
 CharacterG: Hallo.
 CharacterH: Wer bist du?
@@ -38,7 +38,7 @@ CharacterH: Du hast recht. Es ist so ein befreiendes Gefühl.
 Nothing: Eine Weile später...
 CharacterH: Warum verschwindest du?
 CharacterG: Begegnungen in Träumen – wie die kleinsten Sterne hinterlassen sie ihre Spuren, verschwinden aber im Morgengrauen.
-CharacterH: <RoomHero>Es war immer noch ein Traum, aber es war so realistisch... Als wäre sie da gewesen.
+CharacterH: <RoomHero>$Beanfeast$Es war immer noch ein Traum, aber es war so realistisch... Als wäre sie da gewesen.
 CharacterH: Wahrscheinlich können einige Momente nur im Herzen aufbewahrt werden.
 CharacterH: Wir müssen uns waschen.
 OtherDoor: <Bathroom>Tuck... Klopf...
@@ -86,7 +86,7 @@ CharacterH: Und doch, die Operation... das Potenzial wird diese Qualen loswerden
 Nothing: Am selben Abend.
 CharacterH: <RoomHeroDream>Es ist so spät, es ist Zeit, ins Bett zu gehen. Außerdem müssen Sie morgen früh aufstehen, um nicht zu spät zu kommen.
 Nothing: ...
-CharacterG: <ForestPath>Freut mich, dich zu sehen.
+CharacterG: <ForestPath>$WooScary$Freut mich, dich zu sehen.
 CharacterH: Du... wieder hier? Warum?
 CharacterG: Erinnere dich, es ist dein Traum, deine Traumwelt. Wenn ich hier bin, dann willst du, dass ich für dich da bin. Ein bisschen mysteriös, nicht wahr? Hihi.
 CharacterG: Während ich hier bin, gehen wir entlang des Waldweges spazieren.
@@ -110,7 +110,7 @@ CharacterG: Ich denke, dass es hier noch besser ist als ein Märchen.
 CharacterH: Irgendwie scheint es mir, als würde ich bald aufwachen.
 CharacterH: Solange es noch Zeit ist, möchte ich dir noch eine Frage stellen, ob ich dich noch einmal treffen werde? Und wenn ja, wirst du für immer hier bleiben?
 CharacterG: Ja, wir werden uns auf jeden Fall wiedersehen...
-CharacterH: <RoomHero>Was hat sie geantwortet? Ich kann mich nicht bis zum Ende erinnern. Ach.
+CharacterH: <RoomHero>$Beanfeast$Was hat sie geantwortet? Ich kann mich nicht bis zum Ende erinnern. Ach.
 CharacterH: Wie spät ist es jetzt?
 CharacterH: Es gibt noch viel Zeit, man kann sich nirgendwohin beeilen.
 Nothing: Nach zwei Stunden.
@@ -123,8 +123,8 @@ CharacterH: Es ist gemütlich hier.
 CharacterW: Was werden wir bestellen?
 CharacterH: Ich nehme es...
 CharacterH: #Pizza mit Cola, bitte.[1]|Haben Sie Borschtsch? Ich möchte ihn und Kwas.[2]|Lass die Dame entscheiden.[3]
-CharacterG: [1]Ich werde den Caesar-Salat und die Pasta nehmen.[1]|[2]Ich werde den Caesar-Salat und die Pasta nehmen.[2]|[3]Ich nehme einen Caesar-Salat, eine Pasta und einen Smoothie, ihm eine Pasta mit Schaschlik und etwas zu trinken.[3]
-CharacterG: [1]Und ich hatte schon gehofft, dass du dich dafür entscheidest, etwas Nützliches zu essen.|[2]Oh, unerwartet!|[3]Ich denke, das wird uns reichen.
+CharacterGF: [1]Ich werde den Caesar-Salat und die Pasta nehmen.[1]|[2]Ich werde den Caesar-Salat und die Pasta nehmen.[2]|[3]Ich nehme einen Caesar-Salat, eine Pasta und einen Smoothie, ihm eine Pasta mit Schaschlik und etwas zu trinken.[3]
+CharacterGF: [1]Und ich hatte schon gehofft, dass du dich dafür entscheidest, etwas Nützliches zu essen.|[2]Oh, unerwartet!|[3]Ich denke, das wird uns reichen.
 CharacterW: Okay, wir bringen jetzt Ihre Bestellung mit.
 CharacterGF: Du siehst angespannt aus. Ist etwas passiert?
 CharacterH: Nichts Ernstes, nur der Kopf begann zu schmerzen.
@@ -142,7 +142,7 @@ CharacterGF: Wunderbar! Ich habe unsere Spaziergänge so vermisst.
 CharacterH: Einmal haben wir gegessen und ich habe bereits bezahlt, also lasst uns nach Hause gehen.
 Nothing: Nach Hause zurückgekehrt.
 CharacterH: Ich frage mich, ob ich dieses Mädchen im Traum wieder treffen werde. Ich denke, du solltest früh ins Bett gehen.
-CharacterG: <ForestElves>Hallo.
+CharacterG: <ForestElves>$WooScary$Hallo.
 CharacterH: Hallo... Schön, dass wir uns wieder getroffen haben.
 CharacterG: Wie gesagt, ich bin wieder hier.
 CharacterH: Ja, das ist es. Erinnerst du dich an unser Gespräch am Ende des letzten Treffens?
@@ -181,7 +181,7 @@ CharacterG: Es ist Zeit, sich zu verabschieden, wir werden nächstes Mal weiterm
 CharacterH: Auf Wiedersehen...
 CharacterH: <RoomHero>Kha... Kha...
 CharacterH: Und ich habe schon angefangen zu vergessen, dass ich nur einen Schritt vom Tod entfernt bin.
-CharacterH: Schon Mittagessen? Es ist Zeit zu packen und zu gehen.
+CharacterH: $Beanfeast$Schon Mittagessen? Es ist Zeit zu packen und zu gehen.
 Nothing: Den Ort der Erinnerung erreichen.
 CharacterH: <Park>Dieses Mal bin ich sogar früher gekommen. Es bleibt nur, auf sie zu warten.
 CharacterGF: Auf wen warten wir?
@@ -216,12 +216,12 @@ Nothing: Nach Hause zurückgekehrt.
 CharacterH: <RoomHero>M-m-m...
 CharacterH: Mein Kopf tut so weh, ich habe es kaum geschafft, nach Hause zu kommen.
 CharacterH: Du musst schnell einschlafen und dich ausruhen.
-CharacterG: <RoomHeroDream>Ich habe auf dich gewartet.
+CharacterG: <RoomHeroDream>$WooScary$Ich habe auf dich gewartet.
 CharacterH: Hallo.
 CharacterG: Was hältst du davon, zu verschiedenen Orten zu reisen? Es sei denn, es macht dir etwas aus.
 CharacterH: Oh, hallo! Natürlich macht es mir nichts aus. Das letzte Abenteuer war so interessant und spannend.
 CharacterG: Ich bin sehr froh, dass es dir gefallen hat. Dann lass uns auf den Weg gehen - ich kenne viele tolle Orte, die ich dir zeigen möchte.
-CharacterG: <Castle>Wie gefällt dir dieser Palast? Außergewöhnlich schön, nicht wahr?
+CharacterG: <Castle>$DramaticBoi$Wie gefällt dir dieser Palast? Außergewöhnlich schön, nicht wahr?
 CharacterH: Nicht nur schön - großartig und majestätisch!
 CharacterG: Ich bin froh, dass es dir gefallen hat. Dann gehen wir zum nächsten Punkt auf der Tagesordnung von heute über.
 CharacterH: Was ist das sonst noch?
@@ -231,7 +231,7 @@ CharacterG: Oh, du musst dir keine Sorgen machen, weil du nicht tanzen kannst. I
 CharacterG: Komm her.
 CharacterH: Unglaublich, ich habe es geschafft!
 CharacterG: Und es funktioniert sehr gut!
-CharacterH: Uh, wir sind endlich fertig.
+CharacterH: $WooScary$Uh, wir sind endlich fertig.
 CharacterG: Danach gehen wir zum nächsten Ort.
 Nothing: Sie haben noch ein paar verschiedene Orte besucht.
 Nothing: <FloatingIsland>Auf einer schwebenden Insel.
@@ -245,7 +245,7 @@ CharacterG: Auf Wiedersehen.
 CharacterH: <RoomHero>Es ist wieder so unerwartet verschwunden, wie es erschien.
 CharacterH: Ich kann mir nicht einmal vorstellen, wie es sein wird, eines Tages einzuschlafen und dich nicht zu treffen.
 Nothing: Wenn er sich versammelt, geht er zu einem bestimmten Termin.
-CharacterH: <GirlfriendHouseMorning>Mädchen, warten Sie nicht auf mich?
+CharacterH: <GirlfriendHouseMorning>$Beanfeast$Mädchen, warten Sie nicht auf mich?
 CharacterGF: Wer weiß, und wer bist du? Hihi.
 CharacterH: #Der Prinz auf einem weißen Pferd.[1]|Zombie.[2]|Komm ohne diese Witze.[3]
 CharacterGF: [1] Und wo habe ich mein Pferd verloren? Hi hi hi.|[2]Nun, mit deinen blauen Flecken unter deinen Augen siehst du wirklich aus wie ein Zombie.|[3] Du bist ein Langweiler...
@@ -266,7 +266,7 @@ CharacterGF: Wo würden wir uns dann morgen treffen? Kann ich mir nichts einfall
 CharacterH: Wenn du keine Ideen hast, werde ich mich entscheiden, gehen wir ins Kino.
 OtherSignatureUnderPainting: <HoldingHands>"Momente, die unsere Bindung stärken."
 Nothing: Nach Hause zurückgekehrt und eingeschlafen.
-CharacterH: <ForestPath>Etwas in dieser Nacht...
+CharacterH: <ForestPath>$WooScary$Etwas in dieser Nacht...
 CharacterG: Ich bin hier!
 CharacterH: Jedes Mal, wenn ich dich treffe, erwacht in meinem Herzen das Gefühl, dass die Welt so schön und voller Geheimnisse ist.
 CharacterG: So ist es. Die Welt ist voller Geheimnisse, und das macht sie interessant.
@@ -287,7 +287,7 @@ CharacterH: Ich möchte sie nicht verlieren. Aber ich habe so viel Angst...
 CharacterH: Schon heute Abend werde ich meine endgültige Entscheidung treffen müssen.
 CharacterH: Aber welche? Ich weiß nicht...
 Nothing: Nach langem Nachdenken begann er sich zu sammeln und ging zu einem geplanten Treffen.
-CharacterGF: <NightCity>Schau dir an, wie schön die Lichter der Stadt sind! Der Abend ist geradezu fabelhaft.
+CharacterGF: <NightCity>$Beanfeast$Schau dir an, wie schön die Lichter der Stadt sind! Der Abend ist geradezu fabelhaft.
 CharacterH: Es wird ein unvergesslicher Abend.
 CharacterGF: Das ist das Kino. Sieh zu, wie es funkelt!
 CharacterH: Ja, wir waren schon lange nicht mehr hier.
@@ -326,7 +326,7 @@ CharacterH: <GirlfriendHouseEvening>Eine gute Nacht.
 CharacterGF: Für dich auch.
 CharacterH: Sie ist echt. Ihre Gefühle sind aufrichtig, und ich fühle mich genauso. Aber es ist so schwierig. 
 CharacterH: Der ganze Tag war so intensiv. Auf der einen Seite ist die Freude über das, was sie gesagt hat, aber auf der anderen Seite eine unglaubliche Spannung. 
-Nothing: Im Krankenhaus angekommen.
+Nothing: $FrozenWinter$Im Krankenhaus angekommen.
 CharacterD: <Hospital>Ich habe auf dich gewartet, komm rein.
 CharacterD: <DoctorOffice>Hallo. Wie fühlst du dich heute?
 CharacterH: Nicht sehr gut. Diese Gedanken... diese Lösungen... sie lassen mich nicht ruhen.
@@ -343,7 +343,7 @@ CharacterD: Natürlich ist die Chance sehr gering, dein Zustand ist einzigartig 
 CharacterH: Dann wähle ich...
 CharacterH: #Zustimmung zur Operation.@ending1@|Die Operation wird verweigert.@ending2@
 
-CharacterD: @ending1@<DoctorOffice>Es war wahrscheinlich eine schwierige Wahl.
+CharacterD: @ending1@<DoctorOffice>$WooScary$Es war wahrscheinlich eine schwierige Wahl.
 CharacterH: Ich hoffe dennoch, dass alles erfolgreich verläuft.
 CharacterD: Nun, ich werde deine Entscheidung mitteilen und in den nächsten drei Stunden werden wir loslegen.
 CharacterH: Also sofort?
@@ -352,7 +352,7 @@ CharacterD: Bist du bereit, oder?
 CharacterH: Ja, ich... Ich bin fertig. Ich kann nicht sagen, dass ich keine Angst habe, aber ich weiß, dass dies der einzige Weg ist.
 CharacterD: Alles wird gut. Entspann dich einfach.
 Nothing: <OperatingRoom> Der Vorgang hat begonnen.
-CharacterGF: <RoomInHospital>Du bist aufgewacht.
+CharacterGF: <RoomInHospital>$Beanfeast$Du bist aufgewacht.
 CharacterH: Du... hier.
 CharacterGF: Natürlich werde ich immer an deiner Seite sein.
 CharacterH: Jetzt kann ich weitermachen, meine Zukunft aufbauen... mit dir zusammen.{end2}
@@ -361,7 +361,7 @@ CharacterD: @ending2@<DoctorOffice>Es war wahrscheinlich eine schwierige Wahl.
 CharacterD: Ich werde dich nicht davon abhalten. Das ist wahrscheinlich unser letztes Treffen.
 CharacterH: Auf Wiedersehen.
 Nothing: <NightCity>Als er nach Hause kam, gab es einen weiteren Kopfschmerzanfall, der mit keinem anderen vergleichbar war, als er das Bewusstsein verlor und nicht mehr aufstand.
-CharacterG: <DreamWorld>Du hast die Traumwelt gewählt, du hast mich gewählt.
+CharacterG: <DreamWorld>$WooScary$Du hast die Traumwelt gewählt, du hast mich gewählt.
 CharacterH: Ja, das ist es.
 CharacterH: Wo sind wir jetzt?
 CharacterG: Wir sind in der Welt, die du mit deiner Entscheidung erschaffen hast.
