@@ -2,7 +2,7 @@
 
 namespace Infrastructure.Services.Sounds
 {
-    public class SoundsService
+    public class SoundsService : ISoundsService
     {
         public SoundsService()
         {
@@ -17,6 +17,7 @@ namespace Infrastructure.Services.Sounds
         {
             _audioSource.clip = GetClip(clipName);
             _audioSource.loop = isLoop;
+            Play();
         }
 
         public void Stop()

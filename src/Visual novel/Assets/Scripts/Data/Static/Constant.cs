@@ -7,5 +7,6 @@
 		public const string DIALOG_END_ID = "End";
 		
 		public const string BACKGROUND_PATH = "Background";
+		public const string SOUND_MAIN_MENU = "Hope";
 	}
 }

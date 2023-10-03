@@ -6,6 +6,7 @@ using Infrastructure.Services;
 using Infrastructure.Services.LocalisationDataLoad;
 using Infrastructure.Services.LocalizationUI;
 using Infrastructure.Services.SaveLoadData;
+using Infrastructure.Services.Sounds;
 using Infrastructure.Services.UIFactory;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -21,8 +22,8 @@ namespace Infrastructure.ScenesManagers.Meta
         private ILocalizerUI _localizerUI;
         private MainMenu _menu;
         private ISaveLoadDataService _saveLoadData;
-
         private IUIFactoryInfoService _uiFactoryInfo;
+        private ISoundsService _soundsService;
 
         private void Awake()
         {
@@ -30,6 +31,7 @@ namespace Infrastructure.ScenesManagers.Meta
 
             _uiFactoryInfoService.BackgroundUI.SetBackgroundImage(Resources.Load<Texture2D>("Data/Backgrounds/" + Constant.BACKGROUND_PATH));
             _menu = new MainMenu(_uiFactoryInfo.MainMenuUI, LoadGame, StartGame, Exit);
+            _soundsService.SetClip(Constant.SOUND_MAIN_MENU, true);
 
             OpenMenu();
         }
@@ -93,6 +95,7 @@ namespace Infrastructure.ScenesManagers.Meta
             _saveLoadData = ServicesContainer.GetService<ISaveLoadDataService>();
             _uiFactoryInfo = ServicesContainer.GetService<IUIFactoryInfoService>();
             _localizerUI = ServicesContainer.GetService<ILocalizerUI>();
+            _soundsService = ServicesContainer.GetService<ISoundsService>();
         }
     }
 }

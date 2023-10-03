@@ -5,6 +5,7 @@ using System.Collections;
 using Data.Localization.Dialogues;
 using Data.Static;
 using Infrastructure.Services.CoroutineRunner;
+using Infrastructure.Services.Sounds;
 using UI.Background;
 using UI.Dialogue;
 using UnityEngine;
@@ -17,13 +18,14 @@ namespace Infrastructure.ScenesManagers.Core
     public class DialogueManager
     {
         public DialogueManager(Func<string, IPhrase> onGetPart, DialogueUI dialogueUI,
-            BackgroundUI backgroundUI, ICoroutineRunner coroutineRunner,
+            BackgroundUI backgroundUI, ICoroutineRunner coroutineRunner, ISoundsService soundsService,
             UnityAction<string, string, string> onNewDialog, UnityAction<string> handleActionTrigger)
         {
             _onGetPart = onGetPart;
             _dialogueUI = dialogueUI;
             _backgroundUI = backgroundUI;
             _coroutineRunner = coroutineRunner;
+            _soundsService = soundsService;
             _onNewDialog = onNewDialog;
             _handleActionTrigger = handleActionTrigger;
         }
@@ -34,6 +36,7 @@ namespace Infrastructure.ScenesManagers.Core
         public IPhrase CurrentDialogue { get; private set; }
         private readonly BackgroundUI _backgroundUI;
         private readonly ICoroutineRunner _coroutineRunner;
+        private readonly ISoundsService _soundsService;
         private readonly UnityAction<string, string, string> _onNewDialog;
         private readonly UnityAction<string> _handleActionTrigger;
         private readonly DialogueUI _dialogueUI;
@@ -46,6 +49,8 @@ namespace Infrastructure.ScenesManagers.Core
         private bool _isSpeedUpMode;
         private UnityAction _onDialogueCompleted;
         private float _typingDelay;
+
+        private string _currentSoundEffect;
 
         public void StartDialogue()
         {
@@ -148,6 +153,12 @@ namespace Infrastructure.ScenesManagers.Core
                 _dialogueUI.Person.SetActionAvatar(true);
                 _dialogueUI.Person.SetAvatar(
                     GetTexture2D("CharacterAvatars/" + phrase.CharacterAvatarPath));
+            }
+
+            if (_currentSoundEffect != phrase.SoundEffect)
+            {
+                _currentSoundEffect = phrase.SoundEffect;
+                _soundsService.SetClip(phrase.SoundEffect, true);
             }
 
             _displayTypingCoroutine = _coroutineRunner.StartCoroutine(DisplayTyping(phrase.Text));

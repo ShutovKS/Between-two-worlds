@@ -6,6 +6,7 @@ using Infrastructure.Services;
 using Infrastructure.Services.CoroutineRunner;
 using Infrastructure.Services.LocalisationDataLoad;
 using Infrastructure.Services.SaveLoadData;
+using Infrastructure.Services.Sounds;
 using Infrastructure.Services.UIFactory;
 using UnityEngine;
 using UnityEngine.Events;
@@ -28,6 +29,7 @@ namespace Infrastructure.ScenesManagers.Core
         private SaveLoadManager _saveLoadManager;
         private ActionTriggerManager _actionTriggerManager;
         private IUIFactoryInfoService _uiFactoryInfo;
+        private ISoundsService _soundsService;
 
         private void Awake()
         {
@@ -48,6 +50,7 @@ namespace Infrastructure.ScenesManagers.Core
                 _uiFactoryInfo.DialogueUI,
                 _uiFactoryInfo.BackgroundUI,
                 _coroutineRunner,
+                _soundsService,
                 _historyManager.AddedDialogInHistory,
                 _actionTriggerManager.HandleActionTrigger);
 
@@ -77,6 +80,7 @@ namespace Infrastructure.ScenesManagers.Core
             _saveLoadData = ServicesContainer.GetService<ISaveLoadDataService>();
             _uiFactoryInfo = ServicesContainer.GetService<IUIFactoryInfoService>();
             _coroutineRunner = ServicesContainer.GetService<ICoroutineRunner>();
+            _soundsService = ServicesContainer.GetService<ISoundsService>();
         }
 
         private void LoadData()
