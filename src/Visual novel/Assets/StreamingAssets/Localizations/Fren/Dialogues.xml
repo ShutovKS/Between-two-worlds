@@ -5,18 +5,18 @@
     <IDNextDialog>id1.</IDNextDialog>
     <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
     <Name>Héros</Name>
-    <Text> ces maux de tête... Chaque jour, c'est plus fort...</Text>
+    <Text>Ces maux de tête... Chaque jour, c'est plus fort...</Text>
     <BackgroundPath>DoctorOffice</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>FrozenWinter</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id1.</ID>
     <IDNextDialog>id2.</IDNextDialog>
     <CharacterAvatarPath>CharacterDoctor</CharacterAvatarPath>
     <Name>Docteur</Name>
-    <Text>je comprends que c'est très difficile pour toi. Ton état est vraiment horrible.</Text>
+    <Text>Je comprends que c'est très difficile pour toi. Ton état est vraiment horrible.</Text>
     <BackgroundPath>DoctorOffice</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>FrozenWinter</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id2.</ID>
@@ -25,25 +25,25 @@
     <Name>Héros</Name>
     <Text>Désolé docteur, je ne suis pas sûr de pouvoir tenir encore longtemps.</Text>
     <BackgroundPath>DoctorOffice</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>FrozenWinter</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id3.</ID>
     <IDNextDialog>id4.</IDNextDialog>
     <CharacterAvatarPath>CharacterDoctor</CharacterAvatarPath>
     <Name>Docteur</Name>
-    <Text>tu Sais, je suis troublé par tes paroles. Je t'ai appelé pour une bonne raison aujourd'hui, je veux te dire quelque chose.</Text>
+    <Text>Tu Sais, je suis troublé par tes paroles. Je t'ai appelé pour une bonne raison aujourd'hui, je veux te dire quelque chose.</Text>
     <BackgroundPath>DoctorOffice</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>FrozenWinter</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id4.</ID>
     <IDNextDialog>id5.</IDNextDialog>
     <CharacterAvatarPath>CharacterDoctor</CharacterAvatarPath>
     <Name>Docteur</Name>
-    <Text>nous avons trouvé un moyen de vous épargner le tourment et, plus précisément, d'effectuer une opération sur le cerveau.</Text>
+    <Text>Nous avons trouvé un moyen de vous épargner le tourment et, plus précisément, d'effectuer une opération sur le cerveau.</Text>
     <BackgroundPath>DoctorOffice</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>FrozenWinter</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id5.</ID>
@@ -52,7 +52,7 @@
     <Name>Héros</Name>
     <Text>Docteur, c'est merveilleux.</Text>
     <BackgroundPath>DoctorOffice</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>FrozenWinter</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id6.</ID>
@@ -61,16 +61,16 @@
     <Name>Docteur</Name>
     <Text>Cependant, tout n'est pas si simple. L'opération va vraiment soulager vos souffrances. Mais, et il y a un risque - les chances de succès sont faibles, vous pouvez perdre la capacité de marcher ou d'autres complications.</Text>
     <BackgroundPath>DoctorOffice</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>FrozenWinter</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id7.</ID>
     <IDNextDialog>id8.</IDNextDialog>
     <CharacterAvatarPath>CharacterDoctor</CharacterAvatarPath>
     <Name>Docteur</Name>
-    <Text>une opération trop compliquée est à faire et la situation pourrait devenir encore pire.</Text>
+    <Text>Une opération trop compliquée est à faire et la situation pourrait devenir encore pire.</Text>
     <BackgroundPath>DoctorOffice</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>FrozenWinter</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id8.</ID>
@@ -79,7 +79,7 @@
     <Name>Docteur</Name>
     <Text>C'est pourquoi je t'ai appelé aujourd'hui.</Text>
     <BackgroundPath>DoctorOffice</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>FrozenWinter</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id9.</ID>
@@ -88,25 +88,25 @@
     <Name>Héros</Name>
     <Text>Docteur, ça... Moi...</Text>
     <BackgroundPath>DoctorOffice</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>FrozenWinter</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id10.</ID>
     <IDNextDialog>id11.</IDNextDialog>
     <CharacterAvatarPath>CharacterDoctor</CharacterAvatarPath>
     <Name>Docteur</Name>
-    <Text>je comprends que la solution n'est pas facile et que la chirurgie peut être à la fois un salut et un cauchemar encore plus grand. Je te donne quelques jours pour réfléchir. Quand je vous appellerai à nouveau, vous devrez donner votre réponse finale. </Text>
+    <Text>Je comprends que la solution n'est pas facile et que la chirurgie peut être à la fois un salut et un cauchemar encore plus grand. Je te donne quelques jours pour réfléchir. Quand je vous appellerai à nouveau, vous devrez donner votre réponse finale. </Text>
     <BackgroundPath>DoctorOffice</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>FrozenWinter</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id11.</ID>
     <IDNextDialog>id12.</IDNextDialog>
     <CharacterAvatarPath>CharacterDoctor</CharacterAvatarPath>
     <Name>Docteur</Name>
-    <Text>je peux vous conseiller de ne pas passer ces jours assis à la maison et profondément dans vos pensées. Essaie de te promener, de te distraire.</Text>
+    <Text>Je peux vous conseiller de ne pas passer ces jours assis à la maison et profondément dans vos pensées. Essaie de te promener, de te distraire.</Text>
     <BackgroundPath>DoctorOffice</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>FrozenWinter</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id12.</ID>
@@ -115,16 +115,16 @@
     <Name>Héros</Name>
     <Text>D'accord, je vais essayer.</Text>
     <BackgroundPath>DoctorOffice</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>FrozenWinter</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id13.</ID>
     <IDNextDialog>id14.</IDNextDialog>
     <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
     <Name>Héros</Name>
-    <Text> je suis Enfin à la maison. </Text>
+    <Text>Je suis Enfin à la maison. </Text>
     <BackgroundPath>HouseCorridor</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>FrozenWinter</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id14.</ID>
@@ -133,7 +133,7 @@
     <Name>Héros</Name>
     <Text>Que dois-je faire..</Text>
     <BackgroundPath>HouseCorridor</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>FrozenWinter</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id15.</ID>
@@ -142,7 +142,7 @@
     <Name>Héros</Name>
     <Text>J'ai tellement peur.</Text>
     <BackgroundPath>HouseCorridor</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>FrozenWinter</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id16.</ID>
@@ -150,7 +150,7 @@
     <Name>Téléphone</Name>
     <Text>Vous avez un nouveau message.</Text>
     <BackgroundPath>HouseCorridor</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>FrozenWinter</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id17.</ID>
@@ -159,7 +159,7 @@
     <Name>Héros</Name>
     <Text>AAAAAA!!! Je suis fatigué de ce qu'ils veulent de moi à ce moment-là.</Text>
     <BackgroundPath>HouseCorridor</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>FrozenWinter</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id18.</ID>
@@ -168,7 +168,7 @@
     <Name>Héros</Name>
     <Text> Oui, c'est tout, le matin est plus sage. Je vais me coucher, je ne pense pas que ce soit important.</Text>
     <BackgroundPath>RoomHeroDream</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>FrozenWinter</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id19.</ID>
@@ -177,7 +177,7 @@
     <Name>Héros</Name>
     <Text>Suis-je debout au milieu de ma chambre Mais je viens d'être allongé dans mon lit...</Text>
     <BackgroundPath>RoomHeroDream</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id20.</ID>
@@ -186,7 +186,7 @@
     <Name>Héros</Name>
     <Text>Quelque chose ne va pas ici, pour une raison quelconque, la pièce ne ressemble pas à la normale, mais je ne peux pas comprendre pourquoi.</Text>
     <BackgroundPath>RoomHeroDream</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id21.</ID>
@@ -195,25 +195,25 @@
     <Name>Fille</Name>
     <Text>Bonjour.</Text>
     <BackgroundPath>RoomHeroDream</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id22.</ID>
     <IDNextDialog>id23.</IDNextDialog>
     <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
     <Name>Héros</Name>
-    <Text>qui êtes-vous</Text>
+    <Text>Qui êtes-vous</Text>
     <BackgroundPath>RoomHeroDream</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id23.</ID>
     <IDNextDialog>id24.</IDNextDialog>
     <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
     <Name>Fille</Name>
-    <Text>qui suis-Je Ça va être difficile à expliquer, alors passons cette question.</Text>
+    <Text>Qui suis-Je Ça va être difficile à expliquer, alors passons cette question.</Text>
     <BackgroundPath>RoomHeroDream</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id24.</ID>
@@ -222,7 +222,7 @@
     <Name>Héros</Name>
     <Text>Quel est cet endroit Ce n'est pas ma chambre.</Text>
     <BackgroundPath>RoomHeroDream</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id25.</ID>
@@ -231,7 +231,7 @@
     <Name>Fille</Name>
     <Text>Que vous ne deviniez pas, c'est votre rêve.</Text>
     <BackgroundPath>RoomHeroDream</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id26.</ID>
@@ -240,7 +240,7 @@
     <Name>Héros</Name>
     <Text>Pourquoi je me sens si facile</Text>
     <BackgroundPath>RoomHeroDream</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id27.</ID>
@@ -249,7 +249,7 @@
     <Name>Fille</Name>
     <Text>Comme je l'ai dit, tout cela est votre rêve, tout ce que votre subconscient veut, alors cela se manifeste ici, c'est pourquoi vous vous sentez si bien ici.</Text>
     <BackgroundPath>RoomHeroDream</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id28.</ID>
@@ -258,7 +258,7 @@
     <Name>Fille</Name>
     <Text>Telle est la nature des rêves. </Text>
     <BackgroundPath>RoomHeroDream</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id29.</ID>
@@ -267,34 +267,34 @@
     <Name>Fille</Name>
     <Text>Et à ta question qui je suis, je pense savoir comment répondre, je suis celle que tu veux voir à côté.</Text>
     <BackgroundPath>RoomHeroDream</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id30.</ID>
     <IDNextDialog>id31.</IDNextDialog>
     <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
     <Name>Héros</Name>
-    <Text>c'est tellement incroyable...</Text>
+    <Text>C'est tellement incroyable...</Text>
     <BackgroundPath>RoomHeroDream</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id31.</ID>
     <IDNextDialog>id32.</IDNextDialog>
     <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
     <Name>Fille</Name>
-    <Text>la Nuit est le moment où le monde parle aux étoiles et les cœurs aux rêves.</Text>
+    <Text>La Nuit est le moment où le monde parle aux étoiles et les cœurs aux rêves.</Text>
     <BackgroundPath>RoomHeroDream</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id32.</ID>
     <IDNextDialog>id33.</IDNextDialog>
     <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
     <Name>Héros</Name>
-    <Text>je ne sais même pas ton nom...</Text>
+    <Text>Je ne sais même pas ton nom...</Text>
     <BackgroundPath>RoomHeroDream</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id33.</ID>
@@ -303,23 +303,23 @@
     <Name>Fille</Name>
     <Text>Et je n'ai pas de nom, je n'en ai pas besoin, je ne devrais pas y penser.</Text>
     <BackgroundPath>RoomHeroDream</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id34.</ID>
     <IDNextDialog>id35.</IDNextDialog>
     <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
     <Name>Héros</Name>
-    <Text>et si je voulais me réveiller et sortir de ce rêve</Text>
+    <Text>Et si je voulais me réveiller et sortir de ce rêve</Text>
     <BackgroundPath>RoomHeroDream</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id35.</ID>
     <IDNextDialog>id36.</IDNextDialog>
-    <Text>pouvez toujours vous réveiller, mais ne vous sentez-vous pas mieux ici</Text>
+    <Text>Pouvez toujours vous réveiller, mais ne vous sentez-vous pas mieux ici</Text>
     <BackgroundPath>RoomHeroDream</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id36.</ID>
@@ -328,7 +328,7 @@
     <Name>Héros</Name>
     <Text>Tu as raison. C'est un sentiment libérateur.</Text>
     <BackgroundPath>RoomHeroDream</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id37.</ID>
@@ -336,7 +336,7 @@
     <Name />
     <Text>Quelque temps plus tard...</Text>
     <BackgroundPath>RoomHeroDream</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id38.</ID>
@@ -345,7 +345,7 @@
     <Name>Héros</Name>
     <Text>Pourquoi disparais-tu</Text>
     <BackgroundPath>RoomHeroDream</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id39.</ID>
@@ -354,42 +354,42 @@
     <Name>Fille</Name>
     <Text>Rencontres dans les rêves – comme les plus petites étoiles, elles laissent leur marque mais disparaissent à l'aube.</Text>
     <BackgroundPath>RoomHeroDream</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id40.</ID>
     <IDNextDialog>id41.</IDNextDialog>
     <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
     <Name>Héros</Name>
-    <Text> C'était quand même un rêve, mais c'était si réaliste... Comme si elle était là.</Text>
+    <Text>C'était quand même un rêve, mais c'était si réaliste... Comme si elle était là.</Text>
     <BackgroundPath>RoomHero</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id41.</ID>
     <IDNextDialog>id42.</IDNextDialog>
     <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
     <Name>Héros</Name>
-    <Text>peut-Être que certains moments ne peuvent être stockés que dans le cœur.</Text>
+    <Text>Peut-Être que certains moments ne peuvent être stockés que dans le cœur.</Text>
     <BackgroundPath>RoomHero</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id42.</ID>
     <IDNextDialog>id43.</IDNextDialog>
     <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
     <Name>Héros</Name>
-    <Text>il Faut aller se laver.</Text>
+    <Text>Il Faut aller se laver.</Text>
     <BackgroundPath>RoomHero</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id43.</ID>
     <IDNextDialog>id44.</IDNextDialog>
     <Name>Porte</Name>
-    <Text> Tuk... Toc...</Text>
+    <Text>Tuk... Toc...</Text>
     <BackgroundPath>Bathroom</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id44.</ID>
@@ -398,17 +398,17 @@
     <Name>Petite Amie</Name>
     <Text>Êtes-vous là Tu es vivant</Text>
     <BackgroundPath>Bathroom</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Responses">
     <ID>id45.</ID>
     <ResponseList>
       <Response>
-        <AnswerText>Comment es-tu arrivée ici</AnswerText>
+        <AnswerText>Comment es-tu arrivée ici?</AnswerText>
         <IDNextDialog>id46.1</IDNextDialog>
       </Response>
       <Response>
-        <AnswerText>Que fais-tu ici</AnswerText>
+        <AnswerText>Que fais-tu ici?</AnswerText>
         <IDNextDialog>id46.2</IDNextDialog>
       </Response>
     </ResponseList>
@@ -418,34 +418,36 @@
     <IDNextDialog>id47.</IDNextDialog>
     <CharacterAvatarPath>CharacterGirlfriend</CharacterAvatarPath>
     <Name>Petite Amie</Name>
-    <Text>et c'est toi qui me pose encore ces questions La clé a ouvert la porte.</Text>
+    <Text>Et c'est toi qui me pose encore ces questions La clé a ouvert la porte.</Text>
     <BackgroundPath>Bathroom</BackgroundPath>
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
-    <ID>id46.2</ID>
+    <ID>id46.12</ID>
     <IDNextDialog>id47.</IDNextDialog>
     <CharacterAvatarPath>CharacterGirlfriend</CharacterAvatarPath>
     <Name>Petite Amie</Name>
     <Text>Que fais-je ici Qui ne m'a pas répondu J'ai déjà eu peur de ce qui t'est arrivé.</Text>
     <BackgroundPath>Bathroom</BackgroundPath>
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id47.</ID>
     <IDNextDialog>id48.</IDNextDialog>
     <CharacterAvatarPath>CharacterGirlfriend</CharacterAvatarPath>
     <Name>Petite Amie</Name>
-    <Text>comme je vous ai dit que vous allez à l'hôpital, donc je n'ai reçu aucune nouvelle de vous.</Text>
+    <Text>Comme je vous ai dit que vous allez à l'hôpital, donc je n'ai reçu aucune nouvelle de vous.</Text>
     <BackgroundPath>Bathroom</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id48.</ID>
     <IDNextDialog>id49.</IDNextDialog>
     <CharacterAvatarPath>CharacterGirlfriend</CharacterAvatarPath>
     <Name>Petite Amie</Name>
-    <Text>tu sais que je m'inquiète pour toi...</Text>
+    <Text>Tu sais que je m'inquiète pour toi...</Text>
     <BackgroundPath>Bathroom</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id49.</ID>
@@ -454,16 +456,16 @@
     <Name>Héros</Name>
     <Text>Oh, désolé. Après être allé chez le médecin, je n'étais pas au téléphone et de retour à la maison, je me suis immédiatement couché.</Text>
     <BackgroundPath>Bathroom</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id50.</ID>
     <IDNextDialog>id51.</IDNextDialog>
     <CharacterAvatarPath>CharacterGirlfriend</CharacterAvatarPath>
     <Name>Petite Amie</Name>
-    <Text>votre état est-il encore pire</Text>
+    <Text>Votre état est-il encore pire</Text>
     <BackgroundPath>Bathroom</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id51.</ID>
@@ -472,16 +474,16 @@
     <Name>Héros</Name>
     <Text>Non, rien de tel. Ce n'est pas ça.</Text>
     <BackgroundPath>Bathroom</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id52.</ID>
     <IDNextDialog>id53.</IDNextDialog>
     <CharacterAvatarPath>CharacterGirlfriend</CharacterAvatarPath>
     <Name>Petite Amie</Name>
-    <Text>et alors</Text>
+    <Text>Et alors</Text>
     <BackgroundPath>Bathroom</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id53.</ID>
@@ -490,7 +492,7 @@
     <Name>Héros</Name>
     <Text>Eh bien, j'aurais d'abord fini de me laver.</Text>
     <BackgroundPath>Bathroom</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id54.</ID>
@@ -499,7 +501,7 @@
     <Name>Petite Amie</Name>
     <Text>OK, je vais attendre. Finis tes affaires, et on en reparlera.</Text>
     <BackgroundPath>Bathroom</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id55.</ID>
@@ -508,16 +510,16 @@
     <Name>Héros</Name>
     <Text>Sentez-vous chez vous, je serai bientôt là.</Text>
     <BackgroundPath>Bathroom</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id56.</ID>
     <IDNextDialog>id57.</IDNextDialog>
     <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
     <Name>Héros</Name>
-    <Text>est-elle venue ici Parce que je n'ai pas répondu</Text>
+    <Text>Est-elle venue ici Parce que je n'ai pas répondu</Text>
     <BackgroundPath>Bathroom</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id57.</ID>
@@ -526,25 +528,25 @@
     <Name>Héros</Name>
     <Text>Eh bien, Eh bien, je me suis mis en ordre, j'ai l'air mieux, mais ces ecchymoses sous les yeux... Je ne me souviens plus de moi sans eux.</Text>
     <BackgroundPath>Bathroom</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id58.</ID>
     <IDNextDialog>id59.</IDNextDialog>
     <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
     <Name>Héros</Name>
-    <Text> M-m-M... Quel parfum est-ce</Text>
+    <Text>M-m-M... Quel parfum est-ce</Text>
     <BackgroundPath>HouseCorridor</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id59.</ID>
     <IDNextDialog>id60.</IDNextDialog>
     <CharacterAvatarPath>CharacterGirlfriend</CharacterAvatarPath>
     <Name>Petite Amie</Name>
-    <Text> Viens ici, il est temps de prendre le petit déjeuner.</Text>
+    <Text>Viens ici, il est temps de prendre le petit déjeuner.</Text>
     <BackgroundPath>Kitchen</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id60.</ID>
@@ -553,7 +555,7 @@
     <Name>Héros</Name>
     <Text>Mais je n'ai rien cuisiné.</Text>
     <BackgroundPath>Kitchen</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id61.</ID>
@@ -562,25 +564,25 @@
     <Name>Petite Amie</Name>
     <Text>Eh bien, tu m'as dit de me sentir chez moi. Et je me souviens où sont toutes les choses après toutes ces années. </Text>
     <BackgroundPath>Kitchen</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id62.</ID>
     <IDNextDialog>id63.</IDNextDialog>
     <CharacterAvatarPath>CharacterGirlfriend</CharacterAvatarPath>
     <Name>Petite Amie</Name>
-    <Text>si je n'avais rien préparé, que mangerais-tu Encore des céréales Donc, vous aurez des problèmes non seulement avec la tête, mais aussi avec l'estomac.</Text>
+    <Text>Si je n'avais rien préparé, que mangerais-tu Encore des céréales Donc, vous aurez des problèmes non seulement avec la tête, mais aussi avec l'estomac.</Text>
     <BackgroundPath>Kitchen</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id63.</ID>
     <IDNextDialog>id64.</IDNextDialog>
     <CharacterAvatarPath>CharacterGirlfriend</CharacterAvatarPath>
     <Name>Petite Amie</Name>
-    <Text>alors asseyez-vous et prenons le petit déjeuner.</Text>
+    <Text>Alors asseyez-vous et prenons le petit déjeuner.</Text>
     <BackgroundPath>Kitchen</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id64.</ID>
@@ -589,7 +591,7 @@
     <Name>Héros</Name>
     <Text>Eh bien, je ne vais pas refuser. Bon appétit.</Text>
     <BackgroundPath>Kitchen</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id65.</ID>
@@ -598,7 +600,7 @@
     <Name>Petite Amie</Name>
     <Text>à cause de la façon dont je suis arrivé ici, vous m'avez donné les clés de votre appartement, avez-vous oublié que vous avez donné les clés à votre meilleure amie il y a quelques années</Text>
     <BackgroundPath>Kitchen</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id66.</ID>
@@ -607,34 +609,34 @@
     <Name>Héros</Name>
     <Text>Oh, et vraiment déjà oublié.</Text>
     <BackgroundPath>Kitchen</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id67.</ID>
     <IDNextDialog>id68.</IDNextDialog>
     <CharacterAvatarPath>CharacterGirlfriend</CharacterAvatarPath>
     <Name>Petite Amie</Name>
-    <Text>je suis venue m'assurer que tu étais en vie. J'étais tellement inquiète.</Text>
+    <Text>Je suis venue m'assurer que tu étais en vie. J'étais tellement inquiète.</Text>
     <BackgroundPath>Kitchen</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id68.</ID>
     <IDNextDialog>id69.</IDNextDialog>
     <CharacterAvatarPath>CharacterGirlfriend</CharacterAvatarPath>
     <Name>Petite Amie</Name>
-    <Text>maintenant, dites-moi ce qui s'est passé hier</Text>
+    <Text>Maintenant, dites-moi ce qui s'est passé hier</Text>
     <BackgroundPath>Kitchen</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id69.</ID>
     <IDNextDialog>id70.</IDNextDialog>
     <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
     <Name>Héros</Name>
-    <Text>j'étais encore chez le médecin, cette fois il m'a dit qu'il était possible de faire l'opération.</Text>
+    <Text>J'étais encore chez le médecin, cette fois il m'a dit qu'il était possible de faire l'opération.</Text>
     <BackgroundPath>Kitchen</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id70.</ID>
@@ -643,16 +645,16 @@
     <Name>Petite Amie</Name>
     <Text>Opération Est-ce sérieux  C'est génial. </Text>
     <BackgroundPath>Kitchen</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id71.</ID>
     <IDNextDialog>id72.</IDNextDialog>
     <CharacterAvatarPath>CharacterGirlfriend</CharacterAvatarPath>
     <Name>Petite Amie</Name>
-    <Text>mais ce n'est pas tout ce qui vous est arrivé</Text>
+    <Text>Mais ce n'est pas tout ce qui vous est arrivé</Text>
     <BackgroundPath>Kitchen</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id72.</ID>
@@ -661,7 +663,7 @@
     <Name>Héros</Name>
     <Text>Oui... Les chances de réussite de la chirurgie sont faibles, et même si elle réussit, il y a un risque de complications qui peuvent être pires que mon état actuel.</Text>
     <BackgroundPath>Kitchen</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id73.</ID>
@@ -670,7 +672,7 @@
     <Name>Petite Amie</Name>
     <Text>Quel cauchemar. Mais sache ce qui s'est passé pendant l'opération et ce que tu seras après, je serai avec toi.</Text>
     <BackgroundPath>Kitchen</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id74.</ID>
@@ -679,7 +681,7 @@
     <Name>Petite Amie</Name>
     <Text>Avez-vous déjà signé votre accord pour l'opération</Text>
     <BackgroundPath>Kitchen</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id75.</ID>
@@ -688,7 +690,7 @@
     <Name>Héros</Name>
     <Text>Non, je ne sais pas encore quoi faire.</Text>
     <BackgroundPath>Kitchen</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id76.</ID>
@@ -697,7 +699,7 @@
     <Name>Petite Amie</Name>
     <Text>Mais je suis juste très inquiet... Peut - être y a-t-il quelque chose que je peux aider</Text>
     <BackgroundPath>Kitchen</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id77.</ID>
@@ -706,16 +708,16 @@
     <Name>Héros</Name>
     <Text>Merci pour le soin, mais je m'en occuperai moi-même.</Text>
     <BackgroundPath>Kitchen</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id78.</ID>
     <IDNextDialog>id79.</IDNextDialog>
     <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
     <Name>Héros</Name>
-    <Text>bien qu'il y ait quelque chose avec lequel j'ai besoin d'aide. Le médecin m'a dit de ne pas rester à la maison ces jours-ci, bien que je veuille vraiment rester ici.</Text>
+    <Text>Bien qu'il y ait quelque chose avec lequel j'ai besoin d'aide. Le médecin m'a dit de ne pas rester à la maison ces jours-ci, bien que je veuille vraiment rester ici.</Text>
     <BackgroundPath>Kitchen</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id79.</ID>
@@ -724,7 +726,7 @@
     <Name>Petite Amie</Name>
     <Text>Oh, c'est génial, j'ai compris. On se retrouve au café demain. Je t'écrirai où et à quelle heure. Et ce n'est pas discuté.</Text>
     <BackgroundPath>Kitchen</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id80.</ID>
@@ -733,7 +735,7 @@
     <Name>Héros</Name>
     <Text>No... C'est inutile de discuter avec toi.</Text>
     <BackgroundPath>Kitchen</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id81.</ID>
@@ -742,7 +744,7 @@
     <Name>Petite Amie</Name>
     <Text>D'accord, j'irai en premier. Pas besoin d'escorter. Au revoir.</Text>
     <BackgroundPath>Kitchen</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id82.</ID>
@@ -751,33 +753,33 @@
     <Name>Héros</Name>
     <Text>Au Revoir.</Text>
     <BackgroundPath>Kitchen</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id83.</ID>
     <IDNextDialog>id84.</IDNextDialog>
     <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
     <Name>Héros</Name>
-    <Text>elle a toujours été comme ça, au moins quelque chose n'a pas changé avec le temps.</Text>
+    <Text>Elle a toujours été comme ça, au moins quelque chose n'a pas changé avec le temps.</Text>
     <BackgroundPath>Kitchen</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id84.</ID>
     <IDNextDialog>id85.</IDNextDialog>
     <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
     <Name>Héros</Name>
-    <Text>et pourtant, l'opération... le potentiel va se débarrasser de ces tourments, mais avec de telles complications... Que dois-je faire</Text>
+    <Text>Et pourtant, l'opération... le potentiel va se débarrasser de ces tourments, mais avec de telles complications... Que dois-je faire</Text>
     <BackgroundPath>Kitchen</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id85.</ID>
     <IDNextDialog>id86.</IDNextDialog>
     <Name />
-    <Text>le même soir.</Text>
+    <Text>Le même soir.</Text>
     <BackgroundPath>Kitchen</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id86.</ID>
@@ -786,7 +788,7 @@
     <Name>Héros</Name>
     <Text> Il est si tard, il est temps d'aller au lit. Surtout demain, il faudra se lever tôt pour ne pas être en retard.</Text>
     <BackgroundPath>RoomHeroDream</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id87.</ID>
@@ -794,16 +796,16 @@
     <Name />
     <Text>...</Text>
     <BackgroundPath>RoomHeroDream</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id88.</ID>
     <IDNextDialog>id89.</IDNextDialog>
     <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
     <Name>Fille</Name>
-    <Text> de te voir.</Text>
+    <Text>De te voir.</Text>
     <BackgroundPath>ForestPathRavie</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id89.</ID>
@@ -812,16 +814,16 @@
     <Name>Héros</Name>
     <Text>Toi... encore ici Pourquoi </Text>
     <BackgroundPath>ForestPathRavie</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id90.</ID>
     <IDNextDialog>id91.</IDNextDialog>
     <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
     <Name>Fille</Name>
-    <Text>rappelez-Vous, c'est votre rêve, votre monde de rêve. Si je suis là, alors tu veux que je sois là. Un peu mystérieux, non Hee-hee.</Text>
+    <Text>Rappelez-Vous, c'est votre rêve, votre monde de rêve. Si je suis là, alors tu veux que je sois là. Un peu mystérieux, non Hee-hee.</Text>
     <BackgroundPath>ForestPathRavie</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id91.</ID>
@@ -830,34 +832,34 @@
     <Name>Fille</Name>
     <Text>Pendant que je suis là, allons faire une promenade le long de la piste forestière.</Text>
     <BackgroundPath>ForestPathRavie</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id92.</ID>
     <IDNextDialog>id93.</IDNextDialog>
     <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
     <Name>Héros</Name>
-    <Text>avec plaisir, allons-Y.</Text>
+    <Text>Avec plaisir, allons-Y.</Text>
     <BackgroundPath>ForestPathRavie</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id93.</ID>
     <IDNextDialog>id94.</IDNextDialog>
     <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
     <Name>Héros</Name>
-    <Text>je me Demande quelle est cette forêt Si différent de tout ce que j'ai jamais vu</Text>
+    <Text>Je me Demande quelle est cette forêt Si différent de tout ce que j'ai jamais vu</Text>
     <BackgroundPath>ForestPathRavie</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id94.</ID>
     <IDNextDialog>id95.</IDNextDialog>
     <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
     <Name>Fille</Name>
-    <Text>mais après tout, le sommeil ne devrait pas être ordinaire, n'est-ce pas</Text>
+    <Text>Mais après tout, le sommeil ne devrait pas être ordinaire, n'est-ce pas</Text>
     <BackgroundPath>ForestPathRavie</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id95.</ID>
@@ -866,7 +868,7 @@
     <Name>Héros</Name>
     <Text>Tu as raison.</Text>
     <BackgroundPath>ForestPathRavie</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id96.</ID>
@@ -875,7 +877,7 @@
     <Name>Fille</Name>
     <Text>Oh, regarde quelle créature adorable!</Text>
     <BackgroundPath>ForestPathRavie</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id97.</ID>
@@ -884,7 +886,7 @@
     <Name>Héros</Name>
     <Text>Inhabituel, mais qu'est-ce que c'est</Text>
     <BackgroundPath>ForestPathRavie</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id98.</ID>
@@ -893,26 +895,26 @@
     <Name>Fille</Name>
     <Text>C'est toi qui dois demander, ton monde est quand même.</Text>
     <BackgroundPath>ForestPathRavie</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id99.</ID>
     <IDNextDialog>id100.</IDNextDialog>
     <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
     <Name>Fille</Name>
-    <Text>vous ne voulez pas lui donner un nom</Text>
+    <Text>Vous ne voulez pas lui donner un nom</Text>
     <BackgroundPath>ForestPathRavie</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Responses">
     <ID>id100.</ID>
     <ResponseList>
       <Response>
-        <AnswerText>Rogolik (lapin Cornu)</AnswerText>
+        <AnswerText>Lapcor (lapin Cornu)</AnswerText>
         <IDNextDialog>id101.1</IDNextDialog>
       </Response>
       <Response>
-        <AnswerText>Zaragolik (lièvre cornu)</AnswerText>
+        <AnswerText>Licorn (lièvre cornu)</AnswerText>
         <IDNextDialog>id101.1</IDNextDialog>
       </Response>
       <Response>
@@ -926,32 +928,36 @@
     <IDNextDialog>id102.1</IDNextDialog>
     <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
     <Name>Fille</Name>
-    <Text> Hee-hee-hee, vous êtes tellement drôle.</Text>
+    <Text>Hee-hee-hee, vous êtes tellement drôle.</Text>
     <BackgroundPath>ForestPathRavie</BackgroundPath>
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
-    <ID>id101.2</ID>
-    <IDNextDialog>id102.2</IDNextDialog>
+    <ID>id101.12</ID>
+    <IDNextDialog>id102.12</IDNextDialog>
     <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
     <Name>Fille</Name>
     <Text>Hohei - quel est votre nom</Text>
     <BackgroundPath>ForestPathRavie</BackgroundPath>
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id102.1</ID>
     <IDNextDialog>id103.1</IDNextDialog>
     <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
     <Name>Héros</Name>
-    <Text>comment se sentait qu'il n'était pas nécessaire de le faire.</Text>
+    <Text>Comment se sentait qu'il n'était pas nécessaire de le faire.</Text>
     <BackgroundPath>ForestPathRavie</BackgroundPath>
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
-    <ID>id102.2</ID>
-    <IDNextDialog>id103.2</IDNextDialog>
+    <ID>id102.12</ID>
+    <IDNextDialog>id103.12</IDNextDialog>
     <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
     <Name>Héros</Name>
     <Text>Hohei Pourquoi exactement un tel nom</Text>
     <BackgroundPath>ForestPathRavie</BackgroundPath>
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id103.1</ID>
@@ -960,14 +966,16 @@
     <Name>Fille</Name>
     <Text>Oh, allez, ça s'est bien passé.</Text>
     <BackgroundPath>ForestPathRavie</BackgroundPath>
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
-    <ID>id103.2</ID>
+    <ID>id103.12</ID>
     <IDNextDialog>id104.</IDNextDialog>
     <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
     <Name>Fille</Name>
     <Text>jeu de mots, rien de spécial.</Text>
     <BackgroundPath>ForestPathRavie</BackgroundPath>
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id104.</ID>
@@ -976,7 +984,7 @@
     <Name>Fille</Name>
     <Text>Allons-y, car tout ce qui est intéressant nous attend.</Text>
     <BackgroundPath>ForestPathRavie</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id105.</ID>
@@ -984,7 +992,7 @@
     <Name />
     <Text>Quelque temps plus tard...</Text>
     <BackgroundPath>ForestPathRavie</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id106.</ID>
@@ -993,7 +1001,7 @@
     <Name>Fille</Name>
     <Text>Wow, déjà traversé toute la forêt. Regarde combien d'étoiles!</Text>
     <BackgroundPath>ForestPathRavie</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id107.</ID>
@@ -1002,25 +1010,25 @@
     <Name>Héros</Name>
     <Text>Oui, c'est si beau ici... comme si tu étais dans un conte de fées.</Text>
     <BackgroundPath>ForestPathRavie</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id108.</ID>
     <IDNextDialog>id109.</IDNextDialog>
     <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
     <Name>Fille</Name>
-    <Text>je Pense que c'est encore mieux qu'un conte de fées.</Text>
+    <Text>Je Pense que c'est encore mieux qu'un conte de fées.</Text>
     <BackgroundPath>ForestPathRavie</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id109.</ID>
     <IDNextDialog>id110.</IDNextDialog>
     <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
     <Name>Héros</Name>
-    <Text>pour une Raison quelconque, il me semble que je vais me réveiller bientôt. </Text>
+    <Text>Pour une Raison quelconque, il me semble que je vais me réveiller bientôt. </Text>
     <BackgroundPath>ForestPathRavie</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id110.</ID>
@@ -1029,7 +1037,7 @@
     <Name>Héros</Name>
     <Text>Tant qu'il est encore temps, je veux te poser une autre question, est-ce que je te reverrai Et si oui, resteras-tu ici pour toujours</Text>
     <BackgroundPath>ForestPathRavie</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id111.</ID>
@@ -1038,69 +1046,69 @@
     <Name>Fille</Name>
     <Text>Oui, nous nous reverrons certainement et...</Text>
     <BackgroundPath>ForestPathRavie</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id112.</ID>
     <IDNextDialog>id113.</IDNextDialog>
     <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
     <Name>Héros</Name>
-    <Text> Qu'a-t-elle répondu Je ne me souviens pas jusqu'au bout. Ah.</Text>
+    <Text>Qu'a-t-elle répondu Je ne me souviens pas jusqu'au bout. Ah.</Text>
     <BackgroundPath>RoomHero</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id113.</ID>
     <IDNextDialog>id114.</IDNextDialog>
     <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
     <Name>Héros</Name>
-    <Text>quelle heure est-il maintenant</Text>
+    <Text>Quelle heure est-il maintenant</Text>
     <BackgroundPath>RoomHero</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id114.</ID>
     <IDNextDialog>id115.</IDNextDialog>
     <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
     <Name>Héros</Name>
-    <Text>il y a encore beaucoup de Temps, vous ne pouvez pas vous précipiter.</Text>
+    <Text>Il y a encore beaucoup de Temps, vous ne pouvez pas vous précipiter.</Text>
     <BackgroundPath>RoomHero</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id115.</ID>
     <IDNextDialog>id116.</IDNextDialog>
     <Name />
-    <Text>deux heures plus tard.</Text>
+    <Text>Deux heures plus tard.</Text>
     <BackgroundPath>RoomHero</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id116.</ID>
     <IDNextDialog>id117.</IDNextDialog>
     <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
     <Name>Héros</Name>
-    <Text> Je suis en retard, je suis en retard... Je dois me dépêcher. Comment pourrais-je être en retard d'une demi-heure</Text>
+    <Text>Je suis en retard, je suis en retard... Je dois me dépêcher. Comment pourrais-je être en retard d'une demi-heure</Text>
     <BackgroundPath>CafeOutside</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id117.</ID>
     <IDNextDialog>id118.</IDNextDialog>
     <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
     <Name>Héros</Name>
-    <Text>elle est déjà assise à la table, hein...</Text>
+    <Text>Elle est déjà assise à la table, hein...</Text>
     <BackgroundPath>CafeOutside</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id118.</ID>
     <IDNextDialog>id119.</IDNextDialog>
     <CharacterAvatarPath>CharacterGirlfriend</CharacterAvatarPath>
     <Name>Petite Amie</Name>
-    <Text> Bienvenue! Ravie de te voir.</Text>
+    <Text>Bienvenue! Ravie de te voir.</Text>
     <BackgroundPath>CafeInside</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id119.</ID>
@@ -1109,7 +1117,7 @@
     <Name>Héros</Name>
     <Text>Désolé. Je ne voulais pas être en retard. </Text>
     <BackgroundPath>CafeInside</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id120.</ID>
@@ -1118,7 +1126,7 @@
     <Name>Petite Amie</Name>
     <Text>Rien de nouveau n'a été dit, tu étais toujours en retard.</Text>
     <BackgroundPath>CafeInside</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id121.</ID>
@@ -1127,16 +1135,16 @@
     <Name>Héros</Name>
     <Text>Et ici, c'est confortable.</Text>
     <BackgroundPath>CafeInside</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id122.</ID>
     <IDNextDialog>id123.</IDNextDialog>
     <CharacterAvatarPath>CharacterWaiter</CharacterAvatarPath>
     <Name>Serveur</Name>
-    <Text>que commanderons-nous</Text>
+    <Text>Que commanderons-nous</Text>
     <BackgroundPath>CafeInside</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id123.</ID>
@@ -1145,7 +1153,7 @@
     <Name>Héros</Name>
     <Text>Je vais prendre...</Text>
     <BackgroundPath>CafeInside</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Responses">
     <ID>id124.</ID>
@@ -1167,50 +1175,56 @@
   <anyType xsi:type="Phrase">
     <ID>id125.1</ID>
     <IDNextDialog>id126.1</IDNextDialog>
-    <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
-    <Name>Fille</Name>
-    <Text>je vais prendre une salade César et des pâtes.</Text>
+    <CharacterAvatarPath>CharacterGirlfriend</CharacterAvatarPath>
+    <Name>Petite Amie</Name>
+    <Text>Je vais prendre une salade César et des pâtes.</Text>
     <BackgroundPath>CafeInside</BackgroundPath>
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
-    <ID>id125.2</ID>
-    <IDNextDialog>id126.2</IDNextDialog>
-    <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
-    <Name>Fille</Name>
-    <Text> je vais prendre une salade César et des pâtes.</Text>
+    <ID>id125.12</ID>
+    <IDNextDialog>id126.12</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirlfriend</CharacterAvatarPath>
+    <Name>Petite Amie</Name>
+    <Text>Je vais prendre une salade César et des pâtes.</Text>
     <BackgroundPath>CafeInside</BackgroundPath>
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
-    <ID>id125.3</ID>
-    <IDNextDialog>id126.3</IDNextDialog>
-    <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
-    <Name>Fille</Name>
+    <ID>id125.123</ID>
+    <IDNextDialog>id126.123</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirlfriend</CharacterAvatarPath>
+    <Name>Petite Amie</Name>
     <Text> je prendrai une salade César, des pâtes et un cocktail, et il aura des pâtes avec un shish kebab et quelque chose à boire.</Text>
     <BackgroundPath>CafeInside</BackgroundPath>
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id126.1</ID>
     <IDNextDialog>id127.</IDNextDialog>
-    <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
-    <Name>Fille</Name>
+    <CharacterAvatarPath>CharacterGirlfriend</CharacterAvatarPath>
+    <Name>Petite Amie</Name>
     <Text>Et j'espérais déjà que vous décidiez de manger quelque chose de sain.</Text>
     <BackgroundPath>CafeInside</BackgroundPath>
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
-    <ID>id126.2</ID>
+    <ID>id126.12</ID>
     <IDNextDialog>id127.</IDNextDialog>
-    <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
-    <Name>Fille</Name>
+    <CharacterAvatarPath>CharacterGirlfriend</CharacterAvatarPath>
+    <Name>Petite Amie</Name>
     <Text>Oh, surprise!</Text>
     <BackgroundPath>CafeInside</BackgroundPath>
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
-    <ID>id126.3</ID>
+    <ID>id126.123</ID>
     <IDNextDialog>id127.</IDNextDialog>
-    <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
-    <Name>Fille</Name>
+    <CharacterAvatarPath>CharacterGirlfriend</CharacterAvatarPath>
+    <Name>Petite Amie</Name>
     <Text>je Pense que nous en avons assez.</Text>
     <BackgroundPath>CafeInside</BackgroundPath>
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id127.</ID>
@@ -1219,7 +1233,7 @@
     <Name>Serveur</Name>
     <Text>OK, nous allons apporter votre commande maintenant.</Text>
     <BackgroundPath>CafeInside</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id128.</ID>
@@ -1228,7 +1242,7 @@
     <Name>Petite Amie</Name>
     <Text>Vous avez l'air tendu. Quelque chose s'est passé</Text>
     <BackgroundPath>CafeInside</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id129.</ID>
@@ -1237,25 +1251,25 @@
     <Name>Héros</Name>
     <Text>Rien de grave, juste la tête a commencé à faire mal.</Text>
     <BackgroundPath>CafeInside</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id130.</ID>
     <IDNextDialog>id131.</IDNextDialog>
     <CharacterAvatarPath>CharacterGirlfriend</CharacterAvatarPath>
     <Name>Petite Amie</Name>
-    <Text>et que faire</Text>
+    <Text>Et que faire</Text>
     <BackgroundPath>CafeInside</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id131.</ID>
     <IDNextDialog>id132.</IDNextDialog>
     <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
     <Name>Héros</Name>
-    <Text>ne vous inquiétez pas, ça passera bientôt.</Text>
+    <Text>Ne vous inquiétez pas, ça passera bientôt.</Text>
     <BackgroundPath>CafeInside</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id132.</ID>
@@ -1264,7 +1278,7 @@
     <Name>Serveur</Name>
     <Text>Voici votre commande, bon appétit!</Text>
     <BackgroundPath>CafeInside</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id133.</ID>
@@ -1273,7 +1287,7 @@
     <Name>Petite Amie</Name>
     <Text>Bon appétit.</Text>
     <BackgroundPath>CafeInside</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id134.</ID>
@@ -1282,7 +1296,7 @@
     <Name>Héros</Name>
     <Text>Et toi.</Text>
     <BackgroundPath>CafeInside</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id135.</ID>
@@ -1291,7 +1305,7 @@
     <Name>Petite Amie</Name>
     <Text>Laisse-moi goûter ta boisson et je te donne la mienne.</Text>
     <BackgroundPath>CafeInside</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id136.</ID>
@@ -1300,16 +1314,16 @@
     <Name>Héros</Name>
     <Text>MMM... Le cocktail est délicieux.</Text>
     <BackgroundPath>CafeInside</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id137.</ID>
     <IDNextDialog>id138.</IDNextDialog>
     <CharacterAvatarPath>CharacterGirlfriend</CharacterAvatarPath>
     <Name>Petite Amie</Name>
-    <Text>oui, c'est le meilleur cocktail du quartier.</Text>
+    <Text>Oui, c'est le meilleur cocktail du quartier.</Text>
     <BackgroundPath>CafeInside</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id138.</ID>
@@ -1318,16 +1332,16 @@
     <Name>Petite Amie</Name>
     <Text>Puisque le médecin vous a dit de ne pas rester à la maison, nous devons aller quelque part demain. Que diriez-vous d'une promenade dans le parc près de chez vous? Comme quand j'étais enfant?</Text>
     <BackgroundPath>CafeInside</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id139.</ID>
     <IDNextDialog>id140.</IDNextDialog>
     <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
     <Name>Héros</Name>
-    <Text>oui, allez, nous n'y sommes pas allés depuis des années.</Text>
+    <Text>Oui, allez, nous n'y sommes pas allés depuis des années.</Text>
     <BackgroundPath>CafeInside</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id140.</ID>
@@ -1336,7 +1350,7 @@
     <Name>Petite Amie</Name>
     <Text>Génial! Nos promenades m'ont tellement manqué.</Text>
     <BackgroundPath>CafeInside</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id141.</ID>
@@ -1345,7 +1359,7 @@
     <Name>Héros</Name>
     <Text>Une fois que nous avons mangé et que j'ai déjà payé, alors rentrons chez nous.</Text>
     <BackgroundPath>CafeInside</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id142.</ID>
@@ -1353,25 +1367,25 @@
     <Name />
     <Text>Retour à la maison.</Text>
     <BackgroundPath>CafeInside</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id143.</ID>
     <IDNextDialog>id144.</IDNextDialog>
     <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
     <Name>Héros</Name>
-    <Text>je me Demande si je vais revoir cette fille dans un rêve. Je pense que je vais me coucher tôt.</Text>
+    <Text>Je me Demande si je vais revoir cette fille dans un rêve. Je pense que je vais me coucher tôt.</Text>
     <BackgroundPath>CafeInside</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id144.</ID>
     <IDNextDialog>id145.</IDNextDialog>
     <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
     <Name>Fille</Name>
-    <Text> Bonjour.</Text>
+    <Text>Bonjour.</Text>
     <BackgroundPath>ForestElves</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id145.</ID>
@@ -1380,7 +1394,7 @@
     <Name>Héros</Name>
     <Text>Bonjour... Content qu'on se revoie.</Text>
     <BackgroundPath>ForestElves</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id146.</ID>
@@ -1389,7 +1403,7 @@
     <Name>Fille</Name>
     <Text>Comme je l'ai dit, je suis encore là.</Text>
     <BackgroundPath>ForestElves</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id147.</ID>
@@ -1398,34 +1412,34 @@
     <Name>Héros</Name>
     <Text>Oui, c'est le cas. Tu te souviens de notre conversation à la fin de la Dernière réunion?</Text>
     <BackgroundPath>ForestElves</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id148.</ID>
     <IDNextDialog>id149.</IDNextDialog>
     <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
     <Name>Fille</Name>
-    <Text>bien sûr, je me souviens.</Text>
+    <Text>Bien sûr, je me souviens.</Text>
     <BackgroundPath>ForestElves</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id149.</ID>
     <IDNextDialog>id150.</IDNextDialog>
     <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
     <Name>Héros</Name>
-    <Text>pourriez-vous répéter la réponse à ma question? Tu vas toujours me voir dans tes rêves maintenant?</Text>
+    <Text>Pourriez-vous répéter la réponse à ma question? Tu vas toujours me voir dans tes rêves maintenant?</Text>
     <BackgroundPath>ForestElves</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id150.</ID>
     <IDNextDialog>id151.</IDNextDialog>
     <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
     <Name>Fille</Name>
-    <Text>avez-vous déjà oublié?</Text>
+    <Text>Avez-vous déjà oublié?</Text>
     <BackgroundPath>ForestElves</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id151.</ID>
@@ -1434,16 +1448,16 @@
     <Name>Héros</Name>
     <Text>Non, ce n'est pas ça. Je n'ai pas entendu ce que tu as dit.</Text>
     <BackgroundPath>ForestElves</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id152.</ID>
     <IDNextDialog>id153.</IDNextDialog>
     <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
     <Name>Fille</Name>
-    <Text>c'est bizarre, c'est juste un rêve. Peut-être que tu ne voulais pas entendre une telle réponse de ma part?</Text>
+    <Text>C'est bizarre, c'est juste un rêve. Peut-être que tu ne voulais pas entendre une telle réponse de ma part?</Text>
     <BackgroundPath>ForestElves</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id153.</ID>
@@ -1452,7 +1466,7 @@
     <Name>Fille</Name>
     <Text>Eh bien, je vais répondre, mais quoi qu'il en soit. En attendant, regarde cette belle lumière de la lune.</Text>
     <BackgroundPath>ForestElves</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id154.</ID>
@@ -1461,52 +1475,52 @@
     <Name>Héros</Name>
     <Text>Oui, vraiment bien.</Text>
     <BackgroundPath>ForestElves</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id155.</ID>
     <IDNextDialog>id156.</IDNextDialog>
     <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
     <Name>Fille</Name>
-    <Text>changeons de décor, c'est devenu ennuyeux ici. On va dans la forêt des elfes?</Text>
+    <Text>Changeons de décor, c'est devenu ennuyeux ici. On va dans la forêt des elfes?</Text>
     <BackgroundPath>ForestElves</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id156.</ID>
     <IDNextDialog>id157.</IDNextDialog>
     <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
     <Name>Héros</Name>
-    <Text>la Forêt des elfes, comme dans les romans de Fantasy?</Text>
+    <Text>La Forêt des elfes, comme dans les romans de Fantasy?</Text>
     <BackgroundPath>ForestElves</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id157.</ID>
     <IDNextDialog>id158.</IDNextDialog>
     <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
     <Name>Fille</Name>
-    <Text>on Peut le dire.</Text>
+    <Text>On Peut le dire.</Text>
     <BackgroundPath>ForestElves</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id158.</ID>
     <IDNextDialog>id159.</IDNextDialog>
     <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
     <Name>Héros</Name>
-    <Text> comme c'est beau ici! Ces énormes arbres et maisons, certains même dans les arbres.</Text>
+    <Text>Comme c'est beau ici! Ces énormes arbres et maisons, certains même dans les arbres.</Text>
     <BackgroundPath>ForestElfHouses</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id159.</ID>
     <IDNextDialog>id160.</IDNextDialog>
     <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
     <Name>Fille</Name>
-    <Text>regarde, il y a une cible et un arc. On tire?</Text>
+    <Text>Regarde, il y a une cible et un arc. On tire?</Text>
     <BackgroundPath>ForestElves</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id160.</ID>
@@ -1515,15 +1529,15 @@
     <Name>Fille</Name>
     <Text>Je suis le premier!</Text>
     <BackgroundPath>TargetsForBows</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id161.</ID>
     <IDNextDialog>id162.</IDNextDialog>
     <Name />
-    <Text>après avoir Tiré trois flèches poocheri, elle a frappé directement la cible à chaque fois.</Text>
+    <Text>Après avoir Tiré trois flèches poocheri, elle a frappé directement la cible à chaque fois.</Text>
     <BackgroundPath>TargetsForBows</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id162.</ID>
@@ -1532,7 +1546,7 @@
     <Name>Héros</Name>
     <Text>Et je ne sais même pas tirer.</Text>
     <BackgroundPath>TargetsForBows</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id163.</ID>
@@ -1541,7 +1555,7 @@
     <Name>Héros</Name>
     <Text>Génial!</Text>
     <BackgroundPath>TargetsForBows</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id164.</ID>
@@ -1550,16 +1564,16 @@
     <Name>Fille</Name>
     <Text>Merci.</Text>
     <BackgroundPath>TargetsForBows</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id165.</ID>
     <IDNextDialog>id166.</IDNextDialog>
     <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
     <Name>Fille</Name>
-    <Text>c'est ton tour Maintenant.</Text>
+    <Text>C'est ton tour Maintenant.</Text>
     <BackgroundPath>TargetsForBows</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id166.</ID>
@@ -1568,16 +1582,16 @@
     <Name>Héros</Name>
     <Text>Mais je ne sais pas.</Text>
     <BackgroundPath>TargetsForBows</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id167.</ID>
     <IDNextDialog>id168.</IDNextDialog>
     <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
     <Name>Fille</Name>
-    <Text>c'est simple, tendez la corde, visez et tirez.</Text>
+    <Text>C'est simple, tendez la corde, visez et tirez.</Text>
     <BackgroundPath>TargetsForBows</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id168.</ID>
@@ -1586,24 +1600,24 @@
     <Name>Héros</Name>
     <Text>D'accord, ne RIS pas.</Text>
     <BackgroundPath>TargetsForBows</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id169.</ID>
     <IDNextDialog>id170.</IDNextDialog>
     <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
     <Name>Fille</Name>
-    <Text>je Promets d'essayer.</Text>
+    <Text>Le Promets d'essayer.</Text>
     <BackgroundPath>TargetsForBows</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id170.</ID>
     <IDNextDialog>id171.</IDNextDialog>
     <Name />
-    <Text>après avoir Tiré trois fois, aucune des flèches n'a atteint la cible.</Text>
+    <Text>Après avoir Tiré trois fois, aucune des flèches n'a atteint la cible.</Text>
     <BackgroundPath>TargetsForBows</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id171.</ID>
@@ -1612,7 +1626,7 @@
     <Name>Fille</Name>
     <Text>Hee-hee.</Text>
     <BackgroundPath>TargetsForBows</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id172.</ID>
@@ -1621,16 +1635,16 @@
     <Name>Héros</Name>
     <Text>Eh.</Text>
     <BackgroundPath>TargetsForBows</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id173.</ID>
     <IDNextDialog>id174.</IDNextDialog>
     <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
     <Name>Héros</Name>
-    <Text>dis-Moi, je me demande pourquoi nous sommes dans le village des elfes, mais ils ne sont pas là?</Text>
+    <Text>Dis-Moi, je me demande pourquoi nous sommes dans le village des elfes, mais ils ne sont pas là?</Text>
     <BackgroundPath>TargetsForBows</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id174.</ID>
@@ -1639,16 +1653,16 @@
     <Name>Fille</Name>
     <Text>Peut-être qu'ils ne sont tout simplement pas apparus parce que vous ne le vouliez pas vous-même. </Text>
     <BackgroundPath>TargetsForBows</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id175.</ID>
     <IDNextDialog>id176.</IDNextDialog>
     <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
     <Name>Fille</Name>
-    <Text>peut-être que tu voulais être juste avec moi?</Text>
+    <Text>Peut-être que tu voulais être juste avec moi?</Text>
     <BackgroundPath>TargetsForBows</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Responses">
     <ID>id176.</ID>
@@ -1668,16 +1682,18 @@
     <IDNextDialog>id178.1</IDNextDialog>
     <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
     <Name>Fille</Name>
-    <Text>c'est vous pour l'honnêteté</Text>
+    <Text>C'est vous pour l'honnêteté</Text>
     <BackgroundPath>TargetsForBows</BackgroundPath>
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
-    <ID>id177.2</ID>
-    <IDNextDialog>id178.2</IDNextDialog>
+    <ID>id177.12</ID>
+    <IDNextDialog>id178.12</IDNextDialog>
     <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
     <Name>Fille</Name>
     <Text> C'est comme ça que vous devez être plus honnête.</Text>
     <BackgroundPath>TargetsForBows</BackgroundPath>
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id178.1</ID>
@@ -1685,22 +1701,24 @@
     <Name />
     <Text>Elle l'a embrassé.</Text>
     <BackgroundPath>TargetsForBows</BackgroundPath>
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
-    <ID>id178.2</ID>
+    <ID>id178.12</ID>
     <IDNextDialog>id179.</IDNextDialog>
     <Name />
     <Text>Elle fronça les sourcils.</Text>
     <BackgroundPath>TargetsForBows</BackgroundPath>
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id179.</ID>
     <IDNextDialog>id180.</IDNextDialog>
     <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
     <Name>Fille</Name>
-    <Text>il Est temps de dire au revoir, nous continuerons la prochaine fois. Au revoir, au revoir.</Text>
+    <Text>Il Est temps de dire au revoir, nous continuerons la prochaine fois. Au revoir, au revoir.</Text>
     <BackgroundPath>TargetsForBows</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id180.</ID>
@@ -1709,7 +1727,7 @@
     <Name>Héros</Name>
     <Text>Adieu...</Text>
     <BackgroundPath>TargetsForBows</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id181.</ID>
@@ -1718,7 +1736,7 @@
     <Name>Héros</Name>
     <Text> Kha... Kha...</Text>
     <BackgroundPath>RoomHero</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id182.</ID>
@@ -1727,24 +1745,24 @@
     <Name>Héros</Name>
     <Text>Et j'ai déjà commencé à oublier que tout était à un pas de la mort.</Text>
     <BackgroundPath>RoomHero</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id183.</ID>
     <IDNextDialog>id184.</IDNextDialog>
     <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
     <Name>Héros</Name>
-    <Text>déjà déjeuner? Il est temps de se préparer et d'y aller.</Text>
+    <Text>Déjà déjeuner? Il est temps de se préparer et d'y aller.</Text>
     <BackgroundPath>RoomHero</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id184.</ID>
     <IDNextDialog>id185.</IDNextDialog>
     <Name />
-    <Text />
+    <Text>En arrivant à destination.</Text>
     <BackgroundPath>RoomHero</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id185.</ID>
@@ -1753,16 +1771,16 @@
     <Name>Héros</Name>
     <Text>cette fois, je suis même venu plus tôt. Il ne reste plus qu'à l'attendre.</Text>
     <BackgroundPath>Park</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id186.</ID>
     <IDNextDialog>id187.</IDNextDialog>
     <CharacterAvatarPath>CharacterGirlfriend</CharacterAvatarPath>
     <Name>Petite Amie</Name>
-    <Text>qui attendons-nous?</Text>
+    <Text>Qui attendons-nous?</Text>
     <BackgroundPath>Park</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id187.</ID>
@@ -1771,7 +1789,7 @@
     <Name>Héros</Name>
     <Text>Oh, tu m'as fait peur. Salut.</Text>
     <BackgroundPath>Park</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id188.</ID>
@@ -1780,7 +1798,7 @@
     <Name>Petite Amie</Name>
     <Text>Haha, bonjour.</Text>
     <BackgroundPath>Park</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id189.</ID>
@@ -1789,16 +1807,16 @@
     <Name>Petite Amie</Name>
     <Text>Comment vous sentez-vous?</Text>
     <BackgroundPath>Park</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id190.</ID>
     <IDNextDialog>id191.</IDNextDialog>
     <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
     <Name>Héros</Name>
-    <Text>en fait, pas vraiment, il y a eu une autre attaque de maux de tête aujourd'hui, donc c'est vrai, mais je pense que tout va bien maintenant.</Text>
+    <Text>En fait, pas vraiment, il y a eu une autre attaque de maux de tête aujourd'hui, donc c'est vrai, mais je pense que tout va bien maintenant.</Text>
     <BackgroundPath>Park</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id191.</ID>
@@ -1807,16 +1825,16 @@
     <Name>Petite Amie</Name>
     <Text>Pourquoi sommes-nous assis si longtemps? Allons nous promener.</Text>
     <BackgroundPath>Park</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id192.</ID>
     <IDNextDialog>id193.</IDNextDialog>
     <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
     <Name>Héros</Name>
-    <Text>d'accord, allons-Y...</Text>
+    <Text>D'accord, allons-Y...</Text>
     <BackgroundPath>Park</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id193.</ID>
@@ -1825,16 +1843,16 @@
     <Name>Petite Amie</Name>
     <Text>Regarde ces beaux poissons. Un, deux, trois... combien!</Text>
     <BackgroundPath>PondWithFish</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id194.</ID>
     <IDNextDialog>id195.</IDNextDialog>
     <CharacterAvatarPath>CharacterGirlfriend</CharacterAvatarPath>
     <Name>Petite Amie</Name>
-    <Text>je n'en ai jamais vu autant ici auparavant.</Text>
+    <Text>Je n'en ai jamais vu autant ici auparavant.</Text>
     <BackgroundPath>PondWithFish</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id195.</ID>
@@ -1843,7 +1861,7 @@
     <Name>Héros</Name>
     <Text>Allons acheter du pain pour les nourrir.</Text>
     <BackgroundPath>PondWithFish</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id196.</ID>
@@ -1852,7 +1870,7 @@
     <Name>Petite Amie</Name>
     <Text>Oui, avec plaisir.</Text>
     <BackgroundPath>PondWithFish</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id197.</ID>
@@ -1860,7 +1878,7 @@
     <Name />
     <Text>Ils reviennent du magasin.</Text>
     <BackgroundPath>PondWithFish</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id198.</ID>
@@ -1869,7 +1887,7 @@
     <Name>Héros</Name>
     <Text>Tiens, ta moitié.</Text>
     <BackgroundPath>PondWithFish</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id199.</ID>
@@ -1878,16 +1896,16 @@
     <Name>Petite Amie</Name>
     <Text>Merci.</Text>
     <BackgroundPath>PondWithFish</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id200.</ID>
     <IDNextDialog>id201.</IDNextDialog>
     <CharacterAvatarPath>CharacterGirlfriend</CharacterAvatarPath>
     <Name>Petite Amie</Name>
-    <Text>ils sont devenus encore plus nombreux une fois que nous avons jeté le pain.</Text>
+    <Text>Ils sont devenus encore plus nombreux une fois que nous avons jeté le pain.</Text>
     <BackgroundPath>PondWithFish</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id201.</ID>
@@ -1896,16 +1914,16 @@
     <Name>Héros</Name>
     <Text>Si vite tout le monde a mangé.</Text>
     <BackgroundPath>PondWithFish</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id202.</ID>
     <IDNextDialog>id203.</IDNextDialog>
     <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
     <Name>Héros</Name>
-    <Text> Avancer.</Text>
+    <Text>Avancer.</Text>
     <BackgroundPath>Park</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id203.</ID>
@@ -1914,16 +1932,16 @@
     <Name>Héros</Name>
     <Text>KHM... Hmm...</Text>
     <BackgroundPath>Park</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id204.</ID>
     <IDNextDialog>id205.</IDNextDialog>
     <CharacterAvatarPath>CharacterGirlfriend</CharacterAvatarPath>
     <Name>Petite Amie</Name>
-    <Text>vous Avez encore mal à la tête?</Text>
+    <Text>Vous Avez encore mal à la tête?</Text>
     <BackgroundPath>Park</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id205.</ID>
@@ -1932,7 +1950,7 @@
     <Name>Héros</Name>
     <Text>Oui, ça va bientôt passer. On va s'asseoir sur le banc.</Text>
     <BackgroundPath>Park</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id206.</ID>
@@ -1941,25 +1959,25 @@
     <Name>Héros</Name>
     <Text>Est-ce normal que tu passes autant de temps avec moi? Parce que tu as un boulot, et ce n'est pas ton jour de congé. Tu ne vas pas avoir de problème avec ça?</Text>
     <BackgroundPath>Park</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id207.</ID>
     <IDNextDialog>id208.</IDNextDialog>
     <CharacterAvatarPath>CharacterGirlfriend</CharacterAvatarPath>
     <Name>Petite Amie</Name>
-    <Text>ne vous inquiétez pas, je travaille à distance et j'ai des plans pour la semaine à venir. Et si quelque chose, je peux dire que j'ai eu quelques difficultés. Hee-hee.</Text>
+    <Text>Ne vous inquiétez pas, je travaille à distance et j'ai des plans pour la semaine à venir. Et si quelque chose, je peux dire que j'ai eu quelques difficultés. Hee-hee.</Text>
     <BackgroundPath>Park</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id208.</ID>
     <IDNextDialog>id209.</IDNextDialog>
     <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
     <Name>Héros</Name>
-    <Text>je Vois que tu aimes travailler comme designer.</Text>
+    <Text>Je Vois que tu aimes travailler comme designer.</Text>
     <BackgroundPath>Park</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id209.</ID>
@@ -1968,7 +1986,7 @@
     <Name>Petite Amie</Name>
     <Text>Oui, et votre travail?</Text>
     <BackgroundPath>Park</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id210.</ID>
@@ -1977,34 +1995,34 @@
     <Name>Héros</Name>
     <Text>Rien de spécial, j'ai démissionné il y a trois semaines. Et il n'y a pas de problèmes avec l'argent, j'ai assez accumulé.</Text>
     <BackgroundPath>Park</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id211.</ID>
     <IDNextDialog>id212.</IDNextDialog>
     <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
     <Name>Héros</Name>
-    <Text>le mal de Tête a disparu, est allé plus loin.</Text>
+    <Text>Le mal de Tête a disparu, est allé plus loin.</Text>
     <BackgroundPath>Park</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id212.</ID>
     <IDNextDialog>id213.</IDNextDialog>
     <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
     <Name>Héros</Name>
-    <Text>il est déjà sombre, il est probablement temps que nous nous séparions.</Text>
+    <Text>Il est déjà sombre, il est probablement temps que nous nous séparions.</Text>
     <BackgroundPath>Park</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id213.</ID>
     <IDNextDialog>id214.</IDNextDialog>
     <CharacterAvatarPath>CharacterGirlfriend</CharacterAvatarPath>
     <Name>Petite Amie</Name>
-    <Text>oui, probablement. Demain, je t'attendrai chez moi à 10 heures, allons dans les bois pour un pique-nique. À demain!</Text>
+    <Text>Oui, probablement. Demain, je t'attendrai chez moi à 10 heures, allons dans les bois pour un pique-nique. À demain!</Text>
     <BackgroundPath>Park</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id214.</ID>
@@ -2012,7 +2030,7 @@
     <Name />
     <Text>Retour à la maison.</Text>
     <BackgroundPath>Park</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id215.</ID>
@@ -2021,34 +2039,34 @@
     <Name>Héros</Name>
     <Text> M-m-M...</Text>
     <BackgroundPath>RoomHero</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id216.</ID>
     <IDNextDialog>id217.</IDNextDialog>
     <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
     <Name>Héros</Name>
-    <Text>la Tête me fait tellement mal, j'ai eu du mal à rentrer à la maison.</Text>
+    <Text>La Tête me fait tellement mal, j'ai eu du mal à rentrer à la maison.</Text>
     <BackgroundPath>RoomHero</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id217.</ID>
     <IDNextDialog>id218.</IDNextDialog>
     <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
     <Name>Héros</Name>
-    <Text>il Faut s'endormir rapidement et se reposer.</Text>
+    <Text>Il Faut s'endormir rapidement et se reposer.</Text>
     <BackgroundPath>RoomHero</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id218.</ID>
     <IDNextDialog>id219.</IDNextDialog>
     <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
     <Name>Fille</Name>
-    <Text> je t'attendais.</Text>
+    <Text>Je t'attendais.</Text>
     <BackgroundPath>RoomHeroDream</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id219.</ID>
@@ -2057,16 +2075,16 @@
     <Name>Héros</Name>
     <Text>Bonjour.</Text>
     <BackgroundPath>RoomHeroDream</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id220.</ID>
     <IDNextDialog>id221.</IDNextDialog>
     <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
     <Name>Fille</Name>
-    <Text>que diriez-vous de voyager dans différents endroits? Sauf si ça te dérange.</Text>
+    <Text>Que diriez-vous de voyager dans différents endroits? Sauf si ça te dérange.</Text>
     <BackgroundPath>RoomHeroDream</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id221.</ID>
@@ -2075,25 +2093,25 @@
     <Name>Héros</Name>
     <Text>Oh, bonjour! Bien sûr que ça ne me dérange pas. La Dernière aventure était si intéressante et fascinante.</Text>
     <BackgroundPath>RoomHeroDream</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id222.</ID>
     <IDNextDialog>id223.</IDNextDialog>
     <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
     <Name>Fille</Name>
-    <Text>ravie que tu aies aimé. Alors allons - y, je connais beaucoup d'endroits incroyables que je veux te montrer.</Text>
+    <Text>Ravie que tu aies aimé. Alors allons - y, je connais beaucoup d'endroits incroyables que je veux te montrer.</Text>
     <BackgroundPath>RoomHeroDream</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id223.</ID>
     <IDNextDialog>id224.</IDNextDialog>
     <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
     <Name>Fille</Name>
-    <Text> que pensez-vous de ce palais? Très beau, non?</Text>
+    <Text>Que pensez-vous de ce palais? Très beau, non?</Text>
     <BackgroundPath>Castle</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>DramaticBoi</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id224.</ID>
@@ -2102,32 +2120,32 @@
     <Name>Héros</Name>
     <Text>Pas seulement beau - magnifique et majestueux!</Text>
     <BackgroundPath>Castle</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>DramaticBoi</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id225.</ID>
     <IDNextDialog>id226.</IDNextDialog>
     <Text>Contente que tu l'aies aimé. Alors passons au point suivant à l'ordre du jour.</Text>
     <BackgroundPath>Castle</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>DramaticBoi</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id226.</ID>
     <IDNextDialog>id227.</IDNextDialog>
     <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
     <Name>Héros</Name>
-    <Text>est-ce encore quoi?</Text>
+    <Text>Est-ce encore quoi?</Text>
     <BackgroundPath>Castle</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>DramaticBoi</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id227.</ID>
     <IDNextDialog>id228.</IDNextDialog>
     <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
     <Name>Fille</Name>
-    <Text>aujourd'hui, nous attendons un bal dans ce palais - seulement pour nous deux.</Text>
+    <Text>Aujourd'hui, nous attendons un bal dans ce palais - seulement pour nous deux.</Text>
     <BackgroundPath>Castle</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>DramaticBoi</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id228.</ID>
@@ -2136,7 +2154,7 @@
     <Name>Héros</Name>
     <Text>Mais je ne sais pas danser, et la musique n'est pas là...</Text>
     <BackgroundPath>Castle</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>DramaticBoi</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id229.</ID>
@@ -2145,7 +2163,7 @@
     <Name>Fille</Name>
     <Text>Oh, tu n'as pas à t'inquiéter de ne pas savoir danser. Je vais m'occuper de la musique.</Text>
     <BackgroundPath>Castle</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>DramaticBoi</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id230.</ID>
@@ -2154,7 +2172,7 @@
     <Name>Fille</Name>
     <Text>Viens ici.</Text>
     <BackgroundPath>Castle</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>DramaticBoi</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id231.</ID>
@@ -2163,7 +2181,7 @@
     <Name>Héros</Name>
     <Text>Incroyable, je l'ai!</Text>
     <BackgroundPath>Castle</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>DramaticBoi</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id232.</ID>
@@ -2172,7 +2190,7 @@
     <Name>Fille</Name>
     <Text>Et ça se passe très bien!</Text>
     <BackgroundPath>Castle</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>DramaticBoi</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id233.</ID>
@@ -2181,16 +2199,16 @@
     <Name>Héros</Name>
     <Text>UF, enfin, nous avons terminé.</Text>
     <BackgroundPath>Castle</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id234.</ID>
     <IDNextDialog>id235.</IDNextDialog>
     <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
     <Name>Fille</Name>
-    <Text>après cela, nous irons à l'endroit suivant.</Text>
+    <Text>Après cela, nous irons à l'endroit suivant.</Text>
     <BackgroundPath>Castle</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id235.</ID>
@@ -2198,47 +2216,47 @@
     <Name />
     <Text>Ils ont visité plusieurs autres endroits différents.</Text>
     <BackgroundPath>Castle</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id236.</ID>
     <IDNextDialog>id237.</IDNextDialog>
     <Name />
-    <Text> sur une île en vol stationnaire.</Text>
+    <Text>Sur une île en vol stationnaire.</Text>
     <BackgroundPath>FloatingIsland</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id237.</ID>
     <IDNextDialog>id238.</IDNextDialog>
     <Name />
-    <Text> ont Fait du canoë sur l'océan gelé.</Text>
+    <Text>Ont Fait du canoë sur l'océan gelé.</Text>
     <BackgroundPath>FrozenOcean</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id238.</ID>
     <IDNextDialog>id239.</IDNextDialog>
     <Name />
-    <Text> a Visité la bibliothèque, qui a enregistré les histoires de tous les mondes.</Text>
+    <Text>A Visité la bibliothèque, qui a enregistré les histoires de tous les mondes.</Text>
     <BackgroundPath>Library</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id239.</ID>
     <IDNextDialog>id240.</IDNextDialog>
     <Name />
-    <Text> Pêché à partir d'un bateau pirate.</Text>
+    <Text>Pêché à partir d'un bateau pirate.</Text>
     <BackgroundPath>PirateShip</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id240.</ID>
     <IDNextDialog>id241.</IDNextDialog>
     <Name />
-    <Text> a Essayé les fruits les plus rares.</Text>
+    <Text>A Essayé les fruits les plus rares.</Text>
     <BackgroundPath>Orchard</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id241.</ID>
@@ -2247,7 +2265,7 @@
     <Name>Fille</Name>
     <Text>C'est là que notre aventure d'aujourd'hui touche à sa fin.</Text>
     <BackgroundPath>Orchard</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id242.</ID>
@@ -2256,7 +2274,7 @@
     <Name>Héros</Name>
     <Text>Déjà? C'était tout simplement incroyable, tant de choses nouvelles et intéressantes.</Text>
     <BackgroundPath>Orchard</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id243.</ID>
@@ -2265,7 +2283,7 @@
     <Name>Fille</Name>
     <Text>Adieu.</Text>
     <BackgroundPath>Orchard</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id244.</ID>
@@ -2274,33 +2292,33 @@
     <Name>Héros</Name>
     <Text>Elle a disparu aussi soudainement qu'elle est apparue.</Text>
     <BackgroundPath>RoomHero</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id245.</ID>
     <IDNextDialog>id246.</IDNextDialog>
     <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
     <Name>Héros</Name>
-    <Text>je ne peux même pas imaginer ce que ce serait de dormir un jour et de ne pas vous rencontrer.</Text>
+    <Text>Je ne peux même pas imaginer ce que ce serait de dormir un jour et de ne pas vous rencontrer.</Text>
     <BackgroundPath>RoomHero</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id246.</ID>
     <IDNextDialog>id247.</IDNextDialog>
     <Name />
-    <Text>une fois Réuni, il se rend à une réunion prévue.</Text>
+    <Text>Une fois Réuni, il se rend à une réunion prévue.</Text>
     <BackgroundPath>RoomHero</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id247.</ID>
     <IDNextDialog>id248.</IDNextDialog>
     <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
     <Name>Héros</Name>
-    <Text>fille, ne m'attendez-vous pas?</Text>
+    <Text>Fille, ne m'attendez-vous pas?</Text>
     <BackgroundPath>GirlfriendHouseMorning</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id248.</ID>
@@ -2309,7 +2327,7 @@
     <Name>Petite Amie</Name>
     <Text>Qui sait et qui êtes-vous? Hee-hee.</Text>
     <BackgroundPath>GirlfriendHouseMorning</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Responses">
     <ID>id249.</ID>
@@ -2335,40 +2353,43 @@
     <Name>Petite Amie</Name>
     <Text>et où est le cheval perdu? Salut, salut, salut.</Text>
     <BackgroundPath>GirlfriendHouseMorning</BackgroundPath>
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
-    <ID>id250.2</ID>
+    <ID>id250.12</ID>
     <IDNextDialog>id251.</IDNextDialog>
     <CharacterAvatarPath>CharacterGirlfriend</CharacterAvatarPath>
     <Name>Petite Amie</Name>
     <Text>Eh bien, avec tes bleus sous les yeux, tu ressembles vraiment à un zombie.</Text>
     <BackgroundPath>GirlfriendHouseMorning</BackgroundPath>
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
-    <ID>id250.3</ID>
+    <ID>id250.123</ID>
     <IDNextDialog>id251.</IDNextDialog>
     <CharacterAvatarPath>CharacterGirlfriend</CharacterAvatarPath>
     <Name>Petite Amie</Name>
     <Text>Eh bien, vous êtes ennuyeux...</Text>
     <BackgroundPath>GirlfriendHouseMorning</BackgroundPath>
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id251.</ID>
     <IDNextDialog>id252.</IDNextDialog>
     <CharacterAvatarPath>CharacterGirlfriend</CharacterAvatarPath>
     <Name>Petite Amie</Name>
-    <Text>d'accord, allons-Y.</Text>
+    <Text>D'accord, allons-Y.</Text>
     <BackgroundPath>GirlfriendHouseMorning</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id252.</ID>
     <IDNextDialog>id253.</IDNextDialog>
     <CharacterAvatarPath>CharacterGirlfriend</CharacterAvatarPath>
     <Name>Petite Amie</Name>
-    <Text>le Temps est si beau, n'est-ce pas? Juste une journée parfaite pour profiter du moment ensemble.</Text>
+    <Text>Le Temps est si beau, n'est-ce pas? Juste une journée parfaite pour profiter du moment ensemble.</Text>
     <BackgroundPath>Grassland</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id253.</ID>
@@ -2377,7 +2398,7 @@
     <Name>Héros</Name>
     <Text>Oui, c'est exactement ce dont nous avons besoin. La nature autour de nous crée une atmosphère de calme et de détente.</Text>
     <BackgroundPath>Grassland</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id254.</ID>
@@ -2386,7 +2407,7 @@
     <Name>Petite Amie</Name>
     <Text>Regarde, il y a un lac. Et si on passait un peu de temps sur le rivage et qu'on se rafraîchissait? L'eau a l'air si attrayante.</Text>
     <BackgroundPath>LakeWithBeach</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id255.</ID>
@@ -2395,7 +2416,7 @@
     <Name>Héros</Name>
     <Text>Excellente idée.</Text>
     <BackgroundPath>LakeWithBeach</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id256.</ID>
@@ -2404,7 +2425,7 @@
     <Name>Héros</Name>
     <Text>Regarde ce que j'ai! Hee-hee, je t'ai eu! Et l'eau?</Text>
     <BackgroundPath>LakeWithBeach</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id257.</ID>
@@ -2413,7 +2434,7 @@
     <Name>Petite Amie</Name>
     <Text>Oh, vous êtes frappé! Maintenant, je vais devoir me venger!</Text>
     <BackgroundPath>LakeWithBeach</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id258.</ID>
@@ -2422,25 +2443,25 @@
     <Name>Héros</Name>
     <Text>D'accord, d'accord, vous avez gagné! Mais je n'abandonnerai pas!</Text>
     <BackgroundPath>LakeWithBeach</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id259.</ID>
     <IDNextDialog>id260.</IDNextDialog>
     <CharacterAvatarPath>CharacterGirlfriend</CharacterAvatarPath>
     <Name>Petite Amie</Name>
-    <Text>je veux que tu saches que je suis toujours là pour toi. Quelles que soient les difficultés, nous les surmonterons ensemble.</Text>
+    <Text>Je veux que tu saches que je suis toujours là pour toi. Quelles que soient les difficultés, nous les surmonterons ensemble.</Text>
     <BackgroundPath>LakeWithBeach</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id260.</ID>
     <IDNextDialog>id261.</IDNextDialog>
     <CharacterAvatarPath>CharacterGirlfriend</CharacterAvatarPath>
     <Name>Petite Amie</Name>
-    <Text>en vous Regardant, je sais que notre chemin sera brillant.</Text>
+    <Text>En vous Regardant, je sais que notre chemin sera brillant.</Text>
     <BackgroundPath>LakeWithBeach</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id261.</ID>
@@ -2449,7 +2470,7 @@
     <Name>Héros</Name>
     <Text>...</Text>
     <BackgroundPath>LakeWithBeach</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id262.</ID>
@@ -2458,16 +2479,16 @@
     <Name>Héros</Name>
     <Text>Regardez, le soleil commence à se cacher derrière l'horizon. Quelle belle fin de journée.</Text>
     <BackgroundPath>SunsetInForest</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id263.</ID>
     <IDNextDialog>id264.</IDNextDialog>
     <CharacterAvatarPath>CharacterGirlfriend</CharacterAvatarPath>
     <Name>Petite Amie</Name>
-    <Text>il est donc temps de revenir.</Text>
+    <Text>Il est donc temps de revenir.</Text>
     <BackgroundPath>SunsetInForest</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id264.</ID>
@@ -2476,7 +2497,7 @@
     <Name>Petite Amie</Name>
     <Text>Alors, où pourrions-nous nous rencontrer demain? Je ne peux pas penser à quelque chose?</Text>
     <BackgroundPath>SunsetInForest</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id265.</ID>
@@ -2485,15 +2506,15 @@
     <Name>Héros</Name>
     <Text>Puisque tu n'as pas d'idées, je vais choisir, allons au cinéma.</Text>
     <BackgroundPath>SunsetInForest</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id266.</ID>
     <IDNextDialog>id267.</IDNextDialog>
     <Name>Signature sous l'image</Name>
-    <Text>"des Moments qui renforcent notre lien."</Text>
+    <Text>"Des Moments qui renforcent notre lien."</Text>
     <BackgroundPath>HoldingHands</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id267.</ID>
@@ -2501,16 +2522,16 @@
     <Name />
     <Text>Rentrer à la maison et s'endormir.</Text>
     <BackgroundPath>HoldingHands</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id268.</ID>
     <IDNextDialog>id269.</IDNextDialog>
     <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
     <Name>Héros</Name>
-    <Text> Quelque chose dans cette nuit...</Text>
+    <Text>Quelque chose dans cette nuit...</Text>
     <BackgroundPath>ForestPath</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id269.</ID>
@@ -2519,7 +2540,7 @@
     <Name>Fille</Name>
     <Text>Je suis là!</Text>
     <BackgroundPath>ForestPath</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id270.</ID>
@@ -2528,7 +2549,7 @@
     <Name>Héros</Name>
     <Text>Chaque fois que je te rencontre, le sentiment que le monde est si beau et plein de mystères se réveille dans mon cœur.</Text>
     <BackgroundPath>ForestPath</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id271.</ID>
@@ -2537,16 +2558,16 @@
     <Name>Fille</Name>
     <Text>C'est le cas. Le monde est plein d'énigmes et c'est ce qui le rend intéressant.</Text>
     <BackgroundPath>ForestPath</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id272.</ID>
     <IDNextDialog>id273.</IDNextDialog>
     <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
     <Name>Héros</Name>
-    <Text>je suis content que tu sois là.</Text>
+    <Text>Je suis content que tu sois là.</Text>
     <BackgroundPath>ForestPath</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id273.</ID>
@@ -2555,16 +2576,16 @@
     <Name>Héros</Name>
     <Text>Peut-être que cela semble étrange, mais j'ai l'impression qu'à chaque rencontre, vous faites partie de moi. Mes sentiments pour toi sont si forts que parfois je commence même à douter - c'est une réalité ou encore un rêve.</Text>
     <BackgroundPath>ForestPath</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id274.</ID>
     <IDNextDialog>id275.</IDNextDialog>
     <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
     <Name>Héros</Name>
-    <Text>j'ai l'impression que vous êtes quelque chose qui m'a toujours manqué. Et je suis prêt à aller n'importe où, juste pour être à tes côtés.</Text>
+    <Text>J'ai l'impression que vous êtes quelque chose qui m'a toujours manqué. Et je suis prêt à aller n'importe où, juste pour être à tes côtés.</Text>
     <BackgroundPath>ForestPath</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id275.</ID>
@@ -2573,7 +2594,7 @@
     <Name>Fille</Name>
     <Text>Vos mots sont les plus précieux de tous les mystères de ce monde.</Text>
     <BackgroundPath>ForestPath</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id276.</ID>
@@ -2582,88 +2603,88 @@
     <Name>Héros</Name>
     <Text>Tant que j'ai le temps, dites-moi combien de temps je pourrai sortir avec vous dans mes rêves?</Text>
     <BackgroundPath>ForestPath</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id277.</ID>
     <IDNextDialog>id278.</IDNextDialog>
     <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
     <Name>Fille</Name>
-    <Text>je n'ai jamais répondu, tant que ton Moi intérieur aura besoin de moi, je serai là.</Text>
+    <Text>Je n'ai jamais répondu, tant que ton Moi intérieur aura besoin de moi, je serai là.</Text>
     <BackgroundPath>ForestPath</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id278.</ID>
     <IDNextDialog>id279.</IDNextDialog>
     <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
     <Name>Héros</Name>
-    <Text>vous Savez, aujourd'hui, j'ai reçu un message du médecin disant que je devais me présenter demain et donner mon consentement à l'opération. </Text>
+    <Text>Vous Savez, aujourd'hui, j'ai reçu un message du médecin disant que je devais me présenter demain et donner mon consentement à l'opération. </Text>
     <BackgroundPath>ForestPath</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id279.</ID>
     <IDNextDialog>id280.</IDNextDialog>
     <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
     <Name>Héros</Name>
-    <Text>et alors je me suis dit que le Moi intérieur avait besoin de toi parce que je suis malade, mais que se passera-t-il après l'opération?</Text>
+    <Text>Et alors je me suis dit que le Moi intérieur avait besoin de toi parce que je suis malade, mais que se passera-t-il après l'opération?</Text>
     <BackgroundPath>ForestPath</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id280.</ID>
     <IDNextDialog>id281.</IDNextDialog>
     <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
     <Name>Fille</Name>
-    <Text>vous commencez à penser dans la bonne direction.</Text>
+    <Text>Vous commencez à penser dans la bonne direction.</Text>
     <BackgroundPath>ForestPath</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id281.</ID>
     <IDNextDialog>id282.</IDNextDialog>
     <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
     <Name>Fille</Name>
-    <Text> il Est temps pour moi de partir, adieu.</Text>
+    <Text>Il Est temps pour moi de partir, adieu.</Text>
     <BackgroundPath>ForestCrossroads</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id282.</ID>
     <IDNextDialog>id283.</IDNextDialog>
     <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
     <Name>Héros</Name>
-    <Text>mais comment, je ne veux pas vous perdre!..</Text>
+    <Text>Mais comment, je ne veux pas vous perdre!..</Text>
     <BackgroundPath>ForestCrossroads</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id283.</ID>
     <IDNextDialog>id284.</IDNextDialog>
     <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
     <Name>Fille</Name>
-    <Text>tout dépend de votre choix.</Text>
+    <Text>Tout dépend de votre choix.</Text>
     <BackgroundPath>ForestCrossroads</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id284.</ID>
     <IDNextDialog>id285.</IDNextDialog>
     <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
     <Name>Héros</Name>
-    <Text> nous ne nous reverrons plus...</Text>
+    <Text>Nous ne nous reverrons plus...</Text>
     <BackgroundPath>RoomHero</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id285.</ID>
     <IDNextDialog>id286.</IDNextDialog>
     <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
     <Name>Héros</Name>
-    <Text>je ne veux pas la perdre. Mais j'ai tellement peur...</Text>
+    <Text>Je ne veux pas la perdre. Mais j'ai tellement peur...</Text>
     <BackgroundPath>RoomHero</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id286.</ID>
@@ -2672,16 +2693,16 @@
     <Name>Héros</Name>
     <Text>Dès ce soir, je vais devoir donner ma décision finale.</Text>
     <BackgroundPath>RoomHero</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id287.</ID>
     <IDNextDialog>id288.</IDNextDialog>
     <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
     <Name>Héros</Name>
-    <Text>mais lequel? Je l'ignore...</Text>
+    <Text>Mais lequel? Je l'ignore...</Text>
     <BackgroundPath>RoomHero</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id288.</ID>
@@ -2689,7 +2710,7 @@
     <Name />
     <Text>Après une longue réflexion, il a commencé à se rassembler et est allé à une réunion prévue.</Text>
     <BackgroundPath>RoomHero</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id289.</ID>
@@ -2698,16 +2719,16 @@
     <Name>Petite Amie</Name>
     <Text>Voyez quelles sont les belles lumières de la ville! La soirée est fabuleuse.</Text>
     <BackgroundPath>NightCity</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id290.</ID>
     <IDNextDialog>id291.</IDNextDialog>
     <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
     <Name>Héros</Name>
-    <Text>ce sera une soirée inoubliable.</Text>
+    <Text>Ce sera une soirée inoubliable.</Text>
     <BackgroundPath>NightCity</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id291.</ID>
@@ -2716,43 +2737,43 @@
     <Name>Petite Amie</Name>
     <Text>Voilà le cinéma. Regarde-le briller!</Text>
     <BackgroundPath>NightCity</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id292.</ID>
     <IDNextDialog>id293.</IDNextDialog>
     <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
     <Name>Héros</Name>
-    <Text>oui, il y a longtemps que nous n'étions pas là.</Text>
+    <Text>Oui, il y a longtemps que nous n'étions pas là.</Text>
     <BackgroundPath>NightCity</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id293.</ID>
     <IDNextDialog>id294.</IDNextDialog>
     <CharacterAvatarPath>CharacterGirlfriend</CharacterAvatarPath>
     <Name>Petite Amie</Name>
-    <Text>je suis tellement contente que nous passions cette soirée ensemble.</Text>
+    <Text>Je suis tellement contente que nous passions cette soirée ensemble.</Text>
     <BackgroundPath>NightCity</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id294.</ID>
     <IDNextDialog>id295.</IDNextDialog>
     <CharacterAvatarPath>CharacterGirlfriend</CharacterAvatarPath>
     <Name>Petite Amie</Name>
-    <Text> Quelle salle confortable! Je n'étais pas au cinéma depuis longtemps.</Text>
+    <Text>Quelle salle confortable! Je n'étais pas au cinéma depuis longtemps.</Text>
     <BackgroundPath>Cinema</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id295.</ID>
     <IDNextDialog>id296.</IDNextDialog>
     <CharacterAvatarPath>CharacterGirlfriend</CharacterAvatarPath>
     <Name>Petite Amie</Name>
-    <Text>on Dirait que le film promet d'être intéressant. Avez-vous remarqué avec quelle attention tout le monde regarde?</Text>
+    <Text>On Dirait que le film promet d'être intéressant. Avez-vous remarqué avec quelle attention tout le monde regarde?</Text>
     <BackgroundPath>Cinema</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id296.</ID>
@@ -2761,7 +2782,7 @@
     <Name>Héros</Name>
     <Text>Oui, c'est impressionnant. Je suppose que le film est vraiment bon.</Text>
     <BackgroundPath>Cinema</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id297.</ID>
@@ -2770,7 +2791,7 @@
     <Name>Petite Amie</Name>
     <Text>Je ne peux pas croire quelle tournure inattendue!</Text>
     <BackgroundPath>Cinema</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id298.</ID>
@@ -2779,16 +2800,16 @@
     <Name>Héros</Name>
     <Text>Oui, les scénaristes savent vraiment surprendre.</Text>
     <BackgroundPath>Cinema</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id299.</ID>
     <IDNextDialog>id300.</IDNextDialog>
     <CharacterAvatarPath>CharacterGirlfriend</CharacterAvatarPath>
     <Name>Petite Amie</Name>
-    <Text>avez-vous vu un Héros rencontrer son vieil ami de façon inattendue?</Text>
+    <Text>Avez-vous vu un Héros rencontrer son vieil ami de façon inattendue?</Text>
     <BackgroundPath>Cinema</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id300.</ID>
@@ -2797,16 +2818,16 @@
     <Name>Héros</Name>
     <Text>Bien sûr, ce fut un choc pour tout le monde, y compris moi. J'étais sûr qu'il ne le reverrait jamais.</Text>
     <BackgroundPath>Cinema</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id301.</ID>
     <IDNextDialog>id302.</IDNextDialog>
     <CharacterAvatarPath>CharacterGirlfriend</CharacterAvatarPath>
     <Name>Petite Amie</Name>
-    <Text>c'est tellement touchant...</Text>
+    <Text>C'est tellement touchant...</Text>
     <BackgroundPath>Cinema</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id302.</ID>
@@ -2815,16 +2836,16 @@
     <Name>Héros</Name>
     <Text>Oui, de tels moments vous font réfléchir.</Text>
     <BackgroundPath>Cinema</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id303.</ID>
     <IDNextDialog>id304.</IDNextDialog>
     <CharacterAvatarPath>CharacterGirlfriend</CharacterAvatarPath>
     <Name>Petite Amie</Name>
-    <Text>il Semble que le film se termine. Le temps est passé si vite.</Text>
+    <Text>Il Semble que le film se termine. Le temps est passé si vite.</Text>
     <BackgroundPath>Cinema</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id304.</ID>
@@ -2833,25 +2854,25 @@
     <Name>Héros</Name>
     <Text>Oui, mais je suis heureux que nous puissions partager ce soir ensemble.</Text>
     <BackgroundPath>Cinema</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id305.</ID>
     <IDNextDialog>id306.</IDNextDialog>
     <CharacterAvatarPath>CharacterGirlfriend</CharacterAvatarPath>
     <Name>Petite Amie</Name>
-    <Text>le Film était vraiment excitant. C'est super qu'on ait décidé de passer cette soirée ici.</Text>
+    <Text>Le Film était vraiment excitant. C'est super qu'on ait décidé de passer cette soirée ici.</Text>
     <BackgroundPath>NightCity</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id306.</ID>
     <IDNextDialog>id307.</IDNextDialog>
     <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
     <Name>Héros</Name>
-    <Text>d'Accord, c'était inoubliable. Merci de partager ce soir avec moi.</Text>
+    <Text>D'accord, c'était inoubliable. Merci de partager ce soir avec moi.</Text>
     <BackgroundPath>NightCity</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id307.</ID>
@@ -2860,7 +2881,7 @@
     <Name>Héros</Name>
     <Text>Allez, il est temps de revenir à la réalité.</Text>
     <BackgroundPath>NightCity</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id308.</ID>
@@ -2869,16 +2890,16 @@
     <Name>Petite Amie</Name>
     <Text>Bientôt, vous devrez aller à l'hôpital pour prendre une décision.</Text>
     <BackgroundPath>NightCity</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id309.</ID>
     <IDNextDialog>id310.</IDNextDialog>
     <CharacterAvatarPath>CharacterGirlfriend</CharacterAvatarPath>
     <Name>Petite Amie</Name>
-    <Text>vous Savez, avant cela, je veux dire quelque chose d'important.</Text>
+    <Text>Vous Savez, avant cela, je veux dire quelque chose d'important.</Text>
     <BackgroundPath>NightCity</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id310.</ID>
@@ -2887,16 +2908,16 @@
     <Name>Héros</Name>
     <Text>Bien sûr, je suis toute l'attention.</Text>
     <BackgroundPath>NightCity</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id311.</ID>
     <IDNextDialog>id312.</IDNextDialog>
     <CharacterAvatarPath>CharacterGirlfriend</CharacterAvatarPath>
     <Name>Petite Amie</Name>
-    <Text>je voulais que tu saches que je t'apprécie plus que les mots peuvent être exprimés. Ça fait longtemps... je suis amoureuse de toi.</Text>
+    <Text>Je voulais que tu saches que je t'apprécie plus que les mots peuvent être exprimés. Ça fait longtemps... je suis amoureuse de toi.</Text>
     <BackgroundPath>NightCity</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id312.</ID>
@@ -2905,16 +2926,16 @@
     <Name>Héros</Name>
     <Text>Moi... Je ne sais même pas quoi dire.</Text>
     <BackgroundPath>NightCity</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id313.</ID>
     <IDNextDialog>id314.</IDNextDialog>
     <CharacterAvatarPath>CharacterGirlfriend</CharacterAvatarPath>
     <Name>Petite Amie</Name>
-    <Text>je sais que nous avons eu nos propres difficultés, mais... je veux être avec toi, te soutenir dans tout, peu importe ce que tu décides. On peut traverser ça ensemble.</Text>
+    <Text>Je sais que nous avons eu nos propres difficultés, mais... je veux être avec toi, te soutenir dans tout, peu importe ce que tu décides. On peut traverser ça ensemble.</Text>
     <BackgroundPath>NightCity</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id314.</ID>
@@ -2923,16 +2944,16 @@
     <Name>Héros</Name>
     <Text>Merci de me l'avoir dit. Tu... tu es aussi importante pour moi.</Text>
     <BackgroundPath>NightCity</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id315.</ID>
     <IDNextDialog>id316.</IDNextDialog>
     <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
     <Name>Héros</Name>
-    <Text>(je ne peux pas nier qu'elle signifie beaucoup pour moi. Mais vaut-il la peine de prendre des risques et de passer à l'étape suivante?)</Text>
+    <Text>(Je ne peux pas nier qu'elle signifie beaucoup pour moi. Mais vaut-il la peine de prendre des risques et de passer à l'étape suivante?)</Text>
     <BackgroundPath>NightCity</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id316.</ID>
@@ -2941,34 +2962,34 @@
     <Name>Petite Amie</Name>
     <Text>ça Va?</Text>
     <BackgroundPath>NightCity</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id317.</ID>
     <IDNextDialog>id318.</IDNextDialog>
     <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
     <Name>Héros</Name>
-    <Text>avec un sourire. Oui, je pense juste beaucoup à ce qui se passe. Merci de partager mes sentiments avec moi.</Text>
+    <Text>Avec un sourire. Oui, je pense juste beaucoup à ce qui se passe. Merci de partager mes sentiments avec moi.</Text>
     <BackgroundPath>NightCity</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id318.</ID>
     <IDNextDialog>id319.</IDNextDialog>
     <CharacterAvatarPath>CharacterGirlfriend</CharacterAvatarPath>
     <Name>Petite Amie</Name>
-    <Text>nous pouvons aller étape par étape. Je ne te précipite pas.</Text>
+    <Text>Nous pouvons aller étape par étape. Je ne te précipite pas.</Text>
     <BackgroundPath>NightCity</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id319.</ID>
     <IDNextDialog>id320.</IDNextDialog>
     <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
     <Name>Héros</Name>
-    <Text>avec un profond soupir. Merci de comprendre.</Text>
+    <Text>Avec un profond soupir. Merci de comprendre.</Text>
     <BackgroundPath>NightCity</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id320.</ID>
@@ -2977,7 +2998,7 @@
     <Name>Petite Amie</Name>
     <Text>Merci de me guider. Ce fut une soirée vraiment merveilleuse.</Text>
     <BackgroundPath>NightCity</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id321.</ID>
@@ -2986,16 +3007,16 @@
     <Name>Héros</Name>
     <Text>Oui, il y avait. Je suis content qu'on ait pu parler.</Text>
     <BackgroundPath>NightCity</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id322.</ID>
     <IDNextDialog>id323.</IDNextDialog>
     <CharacterAvatarPath>CharacterGirlfriend</CharacterAvatarPath>
     <Name>Petite Amie</Name>
-    <Text>alors, qu'en penses-tu?</Text>
+    <Text>Alors, qu'en penses-tu?</Text>
     <BackgroundPath>NightCity</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id323.</ID>
@@ -3004,16 +3025,16 @@
     <Name>Héros</Name>
     <Text>Semblant regarder vers le bas. Ce... quelque chose que je vais devoir régler. Mais je promets d'y penser.</Text>
     <BackgroundPath>NightCity</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id324.</ID>
     <IDNextDialog>id325.</IDNextDialog>
     <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
     <Name>Héros</Name>
-    <Text> Bonne nuit.</Text>
+    <Text>Bonne nuit.</Text>
     <BackgroundPath>GirlfriendHouseEvening</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id325.</ID>
@@ -3022,16 +3043,16 @@
     <Name>Petite Amie</Name>
     <Text>Toi aussi.</Text>
     <BackgroundPath>GirlfriendHouseEvening</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id326.</ID>
     <IDNextDialog>id327.</IDNextDialog>
     <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
     <Name>Héros</Name>
-    <Text>elle est réelle. Ses sentiments sont sincères et je ressens la même chose. Mais c'est si difficile. </Text>
+    <Text>Elle est réelle. Ses sentiments sont sincères et je ressens la même chose. Mais c'est si difficile. </Text>
     <BackgroundPath>GirlfriendHouseEvening</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id327.</ID>
@@ -3040,24 +3061,24 @@
     <Name>Héros</Name>
     <Text>Toute cette journée a été si intense. D'une part, la joie de ce qu'elle a dit, mais de l'autre, la tension incroyable. </Text>
     <BackgroundPath>GirlfriendHouseEvening</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id328.</ID>
     <IDNextDialog>id329.</IDNextDialog>
     <Name />
-    <Text>en Arrivant à l'hôpital.</Text>
+    <Text>En arrivant à l'hôpital.</Text>
     <BackgroundPath>GirlfriendHouseEvening</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>FrozenWinter</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id329.</ID>
     <IDNextDialog>id330.</IDNextDialog>
     <CharacterAvatarPath>CharacterDoctor</CharacterAvatarPath>
     <Name>Docteur</Name>
-    <Text> je t'attendais, entre.</Text>
+    <Text>Je t'attendais, entre.</Text>
     <BackgroundPath>Hospital</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>FrozenWinter</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id330.</ID>
@@ -3066,7 +3087,7 @@
     <Name>Docteur</Name>
     <Text>Bonjour. Comment tu te sens aujourd'hui?</Text>
     <BackgroundPath>DoctorOffice</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>FrozenWinter</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id331.</ID>
@@ -3075,7 +3096,7 @@
     <Name>Héros</Name>
     <Text>Pas très bon. Ces pensées... ces décisions... ils ne me laissent pas tranquille.</Text>
     <BackgroundPath>DoctorOffice</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>FrozenWinter</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id332.</ID>
@@ -3084,25 +3105,25 @@
     <Name>Docteur</Name>
     <Text>Je Comprends. Prendre une décision qui pourrait affecter votre vie n'est pas facile. Je suis là pour te soutenir.</Text>
     <BackgroundPath>DoctorOffice</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>FrozenWinter</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id333.</ID>
     <IDNextDialog>id334.</IDNextDialog>
     <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
     <Name>Héros</Name>
-    <Text>je me sens dévasté. D'une part, je veux vivre. Je veux construire l'avenir, profiter des moments.</Text>
+    <Text>Je me sens dévasté. D'une part, je veux vivre. Je veux construire l'avenir, profiter des moments.</Text>
     <BackgroundPath>DoctorOffice</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>FrozenWinter</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id334.</ID>
     <IDNextDialog>id335.</IDNextDialog>
     <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
     <Name>Héros</Name>
-    <Text>mais d'un autre côté, ces douleurs et ce qui pourrait encore empirer... J'ai peur que l'opération ne réussisse pas et que je me retrouve dans une situation pire.</Text>
+    <Text>Mais d'un autre côté, ces douleurs et ce qui pourrait encore empirer... J'ai peur que l'opération ne réussisse pas et que je me retrouve dans une situation pire.</Text>
     <BackgroundPath>DoctorOffice</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>FrozenWinter</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id335.</ID>
@@ -3111,25 +3132,25 @@
     <Name>Docteur</Name>
     <Text>Vos sentiments sont absolument compréhensibles. L'opération est une étape sérieuse. Nous avons des données sur votre état et vos risques potentiels, mais c'est à vous de décider. </Text>
     <BackgroundPath>DoctorOffice</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>FrozenWinter</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id336.</ID>
     <IDNextDialog>id337.</IDNextDialog>
     <CharacterAvatarPath>CharacterDoctor</CharacterAvatarPath>
     <Name>Docteur</Name>
-    <Text>il est Important d'écouter votre voix intérieure et de comprendre ce qui est le plus significatif pour vous.</Text>
+    <Text>Il est Important d'écouter votre voix intérieure et de comprendre ce qui est le plus significatif pour vous.</Text>
     <BackgroundPath>DoctorOffice</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>FrozenWinter</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id337.</ID>
     <IDNextDialog>id338.</IDNextDialog>
     <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
     <Name>Héros</Name>
-    <Text>je ne sais tout simplement pas quel chemin choisir. Et si je fais le mauvais choix?</Text>
+    <Text>Je ne sais tout simplement pas quel chemin choisir. Et si je fais le mauvais choix?</Text>
     <BackgroundPath>DoctorOffice</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>FrozenWinter</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id338.</ID>
@@ -3138,7 +3159,7 @@
     <Name>Docteur</Name>
     <Text>Il n'y a pas une telle notion de "mauvais" choix. Les choix que vous ferez refléteront vos valeurs, vos rêves et vos peurs. La vie est pleine d'incertitude et il est important d'aller de l'avant avec ce que vous ressentez à l'intérieur.</Text>
     <BackgroundPath>DoctorOffice</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>FrozenWinter</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id339.</ID>
@@ -3147,16 +3168,16 @@
     <Name>Héros</Name>
     <Text>Merci pour votre soutien.</Text>
     <BackgroundPath>DoctorOffice</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>FrozenWinter</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id340.</ID>
     <IDNextDialog>id341.</IDNextDialog>
     <CharacterAvatarPath>CharacterDoctor</CharacterAvatarPath>
     <Name>Docteur</Name>
-    <Text>au Fait, vous devez comprendre que si vous refusez l'opération, vous ne pouvez pas vivre longtemps. Mais si tu es d'accord, il y a une chance. </Text>
+    <Text>Au Fait, vous devez comprendre que si vous refusez l'opération, vous ne pouvez pas vivre longtemps. Mais si tu es d'accord, il y a une chance. </Text>
     <BackgroundPath>DoctorOffice</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>FrozenWinter</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id341.</ID>
@@ -3165,7 +3186,7 @@
     <Name>Docteur</Name>
     <Text>Bien sûr, la chance est très faible, votre état est unique et vous pouvez compter sur les doigts d'une main. Mais si tout se passe bien, les problèmes de tête disparaîtront.</Text>
     <BackgroundPath>DoctorOffice</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>FrozenWinter</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id342.</ID>
@@ -3174,7 +3195,7 @@
     <Name>Héros</Name>
     <Text>Alors je choisis...</Text>
     <BackgroundPath>DoctorOffice</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>FrozenWinter</SoundEffect>
   </anyType>
   <anyType xsi:type="Responses">
     <ID>id343.</ID>
@@ -3194,18 +3215,18 @@
     <IDNextDialog>id345.</IDNextDialog>
     <CharacterAvatarPath>CharacterDoctor</CharacterAvatarPath>
     <Name>Docteur</Name>
-    <Text>  c'était probablement un choix difficile.</Text>
+    <Text>C'était probablement un choix difficile.</Text>
     <BackgroundPath>DoctorOffice</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id345.</ID>
     <IDNextDialog>id346.</IDNextDialog>
     <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
     <Name>Héros</Name>
-    <Text>j'espère quand même que tout se passera bien.</Text>
+    <Text>J'espère quand même que tout se passera bien.</Text>
     <BackgroundPath>DoctorOffice</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id346.</ID>
@@ -3214,7 +3235,7 @@
     <Name>Docteur</Name>
     <Text>Eh bien, je vais vous informer de votre décision et nous allons commencer dans les trois prochaines heures.</Text>
     <BackgroundPath>DoctorOffice</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id347.</ID>
@@ -3223,7 +3244,7 @@
     <Name>Héros</Name>
     <Text>Alors tout de suite?</Text>
     <BackgroundPath>DoctorOffice</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id348.</ID>
@@ -3232,16 +3253,16 @@
     <Name>Docteur</Name>
     <Text>à la conjecture, il ne reste que peu de temps.</Text>
     <BackgroundPath>DoctorOffice</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id349.</ID>
     <IDNextDialog>id350.</IDNextDialog>
     <CharacterAvatarPath>CharacterDoctor</CharacterAvatarPath>
     <Name>Docteur</Name>
-    <Text>vous êtes prêt, non?</Text>
+    <Text>Vous êtes prêt, non?</Text>
     <BackgroundPath>DoctorOffice</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id350.</ID>
@@ -3250,7 +3271,7 @@
     <Name>Héros</Name>
     <Text>Oui, moi... Je suis prêt. Je ne peux pas dire que je n'ai pas peur, mais je sais que c'est le seul moyen.</Text>
     <BackgroundPath>DoctorOffice</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id351.</ID>
@@ -3259,24 +3280,24 @@
     <Name>Docteur</Name>
     <Text>Tout ira bien. Détends-toi.</Text>
     <BackgroundPath>DoctorOffice</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id352.</ID>
     <IDNextDialog>id353.</IDNextDialog>
     <Name />
-    <Text> l'Opération a commencé.</Text>
+    <Text>L'Opération a commencé.</Text>
     <BackgroundPath>OperatingRoom</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id353.</ID>
     <IDNextDialog>id354.</IDNextDialog>
     <CharacterAvatarPath>CharacterGirlfriend</CharacterAvatarPath>
     <Name>Petite Amie</Name>
-    <Text> Vous êtes réveillé.</Text>
+    <Text>Vous êtes réveillé.</Text>
     <BackgroundPath>RoomInHospital</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id354.</ID>
@@ -3285,7 +3306,7 @@
     <Name>Héros</Name>
     <Text>Toi... ici.</Text>
     <BackgroundPath>RoomInHospital</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id355.</ID>
@@ -3294,7 +3315,7 @@
     <Name>Petite Amie</Name>
     <Text>Bien sûr, je serai toujours à vos côtés.</Text>
     <BackgroundPath>RoomInHospital</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id356.</ID>
@@ -3303,6 +3324,7 @@
     <Name>Héros</Name>
     <Text>Maintenant, je peux aller de l'avant, construire mon avenir... avec toi.</Text>
     <BackgroundPath>RoomInHospital</BackgroundPath>
+    <SoundEffect>Beanfeast</SoundEffect>
     <ActionTrigger>end2</ActionTrigger>
   </anyType>
   <anyType xsi:type="Phrase">
@@ -3310,9 +3332,9 @@
     <IDNextDialog>id358.</IDNextDialog>
     <CharacterAvatarPath>CharacterDoctor</CharacterAvatarPath>
     <Name>Docteur</Name>
-    <Text> c'était probablement un choix difficile.</Text>
+    <Text>C'était probablement un choix difficile.</Text>
     <BackgroundPath>DoctorOffice</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id358.</ID>
@@ -3321,7 +3343,7 @@
     <Name>Docteur</Name>
     <Text>Je ne vais pas vous décourager. C'est probablement notre Dernière rencontre.</Text>
     <BackgroundPath>DoctorOffice</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id359.</ID>
@@ -3330,24 +3352,24 @@
     <Name>Héros</Name>
     <Text>Adieu.</Text>
     <BackgroundPath>DoctorOffice</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id360.</ID>
     <IDNextDialog>id361.</IDNextDialog>
     <Name />
-    <Text> en Rentrant à la maison, il y a eu une autre attaque de maux de tête qui ne pouvait pas être comparée à Seeley, après s'être évanoui, il est tombé et ne s'est plus levé.</Text>
+    <Text>En Rentrant à la maison, il y a eu une autre attaque de maux de tête qui ne pouvait pas être comparée à Seeley, après s'être évanoui, il est tombé et ne s'est plus levé.</Text>
     <BackgroundPath>NightCity</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id361.</ID>
     <IDNextDialog>id362.</IDNextDialog>
     <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
     <Name>Fille</Name>
-    <Text> Tu as choisi le monde des rêves, tu m'as choisi.</Text>
+    <Text>Tu as choisi le monde des rêves, tu m'as choisi.</Text>
     <BackgroundPath>DreamWorld</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id362.</ID>
@@ -3356,7 +3378,7 @@
     <Name>Héros</Name>
     <Text>Oui, c'est le cas.</Text>
     <BackgroundPath>DreamWorld</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id363.</ID>
@@ -3365,7 +3387,7 @@
     <Name>Héros</Name>
     <Text>Où sommes-nous maintenant?</Text>
     <BackgroundPath>DreamWorld</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id364.</ID>
@@ -3374,7 +3396,7 @@
     <Name>Fille</Name>
     <Text>Nous sommes dans le monde que vous avez créé par votre décision.</Text>
     <BackgroundPath>DreamWorld</BackgroundPath>
-    <ActionTrigger />
+    <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id365.</ID>
@@ -3383,6 +3405,7 @@
     <Name>Fille</Name>
     <Text>C'est l'endroit où nos aventures commenceront.</Text>
     <BackgroundPath>DreamWorld</BackgroundPath>
+    <SoundEffect>WooScary</SoundEffect>
     <ActionTrigger>end2</ActionTrigger>
   </anyType>
 </ArrayOfAnyType>
