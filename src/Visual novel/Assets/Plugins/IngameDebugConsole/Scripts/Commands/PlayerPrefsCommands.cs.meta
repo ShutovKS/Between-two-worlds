@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 33fb3ee25c8764f4c905fa3ac7c4eb89
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 68068
+  packageName: In-game Debug Console
+  packageVersion: 1.6.2
+  assetPath: Assets/Plugins/IngameDebugConsole/Scripts/Commands/PlayerPrefsCommands.cs
+  uploadId: 617046

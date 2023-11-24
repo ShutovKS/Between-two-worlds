@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: 37c6c91e5bfac6f499698c03f593bcbb
+timeCreated: 1520627934
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 68068
+  packageName: In-game Debug Console
+  packageVersion: 1.6.2
+  assetPath: Assets/Plugins/IngameDebugConsole/Scripts/DebugLogIndexList.cs
+  uploadId: 617046
