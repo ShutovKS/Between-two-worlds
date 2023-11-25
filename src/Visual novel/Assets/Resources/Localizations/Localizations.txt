@@ -1,0 +1,5 @@
+Eng
+Fren
+Ger
+Ital
+Rus
