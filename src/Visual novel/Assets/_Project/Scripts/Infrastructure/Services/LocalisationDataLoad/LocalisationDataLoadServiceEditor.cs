@@ -31,7 +31,7 @@ namespace Infrastructure.Services.LocalisationDataLoad
             for (var index = 0; index < directoriesNames.Length; index++)
             {
                 var directoryName = directoriesNames[index];
-                if (!File.Exists(Path.Combine(directoryName, LocalisationDataLoadService.PATH_TO_MAIN)))
+                if (!File.Exists(Path.Combine(directoryName, LocalisationDataLoadService.PATH_TO_MAIN + ".txt")))
                 {
                     continue;
                 }
@@ -42,12 +42,12 @@ namespace Infrastructure.Services.LocalisationDataLoad
 
             var localizations = string.Join("\n", directoriesNames);
 
-            if (!File.Exists(Path.Combine(path, LocalisationDataLoadService.DIRECTORIES_NAMES)))
+            if (!File.Exists(Path.Combine(path, LocalisationDataLoadService.DIRECTORIES_NAMES + ".txt")))
             {
-                File.Create(Path.Combine(path, LocalisationDataLoadService.DIRECTORIES_NAMES)).Close();
+                File.Create(Path.Combine(path, LocalisationDataLoadService.DIRECTORIES_NAMES + ".txt")).Close();
             }
 
-            File.WriteAllText(Path.Combine(path, LocalisationDataLoadService.DIRECTORIES_NAMES), localizations);
+            File.WriteAllText(Path.Combine(path, LocalisationDataLoadService.DIRECTORIES_NAMES + ".txt"), localizations);
 
             AssetDatabase.Refresh();
 
