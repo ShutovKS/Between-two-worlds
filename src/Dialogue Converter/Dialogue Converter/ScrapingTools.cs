@@ -65,7 +65,7 @@ public static class ScrapingTools
         }
 
         var openBracketIndex = content.IndexOf('$');
-        string contentTemp = content[..openBracketIndex] + '.' + content[(openBracketIndex + 1)..];
+        var contentTemp = content[..openBracketIndex] + '.' + content[(openBracketIndex + 1)..];
         var closeBracketIndex = contentTemp.IndexOf('$');
         soundEffect = content.Substring(openBracketIndex + 1, closeBracketIndex - openBracketIndex - 1);
         content = contentTemp[..openBracketIndex] + contentTemp[(closeBracketIndex + 1)..];
@@ -81,7 +81,7 @@ public static class ScrapingTools
     private static string GetUniqueId(ref string content)
     {
         var openBracketIndex = content.IndexOf('@');
-        string contentTemp = content[..openBracketIndex] + '.' + content[(openBracketIndex + 1)..];
+        var contentTemp = content[..openBracketIndex] + '.' + content[(openBracketIndex + 1)..];
         var closeBracketIndex = contentTemp.IndexOf('@');
         var uniqueId = content.Substring(openBracketIndex + 1, closeBracketIndex - openBracketIndex - 1);
         content = contentTemp[..openBracketIndex] + contentTemp[(closeBracketIndex + 1)..];
