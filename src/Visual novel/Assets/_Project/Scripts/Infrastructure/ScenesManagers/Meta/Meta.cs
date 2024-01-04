@@ -25,7 +25,7 @@ namespace Infrastructure.ScenesManagers.Meta
         private IUIFactoryInfoService _uiFactoryInfo;
         private ISoundsService _soundsService;
 
-        private void Awake()
+        private void Start()
         {
             InitializedServices();
 

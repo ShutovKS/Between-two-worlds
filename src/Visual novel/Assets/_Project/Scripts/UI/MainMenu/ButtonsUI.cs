@@ -20,6 +20,13 @@ namespace UI.MainMenu
 		[SerializeField] private TextMeshProUGUI _startGameButtonText;
 		[SerializeField] private TextMeshProUGUI _exitButtonText;
 
+		private void Awake()
+		{
+#if UNITY_WEBGL
+			_exitButton.gameObject.SetActive(false);
+#endif
+		}
+		
 		public void RegisterLoadGameButtonCallback(UnityAction action)
 		{
 			_loadGameButton.RegisterNewCallback(action);

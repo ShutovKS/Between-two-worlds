@@ -17,7 +17,7 @@ namespace Infrastructure.ScenesManagers.Bootstrap
 {
     public class Bootstrap : MonoBehaviour, ICoroutineRunner
     {
-        private void Awake()
+        private void Start()
         {
             ServicesInitialize();
             GameLoading();
