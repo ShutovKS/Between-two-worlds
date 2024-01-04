@@ -147,7 +147,6 @@ IPhrase[] ParseBranchingDialogues(int id, string character, string content, Char
 {
     ScrapingTools.TryGetBackground(ref content, out var background);
     ScrapingTools.TryGetSoundEffect(ref content, out var soundEffect);
-    var ID = ScrapingTools.GetId(id);
     charactersAvatars.TryGetCharacterAvatarPath(character, out var characterAvatarPath);
     charactersNames.TryGetCharacterName(character, out var characterName);
 
@@ -156,8 +155,9 @@ IPhrase[] ParseBranchingDialogues(int id, string character, string content, Char
 
     for (var i = 0; i < dialogueParts.Length; i++)
     {
-        var part = dialogueParts[i];
+        var ID = ScrapingTools.GetId(id);
         var IDNext = ScrapingTools.GetId(id + 1);
+        var part = dialogueParts[i];
 
         if (part[0] == '[')
         {
