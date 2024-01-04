@@ -934,7 +934,7 @@
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id101.12</ID>
-    <IDNextDialog>id102.12</IDNextDialog>
+    <IDNextDialog>id102.2</IDNextDialog>
     <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
     <Name>Fille</Name>
     <Text>Hohei - quel est votre nom</Text>
@@ -952,7 +952,7 @@
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id102.12</ID>
-    <IDNextDialog>id103.12</IDNextDialog>
+    <IDNextDialog>id103.2</IDNextDialog>
     <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
     <Name>Héros</Name>
     <Text>Hohei Pourquoi exactement un tel nom</Text>
@@ -1183,7 +1183,7 @@
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id125.12</ID>
-    <IDNextDialog>id126.12</IDNextDialog>
+    <IDNextDialog>id126.2</IDNextDialog>
     <CharacterAvatarPath>CharacterGirlfriend</CharacterAvatarPath>
     <Name>Petite Amie</Name>
     <Text>Je vais prendre une salade César et des pâtes.</Text>
@@ -1192,7 +1192,7 @@
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id125.123</ID>
-    <IDNextDialog>id126.123</IDNextDialog>
+    <IDNextDialog>id126.3</IDNextDialog>
     <CharacterAvatarPath>CharacterGirlfriend</CharacterAvatarPath>
     <Name>Petite Amie</Name>
     <Text> je prendrai une salade César, des pâtes et un cocktail, et il aura des pâtes avec un shish kebab et quelque chose à boire.</Text>
@@ -1688,7 +1688,7 @@
   </anyType>
   <anyType xsi:type="Phrase">
     <ID>id177.12</ID>
-    <IDNextDialog>id178.12</IDNextDialog>
+    <IDNextDialog>id178.2</IDNextDialog>
     <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
     <Name>Fille</Name>
     <Text> C'est comme ça que vous devez être plus honnête.</Text>
