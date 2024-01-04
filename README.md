@@ -1,4 +1,4 @@
-Eng | [Rus](Resources\Localization%20Readme\README_RU.md)
+Eng | [Rus](Resources/Localization%20Readme/README_RU.md)
 
 # Between two worlds
 
@@ -38,14 +38,14 @@ MIT License
 
 ### Main menu
 
-![Main menu](Resources\Screenshots\Eng\main_menu.png)
+![Main menu](Resources/Screenshots/Eng/main_menu.png)
 
 ### Gameplay
 
-![Gameplay](Resources\Screenshots\Eng\gameplay_1.png)
+![Gameplay](Resources/Screenshots/Eng/gameplay_1.png)
 
-![Gameplay](Resources\Screenshots\Eng\gameplay_2.png)
+![Gameplay](Resources/Screenshots/Eng/gameplay_2.png)
 
-![Gameplay](Resources\Screenshots\Eng\gameplay_3.png)
+![Gameplay](Resources/Screenshots/Eng/gameplay_3.png)
 
-![Gameplay](Resources\Screenshots\Eng\gameplay_4.png)
+![Gameplay](Resources/Screenshots/Eng/gameplay_4.png)

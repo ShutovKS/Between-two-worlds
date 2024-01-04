@@ -38,12 +38,12 @@ MIT Лицензия
 
 ### Главное меню
 
-![Главное меню](../../Resources\Screenshots\Rus\main_menu.png)
+![Главное меню](../../Resources/Screenshots/Rus/main_menu.png)
 
 ### Геймплей
 
-![Геймплей](../../Resources\Screenshots\Rus\gameplay_1.png)
+![Геймплей](../../Resources/Screenshots/Rus/gameplay_1.png)
 
-![Геймплей](../../Resources\Screenshots\Rus\gameplay_2.png)
+![Геймплей](../../Resources/Screenshots/Rus/gameplay_2.png)
 
-![Геймплей](../../Resources\Screenshots\Rus\gameplay_3.png)
+![Геймплей](../../Resources/Screenshots/Rus/gameplay_3.png)
