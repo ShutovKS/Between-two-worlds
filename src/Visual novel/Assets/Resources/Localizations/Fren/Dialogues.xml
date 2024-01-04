@@ -423,7 +423,7 @@
     <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
-    <ID>id46.12</ID>
+    <ID>id46.2</ID>
     <IDNextDialog>id47.</IDNextDialog>
     <CharacterAvatarPath>CharacterGirlfriend</CharacterAvatarPath>
     <Name>Petite Amie</Name>
@@ -933,7 +933,7 @@
     <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
-    <ID>id101.12</ID>
+    <ID>id101.2</ID>
     <IDNextDialog>id102.2</IDNextDialog>
     <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
     <Name>Fille</Name>
@@ -951,7 +951,7 @@
     <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
-    <ID>id102.12</ID>
+    <ID>id102.2</ID>
     <IDNextDialog>id103.2</IDNextDialog>
     <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
     <Name>Héros</Name>
@@ -969,7 +969,7 @@
     <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
-    <ID>id103.12</ID>
+    <ID>id103.2</ID>
     <IDNextDialog>id104.</IDNextDialog>
     <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
     <Name>Fille</Name>
@@ -1182,7 +1182,7 @@
     <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
-    <ID>id125.12</ID>
+    <ID>id125.2</ID>
     <IDNextDialog>id126.2</IDNextDialog>
     <CharacterAvatarPath>CharacterGirlfriend</CharacterAvatarPath>
     <Name>Petite Amie</Name>
@@ -1191,7 +1191,7 @@
     <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
-    <ID>id125.123</ID>
+    <ID>id125.3</ID>
     <IDNextDialog>id126.3</IDNextDialog>
     <CharacterAvatarPath>CharacterGirlfriend</CharacterAvatarPath>
     <Name>Petite Amie</Name>
@@ -1209,7 +1209,7 @@
     <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
-    <ID>id126.12</ID>
+    <ID>id126.2</ID>
     <IDNextDialog>id127.</IDNextDialog>
     <CharacterAvatarPath>CharacterGirlfriend</CharacterAvatarPath>
     <Name>Petite Amie</Name>
@@ -1218,7 +1218,7 @@
     <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
-    <ID>id126.123</ID>
+    <ID>id126.3</ID>
     <IDNextDialog>id127.</IDNextDialog>
     <CharacterAvatarPath>CharacterGirlfriend</CharacterAvatarPath>
     <Name>Petite Amie</Name>
@@ -1687,7 +1687,7 @@
     <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
-    <ID>id177.12</ID>
+    <ID>id177.2</ID>
     <IDNextDialog>id178.2</IDNextDialog>
     <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
     <Name>Fille</Name>
@@ -1704,7 +1704,7 @@
     <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
-    <ID>id178.12</ID>
+    <ID>id178.2</ID>
     <IDNextDialog>id179.</IDNextDialog>
     <Name />
     <Text>Elle fronça les sourcils.</Text>
@@ -2356,7 +2356,7 @@
     <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
-    <ID>id250.12</ID>
+    <ID>id250.2</ID>
     <IDNextDialog>id251.</IDNextDialog>
     <CharacterAvatarPath>CharacterGirlfriend</CharacterAvatarPath>
     <Name>Petite Amie</Name>
@@ -2365,7 +2365,7 @@
     <SoundEffect>Beanfeast</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
-    <ID>id250.123</ID>
+    <ID>id250.3</ID>
     <IDNextDialog>id251.</IDNextDialog>
     <CharacterAvatarPath>CharacterGirlfriend</CharacterAvatarPath>
     <Name>Petite Amie</Name>
