@@ -90,6 +90,7 @@ namespace Infrastructure.ScenesManagers.Core
 
         private void ExitInMenu()
         {
+            _dialogueManager.StopAutoDialogSwitchMode();
             _uiFactoryInfo.ConfirmationUI.SetActivePanel(true);
             _uiFactoryInfo.ConfirmationUI.Buttons.RegisterYesButtonCallback(
                 () =>

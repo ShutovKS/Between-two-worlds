@@ -92,7 +92,7 @@ namespace Infrastructure.ScenesManagers.Core
                 _typingDelay = SECONDS_DELAY_FAST;
             }
         }
-
+        
         public void AutoDialogSwitchMode()
         {
             if (_isAutoMode)
@@ -108,6 +108,14 @@ namespace Infrastructure.ScenesManagers.Core
                 {
                     AutoDialogSwitchIfComplete();
                 }
+            }
+        }
+
+        public void StopAutoDialogSwitchMode()
+        {
+            if (_isAutoMode)
+            {
+                AutoDialogSwitchMode();
             }
         }
 
