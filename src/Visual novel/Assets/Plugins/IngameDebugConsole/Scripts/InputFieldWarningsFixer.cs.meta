@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: 049982f63fd78c042851caecd952f3f4
+timeCreated: 1701609854
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 68068
+  packageName: In-game Debug Console
+  packageVersion: 1.6.6
+  assetPath: Assets/Plugins/IngameDebugConsole/Scripts/InputFieldWarningsFixer.cs
+  uploadId: 630272

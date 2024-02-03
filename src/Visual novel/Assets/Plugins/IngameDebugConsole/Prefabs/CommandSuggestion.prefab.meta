@@ -11,6 +11,6 @@ AssetOrigin:
   serializedVersion: 1
   productId: 68068
   packageName: In-game Debug Console
-  packageVersion: 1.6.2
+  packageVersion: 1.6.6
   assetPath: Assets/Plugins/IngameDebugConsole/Prefabs/CommandSuggestion.prefab
-  uploadId: 617046
+  uploadId: 630272
