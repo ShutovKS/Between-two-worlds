@@ -41,7 +41,7 @@ namespace Infrastructure.ScenesManagers.Core
 
         private void InitializedManagers()
         {
-            _actionTriggerManager = new ActionTriggerManager(_uiFactoryInfo, _localisationDataLoad, ConfirmExitInMenu);
+            _actionTriggerManager = new ActionTriggerManager(_uiFactoryInfo, _localisationDataLoad, ExitInMenu);
 
             _historyManager = new HistoryManager(_uiFactoryInfo.DialogueUI.History);
 
