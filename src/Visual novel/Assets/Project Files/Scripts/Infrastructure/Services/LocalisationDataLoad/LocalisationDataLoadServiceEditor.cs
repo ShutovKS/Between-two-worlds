@@ -1,4 +1,4 @@
-#if UNITY_EDITOR
+﻿#if UNITY_EDITOR
 using System.IO;
 using UnityEditor;
 using UnityEditor.Build;
@@ -9,7 +9,7 @@ namespace Infrastructure.Services.LocalisationDataLoad
 {
     public class LocalisationDataLoadServiceEditor : IPreprocessBuildWithReport
     {
-        public int callbackOrder { get; } = 0;
+        public int callbackOrder { get; }
 
         public void OnPreprocessBuild(BuildReport report)
         {
@@ -24,14 +24,14 @@ namespace Infrastructure.Services.LocalisationDataLoad
 
         private static void ShowLocalizations(bool isShow)
         {
-            var path = Path.Combine(Application.dataPath, "Resources", LocalisationDataLoadService.MAIN_DIRECTORY);
-
+            var path = Path.Combine(Application.dataPath, @"Project Files\Resources\Localizations");
+            
             var directoriesNames = Directory.GetDirectories(path);
 
             for (var index = 0; index < directoriesNames.Length; index++)
             {
                 var directoryName = directoriesNames[index];
-                if (!File.Exists(Path.Combine(directoryName, LocalisationDataLoadService.PATH_TO_MAIN + ".txt")))
+                if (!File.Exists(Path.Combine(directoryName, "Main.txt")))
                 {
                     continue;
                 }
@@ -42,12 +42,12 @@ namespace Infrastructure.Services.LocalisationDataLoad
 
             var localizations = string.Join("\n", directoriesNames);
 
-            if (!File.Exists(Path.Combine(path, LocalisationDataLoadService.DIRECTORIES_NAMES + ".txt")))
+            if (!File.Exists(Path.Combine(path, "Localizations" + ".txt")))
             {
-                File.Create(Path.Combine(path, LocalisationDataLoadService.DIRECTORIES_NAMES + ".txt")).Close();
+                File.Create(Path.Combine(path, "Localizations" + ".txt")).Close();
             }
 
-            File.WriteAllText(Path.Combine(path, LocalisationDataLoadService.DIRECTORIES_NAMES + ".txt"), localizations);
+            File.WriteAllText(Path.Combine(path, "Localizations" + ".txt"), localizations);
 
             AssetDatabase.Refresh();
 
