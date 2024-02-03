@@ -1,17 +1,17 @@
-﻿using System.Globalization;
+﻿using System.Collections.Generic;
+using System.Globalization;
 using System.Text;
 using UnityEngine;
 
 // Container for a simple debug entry
 namespace IngameDebugConsole
 {
-	public class DebugLogEntry : System.IEquatable<DebugLogEntry>
+	public class DebugLogEntry
 	{
 		private const int HASH_NOT_CALCULATED = -623218;
 
 		public string logString;
 		public string stackTrace;
-
 		private string completeLog;
 
 		// Sprite to show with this entry
@@ -19,6 +19,9 @@ namespace IngameDebugConsole
 
 		// Collapsed count
 		public int count;
+
+		// Index of this entry among all collapsed entries
+		public int collapsedIndex;
 
 		private int hashValue;
 
@@ -32,10 +35,11 @@ namespace IngameDebugConsole
 			hashValue = HASH_NOT_CALCULATED;
 		}
 
-		// Check if two entries have the same origin
-		public bool Equals( DebugLogEntry other )
+		public void Clear()
 		{
-			return this.logString == other.logString && this.stackTrace == other.stackTrace;
+			logString = null;
+			stackTrace = null;
+			completeLog = null;
 		}
 
 		// Checks if logString or stackTrace contains the search term
@@ -55,7 +59,7 @@ namespace IngameDebugConsole
 		}
 
 		// Credit: https://stackoverflow.com/a/19250516/2373034
-		public override int GetHashCode()
+		public int GetContentHashCode()
 		{
 			if( hashValue == HASH_NOT_CALCULATED )
 			{
@@ -165,6 +169,19 @@ namespace IngameDebugConsole
 			// Append frame count in format: [#Frame]
 			sb.Append( "[#" ).Append( frameCount ).Append( "]" );
 #endif
+		}
+	}
+
+	public class DebugLogEntryContentEqualityComparer : EqualityComparer<DebugLogEntry>
+	{
+		public override bool Equals( DebugLogEntry x, DebugLogEntry y )
+		{
+			return x.logString == y.logString && x.stackTrace == y.stackTrace;
+		}
+
+		public override int GetHashCode( DebugLogEntry obj )
+		{
+			return obj.GetContentHashCode();
 		}
 	}
 }
