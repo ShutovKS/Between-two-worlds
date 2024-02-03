@@ -41,7 +41,7 @@ namespace Infrastructure.ScenesManagers.Core
 
         private void InitializedManagers()
         {
-            _actionTriggerManager = new ActionTriggerManager(_uiFactoryInfo, _localisationDataLoad, ExitInMenu);
+            _actionTriggerManager = new ActionTriggerManager(_uiFactoryInfo, _localisationDataLoad, ConfirmExitInMenu);
 
             _historyManager = new HistoryManager(_uiFactoryInfo.DialogueUI.History);
 
@@ -65,7 +65,7 @@ namespace Infrastructure.ScenesManagers.Core
                 _historyManager.ClearHistory);
 
             _buttonManager = new ButtonManager(_uiFactoryInfo.DialogueUI.Buttons);
-            _buttonManager.RegisterOnClickBack(ExitInMenu);
+            _buttonManager.RegisterOnClickBack(ConfirmExitInMenu);
             _buttonManager.RegisterOnClickSave(_saveLoadManager.DataSave);
             _buttonManager.RegisterOnClickLoad(_saveLoadManager.DataLoad);
             _buttonManager.RegisterOnClickHistory(_historyManager.OpenDialogHistory);
@@ -88,20 +88,19 @@ namespace Infrastructure.ScenesManagers.Core
             _dataCurrent = _saveLoadData.Load();
         }
 
-        private void ExitInMenu()
+        private void ConfirmExitInMenu()
         {
             _dialogueManager.StopAutoDialogSwitchMode();
             _uiFactoryInfo.ConfirmationUI.SetActivePanel(true);
-            _uiFactoryInfo.ConfirmationUI.Buttons.RegisterYesButtonCallback(
-                () =>
-                {
-                    SceneManager.LoadScene("2.Meta");
-                    _uiFactoryInfo.ConfirmationUI.SetActivePanel(false);
-                    _uiFactoryInfo.DialogueUI.SetActivePanel(false);
-                });
+            _uiFactoryInfo.ConfirmationUI.Buttons.RegisterYesButtonCallback(ExitInMenu);
+            _uiFactoryInfo.ConfirmationUI.Buttons.RegisterNoButtonCallback(() => { _uiFactoryInfo.ConfirmationUI.SetActivePanel(false); });
+        }
 
-            _uiFactoryInfo.ConfirmationUI.Buttons.RegisterNoButtonCallback(
-                () => { _uiFactoryInfo.ConfirmationUI.SetActivePanel(false); });
+        private void ExitInMenu()
+        {
+            SceneManager.LoadScene("2.Meta");
+            _uiFactoryInfo.ConfirmationUI.SetActivePanel(false);
+            _uiFactoryInfo.DialogueUI.SetActivePanel(false);
         }
     }
 }

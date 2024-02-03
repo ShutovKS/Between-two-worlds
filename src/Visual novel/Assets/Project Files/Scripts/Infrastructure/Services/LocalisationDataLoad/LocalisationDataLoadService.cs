@@ -148,7 +148,6 @@ namespace Infrastructure.Services.LocalisationDataLoad
 
         private void LoadUILocalisation()
         {
-            Debug.Log(GetPathToUI(CurrentDirectory));
             var json = Resources.Load<TextAsset>(GetPathToUI(CurrentDirectory)).text;
 
             var uiLocalisation = JsonUtility.FromJson<UILocalisation>(json);

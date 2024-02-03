@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using Data.Static;
 using Infrastructure.Services.LocalisationDataLoad;
 using Infrastructure.Services.UIFactory;
@@ -55,7 +55,7 @@ namespace Infrastructure.ScenesManagers.Core
             _uiFactoryInfoService.LastWordsUI.RegisterBackButtonCallback(() =>
             {
                 _uiFactoryInfoService.LastWordsUI.SetActivePanel(false);
-                _onExitInMainMenu();
+                _onExitInMainMenu?.Invoke();
             });
         }
 
