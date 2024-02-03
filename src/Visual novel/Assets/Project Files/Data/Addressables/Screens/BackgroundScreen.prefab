@@ -88,7 +88,7 @@ Canvas:
   m_RenderMode: 0
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
-  m_PixelPerfect: 0
+  m_PixelPerfect: 1
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _backgroundImage: {fileID: 4300806037247321405}
-  _backgroundScreenGameObject: {fileID: 0}
+  _backgroundScreenGameObject: {fileID: 6922902121283289269}
 --- !u!1 &7873796638826089811
 GameObject:
   m_ObjectHideFlags: 0
