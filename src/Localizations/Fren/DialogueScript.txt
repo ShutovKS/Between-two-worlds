@@ -33,7 +33,7 @@ CharacterG: La Nuit est le moment où le monde parle aux étoiles et les cœurs 
 CharacterH: Je ne sais même pas ton nom...
 CharacterG: Et je n'ai pas de nom, je n'en ai pas besoin, je ne devrais pas y penser.
 CharacterH: Et si je voulais me réveiller et sortir de ce rêve
-CharacterGVous: Pouvez toujours vous réveiller, mais ne vous sentez-vous pas mieux ici
+CharacterG: Pouvez toujours vous réveiller, mais ne vous sentez-vous pas mieux ici
 CharacterH: Tu as raison. C'est un sentiment libérateur.
 Nothing: Quelque temps plus tard...
 CharacterH: Pourquoi disparais-tu
@@ -223,7 +223,7 @@ CharacterH: Oh, bonjour! Bien sûr que ça ne me dérange pas. La Dernière aven
 CharacterG: Ravie que tu aies aimé. Alors allons - y, je connais beaucoup d'endroits incroyables que je veux te montrer.
 CharacterG: <Castle>$DramaticBoi$Que pensez-vous de ce palais? Très beau, non?
 CharacterH: Pas seulement beau - magnifique et majestueux!
-Characterg: Contente que tu l'aies aimé. Alors passons au point suivant à l'ordre du jour.
+CharacterG: Contente que tu l'aies aimé. Alors passons au point suivant à l'ordre du jour.
 CharacterH: Est-ce encore quoi?
 CharacterG: Aujourd'hui, nous attendons un bal dans ce palais - seulement pour nous deux.
 CharacterH: Mais je ne sais pas danser, et la musique n'est pas là...
@@ -342,7 +342,6 @@ CharacterD: Au Fait, vous devez comprendre que si vous refusez l'opération, vou
 CharacterD: Bien sûr, la chance est très faible, votre état est unique et vous pouvez compter sur les doigts d'une main. Mais si tout se passe bien, les problèmes de tête disparaîtront.
 CharacterH: Alors je choisis...
 CharacterH: #Consentement à l'opération.@ending1@|Échec de l'opération.@ending2@
-
 CharacterD: @ending1@<DoctorOffice>$WooScary$C'était probablement un choix difficile.
 CharacterH: J'espère quand même que tout se passera bien.
 CharacterD: Eh bien, je vais vous informer de votre décision et nous allons commencer dans les trois prochaines heures.
@@ -356,7 +355,6 @@ CharacterGF: <RoomInHospital>$Beanfeast$Vous êtes réveillé.
 CharacterH: Toi... ici.
 CharacterGF: Bien sûr, je serai toujours à vos côtés.
 CharacterH: Maintenant, je peux aller de l'avant, construire mon avenir... avec toi.{end2}
-
 CharacterD: @ending2@<DoctorOffice>C'était probablement un choix difficile.
 CharacterD: Je ne vais pas vous décourager. C'est probablement notre Dernière rencontre.
 CharacterH: Adieu.

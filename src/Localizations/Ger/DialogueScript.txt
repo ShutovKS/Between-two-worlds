@@ -342,7 +342,6 @@ CharacterD: Übrigens musst du verstehen, dass du, wenn du die Operation ablehns
 CharacterD: Natürlich ist die Chance sehr gering, dein Zustand ist einzigartig und man kann Leute wie dich an den Fingern einer Hand zählen. Aber wenn alles erfolgreich ist, werden die Kopfprobleme verschwinden.
 CharacterH: Dann wähle ich...
 CharacterH: #Zustimmung zur Operation.@ending1@|Die Operation wird verweigert.@ending2@
-
 CharacterD: @ending1@<DoctorOffice>$WooScary$Es war wahrscheinlich eine schwierige Wahl.
 CharacterH: Ich hoffe dennoch, dass alles erfolgreich verläuft.
 CharacterD: Nun, ich werde deine Entscheidung mitteilen und in den nächsten drei Stunden werden wir loslegen.
@@ -356,7 +355,6 @@ CharacterGF: <RoomInHospital>$Beanfeast$Du bist aufgewacht.
 CharacterH: Du... hier.
 CharacterGF: Natürlich werde ich immer an deiner Seite sein.
 CharacterH: Jetzt kann ich weitermachen, meine Zukunft aufbauen... mit dir zusammen.{end2}
-
 CharacterD: @ending2@<DoctorOffice>Es war wahrscheinlich eine schwierige Wahl.
 CharacterD: Ich werde dich nicht davon abhalten. Das ist wahrscheinlich unser letztes Treffen.
 CharacterH: Auf Wiedersehen.

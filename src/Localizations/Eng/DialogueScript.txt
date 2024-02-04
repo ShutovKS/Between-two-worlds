@@ -342,7 +342,6 @@ CharacterD: By the way, you should understand that if you refuse surgery, you wo
 CharacterD: Of course, the chance is very small, your condition is unique, and people like you can be counted on the fingers of one hand. But if everything goes well, then the problems with the head will disappear.
 CharacterH: Then I choose...
 CharacterH: #Consent to the operation.@ending1@|Refusal of the operation.@ending2@
-
 CharacterD: @ending1@<DoctorOffice>$WooScary$Most likely it was a difficult choice.
 CharacterH: I still hope that everything will be successful.
 CharacterD: Well, I'll go inform you about your decision and in the next three hours we will begin.
@@ -356,7 +355,6 @@ CharacterGF: <RoomInHospital>$Beanfeast$You're awake.
 CharacterH: You're... here.
 CharacterGF: Of course, I will always be there for you.
 CharacterH: Now I can go forward, build my future... together with you.{end2}
-
 CharacterD: @ending2@<DoctorOffice>Most likely it was a difficult choice.
 CharacterD: I won't dissuade you. This is most likely our last meeting.
 CharacterH: Goodbye.
