@@ -4,7 +4,7 @@ using UnityEngine;
 
 #endregion
 
-namespace Units.Tools
+namespace Unit.Tools.Camera
 {
 	public static class CameraTextureCapture
 	{
@@ -14,7 +14,7 @@ namespace Units.Tools
 		{
 			const int captureWidth = 1920;
 			const int captureHeight = 1080;
-			var captureCamera = new GameObject("CaptureCamera").AddComponent<Camera>();
+			var captureCamera = new GameObject("CaptureCamera").AddComponent<UnityEngine.Camera>();
 
 			foreach (var canvas in canvases)
 			{

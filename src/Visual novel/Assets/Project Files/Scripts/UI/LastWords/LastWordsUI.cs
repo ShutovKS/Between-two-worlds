@@ -1,7 +1,7 @@
 ﻿using Data.Localization.UILocalisation;
 using Infrastructure.Services.LocalizationUI;
 using TMPro;
-using Units.Tools;
+using Unit.Tools.Extensions;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;

@@ -6,9 +6,9 @@ using UnityEngine.UI;
 
 #endregion
 
-namespace Units.Tools
+namespace Unit.Tools.Extensions
 {
-	public static class Tools
+	public static class ToolsExtensions
 	{
 		public static Sprite ToSprite(this Texture2D texture2D)
 		{
