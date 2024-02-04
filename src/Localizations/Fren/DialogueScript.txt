@@ -86,7 +86,7 @@ CharacterH: Et pourtant, l'opération... le potentiel va se débarrasser de ces 
 Nothing: Le même soir.
 CharacterH: <RoomHeroDream> Il est si tard, il est temps d'aller au lit. Surtout demain, il faudra se lever tôt pour ne pas être en retard.
 Nothing: ...
-CharacterG: <ForestPathRavie>$WooScary$De te voir.
+CharacterG: <ForestPath>$WooScary$De te voir.
 CharacterH: Toi... encore ici Pourquoi 
 CharacterG: Rappelez-Vous, c'est votre rêve, votre monde de rêve. Si je suis là, alors tu veux que je sois là. Un peu mystérieux, non Hee-hee.
 CharacterG: Pendant que je suis là, allons faire une promenade le long de la piste forestière.
