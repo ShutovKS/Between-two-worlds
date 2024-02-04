@@ -4,7 +4,6 @@ using System;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using Editor.Changelog;
 using Ionic.Zip;
 using UnityEditor;
 using UnityEditor.Build;
@@ -18,15 +17,11 @@ namespace Editor.BuildManager.Core
     public static class BuildManager
     {
         private static DateTime usedDate;
-        private static string buildNameString;
         private static string[] buildsPath;
 
-        public static void RunBuildSequnce(BuildManagerSettings settings, BuildSequence sequence,
-            ChangelogData changelog)
+        public static void RunBuildSequnce(BuildManagerSettings settings, BuildSequence sequence)
         {
             Debug.Log("Start init");
-            var usedChangelogEntry = changelog.GetLastVersion();
-            buildNameString = usedChangelogEntry.GetVersionHeader();
 
 #if GAME_TEMPLATE
             TemplateGameManager.Instance.buildNameString = buildNameString;

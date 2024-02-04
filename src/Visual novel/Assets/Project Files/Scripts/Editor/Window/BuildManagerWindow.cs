@@ -1,6 +1,5 @@
 using System.Linq;
 using Editor.BuildManager.Core;
-using Editor.Changelog;
 using UnityEditor;
 using UnityEditor.Build;
 using UnityEditorInternal;
@@ -20,7 +19,6 @@ namespace Editor.Window
 
         private static bool _globalDataFoldout = true;
 
-        private static ChangelogData _changelog;
         private static bool _changelogFoldout = false;
         private static Vector2 _scrollPosChangelog = Vector2.zero;
 
@@ -46,15 +44,9 @@ namespace Editor.Window
             {
                 LoadSettings();
             }
-
-            if (_changelog == null)
-            {
-                LoadChangelog();
-            }
-
+            
             DrawGlobalBuildData();
-            DrawChangelogInfo();
-
+            
             if (!_changelogFoldout)
             {
                 DrawBuildButtons();
@@ -115,158 +107,7 @@ namespace Editor.Window
                 EditorGUILayout.Space(20);
             }
         }
-
-        private static void DrawChangelogInfo()
-        {
-            var oldChangelogFoldoutValue = _changelogFoldout;
-            _changelogFoldout = EditorGUILayout.BeginFoldoutHeaderGroup(_changelogFoldout, "Changelog");
-            EditorGUILayout.EndFoldoutHeaderGroup();
-
-            if (_changelogFoldout)
-            {
-                _scrollPosChangelog = EditorGUILayout.BeginScrollView(_scrollPosChangelog /*, GUILayout.Height(800f)*/);
-                ++EditorGUI.indentLevel;
-
-                EditorGUILayout.LabelField("Readme");
-                _changelog.readme = EditorGUILayout.TextArea(_changelog.readme);
-                GUILayout.Space(10f);
-
-                EditorGUILayout.BeginHorizontal();
-                EditorGUILayout.LabelField("Changelog file:", GUILayout.Width(100));
-                if (GUILayout.Button($"Add version"))
-                {
-                    _changelog.versions.Add(new ChangelogData.ChangelogVersionEntry());
-                }
-
-                EditorGUILayout.EndHorizontal();
-
-                for (var i = _changelog.versions.Count - 1; i >= 0; --i)
-                {
-                    var version = _changelog.versions[i];
-
-                    EditorGUILayout.BeginHorizontal();
-                    version.foldout =
-                        EditorGUILayout.BeginFoldoutHeaderGroup(version.foldout, $"{version.version} - {version.date}");
-                    EditorGUILayout.EndFoldoutHeaderGroup();
-                    if (GUILayout.Button($"Remove version", GUILayout.Width(100)))
-                    {
-                        _changelog.versions.RemoveAt(i);
-                        return;
-                    }
-
-                    EditorGUILayout.EndHorizontal();
-
-                    if (string.IsNullOrEmpty(version.version))
-                    {
-                        version.version = PlayerSettings.bundleVersion;
-                    }
-
-                    if (string.IsNullOrEmpty(version.date))
-                    {
-                        version.date = System.DateTime.Now.ToShortDateString();
-                    }
-
-                    if (version.foldout)
-                    {
-                        ++EditorGUI.indentLevel;
-
-                        EditorGUILayout.BeginHorizontal();
-                        version.version = EditorGUILayout.TextField("Version", version.version);
-                        if (GUILayout.Button($"Curr", GUILayout.Width(70)))
-                        {
-                            version.version = PlayerSettings.bundleVersion;
-                        }
-
-                        EditorGUILayout.EndHorizontal();
-
-                        EditorGUILayout.BeginHorizontal();
-                        version.date = EditorGUILayout.TextField("Date", version.date);
-                        if (GUILayout.Button($"Now", GUILayout.Width(70)))
-                        {
-                            version.date = System.DateTime.Now.ToShortDateString();
-                        }
-
-                        EditorGUILayout.EndHorizontal();
-
-                        version.updateName = EditorGUILayout.TextField("Update name", version.updateName);
-                        version.descriptionText = EditorGUILayout.TextField("Description", version.descriptionText);
-
-                        EditorGUILayout.LabelField("Notes: ");
-
-                        ++EditorGUI.indentLevel;
-                        EditorGUILayout.BeginHorizontal();
-                        EditorGUILayout.LabelField("Type", GUILayout.Width(150));
-                        EditorGUILayout.LabelField("Scope", GUILayout.Width(125));
-                        EditorGUILayout.LabelField("Community", GUILayout.Width(100));
-                        EditorGUILayout.LabelField("Description");
-                        EditorGUILayout.EndHorizontal();
-
-                        for (var j = 0; j < version.notes.Count; ++j)
-                        {
-                            var versionNote = version.notes[j];
-                            EditorGUILayout.BeginHorizontal();
-
-                            var newType = (ChangelogData.ChangelogEntryType)EditorGUILayout.EnumPopup(versionNote.type,
-                                GUILayout.Width(150));
-                            var newScope = (ChangelogData.ChangelogEntryScope)EditorGUILayout.EnumPopup(
-                                versionNote.scope,
-                                GUILayout.Width(150));
-                            versionNote.isCommunityFeedback = EditorGUILayout.Toggle(versionNote.isCommunityFeedback,
-                                GUILayout.Width(70));
-                            versionNote.text = EditorGUILayout.TextField(versionNote.text);
-
-                            if (versionNote.type != newType || versionNote.scope != newScope)
-                            {
-                                versionNote.type = newType;
-                                versionNote.scope = newScope;
-                                version.notes = version.notes.OrderBy(note => note.type).ThenBy(note => note.scope)
-                                    .ToList();
-                                return;
-                            }
-
-                            if (GUILayout.Button($"-", GUILayout.Width(25)))
-                            {
-                                version.notes.RemoveAt(j);
-                                return;
-                            }
-
-                            EditorGUILayout.EndHorizontal();
-                        }
-
-                        --EditorGUI.indentLevel;
-
-                        if (GUILayout.Button($"Add note"))
-                        {
-                            version.notes.Add(new ChangelogData.ChangelogNoteEntry());
-                        }
-
-                        --EditorGUI.indentLevel;
-                    }
-
-                    EditorGUILayout.Space(10);
-                }
-
-                --EditorGUI.indentLevel;
-                EditorGUILayout.EndScrollView();
-            }
-
-            if (oldChangelogFoldoutValue != _changelogFoldout)
-            {
-                ChangelogData.SaveChangelog(_changelog);
-
-#if GAME_TEMPLATE
-		TemplateGameManager.Instance.buildNameString = changelog.GetLastVersion().GetVersionHeader();;
-		TemplateGameManager.Instance.productName = PlayerSettings.productName;
-		EditorUtility.SetDirty(TemplateGameManager.Instance);
-#endif
-            }
-
-            if (_changelogFoldout)
-            {
-                EditorGUILayout.Space(20);
-            }
-        }
-
+        
         private static void DrawBuildButtons()
         {
             if ((_settings != null ? _settings.sequences?.Count ?? 0 : 0) == 0)
@@ -304,7 +145,7 @@ namespace Editor.Window
 
                     if (sequence.isEnabled && GUILayout.Button($"Build {sequence.editorName}"))
                     {
-                        BuildManager.Core.BuildManager.RunBuildSequnce(_settings, sequence, _changelog);
+                        BuildManager.Core.BuildManager.RunBuildSequnce(_settings, sequence);
                     }
                 }
             }
@@ -453,11 +294,6 @@ namespace Editor.Window
                 _settingsPath = SETTINGS_DEFAULT_PATH;
                 PlayerPrefs.SetString(SETTINGS_PATH_KEY, SETTINGS_DEFAULT_PATH);
             }
-        }
-
-        private static void LoadChangelog()
-        {
-            _changelog = ChangelogData.LoadChangelog();
         }
 
         #endregion
