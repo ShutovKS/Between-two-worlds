@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 85a12be5ffc39d349bf6dccb22596603
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 235877
+  packageName: PluginYG - Yandex Game integration
+  packageVersion: 1.6
+  assetPath: Assets/YandexGame/Prefabs/Payments/Purchase.prefab
+  uploadId: 627339

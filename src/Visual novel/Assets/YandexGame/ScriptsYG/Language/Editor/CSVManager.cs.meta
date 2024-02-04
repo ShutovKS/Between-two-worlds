@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: f107992ca6094084a98d8a892e6c1207
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 235877
+  packageName: PluginYG - Yandex Game integration
+  packageVersion: 1.6
+  assetPath: Assets/YandexGame/ScriptsYG/Language/Editor/CSVManager.cs
+  uploadId: 627339

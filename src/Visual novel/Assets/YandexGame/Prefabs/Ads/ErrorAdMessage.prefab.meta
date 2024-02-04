@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 7c3fd30ab60562643a829eed36b2c5d9
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 235877
+  packageName: PluginYG - Yandex Game integration
+  packageVersion: 1.6
+  assetPath: Assets/YandexGame/Prefabs/Ads/ErrorAdMessage.prefab
+  uploadId: 627339

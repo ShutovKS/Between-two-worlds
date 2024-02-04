@@ -710,7 +710,7 @@ PlayerSettings:
   webGLCloseOnQuit: 0
   scriptingDefineSymbols:
     Android: 
-    Standalone: 
+    Standalone: YG_PLUGIN_YANDEX_GAME
     WebGL: 
   additionalCompilerArguments: {}
   platformArchitecture: {}
