@@ -15,8 +15,43 @@ MonoBehaviour:
   m_GroupName: Default Local Group
   m_Data:
     m_SerializedData: []
-  m_GUID: d241931c0c69ce340bebe78ad216eb00
-  m_SerializeEntries: []
+  m_GUID: c42850575d8aa644698f55b5739e2df4
+  m_SerializeEntries:
+  - m_GUID: cd2338343e9043043aedff609d579f44
+    m_Address: Screens/MainMenu
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 70e839069f534b94eab045d825a13569
+    m_Address: Screens/Dialogue
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 590ebe375f5fcc045b22f6748b913e41
+    m_Address: Screens/Background
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a0526e8ec85580d4da84c8e6e9ceddd2
+    m_Address: Screens/ChooseLanguage
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9c830b1e6d4692a40a075e6d5e1399e6
+    m_Address: Screens/Confirmation
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fbef1069e1a6b824e81fa246123c4cfd
+    m_Address: Screens/SaveLoad
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 16aff8fec558c76408123e9920131dcc
+    m_Address: Screens/LastWords
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 3c6c5518033928745b3226d9f12dab01, type: 2}
   m_SchemaSet:
