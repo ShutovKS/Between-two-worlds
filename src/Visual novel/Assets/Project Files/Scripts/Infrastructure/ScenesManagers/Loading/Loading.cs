@@ -81,6 +81,7 @@ namespace Infrastructure.ScenesManagers.Loading
             {
                 _uiFactoryInfo.ChooseLanguageUI.ScrollViewLanguages.AddLanguageInScrollView(
                     localizationInfo.Language,
+                    localizationInfo.FlagImage,
                     () =>
                     {
                         _language = localizationInfo.Language;

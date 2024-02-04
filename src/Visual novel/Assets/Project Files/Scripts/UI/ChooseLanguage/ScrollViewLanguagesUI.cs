@@ -1,44 +1,39 @@
 ﻿#region
 
-using TMPro;
+using System;
+using Units.Tools;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.UI;
+using Object = UnityEngine.Object;
 
 #endregion
 
 namespace UI.ChooseLanguage
 {
-	public class ScrollViewLanguagesUI : MonoBehaviour
-	{
-		[SerializeField] private Transform _contentTransform;
-		[SerializeField] private GameObject _languagePrefab;
+    [Serializable]
+    public class ScrollViewLanguagesUI
+    {
+        [SerializeField] private Transform contentTransform;
+        [SerializeField] private GameObject languagePrefab;
 
-		public void AddLanguageInScrollView(string languageName, UnityAction onClick)
-		{
-			var instance = Instantiate(_languagePrefab, _contentTransform);
-			instance.SetActive(true);
-			instance.GetComponent<Button>().onClick.AddListener(onClick);
-			instance.GetComponentInChildren<TextMeshProUGUI>().text = languageName;
+        public void AddLanguageInScrollView(string languageName, Sprite flagSprite, UnityAction onClick)
+        {
+            var instance = Object.Instantiate(languagePrefab, contentTransform);
 
-			var instanceRectTransform = instance.GetComponent<RectTransform>();
-			var contentRectTransform = _contentTransform.GetComponent<RectTransform>();
+            instance.SetActive(true);
 
-			var scrollSizeDelta = contentRectTransform.sizeDelta;
-			scrollSizeDelta.y += instanceRectTransform.sizeDelta.y;
-			contentRectTransform.sizeDelta = scrollSizeDelta;
+            var languageUI = instance.GetComponent<LanguageUI>();
+            languageUI.buttonComponent.RegisterNewCallback(onClick);
+            languageUI.textComponent.text = languageName;
+            languageUI.imageComponent.sprite = flagSprite;
+        }
 
-			var anchoredPosition = instanceRectTransform.anchoredPosition;
-			anchoredPosition.y = -scrollSizeDelta.y + instanceRectTransform.sizeDelta.y * 0.5f;
-			instanceRectTransform.anchoredPosition = anchoredPosition;
-		}
-
-		public void RemoveAllLanguagesInScrollView()
-		{
-			foreach (Object variable in _contentTransform)
-			{
-				Destroy(variable);
-			}
-		}
-	}
+        public void RemoveAllLanguagesInScrollView()
+        {
+            foreach (Object variable in contentTransform)
+            {
+                Object.Destroy(variable);
+            }
+        }
+    }
 }
