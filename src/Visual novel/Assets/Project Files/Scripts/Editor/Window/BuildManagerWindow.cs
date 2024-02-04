@@ -2,6 +2,7 @@ using System.Linq;
 using Editor.BuildManager.Core;
 using Editor.Changelog;
 using UnityEditor;
+using UnityEditor.Build;
 using UnityEditorInternal;
 using UnityEngine;
 
@@ -9,44 +10,44 @@ namespace Editor.Window
 {
     public class BuildManagerWindow : EditorWindow
     {
-        const string SETTINGS_DEFAULT_PATH =
-                "Assets/Editor/Setting/BuildSequences.asset"; //Need Assets in path, cuz used by AssetDatabase.CreateAsset
+        //Need Assets in path, cuz used by AssetDatabase.CreateAsset
+        private const string SETTINGS_DEFAULT_PATH = "Assets/Editor/Setting/BuildSequences.asset";
 
-        const string SETTINGS_PATH_KEY = "BuildManagerWindow.SettingsPath";
+        private const string SETTINGS_PATH_KEY = "BuildManagerWindow.SettingsPath";
 
-        static string settingsPath;
-        static BuildManagerSettings settings;
+        private static string _settingsPath;
+        private static BuildManagerSettings _settings;
 
-        static bool globalDataFoldout = true;
+        private static bool _globalDataFoldout = true;
 
-        static ChangelogData changelog;
-        static bool changelogFoldout = false;
-        static Vector2 scrollPosChangelog = Vector2.zero;
+        private static ChangelogData _changelog;
+        private static bool _changelogFoldout = false;
+        private static Vector2 _scrollPosChangelog = Vector2.zero;
 
-        static Vector2 scrollPosSequence = Vector2.zero;
-        static bool postBuildFoldout = false;
+        private static Vector2 _scrollPosSequence = Vector2.zero;
+        private static bool _postBuildFoldout = false;
 
-        static ReorderableList sequenceList;
-        static ReorderableList buildList;
+        private static ReorderableList _sequenceList;
+        private static ReorderableList _buildList;
 
         [MenuItem("File/Build Manager", false, 205)]
         public static void ShowWindow()
         {
-            sequenceList = null;
-            buildList = null;
+            _sequenceList = null;
+            _buildList = null;
             GetWindow(typeof(BuildManagerWindow), false, "Builds", true);
 
             LoadSettings();
         }
 
-        void OnGUI()
+        private void OnGUI()
         {
-            if (settings == null)
+            if (_settings == null)
             {
                 LoadSettings();
             }
 
-            if (changelog == null)
+            if (_changelog == null)
             {
                 LoadChangelog();
             }
@@ -54,12 +55,12 @@ namespace Editor.Window
             DrawGlobalBuildData();
             DrawChangelogInfo();
 
-            if (!changelogFoldout)
+            if (!_changelogFoldout)
             {
                 DrawBuildButtons();
 
                 EditorGUILayout.Space(20);
-                scrollPosSequence = EditorGUILayout.BeginScrollView(scrollPosSequence);
+                _scrollPosSequence = EditorGUILayout.BeginScrollView(_scrollPosSequence);
 
                 DrawSequenceList();
                 DrawSelectedSequenceData();
@@ -71,15 +72,15 @@ namespace Editor.Window
                 EditorGUILayout.HelpBox("Close changelog to acess build data", MessageType.Warning);
             }
 
-            EditorUtility.SetDirty(settings);
+            EditorUtility.SetDirty(_settings);
         }
 
         #region Main Drawers
 
-        void DrawGlobalBuildData()
+        private void DrawGlobalBuildData()
         {
-            globalDataFoldout = EditorGUILayout.BeginFoldoutHeaderGroup(globalDataFoldout, "Global data");
-            if (globalDataFoldout)
+            _globalDataFoldout = EditorGUILayout.BeginFoldoutHeaderGroup(_globalDataFoldout, "Global data");
+            if (_globalDataFoldout)
             {
                 ++EditorGUI.indentLevel;
 
@@ -93,13 +94,13 @@ namespace Editor.Window
                 //Defines
                 GUILayout.Space(5);
                 EditorGUILayout.BeginHorizontal();
-                settings.scriptingDefineSymbols =
-                    EditorGUILayout.TextField("Scripting Defines", settings.scriptingDefineSymbols);
+                _settings.scriptingDefineSymbols =
+                    EditorGUILayout.TextField("Scripting Defines", _settings.scriptingDefineSymbols);
                 if (GUILayout.Button($"Set defines", GUILayout.Width(100f)))
                 {
-                    PlayerSettings.SetScriptingDefineSymbolsForGroup(
-                        BuildPipeline.GetBuildTargetGroup(EditorUserBuildSettings.activeBuildTarget),
-                        settings.scriptingDefineSymbols);
+                    var buildTargetGroup = BuildPipeline.GetBuildTargetGroup(EditorUserBuildSettings.activeBuildTarget);
+                    var namedBuildTarget = NamedBuildTarget.FromBuildTargetGroup(buildTargetGroup);
+                    PlayerSettings.SetScriptingDefineSymbols(namedBuildTarget, _settings.scriptingDefineSymbols);
                 }
 
                 EditorGUILayout.EndHorizontal();
@@ -109,39 +110,39 @@ namespace Editor.Window
 
             EditorGUILayout.EndFoldoutHeaderGroup();
 
-            if (globalDataFoldout)
+            if (_globalDataFoldout)
             {
                 EditorGUILayout.Space(20);
             }
         }
 
-        void DrawChangelogInfo()
+        private static void DrawChangelogInfo()
         {
-            var oldChangelogFoldoutValue = changelogFoldout;
-            changelogFoldout = EditorGUILayout.BeginFoldoutHeaderGroup(changelogFoldout, "Changelog");
+            var oldChangelogFoldoutValue = _changelogFoldout;
+            _changelogFoldout = EditorGUILayout.BeginFoldoutHeaderGroup(_changelogFoldout, "Changelog");
             EditorGUILayout.EndFoldoutHeaderGroup();
 
-            if (changelogFoldout)
+            if (_changelogFoldout)
             {
-                scrollPosChangelog = EditorGUILayout.BeginScrollView(scrollPosChangelog /*, GUILayout.Height(800f)*/);
+                _scrollPosChangelog = EditorGUILayout.BeginScrollView(_scrollPosChangelog /*, GUILayout.Height(800f)*/);
                 ++EditorGUI.indentLevel;
 
                 EditorGUILayout.LabelField("Readme");
-                changelog.readme = EditorGUILayout.TextArea(changelog.readme);
+                _changelog.readme = EditorGUILayout.TextArea(_changelog.readme);
                 GUILayout.Space(10f);
 
                 EditorGUILayout.BeginHorizontal();
                 EditorGUILayout.LabelField("Changelog file:", GUILayout.Width(100));
                 if (GUILayout.Button($"Add version"))
                 {
-                    changelog.versions.Add(new ChangelogData.ChangelogVersionEntry());
+                    _changelog.versions.Add(new ChangelogData.ChangelogVersionEntry());
                 }
 
                 EditorGUILayout.EndHorizontal();
 
-                for (var i = changelog.versions.Count - 1; i >= 0; --i)
+                for (var i = _changelog.versions.Count - 1; i >= 0; --i)
                 {
-                    var version = changelog.versions[i];
+                    var version = _changelog.versions[i];
 
                     EditorGUILayout.BeginHorizontal();
                     version.foldout =
@@ -149,7 +150,7 @@ namespace Editor.Window
                     EditorGUILayout.EndFoldoutHeaderGroup();
                     if (GUILayout.Button($"Remove version", GUILayout.Width(100)))
                     {
-                        changelog.versions.RemoveAt(i);
+                        _changelog.versions.RemoveAt(i);
                         return;
                     }
 
@@ -202,24 +203,23 @@ namespace Editor.Window
 
                         for (var j = 0; j < version.notes.Count; ++j)
                         {
-                            var note = version.notes[j];
+                            var versionNote = version.notes[j];
                             EditorGUILayout.BeginHorizontal();
 
-                            var newType =
-                                (ChangelogData.ChangelogEntryType)EditorGUILayout.EnumPopup(note.type,
-                                    GUILayout.Width(150));
-                            var newScope =
-                                (ChangelogData.ChangelogEntryScope)EditorGUILayout.EnumPopup(note.scope,
-                                    GUILayout.Width(150));
-                            note.isCommunityFeedback =
-                                EditorGUILayout.Toggle(note.isCommunityFeedback, GUILayout.Width(70));
-                            note.text = EditorGUILayout.TextField(note.text);
+                            var newType = (ChangelogData.ChangelogEntryType)EditorGUILayout.EnumPopup(versionNote.type,
+                                GUILayout.Width(150));
+                            var newScope = (ChangelogData.ChangelogEntryScope)EditorGUILayout.EnumPopup(
+                                versionNote.scope,
+                                GUILayout.Width(150));
+                            versionNote.isCommunityFeedback = EditorGUILayout.Toggle(versionNote.isCommunityFeedback,
+                                GUILayout.Width(70));
+                            versionNote.text = EditorGUILayout.TextField(versionNote.text);
 
-                            if (note.type != newType || note.scope != newScope)
+                            if (versionNote.type != newType || versionNote.scope != newScope)
                             {
-                                note.type = newType;
-                                note.scope = newScope;
-                                version.notes = version.notes.OrderBy(_note => _note.type).ThenBy(_note => _note.scope)
+                                versionNote.type = newType;
+                                versionNote.scope = newScope;
+                                version.notes = version.notes.OrderBy(note => note.type).ThenBy(note => note.scope)
                                     .ToList();
                                 return;
                             }
@@ -250,9 +250,9 @@ namespace Editor.Window
                 EditorGUILayout.EndScrollView();
             }
 
-            if (oldChangelogFoldoutValue != changelogFoldout)
+            if (oldChangelogFoldoutValue != _changelogFoldout)
             {
-                ChangelogData.SaveChangelog(changelog);
+                ChangelogData.SaveChangelog(_changelog);
 
 #if GAME_TEMPLATE
 		TemplateGameManager.Instance.buildNameString = changelog.GetLastVersion().GetVersionHeader();;
@@ -261,40 +261,40 @@ namespace Editor.Window
 #endif
             }
 
-            if (changelogFoldout)
+            if (_changelogFoldout)
             {
                 EditorGUILayout.Space(20);
             }
         }
 
-        void DrawBuildButtons()
+        private static void DrawBuildButtons()
         {
-            if ((settings?.sequences?.Count ?? 0) != 0)
+            if ((_settings != null ? _settings.sequences?.Count ?? 0 : 0) == 0)
             {
-                var enabledSequence = 0;
-                foreach (var sequence in settings.sequences)
-                    if (sequence.isEnabled)
-                    {
-                        ++enabledSequence;
-                    }
+                return;
+            }
 
-                if (enabledSequence == 0)
+            var enabledSequence = _settings.sequences?.Count(sequence => sequence.isEnabled);
+
+            if (enabledSequence == 0)
+            {
+                return;
+            }
+
+            var prevColor = GUI.backgroundColor;
+            GUI.backgroundColor = new Color(0.773f, 0.345098f, 0.345098f);
+
+            EditorGUILayout.LabelField("Start build sequence(they red not becouse error, but becouse build " +
+                                       "stuck your pc if you accidentaly press it)");
+            EditorGUILayout.LabelField("Don't forget to manually download new version of polyglot localization " +
+                                       "if you want to update it");
+
+            EditorGUILayout.BeginHorizontal();
+            if (_settings.sequences != null)
+            {
+                for (var i = 0; i < _settings.sequences.Count; ++i)
                 {
-                    return;
-                }
-
-                var prevColor = GUI.backgroundColor;
-                GUI.backgroundColor = new Color(0.773f, 0.345098f, 0.345098f);
-
-                EditorGUILayout.LabelField(
-                    "Start build sequence(they red not becouse error, but becouse build stuck your pc if you accidentaly press it)");
-                EditorGUILayout.LabelField(
-                    "Don't forget to manually download new version of polyglot localization if you want to update it");
-
-                EditorGUILayout.BeginHorizontal();
-                for (var i = 0; i < settings.sequences.Count; ++i)
-                {
-                    var sequence = settings.sequences[i];
+                    var sequence = _settings.sequences[i];
 
                     if (i != 0 && i % 3 == 0)
                     {
@@ -304,75 +304,77 @@ namespace Editor.Window
 
                     if (sequence.isEnabled && GUILayout.Button($"Build {sequence.editorName}"))
                     {
-                        BuildManager.Core.BuildManager.RunBuildSequnce(settings, sequence, changelog);
+                        BuildManager.Core.BuildManager.RunBuildSequnce(_settings, sequence, _changelog);
                     }
                 }
-
-                EditorGUILayout.EndHorizontal();
-
-                GUI.backgroundColor = prevColor;
             }
+
+            EditorGUILayout.EndHorizontal();
+
+            GUI.backgroundColor = prevColor;
         }
 
-        void DrawSequenceList()
+        private static void DrawSequenceList()
         {
-            if (sequenceList == null)
+            if (_sequenceList == null)
             {
                 PredefinedBuildConfigs.Init();
-                sequenceList = BuildSequenceReordableList.Create(settings.sequences, OnSequenceAdd, "Builds sequences");
-                sequenceList.onSelectCallback += OnSequenceSelectionChanged;
-                sequenceList.index = 0;
+                _sequenceList =
+                    BuildSequenceReordableList.Create(_settings.sequences, OnSequenceAdd, "Builds sequences");
+                _sequenceList.onSelectCallback += OnSequenceSelectionChanged;
+                _sequenceList.index = 0;
             }
 
-            sequenceList.DoLayoutList();
+            _sequenceList.DoLayoutList();
 
-            if (0 <= sequenceList.index && sequenceList.index < sequenceList.count)
+            if (0 <= _sequenceList.index && _sequenceList.index < _sequenceList.count)
             {
-                var selected = settings.sequences[sequenceList.index];
+                var selected = _settings.sequences[_sequenceList.index];
 
                 EditorGUILayout.BeginHorizontal();
                 selected.scriptingDefineSymbolsOverride = EditorGUILayout.TextField("Defines sequence override",
                     selected.scriptingDefineSymbolsOverride);
                 if (GUILayout.Button($"Set defines", GUILayout.Width(100f)))
                 {
-                    PlayerSettings.SetScriptingDefineSymbolsForGroup(
-                        BuildPipeline.GetBuildTargetGroup(EditorUserBuildSettings.activeBuildTarget),
-                        string.Concat(settings.scriptingDefineSymbols, ";", selected.scriptingDefineSymbolsOverride));
+                    var buildTargetGroup = BuildPipeline.GetBuildTargetGroup(EditorUserBuildSettings.activeBuildTarget);
+                    var namedBuildTarget = NamedBuildTarget.FromBuildTargetGroup(buildTargetGroup);
+                    var concat = string.Concat(_settings.scriptingDefineSymbols, ";",
+                        selected.scriptingDefineSymbolsOverride);
+                    PlayerSettings.SetScriptingDefineSymbols(namedBuildTarget, concat);
                 }
 
                 EditorGUILayout.EndHorizontal();
             }
         }
 
-        void DrawSelectedSequenceData()
+        private void DrawSelectedSequenceData()
         {
             EditorGUILayout.Space(20);
 
-            if (sequenceList.index < 0 || sequenceList.index >= settings.sequences.Count)
+            if (_sequenceList.index < 0 || _sequenceList.index >= _settings.sequences.Count)
             {
-                buildList = null;
+                _buildList = null;
                 return;
             }
 
-            if (buildList == null)
+            if (_buildList == null)
             {
-                buildList = BuildDataReordableList.Create(settings.sequences[sequenceList.index].builds, OnBuildAdd,
+                _buildList = BuildDataReordableList.Create(_settings.sequences[_sequenceList.index].builds, OnBuildAdd,
                     "Builds");
-                buildList.onSelectCallback += OnBuildSelectionChanged;
-                ;
-                buildList.index = 0;
+                _buildList.onSelectCallback += OnBuildSelectionChanged;
+                _buildList.index = 0;
             }
 
-            buildList.DoLayoutList();
+            _buildList.DoLayoutList();
 
-            if (buildList.index < 0 || buildList.index >= settings.sequences[sequenceList.index].builds.Count)
+            if (_buildList.index < 0 || _buildList.index >= _settings.sequences[_sequenceList.index].builds.Count)
             {
                 return;
             }
 
-            var selected = settings.sequences[sequenceList.index].builds[buildList.index];
+            var selected = _settings.sequences[_sequenceList.index].builds[_buildList.index];
 
-            var obj = new SerializedObject(settings);
+            var obj = new SerializedObject(_settings);
 
             selected.isPassbyBuild = EditorGUILayout.Toggle("Is Passby build", selected.isPassbyBuild);
             selected.isReleaseBuild = EditorGUILayout.Toggle("Is Release build", selected.isReleaseBuild);
@@ -387,11 +389,12 @@ namespace Editor.Window
                 EditorGUILayout.TextField("Defines build override", selected.scriptingDefineSymbolsOverride);
             if (GUILayout.Button($"Set defines", GUILayout.Width(100f)))
             {
-                PlayerSettings.SetScriptingDefineSymbolsForGroup(
-                    BuildPipeline.GetBuildTargetGroup(EditorUserBuildSettings.activeBuildTarget),
-                    string.Concat(settings.scriptingDefineSymbols, ";",
-                        settings.sequences[sequenceList.index].scriptingDefineSymbolsOverride, ";",
-                        selected.scriptingDefineSymbolsOverride));
+                var buildTargetGroup = BuildPipeline.GetBuildTargetGroup(EditorUserBuildSettings.activeBuildTarget);
+                var namedBuildTarget = NamedBuildTarget.FromBuildTargetGroup(buildTargetGroup);
+                var concat = string.Concat(_settings.scriptingDefineSymbols, ";",
+                    _settings.sequences[_sequenceList.index].scriptingDefineSymbolsOverride, ";",
+                    selected.scriptingDefineSymbolsOverride);
+                PlayerSettings.SetScriptingDefineSymbols(namedBuildTarget, concat);
             }
 
             EditorGUILayout.EndHorizontal();
@@ -403,91 +406,91 @@ namespace Editor.Window
 
         #region Loaders
 
-        static void LoadSettings()
+        private static void LoadSettings()
         {
-            settingsPath = PlayerPrefs.GetString(SETTINGS_PATH_KEY, "");
-            settings = null;
+            _settingsPath = PlayerPrefs.GetString(SETTINGS_PATH_KEY, "");
+            _settings = null;
 
             //Find path. Try to load settings
-            if (!string.IsNullOrEmpty(settingsPath))
+            if (!string.IsNullOrEmpty(_settingsPath))
             {
-                settings = AssetDatabase.LoadAssetAtPath<BuildManagerSettings>(settingsPath);
-                if (settings == null)
+                _settings = AssetDatabase.LoadAssetAtPath<BuildManagerSettings>(_settingsPath);
+                if (_settings == null)
                 {
-                    settingsPath = null;
+                    _settingsPath = null;
                 }
             }
 
             //No path, or cant locate asset at path. Try to find settings in assets.
-            if (string.IsNullOrEmpty(settingsPath))
+            if (string.IsNullOrEmpty(_settingsPath))
             {
-                var guids = AssetDatabase.FindAssets("t:BuildManagerSettings", new string[] { "Assets" });
+                var guids = AssetDatabase.FindAssets("t:BuildManagerSettings", new[] { "Assets" });
                 if (guids.Length >= 2)
                 {
-                    Debug.LogError(
-                        "[BuildManagerWindow]. 2+ BuildManagerSettings exist. Consider on using only 1 setting. The first one will be used.");
+                    Debug.LogError("[BuildManagerWindow]. 2+ BuildManagerSettings exist. " +
+                                   "Consider on using only 1 setting. The first one will be used.");
                 }
 
                 if (guids.Length != 0)
                 {
-                    settingsPath = AssetDatabase.GUIDToAssetPath(guids[0]);
-                    PlayerPrefs.SetString(SETTINGS_PATH_KEY, settingsPath);
-                    settings = AssetDatabase.LoadAssetAtPath<BuildManagerSettings>(settingsPath);
+                    _settingsPath = AssetDatabase.GUIDToAssetPath(guids[0]);
+                    PlayerPrefs.SetString(SETTINGS_PATH_KEY, _settingsPath);
+                    _settings = AssetDatabase.LoadAssetAtPath<BuildManagerSettings>(_settingsPath);
                 }
             }
 
             //Cant find settings. Create new
-            if (settings == null)
+            if (_settings == null)
             {
                 var defaultSettings = AssetDatabase.LoadAssetAtPath<BuildManagerSettings>(
                     AssetDatabase.GUIDToAssetPath(
-                        AssetDatabase.FindAssets("t:BuildManagerSettings", new string[] { "Packages" })[0]));
+                        AssetDatabase.FindAssets("t:BuildManagerSettings", new[] { "Packages" })[0]));
 
-                settings = (BuildManagerSettings)ScriptableObject.CreateInstance(typeof(BuildManagerSettings));
-                settings.CloneInto(defaultSettings);
+                _settings = (BuildManagerSettings)CreateInstance(typeof(BuildManagerSettings));
+                _settings.CloneInto(defaultSettings);
 
-                AssetDatabase.CreateAsset(settings, SETTINGS_DEFAULT_PATH);
-                settingsPath = SETTINGS_DEFAULT_PATH;
+                AssetDatabase.CreateAsset(_settings, SETTINGS_DEFAULT_PATH);
+                _settingsPath = SETTINGS_DEFAULT_PATH;
                 PlayerPrefs.SetString(SETTINGS_PATH_KEY, SETTINGS_DEFAULT_PATH);
             }
         }
 
-        static void LoadChangelog()
+        private static void LoadChangelog()
         {
-            changelog = ChangelogData.LoadChangelog();
+            _changelog = ChangelogData.LoadChangelog();
         }
 
         #endregion
 
         #region Callbacks
 
-        static void OnSequenceSelectionChanged(ReorderableList list)
+        private static void OnSequenceSelectionChanged(ReorderableList list)
         {
-            buildList = null;
+            _buildList = null;
         }
 
-        static void OnBuildSelectionChanged(ReorderableList list)
+        private static void OnBuildSelectionChanged(ReorderableList list)
         {
         }
 
-        static void OnSequenceAdd(object target)
+        private static void OnSequenceAdd(object target)
         {
-            settings.sequences.Add((target as BuildSequence).Clone() as BuildSequence);
+            _settings.sequences.Add((target as BuildSequence)?.Clone() as BuildSequence);
         }
 
-        static void OnBuildAdd(object target)
+        private static void OnBuildAdd(object target)
         {
-            settings.sequences[sequenceList.index].builds.Add((target as BuildData).Clone() as BuildData);
+            _settings.sequences[_sequenceList.index].builds.Add((target as BuildData)?.Clone() as BuildData);
         }
 
         #endregion
 
         #region Helpers
 
-        void GuiLine(int i_height = 1)
+        private void GuiLine(int iHeight = 1)
         {
-            var rect = EditorGUILayout.GetControlRect(false, i_height);
-            rect.height = i_height;
+            var rect = EditorGUILayout.GetControlRect(false, iHeight);
+            rect.height = iHeight;
             EditorGUI.DrawRect(rect, new Color(0.5f, 0.5f, 0.5f, 1));
         }
 

@@ -28,7 +28,7 @@ MonoBehaviour:
       options: 0
       isReleaseBuild: 0
       needZip: 0
-    - isEnabled: 0
+    - isEnabled: 1
       outputRoot: Builds/
       middlePath: $NAME_$PLATFORM/$NAME/$NAME$EXECUTABLE
       dirPathForPostProcess: $NAME_$VERSION_$PLATFORM
@@ -69,10 +69,10 @@ MonoBehaviour:
       scriptingDefineSymbolsOverride: 
       targetGroup: 13
       target: 20
-      options: 0
+      options: 4
       isReleaseBuild: 0
       needZip: 0
-    - isEnabled: 1
+    - isEnabled: 0
       outputRoot: Builds/
       middlePath: $NAME_$PLATFORM$EXECUTABLE
       dirPathForPostProcess: $NAME_$VERSION_$PLATFORM

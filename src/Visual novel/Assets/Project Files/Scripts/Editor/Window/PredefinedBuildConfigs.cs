@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using Editor.BuildManager.Core;
 using UnityEditor;
 
@@ -6,31 +7,31 @@ namespace Editor.Window
 {
     public static class PredefinedBuildConfigs
     {
-        public static BuildSequence testingSequence;
-        public static BuildSequence testingSequenceZip;
+        public static BuildSequence TestingSequence;
+        public static BuildSequence TestingSequenceZip;
 
-        public static BuildSequence releaseLocalSequence;
-        public static BuildSequence releaseLocalZipSequence;
-        public static BuildSequence releaseFullSequence;
+        public static BuildSequence ReleaseLocalSequence;
+        public static BuildSequence ReleaseLocalZipSequence;
+        public static BuildSequence ReleaseFullSequence;
 
-        public static BuildSequence passbySequence;
+        public static BuildSequence PassbySequence;
 
-        public static BuildData[] standaloneData = new BuildData[]
+        public static readonly BuildData[] StandaloneData =
         {
-            new BuildData(BuildTargetGroup.Standalone, BuildTarget.StandaloneWindows),
-            new BuildData(BuildTargetGroup.Standalone, BuildTarget.StandaloneWindows64),
-            new BuildData(BuildTargetGroup.Standalone, BuildTarget.StandaloneLinux64),
-            new BuildData(BuildTargetGroup.Standalone, BuildTarget.StandaloneOSX),
+            new(BuildTargetGroup.Standalone, BuildTarget.StandaloneWindows),
+            new(BuildTargetGroup.Standalone, BuildTarget.StandaloneWindows64),
+            new(BuildTargetGroup.Standalone, BuildTarget.StandaloneLinux64),
+            new(BuildTargetGroup.Standalone, BuildTarget.StandaloneOSX),
         };
 
-        public static BuildData[] webData = new BuildData[]
+        public static readonly BuildData[] WebData =
         {
-            new BuildData(BuildTargetGroup.WebGL, BuildTarget.WebGL) { middlePath = "$NAME_$VERSION_$PLATFORM/", },
+            new(BuildTargetGroup.WebGL, BuildTarget.WebGL) { middlePath = "$NAME_$VERSION_$PLATFORM/", },
         };
 
-        public static BuildData[] androidData = new BuildData[]
+        public static readonly BuildData[] AndroidData =
         {
-            new BuildData(BuildTargetGroup.Android, BuildTarget.Android)
+            new(BuildTargetGroup.Android, BuildTarget.Android)
             {
                 middlePath = "$NAME_$VERSION_$PLATFORM$EXECUTABLE",
                 dirPathForPostProcess = "$NAME_$VERSION_$PLATFORM$EXECUTABLE",
@@ -39,29 +40,19 @@ namespace Editor.Window
 
         public static void Init()
         {
-            var dataOriginal = new List<BuildData>();
             var data = new List<BuildData>();
 
-            foreach (var buildData in standaloneData)
-            {
-                dataOriginal.Add(buildData.Clone() as BuildData);
-            }
+            var dataOriginal = StandaloneData.Select(buildData => buildData.Clone() as BuildData).ToList();
 
-            foreach (var buildData in webData)
-            {
-                dataOriginal.Add(buildData.Clone() as BuildData);
-            }
+            dataOriginal.AddRange(WebData.Select(buildData => buildData.Clone() as BuildData));
 
-            foreach (var buildData in androidData)
-            {
-                dataOriginal.Add(buildData.Clone() as BuildData);
-            }
+            dataOriginal.AddRange(AndroidData.Select(buildData => buildData.Clone() as BuildData));
 
             FillTestingSequence(ref dataOriginal, ref data);
             FillReleaseSequence(ref dataOriginal, ref data);
         }
 
-        static void FillTestingSequence(ref List<BuildData> dataOriginal, ref List<BuildData> data)
+        private static void FillTestingSequence(ref List<BuildData> dataOriginal, ref List<BuildData> data)
         {
             for (var i = 0; i < dataOriginal.Count; ++i)
             {
@@ -70,7 +61,7 @@ namespace Editor.Window
                 data[i].dirPathForPostProcess = data[i].dirPathForPostProcess.Replace("_$VERSION", "");
             }
 
-            testingSequence = new BuildSequence("Testing", data.ToArray());
+            TestingSequence = new BuildSequence("Testing", data.ToArray());
             data.Clear();
 
             for (var i = 0; i < dataOriginal.Count; ++i)
@@ -81,11 +72,11 @@ namespace Editor.Window
                 data[i].dirPathForPostProcess = data[i].dirPathForPostProcess.Replace("_$VERSION", "");
             }
 
-            testingSequenceZip = new BuildSequence("Testing + zip", data.ToArray());
+            TestingSequenceZip = new BuildSequence("Testing + zip", data.ToArray());
             data.Clear();
         }
 
-        static void FillReleaseSequence(ref List<BuildData> dataOriginal, ref List<BuildData> data)
+        private static void FillReleaseSequence(ref List<BuildData> dataOriginal, ref List<BuildData> data)
         {
             for (var i = 0; i < dataOriginal.Count; ++i)
             {
@@ -98,7 +89,7 @@ namespace Editor.Window
                 data[i].isReleaseBuild = true;
             }
 
-            releaseLocalSequence = new BuildSequence("Release", data.ToArray());
+            ReleaseLocalSequence = new BuildSequence("Release", data.ToArray());
             data.Clear();
 
             for (var i = 0; i < dataOriginal.Count; ++i)
@@ -108,7 +99,7 @@ namespace Editor.Window
                 data[i].needZip = true;
             }
 
-            releaseLocalZipSequence = new BuildSequence("Release + zip", data.ToArray());
+            ReleaseLocalZipSequence = new BuildSequence("Release + zip", data.ToArray());
             data.Clear();
 
             for (var i = 0; i < dataOriginal.Count; ++i)
@@ -118,7 +109,7 @@ namespace Editor.Window
                 data[i].needZip = true;
             }
 
-            releaseFullSequence = new BuildSequence("Release full", data.ToArray());
+            ReleaseFullSequence = new BuildSequence("Release full", data.ToArray());
             data.Clear();
 
             for (var i = 0; i < dataOriginal.Count; ++i)
@@ -129,7 +120,7 @@ namespace Editor.Window
                 data[i].needZip = true;
             }
 
-            passbySequence = new BuildSequence("Passby local release", data.ToArray());
+            PassbySequence = new BuildSequence("Passby local release", data.ToArray());
             data.Clear();
         }
     }

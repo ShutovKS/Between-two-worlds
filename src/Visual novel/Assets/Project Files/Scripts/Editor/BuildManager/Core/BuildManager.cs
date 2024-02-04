@@ -7,6 +7,7 @@ using System.Linq;
 using Editor.Changelog;
 using Ionic.Zip;
 using UnityEditor;
+using UnityEditor.Build;
 using UnityEditor.Build.Reporting;
 using Debug = UnityEngine.Debug;
 
@@ -19,13 +20,11 @@ namespace Editor.BuildManager.Core
         private static DateTime usedDate;
         private static string buildNameString;
         private static string[] buildsPath;
-        private static ChangelogData usedChangelog;
 
         public static void RunBuildSequnce(BuildManagerSettings settings, BuildSequence sequence,
             ChangelogData changelog)
         {
-            // Start init
-            usedChangelog = changelog;
+            Debug.Log("Start init");
             var usedChangelogEntry = changelog.GetLastVersion();
             buildNameString = usedChangelogEntry.GetVersionHeader();
 
@@ -35,7 +34,7 @@ namespace Editor.BuildManager.Core
             EditorUtility.SetDirty(TemplateGameManager.Instance);
 #endif
             usedDate = DateTime.Now;
-            //End init
+            Debug.Log("End init");
 
             Debug.Log("Start building all");
             var startTime = DateTime.Now;
@@ -44,7 +43,7 @@ namespace Editor.BuildManager.Core
 
             Compress(sequence);
 
-            Debug.Log($"End building all. Elapsed time: {DateTime.Now - startTime:mm\\\\:ss}");
+            Debug.Log($@"End building all. Elapsed time: {(DateTime.Now - startTime).ToString()}");
 
 #if UNITY_EDITOR_WIN
             ShowExplorer(sequence.builds[^1].outputRoot);
@@ -55,7 +54,8 @@ namespace Editor.BuildManager.Core
         {
             var targetBeforeStart = EditorUserBuildSettings.activeBuildTarget;
             var targetGroupBeforeStart = BuildPipeline.GetBuildTargetGroup(targetBeforeStart);
-            var definesBeforeStart = PlayerSettings.GetScriptingDefineSymbolsForGroup(targetGroupBeforeStart);
+            var namedBuildTarget = NamedBuildTarget.FromBuildTargetGroup(targetGroupBeforeStart);
+            var definesBeforeStart = PlayerSettings.GetScriptingDefineSymbols(namedBuildTarget);
 
             buildsPath = new string[sequence.builds.Count];
             for (byte i = 0; i < sequence.builds.Count; ++i)
@@ -80,7 +80,7 @@ namespace Editor.BuildManager.Core
             }
 
             EditorUserBuildSettings.SwitchActiveBuildTarget(targetGroupBeforeStart, targetBeforeStart);
-            PlayerSettings.SetScriptingDefineSymbolsForGroup(targetGroupBeforeStart, definesBeforeStart);
+            PlayerSettings.SetScriptingDefineSymbols(namedBuildTarget, definesBeforeStart);
         }
 
         private static void Compress(BuildSequence sequence)
@@ -211,6 +211,8 @@ namespace Editor.BuildManager.Core
                 PlayerSettings.Android.keyaliasPass = PlayerSettings.Android.keystorePass = "keystore";
             }
 
+            var namedBuildTarget = NamedBuildTarget.FromBuildTargetGroup(buildTargetGroup);
+            
             if (isReleaseBuild)
             {
                 switch (buildTargetGroup)
@@ -223,14 +225,14 @@ namespace Editor.BuildManager.Core
                             buildTarget == BuildTarget.StandaloneWindows64 ||
                             buildTarget == BuildTarget.StandaloneLinux64)
                         {
-                            PlayerSettings.SetScriptingBackend(buildTargetGroup, ScriptingImplementation.IL2CPP);
+                            PlayerSettings.SetScriptingBackend(namedBuildTarget, ScriptingImplementation.IL2CPP);
                         }
                         else
                         {
-                            PlayerSettings.SetScriptingBackend(buildTargetGroup, ScriptingImplementation.Mono2x);
+                            PlayerSettings.SetScriptingBackend(namedBuildTarget, ScriptingImplementation.Mono2x);
                         }
 
-                        PlayerSettings.SetIl2CppCompilerConfiguration(buildTargetGroup,
+                        PlayerSettings.SetIl2CppCompilerConfiguration(namedBuildTarget,
                             Il2CppCompilerConfiguration.Master);
                         break;
                     }
@@ -238,8 +240,8 @@ namespace Editor.BuildManager.Core
                     {
                         buildOptions |= BuildOptions.CompressWithLz4;
 
-                        PlayerSettings.SetScriptingBackend(buildTargetGroup, ScriptingImplementation.IL2CPP);
-                        PlayerSettings.SetIl2CppCompilerConfiguration(buildTargetGroup,
+                        PlayerSettings.SetScriptingBackend(namedBuildTarget, ScriptingImplementation.IL2CPP);
+                        PlayerSettings.SetIl2CppCompilerConfiguration(namedBuildTarget,
                             Il2CppCompilerConfiguration.Master);
 
                         PlayerSettings.Android.targetArchitectures = AndroidArchitecture.All;
@@ -247,7 +249,7 @@ namespace Editor.BuildManager.Core
                     }
                     case BuildTargetGroup.WebGL:
                     {
-                        PlayerSettings.SetIl2CppCompilerConfiguration(buildTargetGroup,
+                        PlayerSettings.SetIl2CppCompilerConfiguration(namedBuildTarget,
                             Il2CppCompilerConfiguration.Master);
                         break;
                     }
@@ -267,8 +269,8 @@ namespace Editor.BuildManager.Core
                     {
                         buildOptions &= ~(BuildOptions.CompressWithLz4 | BuildOptions.CompressWithLz4HC);
 
-                        PlayerSettings.SetScriptingBackend(buildTargetGroup, ScriptingImplementation.Mono2x);
-                        PlayerSettings.SetIl2CppCompilerConfiguration(buildTargetGroup,
+                        PlayerSettings.SetScriptingBackend(namedBuildTarget, ScriptingImplementation.Mono2x);
+                        PlayerSettings.SetIl2CppCompilerConfiguration(namedBuildTarget,
                             Il2CppCompilerConfiguration.Debug);
                         break;
                     }
@@ -276,8 +278,8 @@ namespace Editor.BuildManager.Core
                     {
                         buildOptions &= ~(BuildOptions.CompressWithLz4 | BuildOptions.CompressWithLz4HC);
 
-                        PlayerSettings.SetScriptingBackend(buildTargetGroup, ScriptingImplementation.Mono2x);
-                        PlayerSettings.SetIl2CppCompilerConfiguration(buildTargetGroup,
+                        PlayerSettings.SetScriptingBackend(namedBuildTarget, ScriptingImplementation.Mono2x);
+                        PlayerSettings.SetIl2CppCompilerConfiguration(namedBuildTarget,
                             Il2CppCompilerConfiguration.Debug);
 
                         PlayerSettings.Android.targetArchitectures = AndroidArchitecture.ARMv7;
@@ -285,7 +287,7 @@ namespace Editor.BuildManager.Core
                     }
                     case BuildTargetGroup.WebGL:
                     {
-                        PlayerSettings.SetIl2CppCompilerConfiguration(buildTargetGroup,
+                        PlayerSettings.SetIl2CppCompilerConfiguration(namedBuildTarget,
                             Il2CppCompilerConfiguration.Debug);
                         break;
                     }
@@ -307,25 +309,37 @@ namespace Editor.BuildManager.Core
                 options = buildOptions
             };
 
-            PlayerSettings.SetScriptingDefineSymbolsForGroup(buildTargetGroup, definesSymbols);
-            var report = BuildPipeline.BuildPlayer(buildPlayerOptions);
-            var summary = report.summary;
+            PlayerSettings.SetScriptingDefineSymbols(namedBuildTarget, definesSymbols);
+            BuildReport report = null;
 
-            if (summary.result == BuildResult.Succeeded)
+            try
             {
-                Debug.Log($"{summary.platform} succeeded.  \t " +
-                          $"Time: {summary.totalTime:mm\\\\:ss}  \t " +
-                          $"Size: {summary.totalSize / 1048576} Mb");
+                report = BuildPipeline.BuildPlayer(buildPlayerOptions);
+                
             }
-            else if (summary.result == BuildResult.Failed)
+            catch (Exception)
             {
-                Debug.Log($"{summary.platform} failed.   \t " +
-                          $"Time: {summary.totalTime:mm\\\\:ss}  \t " +
-                          $"Size: {summary.totalSize / 1048576} Mb" +
-                          "\n" +
-                          $"Warnings: {summary.totalWarnings}" + "\n" +
-                          $"Errors:   {summary.totalErrors}"
-                );
+                //
+            }
+
+            var summary = report!.summary;
+
+            switch (summary.result)
+            {
+                case BuildResult.Succeeded:
+                    Debug.Log($"{summary.platform} succeeded.  \t " +
+                              $"Time: {summary.totalTime.ToString()}  \t " +
+                              $"Size: {summary.totalSize / 1024 / 1024} Mb" + "\n");
+                    break;
+                case BuildResult.Failed:
+                    Debug.Log($"{summary.platform} failed.   \t " +
+                              $"Time: {summary.totalTime.ToString()}  \t " +
+                              $"Size: {summary.totalSize / 1024 / 1024} Mb" + "\n" +
+                              "\n" +
+                              $"Warnings: {summary.totalWarnings}" + "\n" +
+                              $"Errors:   {summary.totalErrors}"
+                    );
+                    break;
             }
 
             return summary.result == BuildResult.Succeeded ? buildPath : "";
@@ -355,7 +369,7 @@ namespace Editor.BuildManager.Core
             }
 
             Debug.Log($"Make {dirPath}.zip.  \t " +
-                      $"Time: {$"{DateTime.Now - startTime:mm\\:ss}"}  \t " +
+                      $"Time: {(DateTime.Now - startTime).ToString()}  \t " +
                       $"Size: {uncompresedSize / 1048576} Mb - {compresedSize / 1048576} Mb");
         }
 
