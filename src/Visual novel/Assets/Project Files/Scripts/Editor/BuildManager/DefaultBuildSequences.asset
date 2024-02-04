@@ -17,7 +17,7 @@ MonoBehaviour:
     editorName: Testing
     scriptingDefineSymbolsOverride: 
     builds:
-    - isEnabled: 1
+    - isEnabled: 0
       outputRoot: Builds/
       middlePath: $NAME_$PLATFORM/$NAME/$NAME$EXECUTABLE
       dirPathForPostProcess: $NAME_$VERSION_$PLATFORM
@@ -26,16 +26,9 @@ MonoBehaviour:
       targetGroup: 1
       target: 5
       options: 0
-      isVirtualRealitySupported: 0
       isReleaseBuild: 0
       needZip: 0
-      needItchPush: 0
-      itchChannel: windows-32
-      needGithubPush: 0
-      needGamejolthPush: 0
-      needSteamPush: 0
-      needGoogleDrivePush: 0
-    - isEnabled: 1
+    - isEnabled: 0
       outputRoot: Builds/
       middlePath: $NAME_$PLATFORM/$NAME/$NAME$EXECUTABLE
       dirPathForPostProcess: $NAME_$VERSION_$PLATFORM
@@ -44,16 +37,9 @@ MonoBehaviour:
       targetGroup: 1
       target: 19
       options: 0
-      isVirtualRealitySupported: 0
       isReleaseBuild: 0
       needZip: 0
-      needItchPush: 0
-      itchChannel: windows-64
-      needGithubPush: 0
-      needGamejolthPush: 0
-      needSteamPush: 0
-      needGoogleDrivePush: 0
-    - isEnabled: 1
+    - isEnabled: 0
       outputRoot: Builds/
       middlePath: $NAME_$PLATFORM/$NAME/$NAME$EXECUTABLE
       dirPathForPostProcess: $NAME_$VERSION_$PLATFORM
@@ -62,16 +48,9 @@ MonoBehaviour:
       targetGroup: 1
       target: 24
       options: 0
-      isVirtualRealitySupported: 0
       isReleaseBuild: 0
       needZip: 0
-      needItchPush: 0
-      itchChannel: linux-universal
-      needGithubPush: 0
-      needGamejolthPush: 0
-      needSteamPush: 0
-      needGoogleDrivePush: 0
-    - isEnabled: 1
+    - isEnabled: 0
       outputRoot: Builds/
       middlePath: $NAME_$PLATFORM/$NAME/$NAME$EXECUTABLE
       dirPathForPostProcess: $NAME_$VERSION_$PLATFORM
@@ -80,16 +59,9 @@ MonoBehaviour:
       targetGroup: 1
       target: 2
       options: 0
-      isVirtualRealitySupported: 0
       isReleaseBuild: 0
       needZip: 0
-      needItchPush: 0
-      itchChannel: osx-universal
-      needGithubPush: 0
-      needGamejolthPush: 0
-      needSteamPush: 0
-      needGoogleDrivePush: 0
-    - isEnabled: 1
+    - isEnabled: 0
       outputRoot: Builds/
       middlePath: $NAME_$PLATFORM/
       dirPathForPostProcess: $NAME_$VERSION_$PLATFORM
@@ -98,15 +70,8 @@ MonoBehaviour:
       targetGroup: 13
       target: 20
       options: 0
-      isVirtualRealitySupported: 0
       isReleaseBuild: 0
       needZip: 0
-      needItchPush: 0
-      itchChannel: webgl
-      needGithubPush: 0
-      needGamejolthPush: 0
-      needSteamPush: 0
-      needGoogleDrivePush: 0
     - isEnabled: 1
       outputRoot: Builds/
       middlePath: $NAME_$PLATFORM$EXECUTABLE
@@ -116,15 +81,8 @@ MonoBehaviour:
       targetGroup: 7
       target: 13
       options: 0
-      isVirtualRealitySupported: 0
       isReleaseBuild: 0
       needZip: 0
-      needItchPush: 0
-      itchChannel: android
-      needGithubPush: 0
-      needGamejolthPush: 0
-      needSteamPush: 0
-      needGoogleDrivePush: 0
   - isEnabled: 1
     editorName: Testing + zip
     scriptingDefineSymbolsOverride: 
@@ -138,15 +96,8 @@ MonoBehaviour:
       targetGroup: 1
       target: 5
       options: 0
-      isVirtualRealitySupported: 0
       isReleaseBuild: 0
       needZip: 1
-      needItchPush: 0
-      itchChannel: windows-32
-      needGithubPush: 0
-      needGamejolthPush: 0
-      needSteamPush: 0
-      needGoogleDrivePush: 0
     - isEnabled: 1
       outputRoot: Builds/
       middlePath: $NAME_$PLATFORM/$NAME/$NAME$EXECUTABLE
@@ -156,15 +107,8 @@ MonoBehaviour:
       targetGroup: 1
       target: 19
       options: 0
-      isVirtualRealitySupported: 0
       isReleaseBuild: 0
       needZip: 1
-      needItchPush: 0
-      itchChannel: windows-64
-      needGithubPush: 0
-      needGamejolthPush: 0
-      needSteamPush: 0
-      needGoogleDrivePush: 0
     - isEnabled: 1
       outputRoot: Builds/
       middlePath: $NAME_$PLATFORM/$NAME/$NAME$EXECUTABLE
@@ -174,15 +118,8 @@ MonoBehaviour:
       targetGroup: 1
       target: 24
       options: 0
-      isVirtualRealitySupported: 0
       isReleaseBuild: 0
       needZip: 1
-      needItchPush: 0
-      itchChannel: linux-universal
-      needGithubPush: 0
-      needGamejolthPush: 0
-      needSteamPush: 0
-      needGoogleDrivePush: 0
     - isEnabled: 1
       outputRoot: Builds/
       middlePath: $NAME_$PLATFORM/$NAME/$NAME$EXECUTABLE
@@ -192,15 +129,8 @@ MonoBehaviour:
       targetGroup: 1
       target: 2
       options: 0
-      isVirtualRealitySupported: 0
       isReleaseBuild: 0
       needZip: 1
-      needItchPush: 0
-      itchChannel: osx-universal
-      needGithubPush: 0
-      needGamejolthPush: 0
-      needSteamPush: 0
-      needGoogleDrivePush: 0
     - isEnabled: 1
       outputRoot: Builds/
       middlePath: $NAME_$PLATFORM/
@@ -210,15 +140,8 @@ MonoBehaviour:
       targetGroup: 13
       target: 20
       options: 0
-      isVirtualRealitySupported: 0
       isReleaseBuild: 0
       needZip: 1
-      needItchPush: 0
-      itchChannel: webgl
-      needGithubPush: 0
-      needGamejolthPush: 0
-      needSteamPush: 0
-      needGoogleDrivePush: 0
     - isEnabled: 1
       outputRoot: Builds/
       middlePath: $NAME_$PLATFORM$EXECUTABLE
@@ -228,15 +151,8 @@ MonoBehaviour:
       targetGroup: 7
       target: 13
       options: 0
-      isVirtualRealitySupported: 0
       isReleaseBuild: 0
       needZip: 1
-      needItchPush: 0
-      itchChannel: android
-      needGithubPush: 0
-      needGamejolthPush: 0
-      needSteamPush: 0
-      needGoogleDrivePush: 0
   - isEnabled: 1
     editorName: Passby local release
     scriptingDefineSymbolsOverride: 
@@ -250,15 +166,8 @@ MonoBehaviour:
       targetGroup: 1
       target: 5
       options: 0
-      isVirtualRealitySupported: 0
       isReleaseBuild: 1
       needZip: 1
-      needItchPush: 1
-      itchChannel: windows-32
-      needGithubPush: 0
-      needGamejolthPush: 0
-      needSteamPush: 0
-      needGoogleDrivePush: 0
     - isEnabled: 1
       outputRoot: Builds/Releases/
       middlePath: $NAME_$VERSION_$PLATFORM/$NAME_$VERSION/$NAME$EXECUTABLE
@@ -268,15 +177,8 @@ MonoBehaviour:
       targetGroup: 1
       target: 19
       options: 0
-      isVirtualRealitySupported: 0
       isReleaseBuild: 1
       needZip: 1
-      needItchPush: 1
-      itchChannel: windows-64
-      needGithubPush: 0
-      needGamejolthPush: 0
-      needSteamPush: 0
-      needGoogleDrivePush: 0
     - isEnabled: 1
       outputRoot: Builds/Releases/
       middlePath: $NAME_$VERSION_$PLATFORM/$NAME_$VERSION/$NAME$EXECUTABLE
@@ -286,15 +188,8 @@ MonoBehaviour:
       targetGroup: 1
       target: 24
       options: 0
-      isVirtualRealitySupported: 0
       isReleaseBuild: 1
       needZip: 1
-      needItchPush: 1
-      itchChannel: linux-universal
-      needGithubPush: 0
-      needGamejolthPush: 0
-      needSteamPush: 0
-      needGoogleDrivePush: 0
     - isEnabled: 1
       outputRoot: Builds/Releases/
       middlePath: $NAME_$VERSION_$PLATFORM/$NAME_$VERSION/$NAME$EXECUTABLE
@@ -304,15 +199,8 @@ MonoBehaviour:
       targetGroup: 1
       target: 2
       options: 0
-      isVirtualRealitySupported: 0
       isReleaseBuild: 1
       needZip: 1
-      needItchPush: 1
-      itchChannel: osx-universal
-      needGithubPush: 0
-      needGamejolthPush: 0
-      needSteamPush: 0
-      needGoogleDrivePush: 0
     - isEnabled: 1
       outputRoot: Builds/Releases/
       middlePath: $NAME_$VERSION_$PLATFORM/
@@ -322,15 +210,8 @@ MonoBehaviour:
       targetGroup: 13
       target: 20
       options: 0
-      isVirtualRealitySupported: 0
       isReleaseBuild: 1
       needZip: 1
-      needItchPush: 1
-      itchChannel: webgl
-      needGithubPush: 0
-      needGamejolthPush: 0
-      needSteamPush: 0
-      needGoogleDrivePush: 0
     - isEnabled: 1
       outputRoot: Builds/Releases/
       middlePath: $NAME_$VERSION_$PLATFORM$EXECUTABLE
@@ -340,15 +221,8 @@ MonoBehaviour:
       targetGroup: 7
       target: 13
       options: 0
-      isVirtualRealitySupported: 0
       isReleaseBuild: 1
       needZip: 1
-      needItchPush: 1
-      itchChannel: android
-      needGithubPush: 0
-      needGamejolthPush: 0
-      needSteamPush: 0
-      needGoogleDrivePush: 0
   - isEnabled: 1
     editorName: Release
     scriptingDefineSymbolsOverride: 
@@ -362,15 +236,8 @@ MonoBehaviour:
       targetGroup: 1
       target: 5
       options: 0
-      isVirtualRealitySupported: 0
       isReleaseBuild: 1
       needZip: 0
-      needItchPush: 0
-      itchChannel: windows-32
-      needGithubPush: 0
-      needGamejolthPush: 0
-      needSteamPush: 0
-      needGoogleDrivePush: 0
     - isEnabled: 1
       outputRoot: Builds/Releases/
       middlePath: $NAME_$VERSION_$PLATFORM/$NAME_$VERSION/$NAME$EXECUTABLE
@@ -380,15 +247,8 @@ MonoBehaviour:
       targetGroup: 1
       target: 19
       options: 0
-      isVirtualRealitySupported: 0
       isReleaseBuild: 1
       needZip: 0
-      needItchPush: 0
-      itchChannel: windows-64
-      needGithubPush: 0
-      needGamejolthPush: 0
-      needSteamPush: 0
-      needGoogleDrivePush: 0
     - isEnabled: 1
       outputRoot: Builds/Releases/
       middlePath: $NAME_$VERSION_$PLATFORM/$NAME_$VERSION/$NAME$EXECUTABLE
@@ -398,15 +258,8 @@ MonoBehaviour:
       targetGroup: 1
       target: 24
       options: 0
-      isVirtualRealitySupported: 0
       isReleaseBuild: 1
       needZip: 0
-      needItchPush: 0
-      itchChannel: linux-universal
-      needGithubPush: 0
-      needGamejolthPush: 0
-      needSteamPush: 0
-      needGoogleDrivePush: 0
     - isEnabled: 1
       outputRoot: Builds/Releases/
       middlePath: $NAME_$VERSION_$PLATFORM/$NAME_$VERSION/$NAME$EXECUTABLE
@@ -416,15 +269,8 @@ MonoBehaviour:
       targetGroup: 1
       target: 2
       options: 0
-      isVirtualRealitySupported: 0
       isReleaseBuild: 1
       needZip: 0
-      needItchPush: 0
-      itchChannel: osx-universal
-      needGithubPush: 0
-      needGamejolthPush: 0
-      needSteamPush: 0
-      needGoogleDrivePush: 0
     - isEnabled: 1
       outputRoot: Builds/Releases/
       middlePath: $NAME_$VERSION_$PLATFORM/
@@ -434,15 +280,8 @@ MonoBehaviour:
       targetGroup: 13
       target: 20
       options: 0
-      isVirtualRealitySupported: 0
       isReleaseBuild: 1
       needZip: 0
-      needItchPush: 0
-      itchChannel: webgl
-      needGithubPush: 0
-      needGamejolthPush: 0
-      needSteamPush: 0
-      needGoogleDrivePush: 0
     - isEnabled: 1
       outputRoot: Builds/Releases/
       middlePath: $NAME_$VERSION_$PLATFORM$EXECUTABLE
@@ -452,15 +291,8 @@ MonoBehaviour:
       targetGroup: 7
       target: 13
       options: 0
-      isVirtualRealitySupported: 0
       isReleaseBuild: 1
       needZip: 0
-      needItchPush: 0
-      itchChannel: android
-      needGithubPush: 0
-      needGamejolthPush: 0
-      needSteamPush: 0
-      needGoogleDrivePush: 0
   - isEnabled: 1
     editorName: Release + zip
     scriptingDefineSymbolsOverride: 
@@ -474,15 +306,8 @@ MonoBehaviour:
       targetGroup: 1
       target: 5
       options: 0
-      isVirtualRealitySupported: 0
       isReleaseBuild: 1
       needZip: 1
-      needItchPush: 0
-      itchChannel: windows-32
-      needGithubPush: 0
-      needGamejolthPush: 0
-      needSteamPush: 0
-      needGoogleDrivePush: 0
     - isEnabled: 1
       outputRoot: Builds/Releases/
       middlePath: $NAME_$VERSION_$PLATFORM/$NAME_$VERSION/$NAME$EXECUTABLE
@@ -492,15 +317,8 @@ MonoBehaviour:
       targetGroup: 1
       target: 19
       options: 0
-      isVirtualRealitySupported: 0
       isReleaseBuild: 1
       needZip: 1
-      needItchPush: 0
-      itchChannel: windows-64
-      needGithubPush: 0
-      needGamejolthPush: 0
-      needSteamPush: 0
-      needGoogleDrivePush: 0
     - isEnabled: 1
       outputRoot: Builds/Releases/
       middlePath: $NAME_$VERSION_$PLATFORM/$NAME_$VERSION/$NAME$EXECUTABLE
@@ -510,15 +328,8 @@ MonoBehaviour:
       targetGroup: 1
       target: 24
       options: 0
-      isVirtualRealitySupported: 0
       isReleaseBuild: 1
       needZip: 1
-      needItchPush: 0
-      itchChannel: linux-universal
-      needGithubPush: 0
-      needGamejolthPush: 0
-      needSteamPush: 0
-      needGoogleDrivePush: 0
     - isEnabled: 1
       outputRoot: Builds/Releases/
       middlePath: $NAME_$VERSION_$PLATFORM/$NAME_$VERSION/$NAME$EXECUTABLE
@@ -528,15 +339,8 @@ MonoBehaviour:
       targetGroup: 1
       target: 2
       options: 0
-      isVirtualRealitySupported: 0
       isReleaseBuild: 1
       needZip: 1
-      needItchPush: 0
-      itchChannel: osx-universal
-      needGithubPush: 0
-      needGamejolthPush: 0
-      needSteamPush: 0
-      needGoogleDrivePush: 0
     - isEnabled: 1
       outputRoot: Builds/Releases/
       middlePath: $NAME_$VERSION_$PLATFORM/
@@ -546,15 +350,8 @@ MonoBehaviour:
       targetGroup: 13
       target: 20
       options: 0
-      isVirtualRealitySupported: 0
       isReleaseBuild: 1
       needZip: 1
-      needItchPush: 0
-      itchChannel: webgl
-      needGithubPush: 0
-      needGamejolthPush: 0
-      needSteamPush: 0
-      needGoogleDrivePush: 0
     - isEnabled: 1
       outputRoot: Builds/Releases/
       middlePath: $NAME_$VERSION_$PLATFORM$EXECUTABLE
@@ -564,15 +361,8 @@ MonoBehaviour:
       targetGroup: 7
       target: 13
       options: 0
-      isVirtualRealitySupported: 0
       isReleaseBuild: 1
       needZip: 1
-      needItchPush: 0
-      itchChannel: android
-      needGithubPush: 0
-      needGamejolthPush: 0
-      needSteamPush: 0
-      needGoogleDrivePush: 0
   - isEnabled: 1
     editorName: Release full
     scriptingDefineSymbolsOverride: 
@@ -586,15 +376,8 @@ MonoBehaviour:
       targetGroup: 1
       target: 5
       options: 0
-      isVirtualRealitySupported: 0
       isReleaseBuild: 1
       needZip: 1
-      needItchPush: 1
-      itchChannel: windows-32
-      needGithubPush: 1
-      needGamejolthPush: 0
-      needSteamPush: 0
-      needGoogleDrivePush: 0
     - isEnabled: 1
       outputRoot: Builds/Releases/
       middlePath: $NAME_$VERSION_$PLATFORM/$NAME_$VERSION/$NAME$EXECUTABLE
@@ -604,15 +387,8 @@ MonoBehaviour:
       targetGroup: 1
       target: 19
       options: 0
-      isVirtualRealitySupported: 0
       isReleaseBuild: 1
       needZip: 1
-      needItchPush: 1
-      itchChannel: windows-64
-      needGithubPush: 1
-      needGamejolthPush: 0
-      needSteamPush: 0
-      needGoogleDrivePush: 0
     - isEnabled: 1
       outputRoot: Builds/Releases/
       middlePath: $NAME_$VERSION_$PLATFORM/$NAME_$VERSION/$NAME$EXECUTABLE
@@ -622,15 +398,8 @@ MonoBehaviour:
       targetGroup: 1
       target: 24
       options: 0
-      isVirtualRealitySupported: 0
       isReleaseBuild: 1
       needZip: 1
-      needItchPush: 1
-      itchChannel: linux-universal
-      needGithubPush: 1
-      needGamejolthPush: 0
-      needSteamPush: 0
-      needGoogleDrivePush: 0
     - isEnabled: 1
       outputRoot: Builds/Releases/
       middlePath: $NAME_$VERSION_$PLATFORM/$NAME_$VERSION/$NAME$EXECUTABLE
@@ -640,15 +409,8 @@ MonoBehaviour:
       targetGroup: 1
       target: 2
       options: 0
-      isVirtualRealitySupported: 0
       isReleaseBuild: 1
       needZip: 1
-      needItchPush: 1
-      itchChannel: osx-universal
-      needGithubPush: 1
-      needGamejolthPush: 0
-      needSteamPush: 0
-      needGoogleDrivePush: 0
     - isEnabled: 1
       outputRoot: Builds/Releases/
       middlePath: $NAME_$VERSION_$PLATFORM/
@@ -658,15 +420,8 @@ MonoBehaviour:
       targetGroup: 13
       target: 20
       options: 0
-      isVirtualRealitySupported: 0
       isReleaseBuild: 1
       needZip: 1
-      needItchPush: 1
-      itchChannel: webgl
-      needGithubPush: 1
-      needGamejolthPush: 0
-      needSteamPush: 0
-      needGoogleDrivePush: 0
     - isEnabled: 1
       outputRoot: Builds/Releases/
       middlePath: $NAME_$VERSION_$PLATFORM$EXECUTABLE
@@ -676,15 +431,8 @@ MonoBehaviour:
       targetGroup: 7
       target: 13
       options: 0
-      isVirtualRealitySupported: 0
       isReleaseBuild: 1
       needZip: 1
-      needItchPush: 1
-      itchChannel: android
-      needGithubPush: 1
-      needGamejolthPush: 0
-      needSteamPush: 0
-      needGoogleDrivePush: 0
   - isEnabled: 1
     editorName: Testing win only
     scriptingDefineSymbolsOverride: 
@@ -698,16 +446,6 @@ MonoBehaviour:
       targetGroup: 1
       target: 5
       options: 0
-      isVirtualRealitySupported: 0
       isReleaseBuild: 0
       needZip: 1
-      needItchPush: 0
-      itchChannel: windows-testing
-      needGithubPush: 1
-      needGamejolthPush: 0
-      needSteamPush: 0
-      needGoogleDrivePush: 0
   scriptingDefineSymbols: 
-  itchGameLink: teamon/BuildManagerUPM
-  githubUserName: Team-on
-  githubRepoName: BuildManagerUPM
