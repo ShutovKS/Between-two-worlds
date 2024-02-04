@@ -29,7 +29,7 @@ namespace Editor.Window
         static ReorderableList sequenceList;
         static ReorderableList buildList;
 
-        [MenuItem("Window/BuildManager/Builds window &b")]
+        [MenuItem("File/Build Manager", false, 205)]
         public static void ShowWindow()
         {
             sequenceList = null;
