@@ -27,6 +27,7 @@ foreach (var directory in directories)
     File.Copy(mainPath + LastWordsPath, localizationPath + LastWordsPath, true);
     File.Copy(mainPath + UILocalisationPath, localizationPath + UILocalisationPath, true);
     File.Copy(mainPath + MainPath, localizationPath + MainPath, true);
+    File.Copy(mainPath + FlagPath, localizationPath + FlagPath, true);
 }
 
 return;

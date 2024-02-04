@@ -778,6 +778,7 @@
   <anyType xsi:type="Phrase">
     <ID>id85.</ID>
     <IDNextDialog>id86.</IDNextDialog>
+    <Name />
     <Text>Quella sera.</Text>
     <BackgroundPath>Kitchen</BackgroundPath>
     <SoundEffect>Beanfeast</SoundEffect>
@@ -2522,6 +2523,7 @@
   <anyType xsi:type="Phrase">
     <ID>id267.</ID>
     <IDNextDialog>id268.</IDNextDialog>
+    <Name />
     <Text>Tornato a casa e addormentato.</Text>
     <BackgroundPath>HoldingHands</BackgroundPath>
     <SoundEffect>Beanfeast</SoundEffect>
@@ -3068,6 +3070,7 @@
   <anyType xsi:type="Phrase">
     <ID>id328.</ID>
     <IDNextDialog>id329.</IDNextDialog>
+    <Name />
     <Text>Raggiungere l'ospedale.</Text>
     <BackgroundPath>GirlfriendHouseEvening</BackgroundPath>
     <SoundEffect>FrozenWinter</SoundEffect>
@@ -3138,6 +3141,8 @@
   <anyType xsi:type="Phrase">
     <ID>id336.</ID>
     <IDNextDialog>id337.</IDNextDialog>
+    <CharacterAvatarPath>CharacterDoctor</CharacterAvatarPath>
+    <Name>Dottore</Name>
     <Text>è importante ascoltare la tua voce interiore e capire cosa è più significativo per te.</Text>
     <BackgroundPath>DoctorOffice</BackgroundPath>
     <SoundEffect>FrozenWinter</SoundEffect>

@@ -317,6 +317,8 @@
   <anyType xsi:type="Phrase">
     <ID>id35.</ID>
     <IDNextDialog>id36.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
+    <Name>Fille</Name>
     <Text>Pouvez toujours vous réveiller, mais ne vous sentez-vous pas mieux ici</Text>
     <BackgroundPath>RoomHeroDream</BackgroundPath>
     <SoundEffect>WooScary</SoundEffect>
@@ -804,7 +806,7 @@
     <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
     <Name>Fille</Name>
     <Text>De te voir.</Text>
-    <BackgroundPath>ForestPathRavie</BackgroundPath>
+    <BackgroundPath>ForestPath</BackgroundPath>
     <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
@@ -813,7 +815,7 @@
     <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
     <Name>Héros</Name>
     <Text>Toi... encore ici Pourquoi </Text>
-    <BackgroundPath>ForestPathRavie</BackgroundPath>
+    <BackgroundPath>ForestPath</BackgroundPath>
     <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
@@ -822,7 +824,7 @@
     <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
     <Name>Fille</Name>
     <Text>Rappelez-Vous, c'est votre rêve, votre monde de rêve. Si je suis là, alors tu veux que je sois là. Un peu mystérieux, non Hee-hee.</Text>
-    <BackgroundPath>ForestPathRavie</BackgroundPath>
+    <BackgroundPath>ForestPath</BackgroundPath>
     <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
@@ -831,7 +833,7 @@
     <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
     <Name>Fille</Name>
     <Text>Pendant que je suis là, allons faire une promenade le long de la piste forestière.</Text>
-    <BackgroundPath>ForestPathRavie</BackgroundPath>
+    <BackgroundPath>ForestPath</BackgroundPath>
     <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
@@ -840,7 +842,7 @@
     <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
     <Name>Héros</Name>
     <Text>Avec plaisir, allons-Y.</Text>
-    <BackgroundPath>ForestPathRavie</BackgroundPath>
+    <BackgroundPath>ForestPath</BackgroundPath>
     <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
@@ -849,7 +851,7 @@
     <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
     <Name>Héros</Name>
     <Text>Je me Demande quelle est cette forêt Si différent de tout ce que j'ai jamais vu</Text>
-    <BackgroundPath>ForestPathRavie</BackgroundPath>
+    <BackgroundPath>ForestPath</BackgroundPath>
     <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
@@ -858,7 +860,7 @@
     <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
     <Name>Fille</Name>
     <Text>Mais après tout, le sommeil ne devrait pas être ordinaire, n'est-ce pas</Text>
-    <BackgroundPath>ForestPathRavie</BackgroundPath>
+    <BackgroundPath>ForestPath</BackgroundPath>
     <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
@@ -867,7 +869,7 @@
     <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
     <Name>Héros</Name>
     <Text>Tu as raison.</Text>
-    <BackgroundPath>ForestPathRavie</BackgroundPath>
+    <BackgroundPath>ForestPath</BackgroundPath>
     <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
@@ -876,7 +878,7 @@
     <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
     <Name>Fille</Name>
     <Text>Oh, regarde quelle créature adorable!</Text>
-    <BackgroundPath>ForestPathRavie</BackgroundPath>
+    <BackgroundPath>ForestPath</BackgroundPath>
     <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
@@ -885,7 +887,7 @@
     <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
     <Name>Héros</Name>
     <Text>Inhabituel, mais qu'est-ce que c'est</Text>
-    <BackgroundPath>ForestPathRavie</BackgroundPath>
+    <BackgroundPath>ForestPath</BackgroundPath>
     <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
@@ -894,7 +896,7 @@
     <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
     <Name>Fille</Name>
     <Text>C'est toi qui dois demander, ton monde est quand même.</Text>
-    <BackgroundPath>ForestPathRavie</BackgroundPath>
+    <BackgroundPath>ForestPath</BackgroundPath>
     <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
@@ -903,7 +905,7 @@
     <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
     <Name>Fille</Name>
     <Text>Vous ne voulez pas lui donner un nom</Text>
-    <BackgroundPath>ForestPathRavie</BackgroundPath>
+    <BackgroundPath>ForestPath</BackgroundPath>
     <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Responses">
@@ -929,7 +931,7 @@
     <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
     <Name>Fille</Name>
     <Text>Hee-hee-hee, vous êtes tellement drôle.</Text>
-    <BackgroundPath>ForestPathRavie</BackgroundPath>
+    <BackgroundPath>ForestPath</BackgroundPath>
     <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
@@ -938,7 +940,7 @@
     <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
     <Name>Fille</Name>
     <Text>Hohei - quel est votre nom</Text>
-    <BackgroundPath>ForestPathRavie</BackgroundPath>
+    <BackgroundPath>ForestPath</BackgroundPath>
     <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
@@ -947,7 +949,7 @@
     <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
     <Name>Héros</Name>
     <Text>Comment se sentait qu'il n'était pas nécessaire de le faire.</Text>
-    <BackgroundPath>ForestPathRavie</BackgroundPath>
+    <BackgroundPath>ForestPath</BackgroundPath>
     <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
@@ -956,7 +958,7 @@
     <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
     <Name>Héros</Name>
     <Text>Hohei Pourquoi exactement un tel nom</Text>
-    <BackgroundPath>ForestPathRavie</BackgroundPath>
+    <BackgroundPath>ForestPath</BackgroundPath>
     <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
@@ -965,7 +967,7 @@
     <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
     <Name>Fille</Name>
     <Text>Oh, allez, ça s'est bien passé.</Text>
-    <BackgroundPath>ForestPathRavie</BackgroundPath>
+    <BackgroundPath>ForestPath</BackgroundPath>
     <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
@@ -974,7 +976,7 @@
     <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
     <Name>Fille</Name>
     <Text>jeu de mots, rien de spécial.</Text>
-    <BackgroundPath>ForestPathRavie</BackgroundPath>
+    <BackgroundPath>ForestPath</BackgroundPath>
     <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
@@ -983,7 +985,7 @@
     <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
     <Name>Fille</Name>
     <Text>Allons-y, car tout ce qui est intéressant nous attend.</Text>
-    <BackgroundPath>ForestPathRavie</BackgroundPath>
+    <BackgroundPath>ForestPath</BackgroundPath>
     <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
@@ -991,7 +993,7 @@
     <IDNextDialog>id106.</IDNextDialog>
     <Name />
     <Text>Quelque temps plus tard...</Text>
-    <BackgroundPath>ForestPathRavie</BackgroundPath>
+    <BackgroundPath>ForestPath</BackgroundPath>
     <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
@@ -1000,7 +1002,7 @@
     <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
     <Name>Fille</Name>
     <Text>Wow, déjà traversé toute la forêt. Regarde combien d'étoiles!</Text>
-    <BackgroundPath>ForestPathRavie</BackgroundPath>
+    <BackgroundPath>ForestPath</BackgroundPath>
     <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
@@ -1009,7 +1011,7 @@
     <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
     <Name>Héros</Name>
     <Text>Oui, c'est si beau ici... comme si tu étais dans un conte de fées.</Text>
-    <BackgroundPath>ForestPathRavie</BackgroundPath>
+    <BackgroundPath>ForestPath</BackgroundPath>
     <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
@@ -1018,7 +1020,7 @@
     <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
     <Name>Fille</Name>
     <Text>Je Pense que c'est encore mieux qu'un conte de fées.</Text>
-    <BackgroundPath>ForestPathRavie</BackgroundPath>
+    <BackgroundPath>ForestPath</BackgroundPath>
     <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
@@ -1027,7 +1029,7 @@
     <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
     <Name>Héros</Name>
     <Text>Pour une Raison quelconque, il me semble que je vais me réveiller bientôt. </Text>
-    <BackgroundPath>ForestPathRavie</BackgroundPath>
+    <BackgroundPath>ForestPath</BackgroundPath>
     <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
@@ -1036,7 +1038,7 @@
     <CharacterAvatarPath>CharacterHero</CharacterAvatarPath>
     <Name>Héros</Name>
     <Text>Tant qu'il est encore temps, je veux te poser une autre question, est-ce que je te reverrai Et si oui, resteras-tu ici pour toujours</Text>
-    <BackgroundPath>ForestPathRavie</BackgroundPath>
+    <BackgroundPath>ForestPath</BackgroundPath>
     <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
@@ -1045,7 +1047,7 @@
     <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
     <Name>Fille</Name>
     <Text>Oui, nous nous reverrons certainement et...</Text>
-    <BackgroundPath>ForestPathRavie</BackgroundPath>
+    <BackgroundPath>ForestPath</BackgroundPath>
     <SoundEffect>WooScary</SoundEffect>
   </anyType>
   <anyType xsi:type="Phrase">
@@ -2125,6 +2127,8 @@
   <anyType xsi:type="Phrase">
     <ID>id225.</ID>
     <IDNextDialog>id226.</IDNextDialog>
+    <CharacterAvatarPath>CharacterGirl</CharacterAvatarPath>
+    <Name>Fille</Name>
     <Text>Contente que tu l'aies aimé. Alors passons au point suivant à l'ordre du jour.</Text>
     <BackgroundPath>Castle</BackgroundPath>
     <SoundEffect>DramaticBoi</SoundEffect>
