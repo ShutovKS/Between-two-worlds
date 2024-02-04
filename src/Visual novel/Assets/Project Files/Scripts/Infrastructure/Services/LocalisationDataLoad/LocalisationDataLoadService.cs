@@ -39,7 +39,8 @@ namespace Infrastructure.Services.LocalisationDataLoad
                 var localizationMain = new LocalizationMain
                 {
                     PathToDirectory = lang,
-                    Language = strings[0].Remove(0, strings[0].IndexOf('-') + 1)
+                    Language = strings[0].Remove(0, strings[0].IndexOf('-') + 1),
+                    FlagImage = Resources.Load<Sprite>(GetPathToFlag(lang))
                 };
 
                 _localizations.Add(localizationMain.Language, localizationMain);
@@ -52,6 +53,7 @@ namespace Infrastructure.Services.LocalisationDataLoad
         public static string GetPathToLastWords(string lang) => $@"{MAIN_DIRECTORY}\{lang}\LastWords";
         public static string GetPathToDialogue(string lang) => $@"{MAIN_DIRECTORY}\{lang}\Dialogues";
         public static string GetPathToUI(string lang) => $@"{MAIN_DIRECTORY}\{lang}\UILocalisation";
+        public static string GetPathToFlag(string lang) => $@"{MAIN_DIRECTORY}\{lang}\Flag";
 
         public string CurrentLanguage { get; private set; }
         private string CurrentDirectory => _localizations[CurrentLanguage].PathToDirectory;
