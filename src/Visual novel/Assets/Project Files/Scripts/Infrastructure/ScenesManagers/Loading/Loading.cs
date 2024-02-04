@@ -25,7 +25,6 @@ namespace Infrastructure.ScenesManagers.Loading
         {
             InitializedServices();
             await CreatedUI();
-            RegisterLocalizableUI();
             LoadData(() =>
             {
                 LocalisationUI();
@@ -51,27 +50,25 @@ namespace Infrastructure.ScenesManagers.Loading
 
             await _uiFactory.CreatedDialogueScreen();
             _uiFactoryInfo.DialogueUI.SetActivePanel(false);
+            _localizerUI.Register(_uiFactoryInfo.DialogueUI);
 
             await _uiFactory.CreatedMainMenuScreen();
             _uiFactoryInfo.MainMenuUI.SetActivePanel(false);
+            _localizerUI.Register(_uiFactoryInfo.MainMenuUI);
 
             await _uiFactory.CreatedConfirmationScreen();
             _uiFactoryInfo.ConfirmationUI.SetActivePanel(false);
+            _localizerUI.Register(_uiFactoryInfo.ConfirmationUI);
 
             await _uiFactory.CreatedSaveLoadScreen();
             _uiFactoryInfo.SaveLoadUI.SetActivePanel(false);
+            _localizerUI.Register(_uiFactoryInfo.SaveLoadUI);
 
             await _uiFactory.CreatedLastWordsScreen();
             _uiFactoryInfo.LastWordsUI.SetActivePanel(false);
+            _localizerUI.Register(_uiFactoryInfo.LastWordsUI);
         }
-
-        private void RegisterLocalizableUI()
-        {
-            _localizerUI.Register(_uiFactoryInfo.DialogueUI);
-            _localizerUI.Register(_uiFactoryInfo.MainMenuUI);
-            _localizerUI.Register(_uiFactoryInfo.ConfirmationUI);
-            _localizerUI.Register(_uiFactoryInfo.SaveLoadUI);
-        }
+        
 
         private void LoadData(Action onCompleted)
         {
