@@ -160,7 +160,7 @@ PlayerSettings:
   androidMaxAspectRatio: 2.1
   androidMinAspectRatio: 1
   applicationIdentifier:
-    Android: com.LukeParker.ProductNameHere
+    Android: com.Forgeofgameworlds.BetweenTwoWorlds
     Standalone: com.Forge-of-game-worlds.Between-Two-Worlds
   buildNumber:
     Bratwurst: 0
@@ -714,7 +714,7 @@ PlayerSettings:
   webGLCloseOnQuit: 0
   scriptingDefineSymbols:
     Android: 
-    Standalone: YG_PLUGIN_YANDEX_GAME_SERVICES
+    Standalone: YG_PLUGIN_YANDEX_GAME
     WebGL: YG_PLUGIN_YANDEX_GAME
   additionalCompilerArguments: {}
   platformArchitecture: {}

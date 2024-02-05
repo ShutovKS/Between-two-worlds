@@ -13,6 +13,7 @@ namespace Infrastructure.Services.SaveLoadData
             }
             else
             {
+                YandexMetrica.Send("loaded");
                 YandexGame.savesData.Deserialize();
             }
 
@@ -21,6 +22,7 @@ namespace Infrastructure.Services.SaveLoadData
 
         public void Save(GameData gameData)
         {
+            YandexMetrica.Send("saved");
             gameData.Serialize();
 
             YandexGame.savesData.isFirstSession = false;

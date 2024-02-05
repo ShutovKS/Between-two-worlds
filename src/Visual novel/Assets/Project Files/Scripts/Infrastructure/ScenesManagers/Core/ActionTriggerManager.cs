@@ -4,6 +4,7 @@ using Infrastructure.Services.LocalisationDataLoad;
 using Infrastructure.Services.UIFactory;
 using UnityEngine;
 using UnityEngine.Events;
+using YG;
 
 namespace Infrastructure.ScenesManagers.Core
 {
@@ -37,12 +38,14 @@ namespace Infrastructure.ScenesManagers.Core
         private void ActionEnd1()
         {
             var text = _localisationDataLoadService.GetUpLastWord("end1");
+            YandexMetrica.Send("end1");
             SetUpLastWordsUI(text);
         }
 
         private void ActionEnd2()
         {
             var text = _localisationDataLoadService.GetUpLastWord("end2");
+            YandexMetrica.Send("end2");
             SetUpLastWordsUI(text);
         }
 

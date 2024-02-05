@@ -156,6 +156,9 @@ namespace Infrastructure.ScenesManagers.Loading
             
             yandexGame.RejectedAuthorization.RemoveListener(OnInitialized);
             yandexGame.ResolvedAuthorization.RemoveListener(OnInitialized);
+
+            YandexMetrica.Send("started");
+
             return;
 
             void OnInitialized()

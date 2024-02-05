@@ -244,35 +244,6 @@ MonoBehaviour:
     it: []
     de: []
     hi: []
-  fontsTMP:
-    defaultFont: []
-    ru: []
-    en: []
-    tr: []
-    az: []
-    be: []
-    he: []
-    hy: []
-    ka: []
-    et: []
-    fr: []
-    kk: []
-    ky: []
-    lt: []
-    lv: []
-    ro: []
-    tg: []
-    tk: []
-    uk: []
-    uz: []
-    es: []
-    pt: []
-    ar: []
-    id: []
-    ja: []
-    it: []
-    de: []
-    hi: []
   fontsSizeCorrect:
     ru: 
     en: 
@@ -320,8 +291,8 @@ MonoBehaviour:
     imageURI: https://justplaygames.ru/public/Paymant3.png
     priceValue: 30
     consumed: 1
-  metricaEnable: 0
-  metricaCounterID: 0
+  metricaEnable: 1
+  metricaCounterID: 96366733
   debug: 1
   archivingBuild: 1
   logoImageFormat: 1
