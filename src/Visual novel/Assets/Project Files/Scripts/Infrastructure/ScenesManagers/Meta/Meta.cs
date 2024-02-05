@@ -50,11 +50,11 @@ namespace Infrastructure.ScenesManagers.Meta
                 () => { _uiFactoryInfo.SaveLoadUI.SetActivePanel(false); });
 
             var number = 0;
-            var datas = _saveLoadData.Load();
+            var gameData = _saveLoadData.LoadOrCreateNew();
 
             foreach (var ui in _uiFactoryInfo.SaveLoadUI.SaveDataUIs)
             {
-                var data = datas.dialogues[number++];
+                var data = gameData.dialogues[number++];
 
                 if (!data.isDataExist) continue;
 

@@ -21,7 +21,7 @@ namespace Infrastructure.ScenesManagers.Core
         private ButtonManager _buttonManager;
         private ICoroutineRunner _coroutineRunner;
 
-        private DynamicData _dataCurrent;
+        private GameData _dataCurrent;
         private DialogueManager _dialogueManager;
         private HistoryManager _historyManager;
         private ILocalisationDataLoadService _localisationDataLoad;
@@ -85,7 +85,7 @@ namespace Infrastructure.ScenesManagers.Core
 
         private void LoadData()
         {
-            _dataCurrent = _saveLoadData.Load();
+            _dataCurrent = _saveLoadData.LoadOrCreateNew();
         }
 
         private void ConfirmExitInMenu()
