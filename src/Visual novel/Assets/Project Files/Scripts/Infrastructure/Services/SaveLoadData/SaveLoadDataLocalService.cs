@@ -7,7 +7,7 @@ using UnityEngine;
 
 #endregion
 
-namespace Infrastructure.Services.SaveLoadData
+namespace YG
 {
     public class SaveLoadDataLocalService : ISaveLoadDataService
     {

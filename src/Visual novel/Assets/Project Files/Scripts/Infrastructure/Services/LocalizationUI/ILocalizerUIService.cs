@@ -6,7 +6,7 @@ using Data.Localization.UILocalisation;
 
 namespace Infrastructure.Services.LocalizationUI
 {
-	public interface ILocalizerUI
+	public interface ILocalizerUIService
 	{
 		void Localize(UILocalisation localisation);
 

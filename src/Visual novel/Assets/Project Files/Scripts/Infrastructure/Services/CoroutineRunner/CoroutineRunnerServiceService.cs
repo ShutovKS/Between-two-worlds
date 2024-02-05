@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace Infrastructure.Services.CoroutineRunner
 {
-	public class CoroutineRunnerService : MonoBehaviour, ICoroutineRunner
+	public class CoroutineRunnerServiceService : MonoBehaviour, ICoroutineRunnerService
 	{
 		private void Awake()
 		{

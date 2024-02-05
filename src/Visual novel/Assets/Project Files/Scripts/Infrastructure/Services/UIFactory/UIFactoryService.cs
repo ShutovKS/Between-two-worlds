@@ -12,7 +12,7 @@ using UI.LastWords;
 using UI.MainMenu;
 using UI.SaveLoad;
 using UnityEngine;
-using static Data.AssetsAddressablesContainer.AssetsAddressablesContainer;
+using static Data.Constant.AssetsAddressablesPath;
 using static UnityEngine.Object;
 
 #endregion

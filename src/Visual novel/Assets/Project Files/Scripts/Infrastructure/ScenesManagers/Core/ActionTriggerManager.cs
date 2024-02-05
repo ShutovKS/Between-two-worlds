@@ -1,5 +1,5 @@
 using System;
-using Data.Static;
+using Data.Constant;
 using Infrastructure.Services.LocalisationDataLoad;
 using Infrastructure.Services.UIFactory;
 using UnityEngine;
@@ -48,7 +48,7 @@ namespace Infrastructure.ScenesManagers.Core
 
         private void SetUpLastWordsUI(string text)
         {
-            _uiFactoryInfoService.BackgroundUI.SetBackgroundImage(Resources.Load<Texture2D>("Data/Backgrounds/" + Constant.BACKGROUND_PATH));
+            _uiFactoryInfoService.BackgroundUI.SetBackgroundImage(Resources.Load<Texture2D>("Data/Backgrounds/" + ResourcesPath.BACKGROUND_PATH));
             _uiFactoryInfoService.DialogueUI.SetActivePanel(false);
             _uiFactoryInfoService.LastWordsUI.SetActivePanel(true);
             _uiFactoryInfoService.LastWordsUI.SetText(text);
