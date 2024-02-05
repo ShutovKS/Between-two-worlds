@@ -161,7 +161,7 @@ PlayerSettings:
   androidMinAspectRatio: 1
   applicationIdentifier:
     Android: com.LukeParker.ProductNameHere
-    Standalone: com.Luke-Parker.Product-Name-Here
+    Standalone: com.Forge-of-game-worlds.Between-Two-Worlds
   buildNumber:
     Bratwurst: 0
     Standalone: 0
@@ -432,6 +432,10 @@ PlayerSettings:
   openGLRequireES31AEP: 0
   openGLRequireES32: 0
   m_TemplateCustomTags:
+    BANNER_DYNAMIC_1: 
+    BANNER_DYNAMIC_2: 
+    BANNER_STATIC_1: 
+    BANNER_STATIC_2: 
     PRODUCT_DESCRIPTION: 
   mobileMTRendering:
     Android: 1
@@ -711,7 +715,7 @@ PlayerSettings:
   scriptingDefineSymbols:
     Android: 
     Standalone: YG_PLUGIN_YANDEX_GAME
-    WebGL: 
+    WebGL: YG_PLUGIN_YANDEX_GAME
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend:
