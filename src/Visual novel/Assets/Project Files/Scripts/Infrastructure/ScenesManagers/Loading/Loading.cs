@@ -2,12 +2,18 @@
 
 using System;
 using System.Threading.Tasks;
+using Data.Constant;
 using Infrastructure.Services;
+using Infrastructure.Services.AssetsAddressables;
+using Infrastructure.Services.CoroutineRunner;
 using Infrastructure.Services.LocalisationDataLoad;
 using Infrastructure.Services.LocalizationUI;
+using Infrastructure.Services.Sounds;
 using Infrastructure.Services.UIFactory;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
+using YG;
 
 #endregion
 
@@ -16,28 +22,50 @@ namespace Infrastructure.ScenesManagers.Loading
     public class Loading : MonoBehaviour
     {
         private string _language = "";
+        private IAssetsAddressablesProviderService _assetsAddressablesProvider;
         private ILocalisationDataLoadService _localisationDataLoad;
-        private ILocalizerUI _localizerUI;
+        private ICoroutineRunnerService _coroutineRunner;
+        private ILocalizerUIService _localizerUI;
+        private ISaveLoadDataService _saveLoadData;
         private IUIFactoryService _uiFactory;
         private IUIFactoryInfoService _uiFactoryInfo;
+        private ISoundsService _sounds;
 
         private async void Start()
         {
-            InitializedServices();
+            await ServicesInitialize();
             await CreatedUI();
-            LoadData(() =>
+            LanguageSelected(() =>
             {
                 LocalisationUI();
-                StartGame();
+                OpenMainMenu();
             });
         }
 
-        private void InitializedServices()
+        private async Task ServicesInitialize()
         {
-            _localisationDataLoad = ServicesContainer.GetService<ILocalisationDataLoadService>();
-            _uiFactoryInfo = ServicesContainer.GetService<IUIFactoryInfoService>();
-            _uiFactory = ServicesContainer.GetService<IUIFactoryService>();
-            _localizerUI = ServicesContainer.GetService<ILocalizerUI>();
+            _assetsAddressablesProvider = new AssetsAddressablesProviderService();
+            _localisationDataLoad = new LocalisationDataLoadService();
+            _localizerUI = new LocalizerUIServiceService();
+            _uiFactory = new UIFactoryService(_assetsAddressablesProvider);
+            _uiFactoryInfo = _uiFactory;
+            _coroutineRunner = new GameObject().AddComponent<CoroutineRunnerServiceService>();
+            _sounds = new SoundsService();
+
+#if YG_SERVICES && UNITY_WEBGL
+            await InitializeYandexGameSDK();
+            _saveLoadData = new SaveLoadDataYGService();
+#else
+            _saveLoadData = new SaveLoadDataLocalService();
+#endif
+            ServicesContainer.SetServices(
+                _assetsAddressablesProvider,
+                _saveLoadData,
+                _uiFactory,
+                _localisationDataLoad,
+                _localizerUI,
+                _coroutineRunner,
+                _sounds);
         }
 
         private async Task CreatedUI()
@@ -68,9 +96,8 @@ namespace Infrastructure.ScenesManagers.Loading
             _uiFactoryInfo.LastWordsUI.SetActivePanel(false);
             _localizerUI.Register(_uiFactoryInfo.LastWordsUI);
         }
-        
 
-        private void LoadData(Action onCompleted)
+        private void LanguageSelected(Action onCompleted)
         {
             var localizationsInfo = _localisationDataLoad.GetLocalizationsInfo();
 
@@ -81,6 +108,7 @@ namespace Infrastructure.ScenesManagers.Loading
                     localizationInfo.FlagImage,
                     () =>
                     {
+                        _uiFactoryInfo.ChooseLanguageUI.SetActivePanel(false);
                         _language = localizationInfo.Language;
                         _localisationDataLoad.Load(_language);
                         onCompleted?.Invoke();
@@ -94,10 +122,49 @@ namespace Infrastructure.ScenesManagers.Loading
             _localizerUI.Localize(uiLocalisation);
         }
 
-        private void StartGame()
+        private void OpenMainMenu()
         {
             SceneManager.LoadScene("2.Meta");
-            _uiFactoryInfo.ChooseLanguageUI.SetActivePanel(false);
         }
+
+        #region SDK
+
+#if YG_SERVICES
+        private async Task InitializeYandexGameSDK()
+        {
+            
+            var path = AssetsAddressablesPath.YANDEX_GAME_PREFAB;
+            var prefab = await _assetsAddressablesProvider.GetAsset<GameObject>(path);
+            
+            var instance = Instantiate(prefab);
+            DontDestroyOnLoad(instance);
+
+            var isInitialized = false;
+            var yandexGame = instance.GetComponent<YandexGame>();
+            
+            yandexGame.RejectedAuthorization.AddListener(OnInitialized);
+            yandexGame.ResolvedAuthorization.AddListener(OnInitialized);
+            
+            Debug.Log("Yandex Game SDK load initializing");
+            
+            instance.SetActive(true);
+            
+            while (!isInitialized)
+            {
+                await Task.Yield();
+            }
+            
+            yandexGame.RejectedAuthorization.RemoveListener(OnInitialized);
+            yandexGame.ResolvedAuthorization.RemoveListener(OnInitialized);
+            return;
+
+            void OnInitialized()
+            {
+                isInitialized = true;
+            }
+        }
+#endif
+
+        #endregion
     }
 }
