@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: a65f79c6642d5424a83a255a036bb2f4
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 235877
+  packageName: PluginYG - Yandex Game integration
+  packageVersion: 1.6
+  assetPath: Assets/YandexGame/ScriptsYG/Editor/PostProcessBuild/ModifyIndexFile/ModifyBuildManager.cs
+  uploadId: 627339

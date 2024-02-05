@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 72cf57c5b2bf04b4380bc6ab48251d02
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 235877
+  packageName: PluginYG - Yandex Game integration
+  packageVersion: 1.6
+  assetPath: Assets/YandexGame/ScriptsYG/EnvironmentData/Editor/EnvirData_js.js
+  uploadId: 627339

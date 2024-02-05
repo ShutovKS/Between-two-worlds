@@ -5,7 +5,7 @@ using Data.Dynamic;
 using Infrastructure.Services;
 using Infrastructure.Services.CoroutineRunner;
 using Infrastructure.Services.LocalisationDataLoad;
-using Infrastructure.Services.SaveLoadData;
+using YG;
 using Infrastructure.Services.Sounds;
 using Infrastructure.Services.UIFactory;
 using UnityEngine;
@@ -19,9 +19,9 @@ namespace Infrastructure.ScenesManagers.Core
     public class Core : MonoBehaviour
     {
         private ButtonManager _buttonManager;
-        private ICoroutineRunner _coroutineRunner;
+        private ICoroutineRunnerService _coroutineRunnerService;
 
-        private DynamicData _dataCurrent;
+        private GameData _dataCurrent;
         private DialogueManager _dialogueManager;
         private HistoryManager _historyManager;
         private ILocalisationDataLoadService _localisationDataLoad;
@@ -49,7 +49,7 @@ namespace Infrastructure.ScenesManagers.Core
                 _localisationDataLoad.GetPhraseId,
                 _uiFactoryInfo.DialogueUI,
                 _uiFactoryInfo.BackgroundUI,
-                _coroutineRunner,
+                _coroutineRunnerService,
                 _soundsService,
                 _historyManager.AddedDialogInHistory,
                 _actionTriggerManager.HandleActionTrigger);
@@ -79,13 +79,13 @@ namespace Infrastructure.ScenesManagers.Core
             _localisationDataLoad = ServicesContainer.GetService<ILocalisationDataLoadService>();
             _saveLoadData = ServicesContainer.GetService<ISaveLoadDataService>();
             _uiFactoryInfo = ServicesContainer.GetService<IUIFactoryInfoService>();
-            _coroutineRunner = ServicesContainer.GetService<ICoroutineRunner>();
+            _coroutineRunnerService = ServicesContainer.GetService<ICoroutineRunnerService>();
             _soundsService = ServicesContainer.GetService<ISoundsService>();
         }
 
         private void LoadData()
         {
-            _dataCurrent = _saveLoadData.Load();
+            _dataCurrent = _saveLoadData.LoadOrCreateNew();
         }
 
         private void ConfirmExitInMenu()

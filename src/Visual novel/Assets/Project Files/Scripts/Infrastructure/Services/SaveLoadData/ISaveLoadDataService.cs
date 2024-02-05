@@ -4,12 +4,12 @@ using Data.Dynamic;
 
 #endregion
 
-namespace Infrastructure.Services.SaveLoadData
+namespace YG
 {
 	public interface ISaveLoadDataService
 	{
-		DynamicData Load();
-		void Save(DynamicData data);
+		GameData LoadOrCreateNew();
+		void Save(GameData gameData);
 		bool Exists();
 		void Remove();
 	}

@@ -1,9 +1,10 @@
 using System;
-using Data.Static;
+using Data.Constant;
 using Infrastructure.Services.LocalisationDataLoad;
 using Infrastructure.Services.UIFactory;
 using UnityEngine;
 using UnityEngine.Events;
+using YG;
 
 namespace Infrastructure.ScenesManagers.Core
 {
@@ -37,18 +38,20 @@ namespace Infrastructure.ScenesManagers.Core
         private void ActionEnd1()
         {
             var text = _localisationDataLoadService.GetUpLastWord("end1");
+            YandexMetrica.Send("end1");
             SetUpLastWordsUI(text);
         }
 
         private void ActionEnd2()
         {
             var text = _localisationDataLoadService.GetUpLastWord("end2");
+            YandexMetrica.Send("end2");
             SetUpLastWordsUI(text);
         }
 
         private void SetUpLastWordsUI(string text)
         {
-            _uiFactoryInfoService.BackgroundUI.SetBackgroundImage(Resources.Load<Texture2D>("Data/Backgrounds/" + Constant.BACKGROUND_PATH));
+            _uiFactoryInfoService.BackgroundUI.SetBackgroundImage(Resources.Load<Texture2D>("Data/Backgrounds/" + ResourcesPath.BACKGROUND_PATH));
             _uiFactoryInfoService.DialogueUI.SetActivePanel(false);
             _uiFactoryInfoService.LastWordsUI.SetActivePanel(true);
             _uiFactoryInfoService.LastWordsUI.SetText(text);

@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 7cd05ce482d4bd6469c360b48ca328d1
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 235877
+  packageName: PluginYG - Yandex Game integration
+  packageVersion: 1.6
+  assetPath: Assets/YandexGame/WorkingData/SavesYG.cs
+  uploadId: 627339
