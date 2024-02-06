@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Editor.BuildManager.Core;
+using Editor.ScriptingDefineSymbols;
 using UnityEditor;
 using UnityEngine;
 
@@ -7,27 +8,29 @@ namespace Editor.Window
 {
     public class BuildDataReordableList
     {
+        private const float ENABLED_WIDTH = 15f;
+        private const float BUILD_TARGET_GROUP_WIDTH = 100f;
+        private const float BUILD_TARGET_WIDTH = 150f;
+        private const float BUILD_TARGET_ADDONS_USED = 150f;
+        private const float MIN_BUILD_OPTIONS_WIDTH = 100f;
+        private const float SPACE = 5f;
+
         public static UnityEditorInternal.ReorderableList Create(List<BuildData> configsList,
             GenericMenu.MenuFunction2 menuItemHandler, string header)
         {
-            var reorderableList = new UnityEditorInternal.ReorderableList(
-                configsList, typeof(BuildData), true, false, true, true)
+            var reorderableList = new UnityEditorInternal.ReorderableList(configsList, typeof(BuildData),
+                true, false, true, true)
             {
                 elementHeight = EditorGUIUtility.singleLineHeight + 4,
                 drawHeaderCallback = rect => { EditorGUI.LabelField(rect, header); },
                 drawElementCallback = (position, index, isActive, isFocused) =>
                 {
-                    const float ENABLED_WIDTH = 15f;
-                    const float BUILD_TARGET_GROUP_WIDTH = 125f;
-                    const float BUILD_TARGET_WIDTH = 150f;
-                    const float MINBUILD_OPTIONS_WIDTH = 100f;
-                    const float SPACE = 10f;
+                    var buildOptionsWidth = position.width - ENABLED_WIDTH - BUILD_TARGET_WIDTH -
+                                            BUILD_TARGET_GROUP_WIDTH - BUILD_TARGET_ADDONS_USED - SPACE * 5;
 
-                    var buildOptionsWidth =
-                        position.width - SPACE * 6 - ENABLED_WIDTH - BUILD_TARGET_WIDTH - BUILD_TARGET_GROUP_WIDTH;
-                    if (buildOptionsWidth < MINBUILD_OPTIONS_WIDTH)
+                    if (buildOptionsWidth < MIN_BUILD_OPTIONS_WIDTH)
                     {
-                        buildOptionsWidth = MINBUILD_OPTIONS_WIDTH;
+                        buildOptionsWidth = MIN_BUILD_OPTIONS_WIDTH;
                     }
 
                     var data = configsList[index];
@@ -49,22 +52,28 @@ namespace Editor.Window
                     data.target = (BuildTarget)EditorGUI.EnumPopup(position, data.target);
 
                     position.x += position.width + SPACE;
+                    position.width = BUILD_TARGET_ADDONS_USED;
+                    data.addonsUsed = (AddonsUsedType)EditorGUI.EnumFlagsField(position, data.addonsUsed);
+
+                    position.x += position.width + SPACE;
                     position.width = buildOptionsWidth;
                     data.options = (BuildOptions)EditorGUI.EnumFlagsField(position, data.options);
 
                     EditorGUI.EndDisabledGroup();
                 },
+
                 onAddDropdownCallback = (buttonRect, list) =>
                 {
                     var menu = new GenericMenu();
 
                     menu.AddItem(new GUIContent("Custom"), false, menuItemHandler, new BuildData());
+
                     menu.AddSeparator("");
 
                     foreach (var config in PredefinedBuildConfigs.StandaloneData)
                     {
-                        var label = /*"Standalone/" +*/
-                            BuildManager.Core.BuildManager.ConvertBuildTargetToString(config.target);
+                        /*"Standalone/" +*/
+                        var label = BuildManager.Core.BuildManager.ConvertBuildTargetToString(config.target);
                         menu.AddItem(new GUIContent(label), false, menuItemHandler, config);
                     }
 
@@ -72,8 +81,8 @@ namespace Editor.Window
 
                     foreach (var config in PredefinedBuildConfigs.AndroidData)
                     {
-                        var label = /*"Android/" +*/
-                            BuildManager.Core.BuildManager.ConvertBuildTargetToString(config.target);
+                        /*"Android/" +*/
+                        var label = BuildManager.Core.BuildManager.ConvertBuildTargetToString(config.target);
                         menu.AddItem(new GUIContent(label), false, menuItemHandler, config);
                     }
 
@@ -81,13 +90,12 @@ namespace Editor.Window
 
                     foreach (var config in PredefinedBuildConfigs.WebData)
                     {
-                        var label = /*"WebGL/"+ */
-                            BuildManager.Core.BuildManager.ConvertBuildTargetToString(config.target);
+                        /*"WebGL/"+ */
+                        var label = BuildManager.Core.BuildManager.ConvertBuildTargetToString(config.target);
                         menu.AddItem(new GUIContent(label), false, menuItemHandler, config);
                     }
 
                     menu.AddSeparator("");
-
 
                     menu.ShowAsContext();
                 }

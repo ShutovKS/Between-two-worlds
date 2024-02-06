@@ -1,6 +1,7 @@
 ﻿#region
 
 using System;
+using Editor.ScriptingDefineSymbols;
 using UnityEditor;
 
 #endregion
@@ -22,6 +23,7 @@ namespace Editor.BuildManager.Core
 
         public BuildTargetGroup targetGroup;
         public BuildTarget target;
+        public AddonsUsedType addonsUsed;
         public BuildOptions options;
 
         public bool isReleaseBuild; // Maximum compressed build with Release IL2CPP
@@ -45,6 +47,7 @@ namespace Editor.BuildManager.Core
 
             scriptingDefineSymbolsOverride = "";
 
+            addonsUsed = AddonsUsedType.None;
             options = BuildOptions.None;
 
             outputRoot = "Builds/";

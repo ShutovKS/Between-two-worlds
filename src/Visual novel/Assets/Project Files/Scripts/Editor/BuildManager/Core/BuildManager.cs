@@ -67,7 +67,7 @@ namespace Editor.BuildManager.Core
                     data.target,
                     data.options,
                     data.outputRoot + GetPathWithVars(data, data.middlePath),
-                    string.Concat(settings.scriptingDefineSymbols, ";", sequence.scriptingDefineSymbolsOverride, ";",
+                    string.Concat(settings.scriptingDefineSymbols, ";",
                         data.scriptingDefineSymbolsOverride),
                     data.isPassbyBuild,
                     data.isReleaseBuild
