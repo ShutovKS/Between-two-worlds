@@ -2,18 +2,22 @@
 
 using System;
 using System.Threading.Tasks;
-using Data.Constant;
 using Infrastructure.Services;
 using Infrastructure.Services.AssetsAddressables;
 using Infrastructure.Services.CoroutineRunner;
 using Infrastructure.Services.LocalisationDataLoad;
 using Infrastructure.Services.LocalizationUI;
+using Infrastructure.Services.SaveLoadData;
 using Infrastructure.Services.Sounds;
 using Infrastructure.Services.UIFactory;
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.SceneManagement;
+#if YG_SERVICES && UNITY_WEBGL
+using Data.Constant;
 using YG;
+#endif
+
+// using YG;
 
 #endregion
 
@@ -53,8 +57,8 @@ namespace Infrastructure.ScenesManagers.Loading
             _sounds = new SoundsService();
 
 #if YG_SERVICES && UNITY_WEBGL
-            await InitializeYandexGameSDK();
             _saveLoadData = new SaveLoadDataYGService();
+            await InitializeYandexGameSDK();
 #else
             _saveLoadData = new SaveLoadDataLocalService();
 #endif

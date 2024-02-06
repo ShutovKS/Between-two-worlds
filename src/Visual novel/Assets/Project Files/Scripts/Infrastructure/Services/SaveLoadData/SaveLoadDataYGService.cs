@@ -1,7 +1,7 @@
 using Data.Dynamic;
-using YG;
+using Infrastructure.Services.SaveLoadData;
 
-namespace Infrastructure.Services.SaveLoadData
+namespace YG
 {
     public class SaveLoadDataYGService : ISaveLoadDataService
     {
@@ -53,10 +53,7 @@ namespace Infrastructure.Services.SaveLoadData
             Save(YandexGame.savesData);
         }
     }
-}
 
-namespace YG
-{
     public partial class SavesYG : GameData
     {
     }

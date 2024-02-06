@@ -4,7 +4,7 @@ using Data.Dynamic;
 
 #endregion
 
-namespace YG
+namespace Infrastructure.Services.SaveLoadData
 {
 	public interface ISaveLoadDataService
 	{

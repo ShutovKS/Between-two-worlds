@@ -1,2 +1,2 @@
-Build path: D:/Unity/Release/PluginYG/PluginYG
-Build number: 141
+Build path: C:/Users/ShutovKS/Documents/projects/Between-two-worlds/src/Visual novel/Builds/WebGL_1.0.2 Yandex Game/Between_Two_Worlds_1.0.2/Between_Two_Worlds
+Build number: 146

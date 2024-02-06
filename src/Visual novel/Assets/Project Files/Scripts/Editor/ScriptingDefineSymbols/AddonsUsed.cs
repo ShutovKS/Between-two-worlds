@@ -7,7 +7,17 @@ namespace Editor.ScriptingDefineSymbols
             return type switch
             {
                 AddonsUsedType.None => string.Empty,
-                AddonsUsedType.YandexGameSDK => "YG_SERVICES",
+                AddonsUsedType.YandexGameSDK => "YG_PLUGIN_YANDEX_GAME;YG_SERVICES",
+                _ => string.Empty
+            };
+        }
+        
+        public static string GetAddonsUsedName(AddonsUsedType type)
+        {
+            return type switch
+            {
+                AddonsUsedType.None => string.Empty,
+                AddonsUsedType.YandexGameSDK => "Yandex Game",
                 _ => string.Empty
             };
         }

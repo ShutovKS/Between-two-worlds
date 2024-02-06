@@ -147,7 +147,8 @@ namespace Editor.Window
         {
             Settings.OutputRoot = EditorGUILayout.TextField("Output root", Settings.OutputRoot);
             Settings.MiddlePath = EditorGUILayout.TextField("Middle path", Settings.MiddlePath);
-            Settings.DirPathForPostProcess = EditorGUILayout.TextField("Dir path", Settings.DirPathForPostProcess);
+            Settings.DirPathForPostProcess =
+                EditorGUILayout.TextField("Dir path for process", Settings.DirPathForPostProcess);
         }
 
         #endregion

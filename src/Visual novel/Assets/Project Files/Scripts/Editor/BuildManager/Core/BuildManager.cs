@@ -4,6 +4,7 @@ using System;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using Editor.ScriptingDefineSymbols;
 using Ionic.Zip;
 using UnityEditor;
 using UnityEditor.Build;
@@ -31,7 +32,7 @@ namespace Editor.BuildManager.Core
             }
 
             var targetBeforeStart = EditorUserBuildSettings.activeBuildTarget;
-            var targetGroupBeforeStart = BuildPipeline.GetBuildTargetGroup(targetBeforeStart);
+            var targetGroupBeforeStart = EditorUserBuildSettings.selectedBuildTargetGroup;
             var namedBuildTargetStart = NamedBuildTarget.FromBuildTargetGroup(targetGroupBeforeStart);
             var scriptingDefineSymbolsStart = PlayerSettings.GetScriptingDefineSymbols(namedBuildTargetStart);
 
@@ -56,7 +57,7 @@ namespace Editor.BuildManager.Core
                     buildData.target,
                     buildData.options,
                     buildData.buildPath,
-                    buildData.scriptingDefineSymbols,
+                    buildData.addonsUsed,
                     buildData.isPassbyBuild,
                     buildData.isReleaseBuild
                 );
@@ -69,7 +70,7 @@ namespace Editor.BuildManager.Core
             {
                 var buildData = Settings.Builds[i];
 
-                if (!buildData.isCompress || !buildData.isEnabled)
+                if (!buildData.isCompress || !buildData.isEnabled || buildData.targetGroup == BuildTargetGroup.Android)
                 {
                     continue;
                 }
@@ -142,107 +143,61 @@ namespace Editor.BuildManager.Core
 
         #region Base methods
 
-        private static string BaseBuild(BuildTargetGroup buildTargetGroup, BuildTarget buildTarget,
-            BuildOptions buildOptions, string buildPath, string definesSymbols, bool isPassbyBuild, bool isReleaseBuild)
+        private static void BaseBuild(BuildTargetGroup buildTargetGroup, BuildTarget buildTarget,
+            BuildOptions buildOptions, string buildPath, AddonsUsedType addonsUsedType, bool isPassbyBuild,
+            bool isReleaseBuild)
         {
             if (isPassbyBuild)
             {
-                return buildPath;
+                return;
             }
 
-            if (buildTarget == BuildTarget.Android
+            if (buildTargetGroup == BuildTargetGroup.Android
                 && PlayerSettings.Android.useCustomKeystore
                 && string.IsNullOrEmpty(PlayerSettings.Android.keyaliasPass))
             {
                 PlayerSettings.Android.keyaliasPass = PlayerSettings.Android.keystorePass = "keystore";
             }
 
-            var namedBuildTarget = NamedBuildTarget.FromBuildTargetGroup(buildTargetGroup);
-            var releaseType = isReleaseBuild
+            var namedBuildTargetStart = NamedBuildTarget.FromBuildTargetGroup(buildTargetGroup);
+            
+            var releaseScriptingImplementation = isReleaseBuild
+                ? ScriptingImplementation.IL2CPP
+                : ScriptingImplementation.Mono2x;
+
+            switch (buildTargetGroup, isReleaseBuild)
+            {
+                case (BuildTargetGroup.Standalone, true):
+                    buildOptions |= BuildOptions.CompressWithLz4;
+                    PlayerSettings.SetScriptingBackend(namedBuildTargetStart, releaseScriptingImplementation);
+                    break;
+                case (BuildTargetGroup.Standalone, false):
+                    buildOptions &= ~(BuildOptions.CompressWithLz4 | BuildOptions.CompressWithLz4HC);
+                    PlayerSettings.SetScriptingBackend(namedBuildTargetStart, releaseScriptingImplementation);
+                    break;
+
+                case (BuildTargetGroup.Android, true):
+                    buildOptions |= BuildOptions.CompressWithLz4;
+                    PlayerSettings.SetScriptingBackend(namedBuildTargetStart, releaseScriptingImplementation);
+                    break;
+                case (BuildTargetGroup.Android, false):
+                    buildOptions &= ~(BuildOptions.CompressWithLz4 | BuildOptions.CompressWithLz4HC);
+                    PlayerSettings.SetScriptingBackend(namedBuildTargetStart, releaseScriptingImplementation);
+                    break;
+
+                case (BuildTargetGroup.WebGL, true):
+                    break;
+                case (BuildTargetGroup.WebGL, false):
+                    break;
+            }
+
+            
+
+            var releaseCompilerType = isReleaseBuild
                 ? Il2CppCompilerConfiguration.Master
                 : Il2CppCompilerConfiguration.Debug;
 
-            if (isReleaseBuild)
-            {
-                switch (buildTargetGroup)
-                {
-                    case BuildTargetGroup.Standalone:
-                    {
-                        buildOptions |= BuildOptions.CompressWithLz4;
-
-                        if (buildTarget is
-                            BuildTarget.StandaloneWindows or
-                            BuildTarget.StandaloneWindows64 or
-                            BuildTarget.StandaloneLinux64)
-                        {
-                            PlayerSettings.SetScriptingBackend(namedBuildTarget, ScriptingImplementation.IL2CPP);
-                        }
-                        else
-                        {
-                            PlayerSettings.SetScriptingBackend(namedBuildTarget, ScriptingImplementation.Mono2x);
-                        }
-
-                        PlayerSettings.SetIl2CppCompilerConfiguration(namedBuildTarget, releaseType);
-                        break;
-                    }
-                    case BuildTargetGroup.Android:
-                    {
-                        buildOptions |= BuildOptions.CompressWithLz4;
-
-                        PlayerSettings.SetScriptingBackend(namedBuildTarget, ScriptingImplementation.IL2CPP);
-                        PlayerSettings.SetIl2CppCompilerConfiguration(namedBuildTarget, releaseType);
-
-                        PlayerSettings.Android.targetArchitectures = AndroidArchitecture.All;
-                        break;
-                    }
-                    case BuildTargetGroup.WebGL:
-                    {
-                        PlayerSettings.SetIl2CppCompilerConfiguration(namedBuildTarget, releaseType);
-                        break;
-                    }
-                    default:
-                    {
-                        Debug.LogWarning($"{buildTargetGroup} is unsupported for release builds. " +
-                                         "No optimizations applied");
-                        break;
-                    }
-                }
-            }
-            else
-            {
-                switch (buildTargetGroup)
-                {
-                    case BuildTargetGroup.Standalone:
-                    {
-                        buildOptions &= ~(BuildOptions.CompressWithLz4 | BuildOptions.CompressWithLz4HC);
-
-                        PlayerSettings.SetScriptingBackend(namedBuildTarget, ScriptingImplementation.Mono2x);
-                        PlayerSettings.SetIl2CppCompilerConfiguration(namedBuildTarget, releaseType);
-                        break;
-                    }
-                    case BuildTargetGroup.Android:
-                    {
-                        buildOptions &= ~(BuildOptions.CompressWithLz4 | BuildOptions.CompressWithLz4HC);
-
-                        PlayerSettings.SetScriptingBackend(namedBuildTarget, ScriptingImplementation.Mono2x);
-                        PlayerSettings.SetIl2CppCompilerConfiguration(namedBuildTarget, releaseType);
-
-                        PlayerSettings.Android.targetArchitectures = AndroidArchitecture.ARMv7;
-                        break;
-                    }
-                    case BuildTargetGroup.WebGL:
-                    {
-                        PlayerSettings.SetIl2CppCompilerConfiguration(namedBuildTarget, releaseType);
-                        break;
-                    }
-                    default:
-                    {
-                        Debug.LogWarning($"{buildTargetGroup} is unsupported for debug builds. " +
-                                         "No optimizations applied");
-                        break;
-                    }
-                }
-            }
+            PlayerSettings.SetIl2CppCompilerConfiguration(namedBuildTargetStart, releaseCompilerType);
 
             var buildPlayerOptions = new BuildPlayerOptions
             {
@@ -253,19 +208,25 @@ namespace Editor.BuildManager.Core
                 options = buildOptions,
             };
 
-            PlayerSettings.SetScriptingDefineSymbols(namedBuildTarget, definesSymbols);
-            BuildReport report = null;
+            var oldScriptingDefineSymbols = PlayerSettings.GetScriptingDefineSymbols(namedBuildTargetStart);
+
+            var addonsUsedScriptingDefineSymbols = AddonsUsed.GetAddonsUsed(addonsUsedType);
+
+            PlayerSettings.SetScriptingDefineSymbols(namedBuildTargetStart, addonsUsedScriptingDefineSymbols);
+
+            BuildSummary summary = default;
 
             try
             {
-                report = BuildPipeline.BuildPlayer(buildPlayerOptions);
+                var report = BuildPipeline.BuildPlayer(buildPlayerOptions);
+                summary = report!.summary;
             }
             catch (Exception)
             {
                 //
             }
 
-            var summary = report!.summary;
+            PlayerSettings.SetScriptingDefineSymbols(namedBuildTargetStart, oldScriptingDefineSymbols);
 
             switch (summary.result)
             {
@@ -283,9 +244,16 @@ namespace Editor.BuildManager.Core
                               $"Errors:   {summary.totalErrors}"
                     );
                     break;
+                case BuildResult.Unknown:
+                    Debug.Log($"{summary.platform} unknown.  \t " +
+                              $"Time: {summary.totalTime.ToString()}");
+                    break;
+                case BuildResult.Cancelled:
+                    Debug.Log($"{summary.platform} cancelled. \t " +
+                              $"Time: {summary.totalTime.ToString()}");
+                    break;
+                default: throw new ArgumentOutOfRangeException();
             }
-
-            return summary.result == BuildResult.Succeeded ? buildPath : "";
         }
 
         private static void BaseCompress(string dirPath)
@@ -332,6 +300,7 @@ namespace Editor.BuildManager.Core
             s = s.Replace("$MONTH", $"{_usedDate.Date.Month}");
             s = s.Replace("$DAY", $"{_usedDate.Date.Day}");
             s = s.Replace("$TIME", $"{_usedDate.Hour}_{_usedDate.Minute}");
+            s = s.Replace("$ADDONS", $"{AddonsUsed.GetAddonsUsedName(data.addonsUsed)}");
             s = s.Replace("$EXECUTABLE", GetBuildTargetExecutable(data.target));
             return s;
         }

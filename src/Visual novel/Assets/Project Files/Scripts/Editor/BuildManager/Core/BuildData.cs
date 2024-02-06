@@ -3,6 +3,7 @@
 using System;
 using Editor.ScriptingDefineSymbols;
 using UnityEditor;
+using UnityEditor.Build;
 
 #endregion
 
@@ -17,8 +18,6 @@ namespace Editor.BuildManager.Core
         public bool isReleaseBuild = false;
         public bool isCompress = false;
 
-        public string scriptingDefineSymbols = "";
-        
         public string buildPath = "Builds/BuildDirectory";
 
         public AddonsUsedType addonsUsed;

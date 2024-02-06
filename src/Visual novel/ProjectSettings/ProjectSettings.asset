@@ -713,14 +713,15 @@ PlayerSettings:
   webGLWebAssemblyBigInt: 0
   webGLCloseOnQuit: 0
   scriptingDefineSymbols:
-    Android: YG_PLUGIN_YANDEX_GAME
+    Android: 
     Standalone: YG_PLUGIN_YANDEX_GAME
-    WebGL: YG_PLUGIN_YANDEX_GAME
+    WebGL: YG_PLUGIN_YANDEX_GAME;YG_SERVICES
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend:
     Android: 0
     Standalone: 0
+    WebGL: 1
   il2cppCompilerConfiguration:
     Android: 0
     Standalone: 0
