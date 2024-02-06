@@ -11,54 +11,21 @@ namespace Editor.BuildManager.Core
     [Serializable]
     public class BuildData : ICloneable
     {
-        public bool isEnabled;
+        public bool isEnabled = true;
 
-        public string outputRoot;
-        public string middlePath;
-        public string dirPathForPostProcess;
+        public bool isPassbyBuild = false; //Use it to simulate build and give to after build hooks previously build game
+        public bool isReleaseBuild = false;
+        public bool isCompress = false;
 
-        public bool isPassbyBuild; //Use it to simulate build and give to after build hooks previously build game
+        public string scriptingDefineSymbols = "";
+        
+        public string buildPath = "Builds/BuildDirectory";
 
-        public string scriptingDefineSymbolsOverride;
-
-        public BuildTargetGroup targetGroup;
-        public BuildTarget target;
         public AddonsUsedType addonsUsed;
         public BuildOptions options;
+        public BuildTargetGroup targetGroup = BuildTargetGroup.Unknown;
+        public BuildTarget target = BuildTarget.NoTarget;
 
-        public bool isReleaseBuild; // Maximum compressed build with Release IL2CPP
-
-        public bool needZip;
-
-        public BuildData() : this(
-            BuildTargetGroup.Unknown,
-            BuildTarget.NoTarget
-        )
-        {
-        }
-
-        public BuildData(BuildTargetGroup targetGroup, BuildTarget target)
-        {
-            this.targetGroup = targetGroup;
-            this.target = target;
-
-            isEnabled = true;
-            isPassbyBuild = false;
-
-            scriptingDefineSymbolsOverride = "";
-
-            addonsUsed = AddonsUsedType.None;
-            options = BuildOptions.None;
-
-            outputRoot = "Builds/";
-            middlePath = "$NAME_$VERSION_$PLATFORM/$NAME_$VERSION/$NAME$EXECUTABLE";
-            dirPathForPostProcess = "$NAME_$VERSION_$PLATFORM";
-
-            isReleaseBuild = false;
-
-            needZip = false;
-            dirPathForPostProcess = "$NAME_$VERSION_$PLATFORM";
-        }
 
         public object Clone()
         {
