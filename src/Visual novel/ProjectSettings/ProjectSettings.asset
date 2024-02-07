@@ -715,7 +715,7 @@ PlayerSettings:
   scriptingDefineSymbols:
     Android: 
     Standalone: YG_PLUGIN_YANDEX_GAME
-    WebGL: YG_PLUGIN_YANDEX_GAME
+    WebGL: 
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend:

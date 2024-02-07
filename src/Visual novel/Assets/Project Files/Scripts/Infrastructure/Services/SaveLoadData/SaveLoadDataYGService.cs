@@ -1,5 +1,8 @@
+#if YG_SERVICES
 using Data.Dynamic;
 using Infrastructure.Services.SaveLoadData;
+
+
 
 namespace YG
 {
@@ -58,3 +61,5 @@ namespace YG
     {
     }
 }
+
+#endif

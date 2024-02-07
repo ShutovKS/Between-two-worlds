@@ -20,25 +20,25 @@ MonoBehaviour:
     isPassbyBuild: 0
     isReleaseBuild: 0
     isCompress: 0
-    buildPath: Builds/Windows64_1.0.2 Yandex Game/Between_Two_Worlds_1.0.2/Between_Two_Worlds.exe
-    addonsUsed: 1
+    buildPath: Builds/Windows64_1.0.2/Between_Two_Worlds_1.0.2/Between_Two_Worlds.exe
+    addonsUsed: 0
     options: 0
     targetGroup: 1
     target: 19
-  - isEnabled: 1
+  - isEnabled: 0
     isPassbyBuild: 0
     isReleaseBuild: 0
     isCompress: 0
-    buildPath: Builds/Windows32_1.0.2 /Between_Two_Worlds_1.0.2/Between_Two_Worlds.exe
+    buildPath: Builds/Windows32_1.0.2/Between_Two_Worlds_1.0.2/Between_Two_Worlds.exe
     addonsUsed: 0
     options: 0
     targetGroup: 1
     target: 5
-  - isEnabled: 1
+  - isEnabled: 0
     isPassbyBuild: 0
     isReleaseBuild: 0
     isCompress: 0
-    buildPath: Builds/Linux_1.0.2 /Between_Two_Worlds_1.0.2/Between_Two_Worldsx86_64
+    buildPath: Builds/Linux_1.0.2/Between_Two_Worlds_1.0.2/Between_Two_Worldsx86_64
     addonsUsed: 0
     options: 0
     targetGroup: 1
@@ -47,30 +47,30 @@ MonoBehaviour:
     isPassbyBuild: 0
     isReleaseBuild: 0
     isCompress: 0
-    buildPath: Builds/Android_1.0.2 /Between_Two_Worlds_1.0.2/Between_Two_Worlds.apk
+    buildPath: Builds/Android_1.0.2/Between_Two_Worlds_1.0.2/Between_Two_Worlds.apk
     addonsUsed: 0
     options: 0
     targetGroup: 7
     target: 13
-  - isEnabled: 1
+  - isEnabled: 0
     isPassbyBuild: 0
     isReleaseBuild: 0
     isCompress: 0
-    buildPath: Builds/WebGL_1.0.2 Yandex Game/Between_Two_Worlds_1.0.2/Between_Two_Worlds
+    buildPath: Builds/WebGL_Yandex Game1.0.2/Between_Two_Worlds_1.0.2/Between_Two_Worlds
     addonsUsed: 1
     options: 0
     targetGroup: 13
     target: 20
-  - isEnabled: 1
+  - isEnabled: 0
     isPassbyBuild: 0
     isReleaseBuild: 0
     isCompress: 0
-    buildPath: Builds/WebGL_1.0.2 /Between_Two_Worlds_1.0.2/Between_Two_Worlds
+    buildPath: Builds/WebGL_1.0.2/Between_Two_Worlds_1.0.2/Between_Two_Worlds
     addonsUsed: 0
     options: 0
     targetGroup: 13
     target: 20
   ScriptingDefineSymbolsDefault: YG_PLUGIN_YANDEX_GAME
   OutputRoot: Builds/
-  MiddlePath: $PLATFORM_$VERSION $ADDONS/$NAME_$VERSION/$NAME$EXECUTABLE
-  DirPathForPostProcess: $PLATFORM_$VERSION $ADDONS
+  MiddlePath: $PLATFORM_$ADDONS$VERSION/$NAME_$VERSION/$NAME$EXECUTABLE
+  DirPathForPostProcess: $PLATFORM_$ADDONS$VERSION
