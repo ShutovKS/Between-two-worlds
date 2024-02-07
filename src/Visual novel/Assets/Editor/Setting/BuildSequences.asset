@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97a802aca9ee4247959778e0310071f2, type: 3}
   m_Name: BuildSequences
   m_EditorClassIdentifier: 
-  IsNeedZip: 0
+  IsNeedZip: 1
   IsPassbyBuild: 0
-  IsReleaseBuild: 0
+  IsReleaseBuild: 1
   Builds:
   - isEnabled: 1
     isPassbyBuild: 0
@@ -25,7 +25,7 @@ MonoBehaviour:
     options: 0
     targetGroup: 1
     target: 19
-  - isEnabled: 0
+  - isEnabled: 1
     isPassbyBuild: 0
     isReleaseBuild: 0
     isCompress: 0
@@ -34,7 +34,7 @@ MonoBehaviour:
     options: 0
     targetGroup: 1
     target: 5
-  - isEnabled: 0
+  - isEnabled: 1
     isPassbyBuild: 0
     isReleaseBuild: 0
     isCompress: 0
@@ -56,7 +56,7 @@ MonoBehaviour:
     isPassbyBuild: 0
     isReleaseBuild: 0
     isCompress: 0
-    buildPath: Builds/WebGL_Yandex Game1.0.2/Between_Two_Worlds_1.0.2/Between_Two_Worlds
+    buildPath: Builds/WebGL_YandexGame1.0.2/Between_Two_Worlds_1.0.2/Between_Two_Worlds
     addonsUsed: 1
     options: 0
     targetGroup: 13

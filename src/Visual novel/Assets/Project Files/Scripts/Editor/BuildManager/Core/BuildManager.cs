@@ -11,6 +11,7 @@ using UnityEditor.Build;
 using UnityEditor.Build.Reporting;
 using UnityEngine;
 using Debug = UnityEngine.Debug;
+using static Editor.BuildManager.Core.ConvertToStrings;
 
 #endregion
 
@@ -50,7 +51,7 @@ namespace Editor.BuildManager.Core
                     continue;
                 }
 
-                buildData.buildPath = Settings.OutputRoot + GetPathWithVars(buildData, Settings.MiddlePath);
+                buildData.buildPath = Settings.OutputRoot + GetPathWithVars(_usedDate, buildData, Settings.MiddlePath);
 
                 BaseBuild(
                     buildData.targetGroup,
@@ -77,7 +78,8 @@ namespace Editor.BuildManager.Core
 
                 if (!string.IsNullOrEmpty(buildData.buildPath))
                 {
-                    BaseCompress(Settings.OutputRoot + GetPathWithVars(buildData, Settings.DirPathForPostProcess));
+                    BaseCompress(Settings.OutputRoot + GetPathWithVars(_usedDate, buildData, 
+                        Settings.DirPathForPostProcess));
                     return;
                 }
 
@@ -167,11 +169,13 @@ namespace Editor.BuildManager.Core
                     buildOptions |= BuildOptions.CompressWithLz4;
                     PlayerSettings.SetScriptingBackend(namedBuildTarget, ScriptingImplementation.IL2CPP);
                     PlayerSettings.SetIl2CppCompilerConfiguration(namedBuildTarget, Il2CppCompilerConfiguration.Master);
+                    Debug.Log(true);
                     break;
                 case (BuildTargetGroup.Standalone, false):
                     buildOptions &= ~(BuildOptions.CompressWithLz4 | BuildOptions.CompressWithLz4HC);
                     PlayerSettings.SetScriptingBackend(namedBuildTarget, ScriptingImplementation.Mono2x);
                     PlayerSettings.SetIl2CppCompilerConfiguration(namedBuildTarget, Il2CppCompilerConfiguration.Debug);
+                    Debug.Log(false);
                     break;
 
                 case (BuildTargetGroup.Android, true):
@@ -214,7 +218,7 @@ namespace Editor.BuildManager.Core
             PlayerSettings.SetScriptingDefineSymbols(namedBuildTarget, scriptingDefineSymbolsOld);
 
             var summary = buildReport!.summary;
-            
+
             var report = $"Build {buildPlayerOptions.target} {summary.result.ToString()}\t ";
             report += $"Time: {summary.totalTime.ToString()}\t ";
             report += $"Size: {summary.totalSize / 1024 / 1024} Mb\n";
@@ -228,7 +232,6 @@ namespace Editor.BuildManager.Core
                 report += $"Error: {buildReport.SummarizeErrors()}";
                 Debug.LogError(report);
             }
-
         }
 
         private static void BaseCompress(string dirPath)
@@ -257,90 +260,6 @@ namespace Editor.BuildManager.Core
             Debug.Log($"Make {dirPath}.zip.  \t " +
                       $"Time: {(DateTime.Now - startTime).ToString()}  \t " +
                       $"Size: {uncompresedSize / 1048576} Mb - {compresedSize / 1048576} Mb");
-        }
-
-        #endregion
-
-        #region Convert to strings
-
-        public static string GetPathWithVars(BuildData data, string s)
-        {
-            s = s.Replace("$NAME", GetProductName());
-            s = s.Replace("$PLATFORM", ConvertBuildTargetToString(data.target));
-            s = s.Replace("$VERSION", PlayerSettings.bundleVersion);
-            s = s.Replace("$DATESHORT", $"{_usedDate.Date.Year % 100}_{_usedDate.Date.Month}_{_usedDate.Date.Day}");
-            s = s.Replace("$YEARSHORT", $"{_usedDate.Date.Year % 100}");
-            s = s.Replace("$DATE", $"{_usedDate.Date.Year}_{_usedDate.Date.Month}_{_usedDate.Date.Day}");
-            s = s.Replace("$YEAR", $"{_usedDate.Date.Year}");
-            s = s.Replace("$MONTH", $"{_usedDate.Date.Month}");
-            s = s.Replace("$DAY", $"{_usedDate.Date.Day}");
-            s = s.Replace("$TIME", $"{_usedDate.Hour}_{_usedDate.Minute}");
-            s = s.Replace("$ADDONS", $"{AddonsUsed.GetAddonsUsedName(data.addonsUsed)}");
-            s = s.Replace("$EXECUTABLE", GetBuildTargetExecutable(data.target));
-            return s;
-        }
-
-        public static string GetPathWithVarsForZip(BuildData data, string s)
-        {
-            s = s.Replace("$NAME", GetProductName());
-            s = s.Replace("$PLATFORM", ConvertBuildTargetToString(data.target));
-            s = s.Replace("$VERSION", PlayerSettings.bundleVersion);
-            s = s.Replace("$DATESHORT", $"{_usedDate.Date.Year % 100}_{_usedDate.Date.Month}_{_usedDate.Date.Day}");
-            s = s.Replace("$YEARSHORT", $"{_usedDate.Date.Year % 100}");
-            s = s.Replace("$DATE", $"{_usedDate.Date.Year}_{_usedDate.Date.Month}_{_usedDate.Date.Day}");
-            s = s.Replace("$YEAR", $"{_usedDate.Date.Year}");
-            s = s.Replace("$MONTH", $"{_usedDate.Date.Month}");
-            s = s.Replace("$DAY", $"{_usedDate.Date.Day}");
-            s = s.Replace("$TIME", $"{_usedDate.Hour}_{_usedDate.Minute}");
-
-            s = s.Contains("$EXECUTABLE")
-                ? s.Replace("$EXECUTABLE", GetBuildTargetExecutable(data.target))
-                : s + ".zip";
-
-            return s;
-        }
-
-        public static string ConvertBuildTargetToString(BuildTarget target)
-        {
-            return target switch
-            {
-                BuildTarget.StandaloneOSX => "OSX",
-                BuildTarget.StandaloneWindows => "Windows32",
-                BuildTarget.StandaloneWindows64 => "Windows64",
-                BuildTarget.StandaloneLinux64 => "Linux",
-                _ => target.ToString()
-            };
-        }
-
-        public static string GetProductName()
-        {
-            return PlayerSettings.productName
-                    .Replace(' ', '_')
-                    .Replace('/', '_')
-                    .Replace('\\', '_')
-                    .Replace(':', '_')
-                    .Replace('*', '_')
-                    .Replace('?', '_')
-                    .Replace('"', '_')
-                    .Replace('<', '_')
-                    .Replace('>', '_')
-                    .Replace('|', '_')
-                ;
-        }
-
-        public static string GetBuildTargetExecutable(BuildTarget target)
-        {
-            return target switch
-            {
-                BuildTarget.StandaloneWindows => ".exe",
-                BuildTarget.StandaloneWindows64 => ".exe",
-                BuildTarget.StandaloneLinux64 => "x86_64",
-                BuildTarget.StandaloneOSX => "",
-                BuildTarget.iOS => ".ipa",
-                BuildTarget.Android => ".apk",
-                BuildTarget.WebGL => "",
-                _ => ""
-            };
         }
 
         #endregion
