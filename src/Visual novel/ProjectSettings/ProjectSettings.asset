@@ -258,7 +258,7 @@ PlayerSettings:
   useCustomGradlePropertiesTemplate: 0
   useCustomGradleSettingsTemplate: 0
   useCustomProguardFile: 0
-  AndroidTargetArchitectures: 1
+  AndroidTargetArchitectures: 3
   AndroidTargetDevices: 0
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
@@ -713,7 +713,7 @@ PlayerSettings:
   webGLWebAssemblyBigInt: 0
   webGLCloseOnQuit: 0
   scriptingDefineSymbols:
-    Android: 
+    Android: YG_PLUGIN_YANDEX_GAME
     Standalone: YG_PLUGIN_YANDEX_GAME
     WebGL: YG_PLUGIN_YANDEX_GAME
   additionalCompilerArguments: {}
@@ -721,6 +721,7 @@ PlayerSettings:
   scriptingBackend:
     Android: 0
     Standalone: 0
+    WebGL: 1
   il2cppCompilerConfiguration:
     Android: 0
     Standalone: 0

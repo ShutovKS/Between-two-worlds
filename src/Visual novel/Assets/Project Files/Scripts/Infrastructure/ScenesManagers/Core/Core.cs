@@ -5,7 +5,7 @@ using Data.Dynamic;
 using Infrastructure.Services;
 using Infrastructure.Services.CoroutineRunner;
 using Infrastructure.Services.LocalisationDataLoad;
-using YG;
+using Infrastructure.Services.SaveLoadData;
 using Infrastructure.Services.Sounds;
 using Infrastructure.Services.UIFactory;
 using UnityEngine;
@@ -93,7 +93,10 @@ namespace Infrastructure.ScenesManagers.Core
             _dialogueManager.StopAutoDialogSwitchMode();
             _uiFactoryInfo.ConfirmationUI.SetActivePanel(true);
             _uiFactoryInfo.ConfirmationUI.Buttons.RegisterYesButtonCallback(ExitInMenu);
-            _uiFactoryInfo.ConfirmationUI.Buttons.RegisterNoButtonCallback(() => { _uiFactoryInfo.ConfirmationUI.SetActivePanel(false); });
+            _uiFactoryInfo.ConfirmationUI.Buttons.RegisterNoButtonCallback(() =>
+            {
+                _uiFactoryInfo.ConfirmationUI.SetActivePanel(false);
+            });
         }
 
         private void ExitInMenu()

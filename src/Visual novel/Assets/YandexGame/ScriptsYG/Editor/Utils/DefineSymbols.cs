@@ -54,7 +54,9 @@ namespace YG.Insides.Utils
 
         static DefineSymbols()
         {
+#if YG_SERVICES
             AddDefine("YG_PLUGIN_YANDEX_GAME");
+#endif
         }
     }
 }
