@@ -135,7 +135,8 @@ namespace Editor.Window
         private static void DrawConfiguredBuilds()
         {
             EditorGUILayout.BeginVertical();
-
+            
+            Settings.ScriptingDefineSymbolsDefault = EditorGUILayout.TextField("Scripting Define Symbols Default", Settings.ScriptingDefineSymbolsDefault);
             Settings.IsNeedZip = EditorGUILayout.Toggle("Need zip", Settings.IsNeedZip);
             Settings.IsPassbyBuild = EditorGUILayout.Toggle("Is Passby build", Settings.IsPassbyBuild);
             Settings.IsReleaseBuild = EditorGUILayout.Toggle("Is Release build", Settings.IsReleaseBuild);

@@ -159,45 +159,49 @@ namespace Editor.BuildManager.Core
                 PlayerSettings.Android.keyaliasPass = PlayerSettings.Android.keystorePass = "keystore";
             }
 
-            var namedBuildTargetStart = NamedBuildTarget.FromBuildTargetGroup(buildTargetGroup);
-            
+            var namedBuildTarget = NamedBuildTarget.FromBuildTargetGroup(buildTargetGroup);
+
             var releaseScriptingImplementation = isReleaseBuild
                 ? ScriptingImplementation.IL2CPP
                 : ScriptingImplementation.Mono2x;
-
-            switch (buildTargetGroup, isReleaseBuild)
-            {
-                case (BuildTargetGroup.Standalone, true):
-                    buildOptions |= BuildOptions.CompressWithLz4;
-                    PlayerSettings.SetScriptingBackend(namedBuildTargetStart, releaseScriptingImplementation);
-                    break;
-                case (BuildTargetGroup.Standalone, false):
-                    buildOptions &= ~(BuildOptions.CompressWithLz4 | BuildOptions.CompressWithLz4HC);
-                    PlayerSettings.SetScriptingBackend(namedBuildTargetStart, releaseScriptingImplementation);
-                    break;
-
-                case (BuildTargetGroup.Android, true):
-                    buildOptions |= BuildOptions.CompressWithLz4;
-                    PlayerSettings.SetScriptingBackend(namedBuildTargetStart, releaseScriptingImplementation);
-                    break;
-                case (BuildTargetGroup.Android, false):
-                    buildOptions &= ~(BuildOptions.CompressWithLz4 | BuildOptions.CompressWithLz4HC);
-                    PlayerSettings.SetScriptingBackend(namedBuildTargetStart, releaseScriptingImplementation);
-                    break;
-
-                case (BuildTargetGroup.WebGL, true):
-                    break;
-                case (BuildTargetGroup.WebGL, false):
-                    break;
-            }
-
-            
 
             var releaseCompilerType = isReleaseBuild
                 ? Il2CppCompilerConfiguration.Master
                 : Il2CppCompilerConfiguration.Debug;
 
-            PlayerSettings.SetIl2CppCompilerConfiguration(namedBuildTargetStart, releaseCompilerType);
+            switch (buildTargetGroup, isReleaseBuild)
+            {
+                case (BuildTargetGroup.Standalone, true):
+                    buildOptions |= BuildOptions.CompressWithLz4;
+                    PlayerSettings.SetScriptingBackend(namedBuildTarget, releaseScriptingImplementation);
+                    PlayerSettings.SetIl2CppCompilerConfiguration(namedBuildTarget, releaseCompilerType);
+                    break;
+                case (BuildTargetGroup.Standalone, false):
+                    buildOptions &= ~(BuildOptions.CompressWithLz4 | BuildOptions.CompressWithLz4HC);
+                    PlayerSettings.SetScriptingBackend(namedBuildTarget, releaseScriptingImplementation);
+                    PlayerSettings.SetIl2CppCompilerConfiguration(namedBuildTarget, releaseCompilerType);
+                    break;
+
+                case (BuildTargetGroup.Android, true):
+                    buildOptions |= BuildOptions.CompressWithLz4;
+                    PlayerSettings.SetScriptingBackend(namedBuildTarget, releaseScriptingImplementation);
+                    PlayerSettings.SetIl2CppCompilerConfiguration(namedBuildTarget, releaseCompilerType);
+                    PlayerSettings.Android.targetArchitectures = AndroidArchitecture.ARM64 | AndroidArchitecture.ARMv7;
+                    break;
+                case (BuildTargetGroup.Android, false):
+                    buildOptions &= ~(BuildOptions.CompressWithLz4 | BuildOptions.CompressWithLz4HC);
+                    PlayerSettings.SetScriptingBackend(namedBuildTarget, releaseScriptingImplementation);
+                    PlayerSettings.SetIl2CppCompilerConfiguration(namedBuildTarget, releaseCompilerType);
+                    PlayerSettings.Android.targetArchitectures = AndroidArchitecture.ARM64 | AndroidArchitecture.ARMv7;
+                    break;
+
+                case (BuildTargetGroup.WebGL, true):
+                    PlayerSettings.SetIl2CppCompilerConfiguration(namedBuildTarget, releaseCompilerType);
+                    break;
+                case (BuildTargetGroup.WebGL, false):
+                    PlayerSettings.SetIl2CppCompilerConfiguration(namedBuildTarget, releaseCompilerType);
+                    break;
+            }
 
             var buildPlayerOptions = new BuildPlayerOptions
             {
@@ -208,51 +212,35 @@ namespace Editor.BuildManager.Core
                 options = buildOptions,
             };
 
-            var oldScriptingDefineSymbols = PlayerSettings.GetScriptingDefineSymbols(namedBuildTargetStart);
+            var scriptingDefineSymbols = Settings.ScriptingDefineSymbolsDefault;
+            scriptingDefineSymbols = scriptingDefineSymbols + ";" + AddonsUsed.GetAddonsUsed(addonsUsedType);
+            PlayerSettings.SetScriptingDefineSymbols(namedBuildTarget, scriptingDefineSymbols);
 
-            var addonsUsedScriptingDefineSymbols = AddonsUsed.GetAddonsUsed(addonsUsedType);
-
-            PlayerSettings.SetScriptingDefineSymbols(namedBuildTargetStart, addonsUsedScriptingDefineSymbols);
-
-            BuildSummary summary = default;
+            BuildReport buildReport = default;
 
             try
             {
-                var report = BuildPipeline.BuildPlayer(buildPlayerOptions);
-                summary = report!.summary;
+                buildReport = BuildPipeline.BuildPlayer(buildPlayerOptions);
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                //
+                Debug.LogError($"Error: {e.Message}");
             }
 
-            PlayerSettings.SetScriptingDefineSymbols(namedBuildTargetStart, oldScriptingDefineSymbols);
+            var summary = buildReport!.summary;
 
-            switch (summary.result)
+            var report = $"Build {buildPlayerOptions.target} {summary.result.ToString()}\t ";
+            report += $"Time: {summary.totalTime.ToString()}\t ";
+            report += $"Size: {summary.totalSize / 1024 / 1024} Mb\n";
+
+            if (summary.result == BuildResult.Succeeded)
             {
-                case BuildResult.Succeeded:
-                    Debug.Log($"{summary.platform} succeeded.  \t " +
-                              $"Time: {summary.totalTime.ToString()}  \t " +
-                              $"Size: {summary.totalSize / 1024 / 1024} Mb" + "\n");
-                    break;
-                case BuildResult.Failed:
-                    Debug.Log($"{summary.platform} failed.   \t " +
-                              $"Time: {summary.totalTime.ToString()}  \t " +
-                              $"Size: {summary.totalSize / 1024 / 1024} Mb" + "\n" +
-                              "\n" +
-                              $"Warnings: {summary.totalWarnings}" + "\n" +
-                              $"Errors:   {summary.totalErrors}"
-                    );
-                    break;
-                case BuildResult.Unknown:
-                    Debug.Log($"{summary.platform} unknown.  \t " +
-                              $"Time: {summary.totalTime.ToString()}");
-                    break;
-                case BuildResult.Cancelled:
-                    Debug.Log($"{summary.platform} cancelled. \t " +
-                              $"Time: {summary.totalTime.ToString()}");
-                    break;
-                default: throw new ArgumentOutOfRangeException();
+                Debug.Log(report);
+            }
+            else
+            {
+                report += $"Error: {buildReport.SummarizeErrors()}";
+                Debug.LogError(report);
             }
         }
 

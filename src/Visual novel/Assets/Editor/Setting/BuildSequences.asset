@@ -12,16 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97a802aca9ee4247959778e0310071f2, type: 3}
   m_Name: BuildSequences
   m_EditorClassIdentifier: 
-  IsNeedZip: 1
+  IsNeedZip: 0
   IsPassbyBuild: 0
-  IsReleaseBuild: 1
+  IsReleaseBuild: 0
   Builds:
   - isEnabled: 1
     isPassbyBuild: 0
     isReleaseBuild: 0
     isCompress: 0
-    buildPath: Builds/Windows64_1.0.2 /Between_Two_Worlds_1.0.2/Between_Two_Worlds.exe
-    addonsUsed: 0
+    buildPath: Builds/Windows64_1.0.2 Yandex Game/Between_Two_Worlds_1.0.2/Between_Two_Worlds.exe
+    addonsUsed: 1
     options: 0
     targetGroup: 1
     target: 19
@@ -43,7 +43,7 @@ MonoBehaviour:
     options: 0
     targetGroup: 1
     target: 24
-  - isEnabled: 1
+  - isEnabled: 0
     isPassbyBuild: 0
     isReleaseBuild: 0
     isCompress: 0
@@ -56,8 +56,8 @@ MonoBehaviour:
     isPassbyBuild: 0
     isReleaseBuild: 0
     isCompress: 0
-    buildPath: Builds/WebGL_1.0.2 /Between_Two_Worlds_1.0.2/Between_Two_Worlds
-    addonsUsed: 0
+    buildPath: Builds/WebGL_1.0.2 Yandex Game/Between_Two_Worlds_1.0.2/Between_Two_Worlds
+    addonsUsed: 1
     options: 0
     targetGroup: 13
     target: 20
@@ -65,11 +65,12 @@ MonoBehaviour:
     isPassbyBuild: 0
     isReleaseBuild: 0
     isCompress: 0
-    buildPath: Builds/WebGL_1.0.2 Yandex Game/Between_Two_Worlds_1.0.2/Between_Two_Worlds
-    addonsUsed: 1
+    buildPath: Builds/WebGL_1.0.2 /Between_Two_Worlds_1.0.2/Between_Two_Worlds
+    addonsUsed: 0
     options: 0
     targetGroup: 13
     target: 20
+  ScriptingDefineSymbolsDefault: YG_PLUGIN_YANDEX_GAME
   OutputRoot: Builds/
   MiddlePath: $PLATFORM_$VERSION $ADDONS/$NAME_$VERSION/$NAME$EXECUTABLE
   DirPathForPostProcess: $PLATFORM_$VERSION $ADDONS

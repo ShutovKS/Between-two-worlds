@@ -10,8 +10,10 @@ namespace Editor.BuildManager.Core
         public bool IsNeedZip;
         public bool IsPassbyBuild;
         public bool IsReleaseBuild;
-     
+
         public List<BuildData> Builds = new();
+        
+        public string ScriptingDefineSymbolsDefault;
         
         public string OutputRoot = "Builds/";
         public string MiddlePath = "$NAME_$VERSION_$PLATFORM/$NAME_$VERSION/$NAME$EXECUTABLE";
