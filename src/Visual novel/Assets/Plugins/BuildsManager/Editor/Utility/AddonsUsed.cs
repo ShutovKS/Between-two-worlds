@@ -8,7 +8,6 @@ namespace BuildsManager.Utility
         {
             return type switch
             {
-                AddonsUsedType.None => string.Empty,
                 AddonsUsedType.YandexGameSDK => "YG_PLUGIN_YANDEX_GAME" + ";" + "YG_SERVICES",
                 _ => string.Empty
             };
@@ -18,7 +17,6 @@ namespace BuildsManager.Utility
         {
             return type switch
             {
-                AddonsUsedType.None => string.Empty,
                 AddonsUsedType.YandexGameSDK => "YandexGame",
                 _ => string.Empty
             };

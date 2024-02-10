@@ -5,7 +5,6 @@ namespace BuildsManager.Data
     [Flags]
     public enum AddonsUsedType
     {
-        None,
-        YandexGameSDK
+        YandexGameSDK = 1 << 0
     }
 }

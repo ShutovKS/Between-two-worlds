@@ -12,7 +12,7 @@ namespace BuildsManager.Data
 
         public string buildPath = "";
 
-        public AddonsUsedType addonsUsed = AddonsUsedType.None;
+        public AddonsUsedType addonsUsed;
         public BuildOptions options = BuildOptions.None;
         public BuildTarget target = BuildTarget.NoTarget;
         public BuildTargetGroup targetGroup = BuildTargetGroup.Unknown;
