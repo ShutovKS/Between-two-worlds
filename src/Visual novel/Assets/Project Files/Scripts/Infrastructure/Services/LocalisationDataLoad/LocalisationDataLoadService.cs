@@ -18,7 +18,7 @@ namespace Infrastructure.Services.LocalisationDataLoad
         public LocalisationDataLoadService()
         {
             var textAsset = Resources.Load<TextAsset>(GetPathToDirectoriesNames());
-            
+
             var directoriesNames = textAsset.ToString().Split("\n");
 
             foreach (var directoryName in directoriesNames)
@@ -29,9 +29,9 @@ namespace Infrastructure.Services.LocalisationDataLoad
                 {
                     continue;
                 }
-                
+
                 var path = GetPathToMain(lang);
-                
+
                 var fileString = Resources.Load<TextAsset>(path).text;
 
                 var strings = fileString.Split("\n");
@@ -48,12 +48,36 @@ namespace Infrastructure.Services.LocalisationDataLoad
         }
 
         public const string MAIN_DIRECTORY = "Localizations";
-        public static string GetPathToDirectoriesNames() => $@"{MAIN_DIRECTORY}\Localizations";
-        public static string GetPathToMain(string lang) => $@"{MAIN_DIRECTORY}\{lang}\Main";
-        public static string GetPathToLastWords(string lang) => $@"{MAIN_DIRECTORY}\{lang}\LastWords";
-        public static string GetPathToDialogue(string lang) => $@"{MAIN_DIRECTORY}\{lang}\Dialogues";
-        public static string GetPathToUI(string lang) => $@"{MAIN_DIRECTORY}\{lang}\UILocalisation";
-        public static string GetPathToFlag(string lang) => $@"{MAIN_DIRECTORY}\{lang}\Flag";
+
+        public static string GetPathToDirectoriesNames()
+        {
+            return $@"{MAIN_DIRECTORY}\Localizations";
+        }
+
+        public static string GetPathToMain(string lang)
+        {
+            return $@"{MAIN_DIRECTORY}\{lang}\Main";
+        }
+
+        public static string GetPathToLastWords(string lang)
+        {
+            return $@"{MAIN_DIRECTORY}\{lang}\LastWords";
+        }
+
+        public static string GetPathToDialogue(string lang)
+        {
+            return $@"{MAIN_DIRECTORY}\{lang}\Dialogues";
+        }
+
+        public static string GetPathToUI(string lang)
+        {
+            return $@"{MAIN_DIRECTORY}\{lang}\UILocalisation";
+        }
+
+        public static string GetPathToFlag(string lang)
+        {
+            return $@"{MAIN_DIRECTORY}\{lang}\Flag";
+        }
 
         public string CurrentLanguage { get; private set; }
         private string CurrentDirectory => _localizations[CurrentLanguage].PathToDirectory;

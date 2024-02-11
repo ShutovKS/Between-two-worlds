@@ -4,7 +4,6 @@ using System;
 using System.Globalization;
 using Data.Dynamic;
 using Infrastructure.Services.SaveLoadData;
-using YG;
 using UI.Background;
 using UI.Dialogue;
 using UI.SaveLoad;
@@ -50,9 +49,9 @@ namespace Infrastructure.ScenesManagers.Core
             foreach (var ui in _saveLoadUI.SaveDataUIs)
             {
                 var indexLocal = index;
-                
+
                 var data = _data.dialogues[index++];
-                
+
                 if (data.isDataExist)
                 {
                     ui.SetImage(data.background);

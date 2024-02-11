@@ -10,19 +10,19 @@ using UnityEngine.UI;
 
 namespace UI.SaveLoad
 {
-	public class ButtonsUI : MonoBehaviour
-	{
-		[SerializeField] private Button _backButton;
-		[SerializeField] private TextMeshProUGUI _backButtonText;
+    public class ButtonsUI : MonoBehaviour
+    {
+        [SerializeField] private Button _backButton;
+        [SerializeField] private TextMeshProUGUI _backButtonText;
 
-		public void RegisterBackButtonCallback(UnityAction callback)
-		{
-			_backButton.RegisterNewCallback(callback);
-		}
+        public void RegisterBackButtonCallback(UnityAction callback)
+        {
+            _backButton.RegisterNewCallback(callback);
+        }
 
-		public void SetBackButtonText(string text)
-		{
-			_backButtonText.text = text;
-		}
-	}
+        public void SetBackButtonText(string text)
+        {
+            _backButtonText.text = text;
+        }
+    }
 }

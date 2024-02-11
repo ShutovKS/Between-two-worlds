@@ -7,9 +7,9 @@ using UnityEngine;
 
 namespace Infrastructure.Services.CoroutineRunner
 {
-	public interface ICoroutineRunnerService
-	{
-		Coroutine StartCoroutine(IEnumerator enumerator);
-		void StopCoroutine(Coroutine coroutine);
-	}
+    public interface ICoroutineRunnerService
+    {
+        Coroutine StartCoroutine(IEnumerator enumerator);
+        void StopCoroutine(Coroutine coroutine);
+    }
 }

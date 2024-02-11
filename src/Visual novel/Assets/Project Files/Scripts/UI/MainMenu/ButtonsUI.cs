@@ -10,51 +10,51 @@ using UnityEngine.UI;
 
 namespace UI.MainMenu
 {
-	public class ButtonsUI : MonoBehaviour
-	{
-		[SerializeField] private Button _loadGameButton;
-		[SerializeField] private Button _startGameButton;
-		[SerializeField] private Button _exitButton;
+    public class ButtonsUI : MonoBehaviour
+    {
+        [SerializeField] private Button _loadGameButton;
+        [SerializeField] private Button _startGameButton;
+        [SerializeField] private Button _exitButton;
 
-		[SerializeField] private TextMeshProUGUI _loadGameButtonText;
-		[SerializeField] private TextMeshProUGUI _startGameButtonText;
-		[SerializeField] private TextMeshProUGUI _exitButtonText;
+        [SerializeField] private TextMeshProUGUI _loadGameButtonText;
+        [SerializeField] private TextMeshProUGUI _startGameButtonText;
+        [SerializeField] private TextMeshProUGUI _exitButtonText;
 
-		private void Awake()
-		{
+        private void Awake()
+        {
 #if UNITY_WEBGL
-			_exitButton.gameObject.SetActive(false);
+            _exitButton.gameObject.SetActive(false);
 #endif
-		}
-		
-		public void RegisterLoadGameButtonCallback(UnityAction action)
-		{
-			_loadGameButton.RegisterNewCallback(action);
-		}
+        }
 
-		public void RegisterStartGameButtonCallback(UnityAction action)
-		{
-			_startGameButton.RegisterNewCallback(action);
-		}
+        public void RegisterLoadGameButtonCallback(UnityAction action)
+        {
+            _loadGameButton.RegisterNewCallback(action);
+        }
 
-		public void RegisterExitButtonCallback(UnityAction action)
-		{
-			_exitButton.RegisterNewCallback(action);
-		}
+        public void RegisterStartGameButtonCallback(UnityAction action)
+        {
+            _startGameButton.RegisterNewCallback(action);
+        }
 
-		public void SetLoadGameButton(string text)
-		{
-			_loadGameButtonText.text = text;
-		}
+        public void RegisterExitButtonCallback(UnityAction action)
+        {
+            _exitButton.RegisterNewCallback(action);
+        }
 
-		public void SetStartGameButton(string text)
-		{
-			_startGameButtonText.text = text;
-		}
+        public void SetLoadGameButton(string text)
+        {
+            _loadGameButtonText.text = text;
+        }
 
-		public void SetExitButton(string text)
-		{
-			_exitButtonText.text = text;
-		}
-	}
+        public void SetStartGameButton(string text)
+        {
+            _startGameButtonText.text = text;
+        }
+
+        public void SetExitButton(string text)
+        {
+            _exitButtonText.text = text;
+        }
+    }
 }

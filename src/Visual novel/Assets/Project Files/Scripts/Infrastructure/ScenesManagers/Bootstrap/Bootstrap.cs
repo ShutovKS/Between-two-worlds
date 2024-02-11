@@ -1,6 +1,5 @@
 ﻿#region
 
-using Infrastructure.Services.CoroutineRunner;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 

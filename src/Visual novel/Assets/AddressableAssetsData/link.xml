@@ -21,22 +21,7 @@
     <type fullname="UI.SaveLoad.ButtonsUI" preserve="all" />
     <type fullname="UI.SaveLoad.SaveDataUI" preserve="all" />
     <type fullname="UI.SaveLoad.SaveLoadUI" preserve="all" />
-    <type fullname="YG.InfoYG" preserve="all" />
-    <type fullname="YG.ViewingAdsYG" preserve="all" />
-    <type fullname="YG.YandexGame" preserve="all" />
     <type fullname="UI.ChooseLanguage.ScrollViewLanguagesUI" preserve="nothing" serialized="true" />
-    <type fullname="YG.InfoYG/CSVTranslate" preserve="nothing" serialized="true" />
-    <type fullname="YG.InfoYG/Fonts" preserve="nothing" serialized="true" />
-    <type fullname="YG.InfoYG/FontsSizeCorrect" preserve="nothing" serialized="true" />
-    <type fullname="YG.InfoYG/Languages" preserve="nothing" serialized="true" />
-    <type fullname="YG.InfoYG/PlayerInfoSimulation" preserve="nothing" serialized="true" />
-    <type fullname="YG.InfoYG/QuitGameMethod" preserve="nothing" serialized="true" />
-    <type fullname="YG.Utils.LB.LBData" preserve="nothing" serialized="true" />
-    <type fullname="YG.Utils.LB.LBPlayerData" preserve="nothing" serialized="true" />
-    <type fullname="YG.Utils.LB.LBThisPlayerData" preserve="nothing" serialized="true" />
-    <type fullname="YG.Utils.Pay.Purchase" preserve="nothing" serialized="true" />
-    <type fullname="YG.ViewingAdsYG/ClosingADValues" preserve="nothing" serialized="true" />
-    <type fullname="YG.ViewingAdsYG/CustomEvents" preserve="nothing" serialized="true" />
   </assembly>
   <assembly fullname="Unity.Addressables, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" preserve="all">
     <type fullname="UnityEngine.AddressableAssets.Addressables" preserve="all" />
@@ -67,9 +52,7 @@
     <type fullname="UnityEngine.Shader" preserve="all" />
     <type fullname="UnityEngine.Sprite" preserve="all" />
     <type fullname="UnityEngine.Texture2D" preserve="all" />
-    <type fullname="UnityEngine.Transform" preserve="all" />
     <type fullname="UnityEngine.Events.PersistentCallGroup" preserve="nothing" serialized="true" />
-    <type fullname="UnityEngine.Events.UnityEvent" preserve="nothing" serialized="true" />
     <type fullname="UnityEngine.RectOffset" preserve="nothing" serialized="true" />
   </assembly>
   <assembly fullname="UnityEngine.TextRenderingModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">

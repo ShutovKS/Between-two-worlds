@@ -1,6 +1,10 @@
+#region
+
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+
+#endregion
 
 namespace UI.ChooseLanguage
 {

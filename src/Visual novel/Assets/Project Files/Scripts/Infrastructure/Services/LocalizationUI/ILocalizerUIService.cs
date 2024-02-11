@@ -6,12 +6,12 @@ using Data.Localization.UILocalisation;
 
 namespace Infrastructure.Services.LocalizationUI
 {
-	public interface ILocalizerUIService
-	{
-		void Localize(UILocalisation localisation);
+    public interface ILocalizerUIService
+    {
+        void Localize(UILocalisation localisation);
 
-		void Register(ILocalizableUI localizableUI);
-		void Unregister(ILocalizableUI localizableUI);
-		void Clear();
-	}
+        void Register(ILocalizableUI localizableUI);
+        void Unregister(ILocalizableUI localizableUI);
+        void Clear();
+    }
 }

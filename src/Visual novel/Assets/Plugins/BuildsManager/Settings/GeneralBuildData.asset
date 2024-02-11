@@ -22,9 +22,9 @@ MonoBehaviour:
     options: 0
     target: 19
     targetGroup: 1
-  - isEnabled: 0
+  - isEnabled: 1
     isCompress: 0
-    buildPath: Builds/WebGL_$ADDONS1.0.2/Between_Two_Worlds_1.0.2/Between_Two_Worlds
+    buildPath: Builds/WebGL_YandexGame1.0.2/Between_Two_Worlds_1.0.2/Between_Two_Worlds
     addonsUsed: 1
     options: 4
     target: 20

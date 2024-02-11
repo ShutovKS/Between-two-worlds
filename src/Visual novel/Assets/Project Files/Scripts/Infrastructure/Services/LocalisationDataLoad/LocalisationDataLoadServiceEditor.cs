@@ -1,9 +1,14 @@
 ﻿#if UNITY_EDITOR
+
+#region
+
 using System.IO;
 using UnityEditor;
 using UnityEditor.Build;
 using UnityEditor.Build.Reporting;
 using UnityEngine;
+
+#endregion
 
 namespace Infrastructure.Services.LocalisationDataLoad
 {
@@ -25,7 +30,7 @@ namespace Infrastructure.Services.LocalisationDataLoad
         private static void ShowLocalizations(bool isShow)
         {
             var path = Path.Combine(Application.dataPath, @"Project Files\Resources\Localizations");
-            
+
             var directoriesNames = Directory.GetDirectories(path);
 
             for (var index = 0; index < directoriesNames.Length; index++)

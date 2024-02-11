@@ -136,28 +136,27 @@ namespace Infrastructure.ScenesManagers.Loading
 #if YG_SERVICES
         private async Task InitializeYandexGameSDK()
         {
-            
             var path = AssetsAddressablesPath.YANDEX_GAME_PREFAB;
             var prefab = await _assetsAddressablesProvider.GetAsset<GameObject>(path);
-            
+
             var instance = Instantiate(prefab);
             DontDestroyOnLoad(instance);
 
             var isInitialized = false;
             var yandexGame = instance.GetComponent<YandexGame>();
-            
+
             yandexGame.RejectedAuthorization.AddListener(OnInitialized);
             yandexGame.ResolvedAuthorization.AddListener(OnInitialized);
-            
+
             Debug.Log("Yandex Game SDK load initializing");
-            
+
             instance.SetActive(true);
-            
+
             while (!isInitialized)
             {
                 await Task.Yield();
             }
-            
+
             yandexGame.RejectedAuthorization.RemoveListener(OnInitialized);
             yandexGame.ResolvedAuthorization.RemoveListener(OnInitialized);
 

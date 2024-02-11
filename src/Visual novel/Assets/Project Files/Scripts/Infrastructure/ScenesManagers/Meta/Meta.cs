@@ -1,12 +1,10 @@
 #region
 
 using Data.Constant;
-using Data.Dynamic;
 using Infrastructure.Services;
 using Infrastructure.Services.LocalisationDataLoad;
 using Infrastructure.Services.LocalizationUI;
 using Infrastructure.Services.SaveLoadData;
-using YG;
 using Infrastructure.Services.Sounds;
 using Infrastructure.Services.UIFactory;
 using UnityEngine;
@@ -19,7 +17,7 @@ namespace Infrastructure.ScenesManagers.Meta
     public class Meta : MonoBehaviour
     {
         private MainMenu _menu;
-        
+
         private ILocalisationDataLoadService _localisationDataLoad;
         private ILocalizerUIService _localizerUI;
         private ISaveLoadDataService _saveLoadData;
@@ -30,7 +28,8 @@ namespace Infrastructure.ScenesManagers.Meta
         {
             InitializedServices();
 
-            _uiFactoryInfo.BackgroundUI.SetBackgroundImage(Resources.Load<Texture2D>("Data/Backgrounds/" + ResourcesPath.BACKGROUND_PATH));
+            _uiFactoryInfo.BackgroundUI.SetBackgroundImage(
+                Resources.Load<Texture2D>("Data/Backgrounds/" + ResourcesPath.BACKGROUND_PATH));
             _menu = new MainMenu(_uiFactoryInfo.MainMenuUI, LoadGame, StartGame, Exit);
             _sounds.SetClip(ResourcesPath.SOUND_MAIN_MENU, true);
 
@@ -57,7 +56,10 @@ namespace Infrastructure.ScenesManagers.Meta
             {
                 var data = gameData.dialogues[number++];
 
-                if (!data.isDataExist) continue;
+                if (!data.isDataExist)
+                {
+                    continue;
+                }
 
                 ui.SetImage(data.background);
                 ui.SetTitle(data.titleText);

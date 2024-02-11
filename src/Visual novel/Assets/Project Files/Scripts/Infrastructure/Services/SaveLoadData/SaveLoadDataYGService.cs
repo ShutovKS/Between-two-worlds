@@ -3,7 +3,6 @@ using Data.Dynamic;
 using Infrastructure.Services.SaveLoadData;
 
 
-
 namespace YG
 {
     public class SaveLoadDataYGService : ISaveLoadDataService

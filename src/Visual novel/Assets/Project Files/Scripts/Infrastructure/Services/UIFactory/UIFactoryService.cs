@@ -121,6 +121,7 @@ namespace Infrastructure.Services.UIFactory
 
             _screens.Add(typeof(SaveLoadUI), saveLoadScreen);
         }
+
         public async Task CreatedLastWordsScreen()
         {
             var prefab = await _assetsAddressablesProviderService.GetAsset<GameObject>(LAST_WORDS_SCREEN);
@@ -162,6 +163,7 @@ namespace Infrastructure.Services.UIFactory
         {
             Destroy(_screens[typeof(SaveLoadUI)]);
         }
+
         public void DestroyLastWordsScreen()
         {
             Destroy(_screens[typeof(LastWordsUI)]);

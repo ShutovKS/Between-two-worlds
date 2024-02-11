@@ -56,18 +56,25 @@ namespace Infrastructure.ScenesManagers.Core
         {
             _typingDelay = SECONDS_DELAY_DEFAULT;
             _dialogueUI.SetActivePanel(true);
-            var id = PlayerPrefs.GetString(PlayerPrefsPath.KEY_ID_DIALOGUE_FOR_PLAYER_PREFS, PlayerPrefsPath.DIALOG_START_ID);
+            var id = PlayerPrefs.GetString(PlayerPrefsPath.KEY_ID_DIALOGUE_FOR_PLAYER_PREFS,
+                PlayerPrefsPath.DIALOG_START_ID);
             SetDialog(id);
         }
 
         public void DialogFurther()
         {
             if (CurrentDialogue is not Phrase phrase)
+            {
                 throw new Exception($"Current dialogue is not {CurrentDialogue.ID}");
+            }
 
             if (_isDialogCompleted)
             {
-                if (!string.IsNullOrEmpty(phrase.ActionTrigger)) _handleActionTrigger?.Invoke(phrase.ActionTrigger);
+                if (!string.IsNullOrEmpty(phrase.ActionTrigger))
+                {
+                    _handleActionTrigger?.Invoke(phrase.ActionTrigger);
+                }
+
                 SetDialog(phrase.IDNextDialog);
             }
             else
@@ -92,7 +99,7 @@ namespace Infrastructure.ScenesManagers.Core
                 _typingDelay = SECONDS_DELAY_FAST;
             }
         }
-        
+
         public void AutoDialogSwitchMode()
         {
             if (_isAutoMode)
@@ -139,7 +146,11 @@ namespace Infrastructure.ScenesManagers.Core
         {
             if (_isDialogCompleted && CurrentDialogue is Phrase phrase)
             {
-                if (!string.IsNullOrEmpty(phrase.ActionTrigger)) _handleActionTrigger?.Invoke(phrase.ActionTrigger);
+                if (!string.IsNullOrEmpty(phrase.ActionTrigger))
+                {
+                    _handleActionTrigger?.Invoke(phrase.ActionTrigger);
+                }
+
                 SetDialog(phrase.IDNextDialog);
             }
         }
@@ -218,6 +229,5 @@ namespace Infrastructure.ScenesManagers.Core
         }
 
         #endregion
-
     }
 }

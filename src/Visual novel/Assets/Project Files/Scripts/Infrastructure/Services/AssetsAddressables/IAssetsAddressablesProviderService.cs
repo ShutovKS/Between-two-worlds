@@ -7,8 +7,8 @@ using UnityEngine;
 
 namespace Infrastructure.Services.AssetsAddressables
 {
-	public interface IAssetsAddressablesProviderService
-	{
-		Task<T> GetAsset<T>(string address) where T : Object;
-	}
+    public interface IAssetsAddressablesProviderService
+    {
+        Task<T> GetAsset<T>(string address) where T : Object;
+    }
 }
