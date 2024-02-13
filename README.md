@@ -38,14 +38,22 @@ MIT License
 
 ### Main menu
 
-![Main menu](Resources/Screenshots/Eng/main_menu.png)
+![Main menu](Resources/Screenshots/Eng/screenshot_main_menu.png)
 
 ### Gameplay
 
-![Gameplay](Resources/Screenshots/Eng/gameplay_1.png)
+![Gameplay](Resources/Screenshots/Eng/screenshot_gameplay_1.png)
 
-![Gameplay](Resources/Screenshots/Eng/gameplay_2.png)
+![Gameplay](Resources/Screenshots/Eng/screenshot_gameplay_2.png)
 
-![Gameplay](Resources/Screenshots/Eng/gameplay_3.png)
+![Gameplay](Resources/Screenshots/Eng/screenshot_gameplay_3.png)
 
-![Gameplay](Resources/Screenshots/Eng/gameplay_4.png)
+![Gameplay](Resources/Screenshots/Eng/screenshot_gameplay_4.png)
+
+### Other
+
+![Other](Resources/Screenshots/Eng/screenshot_dialogue_history.png)
+
+![Other](Resources/Screenshots/Eng/screenshot_save_load.png)
+
+![Other](Resources/Screenshots/Eng/screenshot_language_selection.png)
