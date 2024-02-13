@@ -1,6 +1,7 @@
 #if YG_SERVICES
 using Data.Dynamic;
 using Infrastructure.Services.SaveLoadData;
+using Newtonsoft.Json;
 
 
 namespace YG
@@ -9,26 +10,31 @@ namespace YG
     {
         public GameData LoadOrCreateNew()
         {
+            YandexMetrica.Send("loaded");
+            GameData gameData = null;
+
             if (!Exists())
             {
-                Reset();
+                CreatingNewData();
             }
             else
             {
-                YandexMetrica.Send("loaded");
-                YandexGame.savesData.Deserialize();
+                var dataJson = YandexGame.savesData.json;
+                gameData = JsonConvert.DeserializeObject<GameData>(dataJson);
             }
 
-            return YandexGame.savesData;
+            return gameData;
         }
 
         public void Save(GameData gameData)
         {
             YandexMetrica.Send("saved");
+            
             gameData.Serialize();
 
+            var dataJson = JsonConvert.SerializeObject(gameData);
             YandexGame.savesData.isFirstSession = false;
-            YandexGame.savesData.dialogues = gameData.dialogues;
+            YandexGame.savesData.json = dataJson;
             YandexGame.SaveProgress();
         }
 
@@ -39,10 +45,10 @@ namespace YG
 
         public void Remove()
         {
-            Reset();
+            CreatingNewData();
         }
 
-        private void Reset()
+        private static void CreatingNewData()
         {
             var dialogues = new DialoguesData[6];
 
@@ -51,13 +57,15 @@ namespace YG
                 dialogues[i] = new DialoguesData();
             }
 
-            YandexGame.savesData.dialogues = dialogues;
-            Save(YandexGame.savesData);
+            GameData gameData = new CustomData();
+            gameData.dialogues = dialogues;
+            gameData.Serialize();
+            
+            var dataJson = JsonConvert.SerializeObject(gameData);
+            YandexGame.savesData.isFirstSession = false;
+            YandexGame.savesData.json = dataJson;
+            YandexGame.SaveProgress();
         }
-    }
-
-    public partial class SavesYG : GameData
-    {
     }
 }
 

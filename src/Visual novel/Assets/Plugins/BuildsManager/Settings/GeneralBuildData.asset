@@ -17,6 +17,13 @@ MonoBehaviour:
   builds:
   - isEnabled: 1
     isCompress: 0
+    buildPath: Builds/Windows32_1.0.2/Between_Two_Worlds_1.0.2/Between_Two_Worlds.exe
+    addonsUsed: 0
+    options: 0
+    target: 5
+    targetGroup: 1
+  - isEnabled: 1
+    isCompress: 0
     buildPath: Builds/Windows64_1.0.2/Between_Two_Worlds_1.0.2/Between_Two_Worlds.exe
     addonsUsed: 0
     options: 0
@@ -24,9 +31,30 @@ MonoBehaviour:
     targetGroup: 1
   - isEnabled: 1
     isCompress: 0
+    buildPath: Builds/Linux_1.0.2/Between_Two_Worlds_1.0.2/Between_Two_Worldsx86_64
+    addonsUsed: 0
+    options: 0
+    target: 24
+    targetGroup: 1
+  - isEnabled: 1
+    isCompress: 0
+    buildPath: Builds/Android_1.0.2/Between_Two_Worlds_1.0.2/Between_Two_Worlds.apk
+    addonsUsed: 0
+    options: 0
+    target: 13
+    targetGroup: 7
+  - isEnabled: 1
+    isCompress: 0
+    buildPath: Builds/WebGL_1.0.2/Between_Two_Worlds_1.0.2/Between_Two_Worlds
+    addonsUsed: 0
+    options: 0
+    target: 20
+    targetGroup: 13
+  - isEnabled: 1
+    isCompress: 0
     buildPath: Builds/WebGL_YandexGame1.0.2/Between_Two_Worlds_1.0.2/Between_Two_Worlds
     addonsUsed: 1
-    options: 4
+    options: 0
     target: 20
     targetGroup: 13
   addonsUsed: 0

@@ -44,7 +44,7 @@ namespace Infrastructure.ScenesManagers.Core
         {
             var text = _localisationDataLoadService.GetUpLastWord("end1");
 #if YG_SERVICES
-            YandexMetrica.Send("end1");
+            YG.YandexMetrica.Send("end1");
 #endif
             SetUpLastWordsUI(text);
         }
@@ -53,7 +53,7 @@ namespace Infrastructure.ScenesManagers.Core
         {
             var text = _localisationDataLoadService.GetUpLastWord("end2");
 #if YG_SERVICES
-            YandexMetrica.Send("end2");
+            YG.YandexMetrica.Send("end2");
 #endif
             SetUpLastWordsUI(text);
         }
