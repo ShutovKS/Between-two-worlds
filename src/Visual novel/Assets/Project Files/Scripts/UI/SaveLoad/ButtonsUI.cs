@@ -1,5 +1,6 @@
 ﻿#region
 
+using System;
 using TMPro;
 using Unit.Tools.Extensions;
 using UnityEngine;
@@ -12,12 +13,14 @@ namespace UI.SaveLoad
 {
     public class ButtonsUI : MonoBehaviour
     {
+        public Action OnButtonClicked;
+        
         [SerializeField] private Button _backButton;
         [SerializeField] private TextMeshProUGUI _backButtonText;
 
-        public void RegisterBackButtonCallback(UnityAction callback)
+        private void Awake()
         {
-            _backButton.RegisterNewCallback(callback);
+            _backButton.RegisterNewCallback(() => OnButtonClicked?.Invoke());
         }
 
         public void SetBackButtonText(string text)

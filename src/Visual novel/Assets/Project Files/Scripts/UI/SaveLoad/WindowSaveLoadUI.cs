@@ -1,5 +1,6 @@
 #region
 
+using System;
 using TMPro;
 using Unit.Tools.Extensions;
 using UnityEngine;
@@ -10,15 +11,17 @@ using UnityEngine.UI;
 
 namespace UI.SaveLoad
 {
-    public class SaveDataUI : MonoBehaviour
+    public class WindowSaveLoadUI : MonoBehaviour
     {
+        public Action OnButtonClicked;
+        
         [SerializeField] private Button _button;
         [SerializeField] private TextMeshProUGUI _textTitle;
         [SerializeField] private Image _image;
-
-        public void RegisterButtonCallback(UnityAction callback)
+        
+        private void Awake()
         {
-            _button.RegisterNewCallback(callback);
+            _button.RegisterNewCallback(() => OnButtonClicked?.Invoke());
         }
 
         public void SetTitle(string title)

@@ -1,6 +1,5 @@
 ﻿#region
 
-using System;
 using System.IO;
 using Data.Dynamic;
 using UnityEngine;
@@ -29,18 +28,22 @@ namespace Infrastructure.Services.SaveLoadData
 
         public GameData LoadOrCreateNew()
         {
-            if (Exists())
+            GameData gameData;
+            
+            if (Exists() == false)
+            {
+                gameData = CreatingNewData();
+            }
+            else
             {
                 var json = File.ReadAllText(_filePath);
 
-                var gameData = JsonUtility.FromJson<CustomData>(json);
+                gameData = JsonUtility.FromJson<GameData>(json);
 
                 gameData.Deserialize();
-
-                return gameData;
             }
 
-            return new CustomData();
+            return gameData;
         }
 
         public void Save(GameData gameData)
@@ -59,15 +62,16 @@ namespace Infrastructure.Services.SaveLoadData
 
         public void Remove()
         {
-            if (File.Exists(_filePath))
-            {
-                File.Delete(_filePath);
-            }
+            CreatingNewData();
         }
-    }
+        
+        private GameData CreatingNewData()
+        {
+            var gameData = new GameData();
+            
+            Save(gameData);
 
-    [Serializable]
-    public class CustomData : GameData
-    {
+            return gameData;
+        }
     }
 }

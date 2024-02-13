@@ -40,25 +40,22 @@ namespace Infrastructure.ScenesManagers.Core
         private readonly ISaveLoadDataService _saveLoadData;
         private readonly SaveLoadUI _saveLoadUI;
 
-        public void DataSave()
+        public void OpenDataSave()
         {
             _saveLoadUI.SetActivePanel(true);
-            _saveLoadUI.ButtonsUI.RegisterBackButtonCallback(() => { _saveLoadUI.SetActivePanel(false); });
+            _saveLoadUI.ButtonsUI.OnButtonClicked = CloseDataScreen;
 
             var index = 0;
-            foreach (var ui in _saveLoadUI.SaveDataUIs)
+            foreach (var dataUI in _saveLoadUI.SaveDataUIs)
             {
                 var indexLocal = index;
 
                 var data = _data.dialogues[index++];
 
-                if (data.isDataExist)
-                {
-                    ui.SetImage(data.background);
-                    ui.SetTitle(data.titleText);
-                }
+                SetConfigForDataUI(dataUI, data, OnButtonClicked);
+                continue;
 
-                ui.RegisterButtonCallback(() =>
+                void OnButtonClicked()
                 {
                     var id = _onGetDialogCurrent.Invoke();
                     var titleText = DateTime.Now.ToString(CultureInfo.InvariantCulture);
@@ -76,40 +73,52 @@ namespace Infrastructure.ScenesManagers.Core
 
                     _saveLoadData.Save(_data);
 
-                    var saveDataUI = _saveLoadUI.SaveDataUIs[indexLocal];
-                    saveDataUI.SetTitle(titleText);
-                    saveDataUI.SetImage(texture2D);
-                    saveDataUI.RegisterButtonCallback(null);
-                });
+                    SetConfigForDataUI(dataUI, _data.dialogues[indexLocal], OnButtonClicked);
+                }
             }
         }
 
-        public void DataLoad()
+        public void OpenDataLoad()
         {
             _saveLoadUI.SetActivePanel(true);
-            _saveLoadUI.ButtonsUI.RegisterBackButtonCallback(() => { _saveLoadUI.SetActivePanel(false); });
+            _saveLoadUI.ButtonsUI.OnButtonClicked = CloseDataScreen;
 
-            var number = 0;
-            foreach (var ui in _saveLoadUI.SaveDataUIs)
+            var index = 0;
+            foreach (var dataUI in _saveLoadUI.SaveDataUIs)
             {
-                var data = _data.dialogues[number++];
+                var dataDialogue = _data.dialogues[index++];
 
-                if (data.isDataExist)
+                if (dataDialogue.isDataExist)
                 {
-                    ui.SetImage(data.background);
-                    ui.SetTitle(data.titleText);
-                    ui.RegisterButtonCallback(() =>
-                    {
-                        _onClearHistory?.Invoke();
-                        _onSetDialog.Invoke(data.idLastDialogue);
-                        _saveLoadUI.SetActivePanel(false);
-                    });
+                    SetConfigForDataUI(dataUI, dataDialogue, OnButtonClicked);
                 }
-                else
+
+                continue;
+
+                void OnButtonClicked()
                 {
-                    ui.RegisterButtonCallback(null);
+                    _onClearHistory?.Invoke();
+                    _onSetDialog.Invoke(dataDialogue.idLastDialogue);
+                    _saveLoadUI.SetActivePanel(false);
                 }
             }
+        }
+
+        private void SetConfigForDataUI(WindowSaveLoadUI loadUI, DialoguesData dialoguesData, Action onButtonClicked)
+        {
+            loadUI.SetImage(dialoguesData.background);
+            loadUI.SetTitle(dialoguesData.titleText);
+            loadUI.OnButtonClicked = onButtonClicked;
+        }
+
+        private void CloseDataScreen()
+        {
+            foreach (var dataUI in _saveLoadUI.SaveDataUIs)
+            {
+                dataUI.OnButtonClicked = null;
+            }
+
+            _saveLoadUI.SetActivePanel(false);
         }
     }
 }

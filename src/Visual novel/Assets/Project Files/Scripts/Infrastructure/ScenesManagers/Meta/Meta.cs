@@ -23,6 +23,7 @@ namespace Infrastructure.ScenesManagers.Meta
         private ISaveLoadDataService _saveLoadData;
         private IUIFactoryInfoService _uiFactoryInfo;
         private ISoundsService _sounds;
+        private AsyncOperation _loadSceneAsync;
 
         private void Start()
         {
@@ -33,21 +34,25 @@ namespace Infrastructure.ScenesManagers.Meta
             _menu = new MainMenu(_uiFactoryInfo.MainMenuUI, LoadGame, StartGame, Exit);
             _sounds.SetClip(ResourcesPath.SOUND_MAIN_MENU, true);
 
+            _loadSceneAsync = SceneManager.LoadSceneAsync("3.Core");
+            _loadSceneAsync.allowSceneActivation = false;
+
             OpenMenu();
         }
 
         private void StartGame()
         {
             PlayerPrefs.SetString(PlayerPrefsPath.KEY_ID_DIALOGUE_FOR_PLAYER_PREFS, PlayerPrefsPath.DIALOG_START_ID);
+
             _menu.ClosedMenu();
-            SceneManager.LoadScene("3.Core");
+
+            _loadSceneAsync.allowSceneActivation = true;
         }
 
         private void LoadGame()
         {
             _uiFactoryInfo.SaveLoadUI.SetActivePanel(true);
-            _uiFactoryInfo.SaveLoadUI.ButtonsUI.RegisterBackButtonCallback(
-                () => { _uiFactoryInfo.SaveLoadUI.SetActivePanel(false); });
+            _uiFactoryInfo.SaveLoadUI.ButtonsUI.OnButtonClicked = () => _uiFactoryInfo.SaveLoadUI.SetActivePanel(false);
 
             var number = 0;
             var gameData = _saveLoadData.LoadOrCreateNew();
@@ -63,14 +68,13 @@ namespace Infrastructure.ScenesManagers.Meta
 
                 ui.SetImage(data.background);
                 ui.SetTitle(data.titleText);
-                ui.RegisterButtonCallback(
-                    () =>
-                    {
-                        PlayerPrefs.SetString(PlayerPrefsPath.KEY_ID_DIALOGUE_FOR_PLAYER_PREFS, data.idLastDialogue);
-                        _uiFactoryInfo.SaveLoadUI.SetActivePanel(false);
-                        _menu.ClosedMenu();
-                        SceneManager.LoadScene("3.Core");
-                    });
+                ui.OnButtonClicked = () =>
+                {
+                    PlayerPrefs.SetString(PlayerPrefsPath.KEY_ID_DIALOGUE_FOR_PLAYER_PREFS, data.idLastDialogue);
+                    _uiFactoryInfo.SaveLoadUI.SetActivePanel(false);
+                    _menu.ClosedMenu();
+                    _loadSceneAsync.allowSceneActivation = true;
+                };
             }
         }
 
@@ -87,7 +91,9 @@ namespace Infrastructure.ScenesManagers.Meta
         private void ChangeLocalisation(string language)
         {
             _localisationDataLoad.Load(language);
+
             var localisation = _localisationDataLoad.GetUILocalisation();
+
             _localizerUI.Localize(localisation);
         }
 

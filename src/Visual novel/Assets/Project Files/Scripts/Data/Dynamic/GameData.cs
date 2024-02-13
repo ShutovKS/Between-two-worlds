@@ -7,9 +7,9 @@ using System;
 namespace Data.Dynamic
 {
     [Serializable]
-    public abstract class GameData
+    public class GameData
     {
-        protected GameData()
+        public GameData()
         {
             dialogues = new DialoguesData[6];
             for (var i = 0; i < dialogues.Length; i++)

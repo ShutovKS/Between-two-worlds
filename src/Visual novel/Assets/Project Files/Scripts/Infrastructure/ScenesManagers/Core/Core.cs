@@ -64,8 +64,8 @@ namespace Infrastructure.ScenesManagers.Core
 
             _buttonManager = new ButtonManager(_uiFactoryInfo.DialogueUI.Buttons);
             _buttonManager.RegisterOnClickBack(ConfirmExitInMenu);
-            _buttonManager.RegisterOnClickSave(_saveLoadManager.DataSave);
-            _buttonManager.RegisterOnClickLoad(_saveLoadManager.DataLoad);
+            _buttonManager.RegisterOnClickSave(_saveLoadManager.OpenDataSave);
+            _buttonManager.RegisterOnClickLoad(_saveLoadManager.OpenDataLoad);
             _buttonManager.RegisterOnClickHistory(_historyManager.OpenDialogHistory);
             _buttonManager.RegisterOnClickSpeedUp(_dialogueManager.ChangeTypingDialogSpeedUp);
             _buttonManager.RegisterOnClickAuto(_dialogueManager.AutoDialogSwitchMode);

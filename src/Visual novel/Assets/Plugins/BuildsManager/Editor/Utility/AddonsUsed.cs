@@ -8,7 +8,10 @@ namespace BuildsManager.Utility
         {
             return type switch
             {
-                AddonsUsedType.YandexGameSDK => "YG_SERVICES",
+                AddonsUsedType.YandexGameSDK => "YG_SERVICES" + ";" +
+                                                "YG_PLUGIN_YANDEX_GAME" + ";" +
+                                                "YG_NEWTONSOFT_FOR_SAVES" + ";" +
+                                                "YG_TEXT_MESH_PRO",
                 _ => string.Empty
             };
         }

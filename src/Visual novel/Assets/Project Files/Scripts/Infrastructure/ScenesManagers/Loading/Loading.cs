@@ -2,6 +2,7 @@
 
 using System;
 using System.Threading.Tasks;
+using Data.Constant;
 using Infrastructure.Services;
 using Infrastructure.Services.AssetsAddressables;
 using Infrastructure.Services.CoroutineRunner;
@@ -12,7 +13,8 @@ using Infrastructure.Services.Sounds;
 using Infrastructure.Services.UIFactory;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-#if YG_SERVICES && UNITY_WEBGL
+using YG;
+#if YG_SERVICES
 using Data.Constant;
 using YG;
 #endif
@@ -56,7 +58,7 @@ namespace Infrastructure.ScenesManagers.Loading
             _coroutineRunner = new GameObject().AddComponent<CoroutineRunnerServiceService>();
             _sounds = new SoundsService();
 
-#if YG_SERVICES && UNITY_WEBGL
+#if YG_SERVICES
             _saveLoadData = new SaveLoadDataYGService();
             await InitializeYandexGameSDK();
 #else

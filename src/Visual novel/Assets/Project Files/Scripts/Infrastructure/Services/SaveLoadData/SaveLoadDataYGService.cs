@@ -1,7 +1,11 @@
 #if YG_SERVICES
 using Data.Dynamic;
 using Infrastructure.Services.SaveLoadData;
-using Newtonsoft.Json;
+using UnityEngine;
+
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 
 
 namespace YG
@@ -11,11 +15,11 @@ namespace YG
         public GameData LoadOrCreateNew()
         {
             YandexMetrica.Send("loaded");
-            GameData gameData = null;
+            GameData gameData;
 
-            if (!Exists())
+            if (Exists() == false)
             {
-                CreatingNewData();
+                gameData = CreatingNewData();
             }
             else
             {
@@ -32,10 +36,11 @@ namespace YG
         public void Save(GameData gameData)
         {
             YandexMetrica.Send("saved");
-            
+
             gameData.Serialize();
 
             var dataJson = JsonUtility.ToJson(gameData, false);
+
             YandexGame.savesData.isFirstSession = false;
             YandexGame.savesData.json = dataJson;
             YandexGame.SaveProgress();
@@ -43,7 +48,9 @@ namespace YG
 
         public bool Exists()
         {
-            return YandexGame.SDKEnabled && YandexGame.savesData.isFirstSession == false;
+            return YandexGame.SDKEnabled &&
+                   YandexGame.savesData.isFirstSession == false &&
+                   string.IsNullOrEmpty(YandexGame.savesData.json) == false;
         }
 
         public void Remove()
@@ -51,24 +58,30 @@ namespace YG
             CreatingNewData();
         }
 
-        private static void CreatingNewData()
+        private GameData CreatingNewData()
         {
-            var dialogues = new DialoguesData[6];
+            var gameData = new GameData();
 
-            for (var i = 0; i < dialogues.Length; i++)
-            {
-                dialogues[i] = new DialoguesData();
-            }
+            Save(gameData);
 
-            GameData gameData = new CustomData();
-            gameData.dialogues = dialogues;
-            gameData.Serialize();
-            
-            var dataJson = JsonConvert.SerializeObject(gameData);
-            YandexGame.savesData.isFirstSession = false;
-            YandexGame.savesData.json = dataJson;
-            YandexGame.SaveProgress();
+            return gameData;
         }
+
+#if UNITY_EDITOR
+        [MenuItem("Tools/Data save-load/Reset save for Yandex Game", false, 1000)]
+        private static void ResetSave()
+        {
+            if (Application.isPlaying)
+            {
+                YandexGame.ResetSaveProgress();
+                Debug.Log("Save reset");
+            }
+            else
+            {
+                Debug.LogError("You can reset save only in play mode");
+            }
+        }
+#endif
     }
 }
 
