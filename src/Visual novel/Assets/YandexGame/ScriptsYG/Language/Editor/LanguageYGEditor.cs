@@ -6,6 +6,7 @@ using UnityEngine.UI;
 using UnityEditor.SceneManagement;
 using YG.Utils.Lang;
 using Color = UnityEngine.Color;
+using Font = UnityEngine.Font;
 #if YG_TEXT_MESH_PRO
 using TMPro;
 #endif

@@ -20,7 +20,10 @@ namespace YG
             else
             {
                 var dataJson = YandexGame.savesData.json;
-                gameData = JsonConvert.DeserializeObject<GameData>(dataJson);
+
+                gameData = JsonUtility.FromJson<GameData>(dataJson);
+
+                gameData.Deserialize();
             }
 
             return gameData;
@@ -32,7 +35,7 @@ namespace YG
             
             gameData.Serialize();
 
-            var dataJson = JsonConvert.SerializeObject(gameData);
+            var dataJson = JsonUtility.ToJson(gameData, false);
             YandexGame.savesData.isFirstSession = false;
             YandexGame.savesData.json = dataJson;
             YandexGame.SaveProgress();
