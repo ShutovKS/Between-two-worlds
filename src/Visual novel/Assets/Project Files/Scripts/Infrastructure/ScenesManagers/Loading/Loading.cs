@@ -13,7 +13,6 @@ using Infrastructure.Services.Sounds;
 using Infrastructure.Services.UIFactory;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using YG;
 #if YG_SERVICES
 using Data.Constant;
 using YG;
