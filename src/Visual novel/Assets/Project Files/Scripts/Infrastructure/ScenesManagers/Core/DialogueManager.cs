@@ -2,8 +2,8 @@
 
 using System;
 using System.Collections;
+using Data.Constant;
 using Data.Localization.Dialogues;
-using Data.Static;
 using Infrastructure.Services.CoroutineRunner;
 using Infrastructure.Services.Sounds;
 using UI.Background;
@@ -18,13 +18,13 @@ namespace Infrastructure.ScenesManagers.Core
     public class DialogueManager
     {
         public DialogueManager(Func<string, IPhrase> onGetPart, DialogueUI dialogueUI,
-            BackgroundUI backgroundUI, ICoroutineRunner coroutineRunner, ISoundsService soundsService,
+            BackgroundUI backgroundUI, ICoroutineRunnerService coroutineRunnerService, ISoundsService soundsService,
             UnityAction<string, string, string> onNewDialog, UnityAction<string> handleActionTrigger)
         {
             _onGetPart = onGetPart;
             _dialogueUI = dialogueUI;
             _backgroundUI = backgroundUI;
-            _coroutineRunner = coroutineRunner;
+            _coroutineRunnerService = coroutineRunnerService;
             _soundsService = soundsService;
             _onNewDialog = onNewDialog;
             _handleActionTrigger = handleActionTrigger;
@@ -35,7 +35,7 @@ namespace Infrastructure.ScenesManagers.Core
 
         public IPhrase CurrentDialogue { get; private set; }
         private readonly BackgroundUI _backgroundUI;
-        private readonly ICoroutineRunner _coroutineRunner;
+        private readonly ICoroutineRunnerService _coroutineRunnerService;
         private readonly ISoundsService _soundsService;
         private readonly UnityAction<string, string, string> _onNewDialog;
         private readonly UnityAction<string> _handleActionTrigger;
@@ -56,24 +56,31 @@ namespace Infrastructure.ScenesManagers.Core
         {
             _typingDelay = SECONDS_DELAY_DEFAULT;
             _dialogueUI.SetActivePanel(true);
-            var id = PlayerPrefs.GetString(Constant.KEY_ID_DIALOGUE_FOR_PLAYER_PREFS, Constant.DIALOG_START_ID);
+            var id = PlayerPrefs.GetString(PlayerPrefsPath.KEY_ID_DIALOGUE_FOR_PLAYER_PREFS,
+                PlayerPrefsPath.DIALOG_START_ID);
             SetDialog(id);
         }
 
         public void DialogFurther()
         {
             if (CurrentDialogue is not Phrase phrase)
+            {
                 throw new Exception($"Current dialogue is not {CurrentDialogue.ID}");
+            }
 
             if (_isDialogCompleted)
             {
-                if (!string.IsNullOrEmpty(phrase.ActionTrigger)) _handleActionTrigger?.Invoke(phrase.ActionTrigger);
+                if (!string.IsNullOrEmpty(phrase.ActionTrigger))
+                {
+                    _handleActionTrigger?.Invoke(phrase.ActionTrigger);
+                }
+
                 SetDialog(phrase.IDNextDialog);
             }
             else
             {
                 _isDialogCompleted = true;
-                _coroutineRunner.StopCoroutine(_displayTypingCoroutine);
+                _coroutineRunnerService.StopCoroutine(_displayTypingCoroutine);
                 _dialogueUI.DialogueText.SetText(phrase.Text);
                 _onDialogueCompleted?.Invoke();
             }
@@ -92,7 +99,7 @@ namespace Infrastructure.ScenesManagers.Core
                 _typingDelay = SECONDS_DELAY_FAST;
             }
         }
-        
+
         public void AutoDialogSwitchMode()
         {
             if (_isAutoMode)
@@ -139,7 +146,11 @@ namespace Infrastructure.ScenesManagers.Core
         {
             if (_isDialogCompleted && CurrentDialogue is Phrase phrase)
             {
-                if (!string.IsNullOrEmpty(phrase.ActionTrigger)) _handleActionTrigger?.Invoke(phrase.ActionTrigger);
+                if (!string.IsNullOrEmpty(phrase.ActionTrigger))
+                {
+                    _handleActionTrigger?.Invoke(phrase.ActionTrigger);
+                }
+
                 SetDialog(phrase.IDNextDialog);
             }
         }
@@ -169,7 +180,7 @@ namespace Infrastructure.ScenesManagers.Core
                 _soundsService.SetClip(phrase.SoundEffect, true);
             }
 
-            _displayTypingCoroutine = _coroutineRunner.StartCoroutine(DisplayTyping(phrase.Text));
+            _displayTypingCoroutine = _coroutineRunnerService.StartCoroutine(DisplayTyping(phrase.Text));
         }
 
         private IEnumerator DisplayTyping(string text)
@@ -218,6 +229,5 @@ namespace Infrastructure.ScenesManagers.Core
         }
 
         #endregion
-
     }
 }

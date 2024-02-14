@@ -83,7 +83,7 @@ CharacterGF: OK, vado per primo. Non c'è bisogno di accompagnarlo. Finché.
 CharacterH: Ciao.
 CharacterH: è sempre stata così, anche se qualcosa non è cambiato nel tempo.
 CharacterH: Eppure, l'operazione... il potenziale si sbarazzerà di questi tormenti, ma con tali complicazioni... Cosa devo fare?
-Niente: Quella sera.
+Nothing: Quella sera.
 CharacterH: <RoomHeroDream>è così tardi, è ora di andare a letto. Inoltre, domani sarà necessario alzarsi presto, in modo da non essere in ritardo.
 Nothing: ...
 CharacterG: <ForestPath>$WooScary$è bello vederti.
@@ -265,7 +265,7 @@ CharacterGF: Quindi è ora di tornare.
 CharacterGF: Allora dove dovremmo incontrarci domani? Non riesco a pensare a niente?
 CharacterH: Se non hai idee, allora sceglierò, andrò al cinema.
 OtherSignatureUnderPainting: <HoldingHands>"Momenti che rafforzano il nostro legame."
-Niente: Tornato a casa e addormentato.
+Nothing: Tornato a casa e addormentato.
 CharacterH: <ForestPath>$WooScary$Qualcosa in questa notte...
 CharacterG: Sono qui!
 CharacterH: Ogni volta che ti incontro, nel mio cuore si risveglia la sensazione che il mondo sia così bello e pieno di misteri.
@@ -326,7 +326,7 @@ CharacterH: <GirlfriendHouseEvening>buona notte.
 CharacterGF: Anche a te.
 CharacterH: Lei è reale. I suoi sentimenti sono sinceri e mi sento allo stesso modo. Ma è così difficile. 
 CharacterH: L'intera giornata è stata così intensa. Da un lato, la gioia di ciò che ha detto, ma dall'altro è un'incredibile tensione. 
-Niente: $FrozenWinter$Raggiungere l'ospedale.
+Nothing: $FrozenWinter$Raggiungere l'ospedale.
 CharacterD: <Hospital>Ti stavo aspettando, entra.
 CharacterD: <DoctorOffice>Ciao. Come ti senti oggi?
 CharacterH: Non molto buono. Questi pensieri... queste soluzioni... mi perseguitano.
@@ -334,7 +334,7 @@ CharacterD: Capisco. Prendere una decisione che può avere un impatto su tutta l
 CharacterH: Mi sento vuoto. Da un lato, voglio vivere. Voglio costruire il futuro, godermi i momenti.
 CharacterH: Ma d'altra parte, questi dolori e ciò che può peggiorare le cose... Temo che l'operazione potrebbe non avere successo e mi troverò in una situazione peggiore.
 CharacterD: I tuoi sentimenti sono assolutamente comprensibili. La chirurgia è un passo serio. Abbiamo dati sulla tua condizione e sui potenziali rischi, ma la decisione spetta a te. 
-Carattere: è importante ascoltare la tua voce interiore e capire cosa è più significativo per te.
+CharacterD: è importante ascoltare la tua voce interiore e capire cosa è più significativo per te.
 CharacterH: Semplicemente Non so quale strada prendere. E se facessi la scelta sbagliata?
 CharacterD: Non esiste una scelta "sbagliata". Le scelte che farai rifletteranno i tuoi valori, sogni e paure. La vita è piena di incertezza ed è importante andare avanti con ciò che senti dentro.
 CharacterH: Grazie per il vostro supporto.
@@ -342,7 +342,6 @@ CharacterD: A proposito, devi capire che se rifiuti l'intervento chirurgico, non
 CharacterD: Certo, la possibilità è molto piccola, la tua condizione è unica e quelli come te possono essere contati sulle dita di una mano. Ma se tutto va bene, i problemi alla testa scompariranno.
 CharacterH: Quindi scelgo...
 CharacterH: #Consenso all'intervento chirurgico.@ending1@|fallimento dell'operazione.@ending2@
-
 CharacterD: @ending1@<DoctorOffice>$WooScary$Probabilmente è stata una scelta difficile.
 CharacterH: Spero ancora che tutto vada bene.
 CharacterD: Beh, vado a riferire sulla tua decisione e nelle prossime tre ore inizieremo.
@@ -356,7 +355,6 @@ CharacterGF: <RoomInHospital>$Beanfeast$ti sei svegliato.
 CharacterH: Tu... qua.
 CharacterGF: Certo, sarò sempre lì per te.
 CharacterH: Ora posso andare avanti, costruire il mio futuro... insieme a te.{end2}
-
 CharacterD: @ending2@<DoctorOffice>Probabilmente è stata una scelta difficile.
 CharacterD: Non ti dissuaderò. Questo è probabilmente il nostro ultimo incontro.
 CharacterH: Addio.

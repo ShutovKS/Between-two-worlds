@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 96a4c910f8df9c948aecac7088022219
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 235877
+  packageName: PluginYG - Yandex Game integration
+  packageVersion: 1.6
+  assetPath: Assets/YandexGame/Prefabs/GraphicsSettings.prefab
+  uploadId: 627339

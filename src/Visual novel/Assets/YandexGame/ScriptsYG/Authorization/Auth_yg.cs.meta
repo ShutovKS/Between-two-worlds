@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 1c551c2e4702fc3469b681e2c974921e
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 235877
+  packageName: PluginYG - Yandex Game integration
+  packageVersion: 1.6
+  assetPath: Assets/YandexGame/ScriptsYG/Authorization/Auth_yg.cs
+  uploadId: 627339

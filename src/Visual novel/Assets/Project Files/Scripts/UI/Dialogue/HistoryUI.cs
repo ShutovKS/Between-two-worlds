@@ -1,72 +1,92 @@
+#region
+
 using System;
 using System.Collections.Generic;
-using Units.Tools;
+using Unit.Tools.Extensions;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
+#endregion
+
 namespace UI.Dialogue
 {
-	public class HistoryUI : MonoBehaviour
-	{
-		[SerializeField] private GameObject _historyPhrasePrefab;
-		[SerializeField] private Transform _contentTransform;
-		[SerializeField] private GameObject _historyGameObject;
-		[SerializeField] private Button _backButton;
+    public class HistoryUI : MonoBehaviour
+    {
+        [SerializeField] private GameObject _historyPhrasePrefab;
+        [SerializeField] private Transform _contentTransform;
+        [SerializeField] private GameObject _historyGameObject;
+        [SerializeField] private Button _backButton;
 
-		private readonly Dictionary<string, GameObject> _historyPhrases = new();
+        private readonly Dictionary<string, GameObject> _historyPhrases = new();
 
-		public void SetActivePanel(bool value) => _historyGameObject.SetActive(value);
-		
-		public void RegisterBackButtonCallback(UnityAction action) => _backButton.RegisterNewCallback(action);
+        public void SetActivePanel(bool value)
+        {
+            _historyGameObject.SetActive(value);
+        }
 
-		public void CreateHistoryPhrase(string id, string name, string text)
-		{
-			var historyPhraseInstantiate = Instantiate(_historyPhrasePrefab, _contentTransform);
-			historyPhraseInstantiate.SetActive(true);
-			_historyPhrases.Add(id, historyPhraseInstantiate);
+        public void RegisterBackButtonCallback(UnityAction action)
+        {
+            _backButton.RegisterNewCallback(action);
+        }
 
-			if (historyPhraseInstantiate.TryGetComponent(out HistoryPhraseUI historyPhraseUI))
-			{
-				historyPhraseUI.NameText.text = name;
-				historyPhraseUI.TextText.text = text;
-			}
-			else throw new Exception("No HistoryPhraseUI in instance historyPhrasePrefab");
+        public void CreateHistoryPhrase(string id, string name, string text)
+        {
+            var historyPhraseInstantiate = Instantiate(_historyPhrasePrefab, _contentTransform);
+            historyPhraseInstantiate.SetActive(true);
+            _historyPhrases.Add(id, historyPhraseInstantiate);
 
-			var contentPanelRT = _contentTransform.GetComponent<RectTransform>();
-			var panel = historyPhraseInstantiate.GetComponent<RectTransform>();
+            if (historyPhraseInstantiate.TryGetComponent(out HistoryPhraseUI historyPhraseUI))
+            {
+                historyPhraseUI.NameText.text = name;
+                historyPhraseUI.TextText.text = text;
+            }
+            else
+            {
+                throw new Exception("No HistoryPhraseUI in instance historyPhrasePrefab");
+            }
 
-			var scrollSizeDelta = contentPanelRT.sizeDelta;
-			scrollSizeDelta.y += contentPanelRT.childCount == 1
-				? panel.sizeDelta.y
-				: panel.sizeDelta.y * 1.5f;
+            var contentPanelRT = _contentTransform.GetComponent<RectTransform>();
+            var panel = historyPhraseInstantiate.GetComponent<RectTransform>();
 
-			contentPanelRT.sizeDelta = scrollSizeDelta;
+            var scrollSizeDelta = contentPanelRT.sizeDelta;
+            scrollSizeDelta.y += contentPanelRT.childCount == 1
+                ? panel.sizeDelta.y
+                : panel.sizeDelta.y * 1.5f;
 
-			var panelAnchoredPosition = panel.anchoredPosition;
-			panelAnchoredPosition.y = - scrollSizeDelta.y + panel.sizeDelta.y * 0.5f;
-			panel.anchoredPosition = panelAnchoredPosition;
-		}
-		
-		public void ClearHistory()
-		{
-			foreach (var historyPhrase in _historyPhrases)
-			{
-				Destroy(historyPhrase.Value);
-			}
-			_historyPhrases.Clear();
-		}
+            contentPanelRT.sizeDelta = scrollSizeDelta;
 
-		public void DestroyHistoryPhrase(string id)
-		{
-			if (_historyPhrases.TryGetValue(id, out var go))
-			{
-				Destroy(go);
-				_historyPhrases.Remove(id);
-			}
-			else throw new Exception($"No id {id} in dictionary history phrases");
-		}
-		
-		public IEnumerable<string> GetHistoryPhrasesId() => _historyPhrases.Keys;
-	}
+            var panelAnchoredPosition = panel.anchoredPosition;
+            panelAnchoredPosition.y = -scrollSizeDelta.y + panel.sizeDelta.y * 0.5f;
+            panel.anchoredPosition = panelAnchoredPosition;
+        }
+
+        public void ClearHistory()
+        {
+            foreach (var historyPhrase in _historyPhrases)
+            {
+                Destroy(historyPhrase.Value);
+            }
+
+            _historyPhrases.Clear();
+        }
+
+        public void DestroyHistoryPhrase(string id)
+        {
+            if (_historyPhrases.TryGetValue(id, out var go))
+            {
+                Destroy(go);
+                _historyPhrases.Remove(id);
+            }
+            else
+            {
+                throw new Exception($"No id {id} in dictionary history phrases");
+            }
+        }
+
+        public IEnumerable<string> GetHistoryPhrasesId()
+        {
+            return _historyPhrases.Keys;
+        }
+    }
 }

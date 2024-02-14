@@ -1,7 +1,8 @@
 ﻿#region
 
+using System;
 using TMPro;
-using Units.Tools;
+using Unit.Tools.Extensions;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -10,19 +11,21 @@ using UnityEngine.UI;
 
 namespace UI.SaveLoad
 {
-	public class ButtonsUI : MonoBehaviour
-	{
-		[SerializeField] private Button _backButton;
-		[SerializeField] private TextMeshProUGUI _backButtonText;
+    public class ButtonsUI : MonoBehaviour
+    {
+        public Action OnButtonClicked;
+        
+        [SerializeField] private Button _backButton;
+        [SerializeField] private TextMeshProUGUI _backButtonText;
 
-		public void RegisterBackButtonCallback(UnityAction callback)
-		{
-			_backButton.RegisterNewCallback(callback);
-		}
+        private void Awake()
+        {
+            _backButton.RegisterNewCallback(() => OnButtonClicked?.Invoke());
+        }
 
-		public void SetBackButtonText(string text)
-		{
-			_backButtonText.text = text;
-		}
-	}
+        public void SetBackButtonText(string text)
+        {
+            _backButtonText.text = text;
+        }
+    }
 }

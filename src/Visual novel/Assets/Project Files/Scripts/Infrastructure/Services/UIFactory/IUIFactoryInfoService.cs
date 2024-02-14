@@ -12,14 +12,14 @@ using UI.SaveLoad;
 
 namespace Infrastructure.Services.UIFactory
 {
-	public interface IUIFactoryInfoService
-	{
-		DialogueUI DialogueUI { get; }
-		MainMenuUI MainMenuUI { get; }
-		BackgroundUI BackgroundUI { get; }
-		ChooseLanguageUI ChooseLanguageUI { get; }
-		ConfirmationUI ConfirmationUI { get; }
-		SaveLoadUI SaveLoadUI { get; }
-		LastWordsUI LastWordsUI { get; }
-	}
+    public interface IUIFactoryInfoService
+    {
+        DialogueUI DialogueUI { get; }
+        MainMenuUI MainMenuUI { get; }
+        BackgroundUI BackgroundUI { get; }
+        ChooseLanguageUI ChooseLanguageUI { get; }
+        ConfirmationUI ConfirmationUI { get; }
+        SaveLoadUI SaveLoadUI { get; }
+        LastWordsUI LastWordsUI { get; }
+    }
 }

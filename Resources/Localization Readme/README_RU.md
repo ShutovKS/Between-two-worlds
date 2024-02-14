@@ -1,6 +1,6 @@
 Rus | [Eng](../../README.md)
 
-# Между двумя мирами
+# Между двух миров
 
 ## Описание
 
@@ -38,12 +38,22 @@ MIT Лицензия
 
 ### Главное меню
 
-![Главное меню](../../Resources/Screenshots/Rus/main_menu.png)
+![Main menu](../../Resources/Screenshots/Rus/screenshot_main_menu.png)
 
 ### Геймплей
 
-![Геймплей](../../Resources/Screenshots/Rus/gameplay_1.png)
+![Gameplay](../../Resources/Screenshots/Rus/screenshot_gameplay_1.png)
 
-![Геймплей](../../Resources/Screenshots/Rus/gameplay_2.png)
+![Gameplay](../../Resources/Screenshots/Rus/screenshot_gameplay_2.png)
 
-![Геймплей](../../Resources/Screenshots/Rus/gameplay_3.png)
+![Gameplay](../../Resources/Screenshots/Rus/screenshot_gameplay_3.png)
+
+![Gameplay](../../Resources/Screenshots/Rus/screenshot_gameplay_4.png)
+
+### Прочее
+
+![Other](../../Resources/Screenshots/Rus/screenshot_dialogue_history.png)
+
+![Other](../../Resources/Screenshots/Rus/screenshot_save_load.png)
+
+![Other](../../Resources/Screenshots/Rus/screenshot_language_selection.png)

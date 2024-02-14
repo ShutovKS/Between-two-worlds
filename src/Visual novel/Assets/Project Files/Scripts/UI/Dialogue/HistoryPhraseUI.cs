@@ -1,5 +1,9 @@
+#region
+
 using TMPro;
 using UnityEngine;
+
+#endregion
 
 namespace UI.Dialogue
 {
