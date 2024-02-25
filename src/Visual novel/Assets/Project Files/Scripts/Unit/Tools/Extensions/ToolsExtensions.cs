@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 #endregion
 
-namespace Unit.Tools.Extensions
+namespace Tools.Extensions
 {
     public static class ToolsExtensions
     {

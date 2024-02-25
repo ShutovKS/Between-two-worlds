@@ -15,6 +15,7 @@ namespace Infrastructure.Services.UIFactory
         Task CreatedConfirmationScreen();
         Task CreatedSaveLoadScreen();
         Task CreatedLastWordsScreen();
+        Task CreatedImageCaptureForSaveScreen();
 
         void DestroyMainMenuScreen();
         void DestroyDialogueScreen();
@@ -23,5 +24,6 @@ namespace Infrastructure.Services.UIFactory
         void DestroyConfirmationScreen();
         void DestroySaveLoadScreen();
         void DestroyLastWordsScreen();
+        void DestroyImageCaptureForSaveScreen();
     }
 }

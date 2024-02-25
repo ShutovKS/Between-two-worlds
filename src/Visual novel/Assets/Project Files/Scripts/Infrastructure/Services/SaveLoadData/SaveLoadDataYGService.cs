@@ -12,38 +12,42 @@ namespace YG
 {
     public class SaveLoadDataYGService : ISaveLoadDataService
     {
+        private GameData _gameData;
+        
+        public GameData GetData()
+        {
+            return _gameData ??= LoadOrCreateNew();
+        }
+
         public GameData LoadOrCreateNew()
         {
             YandexMetrica.Send("loaded");
-            GameData gameData;
 
             if (Exists() == false)
             {
-                gameData = CreatingNewData();
+                _gameData = CreatingNewData();
             }
             else
             {
                 var dataJson = YandexGame.savesData.json;
 
-                gameData = JsonUtility.FromJson<GameData>(dataJson);
-
-                gameData.Deserialize();
+                _gameData = JsonUtility.FromJson<GameData>(dataJson);
             }
 
-            return gameData;
+            return _gameData;
         }
 
         public void Save(GameData gameData)
         {
             YandexMetrica.Send("saved");
 
-            gameData.Serialize();
-
             var dataJson = JsonUtility.ToJson(gameData, false);
 
             YandexGame.savesData.isFirstSession = false;
             YandexGame.savesData.json = dataJson;
             YandexGame.SaveProgress();
+
+            _gameData = gameData;
         }
 
         public bool Exists()

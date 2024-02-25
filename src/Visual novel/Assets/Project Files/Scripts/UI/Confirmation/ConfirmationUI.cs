@@ -10,7 +10,7 @@ namespace UI.Confirmation
 {
     public class ConfirmationUI : MonoBehaviour, ILocalizableUI
     {
-        [SerializeField] private GameObject _confirmationScreenGameObject;
+        [SerializeField] private Canvas canvas;
 
         [field: SerializeField] public ConfirmationButtonsUI Buttons { get; private set; }
         [field: SerializeField] public ConfirmationTextUI Text { get; private set; }
@@ -24,7 +24,7 @@ namespace UI.Confirmation
 
         public void SetActivePanel(bool value)
         {
-            _confirmationScreenGameObject.SetActive(value);
+            canvas.enabled = value;
         }
     }
 }

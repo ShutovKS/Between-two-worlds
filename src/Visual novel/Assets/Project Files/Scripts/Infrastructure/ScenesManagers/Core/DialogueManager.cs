@@ -159,7 +159,7 @@ namespace Infrastructure.ScenesManagers.Core
         {
             _onNewDialog.Invoke(phrase.ID, phrase.Name, phrase.Text);
             _dialogueUI.Answers.SetActiveAnswerOptions(false);
-            _backgroundUI.SetBackgroundImage(GetTexture2D("Backgrounds/" + phrase.BackgroundPath));
+            _backgroundUI.SetBackgroundImage(Tools.Extensions.Resources.GetTexture2D("Backgrounds/" + phrase.BackgroundPath));
             _dialogueUI.DialogueText.SetAuthorName(phrase.Name);
             _dialogueUI.DialogueText.SetText(string.Empty);
 
@@ -170,8 +170,7 @@ namespace Infrastructure.ScenesManagers.Core
             else
             {
                 _dialogueUI.Person.SetActionAvatar(true);
-                _dialogueUI.Person.SetAvatar(
-                    GetTexture2D("CharacterAvatars/" + phrase.CharacterAvatarPath));
+                _dialogueUI.Person.SetAvatar(Tools.Extensions.Resources.GetTexture2D("CharacterAvatars/" + phrase.CharacterAvatarPath));
             }
 
             if (_currentSoundEffect != phrase.SoundEffect)
@@ -210,7 +209,6 @@ namespace Infrastructure.ScenesManagers.Core
                 tuples[i] = (response.ResponseList[i].AnswerText,
                     () =>
                     {
-                        //TODO: add name to response
                         _onNewDialog.Invoke(response.ID, null, response.ResponseList[index].AnswerText);
                         SetDialog(response.ResponseList[index].IDNextDialog);
                     });
@@ -218,16 +216,5 @@ namespace Infrastructure.ScenesManagers.Core
 
             _dialogueUI.Answers.SetAnswerOptions(tuples);
         }
-
-        #region Tools
-
-        private static Texture2D GetTexture2D(string path)
-        {
-            var texture2D = Resources.Load<Texture2D>("Data/" + path);
-
-            return texture2D;
-        }
-
-        #endregion
     }
 }

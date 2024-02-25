@@ -25,39 +25,41 @@ namespace Infrastructure.Services.SaveLoadData
         private const string FILE_NAME = "GameData.txt";
         private const string FOLDER_NAME = "DataFolder";
         private readonly string _filePath;
+        private GameData _gameData;
+
+        public GameData GetData()
+        {
+            return _gameData ??= LoadOrCreateNew();
+        }
 
         public GameData LoadOrCreateNew()
         {
-            GameData gameData;
-            
-            if (Exists() == false)
-            {
-                gameData = CreatingNewData();
-            }
-            else
+            if (File.Exists(_filePath))
             {
                 var json = File.ReadAllText(_filePath);
 
-                gameData = JsonUtility.FromJson<GameData>(json);
-
-                gameData.Deserialize();
+                _gameData = JsonUtility.FromJson<GameData>(json);
+            }
+            else
+            {
+                _gameData = CreatingNewData();
             }
 
-            return gameData;
+            return _gameData;
         }
 
         public void Save(GameData gameData)
         {
-            gameData.Serialize();
-
             var dataString = JsonUtility.ToJson(gameData, false);
 
             File.WriteAllText(_filePath, dataString);
+            
+            _gameData = gameData;
         }
 
         public bool Exists()
         {
-            return File.Exists(_filePath);
+            return _gameData != null;
         }
 
         public void Remove()

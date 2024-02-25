@@ -673,7 +673,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36b35d484ec54e75bf73b985e57a15ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainMenuScreenGameObject: {fileID: 5018326880551288939}
+  canvas: {fileID: 903380684295257115}
   <Buttons>k__BackingField: {fileID: 5307597545719349517}
   <GameName>k__BackingField: {fileID: 7024724666437294960}
 --- !u!1 &4781323547281948093

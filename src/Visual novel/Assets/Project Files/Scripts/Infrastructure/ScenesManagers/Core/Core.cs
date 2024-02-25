@@ -57,8 +57,8 @@ namespace Infrastructure.ScenesManagers.Core
                 _uiFactoryInfo.SaveLoadUI,
                 _dataCurrent,
                 () => _dialogueManager.CurrentDialogue.ID,
-                _uiFactoryInfo.BackgroundUI,
-                _uiFactoryInfo.DialogueUI,
+                _uiFactoryInfo.ImageCaptureForSaveUI,
+                _localisationDataLoad,
                 _dialogueManager.SetDialog,
                 _historyManager.ClearHistory);
 
@@ -83,7 +83,7 @@ namespace Infrastructure.ScenesManagers.Core
 
         private void LoadData()
         {
-            _dataCurrent = _saveLoadData.LoadOrCreateNew();
+            _dataCurrent = _saveLoadData.GetData();
         }
 
         private void ConfirmExitInMenu()

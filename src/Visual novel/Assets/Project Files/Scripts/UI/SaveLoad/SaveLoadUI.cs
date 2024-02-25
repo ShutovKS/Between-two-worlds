@@ -10,7 +10,7 @@ namespace UI.SaveLoad
 {
     public class SaveLoadUI : MonoBehaviour, ILocalizableUI
     {
-        [SerializeField] private GameObject _saveLoadScreenGameObject;
+        [SerializeField] private Canvas canvas;
         [field: SerializeField] public ButtonsUI ButtonsUI { get; private set; }
         [field: SerializeField] public WindowSaveLoadUI[] SaveDataUIs { get; private set; }
 
@@ -21,7 +21,7 @@ namespace UI.SaveLoad
 
         public void SetActivePanel(bool isActive)
         {
-            _saveLoadScreenGameObject.SetActive(isActive);
+            canvas.enabled = isActive;
         }
     }
 }
