@@ -1,7 +1,7 @@
 #region
 
 using TMPro;
-using Unit.Tools.Extensions;
+using Tools.Extensions;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;

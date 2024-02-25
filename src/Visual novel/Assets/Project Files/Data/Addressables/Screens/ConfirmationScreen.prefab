@@ -1062,6 +1062,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 195cb20d696e8734ea121543a065fb48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _confirmationScreenGameObject: {fileID: 5290560068533709456}
+  canvas: {fileID: 1522671980725902596}
   <Buttons>k__BackingField: {fileID: 4096363266801128770}
   <Text>k__BackingField: {fileID: 8438593658389667757}

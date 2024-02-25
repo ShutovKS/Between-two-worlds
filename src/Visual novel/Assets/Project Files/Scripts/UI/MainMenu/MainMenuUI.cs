@@ -10,7 +10,7 @@ namespace UI.MainMenu
 {
     public class MainMenuUI : MonoBehaviour, ILocalizableUI
     {
-        [SerializeField] private GameObject mainMenuScreenGameObject;
+        [SerializeField] private Canvas canvas;
 
         [field: SerializeField] public ButtonsUI Buttons { get; private set; }
         [field: SerializeField] public GameNameUI GameName { get; private set; }
@@ -26,7 +26,7 @@ namespace UI.MainMenu
 
         public void SetActivePanel(bool value)
         {
-            mainMenuScreenGameObject.SetActive(value);
+            canvas.enabled = value;
         }
     }
 }

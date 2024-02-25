@@ -505,7 +505,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a408c51763c574f44a2f6690547843fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _saveLoadScreenGameObject: {fileID: 2112297520855694241}
+  canvas: {fileID: 14861117093331406}
   <ButtonsUI>k__BackingField: {fileID: 8375605617805432552}
   <SaveDataUIs>k__BackingField:
   - {fileID: 2164555347121395142}

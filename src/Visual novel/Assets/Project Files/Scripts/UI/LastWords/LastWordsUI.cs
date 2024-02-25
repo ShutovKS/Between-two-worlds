@@ -3,7 +3,7 @@
 using Data.Localization.UILocalisation;
 using Infrastructure.Services.LocalizationUI;
 using TMPro;
-using Unit.Tools.Extensions;
+using Tools.Extensions;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -16,7 +16,7 @@ namespace UI.LastWords
     {
         [SerializeField] private TextMeshProUGUI _text;
         [SerializeField] private Button _backButton;
-        [SerializeField] private GameObject _panel;
+        [SerializeField] private Canvas canvas;
 
         public void SetText(string text)
         {
@@ -35,7 +35,7 @@ namespace UI.LastWords
 
         public void SetActivePanel(bool isActive)
         {
-            _panel.SetActive(isActive);
+            canvas.enabled = isActive;
         }
     }
 }

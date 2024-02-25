@@ -696,7 +696,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4df10d7bdf447b585e3f01c13d2558b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _dialogueScreenGameObject: {fileID: 4136458253577208461}
+  canvas: {fileID: 6686033194798059184}
   <Answers>k__BackingField: {fileID: 2108221363639294097}
   <Person>k__BackingField: {fileID: 8747564789639568428}
   <DialogueText>k__BackingField: {fileID: 1669926806809939411}

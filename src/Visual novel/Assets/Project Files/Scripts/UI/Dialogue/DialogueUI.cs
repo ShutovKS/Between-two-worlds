@@ -10,7 +10,7 @@ namespace UI.Dialogue
 {
     public class DialogueUI : MonoBehaviour, ILocalizableUI
     {
-        [SerializeField] private GameObject _dialogueScreenGameObject;
+        [SerializeField] private Canvas canvas;
 
         [field: SerializeField] public AnswerOptionsUI Answers { get; private set; }
         [field: SerializeField] public PersonAvatarUI Person { get; private set; }
@@ -28,7 +28,7 @@ namespace UI.Dialogue
 
         public void SetActivePanel(bool value)
         {
-            _dialogueScreenGameObject.SetActive(value);
+            canvas.enabled = value;
         }
     }
 }
