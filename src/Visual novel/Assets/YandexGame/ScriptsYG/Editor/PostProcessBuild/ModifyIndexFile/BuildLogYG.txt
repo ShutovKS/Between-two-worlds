@@ -1,2 +1,2 @@
-Build path: C:/Users/ShutovKS/Documents/projects/Between-two-worlds/src/Visual novel/Builds/WebGL_YandexGame1.0.3/Between_Two_Worlds_1.0.3/Between_Two_Worlds
-Build number: 166
+Build path: C:/Users/ShutovKS/Documents/projects/Between-two-worlds/src/Visual novel/Builds/WebGL_YandexGame1.0.4/Between_Two_Worlds
+Build number: 169
