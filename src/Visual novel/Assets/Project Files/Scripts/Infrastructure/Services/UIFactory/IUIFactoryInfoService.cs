@@ -4,6 +4,7 @@ using UI.Background;
 using UI.ChooseLanguage;
 using UI.Confirmation;
 using UI.Dialogue;
+using UI.ImageCaptureForSave;
 using UI.LastWords;
 using UI.MainMenu;
 using UI.SaveLoad;
@@ -21,5 +22,6 @@ namespace Infrastructure.Services.UIFactory
         ConfirmationUI ConfirmationUI { get; }
         SaveLoadUI SaveLoadUI { get; }
         LastWordsUI LastWordsUI { get; }
+        ImageCaptureForSaveUI ImageCaptureForSaveUI { get; }
     }
 }

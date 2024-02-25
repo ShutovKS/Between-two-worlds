@@ -8,6 +8,7 @@ using UI.Background;
 using UI.ChooseLanguage;
 using UI.Confirmation;
 using UI.Dialogue;
+using UI.ImageCaptureForSave;
 using UI.LastWords;
 using UI.MainMenu;
 using UI.SaveLoad;
@@ -37,6 +38,7 @@ namespace Infrastructure.Services.UIFactory
         public ConfirmationUI ConfirmationUI { get; private set; }
         public SaveLoadUI SaveLoadUI { get; private set; }
         public LastWordsUI LastWordsUI { get; private set; }
+        public ImageCaptureForSaveUI ImageCaptureForSaveUI { get; private set; }
 
         public async Task CreatedMainMenuScreen()
         {
@@ -132,6 +134,22 @@ namespace Infrastructure.Services.UIFactory
             LastWordsUI = lastWordsScreen.TryGetComponent(out LastWordsUI ui)
                 ? ui
                 : throw new Exception($"No {ui.GetType()} in gameObject");
+            
+            _screens.Add(typeof(LastWordsUI), lastWordsScreen);
+        }
+        
+        public async Task CreatedImageCaptureForSaveScreen()
+        {
+            var prefab = await _assetsAddressablesProviderService.GetAsset<GameObject>(IMAGE_CAPTURE_FOR_SAVE);
+            var instantiate = Instantiate(prefab);
+
+            DontDestroyOnLoad(instantiate);
+
+            ImageCaptureForSaveUI = instantiate.TryGetComponent(out ImageCaptureForSaveUI ui)
+                ? ui
+                : throw new Exception($"No {ui.GetType()} in gameObject");
+            
+            _screens.Add(typeof(ImageCaptureForSaveUI), instantiate);
         }
 
         public void DestroyMainMenuScreen()
@@ -167,6 +185,11 @@ namespace Infrastructure.Services.UIFactory
         public void DestroyLastWordsScreen()
         {
             Destroy(_screens[typeof(LastWordsUI)]);
+        }
+
+        public void DestroyImageCaptureForSaveScreen()
+        {
+            Destroy(_screens[typeof(ImageCaptureForSaveUI)]);
         }
     }
 }

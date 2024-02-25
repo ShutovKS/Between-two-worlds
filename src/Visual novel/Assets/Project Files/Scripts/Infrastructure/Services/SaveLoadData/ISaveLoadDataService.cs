@@ -8,6 +8,7 @@ namespace Infrastructure.Services.SaveLoadData
 {
     public interface ISaveLoadDataService
     {
+        GameData GetData();
         GameData LoadOrCreateNew();
         void Save(GameData gameData);
         bool Exists();

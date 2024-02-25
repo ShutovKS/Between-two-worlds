@@ -55,7 +55,7 @@ namespace Infrastructure.ScenesManagers.Meta
             _uiFactoryInfo.SaveLoadUI.ButtonsUI.OnButtonClicked = () => _uiFactoryInfo.SaveLoadUI.SetActivePanel(false);
 
             var number = 0;
-            var gameData = _saveLoadData.LoadOrCreateNew();
+            var gameData = _saveLoadData.GetData();
 
             foreach (var ui in _uiFactoryInfo.SaveLoadUI.SaveDataUIs)
             {
