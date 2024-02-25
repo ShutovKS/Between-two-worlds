@@ -1,6 +1,6 @@
 ﻿#region
 
-using Unit.Tools.Extensions;
+using Tools.Extensions;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,7 +12,7 @@ namespace UI.Background
     {
         [SerializeField] private Image _backgroundImage;
 
-        [SerializeField] private GameObject _backgroundScreenGameObject;
+        [SerializeField] private Canvas canvas;
 
         public void SetBackgroundImage(Texture2D texture2D)
         {
@@ -28,7 +28,7 @@ namespace UI.Background
 
         public void SetActivePanel(bool value)
         {
-            _backgroundScreenGameObject.SetActive(value);
+            canvas.enabled = value;
         }
     }
 }

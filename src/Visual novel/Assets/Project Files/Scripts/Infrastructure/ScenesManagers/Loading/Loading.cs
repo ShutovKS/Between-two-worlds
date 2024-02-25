@@ -3,6 +3,7 @@
 using System;
 using System.Threading.Tasks;
 using Data.Constant;
+using Data.Localization.Dialogues;
 using Infrastructure.Services;
 using Infrastructure.Services.AssetsAddressables;
 using Infrastructure.Services.CoroutineRunner;
@@ -11,8 +12,11 @@ using Infrastructure.Services.LocalizationUI;
 using Infrastructure.Services.SaveLoadData;
 using Infrastructure.Services.Sounds;
 using Infrastructure.Services.UIFactory;
+using Tools.Camera;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
+using static Tools.Extensions.Resources;
 #if YG_SERVICES
 using Data.Constant;
 using YG;
@@ -43,6 +47,7 @@ namespace Infrastructure.ScenesManagers.Loading
             LanguageSelected(() =>
             {
                 LocalisationUI();
+                LoadData();
                 OpenMainMenu();
             });
         }
@@ -100,6 +105,10 @@ namespace Infrastructure.ScenesManagers.Loading
             await _uiFactory.CreatedLastWordsScreen();
             _uiFactoryInfo.LastWordsUI.SetActivePanel(false);
             _localizerUI.Register(_uiFactoryInfo.LastWordsUI);
+
+            await _uiFactory.CreatedImageCaptureForSaveScreen();
+            _uiFactoryInfo.ImageCaptureForSaveUI.SetActivePanel(false);
+            _localizerUI.Register(_uiFactoryInfo.ImageCaptureForSaveUI);
         }
 
         private void LanguageSelected(Action onCompleted)
@@ -125,6 +134,71 @@ namespace Infrastructure.ScenesManagers.Loading
         {
             var uiLocalisation = _localisationDataLoad.GetUILocalisation();
             _localizerUI.Localize(uiLocalisation);
+        }
+
+        private void LoadData()
+        {
+            var data = _saveLoadData.LoadOrCreateNew();
+
+            var imageCaptureForSaveUI = _uiFactoryInfo.ImageCaptureForSaveUI;
+            var backgroundUI = _uiFactoryInfo.ImageCaptureForSaveUI.BackgroundUI;
+            var dialogueUI = _uiFactoryInfo.ImageCaptureForSaveUI.DialogueUI;
+
+            imageCaptureForSaveUI.SetActivePanel(true);
+
+            for (var index = 0; index < data.dialogues.Length; index++)
+            {
+                var dialoguesData = data.dialogues[index];
+
+                if (dialoguesData.isDataExist == false)
+                {
+                    continue;
+                }
+
+                var phraseId = _localisationDataLoad.GetPhraseId(dialoguesData.idLastDialogue);
+
+                switch (phraseId)
+                {
+                    case Phrase phrase:
+                    {
+                        backgroundUI.SetBackgroundImage(GetTexture2D("Backgrounds/" + phrase.BackgroundPath));
+                        dialogueUI.Answers.SetActiveAnswerOptions(false);
+                        dialogueUI.DialogueText.SetAuthorName(phrase.Name);
+                        dialogueUI.DialogueText.SetText(phrase.Text);
+                        if (phrase.CharacterAvatarPath == null)
+                        {
+                            dialogueUI.Person.SetActionAvatar(false);
+                        }
+                        else
+                        {
+                            dialogueUI.Person.SetActionAvatar(true);
+                            dialogueUI.Person.SetAvatar(GetTexture2D("CharacterAvatars/" + phrase.CharacterAvatarPath));
+                        }
+
+                        break;
+                    }
+                    case Responses response:
+                    {
+                        dialogueUI.Answers.SetActiveAnswerOptions(true);
+
+                        var tuples = new (string, UnityAction)[response.ResponseList.Length];
+                        for (var i = 0; i < response.ResponseList.Length; i++)
+                        {
+                            tuples[i] = (response.ResponseList[i].AnswerText, null);
+                        }
+
+                        dialogueUI.Answers.SetAnswerOptions(tuples);
+                        break;
+                    }
+                }
+
+                var texture2D = CameraTextureCapture.CaptureCameraView(backgroundUI.GetComponent<Canvas>(),
+                    dialogueUI.GetComponent<Canvas>());
+
+                dialoguesData.Background = texture2D;
+            }
+
+            imageCaptureForSaveUI.SetActivePanel(false);
         }
 
         private void OpenMainMenu()

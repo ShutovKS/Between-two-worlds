@@ -19,21 +19,5 @@ namespace Data.Dynamic
         }
 
         public DialoguesData[] dialogues;
-
-        public void Serialize()
-        {
-            foreach (var dialoguesData in dialogues)
-            {
-                dialoguesData?.Serialize();
-            }
-        }
-
-        public void Deserialize()
-        {
-            foreach (var dialoguesData in dialogues)
-            {
-                dialoguesData?.Deserialize();
-            }
-        }
     }
 }

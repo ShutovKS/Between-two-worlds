@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _backgroundImage: {fileID: 4300806037247321405}
-  _backgroundScreenGameObject: {fileID: 6922902121283289269}
+  canvas: {fileID: 3786040181869080432}
 --- !u!1 &7873796638826089811
 GameObject:
   m_ObjectHideFlags: 0
