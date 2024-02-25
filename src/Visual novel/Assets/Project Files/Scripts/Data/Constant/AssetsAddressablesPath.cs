@@ -9,6 +9,7 @@
         public const string CONFIRMATION_SCREEN = "Screens/Confirmation";
         public const string SAVE_LOAD_SCREEN = "Screens/SaveLoad";
         public const string LAST_WORDS_SCREEN = "Screens/LastWords";
+        public const string IMAGE_CAPTURE_FOR_SAVE = "Screens/ImageCaptureForSave";
 
 #if YG_SERVICES
         public const string YANDEX_GAME_PREFAB = "Prefabs/YandexGame";
