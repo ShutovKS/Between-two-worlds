@@ -67,7 +67,7 @@ namespace Infrastructure.ScenesManagers.Core
                     {
                         idLastDialogue = id,
                         titleText = titleText,
-                        background = texture2D,
+                        Background = texture2D,
                         isDataExist = true
                     };
 
@@ -106,7 +106,7 @@ namespace Infrastructure.ScenesManagers.Core
 
         private void SetConfigForDataUI(WindowSaveLoadUI loadUI, DialoguesData dialoguesData, Action onButtonClicked)
         {
-            loadUI.SetImage(dialoguesData.background);
+            loadUI.SetImage(dialoguesData.Background);
             loadUI.SetTitle(dialoguesData.titleText);
             loadUI.OnButtonClicked = onButtonClicked;
         }

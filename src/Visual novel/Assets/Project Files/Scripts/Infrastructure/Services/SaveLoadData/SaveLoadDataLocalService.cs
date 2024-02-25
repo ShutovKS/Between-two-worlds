@@ -39,8 +39,6 @@ namespace Infrastructure.Services.SaveLoadData
                 var json = File.ReadAllText(_filePath);
 
                 gameData = JsonUtility.FromJson<GameData>(json);
-
-                gameData.Deserialize();
             }
 
             return gameData;
@@ -48,8 +46,6 @@ namespace Infrastructure.Services.SaveLoadData
 
         public void Save(GameData gameData)
         {
-            gameData.Serialize();
-
             var dataString = JsonUtility.ToJson(gameData, false);
 
             File.WriteAllText(_filePath, dataString);

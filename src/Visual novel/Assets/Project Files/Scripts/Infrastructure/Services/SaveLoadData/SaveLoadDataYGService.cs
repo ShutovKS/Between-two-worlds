@@ -26,8 +26,6 @@ namespace YG
                 var dataJson = YandexGame.savesData.json;
 
                 gameData = JsonUtility.FromJson<GameData>(dataJson);
-
-                gameData.Deserialize();
             }
 
             return gameData;
@@ -36,8 +34,6 @@ namespace YG
         public void Save(GameData gameData)
         {
             YandexMetrica.Send("saved");
-
-            gameData.Serialize();
 
             var dataJson = JsonUtility.ToJson(gameData, false);
 

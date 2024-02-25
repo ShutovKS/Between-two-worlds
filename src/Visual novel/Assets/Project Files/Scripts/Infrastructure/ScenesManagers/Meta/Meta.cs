@@ -66,7 +66,7 @@ namespace Infrastructure.ScenesManagers.Meta
                     continue;
                 }
 
-                ui.SetImage(data.background);
+                ui.SetImage(data.Background);
                 ui.SetTitle(data.titleText);
                 ui.OnButtonClicked = () =>
                 {
