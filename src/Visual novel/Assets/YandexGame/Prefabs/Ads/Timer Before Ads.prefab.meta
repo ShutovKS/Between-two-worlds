@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 35fa95bde1a56744eb9b514cef2e0af8
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 235877
+  packageName: PluginYG - Yandex Game integration
+  packageVersion: 1.6
+  assetPath: Assets/YandexGame/Prefabs/Ads/Timer Before Ads.prefab
+  uploadId: 627339
