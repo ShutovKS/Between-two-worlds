@@ -29,9 +29,13 @@ namespace Infrastructure.ScenesManagers.Meta
         {
             InitializedServices();
 
-            _uiFactoryInfo.BackgroundUI.SetBackgroundImage(
-                Resources.Load<Texture2D>("Data/Backgrounds/" + ResourcesPath.BACKGROUND_PATH));
-            _menu = new MainMenu(_uiFactoryInfo.MainMenuUI, LoadGame, StartGame, Exit);
+            _uiFactoryInfo.BackgroundUI.SetBackgroundImage(Resources.Load<Texture2D>("Data/Backgrounds/" + ResourcesPath.BACKGROUND_PATH));
+            
+            _menu = new MainMenu(_uiFactoryInfo.MainMenuUI);
+            _uiFactoryInfo.MainMenuUI.Buttons.OnExitButtonClicked = Exit;
+            _uiFactoryInfo.MainMenuUI.Buttons.OnLoadGameButtonClicked = LoadGame;
+            _uiFactoryInfo.MainMenuUI.Buttons.OnStartGameButtonClicked = StartGame;
+            
             _sounds.SetClip(ResourcesPath.SOUND_MAIN_MENU, true);
 
             _loadSceneAsync = SceneManager.LoadSceneAsync("3.Core");

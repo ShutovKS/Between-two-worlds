@@ -13,6 +13,8 @@ namespace UI.Dialogue
 {
     public class HistoryUI : MonoBehaviour
     {
+        public Action OnBackButtonClicked;
+
         [SerializeField] private GameObject _historyPhrasePrefab;
         [SerializeField] private Transform _contentTransform;
         [SerializeField] private GameObject _historyGameObject;
@@ -20,16 +22,16 @@ namespace UI.Dialogue
 
         private readonly Dictionary<string, GameObject> _historyPhrases = new();
 
+        public void Awake()
+        {
+            _backButton.onClick.AddListener(() => OnBackButtonClicked?.Invoke());
+        }
+
         public void SetActivePanel(bool value)
         {
             _historyGameObject.SetActive(value);
         }
-
-        public void RegisterBackButtonCallback(UnityAction action)
-        {
-            _backButton.RegisterNewCallback(action);
-        }
-
+        
         public void CreateHistoryPhrase(string id, string name, string text)
         {
             var historyPhraseInstantiate = Instantiate(_historyPhrasePrefab, _contentTransform);

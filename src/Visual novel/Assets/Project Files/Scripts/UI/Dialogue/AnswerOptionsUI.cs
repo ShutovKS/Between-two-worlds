@@ -13,6 +13,7 @@ namespace UI.Dialogue
         [SerializeField] private GameObject _answerOptionUIPrefab;
         [SerializeField] private Transform _answersParentTransform;
         [SerializeField] private GameObject _answerOptionsGameObject;
+        
         private readonly List<GameObject> _answerOptionUIGameObjects = new();
 
         public void SetAnswerOptions(params (string text, UnityAction action)[] answers)

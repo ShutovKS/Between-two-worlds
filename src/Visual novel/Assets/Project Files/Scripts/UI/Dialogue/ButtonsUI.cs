@@ -1,5 +1,6 @@
 #region
 
+using System;
 using TMPro;
 using Tools.Extensions;
 using UnityEngine;
@@ -27,40 +28,24 @@ namespace UI.Dialogue
         [SerializeField] private TextMeshProUGUI _skipButtonText;
         [SerializeField] private TextMeshProUGUI _autoButtonText;
         [SerializeField] private TextMeshProUGUI _furtherButtonText;
+        
+        public Action OnBackButtonClicked;
+        public Action OnSaveButtonClicked;
+        public Action OnLoadButtonClicked;
+        public Action OnHistoryButtonClicked;
+        public Action OnSpeedUpButtonClicked;
+        public Action OnAutoButtonClicked;
+        public Action OnFurtherButtonClicked;
 
-        public void RegisterBackButtonCallback(UnityAction action)
+        public void Awake()
         {
-            _backButton.RegisterNewCallback(action);
-        }
-
-        public void RegisterSaveButtonCallback(UnityAction action)
-        {
-            _saveButton.RegisterNewCallback(action);
-        }
-
-        public void RegisterLoadButtonCallback(UnityAction action)
-        {
-            _loadButton.RegisterNewCallback(action);
-        }
-
-        public void RegisterHistoryButtonCallback(UnityAction action)
-        {
-            _historyButton.RegisterNewCallback(action);
-        }
-
-        public void RegisterSpeedUpButtonCallback(UnityAction action)
-        {
-            _speedUpButton.RegisterNewCallback(action);
-        }
-
-        public void RegisterAutoButtonCallback(UnityAction action)
-        {
-            _autoButton.RegisterNewCallback(action);
-        }
-
-        public void RegisterFurtherButtonCallback(UnityAction action)
-        {
-            _furtherButton.RegisterNewCallback(action);
+            _backButton.RegisterNewCallback(() => OnBackButtonClicked?.Invoke());
+            _saveButton.RegisterNewCallback(() => OnSaveButtonClicked?.Invoke());
+            _loadButton.RegisterNewCallback(() => OnLoadButtonClicked?.Invoke());
+            _historyButton.RegisterNewCallback(() => OnHistoryButtonClicked?.Invoke());
+            _speedUpButton.RegisterNewCallback(() => OnSpeedUpButtonClicked?.Invoke());
+            _autoButton.RegisterNewCallback(() => OnAutoButtonClicked?.Invoke());
+            _furtherButton.RegisterNewCallback(() => OnFurtherButtonClicked?.Invoke());
         }
 
         public void SetHistoryButtonText(string text)

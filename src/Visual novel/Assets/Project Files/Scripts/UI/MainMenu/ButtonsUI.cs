@@ -1,5 +1,6 @@
 ﻿#region
 
+using System;
 using TMPro;
 using Tools.Extensions;
 using UnityEngine;
@@ -12,6 +13,10 @@ namespace UI.MainMenu
 {
     public class ButtonsUI : MonoBehaviour
     {
+        public Action OnLoadGameButtonClicked;
+        public Action OnStartGameButtonClicked;
+        public Action OnExitButtonClicked;
+
         [SerializeField] private Button _loadGameButton;
         [SerializeField] private Button _startGameButton;
         [SerializeField] private Button _exitButton;
@@ -22,24 +27,14 @@ namespace UI.MainMenu
 
         private void Awake()
         {
+            _loadGameButton.onClick.AddListener(() => OnLoadGameButtonClicked?.Invoke());
+            _startGameButton.onClick.AddListener(() => OnStartGameButtonClicked?.Invoke());
+            _exitButton.onClick.AddListener(() => OnExitButtonClicked?.Invoke());
+
+
 #if UNITY_WEBGL
             _exitButton.gameObject.SetActive(false);
 #endif
-        }
-
-        public void RegisterLoadGameButtonCallback(UnityAction action)
-        {
-            _loadGameButton.RegisterNewCallback(action);
-        }
-
-        public void RegisterStartGameButtonCallback(UnityAction action)
-        {
-            _startGameButton.RegisterNewCallback(action);
-        }
-
-        public void RegisterExitButtonCallback(UnityAction action)
-        {
-            _exitButton.RegisterNewCallback(action);
         }
 
         public void SetLoadGameButton(string text)

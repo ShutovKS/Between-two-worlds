@@ -9,13 +9,9 @@ namespace Infrastructure.ScenesManagers.Meta
 {
     public class MainMenu
     {
-        public MainMenu(MainMenuUI mainMenuUI, UnityAction loadGame, UnityAction startGame, UnityAction exit)
+        public MainMenu(MainMenuUI mainMenuUI)
         {
             _mainMenuUI = mainMenuUI;
-
-            _mainMenuUI.Buttons.RegisterLoadGameButtonCallback(loadGame);
-            _mainMenuUI.Buttons.RegisterStartGameButtonCallback(startGame);
-            _mainMenuUI.Buttons.RegisterExitButtonCallback(exit);
         }
 
         private readonly MainMenuUI _mainMenuUI;

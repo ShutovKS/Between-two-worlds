@@ -17,47 +17,47 @@ namespace Infrastructure.ScenesManagers.Core
 {
     public class DialogueManager
     {
-        public DialogueManager(Func<string, IPhrase> onGetPart, DialogueUI dialogueUI,
-            BackgroundUI backgroundUI, ICoroutineRunnerService coroutineRunnerService, ISoundsService soundsService,
-            UnityAction<string, string, string> onNewDialog, UnityAction<string> handleActionTrigger)
+        public DialogueManager(DialogueUI dialogueUI, BackgroundUI backgroundUI,
+            ICoroutineRunnerService coroutineRunnerService, ISoundsService soundsService)
         {
-            _onGetPart = onGetPart;
             _dialogueUI = dialogueUI;
             _backgroundUI = backgroundUI;
             _coroutineRunnerService = coroutineRunnerService;
             _soundsService = soundsService;
-            _onNewDialog = onNewDialog;
-            _handleActionTrigger = handleActionTrigger;
         }
 
         private const float SECONDS_DELAY_DEFAULT = 0.05f;
         private const float SECONDS_DELAY_FAST = 0.005f;
 
         public IPhrase CurrentDialogue { get; private set; }
-        private readonly BackgroundUI _backgroundUI;
+
         private readonly ICoroutineRunnerService _coroutineRunnerService;
         private readonly ISoundsService _soundsService;
-        private readonly UnityAction<string, string, string> _onNewDialog;
-        private readonly UnityAction<string> _handleActionTrigger;
+        private readonly BackgroundUI _backgroundUI;
         private readonly DialogueUI _dialogueUI;
 
-        private readonly Func<string, IPhrase> _onGetPart;
-        private Coroutine _displayTypingCoroutine;
-        private bool _isAutoMode;
+        public UnityAction<string, string, string> OnNewDialog;
+        public UnityAction<string> HandleActionTrigger;
+        public Func<string, IPhrase> OnGetPart;
 
-        private bool _isDialogCompleted;
-        private bool _isSpeedUpMode;
         private UnityAction _onDialogueCompleted;
-        private float _typingDelay;
+
+        private Coroutine _displayTypingCoroutine;
 
         private string _currentSoundEffect;
 
-        public void StartDialogue()
+        private float _typingDelay;
+
+        private bool _isDialogCompleted;
+        private bool _isSpeedUpMode;
+        private bool _isAutoMode;
+
+
+        public void StartDialogue(string id)
         {
             _typingDelay = SECONDS_DELAY_DEFAULT;
             _dialogueUI.SetActivePanel(true);
-            var id = PlayerPrefs.GetString(PlayerPrefsPath.KEY_ID_DIALOGUE_FOR_PLAYER_PREFS,
-                PlayerPrefsPath.DIALOG_START_ID);
+
             SetDialog(id);
         }
 
@@ -72,7 +72,7 @@ namespace Infrastructure.ScenesManagers.Core
             {
                 if (!string.IsNullOrEmpty(phrase.ActionTrigger))
                 {
-                    _handleActionTrigger?.Invoke(phrase.ActionTrigger);
+                    HandleActionTrigger?.Invoke(phrase.ActionTrigger);
                 }
 
                 SetDialog(phrase.IDNextDialog);
@@ -128,7 +128,7 @@ namespace Infrastructure.ScenesManagers.Core
 
         public void SetDialog(string id)
         {
-            CurrentDialogue = _onGetPart?.Invoke(id);
+            CurrentDialogue = OnGetPart?.Invoke(id);
             _isDialogCompleted = false;
 
             switch (CurrentDialogue)
@@ -148,7 +148,7 @@ namespace Infrastructure.ScenesManagers.Core
             {
                 if (!string.IsNullOrEmpty(phrase.ActionTrigger))
                 {
-                    _handleActionTrigger?.Invoke(phrase.ActionTrigger);
+                    HandleActionTrigger?.Invoke(phrase.ActionTrigger);
                 }
 
                 SetDialog(phrase.IDNextDialog);
@@ -157,9 +157,10 @@ namespace Infrastructure.ScenesManagers.Core
 
         private void SetPhraseTyping(Phrase phrase)
         {
-            _onNewDialog.Invoke(phrase.ID, phrase.Name, phrase.Text);
+            OnNewDialog.Invoke(phrase.ID, phrase.Name, phrase.Text);
             _dialogueUI.Answers.SetActiveAnswerOptions(false);
-            _backgroundUI.SetBackgroundImage(Tools.Extensions.Resources.GetTexture2D("Backgrounds/" + phrase.BackgroundPath));
+            _backgroundUI.SetBackgroundImage(
+                Tools.Extensions.Resources.GetTexture2D("Backgrounds/" + phrase.BackgroundPath));
             _dialogueUI.DialogueText.SetAuthorName(phrase.Name);
             _dialogueUI.DialogueText.SetText(string.Empty);
 
@@ -170,7 +171,8 @@ namespace Infrastructure.ScenesManagers.Core
             else
             {
                 _dialogueUI.Person.SetActionAvatar(true);
-                _dialogueUI.Person.SetAvatar(Tools.Extensions.Resources.GetTexture2D("CharacterAvatars/" + phrase.CharacterAvatarPath));
+                _dialogueUI.Person.SetAvatar(
+                    Tools.Extensions.Resources.GetTexture2D("CharacterAvatars/" + phrase.CharacterAvatarPath));
             }
 
             if (_currentSoundEffect != phrase.SoundEffect)
@@ -209,7 +211,7 @@ namespace Infrastructure.ScenesManagers.Core
                 tuples[i] = (response.ResponseList[i].AnswerText,
                     () =>
                     {
-                        _onNewDialog.Invoke(response.ID, null, response.ResponseList[index].AnswerText);
+                        OnNewDialog.Invoke(response.ID, null, response.ResponseList[index].AnswerText);
                         SetDialog(response.ResponseList[index].IDNextDialog);
                     });
             }
