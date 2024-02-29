@@ -52,11 +52,6 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: caf9732433f4dc044845763962493607
-    m_Address: Prefabs/YandexGame
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 46fd095b9a5968a4fb70e3f242e7f9c8
     m_Address: Screens/ImageCaptureForSave
     m_ReadOnly: 0

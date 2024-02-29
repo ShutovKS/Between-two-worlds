@@ -59,6 +59,7 @@ namespace Infrastructure.ScenesManagers.Core
                 OnNewDialog = _historyManager.AddedDialogInHistory,
                 HandleActionTrigger = _actionTriggerManager.HandleActionTrigger
             };
+            _dialogueManager.OnNewDialog += (id, _, _) => SetNewCurrentDialogue(id);
 
             _saveLoadManager = new SaveLoadManager(
                 _saveLoadData,
@@ -105,6 +106,12 @@ namespace Infrastructure.ScenesManagers.Core
             {
                 _uiFactoryInfo.ConfirmationUI.SetActivePanel(false);
             };
+        }
+
+        private void SetNewCurrentDialogue(string id)
+        {
+            _dataCurrent.currentDialogue = id;
+            _saveLoadData.Save(_dataCurrent);
         }
 
         private void ExitInMenu()
