@@ -40,6 +40,11 @@ namespace UI.MainMenu
 #endif
         }
 
+        public void SetContinueGameButtonInteractable(bool value)
+        {
+            _continueGameButton.interactable = value;
+        }
+
         public void SetLoadGameButton(string text)
         {
             _loadGameButtonText.text = text;
