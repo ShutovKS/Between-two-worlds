@@ -1,6 +1,5 @@
 ﻿#region
 
-using Data.Constant;
 using Data.Dynamic;
 using Infrastructure.Services;
 using Infrastructure.Services.CoroutineRunner;
@@ -10,6 +9,7 @@ using Infrastructure.Services.Sounds;
 using Infrastructure.Services.UIFactory;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using static Data.Constant.PlayerPrefsPath;
 
 #endregion
 
@@ -93,8 +93,7 @@ namespace Infrastructure.ScenesManagers.Core
         private void LoadData()
         {
             _dataCurrent = _saveLoadData.GetData();
-            _idDialogue = PlayerPrefs.GetString(PlayerPrefsPath.KEY_ID_DIALOGUE_FOR_PLAYER_PREFS,
-                PlayerPrefsPath.DIALOG_START_ID);
+            _idDialogue = _dataCurrent.currentDialogue;
         }
 
         private void ConfirmExitInMenu()
