@@ -1,8 +1,9 @@
 ﻿{
-  "GameName": "Tra due mondi",
+  "GameName": "Tra due Mondi",
   "LoadGameButton": "Carica",
-  "StartGameButton": "Inizia",
-  "ExitButton": "Uscita",
+  "StartNewGameButton": "Nuova partita",
+  "ContinueGameButton": "Continua",
+  "ExitButton": "Esci",
   "Title": "Sei sicuro?",
   "YesButton": "Sì",
   "NoButton": "No",

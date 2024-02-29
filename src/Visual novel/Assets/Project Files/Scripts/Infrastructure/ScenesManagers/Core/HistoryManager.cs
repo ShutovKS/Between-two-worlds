@@ -19,7 +19,7 @@ namespace Infrastructure.ScenesManagers.Core
         public void OpenDialogHistory()
         {
             _historyUI.SetActivePanel(true);
-            _historyUI.RegisterBackButtonCallback(() => _historyUI.SetActivePanel(false));
+            _historyUI.OnBackButtonClicked = () => _historyUI.SetActivePanel(false);
         }
 
         public void AddedDialogInHistory(string id, string name, string text)

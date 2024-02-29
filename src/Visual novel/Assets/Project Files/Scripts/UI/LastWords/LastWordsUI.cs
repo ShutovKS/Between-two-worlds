@@ -1,5 +1,6 @@
 ﻿#region
 
+using System;
 using Data.Localization.UILocalisation;
 using Infrastructure.Services.LocalizationUI;
 using TMPro;
@@ -14,20 +15,22 @@ namespace UI.LastWords
 {
     public class LastWordsUI : MonoBehaviour, ILocalizableUI
     {
+        public Action OnBackButtonClicked;
+        
         [SerializeField] private TextMeshProUGUI _text;
         [SerializeField] private Button _backButton;
         [SerializeField] private Canvas canvas;
+        
+        private void Awake()
+        {
+            _backButton.onClick.AddListener(() => OnBackButtonClicked?.Invoke());
+        }
 
         public void SetText(string text)
         {
             _text.text = text;
         }
-
-        public void RegisterBackButtonCallback(UnityAction callback)
-        {
-            _backButton.RegisterNewCallback(callback);
-        }
-
+        
         public void Localize(UILocalisation localisation)
         {
             _backButton.GetComponentInChildren<TextMeshProUGUI>().text = localisation.BackButton;

@@ -1,5 +1,6 @@
 ﻿#region
 
+using System;
 using TMPro;
 using Tools.Extensions;
 using UnityEngine;
@@ -16,6 +17,15 @@ namespace UI.Confirmation
         [SerializeField] private Button _yesButton;
         [SerializeField] private TextMeshProUGUI _noButtonText;
         [SerializeField] private Button _noButton;
+        
+        public Action OnYesButtonClicked;
+        public Action OnNoButtonClicked;
+
+        public void Awake()
+        {
+            _yesButton.RegisterNewCallback(() => OnYesButtonClicked?.Invoke());
+            _noButton.RegisterNewCallback(() => OnNoButtonClicked?.Invoke());
+        }
 
         public void SetYesButtonText(string text)
         {
@@ -25,16 +35,6 @@ namespace UI.Confirmation
         public void SetNoButtonText(string text)
         {
             _noButtonText.text = text;
-        }
-
-        public void RegisterYesButtonCallback(UnityAction callback)
-        {
-            _yesButton.RegisterNewCallback(callback);
-        }
-
-        public void RegisterNoButtonCallback(UnityAction callback)
-        {
-            _noButton.RegisterNewCallback(callback);
         }
     }
 }

@@ -14,16 +14,16 @@ namespace Infrastructure.ScenesManagers.Core
     public class ActionTriggerManager
     {
         public ActionTriggerManager(IUIFactoryInfoService uiFactoryInfoService,
-            ILocalisationDataLoadService localisationDataLoadService, UnityAction onExitInMainMenu)
+            ILocalisationDataLoadService localisationDataLoadService)
         {
             _uiFactoryInfoService = uiFactoryInfoService;
             _localisationDataLoadService = localisationDataLoadService;
-            _onExitInMainMenu = onExitInMainMenu;
         }
+
+        public UnityAction OnExitInMainMenu;
 
         private readonly IUIFactoryInfoService _uiFactoryInfoService;
         private readonly ILocalisationDataLoadService _localisationDataLoadService;
-        private readonly UnityAction _onExitInMainMenu;
 
         public void HandleActionTrigger(string actionTrigger)
         {
@@ -65,11 +65,11 @@ namespace Infrastructure.ScenesManagers.Core
             _uiFactoryInfoService.DialogueUI.SetActivePanel(false);
             _uiFactoryInfoService.LastWordsUI.SetActivePanel(true);
             _uiFactoryInfoService.LastWordsUI.SetText(text);
-            _uiFactoryInfoService.LastWordsUI.RegisterBackButtonCallback(() =>
+            _uiFactoryInfoService.LastWordsUI.OnBackButtonClicked = () =>
             {
                 _uiFactoryInfoService.LastWordsUI.SetActivePanel(false);
-                _onExitInMainMenu?.Invoke();
-            });
+                OnExitInMainMenu?.Invoke();
+            };
         }
     }
 }

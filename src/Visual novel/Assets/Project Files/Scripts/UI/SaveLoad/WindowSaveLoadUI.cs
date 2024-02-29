@@ -14,7 +14,7 @@ namespace UI.SaveLoad
     public class WindowSaveLoadUI : MonoBehaviour
     {
         public Action OnButtonClicked;
-        
+
         [SerializeField] private Button _button;
         [SerializeField] private TextMeshProUGUI _textTitle;
         [SerializeField] private Image _image;
