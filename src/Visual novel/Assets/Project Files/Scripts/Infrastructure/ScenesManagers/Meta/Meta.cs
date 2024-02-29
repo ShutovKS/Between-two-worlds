@@ -39,6 +39,10 @@ namespace Infrastructure.ScenesManagers.Meta
             _uiFactoryInfo.MainMenuUI.Buttons.OnStartNewGameButtonClicked = StartNewGame;
             _uiFactoryInfo.MainMenuUI.Buttons.OnContinueGameButtonClicked = ContinueGame;
 
+            var gameData = _saveLoadData.GetData();
+            _uiFactoryInfo.MainMenuUI.Buttons.SetContinueGameButtonInteractable(
+                !string.IsNullOrEmpty(gameData.currentDialogue));
+
             _sounds.SetClip(ResourcesPath.SOUND_MAIN_MENU, true);
 
             _loadSceneAsync = SceneManager.LoadSceneAsync("3.Core");
@@ -85,11 +89,11 @@ namespace Infrastructure.ScenesManagers.Meta
                 ui.OnButtonClicked = () =>
                 {
                     gameData.currentDialogue = data.idLastDialogue;
-                    
+
                     _uiFactoryInfo.SaveLoadUI.SetActivePanel(false);
-                    
+
                     _menu.ClosedMenu();
-                  
+
                     _loadSceneAsync.allowSceneActivation = true;
                 };
             }
