@@ -20,27 +20,25 @@ namespace Infrastructure.ScenesManagers.Core
     public class SaveLoadManager
     {
         public SaveLoadManager(ISaveLoadDataService saveLoadData, SaveLoadUI saveLoadUI, GameData data,
-            Func<string> onGetDialogCurrent, ImageCaptureForSaveUI imageCaptureForSaveUI, 
-            ILocalisationDataLoadService localisationDataLoad, UnityAction<string> onSetDialog, UnityAction onClearHistory)
+            ImageCaptureForSaveUI imageCaptureForSaveUI, ILocalisationDataLoadService localisationDataLoad)
         {
             _saveLoadData = saveLoadData;
             _saveLoadUI = saveLoadUI;
             _data = data;
-            _onGetDialogCurrent = onGetDialogCurrent;
             _imageCaptureForSaveUI = imageCaptureForSaveUI;
             _localisationDataLoad = localisationDataLoad;
-            _onSetDialog = onSetDialog;
-            _onClearHistory = onClearHistory;
         }
 
-        private readonly Func<string> _onGetDialogCurrent;
-        private readonly UnityAction<string> _onSetDialog;
-        private readonly UnityAction _onClearHistory;
         private readonly GameData _data;
         private readonly ISaveLoadDataService _saveLoadData;
         private readonly ILocalisationDataLoadService _localisationDataLoad;
         private readonly ImageCaptureForSaveUI _imageCaptureForSaveUI;
         private readonly SaveLoadUI _saveLoadUI;
+        
+        public Func<string> OnGetDialogCurrent;
+        public UnityAction<string> OnSetDialog;
+        public UnityAction OnClearHistory;
+
 
         public void OpenDataSave()
         {
@@ -59,7 +57,7 @@ namespace Infrastructure.ScenesManagers.Core
 
                 void OnButtonClicked()
                 {
-                    var id = _onGetDialogCurrent.Invoke();
+                    var id = OnGetDialogCurrent.Invoke();
                     var titleText = DateTime.Now.ToString(CultureInfo.InvariantCulture);
                     var phraseId = _localisationDataLoad.GetPhraseId(id);
 
@@ -144,14 +142,14 @@ namespace Infrastructure.ScenesManagers.Core
 
                 void OnButtonClicked()
                 {
-                    _onClearHistory?.Invoke();
-                    _onSetDialog.Invoke(dataDialogue.idLastDialogue);
+                    OnClearHistory?.Invoke();
+                    OnSetDialog.Invoke(dataDialogue.idLastDialogue);
                     _saveLoadUI.SetActivePanel(false);
                 }
             }
         }
 
-        private void SetConfigForDataUI(WindowSaveLoadUI loadUI, DialoguesData dialoguesData, Action onButtonClicked)
+        private static void SetConfigForDataUI(WindowSaveLoadUI loadUI, DialoguesData dialoguesData, Action onButtonClicked)
         {
             loadUI.SetImage(dialoguesData.Background);
             loadUI.SetTitle(dialoguesData.titleText);
