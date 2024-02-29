@@ -14,23 +14,26 @@ namespace UI.MainMenu
     public class ButtonsUI : MonoBehaviour
     {
         public Action OnLoadGameButtonClicked;
-        public Action OnStartGameButtonClicked;
+        public Action OnStartNewGameButtonClicked;
+        public Action OnContinueGameButtonClicked;
         public Action OnExitButtonClicked;
 
         [SerializeField] private Button _loadGameButton;
-        [SerializeField] private Button _startGameButton;
+        [SerializeField] private Button _startNewGameButton;
+        [SerializeField] private Button _continueGameButton;
         [SerializeField] private Button _exitButton;
 
         [SerializeField] private TextMeshProUGUI _loadGameButtonText;
-        [SerializeField] private TextMeshProUGUI _startGameButtonText;
+        [SerializeField] private TextMeshProUGUI _startNewGameButtonText;
+        [SerializeField] private TextMeshProUGUI _continueGameButtonText;
         [SerializeField] private TextMeshProUGUI _exitButtonText;
 
         private void Awake()
         {
             _loadGameButton.onClick.AddListener(() => OnLoadGameButtonClicked?.Invoke());
-            _startGameButton.onClick.AddListener(() => OnStartGameButtonClicked?.Invoke());
+            _startNewGameButton.onClick.AddListener(() => OnStartNewGameButtonClicked?.Invoke());
+            _continueGameButton.onClick.AddListener(() => OnContinueGameButtonClicked?.Invoke());
             _exitButton.onClick.AddListener(() => OnExitButtonClicked?.Invoke());
-
 
 #if UNITY_WEBGL
             _exitButton.gameObject.SetActive(false);
@@ -42,9 +45,14 @@ namespace UI.MainMenu
             _loadGameButtonText.text = text;
         }
 
-        public void SetStartGameButton(string text)
+        public void SetStartNewGameButton(string text)
         {
-            _startGameButtonText.text = text;
+            _startNewGameButtonText.text = text;
+        }
+
+        public void SetContinueGameButton(string text)
+        {
+            _continueGameButtonText.text = text;
         }
 
         public void SetExitButton(string text)

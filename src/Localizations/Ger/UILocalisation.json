@@ -1,7 +1,8 @@
 ﻿{
   "GameName": "Zwischen zwei Welten",
   "LoadGameButton": "Laden",
-  "StartGameButton": "Starten",
+  "StartNewGameButton": "Neues Spiel",
+  "ContinueGameButton": "Fortsetzen",
   "ExitButton": "Beenden",
   "Title": "Sind Sie sicher?",
   "YesButton": "Ja",
@@ -11,4 +12,4 @@
   "AutoButton": "Auto",
   "FurtherButton": "Weiter",
   "BackButton": "Zurück"
-  }
+}

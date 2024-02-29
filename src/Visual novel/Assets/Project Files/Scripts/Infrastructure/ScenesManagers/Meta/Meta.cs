@@ -36,7 +36,7 @@ namespace Infrastructure.ScenesManagers.Meta
             _menu = new MainMenu(_uiFactoryInfo.MainMenuUI);
             _uiFactoryInfo.MainMenuUI.Buttons.OnExitButtonClicked = Exit;
             _uiFactoryInfo.MainMenuUI.Buttons.OnLoadGameButtonClicked = LoadDataGame;
-            _uiFactoryInfo.MainMenuUI.Buttons.OnStartGameButtonClicked = StartNewGame;
+            _uiFactoryInfo.MainMenuUI.Buttons.OnStartNewGameButtonClicked = StartNewGame;
 
             _sounds.SetClip(ResourcesPath.SOUND_MAIN_MENU, true);
 

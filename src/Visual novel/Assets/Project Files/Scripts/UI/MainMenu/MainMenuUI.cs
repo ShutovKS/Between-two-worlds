@@ -18,7 +18,8 @@ namespace UI.MainMenu
         public void Localize(UILocalisation localisation)
         {
             Buttons.SetLoadGameButton(localisation.LoadGameButton);
-            Buttons.SetStartGameButton(localisation.StartGameButton);
+            Buttons.SetStartNewGameButton(localisation.StartNewGameButton);
+            Buttons.SetContinueGameButton(localisation.ContinueGameButton);
             Buttons.SetExitButton(localisation.ExitButton);
 
             GameName.SetGameName(localisation.GameName);
