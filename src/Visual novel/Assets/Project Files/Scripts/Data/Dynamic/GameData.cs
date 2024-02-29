@@ -19,5 +19,6 @@ namespace Data.Dynamic
         }
 
         public DialoguesData[] dialogues;
+        public string currentDialogue;
     }
 }
