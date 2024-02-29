@@ -6,7 +6,8 @@
 
         public string GameName;
         public string LoadGameButton;
-        public string StartGameButton;
+        public string StartNewGameButton;
+        public string ContinueGameButton;
         public string ExitButton;
 
         #endregion

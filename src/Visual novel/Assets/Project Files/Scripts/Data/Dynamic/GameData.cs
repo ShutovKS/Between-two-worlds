@@ -1,6 +1,7 @@
 ﻿#region
 
 using System;
+using JetBrains.Annotations;
 
 #endregion
 
@@ -19,5 +20,6 @@ namespace Data.Dynamic
         }
 
         public DialoguesData[] dialogues;
+        [CanBeNull] public string currentDialogue;
     }
 }

@@ -23,19 +23,22 @@ namespace Infrastructure.ScenesManagers.Meta
         private ISaveLoadDataService _saveLoadData;
         private IUIFactoryInfoService _uiFactoryInfo;
         private ISoundsService _sounds;
+
         private AsyncOperation _loadSceneAsync;
 
         private void Start()
         {
             InitializedServices();
 
-            _uiFactoryInfo.BackgroundUI.SetBackgroundImage(Resources.Load<Texture2D>("Data/Backgrounds/" + ResourcesPath.BACKGROUND_PATH));
-            
+            _uiFactoryInfo.BackgroundUI.SetBackgroundImage(
+                Resources.Load<Texture2D>("Data/Backgrounds/" + ResourcesPath.BACKGROUND_PATH));
+
             _menu = new MainMenu(_uiFactoryInfo.MainMenuUI);
             _uiFactoryInfo.MainMenuUI.Buttons.OnExitButtonClicked = Exit;
-            _uiFactoryInfo.MainMenuUI.Buttons.OnLoadGameButtonClicked = LoadGame;
-            _uiFactoryInfo.MainMenuUI.Buttons.OnStartGameButtonClicked = StartGame;
-            
+            _uiFactoryInfo.MainMenuUI.Buttons.OnLoadGameButtonClicked = LoadDataGame;
+            _uiFactoryInfo.MainMenuUI.Buttons.OnStartNewGameButtonClicked = StartNewGame;
+            _uiFactoryInfo.MainMenuUI.Buttons.OnContinueGameButtonClicked = ContinueGame;
+
             _sounds.SetClip(ResourcesPath.SOUND_MAIN_MENU, true);
 
             _loadSceneAsync = SceneManager.LoadSceneAsync("3.Core");
@@ -44,16 +47,23 @@ namespace Infrastructure.ScenesManagers.Meta
             OpenMenu();
         }
 
-        private void StartGame()
+        private void StartNewGame()
         {
-            PlayerPrefs.SetString(PlayerPrefsPath.KEY_ID_DIALOGUE_FOR_PLAYER_PREFS, PlayerPrefsPath.DIALOG_START_ID);
+            var gameData = _saveLoadData.GetData();
+            gameData.currentDialogue = PlayerPrefsPath.DIALOG_START_ID;
+            _saveLoadData.Save(gameData);
 
+            ContinueGame();
+        }
+
+        private void ContinueGame()
+        {
             _menu.ClosedMenu();
 
             _loadSceneAsync.allowSceneActivation = true;
         }
 
-        private void LoadGame()
+        private void LoadDataGame()
         {
             _uiFactoryInfo.SaveLoadUI.SetActivePanel(true);
             _uiFactoryInfo.SaveLoadUI.ButtonsUI.OnButtonClicked = () => _uiFactoryInfo.SaveLoadUI.SetActivePanel(false);
@@ -74,9 +84,12 @@ namespace Infrastructure.ScenesManagers.Meta
                 ui.SetTitle(data.titleText);
                 ui.OnButtonClicked = () =>
                 {
-                    PlayerPrefs.SetString(PlayerPrefsPath.KEY_ID_DIALOGUE_FOR_PLAYER_PREFS, data.idLastDialogue);
+                    gameData.currentDialogue = data.idLastDialogue;
+                    
                     _uiFactoryInfo.SaveLoadUI.SetActivePanel(false);
+                    
                     _menu.ClosedMenu();
+                  
                     _loadSceneAsync.allowSceneActivation = true;
                 };
             }

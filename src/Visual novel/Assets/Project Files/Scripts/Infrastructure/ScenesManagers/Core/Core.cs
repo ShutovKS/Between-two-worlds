@@ -1,6 +1,5 @@
 ﻿#region
 
-using Data.Constant;
 using Data.Dynamic;
 using Infrastructure.Services;
 using Infrastructure.Services.CoroutineRunner;
@@ -10,6 +9,7 @@ using Infrastructure.Services.Sounds;
 using Infrastructure.Services.UIFactory;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using static Data.Constant.PlayerPrefsPath;
 
 #endregion
 
@@ -59,6 +59,7 @@ namespace Infrastructure.ScenesManagers.Core
                 OnNewDialog = _historyManager.AddedDialogInHistory,
                 HandleActionTrigger = _actionTriggerManager.HandleActionTrigger
             };
+            _dialogueManager.OnNewDialog += (id, _, _) => SetNewCurrentDialogue(id);
 
             _saveLoadManager = new SaveLoadManager(
                 _saveLoadData,
@@ -93,8 +94,7 @@ namespace Infrastructure.ScenesManagers.Core
         private void LoadData()
         {
             _dataCurrent = _saveLoadData.GetData();
-            _idDialogue = PlayerPrefs.GetString(PlayerPrefsPath.KEY_ID_DIALOGUE_FOR_PLAYER_PREFS,
-                PlayerPrefsPath.DIALOG_START_ID);
+            _idDialogue = _dataCurrent.currentDialogue;
         }
 
         private void ConfirmExitInMenu()
@@ -106,6 +106,12 @@ namespace Infrastructure.ScenesManagers.Core
             {
                 _uiFactoryInfo.ConfirmationUI.SetActivePanel(false);
             };
+        }
+
+        private void SetNewCurrentDialogue(string id)
+        {
+            _dataCurrent.currentDialogue = id;
+            _saveLoadData.Save(_dataCurrent);
         }
 
         private void ExitInMenu()
