@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 92f2f00d3df41574795ca24e7ba1e7d8
+PackageManifestImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 177723
+  packageName: Screenshot Utility
+  packageVersion: 1.0.4
+  assetPath: Assets/ScreenshotUtility/package.json
+  uploadId: 479253

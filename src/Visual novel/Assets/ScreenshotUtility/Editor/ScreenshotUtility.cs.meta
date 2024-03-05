@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 968fd279e77f36b49bb9809f97314077
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 177723
+  packageName: Screenshot Utility
+  packageVersion: 1.0.4
+  assetPath: Assets/ScreenshotUtility/Editor/ScreenshotUtility.cs
+  uploadId: 479253
