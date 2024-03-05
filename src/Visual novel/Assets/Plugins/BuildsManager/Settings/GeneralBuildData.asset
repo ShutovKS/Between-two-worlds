@@ -15,42 +15,42 @@ MonoBehaviour:
   isReleaseBuild: 1
   isNeedZip: 1
   builds:
-  - isEnabled: 0
+  - isEnabled: 1
     isCompress: 0
-    buildPath: Builds/Windows32_1.0.4/Between_Two_Worlds.exe
+    buildPath: Builds/Windows32_1.0.5/Between_Two_Worlds.exe
     addonsUsed: 0
     options: 0
     target: 5
     targetGroup: 1
-  - isEnabled: 0
+  - isEnabled: 1
     isCompress: 0
-    buildPath: Builds/Windows64_1.0.4/Between_Two_Worlds.exe
+    buildPath: Builds/Windows64_1.0.5/Between_Two_Worlds.exe
     addonsUsed: 0
     options: 0
     target: 19
     targetGroup: 1
-  - isEnabled: 0
+  - isEnabled: 1
     isCompress: 0
-    buildPath: Builds/Linux_1.0.4/Between_Two_Worldsx86_64
+    buildPath: Builds/Linux_1.0.5/Between_Two_Worldsx86_64
     addonsUsed: 0
     options: 0
     target: 24
     targetGroup: 1
-  - isEnabled: 0
+  - isEnabled: 1
     isCompress: 0
-    buildPath: Builds/Android_1.0.4/Between_Two_Worlds.apk
+    buildPath: Builds/Android_1.0.5/Between_Two_Worlds.apk
     addonsUsed: 0
     options: 0
     target: 13
     targetGroup: 7
-  - isEnabled: 0
+  - isEnabled: 1
     isCompress: 0
-    buildPath: Builds/WebGL_1.0.4/Between_Two_Worlds
+    buildPath: Builds/WebGL_1.0.5/Between_Two_Worlds
     addonsUsed: 0
     options: 4
     target: 20
     targetGroup: 13
-  - isEnabled: 1
+  - isEnabled: 0
     isCompress: 0
     buildPath: Builds/WebGL_YandexGame1.0.4/Between_Two_Worlds
     addonsUsed: 1
