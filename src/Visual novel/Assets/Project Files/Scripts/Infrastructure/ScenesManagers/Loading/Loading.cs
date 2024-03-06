@@ -9,6 +9,7 @@ using Infrastructure.Services.AssetsAddressables;
 using Infrastructure.Services.CoroutineRunner;
 using Infrastructure.Services.LocalisationDataLoad;
 using Infrastructure.Services.LocalizationUI;
+using Infrastructure.Services.Metric;
 using Infrastructure.Services.SaveLoadData;
 using Infrastructure.Services.Sounds;
 using Infrastructure.Services.UIFactory;
@@ -17,10 +18,6 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 using static Tools.Extensions.Resources;
-#if YG_SERVICES
-using Data.Constant;
-using YG;
-#endif
 
 // using YG;
 
@@ -39,43 +36,44 @@ namespace Infrastructure.ScenesManagers.Loading
         private IUIFactoryService _uiFactory;
         private IUIFactoryInfoService _uiFactoryInfo;
         private ISoundsService _sounds;
+        private IMetricService _metric;
 
         private async void Start()
         {
             await ServicesInitialize();
             await CreatedUI();
+            
             LanguageSelected(() =>
             {
                 LocalisationUI();
                 LoadData();
                 OpenMainMenu();
             });
+            
+            _metric.SendEvent(MetricEventType.Started);
         }
 
         private async Task ServicesInitialize()
         {
+            _coroutineRunner = new GameObject().AddComponent<CoroutineRunnerServiceService>();
             _assetsAddressablesProvider = new AssetsAddressablesProviderService();
+            _uiFactory = new UIFactoryService(_assetsAddressablesProvider);
             _localisationDataLoad = new LocalisationDataLoadService();
             _localizerUI = new LocalizerUIServiceService();
-            _uiFactory = new UIFactoryService(_assetsAddressablesProvider);
-            _uiFactoryInfo = _uiFactory;
-            _coroutineRunner = new GameObject().AddComponent<CoroutineRunnerServiceService>();
-            _sounds = new SoundsService();
-
-#if YG_SERVICES
-            _saveLoadData = new SaveLoadDataYGService();
-            await InitializeYandexGameSDK();
-#else
             _saveLoadData = new SaveLoadDataLocalService();
-#endif
+            _metric = new MetricStubService();
+            _sounds = new SoundsService();
+            _uiFactoryInfo = _uiFactory;
+            
             ServicesContainer.SetServices(
                 _assetsAddressablesProvider,
-                _saveLoadData,
-                _uiFactory,
                 _localisationDataLoad,
-                _localizerUI,
                 _coroutineRunner,
-                _sounds);
+                _saveLoadData,
+                _localizerUI,
+                _uiFactory,
+                _sounds,
+                _metric);
         }
 
         private async Task CreatedUI()
@@ -205,47 +203,5 @@ namespace Infrastructure.ScenesManagers.Loading
         {
             SceneManager.LoadScene("2.Meta");
         }
-
-        #region SDK
-
-#if YG_SERVICES
-        private async Task InitializeYandexGameSDK()
-        {
-            var path = AssetsAddressablesPath.YANDEX_GAME_PREFAB;
-            var prefab = await _assetsAddressablesProvider.GetAsset<GameObject>(path);
-
-            var instance = Instantiate(prefab);
-            DontDestroyOnLoad(instance);
-
-            var isInitialized = false;
-            var yandexGame = instance.GetComponent<YandexGame>();
-
-            yandexGame.RejectedAuthorization.AddListener(OnInitialized);
-            yandexGame.ResolvedAuthorization.AddListener(OnInitialized);
-
-            Debug.Log("Yandex Game SDK load initializing");
-
-            instance.SetActive(true);
-
-            while (!isInitialized)
-            {
-                await Task.Yield();
-            }
-
-            yandexGame.RejectedAuthorization.RemoveListener(OnInitialized);
-            yandexGame.ResolvedAuthorization.RemoveListener(OnInitialized);
-
-            YandexMetrica.Send("started");
-
-            return;
-
-            void OnInitialized()
-            {
-                isInitialized = true;
-            }
-        }
-#endif
-
-        #endregion
     }
 }

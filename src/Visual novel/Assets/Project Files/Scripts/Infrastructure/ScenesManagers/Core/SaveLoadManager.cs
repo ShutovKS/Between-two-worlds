@@ -5,6 +5,7 @@ using System.Globalization;
 using Data.Dynamic;
 using Data.Localization.Dialogues;
 using Infrastructure.Services.LocalisationDataLoad;
+using Infrastructure.Services.Metric;
 using Infrastructure.Services.SaveLoadData;
 using Tools.Camera;
 using UI.ImageCaptureForSave;
@@ -20,18 +21,21 @@ namespace Infrastructure.ScenesManagers.Core
     public class SaveLoadManager
     {
         public SaveLoadManager(ISaveLoadDataService saveLoadData, SaveLoadUI saveLoadUI, GameData data,
-            ImageCaptureForSaveUI imageCaptureForSaveUI, ILocalisationDataLoadService localisationDataLoad)
+            ImageCaptureForSaveUI imageCaptureForSaveUI, ILocalisationDataLoadService localisationDataLoad, 
+            IMetricService metricService)
         {
             _saveLoadData = saveLoadData;
             _saveLoadUI = saveLoadUI;
             _data = data;
             _imageCaptureForSaveUI = imageCaptureForSaveUI;
             _localisationDataLoad = localisationDataLoad;
+            _metric = metricService;
         }
 
         private readonly GameData _data;
         private readonly ISaveLoadDataService _saveLoadData;
         private readonly ILocalisationDataLoadService _localisationDataLoad;
+        private readonly IMetricService _metric;
         private readonly ImageCaptureForSaveUI _imageCaptureForSaveUI;
         private readonly SaveLoadUI _saveLoadUI;
         
@@ -52,11 +56,13 @@ namespace Infrastructure.ScenesManagers.Core
 
                 var data = _data.dialogues[index++];
 
-                SetConfigForDataUI(dataUI, data, OnButtonClicked);
+                SetConfigForDataUI(dataUI, data, OnSaveButtonClicked);
                 continue;
 
-                void OnButtonClicked()
+                void OnSaveButtonClicked()
                 {
+                    _metric.SendEvent(MetricEventType.Saved);
+                    
                     var id = OnGetDialogCurrent.Invoke();
                     var titleText = DateTime.Now.ToString(CultureInfo.InvariantCulture);
                     var phraseId = _localisationDataLoad.GetPhraseId(id);
@@ -118,7 +124,7 @@ namespace Infrastructure.ScenesManagers.Core
 
                     _saveLoadData.Save(_data);
 
-                    SetConfigForDataUI(dataUI, _data.dialogues[indexLocal], OnButtonClicked);
+                    SetConfigForDataUI(dataUI, _data.dialogues[indexLocal], OnSaveButtonClicked);
                 }
             }
         }
@@ -135,13 +141,15 @@ namespace Infrastructure.ScenesManagers.Core
 
                 if (dataDialogue.isDataExist)
                 {
-                    SetConfigForDataUI(dataUI, dataDialogue, OnButtonClicked);
+                    SetConfigForDataUI(dataUI, dataDialogue, OnLoadButtonClicked);
                 }
 
                 continue;
 
-                void OnButtonClicked()
+                void OnLoadButtonClicked()
                 {
+                    _metric.SendEvent(MetricEventType.Load);
+                    
                     OnClearHistory?.Invoke();
                     OnSetDialog.Invoke(dataDialogue.idLastDialogue);
                     _saveLoadUI.SetActivePanel(false);
