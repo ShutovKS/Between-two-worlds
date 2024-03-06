@@ -19,7 +19,9 @@ using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 using static Tools.Extensions.Resources;
 
-// using YG;
+#if YG_SERVICES
+using YG;
+#endif
 
 #endregion
 
@@ -60,11 +62,18 @@ namespace Infrastructure.ScenesManagers.Loading
             _uiFactory = new UIFactoryService(_assetsAddressablesProvider);
             _localisationDataLoad = new LocalisationDataLoadService();
             _localizerUI = new LocalizerUIServiceService();
-            _saveLoadData = new SaveLoadDataLocalService();
-            _metric = new MetricStubService();
             _sounds = new SoundsService();
             _uiFactoryInfo = _uiFactory;
-            
+
+#if YG_SERVICES && !UNITY_WEBGL
+            _saveLoadData = new SaveLoadDataYGService();
+            _metric = new MetricYGService();
+            await InitializeYandexGameSDK();
+#else
+            _saveLoadData = new SaveLoadDataLocalService();
+            _metric = new MetricStubService();
+#endif            
+
             ServicesContainer.SetServices(
                 _assetsAddressablesProvider,
                 _localisationDataLoad,
@@ -203,5 +212,45 @@ namespace Infrastructure.ScenesManagers.Loading
         {
             SceneManager.LoadScene("2.Meta");
         }
+
+        #region SDK
+
+#if YG_SERVICES
+        private async Task InitializeYandexGameSDK()
+        {
+            var path = AssetsAddressablesPath.YANDEX_GAME_PREFAB;
+            var prefab = await _assetsAddressablesProvider.GetAsset<GameObject>(path);
+
+            var instance = Instantiate(prefab);
+            DontDestroyOnLoad(instance);
+
+            var isInitialized = false;
+            var yandexGame = instance.GetComponent<YandexGame>();
+
+            yandexGame.RejectedAuthorization.AddListener(OnInitialized);
+            yandexGame.ResolvedAuthorization.AddListener(OnInitialized);
+
+            Debug.Log("Yandex Game SDK load initializing");
+
+            instance.SetActive(true);
+
+            while (!isInitialized)
+            {
+                await Task.Yield();
+            }
+
+            yandexGame.RejectedAuthorization.RemoveListener(OnInitialized);
+            yandexGame.ResolvedAuthorization.RemoveListener(OnInitialized);
+
+            return;
+
+            void OnInitialized()
+            {
+                isInitialized = true;
+            }
+        }
+#endif
+
+        #endregion
     }
 }
