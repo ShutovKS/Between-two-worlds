@@ -3,6 +3,7 @@
 using System;
 using Data.Constant;
 using Infrastructure.Services.LocalisationDataLoad;
+using Infrastructure.Services.Metric;
 using Infrastructure.Services.UIFactory;
 using UnityEngine;
 using UnityEngine.Events;
@@ -13,17 +14,19 @@ namespace Infrastructure.ScenesManagers.Core
 {
     public class ActionTriggerManager
     {
-        public ActionTriggerManager(IUIFactoryInfoService uiFactoryInfoService,
-            ILocalisationDataLoadService localisationDataLoadService)
+        public ActionTriggerManager(IUIFactoryInfoService uiFactoryInfo,
+            ILocalisationDataLoadService localisationDataLoad, IMetricService metric)
         {
-            _uiFactoryInfoService = uiFactoryInfoService;
-            _localisationDataLoadService = localisationDataLoadService;
+            _uiFactoryInfo = uiFactoryInfo;
+            _localisationDataLoad = localisationDataLoad;
+            _metric = metric;
         }
 
         public UnityAction OnExitInMainMenu;
 
-        private readonly IUIFactoryInfoService _uiFactoryInfoService;
-        private readonly ILocalisationDataLoadService _localisationDataLoadService;
+        private readonly IUIFactoryInfoService _uiFactoryInfo;
+        private readonly ILocalisationDataLoadService _localisationDataLoad;
+        private readonly IMetricService _metric;
 
         public void HandleActionTrigger(string actionTrigger)
         {
@@ -42,32 +45,32 @@ namespace Infrastructure.ScenesManagers.Core
 
         private void ActionEnd1()
         {
-            var text = _localisationDataLoadService.GetUpLastWord("end1");
-#if YG_SERVICES
-            YG.YandexMetrica.Send("end1");
-#endif
+            var text = _localisationDataLoad.GetUpLastWord("end1");
+
             SetUpLastWordsUI(text);
+            
+            _metric.SendEvent(MetricEventType.End1);
         }
 
         private void ActionEnd2()
         {
-            var text = _localisationDataLoadService.GetUpLastWord("end2");
-#if YG_SERVICES
-            YG.YandexMetrica.Send("end2");
-#endif
+            var text = _localisationDataLoad.GetUpLastWord("end2");
+            
             SetUpLastWordsUI(text);
+            
+            _metric.SendEvent(MetricEventType.End1);
         }
 
         private void SetUpLastWordsUI(string text)
         {
-            _uiFactoryInfoService.BackgroundUI.SetBackgroundImage(
+            _uiFactoryInfo.BackgroundUI.SetBackgroundImage(
                 Resources.Load<Texture2D>("Data/Backgrounds/" + ResourcesPath.BACKGROUND_PATH));
-            _uiFactoryInfoService.DialogueUI.SetActivePanel(false);
-            _uiFactoryInfoService.LastWordsUI.SetActivePanel(true);
-            _uiFactoryInfoService.LastWordsUI.SetText(text);
-            _uiFactoryInfoService.LastWordsUI.OnBackButtonClicked = () =>
+            _uiFactoryInfo.DialogueUI.SetActivePanel(false);
+            _uiFactoryInfo.LastWordsUI.SetActivePanel(true);
+            _uiFactoryInfo.LastWordsUI.SetText(text);
+            _uiFactoryInfo.LastWordsUI.OnBackButtonClicked = () =>
             {
-                _uiFactoryInfoService.LastWordsUI.SetActivePanel(false);
+                _uiFactoryInfo.LastWordsUI.SetActivePanel(false);
                 OnExitInMainMenu?.Invoke();
             };
         }
