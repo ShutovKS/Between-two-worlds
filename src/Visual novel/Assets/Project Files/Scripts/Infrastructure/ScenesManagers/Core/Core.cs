@@ -4,6 +4,7 @@ using Data.Dynamic;
 using Infrastructure.Services;
 using Infrastructure.Services.CoroutineRunner;
 using Infrastructure.Services.LocalisationDataLoad;
+using Infrastructure.Services.Metric;
 using Infrastructure.Services.SaveLoadData;
 using Infrastructure.Services.Sounds;
 using Infrastructure.Services.UIFactory;
@@ -27,7 +28,8 @@ namespace Infrastructure.ScenesManagers.Core
         private SaveLoadManager _saveLoadManager;
         private ActionTriggerManager _actionTriggerManager;
         private IUIFactoryInfoService _uiFactoryInfo;
-        private ISoundsService _soundsService;
+        private ISoundsService _sounds;
+        private IMetricService _metric;
 
         private string _idDialogue;
 
@@ -42,7 +44,7 @@ namespace Infrastructure.ScenesManagers.Core
 
         private void InitializedManagers()
         {
-            _actionTriggerManager = new ActionTriggerManager(_uiFactoryInfo, _localisationDataLoad)
+            _actionTriggerManager = new ActionTriggerManager(_uiFactoryInfo, _localisationDataLoad, _metric)
             {
                 OnExitInMainMenu = ExitInMenu
             };
@@ -53,7 +55,7 @@ namespace Infrastructure.ScenesManagers.Core
                 _uiFactoryInfo.DialogueUI,
                 _uiFactoryInfo.BackgroundUI,
                 _coroutineRunnerService,
-                _soundsService)
+                _sounds)
             {
                 OnGetPart = _localisationDataLoad.GetPhraseId,
                 OnNewDialog = _historyManager.AddedDialogInHistory,
@@ -66,7 +68,8 @@ namespace Infrastructure.ScenesManagers.Core
                 _uiFactoryInfo.SaveLoadUI,
                 _dataCurrent,
                 _uiFactoryInfo.ImageCaptureForSaveUI,
-                _localisationDataLoad)
+                _localisationDataLoad,
+                _metric)
             {
                 OnGetDialogCurrent = () => _dialogueManager.CurrentDialogue.ID,
                 OnSetDialog = _dialogueManager.SetDialog,
@@ -88,7 +91,8 @@ namespace Infrastructure.ScenesManagers.Core
             _coroutineRunnerService = ServicesContainer.GetService<ICoroutineRunnerService>();
             _uiFactoryInfo = ServicesContainer.GetService<IUIFactoryInfoService>();
             _saveLoadData = ServicesContainer.GetService<ISaveLoadDataService>();
-            _soundsService = ServicesContainer.GetService<ISoundsService>();
+            _sounds = ServicesContainer.GetService<ISoundsService>();
+            _metric = ServicesContainer.GetService<IMetricService>();
         }
 
         private void LoadData()

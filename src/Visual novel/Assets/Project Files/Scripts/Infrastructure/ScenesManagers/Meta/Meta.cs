@@ -4,6 +4,7 @@ using Data.Constant;
 using Infrastructure.Services;
 using Infrastructure.Services.LocalisationDataLoad;
 using Infrastructure.Services.LocalizationUI;
+using Infrastructure.Services.Metric;
 using Infrastructure.Services.SaveLoadData;
 using Infrastructure.Services.Sounds;
 using Infrastructure.Services.UIFactory;
@@ -23,6 +24,7 @@ namespace Infrastructure.ScenesManagers.Meta
         private ISaveLoadDataService _saveLoadData;
         private IUIFactoryInfoService _uiFactoryInfo;
         private ISoundsService _sounds;
+        private IMetricService _metric;
 
         private AsyncOperation _loadSceneAsync;
 
@@ -88,6 +90,8 @@ namespace Infrastructure.ScenesManagers.Meta
                 ui.SetTitle(data.titleText);
                 ui.OnButtonClicked = () =>
                 {
+                    _metric.SendEvent(MetricEventType.Load);
+                    
                     gameData.currentDialogue = data.idLastDialogue;
 
                     _uiFactoryInfo.SaveLoadUI.SetActivePanel(false);
@@ -126,6 +130,7 @@ namespace Infrastructure.ScenesManagers.Meta
             _uiFactoryInfo = ServicesContainer.GetService<IUIFactoryInfoService>();
             _localizerUI = ServicesContainer.GetService<ILocalizerUIService>();
             _sounds = ServicesContainer.GetService<ISoundsService>();
+            _metric = ServicesContainer.GetService<IMetricService>();
         }
     }
 }
