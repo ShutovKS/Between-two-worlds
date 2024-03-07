@@ -12,53 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd64825da9934520a1f6d6df79b5f006, type: 3}
   m_Name: GeneralBuildData
   m_EditorClassIdentifier: 
-  isReleaseBuild: 1
-  isNeedZip: 1
-  builds:
-  - isEnabled: 1
-    isCompress: 0
-    buildPath: Builds/Windows32_1.0.5/Between_Two_Worlds.exe
-    addonsUsed: 0
-    options: 0
-    target: 5
-    targetGroup: 1
-  - isEnabled: 1
-    isCompress: 0
-    buildPath: Builds/Windows64_1.0.5/Between_Two_Worlds.exe
-    addonsUsed: 0
-    options: 0
-    target: 19
-    targetGroup: 1
-  - isEnabled: 1
-    isCompress: 0
-    buildPath: Builds/Linux_1.0.5/Between_Two_Worldsx86_64
-    addonsUsed: 0
-    options: 0
-    target: 24
-    targetGroup: 1
-  - isEnabled: 1
-    isCompress: 0
-    buildPath: Builds/Android_1.0.5/Between_Two_Worlds.apk
-    addonsUsed: 0
-    options: 0
-    target: 13
-    targetGroup: 7
-  - isEnabled: 1
-    isCompress: 0
-    buildPath: Builds/WebGL_1.0.5/Between_Two_Worlds
-    addonsUsed: 0
-    options: 4
-    target: 20
-    targetGroup: 13
-  - isEnabled: 0
-    isCompress: 0
-    buildPath: Builds/WebGL_YandexGame1.0.4/Between_Two_Worlds
-    addonsUsed: 1
-    options: 4
-    target: 20
-    targetGroup: 13
-  addonsUsed: 0
+  isReleaseBuild: 0
+  builds: []
+  addonsUsedData: {fileID: 11400000, guid: 9b668bd4d2fee31499434e75a22ea616, type: 2}
   generalScriptingDefineSymbols: 
   outputRoot: Builds/
-  middlePath: $PLATFORM_$ADDONS$VERSION/$NAME$EXECUTABLE
-  dirPathForPostProcess: $PLATFORM_$ADDONS$VERSION
+  middlePath: $NAME_$VERSION_$PLATFORM/$NAME_$VERSION/$NAME$EXECUTABLE
+  dirPathForPostProcess: $NAME_$VERSION_$PLATFORM
