@@ -8,11 +8,10 @@ namespace BuildsManager.Data
     public class GeneralBuildData : ScriptableObject, ICloneable
     {
         public bool isReleaseBuild = false;
-        public bool isNeedZip = false;
 
-        public List<BuildData> builds = new();
+        public List<BuildData> builds = new(1);
         
-        public AddonsUsedType addonsUsed;
+        public AddonsUsedData addonsUsedData;
         public string generalScriptingDefineSymbols;
 
         public string outputRoot = "Builds/";
