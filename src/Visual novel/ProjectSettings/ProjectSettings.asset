@@ -257,7 +257,7 @@ PlayerSettings:
   useCustomBaseGradleTemplate: 0
   useCustomGradlePropertiesTemplate: 0
   useCustomGradleSettingsTemplate: 0
-  useCustomProguardFile: 0
+  useCustomProguardFile: 1
   AndroidTargetArchitectures: 3
   AndroidTargetDevices: 0
   AndroidSplashScreenScale: 0
@@ -821,7 +821,7 @@ PlayerSettings:
     Standalone: 1
     WebGL: 1
   il2cppCompilerConfiguration:
-    Android: 2
+    Android: 0
     Standalone: 2
     WebGL: 2
   il2cppCodeGeneration: {}
