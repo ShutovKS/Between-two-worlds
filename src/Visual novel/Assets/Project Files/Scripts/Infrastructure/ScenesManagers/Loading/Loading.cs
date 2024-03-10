@@ -3,7 +3,10 @@
 using System;
 using System.Threading.Tasks;
 using Data.Constant;
+using Data.Dynamic;
 using Data.Localization.Dialogues;
+using GooglePlayGames;
+using GooglePlayGames.BasicApi;
 using Infrastructure.Services;
 using Infrastructure.Services.AssetsAddressables;
 using Infrastructure.Services.CoroutineRunner;
@@ -27,7 +30,6 @@ namespace Infrastructure.ScenesManagers.Loading
 {
     public class Loading : MonoBehaviour
     {
-        private string _language = "";
         private IAssetsAddressablesProviderService _assetsAddressablesProvider;
         private ILocalisationDataLoadService _localisationDataLoad;
         private ICoroutineRunnerService _coroutineRunner;
@@ -38,20 +40,51 @@ namespace Infrastructure.ScenesManagers.Loading
         private ISoundsService _sounds;
         private IMetricService _metric;
 
+        private string _language = "";
+
+#if GOOGLE_PLAY_SERVICES
+        private bool _isAuthentication;
+#endif
+
         private async void Start()
         {
+#if GOOGLE_PLAY_SERVICES
+            AuthenticationGooglePlay();
+
+            _isAuthentication = PlayGamesPlatform.Instance.IsAuthenticated();
+
+            Debug.Log($"[AuthenticationGooglePlay]: {_isAuthentication.ToString()}");
+#endif
             await ServicesInitialize();
             await CreatedUI();
-            
+
             LanguageSelected(() =>
             {
                 LocalisationUI();
                 LoadData();
                 OpenMainMenu();
             });
-            
+
             _metric.SendEvent(MetricEventType.Started);
         }
+
+#if GOOGLE_PLAY_SERVICES
+        private void AuthenticationGooglePlay()
+        {
+            PlayGamesPlatform.Instance.Authenticate(ProcessAuthentication);
+
+            return;
+
+            void ProcessAuthentication(SignInStatus status)
+            {
+                if (status != SignInStatus.Success)
+                {
+                    PlayGamesPlatform.Instance.ManuallyAuthenticate(null);
+                }
+            }
+        }
+#endif
+
 
         private async Task ServicesInitialize()
         {
@@ -60,11 +93,20 @@ namespace Infrastructure.ScenesManagers.Loading
             _uiFactory = new UIFactoryService(_assetsAddressablesProvider);
             _localisationDataLoad = new LocalisationDataLoadService();
             _localizerUI = new LocalizerUIServiceService();
-            _saveLoadData = new SaveLoadDataLocalService();
-            _metric = new MetricStubService();
             _sounds = new SoundsService();
             _uiFactoryInfo = _uiFactory;
             
+#if GOOGLE_PLAY_SERVICES
+            if (_isAuthentication)
+            {
+                // _saveLoadData =
+                // _metric = 
+            }
+#endif
+
+            _saveLoadData ??= new SaveLoadDataLocalService();
+            _metric ??= new MetricStubService();
+
             ServicesContainer.SetServices(
                 _assetsAddressablesProvider,
                 _localisationDataLoad,
@@ -144,10 +186,8 @@ namespace Infrastructure.ScenesManagers.Loading
 
             imageCaptureForSaveUI.SetActivePanel(true);
 
-            for (var index = 0; index < data.dialogues.Length; index++)
+            foreach (var dialoguesData in data.dialogues)
             {
-                var dialoguesData = data.dialogues[index];
-
                 if (dialoguesData.isDataExist == false)
                 {
                     continue;

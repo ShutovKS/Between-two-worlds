@@ -35,12 +35,13 @@ namespace Infrastructure.ScenesManagers.Meta
             _uiFactoryInfo.BackgroundUI.SetBackgroundImage(
                 Resources.Load<Texture2D>("Data/Backgrounds/" + ResourcesPath.BACKGROUND_PATH));
 
-            _menu = new MainMenu(_uiFactoryInfo.MainMenuUI);
-            _uiFactoryInfo.MainMenuUI.Buttons.OnExitButtonClicked = Exit;
-            _uiFactoryInfo.MainMenuUI.Buttons.OnLoadGameButtonClicked = LoadDataGame;
-            _uiFactoryInfo.MainMenuUI.Buttons.OnStartNewGameButtonClicked = StartNewGame;
-            _uiFactoryInfo.MainMenuUI.Buttons.OnContinueGameButtonClicked = ContinueGame;
-
+            var mainMenuUI = _uiFactoryInfo.MainMenuUI;
+            _menu = new MainMenu(mainMenuUI);
+            mainMenuUI.Buttons.OnExitButtonClicked = Exit;
+            mainMenuUI.Buttons.OnLoadGameButtonClicked = LoadDataGame;
+            mainMenuUI.Buttons.OnStartNewGameButtonClicked = StartNewGame;
+            mainMenuUI.Buttons.OnContinueGameButtonClicked = ContinueGame;
+            
             var gameData = _saveLoadData.GetData();
             _uiFactoryInfo.MainMenuUI.Buttons.SetContinueGameButtonInteractable(
                 !string.IsNullOrEmpty(gameData.currentDialogue));
@@ -91,7 +92,7 @@ namespace Infrastructure.ScenesManagers.Meta
                 ui.OnButtonClicked = () =>
                 {
                     _metric.SendEvent(MetricEventType.Load);
-                    
+
                     gameData.currentDialogue = data.idLastDialogue;
 
                     _uiFactoryInfo.SaveLoadUI.SetActivePanel(false);
