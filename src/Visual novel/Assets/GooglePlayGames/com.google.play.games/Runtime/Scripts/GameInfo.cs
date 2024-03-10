@@ -38,8 +38,8 @@ namespace GooglePlayGames {
 
         public const string ApplicationId = "450550519213"; // Filled in automatically
         public const string IosClientId = "__IOS_CLIENTID__"; // Filled in automatically
-        public const string WebClientId = ""; // Filled in automatically
-        public const string NearbyConnectionServiceId = "";
+        public const string WebClientId = "450550519213-iphacmv3g4ojj3mcarsjochm7q8kq5ik.apps.googleusercontent.com"; // Filled in automatically
+        public const string NearbyConnectionServiceId = "com.Forgeofgameworlds.BetweenTwoWorlds";
 
         public static bool ApplicationIdInitialized() {
             return !string.IsNullOrEmpty(ApplicationId) && !ApplicationId.Equals(ToEscapedToken(UnescapedApplicationId));
