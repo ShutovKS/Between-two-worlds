@@ -50,8 +50,6 @@ namespace Infrastructure.Services.SaveLoadData
 
         public void Save(GameData gameData)
         {
-            gameData.LastSaveTime = System.DateTime.Now;
-            
             var dataString = JsonUtility.ToJson(gameData, false);
 
             File.WriteAllText(_filePath, dataString);

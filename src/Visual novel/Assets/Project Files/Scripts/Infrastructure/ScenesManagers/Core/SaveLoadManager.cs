@@ -122,6 +122,7 @@ namespace Infrastructure.ScenesManagers.Core
                         isDataExist = true
                     };
 
+                    _data.LastSaveTime = DateTime.Now;
                     _saveLoadData.Save(_data);
 
                     SetConfigForDataUI(dataUI, _data.dialogues[indexLocal], OnSaveButtonClicked);
