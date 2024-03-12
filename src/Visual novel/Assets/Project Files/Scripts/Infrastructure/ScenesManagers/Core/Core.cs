@@ -114,6 +114,7 @@ namespace Infrastructure.ScenesManagers.Core
 
         private void SetNewCurrentDialogue(string id)
         {
+            _dataCurrent.LastSaveTime = System.DateTime.Now;
             _dataCurrent.currentDialogue = id;
             _saveLoadData.Save(_dataCurrent);
         }

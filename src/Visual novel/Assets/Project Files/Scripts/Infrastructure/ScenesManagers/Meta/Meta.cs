@@ -1,5 +1,6 @@
 #region
 
+using System;
 using Data.Constant;
 using Infrastructure.Services;
 using Infrastructure.Services.LocalisationDataLoad;
@@ -58,6 +59,7 @@ namespace Infrastructure.ScenesManagers.Meta
         {
             var gameData = _saveLoadData.GetData();
             gameData.currentDialogue = PlayerPrefsPath.DIALOG_START_ID;
+            gameData.LastSaveTime = DateTime.Now;
             _saveLoadData.Save(gameData);
 
             ContinueGame();
