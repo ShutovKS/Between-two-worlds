@@ -2,8 +2,6 @@
 
 using System;
 using System.Threading.Tasks;
-using Data.Constant;
-using Data.Dynamic;
 using Data.Localization.Dialogues;
 using GooglePlayGames;
 using GooglePlayGames.BasicApi;
@@ -21,8 +19,6 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 using static Tools.Extensions.Resources;
-
-// using YG;
 
 #endregion
 
@@ -98,7 +94,7 @@ namespace Infrastructure.ScenesManagers.Loading
 
 #if GOOGLE_PLAY_SERVICES
             _metric = new MetricGooglePlayService();
-            // _saveLoadData =
+            _saveLoadData = new SaveLoadDataGooglePlayService();
 #endif
 
             _saveLoadData ??= new SaveLoadDataLocalService();

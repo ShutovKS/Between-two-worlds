@@ -810,7 +810,7 @@ PlayerSettings:
   webGLWebAssemblyBigInt: 0
   webGLCloseOnQuit: 0
   scriptingDefineSymbols:
-    Android: 
+    Android: GOOGLE_PLAY_SERVICES
     Standalone: 
     WebGL: 
   additionalCompilerArguments:
