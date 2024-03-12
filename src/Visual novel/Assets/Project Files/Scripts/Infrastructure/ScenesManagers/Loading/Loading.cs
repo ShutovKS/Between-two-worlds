@@ -69,7 +69,7 @@ namespace Infrastructure.ScenesManagers.Loading
         }
 
 #if GOOGLE_PLAY_SERVICES
-        private void AuthenticationGooglePlay()
+        private static void AuthenticationGooglePlay()
         {
             PlayGamesPlatform.Instance.Authenticate(ProcessAuthentication);
 
@@ -95,13 +95,10 @@ namespace Infrastructure.ScenesManagers.Loading
             _localizerUI = new LocalizerUIServiceService();
             _sounds = new SoundsService();
             _uiFactoryInfo = _uiFactory;
-            
+
 #if GOOGLE_PLAY_SERVICES
-            if (_isAuthentication)
-            {
-                // _saveLoadData =
-                // _metric = 
-            }
+            _metric = new MetricGooglePlayService();
+            // _saveLoadData =
 #endif
 
             _saveLoadData ??= new SaveLoadDataLocalService();
