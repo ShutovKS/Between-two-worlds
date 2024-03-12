@@ -58,7 +58,7 @@ namespace Infrastructure.ScenesManagers.Core
             
             SetUpLastWordsUI(text);
             
-            _metric.SendEvent(MetricEventType.End1);
+            _metric.SendEvent(MetricEventType.End2);
         }
 
         private void SetUpLastWordsUI(string text)
