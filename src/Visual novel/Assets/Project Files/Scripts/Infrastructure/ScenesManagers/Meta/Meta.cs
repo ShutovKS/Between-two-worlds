@@ -33,18 +33,20 @@ namespace Infrastructure.ScenesManagers.Meta
         {
             InitializedServices();
 
+            var gameData = _saveLoadData.GetData();
+            
             _uiFactoryInfo.BackgroundUI.SetBackgroundImage(
                 Resources.Load<Texture2D>("Data/Backgrounds/" + ResourcesPath.BACKGROUND_PATH));
 
-            _menu = new MainMenu(_uiFactoryInfo.MainMenuUI);
-            _uiFactoryInfo.MainMenuUI.Buttons.OnExitButtonClicked = Exit;
-            _uiFactoryInfo.MainMenuUI.Buttons.OnLoadGameButtonClicked = LoadDataGame;
-            _uiFactoryInfo.MainMenuUI.Buttons.OnStartNewGameButtonClicked = StartNewGame;
-            _uiFactoryInfo.MainMenuUI.Buttons.OnContinueGameButtonClicked = ContinueGame;
-
-            var gameData = _saveLoadData.GetData();
-            _uiFactoryInfo.MainMenuUI.Buttons.SetContinueGameButtonInteractable(
-                !string.IsNullOrEmpty(gameData.currentDialogue));
+            var mainMenuUI = _uiFactoryInfo.MainMenuUI;
+            mainMenuUI.Buttons.OnExitButtonClicked = Exit;
+            mainMenuUI.Buttons.OnLoadGameButtonClicked = LoadDataGame;
+            mainMenuUI.Buttons.OnStartNewGameButtonClicked = StartNewGame;
+            mainMenuUI.Buttons.OnContinueGameButtonClicked = ContinueGame;
+            mainMenuUI.Buttons.SetContinueGameButtonInteractable(!string.IsNullOrEmpty(gameData.currentDialogue));
+            mainMenuUI.SettingsButtons.OnLanguageButtonClicked = OpenLanguageMenu; 
+            
+            _menu = new MainMenu(mainMenuUI);
 
             _sounds.SetClip(ResourcesPath.SOUND_MAIN_MENU, true);
 
@@ -115,13 +117,25 @@ namespace Infrastructure.ScenesManagers.Meta
             Application.Quit();
         }
 
+        private void OpenLanguageMenu()
+        {
+            _uiFactoryInfo.MainMenuUI.SetActivePanel(false);
+            _uiFactoryInfo.ChooseLanguageUI.SetActivePanel(true);
+            _uiFactoryInfo.ChooseLanguageUI.ScrollViewLanguages.OnSelectLanguage += ChangeLocalisation;
+        }
+        
         private void ChangeLocalisation(string language)
         {
+            _uiFactoryInfo.ChooseLanguageUI.ScrollViewLanguages.OnSelectLanguage += ChangeLocalisation;
+            
             _localisationDataLoad.Load(language);
 
             var localisation = _localisationDataLoad.GetUILocalisation();
 
             _localizerUI.Localize(localisation);
+
+            _uiFactoryInfo.ChooseLanguageUI.SetActivePanel(false);
+            _uiFactoryInfo.MainMenuUI.SetActivePanel(true);
         }
 
         private void InitializedServices()
