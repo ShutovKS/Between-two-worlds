@@ -1,4 +1,4 @@
-﻿#region
+#region
 
 using System;
 using System.Threading.Tasks;
@@ -53,14 +53,9 @@ namespace Infrastructure.ScenesManagers.Loading
 #endif
             await ServicesInitialize();
             await CreatedUI();
-
-            LanguageSelected(() =>
-            {
-                LocalisationUI();
-                LoadData();
-                OpenMainMenu();
-            });
-
+            
+            OpenLanguageSelectionMenu();
+            
             _metric.SendEvent(MetricEventType.Started);
         }
 
@@ -144,7 +139,7 @@ namespace Infrastructure.ScenesManagers.Loading
             _localizerUI.Register(_uiFactoryInfo.ImageCaptureForSaveUI);
         }
 
-        private void LanguageSelected(Action onCompleted)
+        private void OpenLanguageSelectionMenu()
         {
             var localizationsInfo = _localisationDataLoad.GetLocalizationsInfo();
 
@@ -152,15 +147,23 @@ namespace Infrastructure.ScenesManagers.Loading
             {
                 _uiFactoryInfo.ChooseLanguageUI.ScrollViewLanguages.AddLanguageInScrollView(
                     localizationInfo.Language,
-                    localizationInfo.FlagImage,
-                    () =>
-                    {
-                        _uiFactoryInfo.ChooseLanguageUI.SetActivePanel(false);
-                        _language = localizationInfo.Language;
-                        _localisationDataLoad.Load(_language);
-                        onCompleted?.Invoke();
-                    });
+                    localizationInfo.FlagImage);
             }
+            
+            _uiFactoryInfo.ChooseLanguageUI.ScrollViewLanguages.OnSelectLanguage += SelectLanguage;
+        }
+        
+        private void SelectLanguage(string language)
+        {
+            _localisationDataLoad.Load(language);
+            
+            _uiFactoryInfo.ChooseLanguageUI.ScrollViewLanguages.OnSelectLanguage -= SelectLanguage;
+            
+            _uiFactoryInfo.ChooseLanguageUI.SetActivePanel(false);
+            
+            LocalisationUI();
+            LoadData();
+            OpenMainMenu();
         }
 
         private void LocalisationUI()
