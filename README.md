@@ -10,7 +10,7 @@ The story, in the form of a visual novel, tells the story of a man standing on t
 
 Games for Windows, Linux, and Android can be downloaded on the [releases](https://github.com/ShutovKS/Between-two-worlds/releases) page or on [itch.io](https://shutovks.itch.io/between-two-worlds).
 
-For access to the web version of the game, please visit [itch.io](https://shutovks.itch.io/between-two-worlds) or [Yandex Games](https://yandex.ru/games/app/292041).
+For access to the web version of the game, please visit [itch.io](https://shutovks.itch.io/between-two-worlds), [Yandex Games](https://yandex.ru/games/app/292041), [VK Play](https://mini.vkplay.ru/play/game/between_two_worlds).
 
 If you are looking for the Android version, it is available in stores [Google Play](https://play.google.com/store/apps/details?id=com.Forgeofgameworlds.BetweenTwoWorlds) and [RuStore](https://apps.rustore.ru/app/com.Forgeofgameworlds.BetweenTwoWorlds).
 
