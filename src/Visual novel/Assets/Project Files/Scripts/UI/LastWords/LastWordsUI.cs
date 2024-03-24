@@ -4,9 +4,7 @@ using System;
 using Data.Localization.UILocalisation;
 using Infrastructure.Services.LocalizationUI;
 using TMPro;
-using Tools.Extensions;
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.UI;
 
 #endregion
