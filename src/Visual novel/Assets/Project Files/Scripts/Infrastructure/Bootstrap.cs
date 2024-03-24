@@ -1,4 +1,5 @@
 using Features.Infrastructure.ProjectStateMachine.Base;
+using Infrastructure.PSM.States;
 using Infrastructure.Services.AssetsAddressables;
 using Infrastructure.Services.CoroutineRunner;
 using Infrastructure.Services.LocalisationDataLoad;
@@ -26,7 +27,10 @@ namespace Infrastructure
         )
         {
             StateMachine = new StateMachine<Bootstrap>(
+                new BootstrapState(this)
             );
+            
+            StateMachine.SwitchState<BootstrapState>();
         }
 
         public readonly StateMachine<Bootstrap> StateMachine;

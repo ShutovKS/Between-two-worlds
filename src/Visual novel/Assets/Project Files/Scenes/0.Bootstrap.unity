@@ -150,7 +150,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _scriptableObjectInstallers: []
-  _monoInstallers: []
+  _monoInstallers:
+  - {fileID: 608986337}
   _installerPrefabs: []
   _autoRun: 1
   OnPreInstall:
@@ -191,12 +192,11 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 608986334}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76806b48bd6c4df480a9e71eca8785d7, type: 3}
+  m_Script: {fileID: 11500000, guid: af82d5cab43b4f6e8eb90e30796e3d32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bootstrap: {fileID: 1611659632}
 --- !u!1 &786270577 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 109254, guid: 67117722a812a2e46ab8cb8eafbf5f5e, type: 3}
