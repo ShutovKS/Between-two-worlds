@@ -8,10 +8,14 @@ namespace Infrastructure.Services.SaveLoadData
 {
     public interface ISaveLoadDataService
     {
-        GameData GetData();
-        GameData LoadOrCreateNew();
+        GameData Load(out LoadState loadState);
         void Save(GameData gameData);
-        bool Exists();
-        void Remove();
+        
+    }
+
+    public enum LoadState
+    {
+        Successfully,
+        NoSavedProgress,
     }
 }

@@ -5,6 +5,7 @@ using Infrastructure.Services;
 using Infrastructure.Services.CoroutineRunner;
 using Infrastructure.Services.LocalisationDataLoad;
 using Infrastructure.Services.Metric;
+using Infrastructure.Services.Progress;
 using Infrastructure.Services.SaveLoadData;
 using Infrastructure.Services.Sounds;
 using Infrastructure.Services.UIFactory;
@@ -24,7 +25,7 @@ namespace Infrastructure.ScenesManagers.Core
         private DialogueManager _dialogueManager;
         private HistoryManager _historyManager;
         private ILocalisationDataLoadService _localisationDataLoad;
-        private ISaveLoadDataService _saveLoadData;
+        private IProgressService _progress;
         private SaveLoadManager _saveLoadManager;
         private ActionTriggerManager _actionTriggerManager;
         private IUIFactoryInfoService _uiFactoryInfo;
@@ -64,7 +65,7 @@ namespace Infrastructure.ScenesManagers.Core
             _dialogueManager.OnNewDialog += (id, _, _) => SetNewCurrentDialogue(id);
 
             _saveLoadManager = new SaveLoadManager(
-                _saveLoadData,
+                _progress,
                 _uiFactoryInfo.SaveLoadUI,
                 _dataCurrent,
                 _uiFactoryInfo.ImageCaptureForSaveUI,
@@ -90,14 +91,14 @@ namespace Infrastructure.ScenesManagers.Core
             _localisationDataLoad = ServicesContainer.GetService<ILocalisationDataLoadService>();
             _coroutineRunnerService = ServicesContainer.GetService<ICoroutineRunnerService>();
             _uiFactoryInfo = ServicesContainer.GetService<IUIFactoryInfoService>();
-            _saveLoadData = ServicesContainer.GetService<ISaveLoadDataService>();
+            _progress = ServicesContainer.GetService<IProgressService>();
             _sounds = ServicesContainer.GetService<ISoundsService>();
             _metric = ServicesContainer.GetService<IMetricService>();
         }
 
         private void LoadData()
         {
-            _dataCurrent = _saveLoadData.GetData();
+            _dataCurrent = _progress.GetProgress();
             _idDialogue = _dataCurrent.currentDialogue;
         }
 
@@ -116,7 +117,7 @@ namespace Infrastructure.ScenesManagers.Core
         {
             _dataCurrent.LastSaveTime = System.DateTime.Now;
             _dataCurrent.currentDialogue = id;
-            _saveLoadData.Save(_dataCurrent);
+            _progress.SetProgress(_dataCurrent);
         }
 
         private void ExitInMenu()
