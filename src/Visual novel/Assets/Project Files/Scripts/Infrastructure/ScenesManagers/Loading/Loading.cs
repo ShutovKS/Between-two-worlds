@@ -41,7 +41,7 @@ namespace Infrastructure.ScenesManagers.Loading
         private IUIFactoryService _uiFactory;
         private IProgressService _progress;
         private IMetricService _metric;
-
+    
         private async void Start()
         {
             await CreatedUI();

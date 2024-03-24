@@ -48,7 +48,7 @@ namespace Infrastructure.Installers
 
         private void BindLocalizerUIServiceService()
         {
-            Container.BindInterfacesTo<LocalizerUIServiceService>().AsSingle();
+            Container.BindInterfacesTo<LocalizerUIService>().AsSingle();
         }
 
         private void BindSaveLoadDataLocalService()
