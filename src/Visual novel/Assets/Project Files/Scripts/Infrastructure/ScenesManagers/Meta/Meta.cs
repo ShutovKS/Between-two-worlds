@@ -6,6 +6,7 @@ using Infrastructure.Services;
 using Infrastructure.Services.LocalisationDataLoad;
 using Infrastructure.Services.LocalizationUI;
 using Infrastructure.Services.Metric;
+using Infrastructure.Services.Progress;
 using Infrastructure.Services.SaveLoadData;
 using Infrastructure.Services.Sounds;
 using Infrastructure.Services.UIFactory;
@@ -22,7 +23,7 @@ namespace Infrastructure.ScenesManagers.Meta
 
         private ILocalisationDataLoadService _localisationDataLoad;
         private ILocalizerUIService _localizerUI;
-        private ISaveLoadDataService _saveLoadData;
+        private IProgressService _progress;
         private IUIFactoryInfoService _uiFactoryInfo;
         private ISoundsService _sounds;
         private IMetricService _metric;
@@ -33,7 +34,7 @@ namespace Infrastructure.ScenesManagers.Meta
         {
             InitializedServices();
 
-            var gameData = _saveLoadData.GetData();
+            var gameData = _progress.GetProgress();
             
             _uiFactoryInfo.BackgroundUI.SetBackgroundImage(
                 Resources.Load<Texture2D>("Data/Backgrounds/" + ResourcesPath.BACKGROUND_PATH));
@@ -58,10 +59,10 @@ namespace Infrastructure.ScenesManagers.Meta
 
         private void StartNewGame()
         {
-            var gameData = _saveLoadData.GetData();
+            var gameData = _progress.GetProgress();
             gameData.currentDialogue = PlayerPrefsPath.DIALOG_START_ID;
             gameData.LastSaveTime = DateTime.Now;
-            _saveLoadData.Save(gameData);
+            _progress.SetProgress(gameData);
 
             ContinueGame();
         }
@@ -79,7 +80,7 @@ namespace Infrastructure.ScenesManagers.Meta
             _uiFactoryInfo.SaveLoadUI.ButtonsUI.OnButtonClicked = () => _uiFactoryInfo.SaveLoadUI.SetActivePanel(false);
 
             var number = 0;
-            var gameData = _saveLoadData.GetData();
+            var gameData = _progress.GetProgress();
 
             foreach (var ui in _uiFactoryInfo.SaveLoadUI.SaveDataUIs)
             {
@@ -142,7 +143,7 @@ namespace Infrastructure.ScenesManagers.Meta
         {
             _uiFactoryInfo = ServicesContainer.GetService<IUIFactoryInfoService>();
             _localisationDataLoad = ServicesContainer.GetService<ILocalisationDataLoadService>();
-            _saveLoadData = ServicesContainer.GetService<ISaveLoadDataService>();
+            _progress = ServicesContainer.GetService<IProgressService>();
             _uiFactoryInfo = ServicesContainer.GetService<IUIFactoryInfoService>();
             _localizerUI = ServicesContainer.GetService<ILocalizerUIService>();
             _sounds = ServicesContainer.GetService<ISoundsService>();

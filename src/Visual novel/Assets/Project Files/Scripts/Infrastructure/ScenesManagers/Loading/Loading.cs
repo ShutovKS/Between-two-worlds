@@ -3,6 +3,7 @@
 using System;
 using System.Threading.Tasks;
 using Data.Constant;
+using Data.Dynamic;
 using Data.Localization.Dialogues;
 using Infrastructure.Services;
 using Infrastructure.Services.AssetsAddressables;
@@ -10,6 +11,7 @@ using Infrastructure.Services.CoroutineRunner;
 using Infrastructure.Services.LocalisationDataLoad;
 using Infrastructure.Services.LocalizationUI;
 using Infrastructure.Services.Metric;
+using Infrastructure.Services.Progress;
 using Infrastructure.Services.SaveLoadData;
 using Infrastructure.Services.Sounds;
 using Infrastructure.Services.UIFactory;
@@ -30,10 +32,11 @@ namespace Infrastructure.ScenesManagers.Loading
         private IAssetsAddressablesProviderService _assetsAddressablesProvider;
         private ILocalisationDataLoadService _localisationDataLoad;
         private ICoroutineRunnerService _coroutineRunner;
-        private ILocalizerUIService _localizerUI;
-        private ISaveLoadDataService _saveLoadData;
-        private IUIFactoryService _uiFactory;
         private IUIFactoryInfoService _uiFactoryInfo;
+        private ISaveLoadDataService _saveLoadData;        
+        private ILocalizerUIService _localizerUI;
+        private IUIFactoryService _uiFactory;
+        private IProgressService _progress;
         private ISoundsService _sounds;
         private IMetricService _metric;
 
@@ -55,6 +58,7 @@ namespace Infrastructure.ScenesManagers.Loading
             _localisationDataLoad = new LocalisationDataLoadService();
             _localizerUI = new LocalizerUIServiceService();
             _saveLoadData = new SaveLoadDataLocalService();
+            _progress = new ProgressService(_saveLoadData);
             _metric = new MetricStubService();
             _sounds = new SoundsService();
             _uiFactoryInfo = _uiFactory;
@@ -66,6 +70,7 @@ namespace Infrastructure.ScenesManagers.Loading
                 _saveLoadData,
                 _localizerUI,
                 _uiFactory,
+                _progress,
                 _sounds,
                 _metric);
         }
@@ -138,7 +143,7 @@ namespace Infrastructure.ScenesManagers.Loading
 
         private void LoadData()
         {
-            var data = _saveLoadData.LoadOrCreateNew();
+            var data = _progress.GetProgress();
 
             var imageCaptureForSaveUI = _uiFactoryInfo.ImageCaptureForSaveUI;
             var backgroundUI = _uiFactoryInfo.ImageCaptureForSaveUI.BackgroundUI;
@@ -146,10 +151,8 @@ namespace Infrastructure.ScenesManagers.Loading
 
             imageCaptureForSaveUI.SetActivePanel(true);
 
-            for (var index = 0; index < data.dialogues.Length; index++)
+            foreach (var dialoguesData in data.dialogues)
             {
-                var dialoguesData = data.dialogues[index];
-
                 if (dialoguesData.isDataExist == false)
                 {
                     continue;

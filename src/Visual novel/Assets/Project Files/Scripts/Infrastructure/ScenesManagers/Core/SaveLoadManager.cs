@@ -6,6 +6,7 @@ using Data.Dynamic;
 using Data.Localization.Dialogues;
 using Infrastructure.Services.LocalisationDataLoad;
 using Infrastructure.Services.Metric;
+using Infrastructure.Services.Progress;
 using Infrastructure.Services.SaveLoadData;
 using Tools.Camera;
 using UI.ImageCaptureForSave;
@@ -20,11 +21,11 @@ namespace Infrastructure.ScenesManagers.Core
 {
     public class SaveLoadManager
     {
-        public SaveLoadManager(ISaveLoadDataService saveLoadData, SaveLoadUI saveLoadUI, GameData data,
+        public SaveLoadManager(IProgressService progress, SaveLoadUI saveLoadUI, GameData data,
             ImageCaptureForSaveUI imageCaptureForSaveUI, ILocalisationDataLoadService localisationDataLoad, 
             IMetricService metricService)
         {
-            _saveLoadData = saveLoadData;
+            _progress = progress;
             _saveLoadUI = saveLoadUI;
             _data = data;
             _imageCaptureForSaveUI = imageCaptureForSaveUI;
@@ -33,7 +34,7 @@ namespace Infrastructure.ScenesManagers.Core
         }
 
         private readonly GameData _data;
-        private readonly ISaveLoadDataService _saveLoadData;
+        private readonly IProgressService _progress;
         private readonly ILocalisationDataLoadService _localisationDataLoad;
         private readonly IMetricService _metric;
         private readonly ImageCaptureForSaveUI _imageCaptureForSaveUI;
@@ -123,7 +124,7 @@ namespace Infrastructure.ScenesManagers.Core
                     };
 
                     _data.LastSaveTime = DateTime.Now;
-                    _saveLoadData.Save(_data);
+                    _progress.SetProgress(_data);
 
                     SetConfigForDataUI(dataUI, _data.dialogues[indexLocal], OnSaveButtonClicked);
                 }
