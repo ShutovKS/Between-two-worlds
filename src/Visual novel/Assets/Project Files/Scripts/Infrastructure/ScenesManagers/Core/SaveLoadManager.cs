@@ -7,7 +7,6 @@ using Data.Localization.Dialogues;
 using Infrastructure.Services.LocalisationDataLoad;
 using Infrastructure.Services.Metric;
 using Infrastructure.Services.Progress;
-using Infrastructure.Services.SaveLoadData;
 using Tools.Camera;
 using UI.ImageCaptureForSave;
 using UI.SaveLoad;

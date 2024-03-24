@@ -1,7 +1,6 @@
 ﻿#region
 
 using UI.MainMenu;
-using UnityEngine.Events;
 
 #endregion
 

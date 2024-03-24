@@ -2,7 +2,6 @@
 
 using System;
 using System.Collections;
-using Data.Constant;
 using Data.Localization.Dialogues;
 using Infrastructure.Services.CoroutineRunner;
 using Infrastructure.Services.Sounds;

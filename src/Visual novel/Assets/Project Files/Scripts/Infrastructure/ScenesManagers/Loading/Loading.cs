@@ -1,27 +1,18 @@
 ﻿#region
 
-using System;
 using System.Threading.Tasks;
-using Data.Constant;
-using Data.Dynamic;
 using Data.Localization.Dialogues;
-using Infrastructure.Services;
-using Infrastructure.Services.AssetsAddressables;
-using Infrastructure.Services.CoroutineRunner;
 using Infrastructure.Services.LocalisationDataLoad;
 using Infrastructure.Services.LocalizationUI;
 using Infrastructure.Services.Metric;
 using Infrastructure.Services.Progress;
-using Infrastructure.Services.SaveLoadData;
-using Infrastructure.Services.Sounds;
 using Infrastructure.Services.UIFactory;
 using Tools.Camera;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
+using Zenject;
 using static Tools.Extensions.Resources;
-
-// using YG;
 
 #endregion
 
@@ -29,50 +20,35 @@ namespace Infrastructure.ScenesManagers.Loading
 {
     public class Loading : MonoBehaviour
     {
-        private IAssetsAddressablesProviderService _assetsAddressablesProvider;
+        [Inject]
+        public void Construct(ILocalisationDataLoadService localisationDataLoad, IUIFactoryInfoService uiFactoryInfo,
+            ILocalizerUIService localizerUI, IUIFactoryService uiFactory, IProgressService progress,
+            IMetricService metric)
+        {
+            Debug.Log("Loading Construct");
+            
+            _localisationDataLoad = localisationDataLoad;
+            _uiFactoryInfo = uiFactoryInfo;
+            _localizerUI = localizerUI;
+            _uiFactory = uiFactory;
+            _progress = progress;
+            _metric = metric;
+        }
+
         private ILocalisationDataLoadService _localisationDataLoad;
-        private ICoroutineRunnerService _coroutineRunner;
         private IUIFactoryInfoService _uiFactoryInfo;
-        private ISaveLoadDataService _saveLoadData;        
         private ILocalizerUIService _localizerUI;
         private IUIFactoryService _uiFactory;
         private IProgressService _progress;
-        private ISoundsService _sounds;
         private IMetricService _metric;
 
         private async void Start()
         {
-            await ServicesInitialize();
             await CreatedUI();
-            
-            OpenLanguageSelectionMenu();
-            
-            _metric.SendEvent(MetricEventType.Started);
-        }
 
-        private async Task ServicesInitialize()
-        {
-            _coroutineRunner = new GameObject().AddComponent<CoroutineRunnerServiceService>();
-            _assetsAddressablesProvider = new AssetsAddressablesProviderService();
-            _uiFactory = new UIFactoryService(_assetsAddressablesProvider);
-            _localisationDataLoad = new LocalisationDataLoadService();
-            _localizerUI = new LocalizerUIServiceService();
-            _saveLoadData = new SaveLoadDataLocalService();
-            _progress = new ProgressService(_saveLoadData);
-            _metric = new MetricStubService();
-            _sounds = new SoundsService();
-            _uiFactoryInfo = _uiFactory;
-            
-            ServicesContainer.SetServices(
-                _assetsAddressablesProvider,
-                _localisationDataLoad,
-                _coroutineRunner,
-                _saveLoadData,
-                _localizerUI,
-                _uiFactory,
-                _progress,
-                _sounds,
-                _metric);
+            OpenLanguageSelectionMenu();
+
+            _metric.SendEvent(MetricEventType.Started);
         }
 
         private async Task CreatedUI()
@@ -118,18 +94,18 @@ namespace Infrastructure.ScenesManagers.Loading
                     localizationInfo.Language,
                     localizationInfo.FlagImage);
             }
-            
+
             _uiFactoryInfo.ChooseLanguageUI.ScrollViewLanguages.OnSelectLanguage += SelectLanguage;
         }
-        
+
         private void SelectLanguage(string language)
         {
             _localisationDataLoad.Load(language);
-            
+
             _uiFactoryInfo.ChooseLanguageUI.ScrollViewLanguages.OnSelectLanguage -= SelectLanguage;
-            
+
             _uiFactoryInfo.ChooseLanguageUI.SetActivePanel(false);
-            
+
             LocalisationUI();
             LoadData();
             OpenMainMenu();

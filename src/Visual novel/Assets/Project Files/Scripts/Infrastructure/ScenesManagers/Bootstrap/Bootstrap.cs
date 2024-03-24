@@ -9,12 +9,7 @@ namespace Infrastructure.ScenesManagers.Bootstrap
 {
     public class Bootstrap : MonoBehaviour
     {
-        private void Start()
-        {
-            GameLoading();
-        }
-
-        private void GameLoading()
+        public void Start()
         {
             SceneManager.LoadScene("1.Loading");
         }
