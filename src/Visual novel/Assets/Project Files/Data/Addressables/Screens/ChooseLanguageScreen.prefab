@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 663030575365426986}
   - component: {fileID: 5237167649984161608}
   - component: {fileID: 5452081903570411930}
-  m_Layer: 31
+  m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -147,7 +147,7 @@ GameObject:
   - component: {fileID: 3348076796293463945}
   - component: {fileID: 697585062399074669}
   - component: {fileID: 906384545270126877}
-  m_Layer: 31
+  m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -220,7 +220,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 363345303949815312}
-  m_Layer: 31
+  m_Layer: 5
   m_Name: Sliding Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -258,7 +258,7 @@ GameObject:
   - component: {fileID: 7483598063522179724}
   - component: {fileID: 690686028238182714}
   - component: {fileID: 4266149238284692417}
-  m_Layer: 31
+  m_Layer: 5
   m_Name: Handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -331,7 +331,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1929427327174178491}
-  m_Layer: 31
+  m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -369,7 +369,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6284727784054322455}
   - component: {fileID: 5219744845640305355}
-  m_Layer: 31
+  m_Layer: 5
   m_Name: Content
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -433,7 +433,7 @@ GameObject:
   - component: {fileID: 2012946842861031906}
   - component: {fileID: 9175850089603626421}
   - component: {fileID: 1144882622133651058}
-  m_Layer: 31
+  m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -571,7 +571,7 @@ GameObject:
   - component: {fileID: 5512309116335976713}
   - component: {fileID: 1959160176046564708}
   - component: {fileID: 9126935792877012826}
-  m_Layer: 31
+  m_Layer: 5
   m_Name: ChooseLanguageScreen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -673,6 +673,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c2d0779b2b0b7b44b1d64dda47cefbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _buttons: []
   canvas: {fileID: 54329595834533825}
   <ScrollViewLanguages>k__BackingField:
     contentTransform: {fileID: 6284727784054322455}
@@ -689,7 +690,7 @@ GameObject:
   - component: {fileID: 5699447840465052040}
   - component: {fileID: 6091532763877482982}
   - component: {fileID: 5408071089381812680}
-  m_Layer: 31
+  m_Layer: 5
   m_Name: Scroll View
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -796,7 +797,7 @@ GameObject:
   - component: {fileID: 8021541590214236470}
   - component: {fileID: 6514959482417124066}
   - component: {fileID: 6181503459357363011}
-  m_Layer: 31
+  m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -872,7 +873,7 @@ GameObject:
   - component: {fileID: 2054937623037844164}
   - component: {fileID: 3197224989388648724}
   - component: {fileID: 1686868093281978884}
-  m_Layer: 31
+  m_Layer: 5
   m_Name: Viewport
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -959,7 +960,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9204100135668587943}
-  m_Layer: 31
+  m_Layer: 5
   m_Name: Name
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -998,7 +999,7 @@ GameObject:
   - component: {fileID: 8352096323912950927}
   - component: {fileID: 2674692417767565849}
   - component: {fileID: 248284597352431739}
-  m_Layer: 31
+  m_Layer: 5
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1075,7 +1076,7 @@ GameObject:
   - component: {fileID: 6754760998959536564}
   - component: {fileID: 7060064068109614848}
   - component: {fileID: 575156395174059011}
-  m_Layer: 31
+  m_Layer: 5
   m_Name: Language Prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1213,7 +1214,7 @@ GameObject:
   - component: {fileID: 9064326505988114471}
   - component: {fileID: 7360892765313139785}
   - component: {fileID: 4646694899488836924}
-  m_Layer: 31
+  m_Layer: 5
   m_Name: Scrollbar Vertical
   m_TagString: Untagged
   m_Icon: {fileID: 0}
