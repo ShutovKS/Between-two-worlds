@@ -3,18 +3,11 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Features.Services.WindowsService;
 using Infrastructure.Services.AssetsAddressables;
-using UI.Background;
-using UI.ChooseLanguage;
-using UI.Confirmation;
-using UI.Dialogue;
-using UI.ImageCaptureForSave;
-using UI.LastWords;
-using UI.MainMenu;
-using UI.SaveLoad;
 using UnityEngine;
-using static Data.Constant.AssetsAddressablesPath;
-using static UnityEngine.Object;
+using Zenject;
+using Object = UnityEngine.Object;
 
 #endregion
 
@@ -22,174 +15,79 @@ namespace Infrastructure.Services.UIFactory
 {
     public class UIFactoryService : IUIFactoryService
     {
-        public UIFactoryService(IAssetsAddressablesProviderService assetsAddressablesProviderService)
+        public UIFactoryService(DiContainer container, IAssetsAddressablesProviderService assetsAddressablesProvider)
         {
-            _assetsAddressablesProviderService = assetsAddressablesProviderService;
+            _container = container;
+            _assetsAddressablesProvider = assetsAddressablesProvider;
         }
 
-        private readonly IAssetsAddressablesProviderService _assetsAddressablesProviderService;
+        private readonly DiContainer _container;
+        private readonly IAssetsAddressablesProviderService _assetsAddressablesProvider;
 
-        private readonly Dictionary<Type, GameObject> _screens = new();
+        private Dictionary<WindowID, GameObject> _screenTypeToInstanceMap = new();
+        private Dictionary<Type, Component> _screenTypeToComponentMap = new();
 
-        public DialogueUI DialogueUI { get; private set; }
-        public MainMenuUI MainMenuUI { get; private set; }
-        public BackgroundUI BackgroundUI { get; private set; }
-        public ChooseLanguageUI ChooseLanguageUI { get; private set; }
-        public ConfirmationUI ConfirmationUI { get; private set; }
-        public SaveLoadUI SaveLoadUI { get; private set; }
-        public LastWordsUI LastWordsUI { get; private set; }
-        public ImageCaptureForSaveUI ImageCaptureForSaveUI { get; private set; }
-
-        public async Task CreatedMainMenuScreen()
+        public async Task<GameObject> CreateScreen(string assetAddress, WindowID windowId)
         {
-            var prefab = await _assetsAddressablesProviderService.GetAsset<GameObject>(MAIN_MENU_SCREEN);
-            var mainMenuScreen = Instantiate(prefab);
+            var screenPrefab = await _assetsAddressablesProvider.GetAsset<GameObject>(assetAddress);
+            var screenObject = _container.InstantiatePrefab(screenPrefab);
 
-            DontDestroyOnLoad(mainMenuScreen);
+            if (!_screenTypeToInstanceMap.TryAdd(windowId, screenObject))
+            {
+                Debug.LogWarning($"A screen with WindowID {windowId} already exists. Replacing the existing screen object.");
 
-            MainMenuUI = mainMenuScreen.TryGetComponent(out MainMenuUI ui)
-                ? ui
-                : throw new Exception($"No {ui.GetType()} in gameObject");
+                Object.Destroy(_screenTypeToInstanceMap[windowId]);
 
-            _screens.Add(typeof(MainMenuUI), mainMenuScreen);
+                _screenTypeToInstanceMap[windowId] = screenObject;
+
+                return screenObject;
+            }
+
+            TryInitializeScreen(screenObject, windowId);
+
+            return screenObject;
         }
 
-        public async Task CreatedDialogueScreen()
+        public Task<T> GetScreenComponent<T>(WindowID windowId) where T : Component
         {
-            var prefab = await _assetsAddressablesProviderService.GetAsset<GameObject>(DIALOGUE_SCREEN);
-            var dialogueScreen = Instantiate(prefab);
+            if (_screenTypeToInstanceMap.TryGetValue(windowId, out var screenObject))
+            {
+                var screenComponent = screenObject.GetComponent<T>();
 
-            DontDestroyOnLoad(dialogueScreen);
+                if (screenComponent == null)
+                {
+                    Debug.LogError($"Screen component of type {typeof(T)} not found");
+                    return Task.FromResult<T>(null);
+                }
 
-            DialogueUI = dialogueScreen.TryGetComponent(out DialogueUI ui)
-                ? ui
-                : throw new Exception($"No {ui.GetType()} in gameObject");
+                _screenTypeToComponentMap[typeof(T)] = screenComponent;
+                return Task.FromResult(screenComponent);
+            }
 
-            _screens.Add(typeof(DialogueUI), dialogueScreen);
+            Debug.LogError($"Screen with WindowID {windowId} not found");
+            return Task.FromResult<T>(null);
         }
 
-        public async Task CreatedBackgroundScreen()
+        public void DestroyScreen(WindowID windowId)
         {
-            var prefab = await _assetsAddressablesProviderService.GetAsset<GameObject>(BACKGROUND_SCREEN);
-            var backgroundScreen = Instantiate(prefab);
-
-            DontDestroyOnLoad(backgroundScreen);
-
-            BackgroundUI = backgroundScreen.TryGetComponent(out BackgroundUI ui)
-                ? ui
-                : throw new Exception($"No {ui.GetType()} in gameObject");
-
-            _screens.Add(typeof(BackgroundUI), backgroundScreen);
+            if (_screenTypeToInstanceMap.Remove(windowId, out var screenObject))
+            {
+                Object.Destroy(screenObject);
+            }
+            else
+            {
+                Debug.LogError($"Screen with WindowID {windowId} not found");
+            }
         }
 
-        public async Task CreatedChooseLanguageScreen()
+        private void TryInitializeScreen(GameObject screen, WindowID windowId)
         {
-            var prefab = await _assetsAddressablesProviderService.GetAsset<GameObject>(CHOOSE_LANGUAGE_SCREEN);
-            var chooseLanguageScreen = Instantiate(prefab);
-
-            DontDestroyOnLoad(chooseLanguageScreen);
-
-            ChooseLanguageUI = chooseLanguageScreen.TryGetComponent(out ChooseLanguageUI ui)
-                ? ui
-                : throw new Exception($"No {ui.GetType()} in gameObject");
-
-            _screens.Add(typeof(ChooseLanguageUI), chooseLanguageScreen);
-        }
-
-        public async Task CreatedConfirmationScreen()
-        {
-            var prefab = await _assetsAddressablesProviderService.GetAsset<GameObject>(CONFIRMATION_SCREEN);
-            var confirmationScreen = Instantiate(prefab);
-
-            DontDestroyOnLoad(confirmationScreen);
-
-            ConfirmationUI = confirmationScreen.TryGetComponent(out ConfirmationUI ui)
-                ? ui
-                : throw new Exception($"No {ui.GetType()} in gameObject");
-
-            _screens.Add(typeof(ConfirmationUI), confirmationScreen);
-        }
-
-        public async Task CreatedSaveLoadScreen()
-        {
-            var prefab = await _assetsAddressablesProviderService.GetAsset<GameObject>(SAVE_LOAD_SCREEN);
-            var saveLoadScreen = Instantiate(prefab);
-
-            DontDestroyOnLoad(saveLoadScreen);
-
-            SaveLoadUI = saveLoadScreen.TryGetComponent(out SaveLoadUI ui)
-                ? ui
-                : throw new Exception($"No {ui.GetType()} in gameObject");
-
-            _screens.Add(typeof(SaveLoadUI), saveLoadScreen);
-        }
-
-        public async Task CreatedLastWordsScreen()
-        {
-            var prefab = await _assetsAddressablesProviderService.GetAsset<GameObject>(LAST_WORDS_SCREEN);
-            var lastWordsScreen = Instantiate(prefab);
-
-            DontDestroyOnLoad(lastWordsScreen);
-
-            LastWordsUI = lastWordsScreen.TryGetComponent(out LastWordsUI ui)
-                ? ui
-                : throw new Exception($"No {ui.GetType()} in gameObject");
-            
-            _screens.Add(typeof(LastWordsUI), lastWordsScreen);
-        }
-        
-        public async Task CreatedImageCaptureForSaveScreen()
-        {
-            var prefab = await _assetsAddressablesProviderService.GetAsset<GameObject>(IMAGE_CAPTURE_FOR_SAVE);
-            var instantiate = Instantiate(prefab);
-
-            DontDestroyOnLoad(instantiate);
-
-            ImageCaptureForSaveUI = instantiate.TryGetComponent(out ImageCaptureForSaveUI ui)
-                ? ui
-                : throw new Exception($"No {ui.GetType()} in gameObject");
-            
-            _screens.Add(typeof(ImageCaptureForSaveUI), instantiate);
-        }
-
-        public void DestroyMainMenuScreen()
-        {
-            Destroy(_screens[typeof(MainMenuUI)]);
-        }
-
-        public void DestroyDialogueScreen()
-        {
-            Destroy(_screens[typeof(DialogueUI)]);
-        }
-
-        public void DestroyBackgroundScreen()
-        {
-            Destroy(_screens[typeof(BackgroundUI)]);
-        }
-
-        public void DestroyChooseLanguageScreen()
-        {
-            Destroy(_screens[typeof(ChooseLanguageUI)]);
-        }
-
-        public void DestroyConfirmationScreen()
-        {
-            Destroy(_screens[typeof(ConfirmationUI)]);
-        }
-
-        public void DestroySaveLoadScreen()
-        {
-            Destroy(_screens[typeof(SaveLoadUI)]);
-        }
-
-        public void DestroyLastWordsScreen()
-        {
-            Destroy(_screens[typeof(LastWordsUI)]);
-        }
-
-        public void DestroyImageCaptureForSaveScreen()
-        {
-            Destroy(_screens[typeof(ImageCaptureForSaveUI)]);
+            switch (windowId)
+            {
+                case WindowID.Unknown:
+                    // Example: screen.Initialize();
+                    break;
+            }
         }
     }
 }
