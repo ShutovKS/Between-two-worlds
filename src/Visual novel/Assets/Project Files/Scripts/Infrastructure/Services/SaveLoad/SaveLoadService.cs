@@ -6,11 +6,11 @@ using UnityEngine;
 
 #endregion
 
-namespace Infrastructure.Services.SaveLoadData
+namespace Infrastructure.Services.SaveLoad
 {
-    public class SaveLoadDataLocalService : ISaveLoadDataService
+    public class SaveLoadLocalService : ISaveLoadService
     {
-        public SaveLoadDataLocalService()
+        public SaveLoadLocalService()
         {
             var folderPath = Path.Combine(Application.persistentDataPath, FOLDER_NAME);
 

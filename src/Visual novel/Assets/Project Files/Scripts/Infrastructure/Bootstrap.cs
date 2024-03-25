@@ -1,4 +1,4 @@
-using Features.Infrastructure.ProjectStateMachine.Base;
+using Infrastructure.PSM.Core;
 using Infrastructure.PSM.States;
 using Infrastructure.Services.AssetsAddressables;
 using Infrastructure.Services.CoroutineRunner;
@@ -6,9 +6,10 @@ using Infrastructure.Services.LocalisationDataLoad;
 using Infrastructure.Services.LocalizationUI;
 using Infrastructure.Services.Metric;
 using Infrastructure.Services.Progress;
-using Infrastructure.Services.SaveLoadData;
+using Infrastructure.Services.SaveLoad;
 using Infrastructure.Services.Sounds;
 using Infrastructure.Services.UIFactory;
+using Infrastructure.Services.WindowsService;
 
 namespace Infrastructure
 {
@@ -20,7 +21,7 @@ namespace Infrastructure
             IUIFactoryService uiFactoryService,
             ILocalisationDataLoadService localisationDataLoadService,
             ILocalizerUIService localizerUIService,
-            ISaveLoadDataService saveLoadDataLocalService,
+            ISaveLoadService saveLoadLocalService,
             IProgressService progressService,
             IMetricService metricStubService,
             IWindowService windowService,
@@ -30,6 +31,7 @@ namespace Infrastructure
             StateMachine = new StateMachine<Bootstrap>(
                 new BootstrapState(this),
                 new LanguageSelectionState(this, windowService, localisationDataLoadService),
+                new InitializationState(this, progressService)
             );
 
             StateMachine.SwitchState<BootstrapState>();

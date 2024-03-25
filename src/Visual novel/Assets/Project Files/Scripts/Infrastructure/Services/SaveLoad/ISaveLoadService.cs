@@ -4,9 +4,9 @@ using Data.Dynamic;
 
 #endregion
 
-namespace Infrastructure.Services.SaveLoadData
+namespace Infrastructure.Services.SaveLoad
 {
-    public interface ISaveLoadDataService
+    public interface ISaveLoadService
     {
         GameData Load(out LoadState loadState);
         void Save(GameData gameData);

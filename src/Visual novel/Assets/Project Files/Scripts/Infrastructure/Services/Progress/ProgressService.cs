@@ -1,23 +1,23 @@
 using Data.Dynamic;
-using Infrastructure.Services.SaveLoadData;
+using Infrastructure.Services.SaveLoad;
 
 namespace Infrastructure.Services.Progress
 {
     public class ProgressService : IProgressService
     {
-        public ProgressService(ISaveLoadDataService saveLoadDataService)
+        public ProgressService(ISaveLoadService saveLoadService)
         {
-            _saveLoadDataService = saveLoadDataService;
+            _saveLoadService = saveLoadService;
         }
 
-        private readonly ISaveLoadDataService _saveLoadDataService;
+        private readonly ISaveLoadService _saveLoadService;
 
         private GameData _gameData;
 
         public void SetProgress(GameData gameData)
         {
             _gameData = gameData;
-            _saveLoadDataService.Save(gameData);
+            _saveLoadService.Save(gameData);
         }
 
         public GameData GetProgress()
@@ -27,7 +27,7 @@ namespace Infrastructure.Services.Progress
                 return _gameData;
             }
 
-            _gameData = _saveLoadDataService.Load(out var loadState);
+            _gameData = _saveLoadService.Load(out var loadState);
 
             if (loadState == LoadState.NoSavedProgress)
             {
