@@ -1,4 +1,5 @@
 using Data.Localization.UILocalisation;
+using Features.UI.Scripts.Base;
 using Infrastructure.Services.LocalizationUI;
 using UI.Background;
 using UI.Dialogue;
@@ -6,7 +7,7 @@ using UnityEngine;
 
 namespace UI.ImageCaptureForSave
 {
-    public class ImageCaptureForSaveUI : MonoBehaviour, ILocalizableUI
+    public class ImageCaptureForSaveUI : BaseScreen, ILocalizableUI
     {
         [field: SerializeField] public BackgroundUI BackgroundUI { get; private set; }
         [field: SerializeField] public DialogueUI DialogueUI { get; private set; }

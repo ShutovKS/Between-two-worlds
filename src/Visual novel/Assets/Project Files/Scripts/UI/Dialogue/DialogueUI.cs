@@ -1,6 +1,7 @@
 ﻿#region
 
 using Data.Localization.UILocalisation;
+using Features.UI.Scripts.Base;
 using Infrastructure.Services.LocalizationUI;
 using UnityEngine;
 
@@ -8,7 +9,7 @@ using UnityEngine;
 
 namespace UI.Dialogue
 {
-    public class DialogueUI : MonoBehaviour, ILocalizableUI
+    public class DialogueUI : BaseScreen, ILocalizableUI
     {
         [SerializeField] private Canvas canvas;
 

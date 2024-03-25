@@ -1,12 +1,13 @@
 #region
 
+using Features.UI.Scripts.Base;
 using UnityEngine;
 
 #endregion
 
 namespace UI.ChooseLanguage
 {
-    public class ChooseLanguageUI : MonoBehaviour
+    public class ChooseLanguageUI : BaseScreen
     {
         [SerializeField] private Canvas canvas;
 

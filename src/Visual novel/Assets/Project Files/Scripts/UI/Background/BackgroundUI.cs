@@ -1,5 +1,6 @@
 ﻿#region
 
+using Features.UI.Scripts.Base;
 using Tools.Extensions;
 using UnityEngine;
 using UnityEngine.UI;
@@ -8,7 +9,7 @@ using UnityEngine.UI;
 
 namespace UI.Background
 {
-    public class BackgroundUI : MonoBehaviour
+    public class BackgroundUI : BaseScreen
     {
         [SerializeField] private Image _backgroundImage;
 

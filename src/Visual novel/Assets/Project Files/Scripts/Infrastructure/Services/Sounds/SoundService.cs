@@ -6,9 +6,9 @@ using UnityEngine;
 
 namespace Infrastructure.Services.Sounds
 {
-    public class SoundsService : ISoundsService
+    public class SoundService : ISoundService
     {
-        public SoundsService()
+        public SoundService()
         {
             var instance = new GameObject();
             _audioSource = instance.AddComponent<AudioSource>();

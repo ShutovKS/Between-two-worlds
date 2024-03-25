@@ -2,6 +2,7 @@
 
 using System;
 using Data.Localization.UILocalisation;
+using Features.UI.Scripts.Base;
 using Infrastructure.Services.LocalizationUI;
 using TMPro;
 using UnityEngine;
@@ -11,7 +12,7 @@ using UnityEngine.UI;
 
 namespace UI.LastWords
 {
-    public class LastWordsUI : MonoBehaviour, ILocalizableUI
+    public class LastWordsUI : BaseScreen, ILocalizableUI
     {
         public Action OnBackButtonClicked;
         
