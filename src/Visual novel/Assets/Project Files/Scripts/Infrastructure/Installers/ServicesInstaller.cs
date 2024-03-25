@@ -7,6 +7,7 @@ using Infrastructure.Services.Progress;
 using Infrastructure.Services.SaveLoadData;
 using Infrastructure.Services.Sounds;
 using Infrastructure.Services.UIFactory;
+using Infrastructure.Services.WindowsService;
 using Zenject;
 
 namespace Infrastructure.Installers
@@ -15,14 +16,15 @@ namespace Infrastructure.Installers
     {
         public override void InstallBindings() 
         {
-            BindCoroutineRunnerServiceService();
             BindAssetsAddressablesProviderService();
-            BindUIFactoryService();
+            BindCoroutineRunnerServiceService();
             BindLocalisationDataLoadService();
             BindLocalizerUIServiceService();
             BindSaveLoadDataLocalService();
-            BindProgressService();
             BindMetricStubService();
+            BindUIFactoryService();
+            BindProgressService();
+            BindWindowService();
             BindSoundsService();
         }
 
@@ -68,7 +70,12 @@ namespace Infrastructure.Installers
 
         private void BindSoundsService()
         {
-            Container.BindInterfacesTo<SoundsService>().AsSingle();
+            Container.BindInterfacesTo<SoundService>().AsSingle();
+        }
+        
+        private void BindWindowService()
+        {
+            Container.BindInterfacesTo<WindowService>().AsSingle();
         }
     }
 }

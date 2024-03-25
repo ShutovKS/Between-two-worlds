@@ -1,7 +1,6 @@
 ﻿#region
 
-using Data.Localization.UILocalisation;
-using Features.UI.Scripts.Base;
+using Data.Static.UILocalisation;
 using Infrastructure.Services.LocalizationUI;
 using UnityEngine;
 

@@ -1,6 +1,5 @@
 ﻿#region
 
-using Features.UI.Scripts.Base;
 using Tools.Extensions;
 using UnityEngine;
 using UnityEngine.UI;

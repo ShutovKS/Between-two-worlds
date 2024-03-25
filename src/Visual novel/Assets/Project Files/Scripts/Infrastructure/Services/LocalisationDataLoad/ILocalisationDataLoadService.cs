@@ -1,9 +1,9 @@
 #region
 
 using System.Collections.Generic;
-using Data.Localization.Dialogues;
-using Data.Localization.LocalizationMain;
-using Data.Localization.UILocalisation;
+using Data.Static.Dialogues;
+using Data.Static.LocalizationMain;
+using Data.Static.UILocalisation;
 
 #endregion
 

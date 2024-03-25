@@ -1,8 +1,9 @@
 ﻿using System.Threading.Tasks;
+using Data.Constant;
 using Infrastructure.Services.UIFactory;
 using UnityEngine;
 
-namespace Features.Services.WindowsService
+namespace Infrastructure.Services.WindowsService
 {
     public class WindowService : IWindowService
     {
@@ -31,12 +32,12 @@ namespace Features.Services.WindowsService
         {
             var windowsPath = GetWindowsPath(windowID);
 
-            if (windowsPath != null) 
+            if (windowsPath != null)
             {
                 await _uiFactory.CreateScreen(windowsPath, windowID);
             }
         }
-        
+
         public void Close(WindowID windowID)
         {
             if (windowID == WindowID.Unknown)
@@ -52,7 +53,13 @@ namespace Features.Services.WindowsService
         {
             return windowID switch
             {
-                // WindowID.Loading => AssetsAddressableConstants.LOADING_SCREEN,
+                WindowID.Background => AssetsAddressablesPath.BACKGROUND_SCREEN,
+                WindowID.ChooseLanguage => AssetsAddressablesPath.CHOOSE_LANGUAGE_SCREEN,
+                WindowID.MainMenu => AssetsAddressablesPath.MAIN_MENU_SCREEN,
+                WindowID.Dialogue => AssetsAddressablesPath.DIALOGUE_SCREEN,
+                WindowID.Confirmation => AssetsAddressablesPath.SAVE_LOAD_SCREEN,
+                WindowID.LastWords => AssetsAddressablesPath.LAST_WORDS_SCREEN,
+                WindowID.ImageCaptureForSave => AssetsAddressablesPath.IMAGE_CAPTURE_FOR_SAVE,
                 _ => null
             };
         }

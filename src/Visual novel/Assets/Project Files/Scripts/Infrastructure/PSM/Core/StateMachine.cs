@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Features.Infrastructure.ProjectStateMachine.Base
+namespace Infrastructure.PSM.Core
 {
     public class StateMachine<TInitializer>
     {

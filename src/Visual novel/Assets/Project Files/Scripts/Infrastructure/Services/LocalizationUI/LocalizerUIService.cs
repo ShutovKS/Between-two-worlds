@@ -1,7 +1,7 @@
 ﻿#region
 
 using System.Collections.Generic;
-using Data.Localization.UILocalisation;
+using Data.Static.UILocalisation;
 
 #endregion
 

@@ -23,13 +23,15 @@ namespace Infrastructure
             ISaveLoadDataService saveLoadDataLocalService,
             IProgressService progressService,
             IMetricService metricStubService,
-            ISoundsService soundsService
+            IWindowService windowService,
+            ISoundService soundService
         )
         {
             StateMachine = new StateMachine<Bootstrap>(
-                new BootstrapState(this)
+                new BootstrapState(this),
+                new LanguageSelectionState(this, windowService, localisationDataLoadService),
             );
-            
+
             StateMachine.SwitchState<BootstrapState>();
         }
 

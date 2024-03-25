@@ -1,4 +1,4 @@
-namespace Features.Services.WindowsService
+namespace Infrastructure.Services.WindowsService
 {
     public enum ButtonState
     {

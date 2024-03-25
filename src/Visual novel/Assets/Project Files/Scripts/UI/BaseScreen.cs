@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using Features.Services.WindowsService;
 using Infrastructure.Services.Sounds;
+using Infrastructure.Services.WindowsService;
 using UnityEngine;
 
-namespace Features.UI.Scripts.Base
+namespace UI
 {
     public class BaseScreen : MonoBehaviour
     {

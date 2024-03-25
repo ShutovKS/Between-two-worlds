@@ -1,4 +1,5 @@
-using Features.Infrastructure.ProjectStateMachine.Base;
+using Data.Constant;
+using Infrastructure.PSM.Core;
 using UnityEngine.SceneManagement;
 using Zenject;
 
@@ -15,8 +16,8 @@ namespace Infrastructure.PSM.States
 
         public void Initialize()
         {
-            SceneManager.LoadScene("1.Loading");
-            // Initializer.StateMachine.SwitchState<InitializationState>();
+            SceneManager.LoadScene(ScenesNames.EMPTY_SCENE);
+            Initializer.StateMachine.SwitchState<LanguageSelectionState>();
         }
     }
 }

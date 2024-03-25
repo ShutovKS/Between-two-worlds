@@ -1,4 +1,4 @@
-namespace Features.Infrastructure.ProjectStateMachine.Base
+namespace Infrastructure.PSM.Core
 {
     public interface IState<out TInitializer>
     {

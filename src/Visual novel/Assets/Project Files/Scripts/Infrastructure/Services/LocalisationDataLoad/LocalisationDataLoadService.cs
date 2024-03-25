@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Xml.Serialization;
-using Data.Localization.Dialogues;
-using Data.Localization.LocalizationMain;
-using Data.Localization.UILocalisation;
+using Data.Static.Dialogues;
+using Data.Static.LocalizationMain;
+using Data.Static.UILocalisation;
 using UnityEngine;
 
 #endregion
