@@ -1,5 +1,5 @@
 using Infrastructure.PSM.Core;
-using Infrastructure.Services.LocalisationDataLoad;
+using Infrastructure.Services.Localisation;
 using Infrastructure.Services.WindowsService;
 using UI.ChooseLanguage;
 
@@ -8,7 +8,7 @@ namespace Infrastructure.PSM.States
     public class LanguageSelectionState : IState<Bootstrap>, IEnterable, IExitable
     {
         public LanguageSelectionState(Bootstrap initializer, IWindowService windowService,
-            ILocalisationDataLoadService localisationService)
+            ILocalisationService localisationService)
         {
             _windowService = windowService;
             _localisationService = localisationService;
@@ -17,7 +17,7 @@ namespace Infrastructure.PSM.States
 
         public Bootstrap Initializer { get; }
         private readonly IWindowService _windowService;
-        private readonly ILocalisationDataLoadService _localisationService;
+        private readonly ILocalisationService _localisationService;
         private ChooseLanguageUI _chooseLanguageUI;
 
         public void OnEnter()
@@ -53,12 +53,12 @@ namespace Infrastructure.PSM.States
             _chooseLanguageUI.ScrollViewLanguages.OnSelectLanguage -= SelectLanguage;
             _chooseLanguageUI.SetActivePanel(false);
 
-            Initialization(language);
+            Initialization();
         }
 
-        private void Initialization(string language)
+        private void Initialization()
         {
-            Initializer.StateMachine.SwitchState<InitializationState, string>(language);
+            // Initializer.StateMachine.SwitchState<>;
         }
     }
 }

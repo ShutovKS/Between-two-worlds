@@ -4,7 +4,10 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Infrastructure.Services.AssetsAddressables;
+using Infrastructure.Services.Localisation;
+using Infrastructure.Services.Sounds;
 using Infrastructure.Services.WindowsService;
+using UI;
 using UnityEngine;
 using Zenject;
 using Object = UnityEngine.Object;
@@ -15,14 +18,21 @@ namespace Infrastructure.Services.UIFactory
 {
     public class UIFactoryService : IUIFactoryService
     {
-        public UIFactoryService(DiContainer container, IAssetsAddressablesProviderService assetsAddressablesProvider)
+        public UIFactoryService(DiContainer container, IAssetsAddressablesProviderService assetsAddressablesProvider,
+            IWindowService windowService, ISoundService soundService, ILocalisationService localisationService)
         {
             _container = container;
             _assetsAddressablesProvider = assetsAddressablesProvider;
+            _windowService = windowService;
+            _soundService = soundService;
+            _localisationService = localisationService;
         }
 
         private readonly DiContainer _container;
         private readonly IAssetsAddressablesProviderService _assetsAddressablesProvider;
+        private readonly ILocalisationService _localisationService;
+        private readonly IWindowService _windowService;
+        private readonly ISoundService _soundService;
 
         private Dictionary<WindowID, GameObject> _screenTypeToInstanceMap = new();
         private Dictionary<Type, Component> _screenTypeToComponentMap = new();
@@ -39,9 +49,10 @@ namespace Infrastructure.Services.UIFactory
                 Object.Destroy(_screenTypeToInstanceMap[windowId]);
 
                 _screenTypeToInstanceMap[windowId] = screenObject;
-
-                return screenObject;
             }
+
+            screenObject.GetComponent<BaseScreen>()?.Construct(_windowService, _soundService);
+            screenObject.GetComponent<ILocalizableUI>()?.Localize(_localisationService.GetUILocalisation());
 
             TryInitializeScreen(screenObject, windowId);
 

@@ -1,5 +1,4 @@
 using Data.Static.UILocalisation;
-using Infrastructure.Services.LocalizationUI;
 using UI.Background;
 using UI.Dialogue;
 using UnityEngine;

@@ -1,7 +1,6 @@
 using Infrastructure.Services.AssetsAddressables;
 using Infrastructure.Services.CoroutineRunner;
-using Infrastructure.Services.LocalisationDataLoad;
-using Infrastructure.Services.LocalizationUI;
+using Infrastructure.Services.Localisation;
 using Infrastructure.Services.Metric;
 using Infrastructure.Services.Progress;
 using Infrastructure.Services.SaveLoad;
@@ -19,7 +18,6 @@ namespace Infrastructure.Installers
             BindAssetsAddressablesProviderService();
             BindCoroutineRunnerServiceService();
             BindLocalisationDataLoadService();
-            BindLocalizerUIServiceService();
             BindSaveLoadDataLocalService();
             BindMetricStubService();
             BindUIFactoryService();
@@ -45,14 +43,9 @@ namespace Infrastructure.Installers
 
         private void BindLocalisationDataLoadService()
         {
-            Container.BindInterfacesTo<LocalisationDataLoadService>().AsSingle();
+            Container.BindInterfacesTo<LocalisationService>().AsSingle();
         }
-
-        private void BindLocalizerUIServiceService()
-        {
-            Container.BindInterfacesTo<LocalizerUIService>().AsSingle();
-        }
-
+        
         private void BindSaveLoadDataLocalService()
         {
             Container.BindInterfacesTo<SaveLoadLocalService>().AsSingle();

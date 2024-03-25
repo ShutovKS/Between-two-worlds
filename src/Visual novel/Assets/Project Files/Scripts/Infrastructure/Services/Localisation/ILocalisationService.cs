@@ -7,9 +7,9 @@ using Data.Static.UILocalisation;
 
 #endregion
 
-namespace Infrastructure.Services.LocalisationDataLoad
+namespace Infrastructure.Services.Localisation
 {
-    public interface ILocalisationDataLoadService
+    public interface ILocalisationService
     {
         string CurrentLanguage { get; }
         void Load(string language);

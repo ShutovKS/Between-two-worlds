@@ -2,7 +2,6 @@
 
 using System;
 using Data.Static.UILocalisation;
-using Infrastructure.Services.LocalizationUI;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;

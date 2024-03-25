@@ -11,11 +11,11 @@ using UnityEngine;
 
 #endregion
 
-namespace Infrastructure.Services.LocalisationDataLoad
+namespace Infrastructure.Services.Localisation
 {
-    public class LocalisationDataLoadService : ILocalisationDataLoadService
+    public class LocalisationService : ILocalisationService
     {
-        public LocalisationDataLoadService()
+        public LocalisationService()
         {
             var textAsset = Resources.Load<TextAsset>(GetPathToDirectoriesNames());
 

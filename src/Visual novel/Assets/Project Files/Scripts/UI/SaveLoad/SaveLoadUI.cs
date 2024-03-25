@@ -1,7 +1,6 @@
 #region
 
 using Data.Static.UILocalisation;
-using Infrastructure.Services.LocalizationUI;
 using UnityEngine;
 
 #endregion

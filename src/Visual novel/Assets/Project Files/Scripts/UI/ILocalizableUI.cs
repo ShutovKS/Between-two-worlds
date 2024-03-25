@@ -1,10 +1,6 @@
-﻿#region
-
 using Data.Static.UILocalisation;
 
-#endregion
-
-namespace Infrastructure.Services.LocalizationUI
+namespace UI
 {
     public interface ILocalizableUI
     {
