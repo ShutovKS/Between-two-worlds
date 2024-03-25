@@ -17,7 +17,7 @@ namespace Infrastructure.PSM.States
         public void Initialize()
         {
             SceneManager.LoadScene(ScenesNames.EMPTY_SCENE);
-            Initializer.StateMachine.SwitchState<InitializationState>();
+            Initializer.StateMachine.SwitchState<LanguageSelectionState>();
         }
     }
 }

@@ -58,7 +58,7 @@ namespace Infrastructure.PSM.States
 
         private void Initialization()
         {
-            // Initializer.StateMachine.SwitchState<>;
+            Initializer.StateMachine.SwitchState<InitializationState>();
         }
     }
 }
