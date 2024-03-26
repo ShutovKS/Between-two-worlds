@@ -17,6 +17,7 @@ namespace UI.Dialogue
         [SerializeField] private Transform _contentTransform;
         [SerializeField] private GameObject _historyGameObject;
         [SerializeField] private Button _backButton;
+        [SerializeField] private VerticalLayoutGroup _verticalLayoutGroup;
 
         private readonly Dictionary<string, GameObject> _historyPhrases = new();
 
@@ -29,14 +30,14 @@ namespace UI.Dialogue
         {
             _historyGameObject.SetActive(value);
         }
-        
+
         public void CreateHistoryPhrase(string id, string name, string text)
         {
             if (_historyPhrases.ContainsKey(id))
             {
                 return;
             }
-            
+
             var historyPhraseInstantiate = Instantiate(_historyPhrasePrefab, _contentTransform);
             historyPhraseInstantiate.SetActive(true);
             _historyPhrases.Add(id, historyPhraseInstantiate);
@@ -55,15 +56,8 @@ namespace UI.Dialogue
             var panel = historyPhraseInstantiate.GetComponent<RectTransform>();
 
             var scrollSizeDelta = contentPanelRT.sizeDelta;
-            scrollSizeDelta.y += contentPanelRT.childCount == 1
-                ? panel.sizeDelta.y
-                : panel.sizeDelta.y * 1.5f;
-
+            scrollSizeDelta.y += panel.sizeDelta.y + _verticalLayoutGroup.spacing;
             contentPanelRT.sizeDelta = scrollSizeDelta;
-
-            var panelAnchoredPosition = panel.anchoredPosition;
-            panelAnchoredPosition.y = -scrollSizeDelta.y + panel.sizeDelta.y * 0.5f;
-            panel.anchoredPosition = panelAnchoredPosition;
         }
 
         public void ClearHistory()
