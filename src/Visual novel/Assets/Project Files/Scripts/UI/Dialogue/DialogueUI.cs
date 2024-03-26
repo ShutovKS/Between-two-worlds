@@ -1,14 +1,13 @@
 ﻿#region
 
-using Data.Localization.UILocalisation;
-using Infrastructure.Services.LocalizationUI;
+using Data.Static.UILocalisation;
 using UnityEngine;
 
 #endregion
 
 namespace UI.Dialogue
 {
-    public class DialogueUI : MonoBehaviour, ILocalizableUI
+    public class DialogueUI : BaseScreen, ILocalizableUI
     {
         [SerializeField] private Canvas canvas;
 

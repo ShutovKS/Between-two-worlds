@@ -8,19 +8,19 @@ using UnityEngine.UI;
 
 namespace UI.Background
 {
-    public class BackgroundUI : MonoBehaviour
+    public class BackgroundUI : BaseScreen
     {
         [SerializeField] private Image _backgroundImage;
 
         [SerializeField] private Canvas canvas;
 
-        public void SetBackgroundImage(Texture2D texture2D)
+        public void SetImage(Texture2D texture2D)
         {
             _backgroundImage.color = Color.white;
             _backgroundImage.sprite = texture2D.ToSprite();
         }
 
-        public void SetBackgroundColor(Color color)
+        public void SetColor(Color color)
         {
             _backgroundImage.color = color;
             _backgroundImage.sprite = null;

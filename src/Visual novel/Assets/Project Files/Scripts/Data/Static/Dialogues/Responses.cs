@@ -4,7 +4,7 @@ using System;
 
 #endregion
 
-namespace Data.Localization.Dialogues
+namespace Data.Static.Dialogues
 {
     [Serializable]
     public class Responses : IPhrase

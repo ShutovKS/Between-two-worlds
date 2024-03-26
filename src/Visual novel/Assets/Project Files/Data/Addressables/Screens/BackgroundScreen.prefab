@@ -151,6 +151,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cd6d309fd9a4327a6e21250329d48f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _buttons: []
   _backgroundImage: {fileID: 4300806037247321405}
   canvas: {fileID: 3786040181869080432}
 --- !u!1 &7873796638826089811
