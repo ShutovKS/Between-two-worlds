@@ -19,6 +19,7 @@ namespace Data.Dynamic
             }
         }
 
+        public DateTime LastSaveTime;
         public DialoguesData[] dialogues;
         [CanBeNull] public string currentDialogue;
     }

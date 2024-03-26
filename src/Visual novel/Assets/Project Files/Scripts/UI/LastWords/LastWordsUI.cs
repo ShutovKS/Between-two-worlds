@@ -1,19 +1,16 @@
 ﻿#region
 
 using System;
-using Data.Localization.UILocalisation;
-using Infrastructure.Services.LocalizationUI;
+using Data.Static.UILocalisation;
 using TMPro;
-using Tools.Extensions;
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.UI;
 
 #endregion
 
 namespace UI.LastWords
 {
-    public class LastWordsUI : MonoBehaviour, ILocalizableUI
+    public class LastWordsUI : BaseScreen, ILocalizableUI
     {
         public Action OnBackButtonClicked;
         

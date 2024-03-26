@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2944121029473455489}
   - component: {fileID: 6254182045968097904}
   - component: {fileID: 4526554223317329547}
-  m_Layer: 31
+  m_Layer: 5
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -86,7 +86,7 @@ GameObject:
   - component: {fileID: 6724430309528800955}
   - component: {fileID: 8480758574181278295}
   - component: {fileID: 3288436995063448415}
-  m_Layer: 31
+  m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -222,7 +222,7 @@ GameObject:
   - component: {fileID: 6393489404064711402}
   - component: {fileID: 4241697489049289364}
   - component: {fileID: 442927348431719727}
-  m_Layer: 31
+  m_Layer: 5
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -297,7 +297,7 @@ GameObject:
   - component: {fileID: 7475423829647163638}
   - component: {fileID: 7095705929342993983}
   - component: {fileID: 2514237998900994361}
-  m_Layer: 31
+  m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -434,7 +434,7 @@ GameObject:
   - component: {fileID: 9063436276169336293}
   - component: {fileID: 6274406219146612408}
   - component: {fileID: 5720171351582256333}
-  m_Layer: 31
+  m_Layer: 5
   m_Name: YesButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -552,7 +552,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1489945372944612323}
-  m_Layer: 31
+  m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -592,7 +592,7 @@ GameObject:
   - component: {fileID: 9103739844512662740}
   - component: {fileID: 2802933180963363145}
   - component: {fileID: 7907266663001104805}
-  m_Layer: 31
+  m_Layer: 5
   m_Name: NoButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -712,7 +712,7 @@ GameObject:
   - component: {fileID: 7493606390075093049}
   - component: {fileID: 1118844419170643959}
   - component: {fileID: 5867653823284293180}
-  m_Layer: 31
+  m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -850,7 +850,7 @@ GameObject:
   - component: {fileID: 5328064090892977240}
   - component: {fileID: 4096363266801128770}
   - component: {fileID: 8438593658389667757}
-  m_Layer: 31
+  m_Layer: 5
   m_Name: Confirmation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -960,7 +960,7 @@ GameObject:
   - component: {fileID: 600855932098143140}
   - component: {fileID: 8083374019935086955}
   - component: {fileID: 1722174444473397768}
-  m_Layer: 31
+  m_Layer: 5
   m_Name: ConfirmationScreen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1062,6 +1062,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 195cb20d696e8734ea121543a065fb48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _buttons: []
   canvas: {fileID: 1522671980725902596}
   <Buttons>k__BackingField: {fileID: 4096363266801128770}
   <Text>k__BackingField: {fileID: 8438593658389667757}

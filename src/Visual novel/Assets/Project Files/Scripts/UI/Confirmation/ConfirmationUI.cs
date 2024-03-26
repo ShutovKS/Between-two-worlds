@@ -1,14 +1,13 @@
 #region
 
-using Data.Localization.UILocalisation;
-using Infrastructure.Services.LocalizationUI;
+using Data.Static.UILocalisation;
 using UnityEngine;
 
 #endregion
 
 namespace UI.Confirmation
 {
-    public class ConfirmationUI : MonoBehaviour, ILocalizableUI
+    public class ConfirmationUI : BaseScreen, ILocalizableUI
     {
         [SerializeField] private Canvas canvas;
 

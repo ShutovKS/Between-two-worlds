@@ -1,29 +1,17 @@
 ﻿#region
 
 using System.Threading.Tasks;
+using Infrastructure.Services.WindowsService;
+using UnityEngine;
 
 #endregion
 
 namespace Infrastructure.Services.UIFactory
 {
-    public interface IUIFactoryService : IUIFactoryInfoService
+    public interface IUIFactoryService
     {
-        Task CreatedMainMenuScreen();
-        Task CreatedDialogueScreen();
-        Task CreatedBackgroundScreen();
-        Task CreatedChooseLanguageScreen();
-        Task CreatedConfirmationScreen();
-        Task CreatedSaveLoadScreen();
-        Task CreatedLastWordsScreen();
-        Task CreatedImageCaptureForSaveScreen();
-
-        void DestroyMainMenuScreen();
-        void DestroyDialogueScreen();
-        void DestroyBackgroundScreen();
-        void DestroyChooseLanguageScreen();
-        void DestroyConfirmationScreen();
-        void DestroySaveLoadScreen();
-        void DestroyLastWordsScreen();
-        void DestroyImageCaptureForSaveScreen();
+        Task<GameObject> CreateScreen(string assetAddress, WindowID windowId);
+        Task<T> GetScreenComponent<T>(WindowID windowId) where T : Component;
+        void DestroyScreen(WindowID windowId);
     }
 }
