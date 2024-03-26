@@ -1,4 +1,4 @@
-﻿namespace Data.Localization.UILocalisation
+﻿namespace Data.Static.UILocalisation
 {
     public class UILocalisation
     {

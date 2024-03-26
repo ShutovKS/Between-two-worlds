@@ -1,4 +1,4 @@
-﻿namespace Data.Localization.Dialogues
+﻿namespace Data.Static.Dialogues
 {
     public interface IPhrase
     {

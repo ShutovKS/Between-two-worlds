@@ -1,14 +1,13 @@
 ﻿#region
 
-using Data.Localization.UILocalisation;
-using Infrastructure.Services.LocalizationUI;
+using Data.Static.UILocalisation;
 using UnityEngine;
 
 #endregion
 
 namespace UI.MainMenu
 {
-    public class MainMenuUI : MonoBehaviour, ILocalizableUI
+    public class MainMenuUI : BaseScreen, ILocalizableUI
     {
         [SerializeField] private Canvas canvas;
 

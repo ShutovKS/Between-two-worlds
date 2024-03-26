@@ -1,74 +1,89 @@
 using Infrastructure.Services.AssetsAddressables;
 using Infrastructure.Services.CoroutineRunner;
-using Infrastructure.Services.LocalisationDataLoad;
-using Infrastructure.Services.LocalizationUI;
+using Infrastructure.Services.DialogueStories;
+using Infrastructure.Services.Localisation;
 using Infrastructure.Services.Metric;
 using Infrastructure.Services.Progress;
-using Infrastructure.Services.SaveLoadData;
+using Infrastructure.Services.SaveLoad;
+using Infrastructure.Services.ScreenshotsOfSaves;
 using Infrastructure.Services.Sounds;
 using Infrastructure.Services.UIFactory;
+using Infrastructure.Services.WindowsService;
 using Zenject;
 
 namespace Infrastructure.Installers
 {
-    public class ServicesInstaller : MonoInstaller, ICoroutineRunnerService 
+    public class ServicesInstaller : MonoInstaller, ICoroutineRunnerService
     {
-        public override void InstallBindings() 
+        public override void InstallBindings()
         {
-            BindCoroutineRunnerServiceService();
+            BindCoroutineRunnerService();
+
             BindAssetsAddressablesProviderService();
-            BindUIFactoryService();
-            BindLocalisationDataLoadService();
-            BindLocalizerUIServiceService();
-            BindSaveLoadDataLocalService();
-            BindProgressService();
+            BindScreenshotsOfSavesService();
+            BindDialogueHistoryService();
+            BindLocalisationService();
             BindMetricStubService();
-            BindSoundsService();
+            BindUIFactoryService();
+            BindSaveLoadService();
+            BindProgressService();
+            BindWindowService();
+            BindSoundService();
         }
 
-        private void BindCoroutineRunnerServiceService()
+        private void BindCoroutineRunnerService()
         {
-            Container.Bind<ICoroutineRunnerService>().FromInstance(this); 
+            Container.Bind<ICoroutineRunnerService>().FromInstance(this).NonLazy();
         }
 
         private void BindAssetsAddressablesProviderService()
         {
-            Container.BindInterfacesTo<AssetsAddressablesProviderService>().AsSingle();
+            Container.BindInterfacesTo<AssetsAddressablesProviderService>().AsSingle().NonLazy();
         }
 
-        private void BindUIFactoryService()
+        private void BindScreenshotsOfSavesService()
         {
-            Container.BindInterfacesTo<UIFactoryService>().AsSingle();
+            Container.BindInterfacesTo<ScreenshotsOfSavesService>().AsSingle().NonLazy();
+        }
+        
+        private void BindDialogueHistoryService()
+        {
+            Container.BindInterfacesTo<DialogueHistoryService>().AsSingle().NonLazy();
         }
 
-        private void BindLocalisationDataLoadService()
+        private void BindLocalisationService()
         {
-            Container.BindInterfacesTo<LocalisationDataLoadService>().AsSingle();
-        }
-
-        private void BindLocalizerUIServiceService()
-        {
-            Container.BindInterfacesTo<LocalizerUIServiceService>().AsSingle();
-        }
-
-        private void BindSaveLoadDataLocalService()
-        {
-            Container.BindInterfacesTo<SaveLoadDataLocalService>().AsSingle();
-        }
-
-        private void BindProgressService()
-        {
-            Container.BindInterfacesTo<ProgressService>().AsSingle();
+            Container.BindInterfacesTo<LocalisationService>().AsSingle().NonLazy();
         }
 
         private void BindMetricStubService()
         {
-            Container.BindInterfacesTo<MetricStubService>().AsSingle();
+            Container.BindInterfacesTo<MetricStubService>().AsSingle().NonLazy();
         }
 
-        private void BindSoundsService()
+        private void BindUIFactoryService()
         {
-            Container.BindInterfacesTo<SoundsService>().AsSingle();
+            Container.BindInterfacesTo<UIFactoryService>().AsSingle().NonLazy();
+        }
+
+        private void BindSaveLoadService()
+        {
+            Container.BindInterfacesTo<SaveLoadLocalService>().AsSingle().NonLazy();
+        }
+
+        private void BindProgressService()
+        {
+            Container.BindInterfacesTo<ProgressService>().AsSingle().NonLazy();
+        }
+
+        private void BindWindowService()
+        {
+            Container.BindInterfacesTo<WindowService>().AsSingle().NonLazy();
+        }
+
+        private void BindSoundService()
+        {
+            Container.BindInterfacesTo<SoundService>().AsSingle().NonLazy();
         }
     }
 }
