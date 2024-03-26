@@ -43,14 +43,11 @@ namespace Infrastructure.PSM.States
             var backgroundUI = await _windowService.OpenAndGetComponent<BackgroundUI>(WindowID.Background);
             backgroundUI.SetImage(Resources.Load<Texture2D>("Data/Backgrounds/" + ResourcesPath.BACKGROUND_PATH));
 
-            var wordsUI = await _windowService.OpenAndGetComponent<LastWordsUI>(WindowID.LastWords);
             var text = _localisationService.GetUpLastWord(actionTrigger);
+            
+            var wordsUI = await _windowService.OpenAndGetComponent<LastWordsUI>(WindowID.LastWords);
+            wordsUI.OnBackButtonClicked = OpenMainMenu;
             wordsUI.SetText(text);
-            wordsUI.OnBackButtonClicked = () =>
-            {
-                wordsUI.SetActivePanel(false);
-                wordsUI.OnBackButtonClicked = OpenMainMenu;
-            };
 
             _metricService.SendEvent(GetMetric(actionTrigger));
         }

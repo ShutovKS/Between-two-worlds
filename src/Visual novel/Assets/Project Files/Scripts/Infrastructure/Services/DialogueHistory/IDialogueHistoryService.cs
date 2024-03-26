@@ -4,7 +4,7 @@ namespace Infrastructure.Services.DialogueStories
 {
     public interface IDialogueHistoryService
     {
-        DialogInHistory GetLatestDialogue();
+        DialogInHistory? GetLatestDialogue();
         List<DialogInHistory> GetHistory();
         void AddDialogue(string id, string name, string text);
         void Clear();

@@ -57,11 +57,6 @@ namespace Infrastructure.PSM.States
             {
                 var index = i;
                 var data = gameData.dialogues[i];
-                if (!data.isDataExist)
-                {
-                    continue;
-                }
-
                 var ui = saveLoadUI.SaveDataUIs[i];
 
                 ui.SetImage(data.Background);
@@ -73,9 +68,11 @@ namespace Infrastructure.PSM.States
         private async void SetNewIdDialogue(int saveId)
         {
             var gameData = _progressService.GetProgress();
-            gameData.dialogues[saveId].idLastDialogue = _newDialogueId;
-            gameData.dialogues[saveId].Background = await _screenshotsOfSavesService.GetImage(_newDialogueId);
-            gameData.dialogues[saveId].titleText = DateTime.Now.ToString(CultureInfo.InvariantCulture);
+            var dialoguesData = gameData.dialogues[saveId];
+            dialoguesData.idLastDialogue = _newDialogueId;
+            dialoguesData.Background = await _screenshotsOfSavesService.GetImage(_newDialogueId);
+            dialoguesData.titleText = DateTime.Now.ToString(CultureInfo.InvariantCulture);
+            dialoguesData.isDataExist = true;
             _progressService.SetProgress(gameData);
 
             Back();

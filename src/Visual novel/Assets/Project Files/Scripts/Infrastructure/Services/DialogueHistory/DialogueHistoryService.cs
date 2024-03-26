@@ -6,9 +6,9 @@ namespace Infrastructure.Services.DialogueStories
     {
         private readonly List<DialogInHistory> _dialoguesHistory = new();
 
-        public DialogInHistory GetLatestDialogue()
+        public DialogInHistory? GetLatestDialogue()
         {
-            return _dialoguesHistory[^1];
+            return _dialoguesHistory.Count == 0 ? null : _dialoguesHistory[^1];
         }
 
         public List<DialogInHistory> GetHistory()

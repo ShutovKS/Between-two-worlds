@@ -2,6 +2,7 @@ using Infrastructure.PSM.Core;
 using Infrastructure.PSM.States;
 using Infrastructure.Services.AssetsAddressables;
 using Infrastructure.Services.CoroutineRunner;
+using Infrastructure.Services.DialogueStories;
 using Infrastructure.Services.Localisation;
 using Infrastructure.Services.Metric;
 using Infrastructure.Services.Progress;
@@ -19,11 +20,12 @@ namespace Infrastructure
             IAssetsAddressablesProviderService assetsAddressablesProviderService,
             IScreenshotsOfSavesService screenshotsOfSavesService,
             ICoroutineRunnerService coroutineRunnerService,
+            IDialogueHistoryService dialogueHistoryService,
             ILocalisationService localisationService,
-            ISaveLoadService saveLoadLocalService,
             IUIFactoryService uiFactoryService,
+            ISaveLoadService saveLoadService,
             IProgressService progressService,
-            IMetricService metricStubService,
+            IMetricService metricService,
             IWindowService windowService,
             ISoundService soundService
         )
@@ -35,7 +37,9 @@ namespace Infrastructure
                 new MenuState(this, windowService, progressService, soundService),
                 new SaveMenuState(this, progressService, windowService, screenshotsOfSavesService),
                 new LoadMenuState(this, progressService, windowService),
-                new GameplayState(this, windowService)
+                new GameplayState(this, windowService, progressService, coroutineRunnerService, soundService,
+                    localisationService, dialogueHistoryService),
+                new LastWordsState(this, windowService, metricService, localisationService)
             );
 
             StateMachine.SwitchState<BootstrapState>();

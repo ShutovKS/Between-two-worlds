@@ -32,6 +32,11 @@ namespace UI.Dialogue
         
         public void CreateHistoryPhrase(string id, string name, string text)
         {
+            if (_historyPhrases.ContainsKey(id))
+            {
+                return;
+            }
+            
             var historyPhraseInstantiate = Instantiate(_historyPhrasePrefab, _contentTransform);
             historyPhraseInstantiate.SetActive(true);
             _historyPhrases.Add(id, historyPhraseInstantiate);

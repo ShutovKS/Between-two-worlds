@@ -40,7 +40,7 @@ namespace Infrastructure.PSM.States
         {
             var backgroundUI = await _windowService.OpenAndGetComponent<BackgroundUI>(WindowID.Background);
             backgroundUI.SetColor(Color.black);
-            
+
             var saveLoadUI = await _windowService.OpenAndGetComponent<SaveLoadUI>(WindowID.SaveLoad);
             var gameData = _progressService.GetProgress();
 
@@ -67,21 +67,20 @@ namespace Infrastructure.PSM.States
             var gameData = _progressService.GetProgress();
             gameData.currentDialogue = newId;
             _progressService.SetProgress(gameData);
+
+            Initializer.StateMachine.SwitchState<GameplayState>();
         }
 
         private void Back()
         {
-            if (_state is MenuState)
+            switch (_state)
             {
-                Initializer.StateMachine.SwitchState<MenuState>();
-            }
-            else if (_state is GameplayState)
-            {
-                Initializer.StateMachine.SwitchState<GameplayState>();
-            }
-            else
-            {
-                throw new Exception($"Unprocessed state for transition from boot menu.");
+                case MenuState:
+                    Initializer.StateMachine.SwitchState<MenuState>();
+                    break;
+                case GameplayState:
+                    break;
+                default: throw new Exception($"Unprocessed state for transition from boot menu.");
             }
         }
     }
