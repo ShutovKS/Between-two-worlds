@@ -1,7 +1,9 @@
 using Infrastructure.PSM.Core;
 using Infrastructure.Services.Localisation;
 using Infrastructure.Services.WindowsService;
+using UI.Background;
 using UI.ChooseLanguage;
+using UnityEngine;
 
 namespace Infrastructure.PSM.States
 {
@@ -28,10 +30,14 @@ namespace Infrastructure.PSM.States
         public void OnExit()
         {
             _windowService.Close(WindowID.ChooseLanguage);
+            _windowService.Close(WindowID.Background);
         }
 
         private async void OpenChooseLanguage()
         {
+            var backgroundUI = await _windowService.OpenAndGetComponent<BackgroundUI>(WindowID.Background);
+            backgroundUI.SetColor(Color.black);
+
             _chooseLanguageUI = await _windowService.OpenAndGetComponent<ChooseLanguageUI>(WindowID.ChooseLanguage);
 
             var localizationsInfo = _localisationService.GetLocalizationsInfo();

@@ -30,8 +30,12 @@ namespace Infrastructure
         {
             StateMachine = new StateMachine<Bootstrap>(
                 new BootstrapState(this),
+                new LanguageSelectionState(this, windowService, localisationService),
                 new InitializationState(this, progressService, screenshotsOfSavesService),
-                new LanguageSelectionState(this, windowService, localisationService)
+                new MenuState(this, windowService, progressService, soundService),
+                new SaveMenuState(this, progressService, windowService, screenshotsOfSavesService),
+                new LoadMenuState(this, progressService, windowService),
+                new GameplayState(this, windowService)
             );
 
             StateMachine.SwitchState<BootstrapState>();

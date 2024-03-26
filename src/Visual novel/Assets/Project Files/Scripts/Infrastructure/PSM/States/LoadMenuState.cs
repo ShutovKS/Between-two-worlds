@@ -3,7 +3,9 @@ using System.Threading.Tasks;
 using Infrastructure.PSM.Core;
 using Infrastructure.Services.Progress;
 using Infrastructure.Services.WindowsService;
+using UI.Background;
 using UI.SaveLoad;
+using UnityEngine;
 
 namespace Infrastructure.PSM.States
 {
@@ -31,10 +33,14 @@ namespace Infrastructure.PSM.States
         public void OnExit()
         {
             _windowService.Close(WindowID.SaveLoad);
+            _windowService.Close(WindowID.Background);
         }
 
         private async Task OpenUI()
         {
+            var backgroundUI = await _windowService.OpenAndGetComponent<BackgroundUI>(WindowID.Background);
+            backgroundUI.SetColor(Color.black);
+            
             var saveLoadUI = await _windowService.OpenAndGetComponent<SaveLoadUI>(WindowID.SaveLoad);
             var gameData = _progressService.GetProgress();
 

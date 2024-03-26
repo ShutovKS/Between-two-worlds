@@ -1,5 +1,6 @@
 using Infrastructure.Services.AssetsAddressables;
 using Infrastructure.Services.CoroutineRunner;
+using Infrastructure.Services.DialogueStories;
 using Infrastructure.Services.Localisation;
 using Infrastructure.Services.Metric;
 using Infrastructure.Services.Progress;
@@ -16,9 +17,11 @@ namespace Infrastructure.Installers
     {
         public override void InstallBindings()
         {
+            BindCoroutineRunnerService();
+
             BindAssetsAddressablesProviderService();
             BindScreenshotsOfSavesService();
-            BindCoroutineRunnerService();
+            BindDialogueHistoryService();
             BindLocalisationService();
             BindMetricStubService();
             BindUIFactoryService();
@@ -41,6 +44,11 @@ namespace Infrastructure.Installers
         private void BindScreenshotsOfSavesService()
         {
             Container.BindInterfacesTo<ScreenshotsOfSavesService>().AsSingle().NonLazy();
+        }
+        
+        private void BindDialogueHistoryService()
+        {
+            Container.BindInterfacesTo<DialogueHistoryService>().AsSingle().NonLazy();
         }
 
         private void BindLocalisationService()

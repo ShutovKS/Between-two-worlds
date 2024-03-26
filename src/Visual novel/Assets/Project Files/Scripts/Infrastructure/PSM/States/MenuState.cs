@@ -43,7 +43,7 @@ namespace Infrastructure.PSM.States
         private async Task Initialize()
         {
             var gameData = _progressService.GetProgress();
-            
+
             var backgroundUI = await _windowService.OpenAndGetComponent<BackgroundUI>(WindowID.Background);
             backgroundUI.SetImage(Resources.Load<Texture2D>("Data/Backgrounds/" + ResourcesPath.BACKGROUND_PATH));
 
@@ -75,7 +75,7 @@ namespace Infrastructure.PSM.States
 
         private void LoadDataGame()
         {
-            Initializer.StateMachine.SwitchState<LoadMenuState>();
+            Initializer.StateMachine.SwitchState<LoadMenuState, MenuState>(this);
         }
 
         private void OpenLanguageMenu()
