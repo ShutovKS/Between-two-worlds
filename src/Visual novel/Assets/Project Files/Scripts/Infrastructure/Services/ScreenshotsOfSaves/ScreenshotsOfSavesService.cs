@@ -53,7 +53,7 @@ namespace Infrastructure.Services.ScreenshotsOfSaves
 
         private static void SetUpForPhrase(ImageCaptureForSaveUI imageCaptureForSaveUI, Phrase phrase)
         {
-            imageCaptureForSaveUI.BackgroundUI.SetBackgroundImage(Resources.GetTexture2D("Backgrounds/" + phrase.BackgroundPath));
+            imageCaptureForSaveUI.BackgroundUI.SetImage(Resources.GetTexture2D("Backgrounds/" + phrase.BackgroundPath));
             imageCaptureForSaveUI.DialogueUI.Answers.SetActiveAnswerOptions(false);
             imageCaptureForSaveUI.DialogueUI.DialogueText.SetAuthorName(phrase.Name);
             imageCaptureForSaveUI.DialogueUI.DialogueText.SetText(phrase.Text);

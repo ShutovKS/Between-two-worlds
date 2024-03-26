@@ -11,6 +11,7 @@
         Dialogue = 4,
         Confirmation = 5,
         LastWords = 6,
+        SaveLoad = 7,
 
         ImageCaptureForSave = 99,
     }

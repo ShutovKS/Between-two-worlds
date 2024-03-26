@@ -28,7 +28,7 @@ namespace Infrastructure.PSM.States
 
         private void ContinueWork()
         {
-            // Initializer.StateMachine.SwitchState<>();
+            Initializer.StateMachine.SwitchState<MenuState>();
         }
 
         private async Task DataInitialization()
@@ -37,7 +37,7 @@ namespace Infrastructure.PSM.States
 
             foreach (var dialoguesData in data.dialogues)
             {
-                if (!dialoguesData.isDataExist)
+                if (!dialoguesData.isDataExist || dialoguesData.Background != null)
                 {
                     continue;
                 }
