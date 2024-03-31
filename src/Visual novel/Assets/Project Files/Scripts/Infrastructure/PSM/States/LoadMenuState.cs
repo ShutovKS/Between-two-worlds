@@ -79,6 +79,7 @@ namespace Infrastructure.PSM.States
                     Initializer.StateMachine.SwitchState<MenuState>();
                     break;
                 case GameplayState:
+                    Initializer.StateMachine.SwitchState<GameplayState>();
                     break;
                 default: throw new Exception($"Unprocessed state for transition from boot menu.");
             }
