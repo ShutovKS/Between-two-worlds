@@ -5,68 +5,42 @@ using UnityEditor;
 using UnityEngine;
 using YG;
 
-
-namespace Infrastructure.Services.SaveLoadData
+namespace Infrastructure.Services.SaveLoad
 {
-    public class SaveLoadDataYGService : ISaveLoadDataService
+    public class SaveLoadDataYGService : ISaveLoadService
     {
-        private GameData _gameData;
-
-        public GameData GetData()
+        public GameData Load(out LoadState loadState)
         {
-            return _gameData ??= LoadOrCreateNew();
-        }
-
-        public GameData LoadOrCreateNew()
-        {
-            YandexMetrica.Send("loaded");
-
-            if (Exists() == false)
+            YandexGame.LoadProgress();
+            
+            if (Exists())
             {
-                _gameData = CreatingNewData();
-            }
-            else
-            {
+                loadState = LoadState.Successfully;
+
                 var dataJson = YandexGame.savesData.json;
 
-                _gameData = JsonUtility.FromJson<GameData>(dataJson);
+                var gameData = JsonUtility.FromJson<GameData>(dataJson);
+
+                return gameData;
             }
 
-            return _gameData;
+            loadState = LoadState.NoSavedProgress;
+
+            return null;
         }
 
         public void Save(GameData gameData)
         {
-            YandexMetrica.Send("saved");
-
             var dataJson = JsonUtility.ToJson(gameData, false);
 
             YandexGame.savesData.isFirstSession = false;
             YandexGame.savesData.json = dataJson;
             YandexGame.SaveProgress();
-
-            _gameData = gameData;
         }
 
-        public bool Exists()
+        private static bool Exists()
         {
-            return YandexGame.SDKEnabled &&
-                   YandexGame.savesData.isFirstSession == false &&
-                   string.IsNullOrEmpty(YandexGame.savesData.json) == false;
-        }
-
-        public void Remove()
-        {
-            CreatingNewData();
-        }
-
-        private GameData CreatingNewData()
-        {
-            var gameData = new GameData();
-
-            Save(gameData);
-
-            return gameData;
+            return string.IsNullOrEmpty(YandexGame.savesData.json) == false;
         }
 
 #if UNITY_EDITOR

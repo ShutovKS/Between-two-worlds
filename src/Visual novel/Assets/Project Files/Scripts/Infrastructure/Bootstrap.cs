@@ -1,6 +1,7 @@
 using Infrastructure.PSM.Core;
 using Infrastructure.PSM.States;
 using Infrastructure.Services.AssetsAddressables;
+using Infrastructure.Services.Authenticate;
 using Infrastructure.Services.CoroutineRunner;
 using Infrastructure.Services.DialogueStories;
 using Infrastructure.Services.Localisation;
@@ -22,6 +23,7 @@ namespace Infrastructure
             ICoroutineRunnerService coroutineRunnerService,
             IDialogueHistoryService dialogueHistoryService,
             ILocalisationService localisationService,
+            IAuthenticateService authenticateService,
             IUIFactoryService uiFactoryService,
             ISaveLoadService saveLoadService,
             IProgressService progressService,
@@ -31,12 +33,12 @@ namespace Infrastructure
         )
         {
             StateMachine = new StateMachine<Bootstrap>(
-                new BootstrapState(this),
+                new BootstrapState(this, metricService),
                 new LanguageSelectionState(this, windowService, localisationService),
-                new InitializationState(this, progressService, screenshotsOfSavesService),
+                new InitializationState(this, progressService, screenshotsOfSavesService, authenticateService),
                 new MenuState(this, windowService, progressService, soundService),
-                new SaveMenuState(this, progressService, windowService, screenshotsOfSavesService),
-                new LoadMenuState(this, progressService, windowService),
+                new SaveMenuState(this, progressService, windowService, screenshotsOfSavesService, metricService),
+                new LoadMenuState(this, progressService, windowService, metricService),
                 new GameplayState(this, windowService, progressService, coroutineRunnerService, soundService,
                     localisationService, dialogueHistoryService),
                 new LastWordsState(this, windowService, metricService, localisationService)

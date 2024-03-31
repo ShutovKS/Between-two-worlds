@@ -1,4 +1,5 @@
 using Infrastructure.Services.AssetsAddressables;
+using Infrastructure.Services.Authenticate;
 using Infrastructure.Services.CoroutineRunner;
 using Infrastructure.Services.DialogueStories;
 using Infrastructure.Services.Localisation;
@@ -18,10 +19,10 @@ namespace Infrastructure.Installers
         public override void InstallBindings()
         {
             BindCoroutineRunnerService();
-
             BindAssetsAddressablesProviderService();
             BindScreenshotsOfSavesService();
             BindDialogueHistoryService();
+            BindAuthenticatedService();
             BindLocalisationService();
             BindMetricStubService();
             BindUIFactoryService();
@@ -41,11 +42,20 @@ namespace Infrastructure.Installers
             Container.BindInterfacesTo<AssetsAddressablesProviderService>().AsSingle().NonLazy();
         }
 
+        private void BindAuthenticatedService()
+        {
+#if YG_SERVICES
+            Container.BindInterfacesTo<AuthenticatedYGService>().AsSingle().NonLazy();
+#else
+            Container.BindInterfacesTo<AuthenticatedStubService>().AsSingle().NonLazy();
+#endif
+        }
+
         private void BindScreenshotsOfSavesService()
         {
             Container.BindInterfacesTo<ScreenshotsOfSavesService>().AsSingle().NonLazy();
         }
-        
+
         private void BindDialogueHistoryService()
         {
             Container.BindInterfacesTo<DialogueHistoryService>().AsSingle().NonLazy();
@@ -58,7 +68,11 @@ namespace Infrastructure.Installers
 
         private void BindMetricStubService()
         {
+#if YG_SERVICES
+            Container.BindInterfacesTo<MetricYGService>().AsSingle().NonLazy();
+#else
             Container.BindInterfacesTo<MetricStubService>().AsSingle().NonLazy();
+#endif
         }
 
         private void BindUIFactoryService()
@@ -68,7 +82,11 @@ namespace Infrastructure.Installers
 
         private void BindSaveLoadService()
         {
+#if YG_SERVICES
+            Container.BindInterfacesTo<SaveLoadDataYGService>().AsSingle().NonLazy();
+#else
             Container.BindInterfacesTo<SaveLoadLocalService>().AsSingle().NonLazy();
+#endif
         }
 
         private void BindProgressService()

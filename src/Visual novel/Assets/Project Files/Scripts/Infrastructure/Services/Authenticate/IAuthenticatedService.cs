@@ -1,9 +1,11 @@
+using System.Threading.Tasks;
+
 namespace Infrastructure.Services.Authenticate
 {
     public interface IAuthenticateService
     {
         bool IsAuthenticated { get; }
 
-        bool Login();
+        Task<bool> Login();
     }
 }

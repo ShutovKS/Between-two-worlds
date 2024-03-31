@@ -12,8 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd64825da9934520a1f6d6df79b5f006, type: 3}
   m_Name: GeneralBuildData
   m_EditorClassIdentifier: 
-  isReleaseBuild: 0
-  builds: []
+  isReleaseBuild: 1
+  builds:
+  - isEnabled: 1
+    isCompress: 1
+    buildPath: Builds/Between_Two_Worlds_1.0.6_WebGL/Between_Two_Worlds_1.0.6/Between_Two_Worlds
+    addonsUsed:
+    - <Name>k__BackingField: YG
+      <IsUsed>k__BackingField: 1
+    options: 0
+    target: 20
   addonsUsedData: {fileID: 11400000, guid: 9b668bd4d2fee31499434e75a22ea616, type: 2}
   generalScriptingDefineSymbols: 
   outputRoot: Builds/
