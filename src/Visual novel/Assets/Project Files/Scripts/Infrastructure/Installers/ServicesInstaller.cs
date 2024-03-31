@@ -1,4 +1,5 @@
 using Infrastructure.Services.AssetsAddressables;
+using Infrastructure.Services.Authenticate;
 using Infrastructure.Services.CoroutineRunner;
 using Infrastructure.Services.DialogueStories;
 using Infrastructure.Services.Localisation;
@@ -22,6 +23,7 @@ namespace Infrastructure.Installers
             BindAssetsAddressablesProviderService();
             BindScreenshotsOfSavesService();
             BindDialogueHistoryService();
+            BindAuthenticatedService();
             BindLocalisationService();
             BindMetricStubService();
             BindUIFactoryService();
@@ -41,11 +43,16 @@ namespace Infrastructure.Installers
             Container.BindInterfacesTo<AssetsAddressablesProviderService>().AsSingle().NonLazy();
         }
 
+        private void BindAuthenticatedService()
+        {
+            Container.BindInterfacesTo<AuthenticatedStubService>().AsSingle().NonLazy();
+        }
+
         private void BindScreenshotsOfSavesService()
         {
             Container.BindInterfacesTo<ScreenshotsOfSavesService>().AsSingle().NonLazy();
         }
-        
+
         private void BindDialogueHistoryService()
         {
             Container.BindInterfacesTo<DialogueHistoryService>().AsSingle().NonLazy();
