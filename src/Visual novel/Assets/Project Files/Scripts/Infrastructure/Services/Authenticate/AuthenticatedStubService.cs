@@ -1,8 +1,4 @@
 using System.Threading.Tasks;
-using Data.Constant;
-using Infrastructure.Services.AssetsAddressables;
-using UnityEngine;
-using YG;
 
 namespace Infrastructure.Services.Authenticate
 {

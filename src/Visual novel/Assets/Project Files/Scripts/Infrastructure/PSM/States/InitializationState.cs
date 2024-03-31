@@ -35,7 +35,6 @@ namespace Infrastructure.PSM.States
         private async Task Authenticated()
         {
             await _authenticateService.Login();
-            YandexGame.GameReadyAPI();
         }
 
         private void ContinueWork()
