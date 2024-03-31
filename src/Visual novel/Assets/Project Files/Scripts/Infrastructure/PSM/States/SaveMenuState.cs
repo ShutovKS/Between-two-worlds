@@ -2,6 +2,7 @@ using System;
 using System.Globalization;
 using System.Threading.Tasks;
 using Infrastructure.PSM.Core;
+using Infrastructure.Services.Metric;
 using Infrastructure.Services.Progress;
 using Infrastructure.Services.ScreenshotsOfSaves;
 using Infrastructure.Services.WindowsService;
@@ -14,11 +15,12 @@ namespace Infrastructure.PSM.States
     public class SaveMenuState : IState<Bootstrap>, IEnterableWithOneArg<string>, IExitable
     {
         public SaveMenuState(Bootstrap initializer, IProgressService progressService, IWindowService windowService,
-            IScreenshotsOfSavesService screenshotsOfSavesService)
+            IScreenshotsOfSavesService screenshotsOfSavesService, IMetricService metricService)
         {
             _progressService = progressService;
             _windowService = windowService;
             _screenshotsOfSavesService = screenshotsOfSavesService;
+            _metricService = metricService;
             Initializer = initializer;
         }
 
@@ -27,6 +29,7 @@ namespace Infrastructure.PSM.States
         private readonly IProgressService _progressService;
         private readonly IWindowService _windowService;
         private readonly IScreenshotsOfSavesService _screenshotsOfSavesService;
+        private readonly IMetricService _metricService;
 
         private string _newDialogueId;
 
@@ -74,6 +77,8 @@ namespace Infrastructure.PSM.States
             dialoguesData.titleText = DateTime.Now.ToString(CultureInfo.InvariantCulture);
             dialoguesData.isDataExist = true;
             _progressService.SetProgress(gameData);
+            
+            _metricService.SendEvent(MetricEventType.Saved);
 
             Back();
         }

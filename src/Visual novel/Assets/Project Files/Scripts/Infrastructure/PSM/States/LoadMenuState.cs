@@ -1,6 +1,7 @@
 using System;
 using System.Threading.Tasks;
 using Infrastructure.PSM.Core;
+using Infrastructure.Services.Metric;
 using Infrastructure.Services.Progress;
 using Infrastructure.Services.WindowsService;
 using UI.Background;
@@ -11,16 +12,19 @@ namespace Infrastructure.PSM.States
 {
     public class LoadMenuState : IState<Bootstrap>, IEnterableWithOneArg<IState<Bootstrap>>, IExitable
     {
-        public LoadMenuState(Bootstrap initializer, IProgressService progressService, IWindowService windowService)
+        public LoadMenuState(Bootstrap initializer, IProgressService progressService, IWindowService windowService,
+            IMetricService metricService)
         {
             _progressService = progressService;
             _windowService = windowService;
+            _metricService = metricService;
             Initializer = initializer;
         }
 
         public Bootstrap Initializer { get; }
         private readonly IProgressService _progressService;
         private readonly IWindowService _windowService;
+        private readonly IMetricService _metricService;
         private IState<Bootstrap> _state;
 
         public async void OnEnter(IState<Bootstrap> state)
@@ -67,6 +71,8 @@ namespace Infrastructure.PSM.States
             var gameData = _progressService.GetProgress();
             gameData.currentDialogue = newId;
             _progressService.SetProgress(gameData);
+            
+            _metricService.SendEvent(MetricEventType.Load);
 
             Initializer.StateMachine.SwitchState<GameplayState>();
         }
@@ -79,7 +85,6 @@ namespace Infrastructure.PSM.States
                     Initializer.StateMachine.SwitchState<MenuState>();
                     break;
                 case GameplayState:
-                    Initializer.StateMachine.SwitchState<GameplayState>();
                     break;
                 default: throw new Exception($"Unprocessed state for transition from boot menu.");
             }
