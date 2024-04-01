@@ -42,7 +42,7 @@ namespace Infrastructure.PSM.States
 
         private async Task DataInitialization()
         {
-            var data = _progressService.GetProgress();
+            var data = await _progressService.GetProgress();
 
             foreach (var dialoguesData in data.dialogues)
             {

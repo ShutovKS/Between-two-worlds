@@ -1,3 +1,4 @@
+using System.Threading.Tasks;
 using Data.Dynamic;
 using Infrastructure.Services.SaveLoad;
 
@@ -20,14 +21,14 @@ namespace Infrastructure.Services.Progress
             _saveLoadService.Save(gameData);
         }
 
-        public GameData GetProgress()
+        public async Task<GameData> GetProgress()
         {
             if (_gameData != null)
             {
                 return _gameData;
             }
 
-            _gameData = _saveLoadService.Load(out var loadState);
+            _gameData = await _saveLoadService.Load(out var loadState);
 
             if (loadState == LoadState.NoSavedProgress)
             {

@@ -42,7 +42,7 @@ namespace Infrastructure.PSM.States
 
         private async Task Initialize()
         {
-            var gameData = _progressService.GetProgress();
+            var gameData = await _progressService.GetProgress();
 
             var backgroundUI = await _windowService.OpenAndGetComponent<BackgroundUI>(WindowID.Background);
             backgroundUI.SetImage(Resources.Load<Texture2D>("Data/Backgrounds/" + ResourcesPath.BACKGROUND_PATH));
@@ -58,9 +58,9 @@ namespace Infrastructure.PSM.States
             _soundService.SetClip(ResourcesPath.SOUND_MAIN_MENU, true);
         }
 
-        private void StartNewGame()
+        private async void StartNewGame()
         {
-            var gameData = _progressService.GetProgress();
+            var gameData = await _progressService.GetProgress();
             gameData.currentDialogue = PlayerPrefsPath.DIALOG_START_ID;
             gameData.LastSaveTime = DateTime.Now;
             _progressService.SetProgress(gameData);
