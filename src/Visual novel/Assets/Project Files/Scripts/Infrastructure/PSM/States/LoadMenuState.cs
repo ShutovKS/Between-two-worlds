@@ -71,7 +71,7 @@ namespace Infrastructure.PSM.States
             var gameData = _progressService.GetProgress();
             gameData.currentDialogue = newId;
             _progressService.SetProgress(gameData);
-            
+
             _metricService.SendEvent(MetricEventType.Load);
 
             Initializer.StateMachine.SwitchState<GameplayState>();
@@ -85,6 +85,7 @@ namespace Infrastructure.PSM.States
                     Initializer.StateMachine.SwitchState<MenuState>();
                     break;
                 case GameplayState:
+                    Initializer.StateMachine.SwitchState<GameplayState>();
                     break;
                 default: throw new Exception($"Unprocessed state for transition from boot menu.");
             }
