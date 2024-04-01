@@ -1,3 +1,4 @@
+using System.Threading.Tasks;
 using Data.Dynamic;
 
 namespace Infrastructure.Services.Progress
@@ -5,7 +6,7 @@ namespace Infrastructure.Services.Progress
     public interface IProgressService
     {
         void SetProgress(GameData gameData);
-        GameData GetProgress();
+        Task<GameData> GetProgress();
         void CreateNewProgress();
     }
 }

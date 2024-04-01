@@ -1,6 +1,7 @@
 ﻿#region
 
 using System.IO;
+using System.Threading.Tasks;
 using Data.Dynamic;
 using UnityEngine;
 
@@ -26,7 +27,7 @@ namespace Infrastructure.Services.SaveLoad
         private const string FOLDER_NAME = "DataFolder";
         private readonly string _filePath;
 
-        public GameData Load(out LoadState loadState)
+        public Task<GameData> Load(out LoadState loadState)
         {
             if (File.Exists(_filePath))
             {
@@ -35,7 +36,7 @@ namespace Infrastructure.Services.SaveLoad
 
                 loadState = LoadState.Successfully;
 
-                return gameData;
+                return Task.FromResult(gameData);
             }
 
             loadState = LoadState.NoSavedProgress;
