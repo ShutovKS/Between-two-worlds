@@ -4,7 +4,7 @@ using UnityEngine;
 
 #endregion
 
-namespace Data.Localization.LocalizationMain
+namespace Data.Static.LocalizationMain
 {
     public class LocalizationMain
     {

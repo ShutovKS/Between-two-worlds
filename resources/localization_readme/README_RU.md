@@ -10,7 +10,7 @@ Rus | [Eng](../../README.md)
 
 Игры для Windows, Linux и Android можно скачать на странице [релизов](https://github.com/ShutovKS/Between-two-worlds/releases) или на [itch.io](https://shutovks.itch.io/between-two-worlds).
 
-Для доступа к веб-версии игры обратитесь к [itch.io](https://shutovks.itch.io/between-two-worlds) или [Yandex Games](https://yandex.ru/games/app/292041).
+Для доступа к веб-версии игры обратитесь к [itch.io](https://shutovks.itch.io/between-two-worlds), [Yandex Games](https://yandex.ru/games/app/292041), [VK Play](https://mini.vkplay.ru/play/game/between_two_worlds).
 
 Если вы ищете версию для Android, она доступна в сторах [Google Play](https://play.google.com/store/apps/details?id=com.Forgeofgameworlds.BetweenTwoWorlds) и [RuStore](https://apps.rustore.ru/app/com.Forgeofgameworlds.BetweenTwoWorlds).
 

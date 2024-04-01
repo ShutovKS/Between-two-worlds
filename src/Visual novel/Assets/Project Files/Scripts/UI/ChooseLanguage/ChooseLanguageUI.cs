@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace UI.ChooseLanguage
 {
-    public class ChooseLanguageUI : MonoBehaviour
+    public class ChooseLanguageUI : BaseScreen
     {
         [SerializeField] private Canvas canvas;
 

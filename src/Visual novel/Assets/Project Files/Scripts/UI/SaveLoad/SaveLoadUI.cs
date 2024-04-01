@@ -1,14 +1,13 @@
 #region
 
-using Data.Localization.UILocalisation;
-using Infrastructure.Services.LocalizationUI;
+using Data.Static.UILocalisation;
 using UnityEngine;
 
 #endregion
 
 namespace UI.SaveLoad
 {
-    public class SaveLoadUI : MonoBehaviour, ILocalizableUI
+    public class SaveLoadUI : BaseScreen, ILocalizableUI
     {
         [SerializeField] private Canvas canvas;
         [field: SerializeField] public ButtonsUI ButtonsUI { get; private set; }
