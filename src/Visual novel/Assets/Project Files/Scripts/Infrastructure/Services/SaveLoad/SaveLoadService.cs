@@ -27,8 +27,10 @@ namespace Infrastructure.Services.SaveLoad
         private const string FOLDER_NAME = "DataFolder";
         private readonly string _filePath;
 
-        public Task<GameData> Load(out LoadState loadState)
+        public Task<(GameData, LoadState)> Load()
         {
+            LoadState loadState;
+
             if (File.Exists(_filePath))
             {
                 var json = File.ReadAllText(_filePath);
@@ -36,12 +38,12 @@ namespace Infrastructure.Services.SaveLoad
 
                 loadState = LoadState.Successfully;
 
-                return Task.FromResult(gameData);
+                return Task.FromResult((gameData, loadState));
             }
 
             loadState = LoadState.NoSavedProgress;
 
-            return null;
+            return Task.FromResult(((GameData)null, loadState));
         }
 
         public void Save(GameData gameData)
