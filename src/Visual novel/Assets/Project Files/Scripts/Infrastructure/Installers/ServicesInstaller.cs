@@ -45,7 +45,11 @@ namespace Infrastructure.Installers
 
         private void BindAuthenticatedService()
         {
+#if GOOGLE_PLAY_SERVICES
+            Container.BindInterfacesTo<AuthenticatedGooglePlayService>().AsSingle().NonLazy();
+#else
             Container.BindInterfacesTo<AuthenticatedStubService>().AsSingle().NonLazy();
+#endif
         }
 
         private void BindScreenshotsOfSavesService()
@@ -65,7 +69,11 @@ namespace Infrastructure.Installers
 
         private void BindMetricStubService()
         {
+#if GOOGLE_PLAY_SERVICES
+            Container.BindInterfacesTo<MetricGooglePlayService>().AsSingle().NonLazy();
+#else
             Container.BindInterfacesTo<MetricStubService>().AsSingle().NonLazy();
+#endif
         }
 
         private void BindUIFactoryService()
@@ -75,7 +83,12 @@ namespace Infrastructure.Installers
 
         private void BindSaveLoadService()
         {
+#if GOOGLE_PLAY_SERVICES
+            Container.Bind<SaveLoadLocalService>().AsSingle().NonLazy();
+            Container.BindInterfacesTo<SaveLoadGooglePlayService>().AsSingle().NonLazy();
+#else
             Container.BindInterfacesTo<SaveLoadLocalService>().AsSingle().NonLazy();
+#endif
         }
 
         private void BindProgressService()

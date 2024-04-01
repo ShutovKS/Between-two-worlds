@@ -12,4 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cde2bbb25a0e415a9dbdc33eacfa3717, type: 3}
   m_Name: AddonsUsedData
   m_EditorClassIdentifier: 
-  <AddonsUsed>k__BackingField: []
+  <AddonsUsed>k__BackingField:
+  - <Name>k__BackingField: Play Games
+    <Defines>k__BackingField:
+    - GOOGLE_PLAY_SERVICES

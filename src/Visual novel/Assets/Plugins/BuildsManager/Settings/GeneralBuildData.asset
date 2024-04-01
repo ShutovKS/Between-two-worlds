@@ -13,7 +13,15 @@ MonoBehaviour:
   m_Name: GeneralBuildData
   m_EditorClassIdentifier: 
   isReleaseBuild: 0
-  builds: []
+  builds:
+  - isEnabled: 1
+    isCompress: 0
+    buildPath: 
+    addonsUsed:
+    - <Name>k__BackingField: Play Games
+      <IsUsed>k__BackingField: 1
+    options: 0
+    target: 13
   addonsUsedData: {fileID: 11400000, guid: 9b668bd4d2fee31499434e75a22ea616, type: 2}
   generalScriptingDefineSymbols: 
   outputRoot: Builds/
