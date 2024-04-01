@@ -28,9 +28,10 @@ namespace Infrastructure.Services.Progress
                 return _gameData;
             }
 
-            _gameData = await _saveLoadService.Load(out var loadState);
+            (GameData gameData, LoadState loadState) result = await _saveLoadService.Load();
+            _gameData = result.gameData;
 
-            if (loadState == LoadState.NoSavedProgress)
+            if (result.loadState == LoadState.NoSavedProgress)
             {
                 CreateNewProgress();
             }

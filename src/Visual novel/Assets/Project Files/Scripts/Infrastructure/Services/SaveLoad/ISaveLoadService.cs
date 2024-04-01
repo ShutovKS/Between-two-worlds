@@ -9,9 +9,8 @@ namespace Infrastructure.Services.SaveLoad
 {
     public interface ISaveLoadService
     {
-        Task<GameData> Load(out LoadState loadState);
+        Task<(GameData, LoadState)> Load();
         void Save(GameData gameData);
-        
     }
 
     public enum LoadState
