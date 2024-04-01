@@ -63,7 +63,7 @@ namespace Infrastructure.PSM.States
 
         public async void OnEnter()
         {
-            _gameData = _progressService.GetProgress();
+            _gameData = await _progressService.GetProgress();
 
             await OpenUI();
 

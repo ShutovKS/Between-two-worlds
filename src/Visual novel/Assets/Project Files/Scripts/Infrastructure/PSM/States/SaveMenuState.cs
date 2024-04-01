@@ -52,7 +52,7 @@ namespace Infrastructure.PSM.States
             backgroundUI.SetColor(Color.black);
             
             var saveLoadUI = await _windowService.OpenAndGetComponent<SaveLoadUI>(WindowID.SaveLoad);
-            var gameData = _progressService.GetProgress();
+            var gameData = await _progressService.GetProgress();
 
             saveLoadUI.ButtonsUI.OnButtonClicked = Back;
 
@@ -70,7 +70,7 @@ namespace Infrastructure.PSM.States
 
         private async void SetNewIdDialogue(int saveId)
         {
-            var gameData = _progressService.GetProgress();
+            var gameData = await _progressService.GetProgress();
             var dialoguesData = gameData.dialogues[saveId];
             dialoguesData.idLastDialogue = _newDialogueId;
             dialoguesData.Background = await _screenshotsOfSavesService.GetImage(_newDialogueId);
